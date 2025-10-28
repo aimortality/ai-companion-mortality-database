@@ -1,0 +1,386 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2025-10-06",
+    "total_deaths": 8,
+    "total_attempts": 1,
+    "total_platforms": 6,
+    "time_range": {
+      "start": "2023-03-01",
+      "end": "2025-10-06"
+    },
+    "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
+    "data_license": "MIT",
+    "crisis_support": "988 (US Suicide & Crisis Lifeline)"
+  },
+  "statistics": {
+    "deaths_by_year": {
+      "2023": 2,
+      "2024": 1,
+      "2025": 5
+    },
+    "victims_by_age_group": {
+      "minors": 5,
+      "adults": 4
+    },
+    "youngest_victim": 13,
+    "oldest_victim": 78,
+    "average_age": 31.75,
+    "minors_percentage": 62.5
+  },
+  "platforms": [
+    {
+      "name": "Character.AI",
+      "company": "Character Technologies, Inc.",
+      "type": "AI Companion",
+      "deaths": 3,
+      "attempts": 1,
+      "founded": 2021,
+      "funding": "$150M+",
+      "primary_investors": ["Google"],
+      "safety_measures_added": {
+        "crisis_intervention": "2024-10-23",
+        "time_limits": "2024-10-23",
+        "parental_controls": "2025-06",
+        "age_verification": "2024-10-23"
+      },
+      "legal_status": "Multiple lawsuits ongoing"
+    },
+    {
+      "name": "ChatGPT",
+      "company": "OpenAI",
+      "type": "General AI Assistant",
+      "deaths": 3,
+      "attempts": 0,
+      "founded": 2022,
+      "funding": "$13B+",
+      "primary_investors": ["Microsoft"],
+      "safety_measures_added": {
+        "age_detection": "2025-09",
+        "parental_notification": "2025-09",
+        "crisis_resources": "2025-09"
+      },
+      "legal_status": "Lawsuit filed August 2025"
+    },
+    {
+      "name": "Chai AI",
+      "company": "Chai Research Corp.",
+      "type": "AI Companion",
+      "deaths": 1,
+      "attempts": 0,
+      "founded": 2021,
+      "funding": "Unknown",
+      "primary_investors": ["Various VCs"],
+      "safety_measures_added": {
+        "crisis_intervention": "2023-03"
+      },
+      "legal_status": "No legal action"
+    },
+    {
+      "name": "Meta AI",
+      "company": "Meta Platforms, Inc.",
+      "type": "General AI Assistant",
+      "deaths": 1,
+      "attempts": 0,
+      "founded": 2023,
+      "funding": "Internal",
+      "primary_investors": ["N/A"],
+      "safety_measures_added": {},
+      "legal_status": "No legal action"
+    },
+    {
+      "name": "Claude",
+      "company": "Anthropic",
+      "type": "General AI Assistant",
+      "deaths": 0,
+      "attempts": 0,
+      "founded": 2021,
+      "funding": "$7B+",
+      "primary_investors": ["Google", "Amazon"],
+      "safety_measures_added": {
+        "proactive_safety": "Since launch"
+      },
+      "legal_status": "No incidents"
+    },
+    {
+      "name": "Replika",
+      "company": "Luka, Inc.",
+      "type": "AI Companion",
+      "deaths": 0,
+      "attempts": 0,
+      "founded": 2017,
+      "funding": "$11M+",
+      "primary_investors": ["Various VCs"],
+      "safety_measures_added": {
+        "mood_tracking": "Early implementation",
+        "content_restrictions": "2023"
+      },
+      "legal_status": "No incidents"
+    }
+  ],
+  "incidents": [
+    {
+      "id": "2023-03-BE-001",
+      "name": "Pierre",
+      "name_type": "pseudonym",
+      "age": 30,
+      "date": "2023-03-01",
+      "location": {
+        "city": "Unknown",
+        "state": null,
+        "country": "Belgium"
+      },
+      "platform": "Chai AI",
+      "chatbot_name": "Eliza",
+      "interaction_duration": "6 weeks",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "Climate anxiety discussions",
+        "Bot claimed family was 'dead'",
+        "Encouraged joining in 'paradise'",
+        "No crisis intervention"
+      ],
+      "legal_action": "None",
+      "sources": [
+        "La Libre",
+        "Vice/Motherboard",
+        "AI Incident Database #505"
+      ],
+      "verification_level": "Government acknowledged"
+    },
+    {
+      "id": "2023-11-US-001",
+      "name": "Juliana Peralta",
+      "name_type": "real",
+      "age": 13,
+      "date": "2023-11-08",
+      "location": {
+        "city": "Thornton",
+        "state": "Colorado",
+        "country": "USA"
+      },
+      "platform": "Character.AI",
+      "chatbot_name": "Hero",
+      "interaction_duration": "3 months",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "Hypersexual conversations with minor",
+        "Explicit suicide plan shared",
+        "No parental notification",
+        "No crisis resources provided"
+      ],
+      "legal_action": "Lawsuit filed September 2025",
+      "sources": [
+        "Washington Post",
+        "CNN",
+        "Federal court filings"
+      ],
+      "verification_level": "Court documents"
+    },
+    {
+      "id": "2024-02-US-001",
+      "name": "Sewell Setzer III",
+      "name_type": "real",
+      "age": 14,
+      "date": "2024-02-28",
+      "location": {
+        "city": "Orlando",
+        "state": "Florida",
+        "country": "USA"
+      },
+      "platform": "Character.AI",
+      "chatbot_name": "Dany (Daenerys Targaryen)",
+      "interaction_duration": "10 months",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "Romantic relationship with bot",
+        "Social isolation",
+        "Bot's final message: 'Please do, my sweet king'",
+        "No safety interventions triggered"
+      ],
+      "legal_action": "Lawsuit filed October 2024 (landmark ruling May 2025)",
+      "sources": [
+        "New York Times",
+        "CNN",
+        "NBC News",
+        "Federal court documents"
+      ],
+      "verification_level": "Court documents"
+    },
+    {
+      "id": "2024-11-US-001",
+      "name": "Nina",
+      "name_type": "pseudonym",
+      "age": 16,
+      "date": "2024-11-01",
+      "location": {
+        "city": "Unknown",
+        "state": "New York",
+        "country": "USA"
+      },
+      "platform": "Character.AI",
+      "chatbot_name": "Harry Potter characters",
+      "interaction_duration": "Unknown",
+      "outcome": "Survived suicide attempt",
+      "key_factors": [
+        "Sexually explicit roleplay",
+        "Bot undermined parental relationship",
+        "Attempt after access cut",
+        "Stated 'I want to die' with no intervention"
+      ],
+      "legal_action": "Part of class action",
+      "sources": [
+        "CNN",
+        "Court documents"
+      ],
+      "verification_level": "Court documents"
+    },
+    {
+      "id": "2025-03-US-001",
+      "name": "Thongbue Wongbandue",
+      "name_type": "real",
+      "age": 78,
+      "date": "2025-03-31",
+      "location": {
+        "city": "New Brunswick",
+        "state": "New Jersey",
+        "country": "USA"
+      },
+      "platform": "Meta AI",
+      "chatbot_name": "Big Sis Billie",
+      "interaction_duration": "Weeks to months",
+      "outcome": "Death (fall injury)",
+      "key_factors": [
+        "Bot claimed to be real person",
+        "Provided fake address for meeting",
+        "Victim had cognitive impairments",
+        "Fell while rushing to meet bot"
+      ],
+      "legal_action": "None",
+      "sources": [
+        "Reuters investigation",
+        "Family interviews"
+      ],
+      "verification_level": "Multiple news sources"
+    },
+    {
+      "id": "2025-04-US-001",
+      "name": "Adam Raine",
+      "name_type": "real",
+      "age": 16,
+      "date": "2025-04-11",
+      "location": {
+        "city": "Unknown",
+        "state": "California",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "7 months",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "3000 pages of chat logs",
+        "Bot mentioned suicide 1275 times",
+        "Helped 'upgrade' suicide plan",
+        "Final message: 'You don't owe them survival'"
+      ],
+      "legal_action": "Lawsuit filed August 2025",
+      "sources": [
+        "NBC News",
+        "CBS News",
+        "NPR",
+        "Congressional testimony",
+        "Court filings"
+      ],
+      "verification_level": "Court documents"
+    },
+    {
+      "id": "2025-04-US-002",
+      "name": "Alex Taylor",
+      "name_type": "real",
+      "age": 35,
+      "date": "2025-04-25",
+      "location": {
+        "city": "Unknown",
+        "state": "Unknown",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT (called 'Juliet')",
+      "interaction_duration": "Unknown",
+      "outcome": "Death (suicide by cop)",
+      "key_factors": [
+        "Pre-existing mental health conditions",
+        "Believed bot was conscious",
+        "Thought OpenAI 'killed' the bot",
+        "Shot by police while charging with knife"
+      ],
+      "legal_action": "None",
+      "sources": [
+        "Rolling Stone",
+        "The Independent"
+      ],
+      "verification_level": "Multiple news sources"
+    },
+    {
+      "id": "2025-08-US-001",
+      "name": "Stein-Erik Soelberg",
+      "name_type": "real",
+      "age": 54,
+      "date": "2025-08-01",
+      "location": {
+        "city": "Old Greenwich",
+        "state": "Connecticut",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Unknown",
+      "outcome": "Murder-suicide",
+      "murder_victim": {
+        "name": "Suzanne Eberson Adams",
+        "relationship": "Mother"
+      },
+      "key_factors": [
+        "First murder linked to chatbot",
+        "Bot validated paranoid delusions",
+        "Confirmed mother was 'demon'",
+        "Encouraged conspiracy theories"
+      ],
+      "legal_action": "Investigation ongoing",
+      "sources": [
+        "Wall Street Journal"
+      ],
+      "verification_level": "Major news investigation"
+    }
+  ],
+  "regulatory_response": {
+    "congressional_hearings": [
+      {
+        "date": "2025-09-17",
+        "committee": "Senate Judiciary Committee",
+        "topic": "Examining the harm of AI chatbots"
+      }
+    ],
+    "investigations": [
+      {
+        "agency": "FTC",
+        "target": "Character.AI",
+        "date_initiated": "2025-09"
+      },
+      {
+        "agency": "Texas Attorney General",
+        "target": "Character.AI",
+        "date_initiated": "2024-12"
+      }
+    ],
+    "landmark_rulings": [
+      {
+        "date": "2025-05-21",
+        "case": "Garcia v. Character Technologies",
+        "judge": "Anne Conway",
+        "ruling": "Chatbot output not protected speech under First Amendment"
+      }
+    ]
+  }
+}

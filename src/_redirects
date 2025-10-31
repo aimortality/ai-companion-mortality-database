@@ -1,0 +1,11 @@
+# Redirect alternative domains to primary domain
+# chatbotdeaths.org and ai-deaths.com → aimortality.org
+
+https://chatbotdeaths.org/* https://aimortality.org/:splat 301!
+https://www.chatbotdeaths.org/* https://aimortality.org/:splat 301!
+
+https://ai-deaths.com/* https://aimortality.org/:splat 301!
+https://www.ai-deaths.com/* https://aimortality.org/:splat 301!
+
+# Redirect www to apex domain
+https://www.aimortality.org/* https://aimortality.org/:splat 301!

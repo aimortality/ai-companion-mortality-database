@@ -567,14 +567,22 @@
             React.createElement('div', { className: 'viz-title' }, 'Deaths by Platform'),
             React.createElement('svg', { width: '100%', height: '180', style: { overflow: 'visible' } },
               [
-                { name: 'Character.AI', deaths: 2, type: 'companion' },
                 { name: 'ChatGPT', deaths: 3, type: 'assistant' },
+                { name: 'Character.AI', deaths: 2, type: 'companion' },
                 { name: 'Chai AI', deaths: 1, type: 'companion' },
                 { name: 'Meta AI', deaths: 1, type: 'assistant' },
                 { name: 'Claude', deaths: 0, type: 'assistant' },
                 { name: 'Replika', deaths: 0, type: 'companion' }
-              ].map((platform, i) =>
-                React.createElement('g', { key: i, transform: `translate(0, ${i * 28})` },
+              ].map((platform, i) => {
+                const platformColors = {
+                  'Character.AI': '#cc0000',
+                  'ChatGPT': '#000000',
+                  'Chai AI': '#666666',
+                  'Meta AI': '#999999',
+                  'Claude': '#ddd',
+                  'Replika': '#ddd'
+                };
+                return React.createElement('g', { key: i, transform: `translate(0, ${i * 28})` },
                   React.createElement('text', {
                     x: '0',
                     y: '14',
@@ -585,7 +593,7 @@
                     y: '2',
                     width: platform.deaths * 40,
                     height: '16',
-                    fill: platform.deaths > 0 ? (platform.type === 'companion' ? '#cc0000' : '#000') : '#ddd'
+                    fill: platformColors[platform.name]
                   }),
                   React.createElement('text', {
                     x: 125 + platform.deaths * 40,
@@ -593,7 +601,7 @@
                     style: { fontSize: '11px', fill: '#999', fontFamily: 'Georgia, serif' }
                   }, platform.deaths || '0')
                 )
-              )
+              })
             )
           )
         ),

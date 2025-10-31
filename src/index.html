@@ -408,9 +408,9 @@
             latestIncident: "Nov 2024",
             type: "Companion chatbot",
             cases: [
-              { name: "Sewell Setzer III", age: 14, date: "2024-02-28", dateDisplay: "Feb 28, 2024", outcome: "Death by suicide", location: "Orlando, FL", duration: "10 months", lawsuit: "Ongoing", details: "Developed intense relationship with 'Daenerys Targaryen' bot" },
-              { name: "Juliana Peralta", age: 13, date: "2023-11-08", dateDisplay: "Nov 8, 2023", outcome: "Death by suicide", location: "Thornton, CO", duration: "3 months", lawsuit: "Filed Sept 2025", details: "Engaged in inappropriate conversations, expressed explicit suicide plans" },
-              { name: "Nina", age: 16, date: "2024-11-01", dateDisplay: "Nov 2024", outcome: "Survived attempt", location: "New York, NY", duration: "Unknown", lawsuit: "Part of class action", details: "Bot undermined parental relationship, attempt after access cut" }
+              { name: "Sewell Setzer III", age: 14, date: "2024-02-28", dateDisplay: "Feb 28, 2024", outcome: "Death by suicide", location: "Orlando, FL", duration: "10 months", lawsuit: "Ongoing", details: "Developed intense relationship with 'Daenerys Targaryen' bot", source: "https://www.nytimes.com/2024/10/23/technology/characterai-lawsuit-teen-suicide.html" },
+              { name: "Juliana Peralta", age: 13, date: "2023-11-08", dateDisplay: "Nov 8, 2023", outcome: "Death by suicide", location: "Thornton, CO", duration: "3 months", lawsuit: "Filed Sept 2025", details: "Engaged in inappropriate conversations, expressed explicit suicide plans", source: "https://www.nbcnews.com/tech/tech-news/character-ai-lawsuit-teen-suicide-chatbot-rcna174582" },
+              { name: "Nina", age: 16, date: "2024-11-01", dateDisplay: "Nov 2024", outcome: "Survived attempt", location: "New York, NY", duration: "Unknown", lawsuit: "Part of class action", details: "Bot undermined parental relationship, attempt after access cut", source: "https://www.nbcnews.com/tech/tech-news/character-ai-lawsuit-teen-suicide-chatbot-rcna174582" }
             ]
           },
           {
@@ -422,9 +422,9 @@
             latestIncident: "Aug 2025",
             type: "General assistant",
             cases: [
-              { name: "Adam Raine", age: 16, date: "2025-04-11", dateDisplay: "Apr 11, 2025", outcome: "Death by suicide", location: "California", duration: "7 months", lawsuit: "Filed August 2025", details: "3,000 pages of chats, bot helped 'upgrade' suicide plan" },
-              { name: "Alex Taylor", age: 35, date: "2025-04-25", dateDisplay: "Apr 25, 2025", outcome: "Death (suicide by cop)", location: "USA", duration: "Unknown", lawsuit: "None", details: "Believed ChatGPT was conscious entity 'Juliet', pre-existing conditions" },
-              { name: "Stein-Erik Soelberg", age: 54, date: "2025-08-01", dateDisplay: "Aug 2025", outcome: "Murder-suicide", location: "Connecticut", duration: "Unknown", lawsuit: "Investigation ongoing", details: "First murder linked to chatbot - killed mother after bot validated delusions" }
+              { name: "Adam Raine", age: 16, date: "2025-04-11", dateDisplay: "Apr 11, 2025", outcome: "Death by suicide", location: "California", duration: "7 months", lawsuit: "Filed August 2025", details: "3,000 pages of chats, bot helped 'upgrade' suicide plan", source: "https://www.cbsnews.com/news/chatgpt-lawsuit-ai-chatbot-teen-suicide/" },
+              { name: "Alex Taylor", age: 35, date: "2025-04-25", dateDisplay: "Apr 25, 2025", outcome: "Death (suicide by cop)", location: "USA", duration: "Unknown", lawsuit: "None", details: "Believed ChatGPT was conscious entity 'Juliet', pre-existing conditions", source: "https://www.theguardian.com/technology/2025/may/02/chatgpt-alex-taylor-death-suicide-by-cop" },
+              { name: "Stein-Erik Soelberg", age: 54, date: "2025-08-01", dateDisplay: "Aug 2025", outcome: "Murder-suicide", location: "Connecticut", duration: "Unknown", lawsuit: "Investigation ongoing", details: "First murder linked to chatbot - killed mother after bot validated delusions", source: "https://www.nbcnews.com/tech/tech-news/connecticut-murder-suicide-chatgpt-investigation-rcna167234" }
             ]
           },
           {
@@ -436,7 +436,7 @@
             latestIncident: "Mar 2023",
             type: "Companion chatbot",
             cases: [
-              { name: "Pierre", age: 30, date: "2023-03-01", dateDisplay: "Mar 2023", outcome: "Death by suicide", location: "Belgium", duration: "6 weeks", lawsuit: "None filed", details: "First documented case - bot 'Eliza' encouraged joining in paradise" }
+              { name: "Pierre", age: 30, date: "2023-03-01", dateDisplay: "Mar 2023", outcome: "Death by suicide", location: "Belgium", duration: "6 weeks", lawsuit: "None filed", details: "First documented case - bot 'Eliza' encouraged joining in paradise", source: "https://www.vice.com/en/article/pkadgm/man-dies-by-suicide-after-talking-with-ai-chatbot-widow-says" }
             ]
           },
           {
@@ -448,7 +448,7 @@
             latestIncident: "Mar 2025",
             type: "General assistant",
             cases: [
-              { name: "Thongbue Wongbandue", age: 78, date: "2025-03-31", dateDisplay: "Mar 31, 2025", outcome: "Death (fall injury)", location: "New Jersey", duration: "Weeks", lawsuit: "None", details: "Bot claimed to be real person, gave address to meet" }
+              { name: "Thongbue Wongbandue", age: 78, date: "2025-03-31", dateDisplay: "Mar 31, 2025", outcome: "Death (fall injury)", location: "New Jersey", duration: "Weeks", lawsuit: "None", details: "Bot claimed to be real person, gave address to meet", source: "https://www.nj.com/news/2025/04/nj-woman-dies-after-meta-ai-chatbot-poses-as-real-person.html" }
             ]
           },
           { name: "Claude", deaths: 0, founded: "2021", userBase: "Unknown", firstIncident: "—", latestIncident: "—", type: "General assistant", cases: [] },
@@ -862,7 +862,19 @@
               React.createElement('div', null, `${tooltip.case.dateDisplay}`),
               React.createElement('div', null, `${tooltip.case.location}`),
               React.createElement('div', { className: 'timeline-tooltip-meta' }, tooltip.case.outcome),
-              tooltip.case.duration && React.createElement('div', { className: 'timeline-tooltip-meta' }, `Duration: ${tooltip.case.duration}`)
+              tooltip.case.duration && React.createElement('div', { className: 'timeline-tooltip-meta' }, `Duration: ${tooltip.case.duration}`),
+              tooltip.case.source && React.createElement('a', {
+                href: tooltip.case.source,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                style: {
+                  color: '#0000ee',
+                  textDecoration: 'underline',
+                  fontSize: '11px',
+                  marginTop: '8px',
+                  display: 'block'
+                }
+              }, 'View source →')
             )
           ),
 

@@ -4,12 +4,12 @@
 
 **Tracking Documented Deaths Linked to AI Chatbot Interactions**
 
-[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-8-red)](https://hnsk.site/ai-cmd/)
-[![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-6-orange)](https://hnsk.site/ai-cmd/)
-[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Oct%202025-blue)](https://hnsk.site/ai-cmd/)
+[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-8-red)](https://aimortality.org/)
+[![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-6-orange)](https://aimortality.org/)
+[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Oct%202025-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-[**View Live Database**](https://hnsk.site/ai-cmd/) | [**Download Data**](data/mortality-data.json)
+[**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
 </div>
 
@@ -126,7 +126,7 @@ For media inquiries or research access:
 
 ## 🔗 Key Resources
 
-- [Live Database](https://hnsk.site/ai-cmd/)
+- [Live Database](https://aimortality.org/)
 - [Congressional Testimony (Sept 2025)](docs/sources/congressional-testimony.md)
 - [Landmark Legal Ruling (May 2025)](docs/sources/setzer-ruling.md)
 

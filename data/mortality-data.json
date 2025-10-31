@@ -20,20 +20,22 @@
       "2025": 5
     },
     "victims_by_age_group": {
-      "minors": 5,
-      "adults": 4
+      "minors": 3,
+      "adults": 5
     },
+    "minors_affected_including_attempts": 4,
     "youngest_victim": 13,
     "oldest_victim": 78,
-    "average_age": 31.75,
-    "minors_percentage": 62.5
+    "average_age": 32,
+    "minors_percentage_deaths": 37.5,
+    "minors_percentage_all_incidents": 44.4
   },
   "platforms": [
     {
       "name": "Character.AI",
       "company": "Character Technologies, Inc.",
       "type": "AI Companion",
-      "deaths": 3,
+      "deaths": 2,
       "attempts": 1,
       "founded": 2021,
       "funding": "$150M+",

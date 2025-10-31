@@ -331,7 +331,7 @@
     Public database documenting verified deaths associated with AI chatbot interactions
   </div>
   <div class="meta">
-    Last updated: October 6, 2025 | Cases: 9 | Period: March 2023 — October 2025
+    Last updated: October 6, 2025 | Cases: 8 | Period: March 2023 — October 2025
   </div>
 
   <div id="app">
@@ -349,7 +349,7 @@
         platforms: [
           {
             name: "Character.AI",
-            deaths: 3,
+            deaths: 2,
             attempts: 1,
             founded: "2021",
             userBase: "~20M MAU",
@@ -419,8 +419,8 @@
             React.createElement('div', { className: 'stat-label' }, 'Age Range')
           ),
           React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-number' }, '5'),
-            React.createElement('div', { className: 'stat-label' }, 'Minors')
+            React.createElement('div', { className: 'stat-number' }, '4'),
+            React.createElement('div', { className: 'stat-label' }, 'Minors Affected')
           ),
           React.createElement('div', { className: 'stat' },
             React.createElement('div', { className: 'stat-number' }, '4'),
@@ -435,7 +435,7 @@
             React.createElement('div', { className: 'viz-title' }, 'Deaths by Platform'),
             React.createElement('svg', { width: '100%', height: '180', style: { overflow: 'visible' } },
               [
-                { name: 'Character.AI', deaths: 3 },
+                { name: 'Character.AI', deaths: 2 },
                 { name: 'ChatGPT', deaths: 3 },
                 { name: 'Meta AI', deaths: 1 },
                 { name: 'Chai', deaths: 1 },
@@ -710,21 +710,21 @@
             React.createElement('tbody', null,
               React.createElement('tr', null,
                 React.createElement('td', null, '2023'),
-                React.createElement('td', null, '1'),
+                React.createElement('td', null, '2'),
                 React.createElement('td', null, '0'),
-                React.createElement('td', null, 'First documented case (March)')
+                React.createElement('td', null, 'First documented cases (Pierre, Juliana)')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '2024'),
-                React.createElement('td', null, '2'),
                 React.createElement('td', null, '1'),
-                React.createElement('td', null, 'Includes first legal action')
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, 'Sewell Setzer III; Nina survived attempt')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '2025'),
                 React.createElement('td', null, '5'),
                 React.createElement('td', null, '0'),
-                React.createElement('td', null, 'Data through September')
+                React.createElement('td', null, 'Includes murder-suicide case (2 fatalities)')
               )
             )
           ),
@@ -798,13 +798,18 @@
               ),
               React.createElement('tr', { style: { borderTop: '1px solid #000' } },
                 React.createElement('td', null, React.createElement('b', null, 'Minors (under 18)')),
-                React.createElement('td', null, React.createElement('b', null, '5')),
-                React.createElement('td', null, React.createElement('b', null, '62.5%'))
+                React.createElement('td', null, React.createElement('b', null, '3')),
+                React.createElement('td', null, React.createElement('b', null, '37.5%'))
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, React.createElement('b', null, 'Adults (18+)')),
-                React.createElement('td', null, React.createElement('b', null, '3')),
-                React.createElement('td', null, React.createElement('b', null, '37.5%'))
+                React.createElement('td', null, React.createElement('b', null, '4')),
+                React.createElement('td', null, React.createElement('b', null, '50%'))
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', { colSpan: 3, style: { fontSize: '11px', color: '#999', fontStyle: 'italic', paddingTop: '8px' } },
+                  'Note: 4 total minors affected (3 deaths + 1 survived attempt not shown above)'
+                )
               )
             )
           ),

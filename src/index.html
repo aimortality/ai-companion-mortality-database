@@ -558,7 +558,7 @@
                 x: '140',
                 y: '20',
                 style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontStyle: 'italic' }
-              }, 'n=4 (where data available)')
+              }, 'Duration known for 4 of 8 cases')
             )
           ),
 
@@ -666,7 +666,7 @@
             )
           ),
           React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px', fontStyle: 'italic' } },
-            'Note: Duration data available for 4 of 8 cases. Pattern suggests risk may increase with sustained engagement over months.'
+            'Note: Duration known for 4 of 8 cases. Pattern suggests risk may increase with sustained engagement over months.'
           ),
 
           // Common factors
@@ -790,9 +790,9 @@
                 // Platform colors
                 const platformColors = {
                   'Character.AI': '#cc0000',
-                  'ChatGPT': '#00cc00',
-                  'Chai AI': '#0000cc',
-                  'Meta AI': '#cc00cc'
+                  'ChatGPT': '#000000',
+                  'Chai AI': '#666666',
+                  'Meta AI': '#999999'
                 };
                 const color = platformColors[c.platform] || '#666666';
 
@@ -864,11 +864,11 @@
             ' ',
             React.createElement('span', { style: { color: '#cc0000' } }, '● Character.AI'),
             ' ',
-            React.createElement('span', { style: { color: '#00cc00' } }, '● ChatGPT'),
+            React.createElement('span', { style: { color: '#000000' } }, '● ChatGPT'),
             ' ',
-            React.createElement('span', { style: { color: '#0000cc' } }, '● Chai AI'),
+            React.createElement('span', { style: { color: '#666666' } }, '● Chai AI'),
             ' ',
-            React.createElement('span', { style: { color: '#cc00cc' } }, '● Meta AI')
+            React.createElement('span', { style: { color: '#999999' } }, '● Meta AI')
           )
         ),
 
@@ -940,27 +940,27 @@
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
-              // ChatGPT line (green)
+              // ChatGPT line (black)
               React.createElement('polyline', {
                 points: '80,200 200,200 350,200 480,134',
                 fill: 'none',
-                stroke: '#00aa00',
+                stroke: '#000000',
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
-              // Chai AI line (blue)
+              // Chai AI line (dark gray)
               React.createElement('polyline', {
                 points: '80,200 180,178',
                 fill: 'none',
-                stroke: '#0066cc',
+                stroke: '#666666',
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
-              // Meta AI line (purple)
+              // Meta AI line (medium gray)
               React.createElement('polyline', {
                 points: '80,200 350,200 430,178',
                 fill: 'none',
-                stroke: '#9933cc',
+                stroke: '#999999',
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
@@ -1029,11 +1029,11 @@
                 ' ',
                 React.createElement('span', { style: { color: '#cc0000' } }, '— Character.AI'),
                 ' ',
-                React.createElement('span', { style: { color: '#00aa00' } }, '— ChatGPT'),
+                React.createElement('span', { style: { color: '#000000' } }, '— ChatGPT'),
                 ' ',
-                React.createElement('span', { style: { color: '#0066cc' } }, '— Chai AI'),
+                React.createElement('span', { style: { color: '#666666' } }, '— Chai AI'),
                 ' ',
-                React.createElement('span', { style: { color: '#9933cc' } }, '— Meta AI')
+                React.createElement('span', { style: { color: '#999999' } }, '— Meta AI')
               )
             )
           ),

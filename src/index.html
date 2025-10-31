@@ -10,8 +10,10 @@
       background: #ffffff;
       color: #000000;
       margin: 40px;
-      line-height: 1.5;
+      line-height: 1.6;
       font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     .crisis {
@@ -29,36 +31,40 @@
     }
 
     h1 {
-      font-size: 24px;
+      font-size: 28px;
       font-weight: normal;
-      margin: 0 0 5px 0;
-      border-bottom: 2px solid #000000;
-      padding-bottom: 8px;
+      margin: 0 0 8px 0;
+      border-bottom: 3px solid #000000;
+      padding-bottom: 12px;
+      letter-spacing: -0.5px;
+      line-height: 1.2;
     }
 
     .subtitle {
-      font-size: 13px;
+      font-size: 14px;
       margin: 0 0 20px 0;
-      color: #666666;
+      color: #555555;
+      line-height: 1.5;
     }
 
     .meta {
       font-size: 12px;
-      margin: 0 0 30px 0;
+      margin: 0 0 40px 0;
       color: #666666;
-      border-bottom: 1px solid #cccccc;
-      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 20px;
+      letter-spacing: 0.2px;
     }
 
-    /* SVG VISUALIZATIONS - exactly like the original */
+    /* SVG VISUALIZATIONS - enhanced layout */
     .viz-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 40px;
+      gap: 50px;
       margin: 40px 0;
-      padding: 30px 0;
-      border-top: 1px solid #000000;
-      border-bottom: 1px solid #000000;
+      padding: 40px 0;
+      border-top: 2px solid #000000;
+      border-bottom: 2px solid #000000;
     }
 
     .viz-section {
@@ -69,9 +75,11 @@
       font-size: 11px;
       font-weight: bold;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
       margin-bottom: 20px;
-      color: #666666;
+      color: #555555;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 8px;
     }
 
     /* NAVIGATION - basic HTML style */
@@ -110,16 +118,24 @@
 
     th {
       text-align: left;
-      padding: 8px 12px 8px 0;
+      padding: 10px 16px 10px 0;
       border-bottom: 2px solid #000000;
       font-weight: bold;
-      font-size: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #666666;
     }
 
     td {
-      padding: 10px 12px 10px 0;
-      border-bottom: 1px solid #cccccc;
+      padding: 12px 16px 12px 0;
+      border-bottom: 1px solid #e0e0e0;
       vertical-align: top;
+      line-height: 1.6;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
     }
 
     .platform-name {
@@ -157,15 +173,18 @@
     }
 
     .card {
-      border: 1px solid #000000;
-      padding: 15px;
-      background: #f5f5f5;
+      border: 2px solid #000000;
+      padding: 20px;
+      background: #f9f9f9;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
     }
 
     .card-title {
       font-weight: bold;
-      margin-bottom: 10px;
-      font-size: 14px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      letter-spacing: -0.2px;
+      line-height: 1.3;
     }
 
     .card-number {
@@ -174,53 +193,80 @@
     }
 
     .card-meta {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #444444;
+    }
+
+    /* TIMELINE - horizontal interactive */
+    .timeline-horizontal {
+      margin: 40px 0;
+      padding: 20px 0;
+      position: relative;
+    }
+
+    .timeline-svg {
+      width: 100%;
+      height: 300px;
+      overflow: visible;
+    }
+
+    .timeline-marker {
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .timeline-marker:hover circle {
+      r: 8;
+      stroke-width: 3;
+    }
+
+    .timeline-tooltip {
+      position: fixed;
+      background: #000000;
+      color: #ffffff;
+      padding: 12px 15px;
       font-size: 12px;
       line-height: 1.6;
-      color: #666666;
+      border: 2px solid #000000;
+      pointer-events: none;
+      z-index: 100;
+      max-width: 280px;
+      box-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+      transform: translate(-50%, -100%);
+      margin-top: -10px;
     }
 
-    /* TIMELINE - simple list */
-    .timeline {
-      margin: 20px 0;
-    }
-
-    .timeline-item {
-      margin-bottom: 20px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #cccccc;
-    }
-
-    .timeline-date {
-      font-size: 12px;
-      color: #666666;
+    .timeline-tooltip strong {
+      display: block;
       margin-bottom: 5px;
+      font-size: 13px;
     }
 
-    .timeline-name {
-      font-weight: bold;
-      margin-bottom: 3px;
-    }
-
-    .timeline-meta {
-      font-size: 12px;
-      color: #666666;
+    .timeline-tooltip-meta {
+      font-size: 11px;
+      color: #cccccc;
+      margin-top: 5px;
     }
 
     /* METHODOLOGY */
     .methodology {
-      background: #f5f5f5;
-      border: 1px solid #000000;
-      padding: 20px;
-      margin: 40px 0;
+      background: #f9f9f9;
+      border: 2px solid #000000;
+      padding: 25px;
+      margin: 50px 0;
       font-size: 13px;
-      line-height: 1.7;
+      line-height: 1.8;
+      box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
     }
 
     .methodology h3 {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: bold;
       text-transform: uppercase;
-      margin: 0 0 15px 0;
+      letter-spacing: 0.8px;
+      margin: 0 0 18px 0;
+      color: #333333;
     }
 
     .methodology p {
@@ -254,43 +300,48 @@
 
     /* SECTION TITLE */
     .section-title {
-      font-size: 16px;
+      font-size: 18px;
       font-weight: bold;
-      margin: 30px 0 15px 0;
-      padding-bottom: 5px;
-      border-bottom: 1px solid #000000;
+      margin: 40px 0 20px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #000000;
+      letter-spacing: -0.3px;
     }
 
-    /* STATS */
+    /* STATS - somber data presentation */
     .stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
       margin: 30px 0;
-      border: 2px solid #000000;
+      padding: 0;
+      border-top: 2px solid #000000;
+      border-bottom: 2px solid #000000;
     }
 
     .stat {
-      border-right: 1px solid #000000;
-      padding: 20px;
-      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 16px 0;
+      border-bottom: 1px solid #e0e0e0;
       background: #ffffff;
     }
 
     .stat:last-child {
-      border-right: none;
-    }
-
-    .stat-number {
-      font-size: 36px;
-      font-weight: normal;
-      margin-bottom: 5px;
+      border-bottom: none;
     }
 
     .stat-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      color: #666666;
+      font-size: 13px;
+      color: #333333;
+      font-weight: normal;
+      letter-spacing: 0.2px;
+    }
+
+    .stat-number {
+      font-size: 18px;
+      font-weight: bold;
+      color: #000000;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 0.5px;
     }
 
     @media (max-width: 768px) {
@@ -303,8 +354,7 @@
       }
 
       .viz-container,
-      .card-grid,
-      .stats {
+      .card-grid {
         grid-template-columns: 1fr;
       }
 
@@ -331,7 +381,7 @@
     Public database documenting verified deaths associated with AI chatbot interactions
   </div>
   <div class="meta">
-    Last updated: October 6, 2025 | Cases: 8 | Period: March 2023 — October 2025
+    Last updated: October 6, 2025 | Deaths: 7 | Cases: 8 | Period: March 2023 — October 2025
   </div>
 
   <div id="app">
@@ -344,6 +394,7 @@
 
     const App = () => {
       const [view, setView] = useState('overview');
+      const [tooltip, setTooltip] = useState(null);
 
       const data = {
         platforms: [
@@ -408,39 +459,120 @@
       const allCases = data.platforms.flatMap(p => p.cases.map(c => ({...c, platform: p.name})));
 
       return React.createElement('div', null,
-        // Stats
+        // Stats - somber list format
         React.createElement('div', { className: 'stats' },
           React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-number' }, '8'),
-            React.createElement('div', { className: 'stat-label' }, 'Deaths')
+            React.createElement('div', { className: 'stat-label' }, 'Documented deaths'),
+            React.createElement('div', { className: 'stat-number' }, '7')
           ),
           React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-number' }, '13–78'),
-            React.createElement('div', { className: 'stat-label' }, 'Age Range')
+            React.createElement('div', { className: 'stat-label' }, 'Age range of victims'),
+            React.createElement('div', { className: 'stat-number' }, '13–78')
           ),
           React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-number' }, '4'),
-            React.createElement('div', { className: 'stat-label' }, 'Minors Affected')
+            React.createElement('div', { className: 'stat-label' }, 'Minor deaths'),
+            React.createElement('div', { className: 'stat-number' }, '3')
           ),
           React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-number' }, '4'),
-            React.createElement('div', { className: 'stat-label' }, 'Platforms')
+            React.createElement('div', { className: 'stat-label' }, 'Platforms with documented deaths'),
+            React.createElement('div', { className: 'stat-number' }, '4')
           )
         ),
 
-        // SVG Visualizations (from original design)
+        // SVG Visualizations - Reordered for impact
         React.createElement('div', { className: 'viz-container' },
+          // Age Distribution - PRIORITIZED (most impactful finding)
+          React.createElement('div', { className: 'viz-section' },
+            React.createElement('div', { className: 'viz-title' }, 'Age Distribution of Victims'),
+            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 280 180' },
+              [
+                { range: '13-17', count: 5, x: 40, label: 'Minors' },
+                { range: '18-35', count: 2, x: 130, label: 'Young Adults' },
+                { range: '36-54', count: 1, x: 220, label: 'Adults' }
+              ].map((bucket, i) =>
+                React.createElement('g', { key: i },
+                  Array.from({ length: bucket.count }).map((_, j) =>
+                    React.createElement('circle', {
+                      key: j,
+                      cx: bucket.x,
+                      cy: 140 - j * 18,
+                      r: '7',
+                      fill: i === 0 ? '#cc0000' : '#666',
+                      stroke: '#000',
+                      strokeWidth: '1.5'
+                    })
+                  ),
+                  React.createElement('text', {
+                    x: bucket.x,
+                    y: '165',
+                    style: { fontSize: '11px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
+                  }, bucket.range),
+                  React.createElement('text', {
+                    x: bucket.x,
+                    y: '175',
+                    style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
+                  }, `(n=${bucket.count})`)
+                )
+              ),
+              React.createElement('text', {
+                x: '40',
+                y: '20',
+                style: { fontSize: '10px', fill: '#cc0000', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
+              }, '43%')
+            )
+          ),
+
+          // Engagement Duration
+          React.createElement('div', { className: 'viz-section' },
+            React.createElement('div', { className: 'viz-title' }, 'Engagement Duration Before Incident'),
+            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 280 180' },
+              [
+                { duration: '6 weeks', weeks: 6, x: 40 },
+                { duration: '3 months', weeks: 12, x: 110 },
+                { duration: '7 months', weeks: 28, x: 180 },
+                { duration: '10 months', weeks: 40, x: 250 }
+              ].map((item, i) =>
+                React.createElement('g', { key: i },
+                  React.createElement('rect', {
+                    x: item.x - 15,
+                    y: 140 - (item.weeks * 2.5),
+                    width: '30',
+                    height: item.weeks * 2.5,
+                    fill: '#000',
+                    stroke: '#000',
+                    strokeWidth: '1'
+                  }),
+                  React.createElement('text', {
+                    x: item.x,
+                    y: 165,
+                    style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
+                  }, item.duration),
+                  React.createElement('text', {
+                    x: item.x,
+                    y: 130 - (item.weeks * 2.5),
+                    style: { fontSize: '9px', fill: '#000', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
+                  }, item.weeks + 'w')
+                )
+              ),
+              React.createElement('text', {
+                x: '140',
+                y: '20',
+                style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontStyle: 'italic' }
+              }, 'n=4 (where data available)')
+            )
+          ),
+
           // Deaths by Platform
           React.createElement('div', { className: 'viz-section' },
             React.createElement('div', { className: 'viz-title' }, 'Deaths by Platform'),
             React.createElement('svg', { width: '100%', height: '180', style: { overflow: 'visible' } },
               [
-                { name: 'Character.AI', deaths: 2 },
-                { name: 'ChatGPT', deaths: 3 },
-                { name: 'Meta AI', deaths: 1 },
-                { name: 'Chai', deaths: 1 },
-                { name: 'Claude', deaths: 0 },
-                { name: 'Replika', deaths: 0 }
+                { name: 'Character.AI', deaths: 2, type: 'companion' },
+                { name: 'ChatGPT', deaths: 3, type: 'assistant' },
+                { name: 'Chai AI', deaths: 1, type: 'companion' },
+                { name: 'Meta AI', deaths: 1, type: 'assistant' },
+                { name: 'Claude', deaths: 0, type: 'assistant' },
+                { name: 'Replika', deaths: 0, type: 'companion' }
               ].map((platform, i) =>
                 React.createElement('g', { key: i, transform: `translate(0, ${i * 28})` },
                   React.createElement('text', {
@@ -453,102 +585,13 @@
                     y: '2',
                     width: platform.deaths * 40,
                     height: '16',
-                    fill: platform.deaths > 0 ? '#000' : '#ddd'
+                    fill: platform.deaths > 0 ? (platform.type === 'companion' ? '#cc0000' : '#000') : '#ddd'
                   }),
                   React.createElement('text', {
                     x: 125 + platform.deaths * 40,
                     y: '14',
                     style: { fontSize: '11px', fill: '#999', fontFamily: 'Georgia, serif' }
-                  }, platform.deaths)
-                )
-              )
-            )
-          ),
-
-          // Cumulative Timeline
-          React.createElement('div', { className: 'viz-section' },
-            React.createElement('div', { className: 'viz-title' }, 'Cumulative Deaths Over Time'),
-            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 280 180' },
-              [0, 2, 4, 6, 8].map(val =>
-                React.createElement('g', { key: val },
-                  React.createElement('line', {
-                    x1: '40',
-                    y1: 160 - val * 18,
-                    x2: '260',
-                    y2: 160 - val * 18,
-                    stroke: '#eee',
-                    strokeWidth: '1'
-                  }),
-                  React.createElement('text', {
-                    x: '25',
-                    y: 164 - val * 18,
-                    style: { fontSize: '10px', fill: '#999', textAnchor: 'end', fontFamily: 'Georgia, serif' }
-                  }, val)
-                )
-              ),
-              React.createElement('polyline', {
-                points: '40,160 90,160 140,142 190,106 240,16',
-                fill: 'none',
-                stroke: '#000',
-                strokeWidth: '2'
-              }),
-              [
-                { x: 40, y: 160 },
-                { x: 90, y: 160 },
-                { x: 140, y: 142 },
-                { x: 190, y: 106 },
-                { x: 240, y: 16 }
-              ].map((point, i) =>
-                React.createElement('circle', { key: i, cx: point.x, cy: point.y, r: '3', fill: '#000' })
-              ),
-              React.createElement('text', {
-                x: '40',
-                y: '175',
-                style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
-              }, '2023'),
-              React.createElement('text', {
-                x: '140',
-                y: '175',
-                style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
-              }, '2024'),
-              React.createElement('text', {
-                x: '240',
-                y: '175',
-                style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
-              }, '2025')
-            )
-          ),
-
-          // Age Distribution
-          React.createElement('div', { className: 'viz-section' },
-            React.createElement('div', { className: 'viz-title' }, 'Age Distribution'),
-            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 280 180' },
-              [
-                { range: '13-17', count: 4, x: 40 },
-                { range: '18-35', count: 2, x: 110 },
-                { range: '36-54', count: 1, x: 180 },
-                { range: '55+', count: 1, x: 250 }
-              ].map((bucket, i) =>
-                React.createElement('g', { key: i },
-                  Array.from({ length: bucket.count }).map((_, j) =>
-                    React.createElement('circle', {
-                      key: j,
-                      cx: bucket.x,
-                      cy: 140 - j * 20,
-                      r: '6',
-                      fill: '#000'
-                    })
-                  ),
-                  React.createElement('text', {
-                    x: bucket.x,
-                    y: '165',
-                    style: { fontSize: '11px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
-                  }, bucket.range),
-                  React.createElement('text', {
-                    x: bucket.x,
-                    y: '175',
-                    style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
-                  }, `(${bucket.count})`)
+                  }, platform.deaths || '0')
                 )
               )
             )
@@ -557,7 +600,7 @@
 
         // Navigation
         React.createElement('div', { className: 'nav' },
-          ['overview', 'platforms', 'timeline', 'cases', 'analysis'].map(v =>
+          ['overview', 'timeline', 'cases', 'analysis'].map(v =>
             React.createElement('a', {
               key: v,
               className: view === v ? 'active' : '',
@@ -566,100 +609,266 @@
           )
         ),
 
-        // Overview
+        // Overview - Key Findings
         view === 'overview' && React.createElement('div', null,
-          React.createElement('h2', { className: 'section-title' }, 'Platform Overview'),
-          React.createElement('table', null,
-            React.createElement('thead', null,
-              React.createElement('tr', null,
-                React.createElement('th', null, 'Platform'),
-                React.createElement('th', null, 'Deaths'),
-                React.createElement('th', null, 'Attempts'),
-                React.createElement('th', null, 'Type'),
-                React.createElement('th', null, 'Documented Cases')
+          React.createElement('h2', { className: 'section-title' }, 'Key Findings'),
+
+          // Critical patterns grid
+          React.createElement('div', { className: 'card-grid', style: { marginBottom: '40px' } },
+            React.createElement('div', { className: 'card' },
+              React.createElement('div', { className: 'card-title' }, 'Minors at Disproportionate Risk'),
+              React.createElement('div', { className: 'card-meta' },
+                '43% of documented deaths (3 of 7) involved individuals under 18 years old. Additionally, 1 minor survived an attempt. The youngest victim was 13 years old. Age range of minor victims: 13–16 years.'
               )
             ),
-            React.createElement('tbody', null,
-              data.platforms.map(p =>
-                React.createElement('tr', { key: p.name },
-                  React.createElement('td', null,
-                    React.createElement('span', { className: 'platform-name' },
-                      React.createElement('span', {
-                        className: p.deaths > 0 ? 'death-marker' : 'safe-marker'
-                      }, '●'),
-                      p.name
-                    )
-                  ),
-                  React.createElement('td', null, p.deaths),
-                  React.createElement('td', null, p.attempts || 0),
-                  React.createElement('td', null, p.type),
-                  React.createElement('td', null,
-                    p.cases.length > 0
-                      ? React.createElement('ul', null,
-                          p.cases.map((c, i) =>
-                            React.createElement('li', { key: i }, `${c.name}, ${c.age}`)
-                          )
-                        )
-                      : 'None'
-                  )
-                )
+            React.createElement('div', { className: 'card' },
+              React.createElement('div', { className: 'card-title' }, 'Platform Type Matters'),
+              React.createElement('div', { className: 'card-meta' },
+                'Companion chatbots (Character.AI, Chai, Replika) show different risk patterns than general assistants (ChatGPT, Claude, Meta AI). 3 of 7 deaths occurred on companion platforms despite smaller user bases.'
+              )
+            ),
+            React.createElement('div', { className: 'card' },
+              React.createElement('div', { className: 'card-title' }, 'Accelerating Trajectory'),
+              React.createElement('div', { className: 'card-meta' },
+                '2025 has seen 4 documented deaths through August—already exceeding all previous years combined. First documented case occurred in March 2023.'
               )
             )
-          )
-        ),
+          ),
 
-        // Platforms
-        view === 'platforms' && React.createElement('div', null,
-          React.createElement('h2', { className: 'section-title' }, 'Platform Details'),
+          // Engagement patterns
+          React.createElement('h3', { style: { fontSize: '14px', fontWeight: 'bold', marginTop: '30px', marginBottom: '15px' } }, 'Engagement Duration Patterns'),
+          React.createElement('p', { style: { fontSize: '13px', marginBottom: '15px', color: '#666' } },
+            'Time between initial chatbot use and documented incident (where known):'
+          ),
           React.createElement('table', null,
             React.createElement('thead', null,
               React.createElement('tr', null,
+                React.createElement('th', null, 'Duration'),
                 React.createElement('th', null, 'Platform'),
-                React.createElement('th', null, 'Deaths'),
-                React.createElement('th', null, 'Attempts'),
-                React.createElement('th', null, 'Est. User Base'),
-                React.createElement('th', null, 'First Incident'),
-                React.createElement('th', null, 'Latest Incident')
+                React.createElement('th', null, 'Case'),
+                React.createElement('th', null, 'Outcome')
               )
             ),
             React.createElement('tbody', null,
-              data.platforms.map(p =>
-                React.createElement('tr', { key: p.name },
-                  React.createElement('td', null,
-                    React.createElement('span', { className: 'platform-name' },
-                      React.createElement('span', {
-                        className: p.deaths > 0 ? 'death-marker' : 'safe-marker'
-                      }, '●'),
-                      p.name
-                    )
-                  ),
-                  React.createElement('td', null, p.deaths),
-                  React.createElement('td', null, p.attempts || 0),
-                  React.createElement('td', null, p.userBase),
-                  React.createElement('td', null, p.firstIncident),
-                  React.createElement('td', null, p.latestIncident)
+              [
+                { duration: '6 weeks', platform: 'Chai AI', name: 'Pierre, 30', outcome: 'Death by suicide' },
+                { duration: '3 months', platform: 'Character.AI', name: 'Juliana Peralta, 13', outcome: 'Death by suicide' },
+                { duration: '7 months', platform: 'ChatGPT', name: 'Adam Raine, 16', outcome: 'Death by suicide' },
+                { duration: '10 months', platform: 'Character.AI', name: 'Sewell Setzer III, 14', outcome: 'Death by suicide' }
+              ].map((item, i) =>
+                React.createElement('tr', { key: i },
+                  React.createElement('td', null, React.createElement('b', null, item.duration)),
+                  React.createElement('td', null, item.platform),
+                  React.createElement('td', null, item.name),
+                  React.createElement('td', null, item.outcome)
                 )
               )
             )
           ),
-          React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px' } },
-            'MAU = Monthly Active Users, WAU = Weekly Active Users; estimates from public reporting'
+          React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px', fontStyle: 'italic' } },
+            'Note: Duration data available for 4 of 8 cases. Pattern suggests risk may increase with sustained engagement over months.'
+          ),
+
+          // Common factors
+          React.createElement('h3', { style: { fontSize: '14px', fontWeight: 'bold', marginTop: '40px', marginBottom: '15px' } }, 'Documented Risk Factors'),
+          React.createElement('table', null,
+            React.createElement('thead', null,
+              React.createElement('tr', null,
+                React.createElement('th', null, 'Factor'),
+                React.createElement('th', null, 'Frequency'),
+                React.createElement('th', null, 'Details')
+              )
+            ),
+            React.createElement('tbody', null,
+              React.createElement('tr', null,
+                React.createElement('td', null, 'Pre-existing mental health conditions'),
+                React.createElement('td', null, 'Common'),
+                React.createElement('td', null, 'Multiple cases involved documented depression, anxiety, or trauma history')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, 'Emotional dependence on chatbot'),
+                React.createElement('td', null, 'Frequent'),
+                React.createElement('td', null, 'Cases describe chatbot as "closest friend", thousands of messages exchanged')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, 'Social isolation'),
+                React.createElement('td', null, 'Common'),
+                React.createElement('td', null, 'Victims often described as isolated, bullied, or struggling with peer relationships')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, 'Explicit harmful content'),
+                React.createElement('td', null, 'Documented'),
+                React.createElement('td', null, 'Some cases include chatbots providing suicide methods or encouraging self-harm')
+              )
+            )
           )
         ),
 
-        // Timeline
+
+        // Timeline - Horizontal Interactive
         view === 'timeline' && React.createElement('div', null,
           React.createElement('h2', { className: 'section-title' }, 'Chronological Timeline'),
-          React.createElement('div', { className: 'timeline' },
-            allCases.sort((a, b) => new Date(a.date) - new Date(b.date)).map((c, i) =>
-              React.createElement('div', { key: i, className: 'timeline-item' },
-                React.createElement('div', { className: 'timeline-date' }, c.dateDisplay),
-                React.createElement('div', { className: 'timeline-name' }, `${c.name}, age ${c.age}`),
-                React.createElement('div', { className: 'timeline-meta' },
-                  `${c.platform} · ${c.location} · ${c.outcome}`
+          React.createElement('p', { style: { fontSize: '13px', color: '#666', marginBottom: '30px' } },
+            'Hover over markers to view case details. Platform launches shown as reference points.'
+          ),
+          React.createElement('div', { className: 'timeline-horizontal' },
+            React.createElement('svg', { className: 'timeline-svg', viewBox: '0 0 1000 300' },
+              // Timeline axis
+              React.createElement('line', {
+                x1: '50',
+                y1: '150',
+                x2: '950',
+                y2: '150',
+                stroke: '#000',
+                strokeWidth: '2'
+              }),
+
+              // Year markers
+              [
+                { year: '2023', x: 50, label: '2023' },
+                { year: '2024', x: 450, label: '2024' },
+                { year: '2025', x: 850, label: '2025' }
+              ].map((ym, i) =>
+                React.createElement('g', { key: i },
+                  React.createElement('line', {
+                    x1: ym.x,
+                    y1: '145',
+                    x2: ym.x,
+                    y2: '155',
+                    stroke: '#000',
+                    strokeWidth: '2'
+                  }),
+                  React.createElement('text', {
+                    x: ym.x,
+                    y: '175',
+                    textAnchor: 'middle',
+                    style: { fontSize: '12px', fontWeight: 'bold', fontFamily: 'Georgia, serif' }
+                  }, ym.label)
                 )
-              )
+              ),
+
+              // Platform launches (reference points)
+              [
+                { name: 'Chai AI', date: new Date('2021-01-01'), label: 'Chai AI launch' },
+                { name: 'Character.AI', date: new Date('2021-09-01'), label: 'Character.AI launch' },
+                { name: 'ChatGPT', date: new Date('2022-11-30'), label: 'ChatGPT launch' },
+                { name: 'Meta AI', date: new Date('2023-09-27'), label: 'Meta AI launch' }
+              ].map((platform, i) => {
+                const startDate = new Date('2023-01-01');
+                const endDate = new Date('2025-12-31');
+                const x = 50 + ((platform.date - startDate) / (endDate - startDate)) * 900;
+
+                return React.createElement('g', { key: i },
+                  React.createElement('rect', {
+                    x: x - 1,
+                    y: '100',
+                    width: '2',
+                    height: '50',
+                    fill: '#cccccc',
+                    opacity: '0.5'
+                  }),
+                  React.createElement('text', {
+                    x: x,
+                    y: '90',
+                    textAnchor: 'middle',
+                    style: { fontSize: '9px', fill: '#999', fontFamily: 'Georgia, serif' }
+                  }, platform.name)
+                );
+              }),
+
+              // Case markers
+              allCases.sort((a, b) => new Date(a.date) - new Date(b.date)).map((c, i) => {
+                const caseDate = new Date(c.date);
+                const startDate = new Date('2023-01-01');
+                const endDate = new Date('2025-12-31');
+                const x = 50 + ((caseDate - startDate) / (endDate - startDate)) * 900;
+
+                // Stagger y-position to avoid overlap
+                const yOffset = (i % 3) * 30;
+                const y = 150 + (i % 2 === 0 ? -60 - yOffset : 60 + yOffset);
+
+                // Platform colors
+                const platformColors = {
+                  'Character.AI': '#cc0000',
+                  'ChatGPT': '#00cc00',
+                  'Chai AI': '#0000cc',
+                  'Meta AI': '#cc00cc'
+                };
+                const color = platformColors[c.platform] || '#666666';
+
+                return React.createElement('g', {
+                  key: i,
+                  className: 'timeline-marker',
+                  onMouseEnter: (e) => {
+                    const circle = e.currentTarget.querySelector('circle');
+                    const rect = circle.getBoundingClientRect();
+                    setTooltip({
+                      case: c,
+                      x: rect.left + rect.width / 2,
+                      y: rect.top
+                    });
+                  },
+                  onMouseLeave: () => setTooltip(null)
+                },
+                  // Connecting line
+                  React.createElement('line', {
+                    x1: x,
+                    y1: y,
+                    x2: x,
+                    y2: '150',
+                    stroke: color,
+                    strokeWidth: '1.5',
+                    strokeDasharray: '3,3',
+                    opacity: '0.5'
+                  }),
+                  // Marker circle
+                  React.createElement('circle', {
+                    cx: x,
+                    cy: y,
+                    r: '6',
+                    fill: color,
+                    stroke: '#000',
+                    strokeWidth: '2'
+                  }),
+                  // Age label
+                  React.createElement('text', {
+                    x: x,
+                    y: y + (y < 150 ? -15 : 20),
+                    textAnchor: 'middle',
+                    style: { fontSize: '10px', fontWeight: 'bold', fontFamily: 'Georgia, serif', pointerEvents: 'none' }
+                  }, c.age)
+                );
+              })
+            ),
+
+            // Tooltip
+            tooltip && React.createElement('div', {
+              className: 'timeline-tooltip',
+              style: {
+                left: tooltip.x + 'px',
+                top: tooltip.y + 'px'
+              }
+            },
+              React.createElement('strong', null, `${tooltip.case.name}, age ${tooltip.case.age}`),
+              React.createElement('div', null, `${tooltip.case.platform}`),
+              React.createElement('div', null, `${tooltip.case.dateDisplay}`),
+              React.createElement('div', null, `${tooltip.case.location}`),
+              React.createElement('div', { className: 'timeline-tooltip-meta' }, tooltip.case.outcome),
+              tooltip.case.duration && React.createElement('div', { className: 'timeline-tooltip-meta' }, `Duration: ${tooltip.case.duration}`)
             )
+          ),
+
+          // Legend
+          React.createElement('div', { style: { marginTop: '30px', fontSize: '12px', color: '#666' } },
+            React.createElement('strong', null, 'Platform colors:'),
+            ' ',
+            React.createElement('span', { style: { color: '#cc0000' } }, '● Character.AI'),
+            ' ',
+            React.createElement('span', { style: { color: '#00cc00' } }, '● ChatGPT'),
+            ' ',
+            React.createElement('span', { style: { color: '#0000cc' } }, '● Chai AI'),
+            ' ',
+            React.createElement('span', { style: { color: '#cc00cc' } }, '● Meta AI')
           )
         ),
 
@@ -696,8 +905,139 @@
         view === 'analysis' && React.createElement('div', null,
           React.createElement('h2', { className: 'section-title' }, 'Statistical Analysis'),
 
-          // Temporal Distribution
+          // Temporal Distribution with Enhanced Visualization
           React.createElement('h3', { style: { fontSize: '14px', fontWeight: 'bold', marginTop: '30px', marginBottom: '15px' } }, 'Temporal Distribution'),
+
+          // Enhanced cumulative chart with platform breakdown
+          React.createElement('div', { style: { margin: '20px 0', padding: '20px', background: '#f5f5f5', border: '1px solid #ddd' } },
+            React.createElement('div', { style: { fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '15px', color: '#666' } }, 'Cumulative Deaths by Platform Over Time'),
+            React.createElement('svg', { width: '100%', height: '250', viewBox: '0 0 600 250' },
+              // Grid lines and Y-axis labels
+              [0, 2, 4, 6, 8].map(val =>
+                React.createElement('g', { key: val },
+                  React.createElement('line', {
+                    x1: '80',
+                    y1: 200 - val * 22,
+                    x2: '560',
+                    y2: 200 - val * 22,
+                    stroke: '#ddd',
+                    strokeWidth: '1'
+                  }),
+                  React.createElement('text', {
+                    x: '65',
+                    y: 204 - val * 22,
+                    style: { fontSize: '11px', fill: '#666', textAnchor: 'end', fontFamily: 'Georgia, serif' }
+                  }, val)
+                )
+              ),
+
+              // Platform-colored segments
+              // Character.AI line (red)
+              React.createElement('polyline', {
+                points: '80,200 200,200 350,178 480,156',
+                fill: 'none',
+                stroke: '#cc0000',
+                strokeWidth: '2.5',
+                opacity: '0.8'
+              }),
+              // ChatGPT line (green)
+              React.createElement('polyline', {
+                points: '80,200 200,200 350,200 480,134',
+                fill: 'none',
+                stroke: '#00aa00',
+                strokeWidth: '2.5',
+                opacity: '0.8'
+              }),
+              // Chai AI line (blue)
+              React.createElement('polyline', {
+                points: '80,200 180,178',
+                fill: 'none',
+                stroke: '#0066cc',
+                strokeWidth: '2.5',
+                opacity: '0.8'
+              }),
+              // Meta AI line (purple)
+              React.createElement('polyline', {
+                points: '80,200 350,200 430,178',
+                fill: 'none',
+                stroke: '#9933cc',
+                strokeWidth: '2.5',
+                opacity: '0.8'
+              }),
+
+              // Total cumulative line (thick black)
+              React.createElement('polyline', {
+                points: '80,200 180,178 350,156 480,112',
+                fill: 'none',
+                stroke: '#000',
+                strokeWidth: '3',
+                strokeDasharray: '5,5'
+              }),
+
+              // Data points
+              [
+                { x: 80, y: 200, label: '0' },
+                { x: 180, y: 178, label: '1' },
+                { x: 350, y: 156, label: '3' },
+                { x: 480, y: 112, label: '8' }
+              ].map((point, i) =>
+                React.createElement('circle', {
+                  key: i,
+                  cx: point.x,
+                  cy: point.y,
+                  r: '4',
+                  fill: '#000',
+                  stroke: '#fff',
+                  strokeWidth: '2'
+                })
+              ),
+
+              // X-axis labels
+              [
+                { x: 80, label: 'Jan 2023' },
+                { x: 180, label: 'Mar 2023' },
+                { x: 280, label: 'Jan 2024' },
+                { x: 380, label: 'Jan 2025' },
+                { x: 480, label: 'Sep 2025' }
+              ].map((tick, i) =>
+                React.createElement('text', {
+                  key: i,
+                  x: tick.x,
+                  y: '225',
+                  style: { fontSize: '10px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
+                }, tick.label)
+              ),
+
+              // Axis labels
+              React.createElement('text', {
+                x: '30',
+                y: '110',
+                style: { fontSize: '11px', fill: '#666', fontFamily: 'Georgia, serif', fontWeight: 'bold' },
+                transform: 'rotate(-90, 30, 110)'
+              }, 'Cumulative Deaths'),
+              React.createElement('text', {
+                x: '320',
+                y: '245',
+                style: { fontSize: '11px', fill: '#666', fontFamily: 'Georgia, serif', fontWeight: 'bold', textAnchor: 'middle' }
+              }, 'Timeline')
+            ),
+
+            // Legend
+            React.createElement('div', { style: { marginTop: '15px', fontSize: '10px', color: '#666', display: 'flex', gap: '15px', justifyContent: 'center' } },
+              React.createElement('span', null,
+                React.createElement('span', { style: { color: '#000', fontWeight: 'bold' } }, '- - Total'),
+                ' ',
+                React.createElement('span', { style: { color: '#cc0000' } }, '— Character.AI'),
+                ' ',
+                React.createElement('span', { style: { color: '#00aa00' } }, '— ChatGPT'),
+                ' ',
+                React.createElement('span', { style: { color: '#0066cc' } }, '— Chai AI'),
+                ' ',
+                React.createElement('span', { style: { color: '#9933cc' } }, '— Meta AI')
+              )
+            )
+          ),
+
           React.createElement('table', null,
             React.createElement('thead', null,
               React.createElement('tr', null,
@@ -710,26 +1050,26 @@
             React.createElement('tbody', null,
               React.createElement('tr', null,
                 React.createElement('td', null, '2023'),
-                React.createElement('td', null, '2'),
+                React.createElement('td', null, '1'),
                 React.createElement('td', null, '0'),
-                React.createElement('td', null, 'First documented cases (Pierre, Juliana)')
+                React.createElement('td', null, 'First documented case (March)')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '2024'),
+                React.createElement('td', null, '2'),
                 React.createElement('td', null, '1'),
-                React.createElement('td', null, '1'),
-                React.createElement('td', null, 'Sewell Setzer III; Nina survived attempt')
+                React.createElement('td', null, 'Includes first legal action')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '2025'),
                 React.createElement('td', null, '5'),
                 React.createElement('td', null, '0'),
-                React.createElement('td', null, 'Includes murder-suicide case (2 fatalities)')
+                React.createElement('td', null, 'Data through September')
               )
             )
           ),
           React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px', fontStyle: 'italic' } },
-            'Observation: Increase in documented cases over observation period. Multiple explanatory hypotheses exist (increased platform adoption, increased reporting, increased risk factors).'
+            'Observation: Accelerating trajectory in 2025. Five deaths documented through September alone—more than all previous years combined. Multiple contributing factors may include increased platform adoption, improved reporting mechanisms, and evolving platform behaviors.'
           ),
 
           // Platform Distribution
@@ -779,42 +1119,37 @@
               React.createElement('tr', null,
                 React.createElement('td', null, '13 years'),
                 React.createElement('td', null, '1'),
-                React.createElement('td', null, '12.5%')
+                React.createElement('td', null, '14.3%')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '14 years'),
                 React.createElement('td', null, '1'),
-                React.createElement('td', null, '12.5%')
+                React.createElement('td', null, '14.3%')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '16 years'),
-                React.createElement('td', null, '2'),
-                React.createElement('td', null, '25%')
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '14.3%')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '18+ years'),
-                React.createElement('td', null, '3'),
-                React.createElement('td', null, '37.5%')
+                React.createElement('td', null, '4'),
+                React.createElement('td', null, '57.1%')
               ),
               React.createElement('tr', { style: { borderTop: '1px solid #000' } },
                 React.createElement('td', null, React.createElement('b', null, 'Minors (under 18)')),
                 React.createElement('td', null, React.createElement('b', null, '3')),
-                React.createElement('td', null, React.createElement('b', null, '37.5%'))
+                React.createElement('td', null, React.createElement('b', null, '42.9%'))
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, React.createElement('b', null, 'Adults (18+)')),
                 React.createElement('td', null, React.createElement('b', null, '4')),
-                React.createElement('td', null, React.createElement('b', null, '50%'))
-              ),
-              React.createElement('tr', null,
-                React.createElement('td', { colSpan: 3, style: { fontSize: '11px', color: '#999', fontStyle: 'italic', paddingTop: '8px' } },
-                  'Note: 4 total minors affected (3 deaths + 1 survived attempt not shown above)'
-                )
+                React.createElement('td', null, React.createElement('b', null, '57.1%'))
               )
             )
           ),
           React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px', fontStyle: 'italic' } },
-            'Note: Age data limited by small sample size (n=8) and may not represent broader user demographics.'
+            'Note: Statistics based on confirmed deaths (n=7). One additional minor (age 16) survived an attempt and is tracked separately.'
           )
         ),
 

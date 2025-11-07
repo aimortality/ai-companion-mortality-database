@@ -1,0 +1,32 @@
+[build]
+  publish = "src"
+  command = ""
+
+# Redirect all ai-death.com traffic to aimortality.org
+[[redirects]]
+  from = "https://ai-death.com/*"
+  to = "https://aimortality.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.ai-death.com/*"
+  to = "https://aimortality.org/:splat"
+  status = 301
+  force = true
+
+# Redirect www to non-www for primary domain
+[[redirects]]
+  from = "https://www.aimortality.org/*"
+  to = "https://aimortality.org/:splat"
+  status = 301
+  force = true
+
+# Headers for security
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"

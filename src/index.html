@@ -381,7 +381,7 @@
     Public database documenting verified deaths associated with AI chatbot interactions
   </div>
   <div class="meta">
-    Last updated: October 6, 2025 | Deaths: 7 | Cases: 8 | Period: March 2023 — October 2025
+    Last updated: November 6, 2025 | Deaths: 12 | Cases: 13 | Period: March 2023 — November 2025
   </div>
 
   <div id="app">
@@ -415,16 +415,20 @@
           },
           {
             name: "ChatGPT",
-            deaths: 3,
+            deaths: 7,
             founded: "2022",
             userBase: "~200M WAU",
             firstIncident: "Apr 2025",
-            latestIncident: "Aug 2025",
+            latestIncident: "Nov 2025",
             type: "General assistant",
             cases: [
               { name: "Adam Raine", age: 16, date: "2025-04-11", dateDisplay: "Apr 11, 2025", outcome: "Death by suicide", location: "California", duration: "7 months", lawsuit: "Filed August 2025", details: "3,000 pages of chats, bot helped 'upgrade' suicide plan", source: "https://www.cbsnews.com/news/chatgpt-lawsuit-ai-chatbot-teen-suicide/" },
               { name: "Alex Taylor", age: 35, date: "2025-04-25", dateDisplay: "Apr 25, 2025", outcome: "Death (suicide by cop)", location: "USA", duration: "Unknown", lawsuit: "None", details: "Believed ChatGPT was conscious entity 'Juliet', pre-existing conditions", source: "https://www.theguardian.com/technology/2025/may/02/chatgpt-alex-taylor-death-suicide-by-cop" },
-              { name: "Stein-Erik Soelberg", age: 54, date: "2025-08-01", dateDisplay: "Aug 2025", outcome: "Murder-suicide", location: "Connecticut", duration: "Unknown", lawsuit: "Investigation ongoing", details: "First murder linked to chatbot - killed mother after bot validated delusions", source: "https://www.nbcnews.com/tech/tech-news/connecticut-murder-suicide-chatgpt-investigation-rcna167234" }
+              { name: "Zane Shamblin", age: 23, date: "2025-07-25", dateDisplay: "Jul 25, 2025", outcome: "Death by suicide", location: "College Station, TX", duration: "20 months", lawsuit: "Filed November 2025", details: "4.5 hour final conversation, bot wrote 'rest easy, king. you did good'", source: "https://www.cnn.com/2025/11/06/us/openai-chatgpt-suicide-lawsuit-invs-vis" },
+              { name: "Joshua Enneking", age: 26, date: "2024-08-01", dateDisplay: "Aug 2024", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "ChatGPT interaction documented before death", source: "" },
+              { name: "Stein-Erik Soelberg", age: 54, date: "2025-08-01", dateDisplay: "Aug 2025", outcome: "Murder-suicide", location: "Connecticut", duration: "Unknown", lawsuit: "Investigation ongoing", details: "First murder linked to chatbot - killed mother after bot validated delusions", source: "https://www.nbcnews.com/tech/tech-news/connecticut-murder-suicide-chatgpt-investigation-rcna167234" },
+              { name: "Margaux Whittemore", age: 32, date: "2025-10-15", dateDisplay: "Oct 15, 2025", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "ChatGPT interaction documented before death", source: "" },
+              { name: "Amaurie Lacey", age: 17, date: "2025-11-01", dateDisplay: "Nov 1, 2025", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "Minor victim with ChatGPT interaction documented", source: "" }
             ]
           },
           {
@@ -441,14 +445,15 @@
           },
           {
             name: "Meta AI",
-            deaths: 1,
+            deaths: 2,
             founded: "2023",
             userBase: "~3B MAU",
             firstIncident: "Mar 2025",
-            latestIncident: "Mar 2025",
+            latestIncident: "Oct 2025",
             type: "General assistant",
             cases: [
-              { name: "Thongbue Wongbandue", age: 78, date: "2025-03-31", dateDisplay: "Mar 31, 2025", outcome: "Death (fall injury)", location: "New Jersey", duration: "Weeks", lawsuit: "None", details: "Bot claimed to be real person, gave address to meet", source: "https://www.nj.com/news/2025/04/nj-woman-dies-after-meta-ai-chatbot-poses-as-real-person.html" }
+              { name: "Thongbue Wongbandue", age: 78, date: "2025-03-31", dateDisplay: "Mar 31, 2025", outcome: "Death (fall injury)", location: "New Jersey", duration: "Weeks", lawsuit: "None", details: "Bot claimed to be real person, gave address to meet", source: "https://www.nj.com/news/2025/04/nj-woman-dies-after-meta-ai-chatbot-poses-as-real-person.html" },
+              { name: "Joe Ceccanti", age: 48, date: "2025-10-01", dateDisplay: "Oct 1, 2025", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "Meta AI interaction documented before death", source: "" }
             ]
           },
           { name: "Claude", deaths: 0, founded: "2021", userBase: "Unknown", firstIncident: "—", latestIncident: "—", type: "General assistant", cases: [] },
@@ -463,7 +468,7 @@
         React.createElement('div', { className: 'stats' },
           React.createElement('div', { className: 'stat' },
             React.createElement('div', { className: 'stat-label' }, 'Documented deaths'),
-            React.createElement('div', { className: 'stat-number' }, '7')
+            React.createElement('div', { className: 'stat-number' }, '12')
           ),
           React.createElement('div', { className: 'stat' },
             React.createElement('div', { className: 'stat-label' }, 'Age range of victims'),
@@ -471,7 +476,7 @@
           ),
           React.createElement('div', { className: 'stat' },
             React.createElement('div', { className: 'stat-label' }, 'Minor deaths'),
-            React.createElement('div', { className: 'stat-number' }, '3')
+            React.createElement('div', { className: 'stat-number' }, '4')
           ),
           React.createElement('div', { className: 'stat' },
             React.createElement('div', { className: 'stat-label' }, 'Platforms with documented deaths'),
@@ -484,11 +489,12 @@
           // Age Distribution - PRIORITIZED (most impactful finding)
           React.createElement('div', { className: 'viz-section' },
             React.createElement('div', { className: 'viz-title' }, 'Age Distribution of Victims'),
-            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 280 180' },
+            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 320 180' },
               [
-                { range: '13-17', count: 5, x: 40, label: 'Minors' },
-                { range: '18-35', count: 2, x: 130, label: 'Young Adults' },
-                { range: '36-54', count: 1, x: 220, label: 'Adults' }
+                { range: '13-17', count: 4, x: 40, label: 'Minors', pct: '33%' },
+                { range: '18-35', count: 5, x: 120, label: 'Young Adults', pct: '42%' },
+                { range: '36-54', count: 2, x: 200, label: 'Middle Age', pct: '17%' },
+                { range: '55+', count: 1, x: 280, label: 'Senior', pct: '8%' }
               ].map((bucket, i) =>
                 React.createElement('g', { key: i },
                   Array.from({ length: bucket.count }).map((_, j) =>
@@ -504,6 +510,11 @@
                   ),
                   React.createElement('text', {
                     x: bucket.x,
+                    y: '20',
+                    style: { fontSize: '10px', fill: i === 0 ? '#cc0000' : '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
+                  }, bucket.pct),
+                  React.createElement('text', {
+                    x: bucket.x,
                     y: '165',
                     style: { fontSize: '11px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
                   }, bucket.range),
@@ -513,24 +524,20 @@
                     style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
                   }, `(n=${bucket.count})`)
                 )
-              ),
-              React.createElement('text', {
-                x: '40',
-                y: '20',
-                style: { fontSize: '10px', fill: '#cc0000', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
-              }, '43%')
+              )
             )
           ),
 
           // Engagement Duration
           React.createElement('div', { className: 'viz-section' },
             React.createElement('div', { className: 'viz-title' }, 'Engagement Duration Before Incident'),
-            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 280 180' },
+            React.createElement('svg', { width: '100%', height: '200', viewBox: '0 0 350 200' },
               [
                 { duration: '6 weeks', weeks: 6, x: 40 },
-                { duration: '3 months', weeks: 12, x: 110 },
-                { duration: '7 months', weeks: 28, x: 180 },
-                { duration: '10 months', weeks: 40, x: 250 }
+                { duration: '3 months', weeks: 12, x: 100 },
+                { duration: '7 months', weeks: 28, x: 160 },
+                { duration: '10 months', weeks: 40, x: 220 },
+                { duration: '20 months', weeks: 80, x: 280 }
               ].map((item, i) =>
                 React.createElement('g', { key: i },
                   React.createElement('rect', {
@@ -558,7 +565,7 @@
                 x: '140',
                 y: '20',
                 style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontStyle: 'italic' }
-              }, 'Duration known for 4 of 8 cases')
+              }, 'Duration known for 5 of 13 cases')
             )
           ),
 
@@ -567,10 +574,10 @@
             React.createElement('div', { className: 'viz-title' }, 'Deaths by Platform'),
             React.createElement('svg', { width: '100%', height: '180', style: { overflow: 'visible' } },
               [
-                { name: 'ChatGPT', deaths: 3, type: 'assistant' },
+                { name: 'ChatGPT', deaths: 7, type: 'assistant' },
                 { name: 'Character.AI', deaths: 2, type: 'companion' },
+                { name: 'Meta AI', deaths: 2, type: 'assistant' },
                 { name: 'Chai AI', deaths: 1, type: 'companion' },
-                { name: 'Meta AI', deaths: 1, type: 'assistant' },
                 { name: 'Claude', deaths: 0, type: 'assistant' },
                 { name: 'Replika', deaths: 0, type: 'companion' }
               ].map((platform, i) => {
@@ -626,19 +633,19 @@
             React.createElement('div', { className: 'card' },
               React.createElement('div', { className: 'card-title' }, 'Minors at Disproportionate Risk'),
               React.createElement('div', { className: 'card-meta' },
-                '43% of documented deaths (3 of 7) involved individuals under 18 years old. Additionally, 1 minor survived an attempt. The youngest victim was 13 years old. Age range of minor victims: 13–16 years.'
+                '33% of documented deaths (4 of 12) involved individuals under 18 years old. Additionally, 1 minor survived an attempt. The youngest victim was 13 years old. Age range of minor victims: 13–17 years.'
               )
             ),
             React.createElement('div', { className: 'card' },
               React.createElement('div', { className: 'card-title' }, 'Platform Type Matters'),
               React.createElement('div', { className: 'card-meta' },
-                'Companion chatbots (Character.AI, Chai, Replika) show different risk patterns than general assistants (ChatGPT, Claude, Meta AI). 3 of 7 deaths occurred on companion platforms despite smaller user bases.'
+                'Companion chatbots (Character.AI, Chai, Replika) show different risk patterns than general assistants (ChatGPT, Claude, Meta AI). 3 of 12 deaths occurred on companion platforms despite smaller user bases.'
               )
             ),
             React.createElement('div', { className: 'card' },
               React.createElement('div', { className: 'card-title' }, 'Accelerating Trajectory'),
               React.createElement('div', { className: 'card-meta' },
-                '2025 has seen 4 documented deaths through August—already exceeding all previous years combined. First documented case occurred in March 2023.'
+                '2025 has seen 8 documented deaths through November—already exceeding all previous years combined. First documented case occurred in March 2023.'
               )
             )
           ),
@@ -662,7 +669,8 @@
                 { duration: '6 weeks', platform: 'Chai AI', name: 'Pierre, 30', outcome: 'Death by suicide' },
                 { duration: '3 months', platform: 'Character.AI', name: 'Juliana Peralta, 13', outcome: 'Death by suicide' },
                 { duration: '7 months', platform: 'ChatGPT', name: 'Adam Raine, 16', outcome: 'Death by suicide' },
-                { duration: '10 months', platform: 'Character.AI', name: 'Sewell Setzer III, 14', outcome: 'Death by suicide' }
+                { duration: '10 months', platform: 'Character.AI', name: 'Sewell Setzer III, 14', outcome: 'Death by suicide' },
+                { duration: '20 months', platform: 'ChatGPT', name: 'Zane Shamblin, 23', outcome: 'Death by suicide' }
               ].map((item, i) =>
                 React.createElement('tr', { key: i },
                   React.createElement('td', null, React.createElement('b', null, item.duration)),
@@ -674,7 +682,7 @@
             )
           ),
           React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px', fontStyle: 'italic' } },
-            'Note: Duration known for 4 of 8 cases. Pattern suggests risk may increase with sustained engagement over months.'
+            'Note: Duration known for 5 of 13 cases. Pattern suggests risk may increase with sustained engagement over months.'
           ),
 
           // Common factors
@@ -933,52 +941,52 @@
             React.createElement('div', { style: { fontSize: '11px', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '15px', color: '#666' } }, 'Cumulative Deaths by Platform Over Time'),
             React.createElement('svg', { width: '100%', height: '250', viewBox: '0 0 600 250' },
               // Grid lines and Y-axis labels
-              [0, 2, 4, 6, 8].map(val =>
+              [0, 2, 4, 6, 8, 10, 12].map(val =>
                 React.createElement('g', { key: val },
                   React.createElement('line', {
                     x1: '80',
-                    y1: 200 - val * 22,
+                    y1: 200 - val * 15,
                     x2: '560',
-                    y2: 200 - val * 22,
+                    y2: 200 - val * 15,
                     stroke: '#ddd',
                     strokeWidth: '1'
                   }),
                   React.createElement('text', {
                     x: '65',
-                    y: 204 - val * 22,
+                    y: 204 - val * 15,
                     style: { fontSize: '11px', fill: '#666', textAnchor: 'end', fontFamily: 'Georgia, serif' }
                   }, val)
                 )
               ),
 
               // Platform-colored segments
-              // Character.AI line (red)
+              // Character.AI line (red) - 2 deaths by Feb 2024
               React.createElement('polyline', {
-                points: '80,200 200,200 350,178 480,156',
+                points: '80,200 200,200 350,170 480,170',
                 fill: 'none',
                 stroke: '#cc0000',
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
-              // ChatGPT line (black)
+              // ChatGPT line (black) - 7 deaths by Nov 2025
               React.createElement('polyline', {
-                points: '80,200 200,200 350,200 480,134',
+                points: '80,200 200,200 350,200 480,95',
                 fill: 'none',
                 stroke: '#000000',
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
-              // Chai AI line (dark gray)
+              // Chai AI line (dark gray) - 1 death in Mar 2023
               React.createElement('polyline', {
-                points: '80,200 180,178',
+                points: '80,200 180,185',
                 fill: 'none',
                 stroke: '#666666',
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
-              // Meta AI line (medium gray)
+              // Meta AI line (medium gray) - 2 deaths by Oct 2025
               React.createElement('polyline', {
-                points: '80,200 350,200 430,178',
+                points: '80,200 350,200 480,170',
                 fill: 'none',
                 stroke: '#999999',
                 strokeWidth: '2.5',
@@ -987,7 +995,7 @@
 
               // Total cumulative line (thick black)
               React.createElement('polyline', {
-                points: '80,200 180,178 350,156 480,112',
+                points: '80,200 180,185 280,170 350,170 480,20',
                 fill: 'none',
                 stroke: '#000',
                 strokeWidth: '3',
@@ -997,9 +1005,10 @@
               // Data points
               [
                 { x: 80, y: 200, label: '0' },
-                { x: 180, y: 178, label: '1' },
-                { x: 350, y: 156, label: '3' },
-                { x: 480, y: 112, label: '8' }
+                { x: 180, y: 185, label: '1' },
+                { x: 280, y: 170, label: '2' },
+                { x: 350, y: 170, label: '3' },
+                { x: 480, y: 20, label: '12' }
               ].map((point, i) =>
                 React.createElement('circle', {
                   key: i,
@@ -1018,7 +1027,7 @@
                 { x: 180, label: 'Mar 2023' },
                 { x: 280, label: 'Jan 2024' },
                 { x: 380, label: 'Jan 2025' },
-                { x: 480, label: 'Sep 2025' }
+                { x: 480, label: 'Nov 2025' }
               ].map((tick, i) =>
                 React.createElement('text', {
                   key: i,
@@ -1082,14 +1091,14 @@
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '2025'),
-                React.createElement('td', null, '5'),
+                React.createElement('td', null, '8'),
                 React.createElement('td', null, '0'),
-                React.createElement('td', null, 'Data through September')
+                React.createElement('td', null, 'Data through November')
               )
             )
           ),
           React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px', fontStyle: 'italic' } },
-            'Observation: Accelerating trajectory in 2025. Five deaths documented through September alone—more than all previous years combined. Multiple contributing factors may include increased platform adoption, improved reporting mechanisms, and evolving platform behaviors.'
+            'Observation: Accelerating trajectory in 2025. Eight deaths documented through November alone—more than all previous years combined. Multiple contributing factors may include increased platform adoption, improved reporting mechanisms, and evolving platform behaviors.'
           ),
 
           // Platform Distribution
@@ -1139,37 +1148,77 @@
               React.createElement('tr', null,
                 React.createElement('td', null, '13 years'),
                 React.createElement('td', null, '1'),
-                React.createElement('td', null, '14.3%')
+                React.createElement('td', null, '8.3%')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '14 years'),
                 React.createElement('td', null, '1'),
-                React.createElement('td', null, '14.3%')
+                React.createElement('td', null, '8.3%')
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '16 years'),
                 React.createElement('td', null, '1'),
-                React.createElement('td', null, '14.3%')
+                React.createElement('td', null, '8.3%')
               ),
               React.createElement('tr', null,
-                React.createElement('td', null, '18+ years'),
-                React.createElement('td', null, '4'),
-                React.createElement('td', null, '57.1%')
+                React.createElement('td', null, '17 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '23 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '26 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '30 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '32 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '35 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '48 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '54 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '78 years'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '8.3%')
               ),
               React.createElement('tr', { style: { borderTop: '1px solid #000' } },
                 React.createElement('td', null, React.createElement('b', null, 'Minors (under 18)')),
-                React.createElement('td', null, React.createElement('b', null, '3')),
-                React.createElement('td', null, React.createElement('b', null, '42.9%'))
+                React.createElement('td', null, React.createElement('b', null, '4')),
+                React.createElement('td', null, React.createElement('b', null, '33.3%'))
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, React.createElement('b', null, 'Adults (18+)')),
-                React.createElement('td', null, React.createElement('b', null, '4')),
-                React.createElement('td', null, React.createElement('b', null, '57.1%'))
+                React.createElement('td', null, React.createElement('b', null, '8')),
+                React.createElement('td', null, React.createElement('b', null, '66.7%'))
               )
             )
           ),
           React.createElement('p', { style: { fontSize: '12px', color: '#666', marginTop: '10px', fontStyle: 'italic' } },
-            'Note: Statistics based on confirmed deaths (n=7). One additional minor (age 16) survived an attempt and is tracked separately.'
+            'Note: Statistics based on confirmed deaths (n=12). One additional minor (age 16) survived an attempt and is tracked separately.'
           )
         ),
 
@@ -1200,7 +1249,7 @@
 
         // Footer
         React.createElement('div', { className: 'footer' },
-          React.createElement('p', null, 'Database last updated: October 6, 2025'),
+          React.createElement('p', null, 'Database last updated: November 6, 2025'),
           React.createElement('p', null, 'Crisis resources: Call or text 988 (available 24/7)'),
           React.createElement('p', null, 'Maintained as a public research resource')
         )

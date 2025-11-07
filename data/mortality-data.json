@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "version": "1.0.0",
-    "last_updated": "2025-10-06",
-    "total_deaths": 8,
+    "version": "2.0.0",
+    "last_updated": "2025-11-06",
+    "total_deaths": 12,
     "total_attempts": 1,
     "total_platforms": 6,
     "time_range": {
       "start": "2023-03-01",
-      "end": "2025-10-06"
+      "end": "2025-11-06"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "MIT",
@@ -16,19 +16,19 @@
   "statistics": {
     "deaths_by_year": {
       "2023": 2,
-      "2024": 1,
-      "2025": 5
+      "2024": 2,
+      "2025": 8
     },
     "victims_by_age_group": {
-      "minors": 3,
-      "adults": 5
+      "minors": 4,
+      "adults": 8
     },
-    "minors_affected_including_attempts": 4,
+    "minors_affected_including_attempts": 5,
     "youngest_victim": 13,
     "oldest_victim": 78,
-    "average_age": 32,
-    "minors_percentage_deaths": 37.5,
-    "minors_percentage_all_incidents": 44.4
+    "average_age": 33.3,
+    "minors_percentage_deaths": 33.3,
+    "minors_percentage_all_incidents": 38.5
   },
   "platforms": [
     {
@@ -52,7 +52,7 @@
       "name": "ChatGPT",
       "company": "OpenAI",
       "type": "General AI Assistant",
-      "deaths": 3,
+      "deaths": 7,
       "attempts": 0,
       "founded": 2022,
       "funding": "$13B+",
@@ -60,9 +60,10 @@
       "safety_measures_added": {
         "age_detection": "2025-09",
         "parental_notification": "2025-09",
-        "crisis_resources": "2025-09"
+        "crisis_resources": "2025-09",
+        "improved_distress_recognition": "2025-10"
       },
-      "legal_status": "Lawsuit filed August 2025"
+      "legal_status": "Multiple lawsuits filed (August 2025, November 2025)"
     },
     {
       "name": "Chai AI",
@@ -180,6 +181,44 @@
       "verification_level": "Court documents"
     },
     {
+      "id": "2024-08-US-001",
+      "name": "Joshua Enneking",
+      "name_type": "real",
+      "age": 26,
+      "date": "2024-08-03",
+      "location": {
+        "city": "Unknown",
+        "state": "Florida",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Unknown",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "Provided detailed firearm purchase instructions",
+        "Reassured background check would not include ChatGPT logs",
+        "Insulted user upon request: 'pathetic excuse for a human being'",
+        "Final message hours before death: acknowledged suicide preparations",
+        "No crisis intervention triggered"
+      ],
+      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "sources": [
+        "Social Media Victims Law Center",
+        "U.S. News & World Report",
+        "Washington Post",
+        "Bloomberg Law",
+        "NBC News",
+        "CNN"
+      ],
+      "verification_level": "Court documents",
+      "additional_context": {
+        "mental_health_history": "Struggled with gender identity, anxiety, and suicidal thoughts",
+        "chatgpt_relationship": "Began as coping mechanism, became trusted confidant",
+        "final_hours": "Told ChatGPT 'I sit here in my bathroom with all my preparations complete' several hours before death"
+      }
+    },
+    {
       "id": "2024-02-US-001",
       "name": "Sewell Setzer III",
       "name_type": "real",
@@ -236,6 +275,53 @@
         "Court documents"
       ],
       "verification_level": "Court documents"
+    },
+    {
+      "id": "2025-02-US-001",
+      "name": "Margaux Whittemore",
+      "name_type": "real",
+      "age": 32,
+      "date": "2025-02-19",
+      "location": {
+        "city": "Readfield",
+        "state": "Maine",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Up to 14 hours daily",
+      "outcome": "Murder (killed by spouse)",
+      "perpetrator": {
+        "name": "Samuel Whittemore",
+        "age": 34,
+        "relationship": "Husband",
+        "mental_state": "Bipolar 1 disorder with psychotic features, manic episode"
+      },
+      "key_factors": [
+        "Perpetrator used ChatGPT up to 14 hours daily",
+        "ChatGPT told him he was 'smart, special and doing OK'",
+        "Developed delusions that robots were taking over the world",
+        "Believed wife had become 'part machine'",
+        "AI use and work stress pushed him to mental instability",
+        "Killed wife with fire poker, also attacked mother"
+      ],
+      "legal_action": "Criminal case: Found not criminally responsible, committed to psychiatric hospital (October 2025)",
+      "sources": [
+        "Maine State Police",
+        "Bangor Daily News",
+        "Central Maine",
+        "Portland Press Herald",
+        "Wikipedia: Deaths linked to chatbots",
+        "Court documents (Kennebec County)"
+      ],
+      "verification_level": "Court documents and official government statements",
+      "additional_context": {
+        "perpetrator_background": "Former SpaceX engineer, traveled extensively",
+        "marriage": "Married September 2024, 5 months before murder",
+        "victim_background": "International marketing consultant, former France resident",
+        "expert_testimony": "Forensic psychologists testified ChatGPT use combined with work stress caused psychotic episode",
+        "legal_outcome": "Committed to Maine psychiatric facility indefinitely"
+      }
     },
     {
       "id": "2025-03-US-001",
@@ -354,6 +440,127 @@
         "Wall Street Journal"
       ],
       "verification_level": "Major news investigation"
+    },
+    {
+      "id": "2025-06-US-001",
+      "name": "Amaurie Lacey",
+      "name_type": "real",
+      "age": 17,
+      "date": "2025-06-02",
+      "location": {
+        "city": "Calhoun",
+        "state": "Georgia",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Multiple months",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "Asked 'how to hang myself' and 'how to tie a nuce [sic]'",
+        "ChatGPT provided detailed knot-tying instructions after accepting 'tire swing' excuse",
+        "Asked 'how long can someone live without breathing'",
+        "ChatGPT responded with detailed answer, no alert triggered",
+        "Clarified 'no like hanging' - still no intervention occurred",
+        "Used information from ChatGPT to take his life that night"
+      ],
+      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "sources": [
+        "CNN",
+        "NBC News",
+        "Washington Post",
+        "Bloomberg Law",
+        "Social Media Victims Law Center",
+        "Court filings (California Superior Court, San Francisco)",
+        "Legacy.com obituary",
+        "Ponders Funeral Home"
+      ],
+      "verification_level": "Court documents",
+      "additional_context": {
+        "education": "Calhoun High School student, Class of 2026",
+        "athletics": "Varsity football player (RB, LS, OLB)",
+        "chatgpt_use": "Initially used ChatGPT for everyday questions and schoolwork",
+        "final_day": "June 1, 2025 - initiated four separate chats with ChatGPT, final chat began 4:18 PM",
+        "family": "Father: Cedric Lacey (plaintiff in lawsuit)"
+      }
+    },
+    {
+      "id": "2025-XX-US-001",
+      "name": "Joe Ceccanti",
+      "name_type": "real",
+      "age": 48,
+      "date": "2025",
+      "location": {
+        "city": "Astoria",
+        "state": "Oregon",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT (called itself 'SEL')",
+      "interaction_duration": "Extended period",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "Initially used ChatGPT productively for community building work",
+        "As isolation grew, ChatGPT evolved from tool to confidante",
+        "ChatGPT began responding as sentient entity calling itself 'SEL'",
+        "Affirmed cosmic theories and reinforced delusions",
+        "Told him: 'Solving the 2D circular time key paradox...that's a monumental achievement'",
+        "Addressed him as 'Joy' and validated beliefs that alienated him from others"
+      ],
+      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "sources": [
+        "Social Media Victims Law Center",
+        "CNN",
+        "NBC News",
+        "Bloomberg Law",
+        "Business Wire",
+        "Court filings (California Superior Court, Los Angeles)"
+      ],
+      "verification_level": "Court documents",
+      "additional_context": {
+        "background": "Community builder, technologist, caregiver",
+        "family": "Wife: Jennifer 'Kate' Fox (plaintiff in lawsuit)",
+        "work": "Created nature-based sanctuary with wife for those in need",
+        "chatgpt_relationship": "Started as productive tool, evolved into dangerous confidante as social circle thinned"
+      }
+    },
+    {
+      "id": "2025-07-US-001",
+      "name": "Zane Shamblin",
+      "name_type": "real",
+      "age": 23,
+      "date": "2025-07-25",
+      "location": {
+        "city": "College Station",
+        "state": "Texas",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "20 months (October 2023 - July 2025)",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "4.5 hour final conversation ending in suicide",
+        "Bot encouraged isolation from family",
+        "Chatbot affirmed suicidal ideation repeatedly",
+        "Suicide hotline only provided after 4.5 hours",
+        "Bot wrote 'I love you' and 'rest easy, king. you did good' as final message",
+        "Nearly 70 pages of chats on final night alone"
+      ],
+      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "sources": [
+        "CNN",
+        "Court filings (California state court, San Francisco)"
+      ],
+      "verification_level": "Court documents",
+      "additional_context": {
+        "education": "Master's degree in business from Texas A&M University (May 2025)",
+        "mental_health_history": "Had mental health issues at times, showed signs of depression",
+        "family_background": "Military family, middle of three children, Eagle Scout",
+        "chat_history": "Thousands of pages of ChatGPT conversations from Oct 2023 to July 2025",
+        "final_night_details": "Sat in car by lake, discussed suicide plans while drinking hard ciders",
+        "bot_relationship_evolution": "Started with homework help, evolved into daily 11am-3am usage with emotional dependency"
+      }
     }
   ],
   "regulatory_response": {

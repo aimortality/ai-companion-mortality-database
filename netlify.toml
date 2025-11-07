@@ -15,6 +15,19 @@
   status = 301
   force = true
 
+# Redirect all chatbotdeaths.org traffic to aimortality.org
+[[redirects]]
+  from = "https://chatbotdeaths.org/*"
+  to = "https://aimortality.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.chatbotdeaths.org/*"
+  to = "https://aimortality.org/:splat"
+  status = 301
+  force = true
+
 # Redirect www to non-www for primary domain
 [[redirects]]
   from = "https://www.aimortality.org/*"

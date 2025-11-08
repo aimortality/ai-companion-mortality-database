@@ -6,7 +6,7 @@
   <title>AI Companion Mortality Database</title>
   <style>
     body {
-      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
       background: #ffffff;
       color: #000000;
       margin: 40px;
@@ -308,40 +308,36 @@
       letter-spacing: -0.3px;
     }
 
-    /* STATS - somber data presentation */
-    .stats {
+    /* STATS - brutalist overview boxes */
+    .overview {
       margin: 30px 0;
-      padding: 0;
-      border-top: 2px solid #000000;
-      border-bottom: 2px solid #000000;
+      border: 1px solid #000000;
+      padding: 15px;
     }
 
-    .stat {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 16px 0;
-      border-bottom: 1px solid #e0e0e0;
-      background: #ffffff;
+    .stat-box {
+      padding: 12px 0;
+      border-bottom: 1px solid #cccccc;
     }
 
-    .stat:last-child {
+    .stat-box:last-child {
       border-bottom: none;
     }
 
-    .stat-label {
-      font-size: 13px;
-      color: #333333;
+    .stat-number {
+      font-size: 24px;
       font-weight: normal;
-      letter-spacing: 0.2px;
+      display: block;
+      margin-bottom: 4px;
+      font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+      color: #000000;
     }
 
-    .stat-number {
-      font-size: 18px;
-      font-weight: bold;
+    .stat-label {
+      font-size: 10px;
+      text-transform: uppercase;
       color: #000000;
-      font-family: 'Courier New', Courier, monospace;
-      letter-spacing: 0.5px;
+      font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
     }
 
     @media (max-width: 768px) {
@@ -464,23 +460,23 @@
       const allCases = data.platforms.flatMap(p => p.cases.map(c => ({...c, platform: p.name})));
 
       return React.createElement('div', null,
-        // Stats - somber list format
-        React.createElement('div', { className: 'stats' },
-          React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-label' }, 'Documented deaths'),
-            React.createElement('div', { className: 'stat-number' }, '12')
+        // Stats - brutalist overview boxes
+        React.createElement('div', { className: 'overview' },
+          React.createElement('div', { className: 'stat-box' },
+            React.createElement('span', { className: 'stat-number' }, '12'),
+            React.createElement('span', { className: 'stat-label' }, 'Documented Deaths')
           ),
-          React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-label' }, 'Age range of victims'),
-            React.createElement('div', { className: 'stat-number' }, '13–78')
+          React.createElement('div', { className: 'stat-box' },
+            React.createElement('span', { className: 'stat-number' }, '4'),
+            React.createElement('span', { className: 'stat-label' }, 'Minors')
           ),
-          React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-label' }, 'Minor deaths'),
-            React.createElement('div', { className: 'stat-number' }, '4')
+          React.createElement('div', { className: 'stat-box' },
+            React.createElement('span', { className: 'stat-number' }, '13–78'),
+            React.createElement('span', { className: 'stat-label' }, 'Age Range')
           ),
-          React.createElement('div', { className: 'stat' },
-            React.createElement('div', { className: 'stat-label' }, 'Platforms with documented deaths'),
-            React.createElement('div', { className: 'stat-number' }, '4')
+          React.createElement('div', { className: 'stat-box' },
+            React.createElement('span', { className: 'stat-number' }, '4'),
+            React.createElement('span', { className: 'stat-label' }, 'Platforms')
           )
         ),
 
@@ -511,17 +507,17 @@
                   React.createElement('text', {
                     x: bucket.x,
                     y: '20',
-                    style: { fontSize: '10px', fill: i === 0 ? '#cc0000' : '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
+                    style: { fontSize: '10px', fill: i === 0 ? '#cc0000' : '#666', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontWeight: 'bold' }
                   }, bucket.pct),
                   React.createElement('text', {
                     x: bucket.x,
                     y: '165',
-                    style: { fontSize: '11px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
+                    style: { fontSize: '11px', fill: '#666', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontWeight: 'bold' }
                   }, bucket.range),
                   React.createElement('text', {
                     x: bucket.x,
                     y: '175',
-                    style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
+                    style: { fontSize: '9px', fill: '#999', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                   }, `(n=${bucket.count})`)
                 )
               )
@@ -552,19 +548,19 @@
                   React.createElement('text', {
                     x: item.x,
                     y: 165,
-                    style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
+                    style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                   }, item.duration),
                   React.createElement('text', {
                     x: item.x,
                     y: 130 - (item.weeks * 2.5),
-                    style: { fontSize: '9px', fill: '#000', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontWeight: 'bold' }
+                    style: { fontSize: '9px', fill: '#000', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontWeight: 'bold' }
                   }, item.weeks + 'w')
                 )
               ),
               React.createElement('text', {
                 x: '140',
                 y: '20',
-                style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif', fontStyle: 'italic' }
+                style: { fontSize: '9px', fill: '#666', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontStyle: 'italic' }
               }, 'Duration known for 5 of 13 cases')
             )
           ),
@@ -593,7 +589,7 @@
                   React.createElement('text', {
                     x: '0',
                     y: '14',
-                    style: { fontSize: '11px', fill: '#666', fontFamily: 'Georgia, serif' }
+                    style: { fontSize: '11px', fill: '#666', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                   }, platform.name),
                   React.createElement('rect', {
                     x: '120',
@@ -605,7 +601,7 @@
                   React.createElement('text', {
                     x: 125 + platform.deaths * 40,
                     y: '14',
-                    style: { fontSize: '11px', fill: '#999', fontFamily: 'Georgia, serif' }
+                    style: { fontSize: '11px', fill: '#999', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                   }, platform.deaths || '0')
                 )
               })
@@ -758,7 +754,7 @@
                     x: ym.x,
                     y: '175',
                     textAnchor: 'middle',
-                    style: { fontSize: '12px', fontWeight: 'bold', fontFamily: 'Georgia, serif' }
+                    style: { fontSize: '12px', fontWeight: 'bold', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                   }, ym.label)
                 )
               ),
@@ -787,7 +783,7 @@
                     x: x,
                     y: '90',
                     textAnchor: 'middle',
-                    style: { fontSize: '9px', fill: '#999', fontFamily: 'Georgia, serif' }
+                    style: { fontSize: '9px', fill: '#999', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                   }, platform.name)
                 );
               }),
@@ -851,7 +847,7 @@
                     x: x,
                     y: y + (y < 150 ? -15 : 20),
                     textAnchor: 'middle',
-                    style: { fontSize: '10px', fontWeight: 'bold', fontFamily: 'Georgia, serif', pointerEvents: 'none' }
+                    style: { fontSize: '10px', fontWeight: 'bold', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', pointerEvents: 'none' }
                   }, c.age)
                 );
               })
@@ -954,7 +950,7 @@
                   React.createElement('text', {
                     x: '65',
                     y: 204 - val * 15,
-                    style: { fontSize: '11px', fill: '#666', textAnchor: 'end', fontFamily: 'Georgia, serif' }
+                    style: { fontSize: '11px', fill: '#666', textAnchor: 'end', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                   }, val)
                 )
               ),
@@ -1033,7 +1029,7 @@
                   key: i,
                   x: tick.x,
                   y: '225',
-                  style: { fontSize: '10px', fill: '#666', textAnchor: 'middle', fontFamily: 'Georgia, serif' }
+                  style: { fontSize: '10px', fill: '#666', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace' }
                 }, tick.label)
               ),
 
@@ -1041,13 +1037,13 @@
               React.createElement('text', {
                 x: '30',
                 y: '110',
-                style: { fontSize: '11px', fill: '#666', fontFamily: 'Georgia, serif', fontWeight: 'bold' },
+                style: { fontSize: '11px', fill: '#666', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontWeight: 'bold' },
                 transform: 'rotate(-90, 30, 110)'
               }, 'Cumulative Deaths'),
               React.createElement('text', {
                 x: '320',
                 y: '245',
-                style: { fontSize: '11px', fill: '#666', fontFamily: 'Georgia, serif', fontWeight: 'bold', textAnchor: 'middle' }
+                style: { fontSize: '11px', fill: '#666', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontWeight: 'bold', textAnchor: 'middle' }
               }, 'Timeline')
             ),
 

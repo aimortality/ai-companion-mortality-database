@@ -1,0 +1,6 @@
+# robots.txt for AI Companion Mortality Database
+
+User-agent: *
+Allow: /
+
+Sitemap: https://aimortality.org/sitemap.xml

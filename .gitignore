@@ -1,2 +1,15 @@
 # Local Netlify folder
 .netlify
+
+# macOS system files
+.DS_Store
+
+# Image assets
+*.webp
+*.jpg
+*.jpeg
+*.png
+
+# Internal documentation
+CLAUDE_CODE_INSTRUCTIONS.md
+WEEKLY_RESEARCH_PROMPT.md

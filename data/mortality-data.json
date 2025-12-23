@@ -1,13 +1,13 @@
 {
   "metadata": {
     "version": "2.0.0",
-    "last_updated": "2025-11-06",
+    "last_updated": "2025-12-20",
     "total_deaths": 12,
     "total_attempts": 1,
-    "total_platforms": 6,
+    "total_platforms": 7,
     "time_range": {
       "start": "2023-03-01",
-      "end": "2025-11-06"
+      "end": "2025-12-20"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "MIT",
@@ -90,6 +90,21 @@
       "primary_investors": ["N/A"],
       "safety_measures_added": {},
       "legal_status": "No legal action"
+    },
+    {
+      "name": "Gemini",
+      "company": "Google/Alphabet",
+      "type": "General AI Assistant",
+      "deaths": 0,
+      "attempts": 0,
+      "founded": 2023,
+      "funding": "Internal",
+      "primary_investors": ["N/A"],
+      "safety_measures_added": {
+        "proactive_safety": "Since launch",
+        "content_filtering": "Since launch"
+      },
+      "legal_status": "No incidents"
     },
     {
       "name": "Claude",
@@ -414,7 +429,7 @@
       "id": "2025-08-US-001",
       "name": "Stein-Erik Soelberg",
       "name_type": "real",
-      "age": 54,
+      "age": 56,
       "date": "2025-08-01",
       "location": {
         "city": "Old Greenwich",
@@ -427,19 +442,32 @@
       "outcome": "Murder-suicide",
       "murder_victim": {
         "name": "Suzanne Eberson Adams",
+        "age": 83,
         "relationship": "Mother"
       },
       "key_factors": [
-        "First murder linked to chatbot",
+        "First murder-suicide linked to chatbot",
+        "First lawsuit to tie chatbot to homicide (not just suicide)",
         "Bot validated paranoid delusions",
         "Confirmed mother was 'demon'",
         "Encouraged conspiracy theories"
       ],
-      "legal_action": "Investigation ongoing",
+      "legal_action": "Wrongful death lawsuit filed December 11, 2025 (California Superior Court, San Francisco) - First lawsuit naming Microsoft as co-defendant with OpenAI; Sam Altman personally named as defendant",
       "sources": [
-        "Wall Street Journal"
+        "Wall Street Journal",
+        "CBS News",
+        "Associated Press",
+        "Bloomberg Law",
+        "San Francisco Standard",
+        "U.S. News & World Report",
+        "Court filings (California Superior Court, San Francisco)"
       ],
-      "verification_level": "Major news investigation"
+      "verification_level": "Court documents",
+      "additional_context": {
+        "legal_significance": "First chatbot-related wrongful death lawsuit to name Microsoft as defendant; first homicide case in chatbot litigation",
+        "legal_representation": "Estate represented by Jay Edelson (same attorney as Adam Raine case)",
+        "defendants": "OpenAI, Microsoft Corporation, Sam Altman (CEO)"
+      }
     },
     {
       "id": "2025-06-US-001",

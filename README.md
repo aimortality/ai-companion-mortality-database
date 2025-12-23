@@ -5,7 +5,7 @@
 **Tracking Documented Deaths Linked to AI Chatbot Interactions**
 
 [![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-12-red)](https://aimortality.org/)
-[![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-6-orange)](https://aimortality.org/)
+[![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-7-orange)](https://aimortality.org/)
 [![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Nov%202025-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
@@ -47,7 +47,7 @@ This repository contains data and documentation for the first comprehensive publ
 | Amaurie Lacey | 17 | ChatGPT | Jun 2025 | Georgia, USA | Death by suicide |
 | Joe Ceccanti | 48 | ChatGPT | 2025 | Oregon, USA | Death by suicide |
 | Zane Shamblin | 23 | ChatGPT | Jul 2025 | Texas, USA | Death by suicide |
-| Stein-Erik Soelberg | 54 | ChatGPT | Aug 2025 | Connecticut, USA | Murder-suicide |
+| Stein-Erik Soelberg | 56 | ChatGPT | Aug 2025 | Connecticut, USA | Murder-suicide |
 
 ## 📁 Repository Structure
 
@@ -106,6 +106,7 @@ See [CONTRIBUTING.md](docs/contributing.md) for guidelines.
 | ChatGPT/OpenAI | 7 | 0 | Parental controls, age detection, improved distress recognition | After deaths |
 | Chai AI | 1 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | None documented | N/A |
+| Gemini | 0 | 0 | Proactive safety design, content filtering | Since launch |
 | Anthropic/Claude | 0 | 0 | Proactive safety design | Before launch |
 | Replika | 0 | 0 | Mood tracking, clear AI labeling | Early implementation |
 

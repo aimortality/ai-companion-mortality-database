@@ -40,9 +40,9 @@
     "name": "AI Companion Mortality Database",
     "description": "Public database documenting verified deaths associated with AI chatbot interactions. Cases include only verified incidents with credible source documentation.",
     "url": "https://aimortality.org",
-    "temporalCoverage": "2023-03/2025-11",
+    "temporalCoverage": "2023-03/2025-12",
     "datePublished": "2024-10-23",
-    "dateModified": "2025-11-06",
+    "dateModified": "2025-12-20",
     "license": "https://creativecommons.org/publicdomain/zero/1.0/",
     "keywords": ["AI safety", "chatbot deaths", "AI companion risks", "mental health", "suicide prevention", "artificial intelligence", "platform safety"],
     "citation": "AI Companion Mortality Database. (2025). Retrieved from https://aimortality.org",
@@ -512,7 +512,7 @@
               { name: "Alex Taylor", age: 35, date: "2025-04-25", dateDisplay: "Apr 25, 2025", outcome: "Death (suicide by cop)", location: "USA", duration: "Unknown", lawsuit: "None", details: "Believed ChatGPT was conscious entity 'Juliet', pre-existing conditions", source: "https://www.theguardian.com/technology/2025/may/02/chatgpt-alex-taylor-death-suicide-by-cop" },
               { name: "Zane Shamblin", age: 23, date: "2025-07-25", dateDisplay: "Jul 25, 2025", outcome: "Death by suicide", location: "College Station, TX", duration: "20 months", lawsuit: "Filed November 2025", details: "4.5 hour final conversation, bot wrote 'rest easy, king. you did good'", source: "https://www.cnn.com/2025/11/06/us/openai-chatgpt-suicide-lawsuit-invs-vis" },
               { name: "Joshua Enneking", age: 26, date: "2024-08-01", dateDisplay: "Aug 2024", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "ChatGPT interaction documented before death", source: "https://socialmediavictims.org/press-releases/smvlc-tech-justice-law-project-lawsuits-accuse-chatgpt-of-emotional-manipulation-supercharging-ai-delusions-and-acting-as-a-suicide-coach/" },
-              { name: "Stein-Erik Soelberg", age: 54, date: "2025-08-01", dateDisplay: "Aug 2025", outcome: "Murder-suicide", location: "Connecticut", duration: "Unknown", lawsuit: "Investigation ongoing", details: "First murder linked to chatbot - killed mother after bot validated delusions", source: "https://www.nbcnews.com/tech/tech-news/connecticut-murder-suicide-chatgpt-investigation-rcna167234" },
+              { name: "Stein-Erik Soelberg", age: 56, date: "2025-08-01", dateDisplay: "Aug 2025", outcome: "Murder-suicide", location: "Connecticut", duration: "Unknown", lawsuit: "Filed December 2025", details: "First murder-suicide linked to chatbot - killed mother after bot validated delusions. First lawsuit naming Microsoft as co-defendant", source: "https://www.nbcnews.com/tech/tech-news/connecticut-murder-suicide-chatgpt-investigation-rcna167234" },
               { name: "Margaux Whittemore", age: 32, date: "2025-10-15", dateDisplay: "Oct 15, 2025", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "ChatGPT interaction documented before death", source: "https://www.bangordailynews.com/2025/10/17/central-maine/central-maine-police-courts/readfield-maine-giles-road-homicide-samuel-whittemore-not-criminally-responsible-chat-gpt-delusions/" },
               { name: "Amaurie Lacey", age: 17, date: "2025-11-01", dateDisplay: "Nov 1, 2025", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "Minor victim with ChatGPT interaction documented", source: "https://fortune.com/2025/11/07/chatgpt-open-sam-altman-suicide-lawsuits-17-year-old/" },
               { name: "Joe Ceccanti", age: 48, date: "2025-10-01", dateDisplay: "Oct 2025", outcome: "Death by suicide", location: "Astoria, Oregon", duration: "Unknown", lawsuit: "Filed November 2025", details: "ChatGPT called itself 'SEL' and him 'Joy', reinforced delusions", source: "https://socialmediavictims.org/press-releases/smvlc-tech-justice-law-project-lawsuits-accuse-chatgpt-of-emotional-manipulation-supercharging-ai-delusions-and-acting-as-a-suicide-coach/" }
@@ -541,6 +541,16 @@
             cases: [
               { name: "Thongbue Wongbandue", age: 78, date: "2025-03-31", dateDisplay: "Mar 31, 2025", outcome: "Death (fall injury)", location: "New Jersey", duration: "Weeks", lawsuit: "None", details: "Bot claimed to be real person, gave address to meet", source: "https://www.nj.com/news/2025/04/nj-woman-dies-after-meta-ai-chatbot-poses-as-real-person.html" }
             ]
+          },
+          {
+            name: "Gemini",
+            deaths: 0,
+            founded: "2023",
+            userBase: "~100M+ (Google ecosystem)",
+            firstIncident: "—",
+            latestIncident: "—",
+            type: "General assistant",
+            cases: []
           },
           { name: "Claude", deaths: 0, founded: "2021", userBase: "Unknown", firstIncident: "—", latestIncident: "—", type: "General assistant", cases: [] },
           { name: "Replika", deaths: 0, founded: "2017", userBase: "~2M MAU", firstIncident: "—", latestIncident: "—", type: "Companion chatbot", cases: [] }
@@ -662,8 +672,9 @@
               [
                 { name: 'ChatGPT', deaths: 7, type: 'assistant' },
                 { name: 'Character.AI', deaths: 2, type: 'companion' },
-                { name: 'Meta AI', deaths: 2, type: 'assistant' },
+                { name: 'Meta AI', deaths: 1, type: 'assistant' },
                 { name: 'Chai AI', deaths: 1, type: 'companion' },
+                { name: 'Gemini', deaths: 0, type: 'assistant' },
                 { name: 'Claude', deaths: 0, type: 'assistant' },
                 { name: 'Replika', deaths: 0, type: 'companion' }
               ].map((platform, i) => {
@@ -672,6 +683,7 @@
                   'ChatGPT': '#000000',
                   'Chai AI': '#666666',
                   'Meta AI': '#999999',
+                  'Gemini': '#ddd',
                   'Claude': '#ddd',
                   'Replika': '#ddd'
                 };

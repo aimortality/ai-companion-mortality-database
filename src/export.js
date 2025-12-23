@@ -32,7 +32,7 @@ const mortalityData = {
         { name: "Amaurie Lacey", age: 17, date: "2025-06-02", location: "Georgia, USA" },
         { name: "Joe Ceccanti", age: 48, date: "2025", location: "Oregon, USA" },
         { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA" },
-        { name: "Stein-Erik Soelberg", age: 54, date: "2025-08", location: "Connecticut, USA" }
+        { name: "Stein-Erik Soelberg", age: 56, date: "2025-08", location: "Connecticut, USA" }
       ]
     },
     {
@@ -50,6 +50,12 @@ const mortalityData = {
       cases: [
         { name: "Thongbue Wongbandue", age: 78, date: "2025-03-31", location: "New Jersey, USA" }
       ]
+    },
+    {
+      name: "Gemini",
+      deaths: 0,
+      attempts: 0,
+      cases: []
     },
     {
       name: "Anthropic/Claude",

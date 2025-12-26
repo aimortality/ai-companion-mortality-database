@@ -465,24 +465,56 @@
       padding: 50px;
       color: #666666;
     }
+
+    /* Accessibility: Skip link */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: #000;
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 100;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* Accessibility: Focus indicators */
+    a:focus,
+    button:focus {
+      outline: 2px solid #000;
+      outline-offset: 2px;
+    }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #000;
+      outline-offset: 2px;
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
   <div class="crisis">
     Crisis resources available 24/7: <a href="tel:988">Call or text 988</a> (Suicide & Crisis Lifeline)
   </div>
 
   <h1>AI Companion Mortality Database</h1>
   <div class="subtitle">
-    Public database documenting verified deaths associated with AI chatbot interactions
+    Public database documenting verified deaths associated with AI chatbot interactions.<br>
+    All cases verified through court documents, news sources, or government acknowledgment.
   </div>
   <div class="meta">
     Last updated: December 20, 2025 | Deaths: 12 | Cases: 13 | Period: March 2023 — December 2025
   </div>
 
-  <div id="app">
-    <div class="loading">Loading database...</div>
-  </div>
+  <main id="main-content">
+    <div id="app">
+      <div class="loading">Loading database...</div>
+    </div>
+  </main>
 
   <script type="module">
     import React, { useState } from 'https://esm.sh/react@18.2.0';
@@ -589,12 +621,28 @@
           )
         ),
 
+        // Navigation
+        React.createElement('div', { className: 'nav' },
+          ['overview', 'timeline', 'cases', 'analysis'].map(v =>
+            React.createElement('a', {
+              key: v,
+              href: `#${v}`
+            }, v.charAt(0).toUpperCase() + v.slice(1))
+          ),
+          React.createElement('a', {
+            key: 'report',
+            href: 'report.html',
+            onClick: () => gtag('event', 'view_report', { 'event_category': 'navigation' })
+          }, 'Research Report →')
+        ),
+
         // SVG Visualizations - Reordered for impact
         React.createElement('div', { className: 'viz-container' },
           // Age Distribution - PRIORITIZED (most impactful finding)
           React.createElement('div', { className: 'viz-section' },
-            React.createElement('div', { className: 'viz-title' }, 'Age Distribution of Victims'),
-            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 320 180' },
+            React.createElement('div', { className: 'viz-title', id: 'age-dist-label' }, 'Age Distribution of Victims'),
+            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 320 180', role: 'img', 'aria-labelledby': 'age-dist-label', 'aria-describedby': 'age-dist-desc' },
+              React.createElement('desc', { id: 'age-dist-desc' }, '33% of victims were minors aged 13-17 (4 people), 42% were young adults 18-35 (5 people), 17% were middle-aged 36-54 (2 people), and 8% were seniors 55+ (1 person).'),
               [
                 { range: '13-17', count: 4, x: 40, label: 'Minors', pct: '33%' },
                 { range: '18-35', count: 5, x: 120, label: 'Young Adults', pct: '42%' },
@@ -635,8 +683,9 @@
 
           // Engagement Duration
           React.createElement('div', { className: 'viz-section' },
-            React.createElement('div', { className: 'viz-title' }, 'Engagement Duration Before Incident'),
-            React.createElement('svg', { width: '100%', height: '200', viewBox: '0 0 350 200' },
+            React.createElement('div', { className: 'viz-title', id: 'duration-label' }, 'Engagement Duration Before Incident'),
+            React.createElement('svg', { width: '100%', height: '200', viewBox: '0 0 350 200', role: 'img', 'aria-labelledby': 'duration-label', 'aria-describedby': 'duration-desc' },
+              React.createElement('desc', { id: 'duration-desc' }, 'Bar chart showing engagement duration before incidents. Cases ranged from 6 weeks to 20 months. Duration known for 5 of 13 cases.'),
               [
                 { duration: '6 weeks', weeks: 6, x: 40 },
                 { duration: '3 months', weeks: 12, x: 100 },
@@ -676,10 +725,11 @@
 
           // Deaths by Platform
           React.createElement('div', { className: 'viz-section' },
-            React.createElement('div', { className: 'viz-title' }, 'Deaths by Platform'),
-            React.createElement('svg', { width: '100%', height: '180', style: { overflow: 'visible' } },
+            React.createElement('div', { className: 'viz-title', id: 'platform-label' }, 'Deaths by Platform'),
+            React.createElement('svg', { width: '100%', height: '180', style: { overflow: 'visible' }, role: 'img', 'aria-labelledby': 'platform-label', 'aria-describedby': 'platform-desc' },
+              React.createElement('desc', { id: 'platform-desc' }, 'Horizontal bar chart showing deaths by platform. ChatGPT: 8 deaths, Character.AI: 2 deaths, Meta AI: 1 death, Chai AI: 1 death. Gemini, Claude, and Replika have zero documented deaths.'),
               [
-                { name: 'ChatGPT', deaths: 7, type: 'assistant' },
+                { name: 'ChatGPT', deaths: 8, type: 'assistant' },
                 { name: 'Character.AI', deaths: 2, type: 'companion' },
                 { name: 'Meta AI', deaths: 1, type: 'assistant' },
                 { name: 'Chai AI', deaths: 1, type: 'companion' },
@@ -720,16 +770,6 @@
           )
         ),
 
-        // Navigation
-        React.createElement('div', { className: 'nav' },
-          ['overview', 'timeline', 'cases', 'analysis'].map(v =>
-            React.createElement('a', {
-              key: v,
-              href: `#${v}`
-            }, v.charAt(0).toUpperCase() + v.slice(1))
-          )
-        ),
-
         // Overview - Key Findings
         React.createElement('div', { id: 'overview' },
           React.createElement('h2', { className: 'section-title' }, 'Key Findings'),
@@ -761,14 +801,14 @@
           React.createElement('p', { style: { fontSize: '13px', marginBottom: '15px', color: '#666' } },
             'Time between initial chatbot use and documented incident (where known):'
           ),
-          React.createElement('table', null,
+          React.createElement('table', { role: 'table', 'aria-label': 'Engagement duration patterns showing time between initial chatbot use and documented incident' },
             React.createElement('thead', null,
               React.createElement('tr', null,
-                React.createElement('th', null, 'Duration'),
-                React.createElement('th', null, 'Platform'),
-                React.createElement('th', null, 'Case'),
-                React.createElement('th', null, 'Outcome'),
-                React.createElement('th', null, 'Source')
+                React.createElement('th', { scope: 'col' }, 'Duration'),
+                React.createElement('th', { scope: 'col' }, 'Platform'),
+                React.createElement('th', { scope: 'col' }, 'Case'),
+                React.createElement('th', { scope: 'col' }, 'Outcome'),
+                React.createElement('th', { scope: 'col' }, 'Source')
               )
             ),
             React.createElement('tbody', null,
@@ -802,12 +842,12 @@
 
           // Common factors
           React.createElement('h3', { style: { fontSize: '14px', fontWeight: 'bold', marginTop: '40px', marginBottom: '15px' } }, 'Documented Risk Factors'),
-          React.createElement('table', null,
+          React.createElement('table', { role: 'table', 'aria-label': 'Documented risk factors across cases' },
             React.createElement('thead', null,
               React.createElement('tr', null,
-                React.createElement('th', null, 'Factor'),
-                React.createElement('th', null, 'Frequency'),
-                React.createElement('th', null, 'Details')
+                React.createElement('th', { scope: 'col' }, 'Factor'),
+                React.createElement('th', { scope: 'col' }, 'Frequency'),
+                React.createElement('th', { scope: 'col' }, 'Details')
               )
             ),
             React.createElement('tbody', null,
@@ -1018,16 +1058,16 @@
         // Cases
         React.createElement('div', { id: 'cases' },
           React.createElement('h2', { className: 'section-title' }, 'Documented Cases'),
-          React.createElement('table', null,
+          React.createElement('table', { role: 'table', 'aria-label': 'Complete list of documented cases with victim information and outcomes' },
             React.createElement('thead', null,
               React.createElement('tr', null,
-                React.createElement('th', null, 'Name'),
-                React.createElement('th', null, 'Age'),
-                React.createElement('th', null, 'Date'),
-                React.createElement('th', null, 'Platform'),
-                React.createElement('th', null, 'Location'),
-                React.createElement('th', null, 'Outcome'),
-                React.createElement('th', null, 'Source')
+                React.createElement('th', { scope: 'col' }, 'Name'),
+                React.createElement('th', { scope: 'col' }, 'Age'),
+                React.createElement('th', { scope: 'col' }, 'Date'),
+                React.createElement('th', { scope: 'col' }, 'Platform'),
+                React.createElement('th', { scope: 'col' }, 'Location'),
+                React.createElement('th', { scope: 'col' }, 'Outcome'),
+                React.createElement('th', { scope: 'col' }, 'Source')
               )
             ),
             React.createElement('tbody', null,
@@ -1191,19 +1231,19 @@
             )
           ),
 
-          React.createElement('table', null,
+          React.createElement('table', { role: 'table', 'aria-label': 'Deaths and attempts by year' },
             React.createElement('thead', null,
               React.createElement('tr', null,
-                React.createElement('th', null, 'Year'),
-                React.createElement('th', null, 'Deaths'),
-                React.createElement('th', null, 'Attempts'),
-                React.createElement('th', null, 'Notes')
+                React.createElement('th', { scope: 'col' }, 'Year'),
+                React.createElement('th', { scope: 'col' }, 'Deaths'),
+                React.createElement('th', { scope: 'col' }, 'Attempts'),
+                React.createElement('th', { scope: 'col' }, 'Notes')
               )
             ),
             React.createElement('tbody', null,
               React.createElement('tr', null,
                 React.createElement('td', null, '2023'),
-                React.createElement('td', null, '1'),
+                React.createElement('td', null, '2'),
                 React.createElement('td', null, '0'),
                 React.createElement('td', null, 'First documented case (March)')
               ),
@@ -1227,15 +1267,15 @@
 
           // Platform Distribution
           React.createElement('h3', { style: { fontSize: '14px', fontWeight: 'bold', marginTop: '40px', marginBottom: '15px' } }, 'Platform Distribution'),
-          React.createElement('table', null,
+          React.createElement('table', { role: 'table', 'aria-label': 'Platform distribution showing deaths and attempts by AI platform' },
             React.createElement('thead', null,
               React.createElement('tr', null,
-                React.createElement('th', null, 'Platform'),
-                React.createElement('th', null, 'Deaths'),
-                React.createElement('th', null, 'Attempts'),
-                React.createElement('th', null, 'Est. User Base'),
-                React.createElement('th', null, 'First Incident'),
-                React.createElement('th', null, 'Latest Incident')
+                React.createElement('th', { scope: 'col' }, 'Platform'),
+                React.createElement('th', { scope: 'col' }, 'Deaths'),
+                React.createElement('th', { scope: 'col' }, 'Attempts'),
+                React.createElement('th', { scope: 'col' }, 'Est. User Base'),
+                React.createElement('th', { scope: 'col' }, 'First Incident'),
+                React.createElement('th', { scope: 'col' }, 'Latest Incident')
               )
             ),
             React.createElement('tbody', null,
@@ -1260,12 +1300,12 @@
           React.createElement('p', { style: { fontSize: '13px', marginBottom: '15px' } },
             'Age distribution of victims:'
           ),
-          React.createElement('table', null,
+          React.createElement('table', { role: 'table', 'aria-label': 'Age distribution of victims' },
             React.createElement('thead', null,
               React.createElement('tr', null,
-                React.createElement('th', null, 'Age'),
-                React.createElement('th', null, 'Count'),
-                React.createElement('th', null, 'Percentage')
+                React.createElement('th', { scope: 'col' }, 'Age'),
+                React.createElement('th', { scope: 'col' }, 'Count'),
+                React.createElement('th', { scope: 'col' }, 'Percentage')
               )
             ),
             React.createElement('tbody', null,

@@ -14,6 +14,60 @@
   <title>AI Companion Mortality Database: A Systematic Documentation of Deaths Associated with Conversational AI Systems</title>
   <link rel="icon" type="image/jpeg" href="/favicon.jpg">
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --muted-light: #dddddd;
+      --border: #1a1a1a;
+      --border-soft: #eeeeee;
+      --panel: #f5f5f5;
+      --panel-alt: #fafafa;
+      --link: #1a1a1a;
+      --accent: #1a1a1a;
+    }
+
+    :root[data-theme="light"] {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #666666;
+      --muted-light: #dddddd;
+      --border: #1a1a1a;
+      --border-soft: #eeeeee;
+      --panel: #f5f5f5;
+      --panel-alt: #fafafa;
+      --link: #1a1a1a;
+      --accent: #1a1a1a;
+    }
+
+    :root[data-theme="dark"] {
+      --bg: #0f1113;
+      --text: #f2f2f2;
+      --muted: #b5b5b5;
+      --muted-light: #3a3a3a;
+      --border: #e6e6e6;
+      --border-soft: #2b2f33;
+      --panel: #171a1d;
+      --panel-alt: #15181b;
+      --link: #c7c7c7;
+      --accent: #f2f2f2;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1113;
+        --text: #f2f2f2;
+        --muted: #b5b5b5;
+        --muted-light: #3a3a3a;
+        --border: #e6e6e6;
+        --border-soft: #2b2f33;
+        --panel: #171a1d;
+        --panel-alt: #15181b;
+        --link: #c7c7c7;
+        --accent: #f2f2f2;
+      }
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -24,8 +78,8 @@
       font-family: 'Georgia', 'Times New Roman', Times, serif;
       font-size: 16px;
       line-height: 1.7;
-      color: #1a1a1a;
-      background: #fff;
+      color: var(--text);
+      background: var(--bg);
       max-width: 800px;
       margin: 0 auto;
       padding: 60px 24px;
@@ -33,28 +87,28 @@
 
     /* Crisis Banner - Subtle but present */
     .crisis-notice {
-      background: #f5f5f5;
-      border: 1px solid #ddd;
+      background: var(--panel);
+      border: 1px solid var(--muted-light);
       padding: 12px 16px;
       font-size: 13px;
       margin-bottom: 40px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     .crisis-notice a {
-      color: #1a1a1a;
+      color: var(--accent);
       font-weight: 600;
     }
 
     /* Header */
     .journal-header {
-      border-bottom: 1px solid #1a1a1a;
+      border-bottom: 1px solid var(--border);
       padding-bottom: 8px;
       margin-bottom: 30px;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #666;
+      color: var(--muted);
       display: flex;
       justify-content: space-between;
     }
@@ -72,12 +126,12 @@
       margin-bottom: 8px;
     }
     .authors a {
-      color: #1a1a1a;
+      color: var(--link);
     }
 
     .affiliation {
       font-size: 13px;
-      color: #666;
+      color: var(--muted);
       font-style: italic;
       margin-bottom: 30px;
     }
@@ -85,10 +139,10 @@
     .metadata {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       font-size: 12px;
-      color: #666;
+      color: var(--muted);
       margin-bottom: 40px;
       padding-bottom: 20px;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--border-soft);
     }
     .metadata span {
       margin-right: 20px;
@@ -96,8 +150,8 @@
 
     /* Abstract */
     .abstract {
-      background: #fafafa;
-      border-left: 3px solid #1a1a1a;
+      background: var(--panel-alt);
+      border-left: 3px solid var(--border);
       padding: 20px 24px;
       margin-bottom: 40px;
     }
@@ -120,7 +174,7 @@
       font-size: 13px;
       margin-top: 16px;
       padding-top: 12px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid var(--border-soft);
     }
     .keywords strong {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -156,8 +210,8 @@
 
     /* Key Findings Box */
     .key-findings {
-      background: #fff;
-      border: 1px solid #1a1a1a;
+      background: var(--bg);
+      border: 1px solid var(--border);
       padding: 20px 24px;
       margin: 30px 0;
     }
@@ -191,9 +245,9 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     th {
-      background: #f5f5f5;
-      border-top: 2px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
+      background: var(--panel);
+      border-top: 2px solid var(--border);
+      border-bottom: 1px solid var(--border);
       padding: 10px 12px;
       text-align: left;
       font-size: 12px;
@@ -202,16 +256,16 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     td {
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid var(--border-soft);
       padding: 10px 12px;
       vertical-align: top;
     }
     tbody tr:last-child td {
-      border-bottom: 2px solid #1a1a1a;
+      border-bottom: 2px solid var(--border);
     }
     .table-note {
       font-size: 12px;
-      color: #666;
+      color: var(--muted);
       font-style: italic;
       margin-top: 8px;
     }
@@ -234,12 +288,12 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
-      background: #1a1a1a;
-      border: 1px solid #1a1a1a;
+      background: var(--border);
+      border: 1px solid var(--border);
       margin: 24px 0;
     }
     .stat-cell {
-      background: #fff;
+      background: var(--bg);
       padding: 16px;
       text-align: center;
     }
@@ -253,25 +307,25 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      color: #666;
+      color: var(--muted);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     /* Citations */
     .citation {
       font-size: 14px;
-      color: #666;
+      color: var(--muted);
     }
     sup {
       font-size: 11px;
-      color: #0066cc;
+      color: var(--link);
     }
 
     /* References */
     .references {
       margin-top: 50px;
       padding-top: 30px;
-      border-top: 1px solid #1a1a1a;
+      border-top: 1px solid var(--border);
     }
     .references h2::before {
       content: "";
@@ -289,15 +343,15 @@
     footer {
       margin-top: 60px;
       padding-top: 20px;
-      border-top: 1px solid #eee;
+      border-top: 1px solid var(--border-soft);
       font-size: 12px;
-      color: #666;
+      color: var(--muted);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     /* Links */
     a {
-      color: #0066cc;
+      color: var(--link);
       text-decoration: none;
     }
     a:hover {
@@ -322,9 +376,31 @@
         padding: 8px 6px;
       }
     }
+
+    .theme-toggle {
+      position: fixed;
+      top: 18px;
+      right: 18px;
+      z-index: 200;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.4px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid var(--border-soft);
+      background: var(--panel);
+      color: var(--text);
+      opacity: 0.85;
+      transition: opacity 0.15s ease;
+    }
+
+    .theme-toggle:hover {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Theme: Light</button>
   <div class="crisis-notice">
     If you or someone you know is in crisis, contact the <strong>988 Suicide & Crisis Lifeline</strong>: <a href="tel:988">Call or text 988</a> (available 24/7)
   </div>
@@ -696,10 +772,51 @@
       <p><strong>Citation:</strong> [Author]. (2025). AI Companion Mortality Database: Documented Deaths Associated with Conversational AI Systems (2023–2025). Version 2.0. https://aimortality.org</p>
       <p style="margin-top: 12px;"><strong>Correspondence:</strong> [contact information]</p>
       <p style="margin-top: 12px;"><strong>Conflicts of Interest:</strong> None declared.</p>
-      <p style="margin-top: 20px; padding-top: 12px; border-top: 1px solid #eee;">
+    <p style="margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--border-soft);">
         Database last updated: December 20, 2025 | <a href="report.html">Full Research Report</a>
       </p>
     </footer>
   </article>
+
+  <script>
+    (function() {
+      const storageKey = 'theme';
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+      const systemTheme = () => (media && media.matches ? 'dark' : 'light');
+      const storedTheme = () => {
+        const value = localStorage.getItem(storageKey);
+        return value === 'dark' || value === 'light' ? value : null;
+      };
+      const currentTheme = () => root.dataset.theme || systemTheme();
+      const setButton = (theme) => {
+        toggle.textContent = `Theme: ${theme === 'dark' ? 'Dark' : 'Light'}`;
+        toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      };
+
+      const stored = storedTheme();
+      if (stored) {
+        root.dataset.theme = stored;
+      }
+      setButton(currentTheme());
+
+      toggle.addEventListener('click', () => {
+        const next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        localStorage.setItem(storageKey, next);
+        setButton(next);
+      });
+
+      if (media) {
+        media.addEventListener('change', (event) => {
+          if (!storedTheme()) {
+            setButton(event.matches ? 'dark' : 'light');
+          }
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

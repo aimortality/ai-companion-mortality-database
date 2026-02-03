@@ -17,10 +17,72 @@
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
 
     <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --muted: #666666;
+            --muted-strong: #333333;
+            --border: #000000;
+            --border-soft: #e0e0e0;
+            --panel: #f9f9f9;
+            --link: #0000ff;
+            --inverse-bg: #000000;
+            --inverse-text: #ffffff;
+            --callout-bg: #f0f8ff;
+            --callout-border: #0000ff;
+        }
+
+        :root[data-theme="light"] {
+            --bg: #ffffff;
+            --text: #000000;
+            --muted: #666666;
+            --muted-strong: #333333;
+            --border: #000000;
+            --border-soft: #e0e0e0;
+            --panel: #f9f9f9;
+            --link: #0000ff;
+            --inverse-bg: #000000;
+            --inverse-text: #ffffff;
+            --callout-bg: #f0f8ff;
+            --callout-border: #0000ff;
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #0f1113;
+            --text: #f2f2f2;
+            --muted: #b5b5b5;
+            --muted-strong: #c7c7c7;
+            --border: #e6e6e6;
+            --border-soft: #3a3a3a;
+            --panel: #171a1d;
+            --link: #8ab4f8;
+            --inverse-bg: #f2f2f2;
+            --inverse-text: #0f1113;
+            --callout-bg: #111a22;
+            --callout-border: #8ab4f8;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1113;
+                --text: #f2f2f2;
+                --muted: #b5b5b5;
+                --muted-strong: #c7c7c7;
+                --border: #e6e6e6;
+                --border-soft: #3a3a3a;
+                --panel: #171a1d;
+                --link: #8ab4f8;
+                --inverse-bg: #f2f2f2;
+                --inverse-text: #0f1113;
+                --callout-bg: #111a22;
+                --callout-border: #8ab4f8;
+            }
+        }
+
         body {
             font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            background: #ffffff;
-            color: #000000;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
             margin: 40px;
             font-size: 14px;
@@ -36,7 +98,7 @@
         .back-link {
             font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
             font-size: 0.85rem;
-            color: #0000FF;
+            color: var(--link);
             text-decoration: none;
             margin-bottom: 40px;
             display: inline-block;
@@ -50,7 +112,7 @@
             font-size: 28px;
             font-weight: normal;
             margin: 0 0 8px 0;
-            border-bottom: 3px solid #000000;
+            border-bottom: 3px solid var(--border);
             padding-bottom: 12px;
             letter-spacing: -0.5px;
             line-height: 1.2;
@@ -100,17 +162,17 @@
         }
 
         .case-section {
-            background-color: #f9f9f9;
+            background-color: var(--panel);
             padding: 25px;
             margin: 40px 0;
-            border: 2px solid #000000;
+            border: 2px solid var(--border);
             box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
         }
 
         .meta-info {
             font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
             font-size: 0.85rem;
-            color: #666666;
+            color: var(--muted);
             margin-bottom: 10px;
         }
 
@@ -127,8 +189,8 @@
         }
 
         .summary-box {
-            background-color: #f9f9f9;
-            border: 2px solid #000000;
+            background-color: var(--panel);
+            border: 2px solid var(--border);
             padding: 25px;
             margin: 30px 0;
             box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
@@ -136,16 +198,16 @@
 
         hr {
             border: none;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid var(--border-soft);
             margin: 60px 0;
         }
 
         .footer {
             margin-top: 50px;
             padding-top: 20px;
-            border-top: 1px solid #000000;
+            border-top: 1px solid var(--border);
             font-size: 12px;
-            color: #666666;
+            color: var(--muted);
             text-align: center;
         }
 
@@ -162,15 +224,37 @@
                 font-size: 1.2rem;
             }
         }
+
+        .theme-toggle {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 200;
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+            font-size: 11px;
+            letter-spacing: 0.4px;
+            padding: 6px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border-soft);
+            background: var(--panel);
+            color: var(--text);
+            opacity: 0.85;
+            transition: opacity 0.15s ease;
+        }
+
+        .theme-toggle:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Theme: Light</button>
         <a href="index.html" class="back-link">← Back to Database</a>
 
         <h1>Historical Record: Documented Deaths Attributed to Chatbot/LLM Interactions</h1>
 
-        <div class="summary-box" style="background-color: #f0f8ff; border-left: 4px solid #0000FF; padding: 20px; margin: 20px 0;">
+        <div class="summary-box" style="background-color: var(--callout-bg); border-left: 4px solid var(--callout-border); padding: 20px; margin: 20px 0;">
             <h4 style="margin-top: 0; margin-bottom: 15px; opacity: 1;">Research Disclosure & AI Collaboration</h4>
             <p style="margin-bottom: 10px;">This database was compiled with research assistance from Anthropic's Claude Code (AI assistant). The contrast is intentional and illustrative:</p>
 
@@ -1277,8 +1361,49 @@
             <em>Future updates needed as legal cases proceed and additional incidents emerge</em></p>
 
             <p style="margin-top: 30px;">If you or someone you know is in crisis, contact 988 (Suicide & Crisis Lifeline)</p>
-            <p>Contact: <a href="mailto:contact@aimortality.org" style="color: #666; text-decoration: underline;">contact@aimortality.org</a></p>
+            <p>Contact: <a href="mailto:contact@aimortality.org" style="color: var(--muted); text-decoration: underline;">contact@aimortality.org</a></p>
         </div>
     </div>
+
+    <script>
+        (function() {
+            const storageKey = 'theme';
+            const root = document.documentElement;
+            const toggle = document.getElementById('theme-toggle');
+            const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
+            const systemTheme = () => (media && media.matches ? 'dark' : 'light');
+            const storedTheme = () => {
+                const value = localStorage.getItem(storageKey);
+                return value === 'dark' || value === 'light' ? value : null;
+            };
+            const currentTheme = () => root.dataset.theme || systemTheme();
+            const setButton = (theme) => {
+                toggle.textContent = `Theme: ${theme === 'dark' ? 'Dark' : 'Light'}`;
+                toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+            };
+
+            const stored = storedTheme();
+            if (stored) {
+                root.dataset.theme = stored;
+            }
+            setButton(currentTheme());
+
+            toggle.addEventListener('click', () => {
+                const next = currentTheme() === 'dark' ? 'light' : 'dark';
+                root.dataset.theme = next;
+                localStorage.setItem(storageKey, next);
+                setButton(next);
+            });
+
+            if (media) {
+                media.addEventListener('change', (event) => {
+                    if (!storedTheme()) {
+                        setButton(event.matches ? 'dark' : 'light');
+                    }
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

@@ -3,9 +3,9 @@
 
 const mortalityData = {
   metadata: {
-    version: "2.0.0",
-    last_updated: "2025-12-20",
-    total_deaths: 12,
+    version: "2.1.0",
+    last_updated: "2026-02-12",
+    total_deaths: 14,
     total_attempts: 1,
     crisis_support: "988"
   },
@@ -22,13 +22,15 @@ const mortalityData = {
     },
     {
       name: "ChatGPT/OpenAI",
-      deaths: 7,
+      deaths: 10,
       attempts: 0,
       cases: [
         { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA" },
+        { name: "Sophie Rottenberg", age: 29, date: "2025-02", location: "USA" },
         { name: "Margaux Whittemore", age: 32, date: "2025-02-19", location: "Maine, USA" },
         { name: "Adam Raine", age: 16, date: "2025-04-11", location: "California, USA" },
         { name: "Alex Taylor", age: 35, date: "2025-04-25", location: "USA" },
+        { name: "Sam Nelson", age: 19, date: "2025-05-31", location: "California, USA" },
         { name: "Amaurie Lacey", age: 17, date: "2025-06-02", location: "Georgia, USA" },
         { name: "Joe Ceccanti", age: 48, date: "2025", location: "Oregon, USA" },
         { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA" },
@@ -111,14 +113,14 @@ const DataExporter = {
       age_statistics: {
         youngest: 13,
         oldest: 78,
-        average: 33.3,
+        average: 31.1,
         minors: 4,
-        adults: 8
+        adults: 10
       },
       deaths_by_year: {
         "2023": 2,
         "2024": 2,
-        "2025": 8
+        "2025": 10
       }
     };
 
@@ -297,9 +299,9 @@ const API = {
         return mortalityData.platforms;
       case 'statistics':
         return {
-          total_deaths: 12,
+          total_deaths: 14,
           total_attempts: 1,
-          minors_percentage: 33.3,
+          minors_percentage: 28.6,
           platforms_affected: 4
         };
       case 'timeline':

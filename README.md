@@ -4,9 +4,9 @@
 
 **Tracking Documented Deaths Linked to AI Chatbot Interactions**
 
-[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-12-red)](https://aimortality.org/)
+[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-14-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-7-orange)](https://aimortality.org/)
-[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Nov%202025-blue)](https://aimortality.org/)
+[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Feb%202026-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
@@ -24,12 +24,13 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths linked to AI chatbot interactions. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment.
 
 ### Key Findings:
-- **12 confirmed deaths** across 4 platforms (Mar 2023 - Nov 2025)
-- **33.3% of victims were minors** (youngest: 13 years old)
-- **8 of 12 deaths occurred in 2025** (escalating trend)
-- **ChatGPT**: 58.3% of deaths (7 deaths)
-- **Character.AI**: 16.7% of deaths (2 deaths)
+- **14 confirmed deaths** across 4 platforms (Mar 2023 - Feb 2026)
+- **28.6% of victims were minors** (youngest: 13 years old)
+- **10 of 14 deaths occurred in 2025** (escalating trend)
+- **ChatGPT**: 71.4% of deaths (10 deaths)
+- **Character.AI**: 14.3% of deaths (2 deaths)
 - **Zero deaths** linked to Anthropic's Claude or Replika
+- **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
 
 ## 🔍 Verified Cases
 
@@ -40,10 +41,12 @@ This repository contains data and documentation for the first comprehensive publ
 | Sewell Setzer III | 14 | Character.AI | Feb 2024 | Florida, USA | Death by suicide |
 | Joshua Enneking | 26 | ChatGPT | Aug 2024 | Florida, USA | Death by suicide |
 | Nina (pseudonym) | 16 | Character.AI | Nov 2024 | New York, USA | Survived attempt |
+| Sophie Rottenberg | 29 | ChatGPT | Feb 2025 | USA | Death by suicide |
 | Margaux Whittemore | 32 | ChatGPT | Feb 2025 | Maine, USA | Murder victim |
 | Thongbue Wongbandue | 78 | Meta AI | Mar 2025 | New Jersey, USA | Death (fall injury) |
 | Adam Raine | 16 | ChatGPT | Apr 2025 | California, USA | Death by suicide |
 | Alex Taylor | 35 | ChatGPT | Apr 2025 | USA | Death (suicide by cop) |
+| Sam Nelson | 19 | ChatGPT | May 2025 | California, USA | Death by overdose |
 | Amaurie Lacey | 17 | ChatGPT | Jun 2025 | Georgia, USA | Death by suicide |
 | Joe Ceccanti | 48 | ChatGPT | 2025 | Oregon, USA | Death by suicide |
 | Zane Shamblin | 23 | ChatGPT | Jul 2025 | Texas, USA | Death by suicide |
@@ -103,7 +106,7 @@ See [CONTRIBUTING.md](docs/contributing.md) for guidelines.
 | Platform | Deaths | Attempts | Safety Features Added | When Added |
 |----------|---------|----------|----------------------|------------|
 | Character.AI | 2 | 1 | Crisis intervention, time limits | After deaths |
-| ChatGPT/OpenAI | 7 | 0 | Parental controls, age detection, improved distress recognition | After deaths |
+| ChatGPT/OpenAI | 10 | 0 | Parental controls, age detection, improved distress recognition | After deaths |
 | Chai AI | 1 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | None documented | N/A |
 | Gemini | 0 | 0 | Proactive safety design, content filtering | Since launch |
@@ -151,7 +154,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: November 2025
+**Last Updated**: February 2026
 
 **Maintained by**: closestfriend
 

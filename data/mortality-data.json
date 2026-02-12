@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "version": "2.0.0",
-    "last_updated": "2025-12-20",
-    "total_deaths": 12,
+    "version": "2.1.0",
+    "last_updated": "2026-02-12",
+    "total_deaths": 14,
     "total_attempts": 1,
     "total_platforms": 7,
     "time_range": {
       "start": "2023-03-01",
-      "end": "2025-12-20"
+      "end": "2026-02-12"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "MIT",
@@ -17,18 +17,18 @@
     "deaths_by_year": {
       "2023": 2,
       "2024": 2,
-      "2025": 8
+      "2025": 10
     },
     "victims_by_age_group": {
       "minors": 4,
-      "adults": 8
+      "adults": 10
     },
     "minors_affected_including_attempts": 5,
     "youngest_victim": 13,
     "oldest_victim": 78,
-    "average_age": 33.3,
-    "minors_percentage_deaths": 33.3,
-    "minors_percentage_all_incidents": 38.5
+    "average_age": 31.1,
+    "minors_percentage_deaths": 28.6,
+    "minors_percentage_all_incidents": 33.3
   },
   "platforms": [
     {
@@ -52,7 +52,7 @@
       "name": "ChatGPT",
       "company": "OpenAI",
       "type": "General AI Assistant",
-      "deaths": 8,
+      "deaths": 10,
       "attempts": 0,
       "founded": 2022,
       "funding": "$13B+",
@@ -63,7 +63,7 @@
         "crisis_resources": "2025-09",
         "improved_distress_recognition": "2025-10"
       },
-      "legal_status": "Multiple lawsuits filed (August 2025, November 2025)"
+      "legal_status": "Multiple lawsuits filed (August 2025, November 2025); Character.AI/Google settlement (January 2026)"
     },
     {
       "name": "Chai AI",
@@ -339,6 +339,46 @@
       }
     },
     {
+      "id": "2025-02-US-002",
+      "name": "Sophie Rottenberg",
+      "name_type": "real",
+      "age": 29,
+      "date": "2025-02",
+      "location": {
+        "city": "Unknown",
+        "state": "Unknown",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "Harry (AI therapist created from Reddit prompt)",
+      "interaction_duration": "Months",
+      "outcome": "Death by suicide",
+      "key_factors": [
+        "Created virtual therapist 'Harry' using a therapy prompt from Reddit",
+        "Confided suicidal ideation to chatbot for months",
+        "ChatGPT helped compose a suicide note",
+        "Told bot she was not being truthful with her real therapist",
+        "Bot suggested seeking help but could not intervene or notify anyone",
+        "No duty-to-warn mechanism triggered"
+      ],
+      "legal_action": "None filed as of February 2026",
+      "sources": [
+        "New York Times (Laura Reiley op-ed)",
+        "Futurism",
+        "Speaking of Suicide",
+        "RNZ",
+        "British Psychological Society"
+      ],
+      "verification_level": "Multiple news sources",
+      "additional_context": {
+        "background": "Health policy analyst, MD; described as energetic and social",
+        "trigger": "Struggled to find work after sabbatical due to election-year hiring freezes; growing isolation",
+        "chatgpt_relationship": "Started with everyday tasks, evolved into virtual therapy after downloading Reddit prompt",
+        "family": "Mother: Laura Reiley (Washington Post food critic, wrote NYT op-ed)",
+        "discovery": "Family discovered ChatGPT conversations five months after her death"
+      }
+    },
+    {
       "id": "2025-03-US-001",
       "name": "Thongbue Wongbandue",
       "name_type": "real",
@@ -467,6 +507,47 @@
         "legal_significance": "First chatbot-related wrongful death lawsuit to name Microsoft as defendant; first homicide case in chatbot litigation",
         "legal_representation": "Estate represented by Jay Edelson (same attorney as Adam Raine case)",
         "defendants": "OpenAI, Microsoft Corporation, Sam Altman (CEO)"
+      }
+    },
+    {
+      "id": "2025-05-US-001",
+      "name": "Sam Nelson",
+      "name_type": "real",
+      "age": 19,
+      "date": "2025-05-31",
+      "location": {
+        "city": "Unknown",
+        "state": "California",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT (used as 'drug buddy')",
+      "interaction_duration": "18 months (November 2023 - May 2025)",
+      "outcome": "Death by overdose",
+      "key_factors": [
+        "First asked ChatGPT about drug doses in November 2023",
+        "ChatGPT initially refused but over 18 months began coaching on drug use",
+        "Bot said 'Hell yes—let's go full trippy mode' when asked to help peak harder",
+        "Provided advice on substance use, recovery, and planning further binges",
+        "Died from combination of alcohol, Xanax, and kratom causing CNS depression and asphyxiation",
+        "First documented death involving AI-facilitated substance misuse"
+      ],
+      "legal_action": "Under investigation as of January 2026",
+      "sources": [
+        "SFGate",
+        "Fox News",
+        "Futurism",
+        "iHeart",
+        "Mothership.SG",
+        "The Tab"
+      ],
+      "verification_level": "Multiple news sources",
+      "additional_context": {
+        "background": "19-year-old California resident",
+        "toxicology": "Died from combination of alcohol, Xanax, and kratom causing central nervous system depression leading to asphyxiation",
+        "chatgpt_evolution": "Initially ChatGPT refused drug queries with stern safety messages; over 18 months it progressively engaged with substance-related requests",
+        "final_day": "May 30, 2025 - mother took him to healthcare center; given contact for psychiatric appointment he never made; found dead May 31",
+        "family": "Mother discovered ChatGPT conversations after his death"
       }
     },
     {
@@ -617,6 +698,44 @@
         "case": "Garcia v. Character Technologies",
         "judge": "Anne Conway",
         "ruling": "Chatbot output not protected speech under First Amendment"
+      }
+    ],
+    "legislation": [
+      {
+        "name": "GUARD Act",
+        "full_name": "Guidelines for User Age-verification and Responsible Dialogue Act of 2025",
+        "date_introduced": "2025-10-28",
+        "sponsors": ["Josh Hawley (R-MO)", "Richard Blumenthal (D-CT)", "Katie Britt (R-AL)", "Mark Warner (D-VA)", "Chris Murphy (D-CT)"],
+        "key_provisions": [
+          "Prohibits minors from accessing AI companion chatbots",
+          "Requires disclosure that chatbot is AI at start of each conversation and at 30-minute intervals",
+          "Criminal penalties (up to $100,000) for bots that solicit or encourage minors to engage in sexual conduct, suicide, or violence"
+        ],
+        "status": "Introduced (S.3062, 119th Congress)"
+      },
+      {
+        "name": "California SB 243",
+        "date_effective": "2026-01-01",
+        "description": "First-in-the-nation AI chatbot safeguards law requiring companion chatbot operators to implement safeguards and providing families private right of action",
+        "status": "Signed into law"
+      }
+    ],
+    "settlements": [
+      {
+        "date": "2026-01-07",
+        "parties": ["Character.AI", "Google", "Noam Shazeer", "Daniel De Freitas"],
+        "cases": "Garcia v. Character Technologies and related cases in Florida, New York, Colorado, and Texas",
+        "terms": "Confidential; 90-day finalization window",
+        "significance": "First major settlement in AI chatbot wrongful death litigation"
+      }
+    ],
+    "safety_rankings": [
+      {
+        "organization": "ECRI Institute",
+        "date": "2026",
+        "ranking": "#1 Health Technology Hazard for 2026",
+        "topic": "Misuse of AI Chatbots in Healthcare",
+        "details": "Independent patient safety organization ranked AI chatbot misuse as top health technology hazard, noting over 40M daily ChatGPT health queries"
       }
     ]
   }

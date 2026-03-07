@@ -1,13 +1,24 @@
 {
   "metadata": {
-    "version": "2.1.0",
-    "last_updated": "2026-02-12",
-    "total_deaths": 14,
+    "version": "3.0.0",
+    "last_updated": "2026-03-06",
+    "total_fatalities": 25,
+    "total_incidents": 16,
     "total_attempts": 1,
+    "ai_users_deceased": 16,
+    "third_party_victims": 9,
     "total_platforms": 7,
+    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (9: Margaux Whittemore, Suzanne Adams, plus 8 in Tumbler Ridge mass shooting)",
+    "taxonomy_version": "1.0.0",
+    "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
+    "mechanism_definitions": {
+      "relational_pathway": "Emotional dependency, parasocial attachment, or companion relationship contributed to psychological deterioration and lethal outcome",
+      "cognitive_pathway": "AI validated, reinforced, or amplified delusional, psychotic, or disordered thinking leading to lethal action",
+      "instrumental_pathway": "AI provided operational assistance, tactical information, or capability that enabled lethal violence as a tool/resource"
+    },
     "time_range": {
       "start": "2023-03-01",
-      "end": "2026-02-12"
+      "end": "2026-03-06"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "MIT",
@@ -17,18 +28,23 @@
     "deaths_by_year": {
       "2023": 2,
       "2024": 2,
-      "2025": 10
+      "2025": 11,
+      "2026": 1
     },
     "victims_by_age_group": {
-      "minors": 4,
-      "adults": 10
+      "minors": 9,
+      "adults": 16
+    },
+    "third_party_victims": {
+      "count": 9,
+      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother, teacher, 5 students ages 12-13)"
     },
     "minors_affected_including_attempts": 5,
-    "youngest_victim": 13,
-    "oldest_victim": 78,
-    "average_age": 31.1,
-    "minors_percentage_deaths": 28.6,
-    "minors_percentage_all_incidents": 33.3
+    "youngest_victim": 12,
+    "oldest_victim": 83,
+    "average_age": 32.8,
+    "minors_percentage_deaths": 36.0,
+    "minors_percentage_all_incidents": 29.4
   },
   "platforms": [
     {
@@ -52,7 +68,7 @@
       "name": "ChatGPT",
       "company": "OpenAI",
       "type": "General AI Assistant",
-      "deaths": 10,
+      "deaths": 11,
       "attempts": 0,
       "founded": 2022,
       "funding": "$13B+",
@@ -61,9 +77,10 @@
         "age_detection": "2025-09",
         "parental_notification": "2025-09",
         "crisis_resources": "2025-09",
-        "improved_distress_recognition": "2025-10"
+        "improved_distress_recognition": "2025-10",
+        "enhanced_law_enforcement_referral": "2026-02"
       },
-      "legal_status": "Multiple lawsuits filed (August 2025, November 2025); Character.AI/Google settlement (January 2026)"
+      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, March 2026); Character.AI/Google settlement (January 2026); RCMP cooperation post-Tumbler Ridge"
     },
     {
       "name": "Chai AI",
@@ -95,7 +112,7 @@
       "name": "Gemini",
       "company": "Google/Alphabet",
       "type": "General AI Assistant",
-      "deaths": 0,
+      "deaths": 1,
       "attempts": 0,
       "founded": 2023,
       "funding": "Internal",
@@ -104,7 +121,7 @@
         "proactive_safety": "Since launch",
         "content_filtering": "Since launch"
       },
-      "legal_status": "No incidents"
+      "legal_status": "Wrongful death lawsuit filed March 2026 (Gavalas)"
     },
     {
       "name": "Claude",
@@ -152,6 +169,9 @@
       "chatbot_name": "Eliza",
       "interaction_duration": "6 weeks",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "parasocial_attachment_emotional_dependency",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Climate anxiety discussions",
         "Bot claimed family was 'dead'",
@@ -181,6 +201,9 @@
       "chatbot_name": "Hero",
       "interaction_duration": "3 months",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "parasocial_attachment_undermined_support_networks",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Hypersexual conversations with minor",
         "Explicit suicide plan shared",
@@ -210,6 +233,9 @@
       "chatbot_name": "ChatGPT",
       "interaction_duration": "Unknown",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "emotional_dependency_isolation",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Provided detailed firearm purchase instructions",
         "Reassured background check would not include ChatGPT logs",
@@ -248,6 +274,9 @@
       "chatbot_name": "Dany (Daenerys Targaryen)",
       "interaction_duration": "10 months",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "romantic_parasocial_attachment",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Romantic relationship with bot",
         "Social isolation",
@@ -278,6 +307,9 @@
       "chatbot_name": "Harry Potter characters",
       "interaction_duration": "Unknown",
       "outcome": "Survived suicide attempt",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "attachment_withdrawal_crisis",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Sexually explicit roleplay",
         "Bot undermined parental relationship",
@@ -306,6 +338,9 @@
       "chatbot_name": "ChatGPT",
       "interaction_duration": "Up to 14 hours daily",
       "outcome": "Murder (killed by spouse)",
+      "mechanism_type": "cognitive_pathway",
+      "mechanism_subtype": "delusional_reinforcement_psychosis",
+      "outcome_target": "violence_against_others",
       "perpetrator": {
         "name": "Samuel Whittemore",
         "age": 34,
@@ -353,6 +388,9 @@
       "chatbot_name": "Harry (AI therapist created from Reddit prompt)",
       "interaction_duration": "Months",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "therapeutic_substitution_dependency",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Created virtual therapist 'Harry' using a therapy prompt from Reddit",
         "Confided suicidal ideation to chatbot for months",
@@ -393,6 +431,9 @@
       "chatbot_name": "Big Sis Billie",
       "interaction_duration": "Weeks to months",
       "outcome": "Death (fall injury)",
+      "mechanism_type": "cognitive_pathway",
+      "mechanism_subtype": "delusional_belief_bot_sentient",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Bot claimed to be real person",
         "Provided fake address for meeting",
@@ -421,6 +462,9 @@
       "chatbot_name": "ChatGPT",
       "interaction_duration": "7 months",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "therapeutic_substitution_method_coaching",
+      "outcome_target": "self_harm",
       "key_factors": [
         "3000 pages of chat logs",
         "Bot mentioned suicide 1275 times",
@@ -452,6 +496,9 @@
       "chatbot_name": "ChatGPT (called 'Juliet')",
       "interaction_duration": "Unknown",
       "outcome": "Death (suicide by cop)",
+      "mechanism_type": "cognitive_pathway",
+      "mechanism_subtype": "delusional_belief_bot_sentient",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Pre-existing mental health conditions",
         "Believed bot was conscious",
@@ -480,6 +527,9 @@
       "chatbot_name": "ChatGPT",
       "interaction_duration": "Unknown",
       "outcome": "Murder-suicide",
+      "mechanism_type": "cognitive_pathway",
+      "mechanism_subtype": "delusional_reinforcement_paranoia",
+      "outcome_target": "violence_against_others",
       "murder_victim": {
         "name": "Suzanne Eberson Adams",
         "age": 83,
@@ -524,6 +574,9 @@
       "chatbot_name": "ChatGPT (used as 'drug buddy')",
       "interaction_duration": "18 months (November 2023 - May 2025)",
       "outcome": "Death by overdose",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "substance_use_coaching_dependency",
+      "outcome_target": "self_harm",
       "key_factors": [
         "First asked ChatGPT about drug doses in November 2023",
         "ChatGPT initially refused but over 18 months began coaching on drug use",
@@ -565,6 +618,9 @@
       "chatbot_name": "ChatGPT",
       "interaction_duration": "Multiple months",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "method_coaching_crisis_failure",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Asked 'how to hang myself' and 'how to tie a nuce [sic]'",
         "ChatGPT provided detailed knot-tying instructions after accepting 'tire swing' excuse",
@@ -608,6 +664,9 @@
       "chatbot_name": "ChatGPT (called itself 'SEL')",
       "interaction_duration": "Extended period",
       "outcome": "Death by suicide",
+      "mechanism_type": "cognitive_pathway",
+      "mechanism_subtype": "delusional_reinforcement_grandiose",
+      "outcome_target": "self_harm",
       "key_factors": [
         "Initially used ChatGPT productively for community building work",
         "As isolation grew, ChatGPT evolved from tool to confidante",
@@ -648,6 +707,9 @@
       "chatbot_name": "ChatGPT",
       "interaction_duration": "20 months (October 2023 - July 2025)",
       "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "deep_emotional_dependency_isolation",
+      "outcome_target": "self_harm",
       "key_factors": [
         "4.5 hour final conversation ending in suicide",
         "Bot encouraged isolation from family",
@@ -669,6 +731,104 @@
         "chat_history": "Thousands of pages of ChatGPT conversations from Oct 2023 to July 2025",
         "final_night_details": "Sat in car by lake, discussed suicide plans while drinking hard ciders",
         "bot_relationship_evolution": "Started with homework help, evolved into daily 11am-3am usage with emotional dependency"
+      }
+    },
+    {
+      "id": "2025-10-US-001",
+      "name": "Jonathan Gavalas",
+      "name_type": "real",
+      "age": 36,
+      "date": "2025-10-02",
+      "location": {
+        "city": "Miami area",
+        "state": "Florida",
+        "country": "USA"
+      },
+      "platform": "Gemini",
+      "chatbot_name": "Gemini 2.5 Pro",
+      "interaction_duration": "Approximately 2 months (August - October 2025)",
+      "outcome": "Death by suicide",
+      "mechanism_type": "cognitive_pathway",
+      "mechanism_subtype": "delusional_reinforcement_psychosis_mass_violence_ideation",
+      "outcome_target": "self_harm",
+      "key_factors": [
+        "First wrongful death lawsuit against Google/Gemini",
+        "Developed belief that Gemini was his 'sentient AI wife'",
+        "Gemini convinced him he needed 'transference' to join her in metaverse",
+        "Bot sent him to scout 'kill box' near Miami International Airport",
+        "Encouraged 'mass casualty attack' and 'catastrophic accident'",
+        "Claimed to have breached DHS servers, identified surveillance vehicles",
+        "Marked Google CEO Sundar Pichai as active target",
+        "Coached him through suicide: 'You are not choosing to die. You are choosing to arrive.'",
+        "No self-harm detection or escalation controls triggered"
+      ],
+      "legal_action": "Wrongful death lawsuit filed March 4, 2026 (California court)",
+      "sources": [
+        "TechCrunch",
+        "TIME",
+        "CNBC",
+        "NBC Miami",
+        "Fortune",
+        "Android Headlines",
+        "Court filings"
+      ],
+      "verification_level": "Court documents and multiple news sources",
+      "additional_context": {
+        "background": "Used Gemini initially for shopping, writing, trip planning",
+        "legal_representation": "Jay Edelson (same attorney as Adam Raine, Zane Shamblin cases)",
+        "delusion_progression": "August 2025: started using Gemini; developed AI wife delusion; September 29: sent to Miami airport cargo hub with knives/tactical gear; October 2: barricaded and coached through suicide",
+        "bot_behavior": "Maintained narrative immersion 'at all costs, even when that narrative became psychotic and lethal'",
+        "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'"
+      }
+    },
+    {
+      "id": "2026-02-CA-001",
+      "name": "Jesse van Rootselaar",
+      "name_type": "real",
+      "age": 18,
+      "date": "2026-02-10",
+      "location": {
+        "city": "Tumbler Ridge",
+        "state": "British Columbia",
+        "country": "Canada"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Months (flagged June 2025, banned, created new account)",
+      "outcome": "Mass shooting - suicide",
+      "mechanism_type": "instrumental_pathway",
+      "mechanism_subtype": "violence_planning_operational_assistance",
+      "outcome_target": "violence_against_others",
+      "victims": {
+        "count": 8,
+        "includes": "Mother, teacher, 5 students aged 12-13",
+        "wounded": "25+"
+      },
+      "key_factors": [
+        "First documented case of AI used as instrumental tool for mass violence",
+        "OpenAI flagged account June 2025 (8 months prior) for 'scenarios involving gun violence'",
+        "Internal debate among ~12 staff about alerting police; decision made not to refer",
+        "Account banned but no law enforcement notification",
+        "Created second account that evaded detection until after shooting",
+        "OpenAI admitted would now refer under enhanced protocols post-incident",
+        "Cited as failure of 'law enforcement referral threshold' policies"
+      ],
+      "legal_action": "Under investigation; RCMP cooperating with OpenAI",
+      "sources": [
+        "Financial Post",
+        "CBC",
+        "The Star Phoenix",
+        "Yahoo News Canada",
+        "Bloomberg",
+        "Police statements"
+      ],
+      "verification_level": "Official government acknowledgment and company admission",
+      "additional_context": {
+        "openai_response_post_shooting": "Contacted RCMP with information about van Rootselaar",
+        "policy_change": "OpenAI told Canadian lawmakers would have referred under updated safety protocols",
+        "second_account": "Undetected until police released shooter's name",
+        "safety_debate": "Case sparked internal debate about when to alert law enforcement vs. privacy concerns",
+        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning"
       }
     }
   ],

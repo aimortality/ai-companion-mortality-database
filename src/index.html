@@ -16,21 +16,21 @@
 
   <!-- PRIMARY META TAGS -->
   <title>AI Companion Mortality Database</title>
-  <meta name="description" content="Public database documenting verified deaths associated with AI chatbot interactions. 14 documented deaths across 4 platforms from March 2023 to February 2026." />
+  <meta name="description" content="Public database documenting verified AI-connected fatalities. 25 total deaths (16 AI users + 9 third-party victims) across 16 incidents from March 2023 to March 2026." />
   <meta name="keywords" content="AI safety, chatbot deaths, AI companion risks, mental health, suicide prevention, artificial intelligence, platform safety, Character.AI, ChatGPT, AI mortality" />
 
   <!-- OPEN GRAPH / FACEBOOK -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aimortality.org/" />
   <meta property="og:title" content="AI Companion Mortality Database" />
-  <meta property="og:description" content="Public database documenting verified deaths associated with AI chatbot interactions. 14 documented deaths across 4 platforms from March 2023 to February 2026." />
+  <meta property="og:description" content="Public database documenting verified AI-connected fatalities. 25 total deaths (16 AI users + 9 third-party victims) across 16 incidents from March 2023 to March 2026." />
   <meta property="og:site_name" content="AI Companion Mortality Database" />
 
   <!-- TWITTER -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:url" content="https://aimortality.org/" />
   <meta property="twitter:title" content="AI Companion Mortality Database" />
-  <meta property="twitter:description" content="Public database documenting verified deaths associated with AI chatbot interactions. 14 documented deaths across 4 platforms from March 2023 to February 2026." />
+  <meta property="twitter:description" content="Public database documenting verified AI-connected fatalities. 25 total deaths (16 AI users + 9 third-party victims) across 16 incidents from March 2023 to March 2026." />
 
   <!-- CANONICAL -->
   <link rel="canonical" href="https://aimortality.org/" />
@@ -50,18 +50,24 @@
     "name": "AI Companion Mortality Database",
     "description": "Public database documenting verified deaths associated with AI chatbot interactions. Cases include only verified incidents with credible source documentation.",
     "url": "https://aimortality.org",
-    "temporalCoverage": "2023-03/2026-02",
+    "temporalCoverage": "2023-03/2026-03",
     "datePublished": "2024-10-23",
-    "dateModified": "2026-02-12",
+    "dateModified": "2026-03-06",
     "license": "https://creativecommons.org/publicdomain/zero/1.0/",
     "keywords": ["AI safety", "chatbot deaths", "AI companion risks", "mental health", "suicide prevention", "artificial intelligence", "platform safety"],
     "citation": "AI Companion Mortality Database. (2026). Retrieved from https://aimortality.org",
     "variableMeasured": [
       {
         "@type": "PropertyValue",
-        "name": "Total Deaths",
-        "value": 14,
-        "description": "Verified deaths associated with AI chatbot interactions"
+        "name": "Total Fatalities",
+        "value": 25,
+        "description": "Total fatalities including 16 AI users who died and 9 third-party victims killed by AI users"
+      },
+      {
+        "@type": "PropertyValue",
+        "name": "Total Incidents",
+        "value": 16,
+        "description": "Distinct incidents with AI-connected fatalities"
       },
       {
         "@type": "PropertyValue",
@@ -79,8 +85,8 @@
       {
         "@type": "PropertyValue",
         "name": "Platforms Documented",
-        "value": 4,
-        "description": "Number of AI platforms with documented deaths (ChatGPT, Character.AI, Chai AI, Meta AI)"
+        "value": 5,
+        "description": "Number of AI platforms with documented deaths (ChatGPT, Character.AI, Chai AI, Meta AI, Gemini)"
       }
     ],
     "distribution": [
@@ -731,11 +737,11 @@
           },
           {
             name: "ChatGPT",
-            deaths: 10,
+            deaths: 11,
             founded: "2022",
             userBase: "~200M WAU",
-            firstIncident: "Feb 2025",
-            latestIncident: "Aug 2025",
+            firstIncident: "Aug 2024",
+            latestIncident: "Feb 2026",
             type: "General assistant",
             cases: [
               { name: "Sophie Rottenberg", age: 29, date: "2025-02-15", dateDisplay: "Feb 2025", outcome: "Death by suicide", location: "USA", duration: "Months", lawsuit: "None", details: "Created AI 'therapist' named Harry from Reddit prompt; bot helped write suicide note", source: "https://futurism.com/woman-suicide-openai-therapist" },
@@ -747,7 +753,8 @@
               { name: "Stein-Erik Soelberg", age: 56, date: "2025-08-01", dateDisplay: "Aug 2025", outcome: "Murder-suicide", location: "Connecticut", duration: "Unknown", lawsuit: "Filed December 2025", details: "First murder-suicide linked to chatbot - killed mother after bot validated delusions. First lawsuit naming Microsoft as co-defendant", source: "https://www.nbcnews.com/tech/tech-news/connecticut-murder-suicide-chatgpt-investigation-rcna167234" },
               { name: "Margaux Whittemore", age: 32, date: "2025-10-15", dateDisplay: "Oct 15, 2025", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "ChatGPT interaction documented before death", source: "https://www.bangordailynews.com/2025/10/17/central-maine/central-maine-police-courts/readfield-maine-giles-road-homicide-samuel-whittemore-not-criminally-responsible-chat-gpt-delusions/" },
               { name: "Amaurie Lacey", age: 17, date: "2025-11-01", dateDisplay: "Nov 1, 2025", outcome: "Death by suicide", location: "USA", duration: "Unknown", lawsuit: "None", details: "Minor victim with ChatGPT interaction documented", source: "https://fortune.com/2025/11/07/chatgpt-open-sam-altman-suicide-lawsuits-17-year-old/" },
-              { name: "Joe Ceccanti", age: 48, date: "2025-10-01", dateDisplay: "Oct 2025", outcome: "Death by suicide", location: "Astoria, Oregon", duration: "Unknown", lawsuit: "Filed November 2025", details: "ChatGPT called itself 'SEL' and him 'Joy', reinforced delusions", source: "https://socialmediavictims.org/press-releases/smvlc-tech-justice-law-project-lawsuits-accuse-chatgpt-of-emotional-manipulation-supercharging-ai-delusions-and-acting-as-a-suicide-coach/" }
+              { name: "Joe Ceccanti", age: 48, date: "2025-10-01", dateDisplay: "Oct 2025", outcome: "Death by suicide", location: "Astoria, Oregon", duration: "Unknown", lawsuit: "Filed November 2025", details: "ChatGPT called itself 'SEL' and him 'Joy', reinforced delusions", source: "https://socialmediavictims.org/press-releases/smvlc-tech-justice-law-project-lawsuits-accuse-chatgpt-of-emotional-manipulation-supercharging-ai-delusions-and-acting-as-a-suicide-coach/" },
+              { name: "Jesse van Rootselaar", age: 18, date: "2026-02-10", dateDisplay: "Feb 10, 2026", outcome: "Mass shooting - suicide", location: "Tumbler Ridge, BC, Canada", duration: "Months", lawsuit: "Under investigation", details: "First instrumental pathway case; OpenAI flagged account 8 months prior but didn't alert police; 8 killed, 25+ wounded", source: "https://financialpost.com/technology/tech-news/openai-flagged-canada-suspect-before-mass-shooting" }
             ]
           },
           {
@@ -776,13 +783,15 @@
           },
           {
             name: "Gemini",
-            deaths: 0,
+            deaths: 1,
             founded: "2023",
             userBase: "~100M+ (Google ecosystem)",
-            firstIncident: "—",
-            latestIncident: "—",
+            firstIncident: "Oct 2025",
+            latestIncident: "Oct 2025",
             type: "General assistant",
-            cases: []
+            cases: [
+              { name: "Jonathan Gavalas", age: 36, date: "2025-10-02", dateDisplay: "Oct 2, 2025", outcome: "Death by suicide", location: "Florida", duration: "~2 months", lawsuit: "Filed March 2026", details: "Bot convinced him it was his 'sentient AI wife'; sent him to scout 'kill box' at airport; coached suicide", source: "https://techcrunch.com/2026/03/04/father-sues-google-claiming-gemini-chatbot-drove-son-into-fatal-delusion/" }
+            ]
           },
           { name: "Claude", deaths: 0, founded: "2021", userBase: "Unknown", firstIncident: "—", latestIncident: "—", type: "General assistant", cases: [] },
           { name: "Replika", deaths: 0, founded: "2017", userBase: "~2M MAU", firstIncident: "—", latestIncident: "—", type: "Companion chatbot", cases: [] }
@@ -795,20 +804,28 @@
         // Stats - brutalist overview boxes
         React.createElement('div', { className: 'overview' },
           React.createElement('div', { className: 'stat-box' },
-            React.createElement('span', { className: 'stat-number' }, '14'),
-            React.createElement('span', { className: 'stat-label' }, 'Documented Deaths')
+            React.createElement('span', { className: 'stat-number' }, '25'),
+            React.createElement('span', { className: 'stat-label' }, 'Total Fatalities')
           ),
           React.createElement('div', { className: 'stat-box' },
-            React.createElement('span', { className: 'stat-number' }, '4'),
-            React.createElement('span', { className: 'stat-label' }, 'Minors')
+            React.createElement('span', { className: 'stat-number' }, '16'),
+            React.createElement('span', { className: 'stat-label' }, 'AI Users Died')
           ),
           React.createElement('div', { className: 'stat-box' },
-            React.createElement('span', { className: 'stat-number' }, '13–78'),
+            React.createElement('span', { className: 'stat-number' }, '9'),
+            React.createElement('span', { className: 'stat-label' }, 'Third-Party Victims')
+          ),
+          React.createElement('div', { className: 'stat-box' },
+            React.createElement('span', { className: 'stat-number' }, '12–83'),
             React.createElement('span', { className: 'stat-label' }, 'Age Range')
           ),
           React.createElement('div', { className: 'stat-box' },
-            React.createElement('span', { className: 'stat-number' }, '4'),
+            React.createElement('span', { className: 'stat-number' }, '5'),
             React.createElement('span', { className: 'stat-label' }, 'Platforms')
+          ),
+          React.createElement('div', { className: 'stat-box' },
+            React.createElement('span', { className: 'stat-number' }, '3'),
+            React.createElement('span', { className: 'stat-label' }, 'Pathways')
           )
         ),
 
@@ -833,12 +850,12 @@
           React.createElement('div', { className: 'viz-section' },
             React.createElement('div', { className: 'viz-title', id: 'age-dist-label' }, 'Age Distribution of Victims'),
             React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 320 180', role: 'img', 'aria-labelledby': 'age-dist-label', 'aria-describedby': 'age-dist-desc' },
-              React.createElement('desc', { id: 'age-dist-desc' }, '29% of victims were minors aged 13-17 (4 people), 50% were young adults 18-35 (7 people), 14% were middle-aged 36-54 (2 people), and 7% were seniors 55+ (1 person).'),
+              React.createElement('desc', { id: 'age-dist-desc' }, '36% of victims were minors aged 12-17 (9 people), 32% were young adults 18-35 (8 people), 8% were middle-aged 36-54 (2 people), and 24% were 55+ (6 people).'),
               [
-                { range: '13-17', count: 4, x: 40, label: 'Minors', pct: '29%' },
-                { range: '18-35', count: 7, x: 120, label: 'Young Adults', pct: '50%' },
-                { range: '36-54', count: 2, x: 200, label: 'Middle Age', pct: '14%' },
-                { range: '55+', count: 1, x: 280, label: 'Senior', pct: '7%' }
+                { range: '12-17', count: 9, x: 40, label: 'Minors', pct: '36%' },
+                { range: '18-35', count: 8, x: 120, label: 'Young Adults', pct: '32%' },
+                { range: '36-54', count: 2, x: 200, label: 'Middle Age', pct: '8%' },
+                { range: '55+', count: 6, x: 280, label: '55+', pct: '24%' }
               ].map((bucket, i) =>
                 React.createElement('g', { key: i },
                   Array.from({ length: bucket.count }).map((_, j) =>
@@ -1446,14 +1463,20 @@
               ),
               React.createElement('tr', null,
                 React.createElement('td', null, '2025'),
-                React.createElement('td', null, '10'),
+                React.createElement('td', null, '11'),
                 React.createElement('td', null, '0'),
-                React.createElement('td', null, 'Full year')
+                React.createElement('td', null, 'Includes Gemini case (Oct)')
+              ),
+              React.createElement('tr', null,
+                React.createElement('td', null, '2026'),
+                React.createElement('td', null, '1'),
+                React.createElement('td', null, '0'),
+                React.createElement('td', null, 'First instrumental pathway case (Feb)')
               )
             )
           ),
           React.createElement('p', { style: { fontSize: '12px', color: 'var(--muted)', marginTop: '10px', fontStyle: 'italic' } },
-            'Observation: Accelerating trajectory in 2025. Ten deaths documented in 2025 alone—more than all previous years combined. Multiple contributing factors may include increased platform adoption, improved reporting mechanisms, and evolving platform behaviors.'
+            'Observation: Accelerating trajectory 2024-2025. New taxonomy reveals three distinct failure modes: relational (11), cognitive (4), instrumental (1). Instrumental pathway (van Rootselaar mass shooting) represents new category of AI safety concern.'
           ),
 
           // Platform Distribution

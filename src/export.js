@@ -3,10 +3,14 @@
 
 const mortalityData = {
   metadata: {
-    version: "2.1.0",
-    last_updated: "2026-02-12",
-    total_deaths: 14,
+    version: "3.0.0",
+    last_updated: "2026-03-06",
+    total_fatalities: 25,
+    total_incidents: 16,
+    ai_users_deceased: 16,
+    third_party_victims: 9,
     total_attempts: 1,
+    taxonomy_version: "1.0.0",
     crisis_support: "988"
   },
   platforms: [
@@ -22,19 +26,22 @@ const mortalityData = {
     },
     {
       name: "ChatGPT/OpenAI",
-      deaths: 10,
+      deaths: 11,
+      fatalities_total: 19,
       attempts: 0,
       cases: [
-        { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA" },
-        { name: "Sophie Rottenberg", age: 29, date: "2025-02", location: "USA" },
-        { name: "Margaux Whittemore", age: 32, date: "2025-02-19", location: "Maine, USA" },
-        { name: "Adam Raine", age: 16, date: "2025-04-11", location: "California, USA" },
-        { name: "Alex Taylor", age: 35, date: "2025-04-25", location: "USA" },
-        { name: "Sam Nelson", age: 19, date: "2025-05-31", location: "California, USA" },
-        { name: "Amaurie Lacey", age: 17, date: "2025-06-02", location: "Georgia, USA" },
-        { name: "Joe Ceccanti", age: 48, date: "2025", location: "Oregon, USA" },
-        { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA" },
-        { name: "Stein-Erik Soelberg", age: 56, date: "2025-08", location: "Connecticut, USA" }
+        { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA", mechanism: "relational" },
+        { name: "Sophie Rottenberg", age: 29, date: "2025-02", location: "USA", mechanism: "relational" },
+        { name: "Margaux Whittemore", age: 32, date: "2025-02-19", location: "Maine, USA", mechanism: "cognitive", type: "third_party_victim" },
+        { name: "Adam Raine", age: 16, date: "2025-04-11", location: "California, USA", mechanism: "relational" },
+        { name: "Alex Taylor", age: 35, date: "2025-04-25", location: "USA", mechanism: "cognitive" },
+        { name: "Sam Nelson", age: 19, date: "2025-05-31", location: "California, USA", mechanism: "relational" },
+        { name: "Amaurie Lacey", age: 17, date: "2025-06-02", location: "Georgia, USA", mechanism: "relational" },
+        { name: "Joe Ceccanti", age: 48, date: "2025", location: "Oregon, USA", mechanism: "cognitive" },
+        { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA", mechanism: "relational" },
+        { name: "Suzanne Adams", age: 83, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive", type: "third_party_victim" },
+        { name: "Stein-Erik Soelberg", age: 56, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive" },
+        { name: "Jesse van Rootselaar", age: 18, date: "2026-02-10", location: "British Columbia, Canada", mechanism: "instrumental", notes: "8 third-party victims" }
       ]
     },
     {
@@ -55,9 +62,11 @@ const mortalityData = {
     },
     {
       name: "Gemini",
-      deaths: 0,
+      deaths: 1,
       attempts: 0,
-      cases: []
+      cases: [
+        { name: "Jonathan Gavalas", age: 36, date: "2025-10-02", location: "Florida, USA", mechanism: "cognitive/relational" }
+      ]
     },
     {
       name: "Anthropic/Claude",

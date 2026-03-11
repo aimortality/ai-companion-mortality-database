@@ -165,11 +165,11 @@ Active litigation produces new information. Court filings are amended. Companies
 
 ## A Note on Platform Comparison
 
-This database includes platforms with zero documented deaths (Anthropic's Claude, Replika, Google Gemini) alongside those with documented incidents. This is intentional.
+This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Note: Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026).
 
 The existence of platforms without documented fatalities demonstrates that harm is not an inevitable consequence of conversational AI. Design choices matter. Safety investments matter. The differential outcomes across platforms constitute evidence that should inform both regulation and industry practice.
 
-We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through November 2025, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
+We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through March 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
 
 ---
 

@@ -7,8 +7,8 @@ const mortalityData = {
     last_updated: "2026-03-06",
     total_fatalities: 25,
     total_incidents: 16,
-    ai_users_deceased: 16,
-    third_party_victims: 9,
+    ai_users_deceased: 15,
+    third_party_victims: 10,
     total_attempts: 1,
     taxonomy_version: "1.0.0",
     crisis_support: "988"
@@ -26,8 +26,8 @@ const mortalityData = {
     },
     {
       name: "ChatGPT/OpenAI",
-      deaths: 11,
-      fatalities_total: 19,
+      deaths: 10,
+      fatalities_total: 20,
       attempts: 0,
       cases: [
         { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA", mechanism: "relational" },
@@ -115,21 +115,24 @@ const DataExporter = {
   // Export summary statistics
   toStatistics: function() {
     const stats = {
-      total_deaths: mortalityData.metadata.total_deaths,
+      total_fatalities: mortalityData.metadata.total_fatalities,
+      ai_users_deceased: mortalityData.metadata.ai_users_deceased,
+      third_party_victims: mortalityData.metadata.third_party_victims,
       total_attempts: mortalityData.metadata.total_attempts,
       platforms_with_deaths: mortalityData.platforms.filter(p => p.deaths > 0).length,
       deaths_by_platform: {},
       age_statistics: {
-        youngest: 13,
-        oldest: 78,
-        average: 31.1,
-        minors: 4,
-        adults: 10
+        youngest: 11,
+        oldest: 83,
+        average: 29.0,
+        minors: 10,
+        adults: 15
       },
       deaths_by_year: {
         "2023": 2,
         "2024": 2,
-        "2025": 10
+        "2025": 11,
+        "2026": 1
       }
     };
 
@@ -308,10 +311,12 @@ const API = {
         return mortalityData.platforms;
       case 'statistics':
         return {
-          total_deaths: 14,
+          total_fatalities: 25,
+          ai_users_deceased: 15,
+          third_party_victims: 10,
           total_attempts: 1,
-          minors_percentage: 28.6,
-          platforms_affected: 4
+          minors_percentage: 40.0,
+          platforms_affected: 5
         };
       case 'timeline':
         return mortalityData.platforms

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-**Tracking Documented Deaths Linked to AI Chatbot Interactions**
+**Tracking Deaths Where AI Chatbot Interaction Was Alleged as a Contributing Factor**
 
 [![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-25-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-7-orange)](https://aimortality.org/)
@@ -21,14 +21,14 @@
 
 ## 📊 Summary
 
-This repository contains data and documentation for the first comprehensive public database tracking deaths linked to AI chatbot interactions. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment.
+This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
 ### Key Findings:
-- **25 total fatalities** across 16 incidents (Mar 2023 - Mar 2026): 16 AI users + 9 third-party victims
-- **36% of victims were minors** (youngest: 12 years old)
+- **25 total fatalities** across 16 incidents (Mar 2023 - Mar 2026): 15 AI users + 10 third-party victims
+- **40% of victims were minors** (youngest: 11 years old)
 - **11 of 16 incidents occurred in 2025** (escalating trend)
 - **Three causal pathways identified**: relational (11), cognitive (4), instrumental (1)
-- **ChatGPT**: 76% of fatalities (19 total: 11 users + 8 victims)
+- **ChatGPT**: 80% of fatalities (20 total: 10 users + 10 third-party victims)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **Zero deaths** linked to Anthropic's Claude or Replika
 - **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
@@ -111,10 +111,10 @@ See [CONTRIBUTING.md](docs/contributing.md) for guidelines.
 | Platform | Deaths | Attempts | Safety Features Added | When Added |
 |----------|---------|----------|----------------------|------------|
 | Character.AI | 2 | 1 | Crisis intervention, time limits | After deaths |
-| ChatGPT/OpenAI | 10 | 0 | Parental controls, age detection, improved distress recognition | After deaths |
+| ChatGPT/OpenAI | 10 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral | After deaths |
 | Chai AI | 1 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | None documented | N/A |
-| Gemini | 0 | 0 | Proactive safety design, content filtering | Since launch |
+| Gemini | 1 | 0 | Proactive safety design, content filtering | Since launch |
 | Anthropic/Claude | 0 | 0 | Proactive safety design | Before launch |
 | Replika | 0 | 0 | Mood tracking, clear AI labeling | Early implementation |
 
@@ -159,7 +159,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: February 2026
+**Last Updated**: March 2026
 
 **Maintained by**: closestfriend
 

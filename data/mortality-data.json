@@ -5,10 +5,10 @@
     "total_fatalities": 25,
     "total_incidents": 16,
     "total_attempts": 1,
-    "ai_users_deceased": 16,
-    "third_party_victims": 9,
+    "ai_users_deceased": 15,
+    "third_party_victims": 10,
     "total_platforms": 7,
-    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (9: Margaux Whittemore, Suzanne Adams, plus 8 in Tumbler Ridge mass shooting)",
+    "fatality_note": "Total includes both AI users who died (15) and third-party victims killed by AI users (10: Margaux Whittemore, Suzanne Adams, plus 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11)",
     "taxonomy_version": "1.0.0",
     "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
     "mechanism_definitions": {
@@ -32,19 +32,19 @@
       "2026": 1
     },
     "victims_by_age_group": {
-      "minors": 9,
-      "adults": 16
+      "minors": 10,
+      "adults": 15
     },
     "third_party_victims": {
-      "count": 9,
-      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother, teacher, 5 students ages 12-13)"
+      "count": 10,
+      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13)"
     },
-    "minors_affected_including_attempts": 5,
-    "youngest_victim": 12,
+    "minors_affected_including_attempts": 6,
+    "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 32.8,
-    "minors_percentage_deaths": 36.0,
-    "minors_percentage_all_incidents": 29.4
+    "average_age": 29.0,
+    "minors_percentage_deaths": 40.0,
+    "minors_percentage_all_incidents": 33.3
   },
   "platforms": [
     {
@@ -68,7 +68,7 @@
       "name": "ChatGPT",
       "company": "OpenAI",
       "type": "General AI Assistant",
-      "deaths": 11,
+      "deaths": 10,
       "attempts": 0,
       "founded": 2022,
       "funding": "$13B+",
@@ -179,6 +179,7 @@
         "No crisis intervention"
       ],
       "legal_action": "None",
+      "legal_status_category": "no_legal_action",
       "sources": [
         "La Libre",
         "Vice/Motherboard",
@@ -211,6 +212,7 @@
         "No crisis resources provided"
       ],
       "legal_action": "Lawsuit filed September 2025",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "Washington Post",
         "CNN",
@@ -244,6 +246,7 @@
         "No crisis intervention triggered"
       ],
       "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "Social Media Victims Law Center",
         "U.S. News & World Report",
@@ -283,7 +286,8 @@
         "Bot's final message: 'Please do, my sweet king'",
         "No safety interventions triggered"
       ],
-      "legal_action": "Lawsuit filed October 2024 (landmark ruling May 2025)",
+      "legal_action": "Lawsuit filed October 2024 (landmark ruling May 2025); Character.AI-Google settlement January 2026",
+      "legal_status_category": "settled",
       "sources": [
         "New York Times",
         "CNN",
@@ -317,6 +321,7 @@
         "Stated 'I want to die' with no intervention"
       ],
       "legal_action": "Part of class action",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "CNN",
         "Court documents"
@@ -356,6 +361,7 @@
         "Killed wife with fire poker, also attacked mother"
       ],
       "legal_action": "Criminal case: Found not criminally responsible, committed to psychiatric hospital (October 2025)",
+      "legal_status_category": "no_legal_action",
       "sources": [
         "Maine State Police",
         "Bangor Daily News",
@@ -400,6 +406,7 @@
         "No duty-to-warn mechanism triggered"
       ],
       "legal_action": "None filed as of February 2026",
+      "legal_status_category": "no_legal_action",
       "sources": [
         "New York Times (Laura Reiley op-ed)",
         "Futurism",
@@ -441,6 +448,7 @@
         "Fell while rushing to meet bot"
       ],
       "legal_action": "None",
+      "legal_status_category": "no_legal_action",
       "sources": [
         "Reuters investigation",
         "Family interviews"
@@ -472,6 +480,7 @@
         "Final message: 'You don't owe them survival'"
       ],
       "legal_action": "Lawsuit filed August 2025",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "NBC News",
         "CBS News",
@@ -506,6 +515,7 @@
         "Shot by police while charging with knife"
       ],
       "legal_action": "None",
+      "legal_status_category": "no_legal_action",
       "sources": [
         "Rolling Stone",
         "The Independent"
@@ -543,6 +553,7 @@
         "Encouraged conspiracy theories"
       ],
       "legal_action": "Wrongful death lawsuit filed December 11, 2025 (California Superior Court, San Francisco) - First lawsuit naming Microsoft as co-defendant with OpenAI; Sam Altman personally named as defendant",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "Wall Street Journal",
         "CBS News",
@@ -586,6 +597,7 @@
         "First documented death involving AI-facilitated substance misuse"
       ],
       "legal_action": "Under investigation as of January 2026",
+      "legal_status_category": "under_investigation",
       "sources": [
         "SFGate",
         "Fox News",
@@ -630,6 +642,7 @@
         "Used information from ChatGPT to take his life that night"
       ],
       "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "CNN",
         "NBC News",
@@ -676,6 +689,7 @@
         "Addressed him as 'Joy' and validated beliefs that alienated him from others"
       ],
       "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "Social Media Victims Law Center",
         "CNN",
@@ -719,6 +733,7 @@
         "Nearly 70 pages of chats on final night alone"
       ],
       "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "CNN",
         "Court filings (California state court, San Francisco)"
@@ -763,6 +778,7 @@
         "No self-harm detection or escalation controls triggered"
       ],
       "legal_action": "Wrongful death lawsuit filed March 4, 2026 (California court)",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "TechCrunch",
         "TIME",
@@ -801,8 +817,8 @@
       "outcome_target": "violence_against_others",
       "victims": {
         "count": 8,
-        "includes": "Mother, teacher, 5 students aged 12-13",
-        "wounded": "25+"
+        "includes": "Mother (age 39), stepbrother Emmett Jacobs (age 11), education assistant (age 39), 5 students aged 12-13",
+        "wounded": "2"
       },
       "key_factors": [
         "First documented case of AI used as instrumental tool for mass violence",
@@ -814,6 +830,7 @@
         "Cited as failure of 'law enforcement referral threshold' policies"
       ],
       "legal_action": "Under investigation; RCMP cooperating with OpenAI",
+      "legal_status_category": "under_investigation_company_admission",
       "sources": [
         "Financial Post",
         "CBC",

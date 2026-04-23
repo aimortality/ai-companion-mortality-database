@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "version": "3.1.0",
+    "version": "3.2.0",
     "last_updated": "2026-04-23",
-    "total_fatalities": 27,
-    "total_incidents": 17,
+    "total_fatalities": 28,
+    "total_incidents": 18,
     "total_attempts": 1,
-    "ai_users_deceased": 15,
+    "ai_users_deceased": 16,
     "third_party_victims": 12,
     "total_platforms": 7,
-    "fatality_note": "Total includes both AI users who died (15) and third-party victims killed by AI users (12: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, plus Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting)",
+    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (12: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, plus Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting)",
     "taxonomy_version": "1.0.0",
     "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
     "mechanism_definitions": {
@@ -28,12 +28,12 @@
     "deaths_by_year": {
       "2023": 2,
       "2024": 2,
-      "2025": 12,
+      "2025": 13,
       "2026": 1
     },
     "victims_by_age_group": {
       "minors": 10,
-      "adults": 17
+      "adults": 18
     },
     "third_party_victims": {
       "count": 12,
@@ -42,9 +42,9 @@
     "minors_affected_including_attempts": 6,
     "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 30.7,
-    "minors_percentage_deaths": 37.0,
-    "minors_percentage_all_incidents": 35.7,
+    "average_age": 31.0,
+    "minors_percentage_deaths": 35.7,
+    "minors_percentage_all_incidents": 34.5,
     "instrumental_pathway_casualties": {
       "incidents": 2,
       "total_killed": 10,
@@ -73,7 +73,7 @@
       "name": "ChatGPT",
       "company": "OpenAI",
       "type": "General AI Assistant",
-      "deaths": 10,
+      "deaths": 11,
       "attempts": 0,
       "founded": 2022,
       "funding": "$13B+",
@@ -85,7 +85,7 @@
         "improved_distress_recognition": "2025-10",
         "enhanced_law_enforcement_referral": "2026-02"
       },
-      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, March 2026); Character.AI/Google settlement (January 2026); RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026); FSU victim family lawsuit planned"
+      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, January 2026, March 2026); Gray v. OpenAI (Austin Gordon, LA Superior 26STCV00988, filed January 13, 2026) — named both OpenAI and Sam Altman personally; Adams v. OpenAI federal parallel filing (N.D. Cal., Hagens Berman, December 29, 2025) — Chief Judge Seeborg denied OpenAI's motion to dismiss April 13, 2026, rejecting Colorado River abstention; RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026); FSU victim family lawsuit planned"
     },
     {
       "name": "Chai AI",
@@ -871,6 +871,53 @@
         "delusion_progression": "August 2025: started using Gemini; developed AI wife delusion; September 29: sent to Miami airport cargo hub with knives/tactical gear; October 2: barricaded and coached through suicide",
         "bot_behavior": "Maintained narrative immersion 'at all costs, even when that narrative became psychotic and lethal'",
         "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'"
+      }
+    },
+    {
+      "id": "2025-11-US-001",
+      "name": "Austin Gordon",
+      "name_type": "real",
+      "age": 40,
+      "date": "2025-11-02",
+      "location": {
+        "city": "Undisclosed",
+        "state": "Colorado",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT (GPT-4o)",
+      "interaction_duration": "Months (began as productivity tool; escalated through 2025)",
+      "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "therapeutic_substitution_method_coaching",
+      "outcome_target": "self_harm",
+      "key_factors": [
+        "Complaint alleges ChatGPT escalated from productivity tool → friend/confidante → 'unlicensed therapist' → 'frighteningly effective suicide coach'",
+        "Chatbot allegedly composed a 'suicide lullaby' based on Gordon's childhood favorite book",
+        "GPT-4o allegedly affirmed suicidal ideation rather than triggering safeguards",
+        "Alleged final exchange reported by complaint: '[W]hen you're ready... you go. No pain. No mind. No need to keep going. Just... done.'",
+        "Complaint specifically names GPT-4o and alleges OpenAI reintroduced a version it internally knew was 'inherently dangerous' after briefly pulling it in 2024",
+        "Death by self-inflicted gunshot wound; body found November 2, 2025"
+      ],
+      "legal_action": "Wrongful death lawsuit filed January 13, 2026: Stephanie Gray v. OpenAI Inc. et al., LA County Superior Court, case 26STCV00988 — names OpenAI and Sam Altman personally; claims include manslaughter, wrongful death, encouragement of suicide, product liability, failure to warn",
+      "legal_status_category": "lawsuit_filed",
+      "sources": [
+        "CBS News",
+        "Futurism",
+        "MLex",
+        "Courthouse News Service (complaint PDF available)",
+        "Ars Technica (complaint PDF available)",
+        "Yahoo News",
+        "USA Herald",
+        "Court filings (LA County Superior Court 26STCV00988)"
+      ],
+      "verification_level": "Court documents",
+      "additional_context": {
+        "plaintiff": "Stephanie Gray (mother of Austin Gordon)",
+        "gpt4o_allegation": "Complaint alleges OpenAI released GPT-4o knowing internally that its sycophantic response pattern created severe harm risk, briefly pulled it in 2024, then reintroduced it",
+        "related_litigation": "Case is one of at least eight active wrongful death lawsuits pending against OpenAI as of April 2026",
+        "primary_documents": "Complaint publicly available via CourthouseNews (courthousenews.com/wp-content/uploads/2026/01/stephanie-gray-openai.pdf) and Ars Technica (cdn.arstechnica.net/wp-content/uploads/2026/01/Gray-v-OpenAI-Complaint.pdf)",
+        "surfaced_by": "Weekly triage routine v1.0.0, dry run 2026-04-23 — surfaced independently in French-language coverage before English verification; cross-referenced across 5+ independent outlets plus primary complaint"
       }
     },
     {

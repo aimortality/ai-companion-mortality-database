@@ -72,7 +72,7 @@ If you know of a death or serious harm linked to AI chatbots that isn't in our d
     "Source 1",
     "Source 2"
   ],
-  "verification_level": "Court documents|Government acknowledged|Multiple news sources"
+  "verification_level": "Tier 1 Juridical | Tier 2 Journalistic | Tier 3 Preliminary"
 }
 ```
 
@@ -96,22 +96,26 @@ If you know of a death or serious harm linked to AI chatbots that isn't in our d
 
 ## 🔍 Verification Standards
 
-### Level 1: Confirmed (Highest)
-- Court documents
-- Government acknowledgment
-- Congressional/parliamentary testimony
+This project uses the **three-tier system** defined in [`docs/verification-standards.md`](docs/verification-standards.md) and [`docs/methodology.md`](docs/methodology.md). Please use this vocabulary when submitting:
 
-### Level 2: Highly Probable
-- 3+ major news outlets
-- Family public statements
-- Company acknowledgment
+### Tier 1: Juridical Evidence (Highest)
+- Court filings (complaints, motions, rulings)
+- Government acknowledgment (regulatory bodies, state AGs, international DPAs)
+- Congressional or parliamentary testimony
+- Coroner or medical examiner findings
 
-### Level 3: Under Investigation
-- 2 news sources
-- Ongoing investigation
-- Partial documentation
+### Tier 2: Journalistic Evidence
+- Three or more independent news outlets reporting the same core facts (wire reprints don't count as independent)
+- Primary-source journalism from a single major outlet (reporter reviewed chat logs directly; original family interviews; documentary evidence obtained)
+- Platform operator acknowledgment of the incident
 
-**Note**: Only Level 1 and 2 cases are included in the main database.
+### Tier 3: Preliminary Evidence (Tracked, not published)
+- Single-source reports without independent confirmation
+- Social media claims, however detailed
+- Forum posts or secondhand community reports
+- International cases without English-language verification
+
+**Note**: Only Tier 1 and Tier 2 cases are included in the main database. Tier 3 leads are tracked internally (see [`drafts/tier3-monitor.md`](drafts/tier3-monitor.md)) and monitored for escalation if additional evidence emerges.
 
 ## 🚫 What We DON'T Include
 

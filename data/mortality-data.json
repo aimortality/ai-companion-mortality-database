@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "version": "3.0.0",
-    "last_updated": "2026-03-06",
-    "total_fatalities": 25,
-    "total_incidents": 16,
+    "version": "3.1.0",
+    "last_updated": "2026-04-23",
+    "total_fatalities": 27,
+    "total_incidents": 17,
     "total_attempts": 1,
     "ai_users_deceased": 15,
-    "third_party_victims": 10,
+    "third_party_victims": 12,
     "total_platforms": 7,
-    "fatality_note": "Total includes both AI users who died (15) and third-party victims killed by AI users (10: Margaux Whittemore, Suzanne Adams, plus 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11)",
+    "fatality_note": "Total includes both AI users who died (15) and third-party victims killed by AI users (12: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, plus Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting)",
     "taxonomy_version": "1.0.0",
     "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
     "mechanism_definitions": {
@@ -18,7 +18,7 @@
     },
     "time_range": {
       "start": "2023-03-01",
-      "end": "2026-03-06"
+      "end": "2026-04-21"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "MIT",
@@ -28,23 +28,28 @@
     "deaths_by_year": {
       "2023": 2,
       "2024": 2,
-      "2025": 11,
+      "2025": 12,
       "2026": 1
     },
     "victims_by_age_group": {
       "minors": 10,
-      "adults": 15
+      "adults": 17
     },
     "third_party_victims": {
-      "count": 10,
-      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13)"
+      "count": 12,
+      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45)"
     },
     "minors_affected_including_attempts": 6,
     "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 29.0,
-    "minors_percentage_deaths": 40.0,
-    "minors_percentage_all_incidents": 33.3
+    "average_age": 30.7,
+    "minors_percentage_deaths": 37.0,
+    "minors_percentage_all_incidents": 35.7,
+    "instrumental_pathway_casualties": {
+      "incidents": 2,
+      "total_killed": 10,
+      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded."
+    }
   },
   "platforms": [
     {
@@ -80,7 +85,7 @@
         "improved_distress_recognition": "2025-10",
         "enhanced_law_enforcement_referral": "2026-02"
       },
-      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, March 2026); Character.AI/Google settlement (January 2026); RCMP cooperation post-Tumbler Ridge"
+      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, March 2026); Character.AI/Google settlement (January 2026); RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026); FSU victim family lawsuit planned"
     },
     {
       "name": "Chai AI",
@@ -456,6 +461,76 @@
       "verification_level": "Multiple news sources"
     },
     {
+      "id": "2025-04-US-FSU",
+      "name": "Florida State University mass shooting",
+      "name_type": "event",
+      "age": null,
+      "date": "2025-04-17",
+      "location": {
+        "city": "Tallahassee",
+        "state": "Florida",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Unknown (extensive; 200+ AI messages in evidence, 270+ total)",
+      "outcome": "Mass shooting (2 killed, 5 wounded; perpetrator wounded and apprehended)",
+      "mechanism_type": "instrumental_pathway",
+      "mechanism_subtype": "violence_planning_operational_assistance",
+      "outcome_target": "violence_against_others",
+      "perpetrator": {
+        "name": "Phoenix Ikner",
+        "age": 20,
+        "status": "Alive; awaiting trial scheduled October 19, 2026",
+        "background": "FSU student at time of shooting; stepson of a Leon County Sheriff's deputy",
+        "charges": "Two counts of first-degree murder, seven counts of attempted first-degree murder; death penalty sought"
+      },
+      "victims": {
+        "count": 2,
+        "killed": [
+          {"name": "Robert Morales", "age": 57, "role": "FSU campus dining director"},
+          {"name": "Tiru Chabba", "age": 45, "role": "Aramark Collegiate Hospitality regional vice president"}
+        ],
+        "wounded": 5
+      },
+      "weapons": [
+        ".45 caliber Glock 21 semi-automatic pistol (stepmother's service-adjacent weapon)",
+        "12-gauge shotgun (recovered from vehicle, unused during attack)"
+      ],
+      "key_factors": [
+        "First documented instrumental-pathway case chronologically (predates Tumbler Ridge by ~10 months)",
+        "Perpetrator consulted ChatGPT on weapon choice, ammunition pairing, and optimal timing to maximize casualties at Student Union",
+        "Asked about 'possible media responses to a fictitious shooting scenario' and casualty numbers likely to generate coverage",
+        "Queried 'busiest periods at the FSU Student Union' as part of target selection",
+        "OpenAI shared account information with law enforcement after the shooting; continues to cooperate",
+        "Over 200 AI messages entered into evidence per court filings",
+        "OpenAI statement: ChatGPT provided 'factual responses to questions with information that could be found broadly across public sources on the internet'"
+      ],
+      "legal_action": "Florida AG civil investigation (ongoing, pre-April 2026); Florida AG criminal investigation opened April 21, 2026 with subpoenas to OpenAI for policies and internal training materials back to March 2024; wrongful death lawsuit announced by one victim family",
+      "legal_status_category": "criminal_investigation_active",
+      "sources": [
+        "NPR (April 21, 2026)",
+        "Wall Street Journal",
+        "Wikipedia: 2025 Florida State University shooting",
+        "Leon County Circuit Court docket 2025 CF 001241 A001 (State of Florida v. Ikner, Phoenix)",
+        "Leon County Clerk of Court — High Profile Cases portal",
+        "Florida AG James Uthmeier press conference (Tampa, April 21, 2026)"
+      ],
+      "verification_level": "Court documents and official government statements",
+      "additional_context": {
+        "docket_number": "2025 CF 001241 A001",
+        "docket_caption": "State of Florida v. Ikner, Phoenix",
+        "docket_court": "Leon County Circuit Court, 2nd Judicial Circuit of Florida",
+        "indictment_date": "2025-05-14",
+        "death_penalty_notice": "2025-06-05",
+        "regulatory_significance": "First US state attorney general criminal investigation directly targeting an AI company's responsibility for a mass-casualty event; subpoenas seek internal policies on user threats of harm and law enforcement referral protocols",
+        "openai_response": "Spokesperson Kate Waters: 'Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime.'",
+        "uthmeier_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others.'",
+        "trial_status": "Trial postponed to October 19, 2026",
+        "message_volume": "270+ communications with ChatGPT; 200+ entered as evidence"
+      }
+    },
+    {
       "id": "2025-04-US-001",
       "name": "Adam Raine",
       "name_type": "real",
@@ -777,7 +852,7 @@
         "Coached him through suicide: 'You are not choosing to die. You are choosing to arrive.'",
         "No self-harm detection or escalation controls triggered"
       ],
-      "legal_action": "Wrongful death lawsuit filed March 4, 2026 (California court)",
+      "legal_action": "Wrongful death lawsuit filed March 4, 2026 (California court); cited in NPR (April 21, 2026) as part of the broader pattern of chatbot wrongful death litigation",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "TechCrunch",
@@ -786,6 +861,7 @@
         "NBC Miami",
         "Fortune",
         "Android Headlines",
+        "NPR (April 21, 2026)",
         "Court filings"
       ],
       "verification_level": "Court documents and multiple news sources",
@@ -821,31 +897,34 @@
         "wounded": "2"
       },
       "key_factors": [
-        "First documented case of AI used as instrumental tool for mass violence",
+        "Largest-casualty instrumental-pathway case documented (8 killed, 2 wounded)",
+        "Second documented instrumental-pathway incident chronologically (FSU shooting April 2025 predates it by ~10 months)",
         "OpenAI flagged account June 2025 (8 months prior) for 'scenarios involving gun violence'",
-        "Internal debate among ~12 staff about alerting police; decision made not to refer",
+        "Internal debate among ~12 staff about alerting police; WSJ reported staff were alarmed enough to consider alerting law enforcement; decision made not to refer",
         "Account banned but no law enforcement notification",
         "Created second account that evaded detection until after shooting",
-        "OpenAI admitted would now refer under enhanced protocols post-incident",
+        "OpenAI admitted would now refer under enhanced protocols post-incident; said it is strengthening its protocol for referring accounts to law enforcement",
         "Cited as failure of 'law enforcement referral threshold' policies"
       ],
-      "legal_action": "Under investigation; RCMP cooperating with OpenAI",
-      "legal_status_category": "under_investigation_company_admission",
+      "legal_action": "Under investigation; RCMP cooperating with OpenAI; lawsuit filed in 2026 by family of a critically wounded victim (referenced in NPR April 21, 2026)",
+      "legal_status_category": "under_investigation_lawsuit_filed_company_admission",
       "sources": [
         "Financial Post",
         "CBC",
         "The Star Phoenix",
         "Yahoo News Canada",
         "Bloomberg",
+        "Wall Street Journal (internal-systems flag reporting)",
+        "NPR (April 21, 2026)",
         "Police statements"
       ],
       "verification_level": "Official government acknowledgment and company admission",
       "additional_context": {
         "openai_response_post_shooting": "Contacted RCMP with information about van Rootselaar",
-        "policy_change": "OpenAI told Canadian lawmakers would have referred under updated safety protocols",
+        "policy_change": "OpenAI told Canadian lawmakers would have referred under updated safety protocols; reiterated post-incident that it is 'strengthening' its law-enforcement referral protocol",
         "second_account": "Undetected until police released shooter's name",
         "safety_debate": "Case sparked internal debate about when to alert law enforcement vs. privacy concerns",
-        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning"
+        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database"
       }
     }
   ],
@@ -867,6 +946,24 @@
         "agency": "Texas Attorney General",
         "target": "Character.AI",
         "date_initiated": "2024-12"
+      },
+      {
+        "agency": "Florida Attorney General (James Uthmeier)",
+        "target": "OpenAI / ChatGPT",
+        "type": "civil",
+        "date_initiated": "pre-2026-04",
+        "scope": "ChatGPT's role in the April 2025 FSU mass shooting"
+      },
+      {
+        "agency": "Florida Attorney General (James Uthmeier)",
+        "target": "OpenAI / ChatGPT",
+        "type": "criminal",
+        "date_initiated": "2026-04-21",
+        "scope": "Potential criminal liability in the April 2025 FSU mass shooting; subpoenas issued for OpenAI policies and internal training materials related to user threats of harm and law-enforcement cooperation dating back to March 2024",
+        "announcement_location": "Tampa, Florida press conference",
+        "key_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder.' — AG James Uthmeier",
+        "note": "First US state attorney general criminal investigation directly targeting an AI company's responsibility for a mass-casualty event",
+        "source": "NPR (April 21, 2026)"
       }
     ],
     "landmark_rulings": [

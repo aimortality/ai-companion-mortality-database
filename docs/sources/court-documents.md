@@ -183,6 +183,55 @@ Three additional wrongful death lawsuits filed against OpenAI in November 2025:
 
 ---
 
+### State of Florida v. Ikner, Phoenix
+**FSU mass shooting; perpetrator consulted ChatGPT for operational planning.**
+
+| Field | Information |
+|-------|-------------|
+| **Case** | 2025 CF 001241 A001 |
+| **Court** | Leon County Circuit Court, 2nd Judicial Circuit of Florida |
+| **Incident Date** | April 17, 2025 (FSU Student Union, Tallahassee, FL) |
+| **Defendant** | Phoenix Ikner, 20 (FSU student; stepson of Leon County Sheriff's deputy) |
+| **Charges** | 2× first-degree murder; 7× attempted first-degree murder with a firearm |
+| **Indictment** | Grand jury indictment handed down May 14, 2025 |
+| **Initial Appearance** | Circuit Court Judge Monique Richardson; defendant found indigent |
+| **Defense** | Randall Harper (public defender) |
+| **State's Intent** | Death penalty sought (announced June 5, 2025) |
+| **Trial Date** | Postponed to October 19, 2026 |
+| **Status** | Pending trial |
+
+**Victims killed:** Robert Morales, 57 (FSU campus dining director); Tiru Chabba, 45 (Aramark Collegiate Hospitality regional VP).
+
+**Weapons:** .45 caliber Glock 21 semi-automatic pistol (stepmother's service-associated firearm, per reporting); 12-gauge shotgun recovered from vehicle (unused during attack). Grand jury found shotgun malfunction slowed the attack.
+
+**ChatGPT evidence:** 270+ total ChatGPT communications, 200+ messages entered into evidence per court filings. Subject matter includes: weapon selection, ammunition pairing, "busiest periods at the FSU Student Union," and "possible media responses to a fictitious shooting scenario."
+
+**Access:** [Leon County Clerk of Court](https://cvweb.leonclerk.com/public/online_services/high_profile/high_profile.asp) — High Profile Cases portal
+
+---
+
+### Florida AG v. OpenAI (Criminal Investigation)
+**First US state criminal investigation directly targeting an AI company over a mass-casualty event.**
+
+| Field | Information |
+|-------|-------------|
+| **Agency** | Office of the Florida Attorney General (James Uthmeier) |
+| **Announced** | April 21, 2026 (press conference, Tampa, FL) |
+| **Target** | OpenAI / ChatGPT |
+| **Predicate** | FSU mass shooting (April 17, 2025); continuation of pre-existing civil investigation |
+| **Process** | Subpoenas issued to OpenAI for policies and internal training materials related to user threats of harm and law-enforcement cooperation, dating back to March 2024 |
+| **Status** | Active; "uncharted territory" per AG; criminal liability undetermined |
+
+**Key quote (AG Uthmeier):** *"My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others."*
+
+**OpenAI response (Kate Waters):** "Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime." OpenAI states it shared account information with law enforcement after the shooting and continues to cooperate.
+
+**Anticipated civil suit:** Family of one FSU victim announced intent to sue OpenAI (not yet filed as of April 21, 2026). If filed in federal court (diversity jurisdiction), documents would become accessible via PACER.
+
+**Source:** [NPR (April 21, 2026)](https://www.npr.org/2026/04/21/nx-s1-5793967/florida-openai-investigation-mass-shooting-fsu)
+
+---
+
 ## Regulatory Investigations
 
 ### FTC Inquiry (September 2025)
@@ -258,6 +307,6 @@ For documents not available online, contact the relevant clerk of court. Many pr
 
 ---
 
-*Last updated: December 2025*
+*Last updated: April 23, 2026*
 
 *Note: Case statuses change frequently. Check PACER or relevant court systems for current docket information.*

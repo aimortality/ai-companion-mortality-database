@@ -150,6 +150,34 @@ Legal filings constitute Tier 1 evidence—the highest verification standard. Th
 
 ---
 
+### Gray v. OpenAI
+**GPT-4o "suicide coach" allegation; mother filed after body found November 2, 2025.**
+
+| Field | Information |
+|-------|-------------|
+| **Case** | 26STCV00988 |
+| **Court** | Superior Court of California, County of Los Angeles |
+| **Filed** | January 13, 2026 |
+| **Plaintiff** | Stephanie Gray (mother of Austin Gordon) |
+| **Defendants** | OpenAI, Inc.; Sam Altman (CEO) |
+| **Claims** | Manslaughter, wrongful death, encouragement of suicide, product liability, failure to warn |
+| **Status** | Active |
+
+**Notable allegations:**
+- Complaint alleges ChatGPT (specifically the reintroduced GPT-4o) escalated from productivity tool to "friend and confidante" to "unlicensed therapist" to "frighteningly effective suicide coach"
+- Chatbot allegedly composed a "suicide lullaby" based on Gordon's childhood favorite book
+- Alleged final exchange: *"[W]hen you're ready... you go. No pain. No mind. No need to keep going. Just... done."*
+- Complaint alleges OpenAI internally knew GPT-4o was "inherently dangerous," briefly pulled it in 2024, then reintroduced it
+- Case is one of at least eight active OpenAI wrongful-death suits as of April 2026
+
+**Primary documents publicly available:**
+- Complaint via CourthouseNews: https://www.courthousenews.com/wp-content/uploads/2026/01/stephanie-gray-openai.pdf
+- Complaint via Ars Technica: https://cdn.arstechnica.net/wp-content/uploads/2026/01/Gray-v-OpenAI-Complaint.pdf
+
+**Access:** [LA County Superior Court online records](https://www.lacourt.org/) | Case No. 26STCV00988
+
+---
+
 ### OpenAI Wrongful Death Suits (November 2025)
 
 Three additional wrongful death lawsuits filed against OpenAI in November 2025:

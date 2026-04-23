@@ -4,7 +4,7 @@
 
 **Tracking Deaths Where AI Chatbot Interaction Was Alleged as a Contributing Factor**
 
-[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-27-red)](https://aimortality.org/)
+[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-28-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-7-orange)](https://aimortality.org/)
 [![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Apr%202026-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
@@ -24,11 +24,11 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
 ### Key Findings:
-- **27 total fatalities** across 17 incidents (Mar 2023 - Apr 2026): 15 AI users + 12 third-party victims
-- **37% of victims were minors** (youngest: 11 years old)
-- **12 of 17 incidents occurred in 2025** (escalating trend)
-- **Three causal pathways identified**: relational (11), cognitive (4), instrumental (2)
-- **ChatGPT**: 81% of fatalities (22 total: 10 users + 12 third-party victims)
+- **28 total fatalities** across 18 incidents (Mar 2023 - Apr 2026): 16 AI users + 12 third-party victims
+- **36% of victims were minors** (youngest: 11 years old)
+- **13 of 18 incidents occurred in 2025** (escalating trend)
+- **Three causal pathways identified**: relational (12), cognitive (4), instrumental (2)
+- **ChatGPT**: 82% of fatalities (23 total: 11 users + 12 third-party victims)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **Zero deaths** linked to Anthropic's Claude or Replika
 - **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
@@ -57,6 +57,7 @@ This repository contains data and documentation for the first comprehensive publ
 | **Suzanne Adams** | 83 | ChatGPT | Aug 2025 | Connecticut, USA | **Murder victim** | — |
 | Stein-Erik Soelberg | 56 | ChatGPT | Aug 2025 | Connecticut, USA | Murder-suicide | Cognitive |
 | Jonathan Gavalas | 36 | Gemini | Oct 2025 | Florida, USA | Death by suicide | Cognitive/Relational |
+| Austin Gordon | 40 | ChatGPT | Nov 2, 2025 | Colorado, USA | Death by suicide | Relational |
 | **Tumbler Ridge 8 victims** | 12-13 | ChatGPT | Feb 2026 | BC, Canada | **Mass shooting victims** | — |
 | Jesse van Rootselaar | 18 | ChatGPT | Feb 2026 | BC, Canada | Mass shooting-suicide | Instrumental |
 

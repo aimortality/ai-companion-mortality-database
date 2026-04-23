@@ -3,11 +3,11 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.1.0",
+    version: "3.2.0",
     last_updated: "2026-04-23",
-    total_fatalities: 27,
-    total_incidents: 17,
-    ai_users_deceased: 15,
+    total_fatalities: 28,
+    total_incidents: 18,
+    ai_users_deceased: 16,
     third_party_victims: 12,
     total_attempts: 1,
     taxonomy_version: "1.0.0",
@@ -26,8 +26,8 @@ const mortalityData = {
     },
     {
       name: "ChatGPT/OpenAI",
-      deaths: 10,
-      fatalities_total: 22,
+      deaths: 11,
+      fatalities_total: 23,
       attempts: 0,
       cases: [
         { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA", mechanism: "relational" },
@@ -40,6 +40,7 @@ const mortalityData = {
         { name: "Sam Nelson", age: 19, date: "2025-05-31", location: "California, USA", mechanism: "relational" },
         { name: "Amaurie Lacey", age: 17, date: "2025-06-02", location: "Georgia, USA", mechanism: "relational" },
         { name: "Joe Ceccanti", age: 48, date: "2025", location: "Oregon, USA", mechanism: "cognitive" },
+        { name: "Austin Gordon", age: 40, date: "2025-11-02", location: "Colorado, USA", mechanism: "relational", notes: "Gray v. OpenAI, LA Superior 26STCV00988, filed Jan 13, 2026" },
         { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA", mechanism: "relational" },
         { name: "Suzanne Adams", age: 83, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive", type: "third_party_victim" },
         { name: "Stein-Erik Soelberg", age: 56, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive" },
@@ -126,14 +127,14 @@ const DataExporter = {
       age_statistics: {
         youngest: 11,
         oldest: 83,
-        average: 30.7,
+        average: 31.0,
         minors: 10,
-        adults: 17
+        adults: 18
       },
       deaths_by_year: {
         "2023": 2,
         "2024": 2,
-        "2025": 12,
+        "2025": 13,
         "2026": 1
       }
     };
@@ -313,11 +314,11 @@ const API = {
         return mortalityData.platforms;
       case 'statistics':
         return {
-          total_fatalities: 27,
-          ai_users_deceased: 15,
+          total_fatalities: 28,
+          ai_users_deceased: 16,
           third_party_victims: 12,
           total_attempts: 1,
-          minors_percentage: 37.0,
+          minors_percentage: 35.7,
           platforms_affected: 5
         };
       case 'timeline':

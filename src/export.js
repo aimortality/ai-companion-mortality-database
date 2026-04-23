@@ -3,12 +3,12 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.0.0",
-    last_updated: "2026-03-06",
-    total_fatalities: 25,
-    total_incidents: 16,
+    version: "3.1.0",
+    last_updated: "2026-04-23",
+    total_fatalities: 27,
+    total_incidents: 17,
     ai_users_deceased: 15,
-    third_party_victims: 10,
+    third_party_victims: 12,
     total_attempts: 1,
     taxonomy_version: "1.0.0",
     crisis_support: "988"
@@ -27,12 +27,14 @@ const mortalityData = {
     {
       name: "ChatGPT/OpenAI",
       deaths: 10,
-      fatalities_total: 20,
+      fatalities_total: 22,
       attempts: 0,
       cases: [
         { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA", mechanism: "relational" },
         { name: "Sophie Rottenberg", age: 29, date: "2025-02", location: "USA", mechanism: "relational" },
         { name: "Margaux Whittemore", age: 32, date: "2025-02-19", location: "Maine, USA", mechanism: "cognitive", type: "third_party_victim" },
+        { name: "Robert Morales", age: 57, date: "2025-04-17", location: "Tallahassee, FL, USA", mechanism: "instrumental", type: "third_party_victim", notes: "Killed in FSU mass shooting; shooter Phoenix Ikner (20) consulted ChatGPT for attack planning" },
+        { name: "Tiru Chabba", age: 45, date: "2025-04-17", location: "Tallahassee, FL, USA", mechanism: "instrumental", type: "third_party_victim", notes: "Killed in FSU mass shooting; shooter Phoenix Ikner (20) consulted ChatGPT for attack planning" },
         { name: "Adam Raine", age: 16, date: "2025-04-11", location: "California, USA", mechanism: "relational" },
         { name: "Alex Taylor", age: 35, date: "2025-04-25", location: "USA", mechanism: "cognitive" },
         { name: "Sam Nelson", age: 19, date: "2025-05-31", location: "California, USA", mechanism: "relational" },
@@ -124,14 +126,14 @@ const DataExporter = {
       age_statistics: {
         youngest: 11,
         oldest: 83,
-        average: 29.0,
+        average: 30.7,
         minors: 10,
-        adults: 15
+        adults: 17
       },
       deaths_by_year: {
         "2023": 2,
         "2024": 2,
-        "2025": 11,
+        "2025": 12,
         "2026": 1
       }
     };
@@ -311,11 +313,11 @@ const API = {
         return mortalityData.platforms;
       case 'statistics':
         return {
-          total_fatalities: 25,
+          total_fatalities: 27,
           ai_users_deceased: 15,
-          third_party_victims: 10,
+          third_party_victims: 12,
           total_attempts: 1,
-          minors_percentage: 40.0,
+          minors_percentage: 37.0,
           platforms_affected: 5
         };
       case 'timeline':

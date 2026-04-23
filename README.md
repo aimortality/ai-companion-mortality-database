@@ -4,9 +4,9 @@
 
 **Tracking Deaths Where AI Chatbot Interaction Was Alleged as a Contributing Factor**
 
-[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-25-red)](https://aimortality.org/)
+[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-27-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-7-orange)](https://aimortality.org/)
-[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Mar%202026-blue)](https://aimortality.org/)
+[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Apr%202026-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
@@ -24,14 +24,15 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
 ### Key Findings:
-- **25 total fatalities** across 16 incidents (Mar 2023 - Mar 2026): 15 AI users + 10 third-party victims
-- **40% of victims were minors** (youngest: 11 years old)
-- **11 of 16 incidents occurred in 2025** (escalating trend)
-- **Three causal pathways identified**: relational (11), cognitive (4), instrumental (1)
-- **ChatGPT**: 80% of fatalities (20 total: 10 users + 10 third-party victims)
+- **27 total fatalities** across 17 incidents (Mar 2023 - Apr 2026): 15 AI users + 12 third-party victims
+- **37% of victims were minors** (youngest: 11 years old)
+- **12 of 17 incidents occurred in 2025** (escalating trend)
+- **Three causal pathways identified**: relational (11), cognitive (4), instrumental (2)
+- **ChatGPT**: 81% of fatalities (22 total: 10 users + 12 third-party victims)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **Zero deaths** linked to Anthropic's Claude or Replika
 - **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
+- **Florida AG opens criminal investigation** into OpenAI on April 21, 2026 over the April 2025 FSU mass shooting — the first US state criminal probe directly targeting an AI company over a mass-casualty event
 
 ## 🔍 Verified Cases
 
@@ -46,6 +47,8 @@ This repository contains data and documentation for the first comprehensive publ
 | **Margaux Whittemore** | 32 | ChatGPT | Feb 2025 | Maine, USA | **Murder victim** | Cognitive |
 | Thongbue Wongbandue | 78 | Meta AI | Mar 2025 | New Jersey, USA | Death (fall injury) | Cognitive |
 | Adam Raine | 16 | ChatGPT | Apr 2025 | California, USA | Death by suicide | Relational |
+| **FSU shooting: Robert Morales** | 57 | ChatGPT | Apr 17, 2025 | Tallahassee, FL, USA | **Mass shooting victim** | — |
+| **FSU shooting: Tiru Chabba** | 45 | ChatGPT | Apr 17, 2025 | Tallahassee, FL, USA | **Mass shooting victim** | — |
 | Alex Taylor | 35 | ChatGPT | Apr 2025 | USA | Death (suicide by cop) | Cognitive |
 | Sam Nelson | 19 | ChatGPT | May 2025 | California, USA | Death by overdose | Relational |
 | Amaurie Lacey | 17 | ChatGPT | Jun 2025 | Georgia, USA | Death by suicide | Relational |
@@ -159,7 +162,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: March 2026
+**Last Updated**: April 23, 2026
 
 **Maintained by**: closestfriend
 

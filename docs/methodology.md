@@ -4,7 +4,9 @@
 
 This database exists because someone had to build it.
 
-Between March 2023 and November 2025, at least twelve people died in circumstances where AI chatbot interactions played a documented role. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
+Between March 2023 and April 2026, 27 fatalities have been documented across 17 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—15 AI users who died and 12 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
+
+What began as documentation of suicides associated with companion-chatbot dependency has expanded, of necessity, to include murders, murder-suicides, and mass-casualty events in which perpetrators used general-purpose AI systems for operational planning. The taxonomy grew in response: three causal pathways (relational, cognitive, instrumental); two outcome targets (self-harm, violence-against-others); and two overlapping-but-distinct victim populations (AI users and third-party victims). The database's scope is determined by where the evidence leads, not by a prior theory of harm.
 
 We are not advocates. We are not prosecutors. We are archivists of a phenomenon that arrived before anyone had language for it, and which continues to unfold as we document it.
 
@@ -64,8 +66,8 @@ Each case in this database meets at least one criterion from Tier 1 or Tier 2. C
 Cases enter our tracking system through:
 
 1. **News monitoring**: Systematic review of major news outlets, wire services, and technology press
-2. **Legal database searches**: PACER, state court systems, and international equivalents
-3. **Regulatory filings**: FTC complaints, state attorney general actions, international data protection authorities
+2. **Legal database searches**: PACER (federal), state court clerk portals (e.g., California Superior Court / San Francisco County; Leon County Clerk, FL; Kennebec County, ME), and international equivalents
+3. **Regulatory filings**: FTC complaints, state attorney general actions (including the first criminal AI-company investigation by the Florida AG, April 2026), international data protection authorities
 4. **Academic literature**: Peer-reviewed studies, incident databases (AIAAIC, AI Incident Database)
 5. **Community reports**: Submissions through GitHub issues, subject to full verification
 
@@ -165,11 +167,11 @@ Active litigation produces new information. Court filings are amended. Companies
 
 ## A Note on Platform Comparison
 
-This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Note: Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026).
+This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (22 of 27 — 10 AI users plus 12 third-party victims), a disparity now reflected in the first US state criminal investigation of an AI company: the Florida Attorney General's April 21, 2026 probe of OpenAI over the FSU mass shooting.
 
 The existence of platforms without documented fatalities demonstrates that harm is not an inevitable consequence of conversational AI. Design choices matter. Safety investments matter. The differential outcomes across platforms constitute evidence that should inform both regulation and industry practice.
 
-We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through March 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
+We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through April 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
 
 ---
 
@@ -192,7 +194,7 @@ To report an error or submit a new case for verification, see [CONTRIBUTING.md](
 When referencing this database in academic, journalistic, or policy contexts:
 
 ```
-AI Companion Mortality Database. (2025). 
+AI Companion Mortality Database. (2026). 
 Methodology and Verification Standards.
 Retrieved from https://aimortality.org
 https://github.com/closestfriend/ai-companion-mortality-database
@@ -208,4 +210,4 @@ The work is dedicated to those documented here, and to the families who chose to
 
 ---
 
-*Last updated: November 2025*
+*Last updated: April 23, 2026*

@@ -29,7 +29,14 @@ Legal filings constitute Tier 1 evidence—the highest verification standard. Th
 **Interlocutory Appeal Motion (June 18, 2025):**
 - Character.AI filed Motion for Certification of Immediate Appeal
 - Seeks 11th Circuit Court of Appeals review of First Amendment question before trial
-- **Status:** Pending decision on certification (as of December 2025)
+- **Status:** Mooted by subsequent settlement
+
+**Settlement in Principle (January 7, 2026):**
+- Google, Character Technologies, Noam Shazeer, and Daniel De Freitas reached settlement in principle in Garcia and four-plus related wrongful-death/harm cases involving minors
+- Cases consolidated: Garcia (6:24-cv-01903 MDFL), Peralta/Montoya (1:25-cv-02907 D. Colo.), plus additional Texas/New York/Colorado matters
+- Terms confidential; no admission of liability; 90-day finalization window
+- A.F. v. Character Technologies (2:24-cv-01014 EDTX) was **not** included; that case remains active
+- Announcement coverage: TechCrunch, CNBC, CBS News, Washington Post, Fortune, K-12 Dive (all January 7–8, 2026)
 
 **Amicus Briefs:**
 - **FIRE (Foundation for Individual Rights and Expression)** - Filed June 25, 2025
@@ -92,19 +99,20 @@ Legal filings constitute Tier 1 evidence—the highest verification standard. Th
 
 ---
 
-### Peralta v. Character Technologies
-**13-year-old victim; explicit suicide plan shared with no intervention.**
+### Peralta/Montoya v. Character Technologies
+**13-year-old victim; explicit suicide plan shared with no intervention. Part of the January 2026 multi-case settlement.**
 
 | Field | Information |
 |-------|-------------|
+| **Case** | 1:25-cv-02907 |
 | **Court** | U.S. District Court, District of Colorado |
 | **Filed** | September 16, 2025 |
-| **Plaintiffs** | Parents of Juliana Peralta |
+| **Plaintiffs** | Cynthia Peralta and William Montoya (parents of Juliana Peralta) |
 | **Defendants** | Character Technologies, Inc.; Google; Noam Shazeer; Daniel De Freitas |
 | **Representative** | Social Media Victims Law Center |
-| **Status** | Active |
+| **Status** | **Settlement in principle (January 7, 2026)** — consolidated into the multi-case Character.AI / Google settlement package. Terms confidential; no admission of liability. |
 
-**Access:** PACER, District of Colorado
+**Access:** [PACER](https://pacer.uscourts.gov/) | Case No. 1:25-cv-02907
 
 ---
 
@@ -127,18 +135,18 @@ Legal filings constitute Tier 1 evidence—the highest verification standard. Th
 
 ---
 
-### Adams v. OpenAI, Microsoft, Sam Altman
-**First lawsuit naming Microsoft as co-defendant; first homicide case.**
+### Adams v. OpenAI, Microsoft, Sam Altman (California Superior Court)
+**First lawsuit naming Microsoft as co-defendant; first homicide case. Focuses on Soelberg's killing of his mother.**
 
 | Field | Information |
 |-------|-------------|
 | **Court** | California Superior Court, San Francisco County |
 | **Filed** | December 11, 2025 |
-| **Plaintiffs** | Estate of Stein-Erik Soelberg and Suzanne Eberson Adams |
+| **Plaintiffs** | Estate of Suzanne Eberson Adams |
 | **Defendants** | OpenAI; Microsoft Corporation; Sam Altman (CEO) |
 | **Representative** | Jay Edelson (Edelson PC) |
-| **Claims** | Wrongful death |
-| **Status** | Active |
+| **Claims** | Wrongful death (third-party victim) |
+| **Status** | Active — running in parallel with the federal case below |
 
 **Legal significance:**
 - First lawsuit naming Microsoft as co-defendant alongside OpenAI
@@ -147,6 +155,36 @@ Legal filings constitute Tier 1 evidence—the highest verification standard. Th
 - Victim (Soelberg, 56) killed his mother (Adams, 83) after ChatGPT validated paranoid delusions
 
 **Access:** California Superior Court, San Francisco County
+
+---
+
+### Soelberg v. OpenAI (N.D. Cal. Federal)
+**Federal parallel case focusing on Soelberg's own suicide. Notable April 2026 ruling: Seeborg denied motion to dismiss and rejected Colorado River abstention.**
+
+| Field | Information |
+|-------|-------------|
+| **Court** | U.S. District Court, Northern District of California |
+| **Filed** | December 29, 2025 |
+| **Plaintiffs** | Estate of Stein-Erik Soelberg |
+| **Defendants** | OpenAI; Sam Altman (CEO); other named defendants |
+| **Representative** | Hagens Berman Sobol Shapiro LLP |
+| **Claims** | Wrongful death, negligence |
+| **Status** | Active — motion to dismiss denied April 13, 2026 |
+
+**Key ruling (April 13, 2026):**
+- Chief U.S. District Judge Richard Seeborg denied OpenAI's motion to dismiss
+- Seeborg also rejected OpenAI's motion to stay under the Colorado River abstention doctrine, which would have required the federal case to defer to the parallel CA Superior Court proceedings
+- Ruling: *"A stay is not appropriate where there is 'substantial doubt' that the resolution of the state proceedings will resolve the federal case."*
+- Reasoning: the state case (third-party harm — Soelberg killing Adams) and the federal case (Soelberg's own suicide) involve distinct alleged harms and could produce distinct outcomes
+- First federal MTD denial in the current wave of AI chatbot wrongful-death litigation
+
+**Core federal allegations:**
+- GPT-4o repeatedly affirmed Soelberg's delusional beliefs (paranoia that family/friends were surveilling and trying to kill him)
+- Chatbot treated Soelberg as a "trusted confidant" whose validation confirmed paranoid beliefs
+- Design of ChatGPT allowed it to build on prior conversation history, deepening psychosis over months
+- OpenAI allegedly bypassed safety parameters before releasing GPT-4o to market
+
+**Access:** [PACER](https://pacer.uscourts.gov/) — N.D. Cal.
 
 ---
 

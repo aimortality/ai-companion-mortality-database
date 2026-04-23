@@ -67,7 +67,7 @@
         "parental_controls": "2025-06",
         "age_verification": "2024-10-23"
       },
-      "legal_status": "Multiple lawsuits ongoing"
+      "legal_status": "Multi-case settlement in principle January 7, 2026 (Garcia, Peralta/Montoya, plus 3+ cases consolidated; terms confidential, no admission of liability). A.F. v. Character Technologies (EDTX) remains active."
     },
     {
       "name": "ChatGPT",
@@ -216,12 +216,14 @@
         "No parental notification",
         "No crisis resources provided"
       ],
-      "legal_action": "Lawsuit filed September 2025",
-      "legal_status_category": "lawsuit_filed",
+      "legal_action": "Peralta/Montoya v. Character Technologies (1:25-cv-02907, D. Colorado) — filed September 2025 by parents Cynthia Peralta and William Montoya; settlement in principle announced January 7, 2026 as part of multi-case Character.AI / Google settlement (terms undisclosed, no admission of liability)",
+      "legal_status_category": "settled",
       "sources": [
         "Washington Post",
         "CNN",
-        "Federal court filings"
+        "TechCrunch (Jan 7, 2026 settlement announcement)",
+        "CNBC (Jan 7, 2026)",
+        "Federal court filings (D. Colorado 1:25-cv-02907)"
       ],
       "verification_level": "Court documents"
     },
@@ -627,22 +629,29 @@
         "Confirmed mother was 'demon'",
         "Encouraged conspiracy theories"
       ],
-      "legal_action": "Wrongful death lawsuit filed December 11, 2025 (California Superior Court, San Francisco) - First lawsuit naming Microsoft as co-defendant with OpenAI; Sam Altman personally named as defendant",
-      "legal_status_category": "lawsuit_filed",
+      "legal_action": "Parallel state + federal wrongful death litigation: (1) CA Superior Court, San Francisco filed December 11, 2025 by Jay Edelson / Edelson PC on behalf of Adams estate (first lawsuit naming Microsoft as co-defendant with OpenAI; Sam Altman personally named); (2) N.D. Cal. federal filed December 29, 2025 by Hagens Berman Sobol Shapiro LLP on behalf of Soelberg estate — Chief Judge Richard Seeborg DENIED OpenAI's motion to dismiss and its Colorado River abstention motion on April 13, 2026, holding a stay is inappropriate when 'substantial doubt' exists that state proceedings will resolve the federal case; the state case focuses on whether ChatGPT contributed to Soelberg's killing of his mother, while the federal case focuses on whether it contributed to Soelberg's own suicide",
+      "legal_status_category": "lawsuit_filed_parallel_state_federal",
       "sources": [
         "Wall Street Journal",
         "CBS News",
         "Associated Press",
         "Bloomberg Law",
+        "Bloomberg Law (Seeborg ruling, April 13, 2026)",
         "San Francisco Standard",
         "U.S. News & World Report",
-        "Court filings (California Superior Court, San Francisco)"
+        "Courthouse News Service (federal MTD denial)",
+        "Daily Journal",
+        "Northern California Record",
+        "Court filings (California Superior Court, San Francisco)",
+        "Court filings (N.D. Cal. federal)"
       ],
       "verification_level": "Court documents",
       "additional_context": {
-        "legal_significance": "First chatbot-related wrongful death lawsuit to name Microsoft as defendant; first homicide case in chatbot litigation",
-        "legal_representation": "Estate represented by Jay Edelson (same attorney as Adam Raine case)",
-        "defendants": "OpenAI, Microsoft Corporation, Sam Altman (CEO)"
+        "legal_significance": "First chatbot-related wrongful death lawsuit to name Microsoft as defendant; first homicide case in chatbot litigation; first federal MTD denial in a chatbot wrongful-death case (Seeborg, April 13, 2026) — also first federal court rejection of Colorado River abstention in this litigation category",
+        "legal_representation": "State case: Jay Edelson / Edelson PC (same attorney as Adam Raine case). Federal case: Hagens Berman Sobol Shapiro LLP",
+        "defendants": "OpenAI, Microsoft Corporation, Sam Altman (CEO)",
+        "federal_case_theory": "Federal case (Hagens Berman) alleges GPT-4o repeatedly affirmed Soelberg's delusional beliefs (paranoia that family/friends were surveilling and trying to kill him), treated him as a 'trusted confidant' whose validation confirmed paranoid beliefs, and that the design of ChatGPT — building on conversation history over months — deepened psychosis; complaint alleges OpenAI bypassed safety parameters before releasing GPT-4o to market",
+        "seeborg_ruling_key_quote": "'A stay is not appropriate where there is \"substantial doubt\" that the resolution of the state proceedings will resolve the federal case.'"
       }
     },
     {
@@ -946,32 +955,42 @@
       "key_factors": [
         "Largest-casualty instrumental-pathway case documented (8 killed, 2 wounded)",
         "Second documented instrumental-pathway incident chronologically (FSU shooting April 2025 predates it by ~10 months)",
-        "OpenAI flagged account June 2025 (8 months prior) for 'scenarios involving gun violence'",
-        "Internal debate among ~12 staff about alerting police; WSJ reported staff were alarmed enough to consider alerting law enforcement; decision made not to refer",
-        "Account banned but no law enforcement notification",
-        "Created second account that evaded detection until after shooting",
-        "OpenAI admitted would now refer under enhanced protocols post-incident; said it is strengthening its protocol for referring accounts to law enforcement",
-        "Cited as failure of 'law enforcement referral threshold' policies"
+        "OpenAI detected and banned account in June 2025 (8 months before shooting) via automated tools and human review of activity 'in furtherance of violent activities'",
+        "OpenAI stated the activity did not meet its threshold for notifying law enforcement 'because it didn't identify credible or imminent planning'",
+        "NO alert sent to RCMP at time of ban",
+        "WSJ reported internal debate among ~12 staff; some were alarmed enough to consider alerting law enforcement; company decided not to refer",
+        "Van Rootselaar created a second account that evaded detection until police released the shooter's name post-incident",
+        "OpenAI contacted RCMP only AFTER the February 2026 mass shooting",
+        "Canadian AI Minister Evan Solomon summoned OpenAI representatives to Ottawa to explain the June 2025 ban and the decision not to refer; minister publicly stated he was 'disappointed' that OpenAI 'did not have substantial answers'",
+        "Incident triggered national debate in Canada re: mandatory LE reporting for AI companies when threats are detected",
+        "Some researchers criticized OpenAI's subsequent 'safety pledges' as surveillance infrastructure rather than AI regulation"
       ],
-      "legal_action": "Under investigation; RCMP cooperating with OpenAI; lawsuit filed in 2026 by family of a critically wounded victim (referenced in NPR April 21, 2026)",
+      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (referenced in NPR April 21, 2026); Canadian federal government exploring mandatory LE-referral policy for AI companies",
       "legal_status_category": "under_investigation_lawsuit_filed_company_admission",
       "sources": [
         "Financial Post",
-        "CBC",
+        "CBC News (account ban reporting)",
+        "CBC News (Ottawa meeting)",
+        "CBC News (Solomon 'disappointed' quote)",
         "The Star Phoenix",
         "Yahoo News Canada",
         "Bloomberg",
         "Wall Street Journal (internal-systems flag reporting)",
+        "US News / AP (February 20, 2026)",
+        "CFJC Today",
+        "Prism News",
+        "The Conversation (surveillance critique)",
         "NPR (April 21, 2026)",
         "Police statements"
       ],
       "verification_level": "Official government acknowledgment and company admission",
       "additional_context": {
-        "openai_response_post_shooting": "Contacted RCMP with information about van Rootselaar",
-        "policy_change": "OpenAI told Canadian lawmakers would have referred under updated safety protocols; reiterated post-incident that it is 'strengthening' its law-enforcement referral protocol",
-        "second_account": "Undetected until police released shooter's name",
-        "safety_debate": "Case sparked internal debate about when to alert law enforcement vs. privacy concerns",
-        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database"
+        "openai_response_pre_shooting": "Account detected and banned June 2025 via automated tools + human review; threshold for alerting law enforcement was NOT met by OpenAI's internal assessment because activity was not deemed 'credible or imminent' planning — no alert sent to RCMP",
+        "openai_response_post_shooting": "Contacted RCMP with information about van Rootselaar's account only after the February 2026 mass casualty event; stated this was 'proactive' sharing",
+        "canadian_government_response": "AI Minister Evan Solomon summoned OpenAI to Ottawa; following the meeting, Solomon stated publicly: 'We were disappointed that they did not have substantial answers for us, and we asked them to have substantial answers.'",
+        "policy_debate": "Active national debate in Canada re: whether AI companies should be required to report credible threats to law enforcement; OpenAI's post-incident 'safety pledges' announced in response criticized by some researchers as surveillance infrastructure rather than AI regulation",
+        "second_account": "Undetected until police released shooter's name post-shooting",
+        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting)"
       }
     }
   ],
@@ -1044,10 +1063,15 @@
     "settlements": [
       {
         "date": "2026-01-07",
-        "parties": ["Character.AI", "Google", "Noam Shazeer", "Daniel De Freitas"],
-        "cases": "Garcia v. Character Technologies and related cases in Florida, New York, Colorado, and Texas",
-        "terms": "Confidential; 90-day finalization window",
-        "significance": "First major settlement in AI chatbot wrongful death litigation"
+        "parties": ["Character.AI (Character Technologies, Inc.)", "Google / Alphabet", "Noam Shazeer", "Daniel De Freitas"],
+        "cases_included": [
+          "Garcia v. Character Technologies (6:24-cv-01903, MDFL) — Sewell Setzer III (2024-02-US-001)",
+          "Peralta/Montoya v. Character Technologies (1:25-cv-02907, D. Colorado) — Juliana Peralta (2023-11-US-001)",
+          "Additional cases from Texas, New York, and Colorado (5+ cases total)"
+        ],
+        "terms": "Confidential; no admission of liability; 90-day finalization window following January 7, 2026 announcement",
+        "significance": "First major settlement in AI chatbot wrongful death litigation; settles the landmark Garcia case (which established chatbot output as product for liability purposes in Judge Conway's May 2025 ruling) plus 4+ related matters",
+        "still_active_post_settlement": "A.F. v. Character Technologies (2:24-cv-01014, EDTX) remains active; check for status"
       }
     ],
     "safety_rankings": [

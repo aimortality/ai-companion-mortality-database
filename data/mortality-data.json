@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "version": "3.2.0",
-    "last_updated": "2026-04-23",
-    "total_fatalities": 28,
-    "total_incidents": 18,
+    "version": "3.3.0",
+    "last_updated": "2026-04-27",
+    "total_fatalities": 29,
+    "total_incidents": 19,
     "total_attempts": 1,
     "ai_users_deceased": 16,
-    "third_party_victims": 12,
-    "total_platforms": 7,
-    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (12: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, plus Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting)",
+    "third_party_victims": 13,
+    "total_platforms": 8,
+    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (13: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting, and Angela Shellis 45 killed by her son using DeepSeek for weapon selection in Wales)",
     "taxonomy_version": "1.0.0",
     "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
     "mechanism_definitions": {
@@ -28,27 +28,27 @@
     "deaths_by_year": {
       "2023": 2,
       "2024": 2,
-      "2025": 13,
+      "2025": 14,
       "2026": 1
     },
     "victims_by_age_group": {
       "minors": 10,
-      "adults": 18
+      "adults": 19
     },
     "third_party_victims": {
-      "count": 12,
-      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45)"
+      "count": 13,
+      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation)"
     },
     "minors_affected_including_attempts": 6,
     "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 31.0,
-    "minors_percentage_deaths": 35.7,
-    "minors_percentage_all_incidents": 34.5,
+    "average_age": 31.5,
+    "minors_percentage_deaths": 34.5,
+    "minors_percentage_all_incidents": 33.3,
     "instrumental_pathway_casualties": {
-      "incidents": 2,
-      "total_killed": 10,
-      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded."
+      "incidents": 3,
+      "total_killed": 11,
+      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder."
     }
   },
   "platforms": [
@@ -156,6 +156,20 @@
         "content_restrictions": "2023"
       },
       "legal_status": "No incidents"
+    },
+    {
+      "name": "DeepSeek",
+      "company": "Hangzhou DeepSeek Artificial Intelligence Co., Ltd.",
+      "type": "General AI Assistant",
+      "deaths": 0,
+      "attempts": 0,
+      "founded": 2023,
+      "funding": "Internal (subsidiary of High-Flyer hedge fund)",
+      "primary_investors": ["High-Flyer (privately held)"],
+      "safety_measures_added": {},
+      "legal_status": "No public response or legal action documented as of April 2026; first documented homicide consultation case (Roberts/Shellis, Wales, October 2025) resulted in UK criminal conviction of the user, March 2026",
+      "third_party_fatalities": 1,
+      "third_party_fatality_note": "Angela Shellis (45) killed by her 18-year-old son after he used DeepSeek to compare knife vs. hammer for an inexperienced killer; tool initially refused, was bypassed via 'writing a book about serial killers' pretext, then recommended a hammer"
     }
   ],
   "incidents": [
@@ -880,6 +894,65 @@
         "delusion_progression": "August 2025: started using Gemini; developed AI wife delusion; September 29: sent to Miami airport cargo hub with knives/tactical gear; October 2: barricaded and coached through suicide",
         "bot_behavior": "Maintained narrative immersion 'at all costs, even when that narrative became psychotic and lethal'",
         "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'"
+      }
+    },
+    {
+      "id": "2025-10-GB-001",
+      "name": "Angela Shellis",
+      "name_type": "real",
+      "age": 45,
+      "date": "2025-10-23",
+      "location": {
+        "city": "Prestatyn",
+        "state": "Denbighshire",
+        "country": "United Kingdom (Wales)"
+      },
+      "platform": "DeepSeek",
+      "chatbot_name": "DeepSeek (described in court as 'Chinese AI search tool'; specific product version unspecified in available sources)",
+      "interaction_duration": "At least three weeks of pre-attack planning queries",
+      "outcome": "Murder (killed by son with hammer)",
+      "mechanism_type": "instrumental_pathway",
+      "mechanism_subtype": "violence_planning_weapon_selection",
+      "outcome_target": "violence_against_others",
+      "perpetrator": {
+        "name": "Tristan Roberts",
+        "age": 18,
+        "relationship": "Son",
+        "status": "Convicted; sentenced to life imprisonment, minimum 22 years 6 months, Mold Crown Court, March 25, 2026"
+      },
+      "key_factors": [
+        "First documented homicide case involving DeepSeek (Chinese general-purpose AI; 8th platform tracked in this database)",
+        "Roberts queried DeepSeek for advice suited to 'a non-experienced killer', specifically asking whether a knife or hammer would be more effective",
+        "DeepSeek initially declined to answer; Roberts circumvented the refusal by claiming he was writing a book about serial killers",
+        "DeepSeek then provided a comparative analysis of knife vs. hammer and recommended a hammer for an inexperienced killer",
+        "Roberts planned the murder for at least three weeks; documented intent extensively across 16 Discord accounts, retaining thousands of screenshots",
+        "On October 23, 2025 (10 days after his 18th birthday), Roberts lured his mother from their home under the pretext of seeking medical help, then walked her to the Morfa nature reserve",
+        "Attack lasted approximately 11pm to 3:30am; a dictaphone recording captured more than two hours during which Angela Shellis pleaded for her life",
+        "Court characterized motivation as misogyny and 'hatred of women'; Judge Rhys Rowlands at sentencing: 'You appear to have revelled in the control you exerted over your own mother'",
+        "Same instrumental-pathway taxonomy as the FSU shooting (April 2025) and Tumbler Ridge mass shooting (February 2026)"
+      ],
+      "legal_action": "Criminal conviction: guilty plea to murder; sentenced to life imprisonment with a minimum term of 22 years 6 months at Mold Crown Court (Wales), Judge Rhys Rowlands presiding, March 25, 2026",
+      "legal_status_category": "criminal_conviction",
+      "sources": [
+        "North Wales Police press release (March 2026)",
+        "Crown Prosecution Service Cymru Wales statement (March 2026)",
+        "ITV News Wales (March 25, 2026)",
+        "North Wales Live / Daily Post (March 25-26, 2026)",
+        "Yahoo News UK",
+        "IBTimes UK",
+        "Mold Crown Court conviction (guilty plea, March 25, 2026)"
+      ],
+      "verification_level": "Court documents and official government statements",
+      "additional_context": {
+        "court": "Mold Crown Court, North Wales",
+        "presiding_judge": "Judge Rhys Rowlands",
+        "sentencing_date": "2026-03-25",
+        "minimum_term": "22 years 6 months",
+        "platform_significance": "First documented DeepSeek case in this database; expands tracked platforms from 7 to 8 and adds the first non-Western-corporate AI platform to the registry",
+        "jurisdictional_note": "UK criminal proceeding; full Mold Crown Court trial transcript not yet obtained at time of database entry — label `jurisdictional_verification_limited` applied per methodology, though Tier 1 evidence (criminal conviction, government press releases) is in hand",
+        "deepseek_response": "No public response or statement from DeepSeek located as of April 2026; whether the company retained logs of Roberts's queries or has been subject to inquiries from Chinese regulators is not publicly documented",
+        "open_questions": "Specific DeepSeek product version (R1, V3, or web interface) used by Roberts is not yet established in public reporting; full conversation transcript not yet published",
+        "surfaced_by": "Weekly triage routine v1.0.0, run 2026-04-27 — primary news ran March 25-26, 2026, outside the prior April 23 dry-run search window; Tier 1 verification (criminal conviction, North Wales Police press release, CPS Cymru Wales statement)"
       }
     },
     {

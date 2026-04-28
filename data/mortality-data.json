@@ -475,7 +475,7 @@
       },
       "platform": "ChatGPT",
       "chatbot_name": "ChatGPT",
-      "interaction_duration": "Unknown (extensive; 200+ AI messages in evidence, 270+ total)",
+      "interaction_duration": "Over one year; 13,000+ total ChatGPT messages over the period; 200+ entered as evidence per court filings",
       "outcome": "Mass shooting (2 killed, 5 wounded; perpetrator wounded and apprehended)",
       "mechanism_type": "instrumental_pathway",
       "mechanism_subtype": "violence_planning_operational_assistance",
@@ -529,7 +529,7 @@
         "openai_response": "Spokesperson Kate Waters: 'Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime.'",
         "uthmeier_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others.'",
         "trial_status": "Trial postponed to October 19, 2026",
-        "message_volume": "270+ communications with ChatGPT; 200+ entered as evidence"
+        "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence"
       }
     },
     {

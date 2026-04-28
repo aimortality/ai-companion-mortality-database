@@ -3,12 +3,12 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.2.0",
-    last_updated: "2026-04-23",
-    total_fatalities: 28,
-    total_incidents: 18,
+    version: "3.3.0",
+    last_updated: "2026-04-27",
+    total_fatalities: 29,
+    total_incidents: 19,
     ai_users_deceased: 16,
-    third_party_victims: 12,
+    third_party_victims: 13,
     total_attempts: 1,
     taxonomy_version: "1.0.0",
     crisis_support: "988"
@@ -82,6 +82,15 @@ const mortalityData = {
       deaths: 0,
       attempts: 0,
       cases: []
+    },
+    {
+      name: "DeepSeek",
+      deaths: 0,
+      fatalities_total: 1,
+      attempts: 0,
+      cases: [
+        { name: "Angela Shellis", age: 45, date: "2025-10-23", location: "Prestatyn, Wales, UK", mechanism: "instrumental", type: "third_party_victim", notes: "Killed by son Tristan Roberts (18) after he used DeepSeek to compare knife vs. hammer for 'a non-experienced killer'; tool initially declined, was bypassed via 'writing a book about serial killers' pretext, then recommended a hammer. Mold Crown Court guilty plea, life sentence (min. 22y 6m), March 25, 2026." }
+      ]
     }
   ]
 };
@@ -127,14 +136,14 @@ const DataExporter = {
       age_statistics: {
         youngest: 11,
         oldest: 83,
-        average: 31.0,
+        average: 31.5,
         minors: 10,
-        adults: 18
+        adults: 19
       },
       deaths_by_year: {
         "2023": 2,
         "2024": 2,
-        "2025": 13,
+        "2025": 14,
         "2026": 1
       }
     };
@@ -314,12 +323,12 @@ const API = {
         return mortalityData.platforms;
       case 'statistics':
         return {
-          total_fatalities: 28,
+          total_fatalities: 29,
           ai_users_deceased: 16,
-          third_party_victims: 12,
+          third_party_victims: 13,
           total_attempts: 1,
-          minors_percentage: 35.7,
-          platforms_affected: 5
+          minors_percentage: 34.5,
+          platforms_affected: 6
         };
       case 'timeline':
         return mortalityData.platforms

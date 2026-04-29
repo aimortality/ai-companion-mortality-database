@@ -876,7 +876,7 @@
           // Age Distribution - PRIORITIZED (most impactful finding)
           React.createElement('div', { className: 'viz-section' },
             React.createElement('div', { className: 'viz-title', id: 'age-dist-label' }, 'Age Distribution of Victims'),
-            React.createElement('svg', { width: '100%', height: '180', viewBox: '0 0 320 180', role: 'img', 'aria-labelledby': 'age-dist-label', 'aria-describedby': 'age-dist-desc' },
+            React.createElement('svg', { width: '100%', height: '230', viewBox: '0 -50 320 230', role: 'img', 'aria-labelledby': 'age-dist-label', 'aria-describedby': 'age-dist-desc' },
               React.createElement('desc', { id: 'age-dist-desc' }, '34% of victims were minors aged 11-17 (10 people), 28% were young adults 18-35 (8 people), 24% were middle-aged 36-54 (7 people), and 14% were 55+ (4 people).'),
               [
                 { range: '11-17', count: 10, x: 40, label: 'Minors', pct: '34%' },
@@ -898,7 +898,7 @@
                   ),
                   React.createElement('text', {
                     x: bucket.x,
-                    y: '20',
+                    y: 140 - (bucket.count - 1) * 18 - 14,
                     style: { fontSize: '10px', fill: i === 0 ? '#cc0000' : 'var(--muted)', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontWeight: 'bold' }
                   }, bucket.pct),
                   React.createElement('text', {
@@ -919,7 +919,7 @@
           // Engagement Duration
           React.createElement('div', { className: 'viz-section' },
             React.createElement('div', { className: 'viz-title', id: 'duration-label' }, 'Engagement Duration Before Incident'),
-            React.createElement('svg', { width: '100%', height: '200', viewBox: '0 0 350 200', role: 'img', 'aria-labelledby': 'duration-label', 'aria-describedby': 'duration-desc' },
+            React.createElement('svg', { width: '100%', height: '285', viewBox: '0 -85 350 285', role: 'img', 'aria-labelledby': 'duration-label', 'aria-describedby': 'duration-desc' },
               React.createElement('desc', { id: 'duration-desc' }, 'Bar chart showing engagement duration before incidents. Cases ranged from 6 weeks to 20 months. Duration known for 5 of 13 cases.'),
               [
                 { duration: '6 weeks', weeks: 6, x: 40 },
@@ -952,7 +952,7 @@
               ),
               React.createElement('text', {
                 x: '140',
-                y: '20',
+                y: '190',
                 style: { fontSize: '9px', fill: 'var(--muted)', textAnchor: 'middle', fontFamily: '\'SF Mono\', \'Menlo\', \'Monaco\', \'Courier New\', monospace', fontStyle: 'italic' }
               }, 'Duration known for 11 of 20 cases')
             )

@@ -38,7 +38,7 @@ Do not rely on a single language for a signal. If a hit appears only in one outl
 For each hit:
 
 1. **Classify the tier** per `verification-standards.md`.
-2. **Tier 3** → append a single row to `drafts/tier3-monitor.md`. Commit directly to `main` with a message like `Tier 3: append <N> lead(s) from weekly triage <YYYY-MM-DD>`. Never edit existing rows. Preserve the original-language source URL as the primary; add a one-line English gloss in the `english_summary` column.
+2. **Tier 3** → append a single row to `drafts/tier3-monitor.md`. **Do this first, while you are still on `main`, before checking out any feature branch.** Commit directly to `main` with a message like `Tier 3: append <N> lead(s) from weekly triage <YYYY-MM-DD>`, then `git push origin main` immediately so the watch-list update isn't held behind candidate/docket review. After pushing, verify the commit landed on `main` with `git branch --contains <hash>` — output must include `main`, not only the routine branch. Never edit existing rows. Preserve the original-language source URL as the primary; add a one-line English gloss in the `english_summary` column.
 3. **Tier 1 or Tier 2** → create a file at `drafts/weekly-triage/YYYY-MM-DD/candidate-<slug>.md` using the template in `.github/ISSUE_TEMPLATE/new-case-candidate.md` as the frontmatter JSON block, followed by prose under these headings: **Summary**, **Sources (tiered)**, **Verification status**, **Open questions**, **Recommended next step**. Stage these on a PR branch; do not commit to `main`.
 4. **Non-Anglophone hits**: cite the original-language source as primary. If primary documents (court filings, coroner reports) are inaccessible due to language or jurisdiction, add the label `jurisdictional-verification-limited` to the weekly issue and note the access gap in the candidate file's **Open questions** section per `methodology.md:144`.
 5. **Deduplication**: if a hit describes a case already in `data/mortality-data.json` (e.g., new WSJ reporting on the Tumbler Ridge `2026-02-CA-001` incident), it is **not a new-case candidate** — it belongs in Job B as a docket/legal-development update on the existing record.
@@ -86,7 +86,7 @@ If Job A produced only Tier 3 additions and Job B found nothing, **open no PR**.
 
 ### 3. Tier 3 monitor commits (append-only)
 
-Committed directly to `main`. Any number from 0 to many per run. One commit per run is ideal; combine all appends.
+Committed directly to `main`, **before** the routine branch is created. Any number from 0 to many per run; combine all appends in a single commit when feasible. When the issue body's `## Tier 3 additions` section references a commit hash, that hash must resolve on `main` — verify with `git branch --contains <hash>` before filing the issue. *Regression precedent (run 2026-05-04):* the issue body claimed Tier 3 went to main but the commit only existed on the routine branch; do not repeat.
 
 ## Forbidden actions
 
@@ -119,4 +119,4 @@ If you cannot say yes to all three, downgrade the candidate to Tier 3 and append
 
 ## Version
 
-Prompt version: 1.0.0 (initial). Iterate via normal PR flow against this file.
+Prompt version: 1.0.1 — clarified Tier 3 commit-ordering and verification (1.0.0 regression: 2026-05-04 run committed Tier 3 to routine branch instead of `main`, then mis-claimed the location in the issue body). Iterate via normal PR flow against this file.

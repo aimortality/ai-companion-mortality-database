@@ -522,15 +522,22 @@
         "Over 200 AI messages entered into evidence per court filings",
         "OpenAI statement: ChatGPT provided 'factual responses to questions with information that could be found broadly across public sources on the internet'"
       ],
-      "legal_action": "Florida AG civil investigation (ongoing, pre-April 2026); Florida AG criminal investigation opened April 21, 2026 with subpoenas to OpenAI for policies and internal training materials back to March 2024; wrongful death lawsuit announced by one victim family",
-      "legal_status_category": "criminal_investigation_active",
+      "legal_action": "Florida AG civil investigation (ongoing, pre-April 2026); Florida AG criminal investigation opened April 21, 2026 with subpoenas to OpenAI for policies and internal training materials back to March 2024 — expanded April 27–28, 2026 to include the April 2026 University of South Florida double homicide (Abugharbieh) as a second predicate incident; first federal civil wrongful death suit filed May 10, 2026 in U.S. District Court, Northern District of Florida (Tallahassee Division): Joshi v. OpenAI Foundation et al., Case No. 4:26-cv-00222-MW-MJF, brought by widow Vandana Joshi against OpenAI and Phoenix Ikner; Morales family wrongful death suit anticipated (attorney Ryan Hobbs, per April 27 reporting) but not yet confirmed filed",
+      "legal_status_category": "criminal_investigation_active_lawsuit_filed",
       "sources": [
         "NPR (April 21, 2026)",
         "Wall Street Journal",
         "Wikipedia: 2025 Florida State University shooting",
         "Leon County Circuit Court docket 2025 CF 001241 A001 (State of Florida v. Ikner, Phoenix)",
         "Leon County Clerk of Court — High Profile Cases portal",
-        "Florida AG James Uthmeier press conference (Tampa, April 21, 2026)"
+        "Florida AG James Uthmeier press conference (Tampa, April 21, 2026)",
+        "WUSF (April 28, 2026) — AG criminal investigation expansion to USF",
+        "Florida Phoenix (April 27, 2026)",
+        "WLRN (April 27, 2026)",
+        "Bloomberg Law (May 11, 2026) — Joshi v. OpenAI complaint",
+        "Florida Politics (May 11, 2026)",
+        "CBS News, CNN, NBC News, ABC News, PBS NewsHour, Engadget, IBTimes UK (Joshi civil suit, May 11–12, 2026)",
+        "Court filings (U.S. District Court, N.D. Fla., 4:26-cv-00222-MW-MJF)"
       ],
       "verification_level": "Court documents and official government statements",
       "additional_context": {
@@ -539,11 +546,22 @@
         "docket_court": "Leon County Circuit Court, 2nd Judicial Circuit of Florida",
         "indictment_date": "2025-05-14",
         "death_penalty_notice": "2025-06-05",
-        "regulatory_significance": "First US state attorney general criminal investigation directly targeting an AI company's responsibility for a mass-casualty event; subpoenas seek internal policies on user threats of harm and law enforcement referral protocols",
+        "regulatory_significance": "First US state attorney general criminal investigation directly targeting an AI company's responsibility for a mass-casualty event; subpoenas seek internal policies on user threats of harm and law enforcement referral protocols. As of April 27–28, 2026 the investigation was expanded to cover a second Florida incident — the April 2026 USF double homicide — making it the first AG investigation to add a second AI-implicated predicate.",
+        "criminal_investigation_expansion": "AG Uthmeier announced April 27–28, 2026 (one week after opening) that the OpenAI criminal investigation would expand to include the University of South Florida double homicide (Hisham Abugharbieh). Trigger: Tampa prosecutors disclosed Abugharbieh's ChatGPT queries about body disposal (April 13) and firearm use/detection (April 19). Florida Politics characterized the move as 'broadening' the existing investigation rather than opening a separate one. No specific OpenAI public statement on the expansion has been located.",
         "openai_response": "Spokesperson Kate Waters: 'Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime.'",
         "uthmeier_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others.'",
-        "trial_status": "Trial postponed to October 19, 2026",
-        "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence"
+        "trial_status": "Trial postponed to October 19, 2026; jury selection November 3; status hearing postponed from April to May 2026 — no further docket event identified through May 18 triage sweep",
+        "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence",
+        "civil_docket_caption": "Joshi v. OpenAI Foundation et al.",
+        "civil_docket_number": "4:26-cv-00222-MW-MJF",
+        "civil_docket_court": "U.S. District Court, Northern District of Florida, Tallahassee Division",
+        "civil_filing_date": "2026-05-10",
+        "civil_plaintiff": "Vandana Joshi (widow of Tiru Chabba, 45 — Aramark Collegiate Hospitality regional VP killed in the shooting)",
+        "civil_defendants": "OpenAI (as the Foundation et al.) and Phoenix Ikner (as co-defendant)",
+        "civil_legal_representation": "Osborne, Francis & Pettis + Strom Law Firm + Bannister, Wyatt & Stalvey",
+        "civil_claims": "Negligence, gross negligence, three strict products liability counts (defective design, negligent design, failure to warn), negligent entrustment, battery (against Ikner), Florida wrongful death",
+        "civil_complaint_allegations": "ChatGPT allegedly told Ikner a shooting would attract more national media attention 'if children are involved' (even 2–3 child victims would draw greater coverage); ChatGPT identified firearms from photos Ikner uploaded and provided instructions on loading and operation; ChatGPT discussed busiest times at FSU's Student Union as part of target selection; conversations allegedly continued until minutes before the shooting began",
+        "civil_legal_significance": "First federal wrongful death civil action filed by a victim family in an AI-implicated mass-shooting case; tests Florida products-liability law as applied to a generative AI system; ninth+ wrongful death suit against OpenAI as of May 2026 and the first invoking a federal-court forum for a chatbot-mass-shooting theory (most prior OpenAI wrongful death suits sit in CA Superior or N.D. Cal.)"
       }
     },
     {

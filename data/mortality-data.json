@@ -1114,6 +1114,91 @@
         "second_account": "Undetected until police released shooter's name post-shooting",
         "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting); now also the first AI-implicated mass shooting where the CEO has personally apologized to a victim community and where victim families have crossed an international border to litigate in U.S. federal court for damages remedies unavailable under domestic law"
       }
+    },
+    {
+      "id": "2026-04-US-001",
+      "name": "University of South Florida double homicide",
+      "name_type": "event",
+      "age": null,
+      "date": "2026-04-16",
+      "location": {
+        "city": "Tampa",
+        "state": "Florida",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Days surrounding the murders (documented April 13–19, 2026)",
+      "outcome": "Double homicide (2 third-party victims killed by sharp-force injuries)",
+      "mechanism_type": "instrumental_pathway",
+      "mechanism_subtype": "violence_planning_operational_assistance",
+      "outcome_target": "violence_against_others",
+      "perpetrator": {
+        "name": "Hisham Saleh Abugharbieh",
+        "age": 26,
+        "status": "Alive; pleaded not guilty May 18, 2026 (waived arraignment appearance, written plea); held without bond; jury trial scheduled November 3, 2027",
+        "background": "Roommate of victim Zamil Limon at time of killings; prior unrelated charges reportedly dismissed via diversion program (per CNN April 29, 2026)",
+        "charges": "Two counts of first-degree murder with a weapon (premeditated), one count of tampering with physical evidence relating to a capital felony, two counts of unlawfully holding or moving a dead human body in unapproved conditions, two counts of failure to report deaths to medical examiner or law enforcement with intent to conceal; death penalty sought"
+      },
+      "victims": {
+        "count": 2,
+        "killed": [
+          {"name": "Zamil Ahamed Limon", "age": 27, "role": "USF doctoral student", "nationality": "Bangladeshi"},
+          {"name": "Nahida Sultana Bristy", "age": 27, "role": "USF doctoral student", "nationality": "Bangladeshi"}
+        ],
+        "wounded": 0
+      },
+      "weapons": [
+        "Sharp-force / bladed weapon (cause of death per Pinellas County medical examiner ruling and Hillsborough County criminal affidavit; specific weapon not detailed in available reporting)"
+      ],
+      "key_factors": [
+        "Third documented instrumental-pathway case involving ChatGPT (after FSU April 2025 and Tumbler Ridge February 2026); first such case where the AI consultation was about post-mortem disposal rather than attack planning",
+        "April 13, 2026 (three days before victims' last contact): Abugharbieh asked ChatGPT 'What happens if a human has a put in a black garbage bag and thrown in a dumpster' — documented in Hillsborough County criminal affidavit; on-pattern pre-crime operational-assistance query about disposal that may have lowered the perceived cost of acting",
+        "Both victims were killed by sharp-force injuries (stab wounds); cause of death per Pinellas County medical examiner; not by firearm",
+        "Limon's body was recovered bound at wrists and ankles, with deep cuts at the hips consistent with attempted dismemberment to fit a trash bag; items belonging to Limon (student ID, credit cards, eyeglasses) recovered from a dumpster",
+        "Bristy's body was located separately; affidavit cites multiple stab wounds",
+        "Phone data placed Abugharbieh at the Howard Frankland Bridge twice during the early morning hours of April 17, 2026",
+        "On April 19, 2026 (three days after victims disappeared), Abugharbieh asked ChatGPT about sniper survival, firearm sound, vehicle VIN modification, and unlicensed firearm storage. These post-crime queries do not map to the actual mechanism of killing (stab wounds) and are either consultation about a separate potential violence event, related to the SWAT standoff that produced his April 24 arrest, or untethered from the index crime — documented here for transparency rather than as on-mechanism evidence",
+        "Florida AG James Uthmeier expanded the existing OpenAI criminal investigation (originally predicated on the FSU mass shooting) to include this case on April 27–28, 2026",
+        "Hillsborough County grand jury indicted Abugharbieh on May 7, 2026; state attorney's office filed death penalty notice the following day"
+      ],
+      "legal_action": "Hillsborough County criminal case (case number pending publication via Hillsborough Clerk of Court following May 7, 2026 indictment): two counts first-degree murder with a weapon, tampering with physical evidence, two counts unlawful transportation of remains, two counts failure to report deaths. Grand jury indictment May 7, 2026; death penalty notice filed May 8, 2026; not-guilty plea entered May 18, 2026; status hearing December 10, 2026; jury trial November 3, 2027. Florida AG criminal investigation of OpenAI expanded April 27–28, 2026 to include this case as a second predicate alongside the FSU shooting.",
+      "legal_status_category": "indicted_death_penalty_sought",
+      "sources": [
+        "WUSF (April 27, 2026)",
+        "WUSF (April 29, 2026)",
+        "WUSF (May 7, 2026 — indictment)",
+        "WUWF (May 19, 2026 — not-guilty plea)",
+        "CNN (April 26 and April 28, 2026)",
+        "CNN (April 29, 2026 — suspect's prior record)",
+        "NBC News",
+        "Tampa Bay Times (April 26, 2026)",
+        "ABC News",
+        "Axios Tampa Bay (April 27, 2026)",
+        "NPR (April 25, 2026)",
+        "Court TV",
+        "WTSP timeline reporting",
+        "WFLA (May 7, 2026)",
+        "FOX 13 Tampa Bay (May 7, 2026)",
+        "MySunCoast (May 7 and May 18, 2026)",
+        "Florida Politics (April 27, 2026)",
+        "Florida Phoenix (April 27, 2026)",
+        "Hillsborough County criminal affidavit (referenced by multiple outlets)"
+      ],
+      "verification_level": "Court documents and multiple news sources",
+      "additional_context": {
+        "indictment_date": "2026-05-07",
+        "death_penalty_notice": "2026-05-08",
+        "arraignment_date": "2026-05-18",
+        "status_hearing_date": "2026-12-10",
+        "trial_date": "2027-11-03",
+        "case_number_status": "Hillsborough County 26-CF case number not yet published in available news sources as of the May 18 triage sweep; verify via Hillsborough Clerk of Court online records before next data refresh",
+        "mechanism_note": "This case fits instrumental_pathway and reuses the same subtype as the FSU and Tumbler Ridge incidents (violence_planning_operational_assistance). The pre-crime April 13 query about body disposal is the on-mechanism query; the post-crime April 19 queries about firearms and VIN modification are documented in key_factors but do not match the actual mechanism of killing (sharp-force injuries) and may relate to a separate potential violence event or the SWAT standoff at arrest. Per project methodology (taxonomy parsimony, no new subtypes), the case is classified by the on-mechanism pre-crime query; the post-crime queries are treated as separate-event consultation rather than as evidence for a distinct subtype.",
+        "regulatory_significance": "Trigger event for the Florida AG criminal investigation's expansion to a second predicate (April 27–28, 2026); first AI-implicated case to be added to an existing AG investigation rather than serving as its founding predicate",
+        "openai_response": "No specific public OpenAI statement on this case has been located through May 18, 2026; OpenAI has not responded to the AG's investigation expansion announcement",
+        "scope_note": "Both victims were Bangladeshi nationals studying at USF; both 27 years old; both adults. The pre-crime ChatGPT consultation on April 13 was about post-mortem disposal logistics, not about attack planning in the conventional sense — this is a meaningful departure from the FSU (target selection, casualty maximization) and Tumbler Ridge (months-long ideation reinforcement) patterns, and is documented as such rather than collapsed into a new taxonomy bucket",
+        "promotion_history": "Surfaced by 2026-05-04 weekly triage routine; promotion deferred to the week of May 11 pending grand jury indictment (which produced the canonical case-charge structure on May 7); cause-of-death revision (stab wounds, not firearm) was identified in mid-research and integrated into this final record"
+      }
     }
   ],
   "regulatory_response": {

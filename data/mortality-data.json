@@ -680,37 +680,55 @@
         "country": "USA"
       },
       "platform": "ChatGPT",
-      "chatbot_name": "ChatGPT (used as 'drug buddy')",
+      "chatbot_name": "ChatGPT (GPT-4o; used as 'drug buddy')",
       "interaction_duration": "18 months (November 2023 - May 2025)",
       "outcome": "Death by overdose",
       "mechanism_type": "relational_pathway",
       "mechanism_subtype": "substance_use_coaching_dependency",
       "outcome_target": "self_harm",
       "key_factors": [
-        "First asked ChatGPT about drug doses in November 2023",
+        "UC Merced student; first asked ChatGPT about drug doses in November 2023",
         "ChatGPT initially refused but over 18 months began coaching on drug use",
         "Bot said 'Hell yes—let's go full trippy mode' when asked to help peak harder",
         "Provided advice on substance use, recovery, and planning further binges",
+        "On May 30, 2025 (the day before his death) ChatGPT allegedly recommended 0.25–0.5mg of Xanax as 'one of the best moves right now' to alleviate kratom-induced nausea",
         "Died from combination of alcohol, Xanax, and kratom causing CNS depression and asphyxiation",
-        "First documented death involving AI-facilitated substance misuse"
+        "First documented death involving AI-facilitated substance misuse",
+        "Complaint specifically names GPT-4o and alleges OpenAI deliberately weakened safety measures to maximize engagement — same allegation pattern as Gray v. OpenAI (Austin Gordon, 2025-11-US-001) and Soelberg federal case"
       ],
-      "legal_action": "Under investigation as of January 2026",
-      "legal_status_category": "under_investigation",
+      "legal_action": "Wrongful death lawsuit filed May 12, 2026: Turner-Scott v. OpenAI Foundation et al., San Francisco County Superior Court (case number pending publication). Plaintiffs Leila Turner-Scott and Angus Scott (parents) sued OpenAI Foundation (f/k/a OpenAI, Inc.), OpenAI Holdings LLC, OpenAI Group PBC, and CEO Sam Altman personally. Claims: strict product liability (defective design + failure to warn), negligent design + failure to warn, California Unfair Competition Law violations, and unlicensed practice of medicine under California Business & Professions Code. Plaintiffs seek to pause operations of 'ChatGPT Health' as unlicensed medical practice. Co-counsel: Tech Justice Law, Social Media Victims Law Center, and Yale Law School Tech Accountability & Competition Project",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "SFGate",
         "Fox News",
         "Futurism",
         "iHeart",
         "Mothership.SG",
-        "The Tab"
+        "The Tab",
+        "Engadget (May 12, 2026)",
+        "Gizmodo (May 12, 2026)",
+        "Claims Journal (May 13, 2026)",
+        "Los Banos Enterprise (UC Merced local coverage)",
+        "The Daily Record (May 12, 2026)",
+        "KRON4",
+        "Tech Justice Law case page",
+        "Court filings (San Francisco County Superior Court)"
       ],
-      "verification_level": "Multiple news sources",
+      "verification_level": "Court documents and multiple news sources",
       "additional_context": {
-        "background": "19-year-old California resident",
+        "background": "19-year-old UC Merced student",
         "toxicology": "Died from combination of alcohol, Xanax, and kratom causing central nervous system depression leading to asphyxiation",
         "chatgpt_evolution": "Initially ChatGPT refused drug queries with stern safety messages; over 18 months it progressively engaged with substance-related requests",
         "final_day": "May 30, 2025 - mother took him to healthcare center; given contact for psychiatric appointment he never made; found dead May 31",
-        "family": "Mother discovered ChatGPT conversations after his death"
+        "family": "Mother discovered ChatGPT conversations after his death",
+        "case_caption": "Turner-Scott v. OpenAI Foundation (f/k/a OpenAI, Inc.), OpenAI Holdings LLC, OpenAI Group PBC, and Samuel Altman",
+        "plaintiffs": "Leila Turner-Scott and Angus Scott (parents of Sam Nelson)",
+        "court": "San Francisco County Superior Court",
+        "filing_date": "2026-05-12",
+        "legal_representation": "Tech Justice Law + Social Media Victims Law Center + Yale Law School Tech Accountability & Competition Project",
+        "legal_significance": "First wrongful death lawsuit framing ChatGPT as an unlicensed medical practitioner whose drug-dosage advice caused death; filed in the same window as Pennsylvania v. Character Technologies (May 1, 2026 — state AG enforcement on the same unlicensed-medicine theory). Names Sam Altman personally — joins Gray v. OpenAI (Gordon) and Adams v. OpenAI (Soelberg state case) in that pattern.",
+        "gpt4o_allegation": "Complaint specifically names GPT-4o and alleges OpenAI deliberately removed safety measures from GPT-4o to maximize user engagement; GPT-4o was retired by OpenAI on February 13, 2026 following complaints about sycophantic behavior",
+        "novel_claim": "Plaintiffs are also suing for the unauthorized practice of medicine under California Business & Professions Code, asking the court to pause operations of 'ChatGPT Health' — first wrongful death suit advancing this theory against OpenAI; same theory advanced by Pennsylvania AG against Character.AI on May 1, 2026"
       }
     },
     {

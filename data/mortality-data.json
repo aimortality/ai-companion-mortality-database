@@ -1039,6 +1039,90 @@
       }
     },
     {
+      "id": "2026-01-KR-001",
+      "name": "Gangbuk-gu motel serial poisoning murders",
+      "name_type": "event",
+      "age": null,
+      "date": "2026-01-28",
+      "location": {
+        "city": "Seoul (Gangbuk-gu)",
+        "state": null,
+        "country": "South Korea"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Months across at least three attacks (October 2025 – February 2026)",
+      "outcome": "Two third-party victims killed by drug poisoning; one additional victim seriously injured and survived",
+      "mechanism_type": "instrumental_pathway",
+      "mechanism_subtype": "violence_planning_weapon_selection",
+      "outcome_target": "violence_against_others",
+      "perpetrator": {
+        "name": "Kim So-young (김소영)",
+        "age": 20,
+        "status": "Arrested February 11, 2026; sent to Seoul Northern District Prosecutors' Office on murder charges February 19; identity publicly disclosed by prosecutors March 9, 2026 (first 21st-century-born female suspect in South Korea to have identity publicly disclosed, per JoongAng Ilbo); police PCL-R evaluation (March 4, 2026) found her to meet psychopath criteria",
+        "background": "Met victims via online dating; lured them to motel rooms in Seoul's Gangbuk-gu district; laced drinks with benzodiazepines she had been prescribed for an unspecified mental illness",
+        "charges": "Two counts of murder (upgraded by Seoul Gangbuk Police from initial 'inflicting bodily injury resulting in death' classification after ChatGPT logs established premeditated intent); prosecution by Seoul Northern District Prosecutors' Office"
+      },
+      "victims": {
+        "count": 2,
+        "killed": [
+          {"name": "Unidentified male", "age_range": "20s", "role": "Met perpetrator via online dating; died January 28, 2026 in a Gangbuk-gu motel room"},
+          {"name": "Unidentified male", "age_range": "20s", "role": "Met perpetrator via online dating; died February 9, 2026 in a Gangbuk-gu motel room"}
+        ],
+        "wounded": 1,
+        "wounded_detail": "A third victim was seriously injured by the same modus operandi in December 2025 and survived; this is the survived attempt counted in metadata.total_attempts. Korean police are investigating two additional suspected cases that could raise the total to five if confirmed."
+      },
+      "weapons": [
+        "Zolpidem (Z-drug / non-benzodiazepine sedative-hypnotic, prescribed to perpetrator) administered in alcoholic drinks; Korean reporting cited zolpidem specifically though some English coverage generalized to 'benzodiazepines'"
+      ],
+      "key_factors": [
+        "First documented instrumental-pathway chatbot case outside the English-speaking world and first in East Asia in this database",
+        "First documented case where a chatbot was consulted for dose-optimization of an intoxicant used as a homicide method (substance-mediated weapon-selection variant of the same pattern as Roberts/Shellis 2025-10-GB-001)",
+        "Korean prosecutors described ChatGPT logs as 'highly noteworthy' as direct murder-intent evidence — among the first uses of ChatGPT conversations as forensic evidence of premeditated intent in a criminal proceeding",
+        "After the first attack (December 2025) the victim regained consciousness; perpetrator then queried ChatGPT with questions translated as 'What happens if you take sleeping pills with alcohol?', 'How much is dangerous?', and 'Could it be fatal?' before the second and third attacks, increasing the dose for subsequent attacks",
+        "Seoul Gangbuk Police forensically extracted ChatGPT search history from perpetrator's phone; logs established premeditated intent and supported the upgrade from inflicting-bodily-injury-resulting-in-death to murder",
+        "Three documented attacks across roughly four months in motel rooms in Gangbuk-gu, Seoul: December 2025 (victim survived with serious injury), January 28 2026 (victim died), February 9 2026 (victim died)",
+        "Victims were third-party adult men in their 20s met via online dating; not chatbot users themselves",
+        "No public statement from OpenAI on this case has been located in available English or Korean reporting",
+        "Mechanism subtype reuses violence_planning_weapon_selection (per Roberts/Shellis precedent and taxonomy parsimony policy); substance-mediated dose-optimization variation is documented in key_factors rather than as a new subtype"
+      ],
+      "legal_action": "Arrested by Seoul Gangbuk Police, February 11, 2026; police referral to prosecutors February 19, 2026 on murder charges; identity disclosure committee convened by Seoul Northern District Prosecutors' Office on March 3 and disclosed on March 9, 2026. Active prosecution by Seoul Northern District Prosecutors' Office; no English-language trial date published as of May 18, 2026.",
+      "legal_status_category": "criminal_charges_filed",
+      "sources": [
+        "The Korea Herald — 'Suspect used ChatGPT in planning drug killings: police'",
+        "Fortune (March 2, 2026)",
+        "NBC News",
+        "South China Morning Post",
+        "Vice",
+        "TechRadar",
+        "Mothership.SG (February 2026)",
+        "Controverity (February 27, 2026)",
+        "Yahoo News / AOL",
+        "MBC News (Korean — multiple stories including identity disclosure)",
+        "KBS (Korean — explainer reporting)",
+        "YTN (Korean — cable news)",
+        "Money Today (Korean — March 9, 2026)",
+        "Hankyung / 한국경제 (Korean — psychopath determination)",
+        "Newdaily (Korean — ChatGPT-as-smoking-gun reporting)",
+        "JoongAng Ilbo (Korean, referenced — first 21st-century-born female with public identity disclosure)",
+        "Korean Center News",
+        "Daum/Yonhap wire service",
+        "Police statements (Seoul Gangbuk Police)"
+      ],
+      "verification_level": "Multiple independent Korean and English news sources; police-sourced; primary Korean court documents not accessible in English (jurisdictional-verification-limited)",
+      "additional_context": {
+        "tier_at_promotion": "Tier 2 Journalistic with jurisdictional-verification-limited label (Korean criminal court records not accessible in English; English-language reporting confirmed across 10+ outlets, Korean-language reporting confirmed across major broadcasters including MBC, KBS, YTN and major dailies including Hankyung, Money Today)",
+        "korean_language_verification": "Confirmed independently in Korean-language coverage during May 18, 2026 triage sweep; Korean sources corrected three details that had been imprecise in initial English reporting: (1) substance is zolpidem specifically, not generic benzodiazepine; (2) date range starts October 2025, not December 2025; (3) referral to prosecutors was February 19 (Feb 11 was arrest)",
+        "victim_names_status": "Korean-language coverage describes victims only as 'men in their 20s' and does not publish their names — no name has been published in any language as of this entry, which clears the family-recognition gate by default rather than by access",
+        "perpetrator_age_discrepancy": "Some early Western coverage reported age 21; official Seoul Northern District Prosecutors' Office disclosure (March 9, 2026) confirmed age 20",
+        "psychopath_assessment": "Seoul Gangbuk Police announced March 4, 2026 that PCL-R evaluation found perpetrator to meet psychopath criteria; this was reported as a factor in the public identity-disclosure committee's review",
+        "open_cases": "Korean police announced investigation of two additional suspected cases by the same perpetrator that, if confirmed, would bring the total victim count to five",
+        "openai_response": "No public statement from OpenAI located in English or Korean sources as of May 18, 2026",
+        "regulatory_significance": "First case to surface in non-English-language coverage that was missed by prior triage runs (April 23, May 4) and was caught by the multilingual sweep in the May 18 run — also the first ChatGPT-implicated criminal case where forensic extraction of conversation logs has served as the central premeditated-intent evidence in a Korean criminal proceeding",
+        "surfaced_by": "Weekly triage routine v1.0.1, May 18, 2026 run — Korean-language sources (MBC, KBS, YTN, Money Today, Hankyung, Newdaily) verified against initial Korea Herald + SCMP + Fortune + NBC English reporting"
+      }
+    },
+    {
       "id": "2026-02-CA-001",
       "name": "Jesse van Rootselaar",
       "name_type": "real",

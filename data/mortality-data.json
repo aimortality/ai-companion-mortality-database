@@ -1074,13 +1074,14 @@
         "Incident triggered national debate in Canada re: mandatory LE reporting for AI companies when threats are detected",
         "Some researchers criticized OpenAI's subsequent 'safety pledges' as surveillance infrastructure rather than AI regulation"
       ],
-      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (referenced in NPR April 21, 2026); Canadian federal government exploring mandatory LE-referral policy for AI companies",
-      "legal_status_category": "under_investigation_lawsuit_filed_company_admission",
+      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (BC Supreme Court, referenced in NPR April 21, 2026); on April 29, 2026 a separate federal civil action was filed in U.S. District Court, Northern District of California (San Francisco) by multiple Tumbler Ridge victim families against OpenAI and Sam Altman (personally named) — damages sought in excess of US$1 billion; complaint alleges OpenAI's internal safety team urged management to refer van Rootselaar's June 2025 flagged account to law enforcement and that leadership declined; on April 23–24, 2026 OpenAI CEO Sam Altman published a personal apology letter to the Tumbler Ridge community and OpenAI announced three voluntary policy changes (lowered LE-referral threshold, direct RCMP point of contact, behavioral-expert consultation on flagged cases); Canadian federal government exploring mandatory LE-referral policy for AI companies",
+      "legal_status_category": "under_investigation_lawsuit_filed_parallel_state_federal_company_admission",
       "sources": [
         "Financial Post",
         "CBC News (account ban reporting)",
         "CBC News (Ottawa meeting)",
         "CBC News (Solomon 'disappointed' quote)",
+        "CBC News (Altman apology, April 24, 2026)",
         "The Star Phoenix",
         "Yahoo News Canada",
         "Bloomberg",
@@ -1090,16 +1091,28 @@
         "Prism News",
         "The Conversation (surveillance critique)",
         "NPR (April 21, 2026)",
-        "Police statements"
+        "NPR (April 29, 2026) — N.D. Cal. federal civil suit",
+        "CNBC (April 29, 2026)",
+        "CP24/CTV (April 24, 2026 apology; April 29, 2026 suit)",
+        "Al Jazeera (April 29, 2026)",
+        "Business in Vancouver (April 29, 2026 — $1B damages estimate)",
+        "TechCrunch (April 25, 2026 — Altman apology)",
+        "CNN (April 24, 2026 — Altman apology)",
+        "Tumbler RidgeLines (local, April 24, 2026)",
+        "Police statements",
+        "Court filings (U.S. District Court, N.D. Cal., San Francisco; case number not yet publicly confirmed)"
       ],
-      "verification_level": "Official government acknowledgment and company admission",
+      "verification_level": "Court documents, official government acknowledgment, and company admission",
       "additional_context": {
-        "openai_response_pre_shooting": "Account detected and banned June 2025 via automated tools + human review; threshold for alerting law enforcement was NOT met by OpenAI's internal assessment because activity was not deemed 'credible or imminent' planning — no alert sent to RCMP",
+        "openai_response_pre_shooting": "Account detected and banned June 2025 via automated tools + human review; threshold for alerting law enforcement was NOT met by OpenAI's internal assessment because activity was not deemed 'credible or imminent' planning — no alert sent to RCMP. WSJ subsequently reported internal debate among ~12 staff; some advocated for a law-enforcement referral; leadership declined.",
         "openai_response_post_shooting": "Contacted RCMP with information about van Rootselaar's account only after the February 2026 mass casualty event; stated this was 'proactive' sharing",
-        "canadian_government_response": "AI Minister Evan Solomon summoned OpenAI to Ottawa; following the meeting, Solomon stated publicly: 'We were disappointed that they did not have substantial answers for us, and we asked them to have substantial answers.'",
+        "altman_apology_2026_04_24": "Sam Altman signed and published a personal apology letter to Tumbler Ridge, dated April 23, 2026 and widely reported April 24, 2026. Key quote: 'I am deeply sorry that we did not alert law enforcement to the account that was banned in June.' Acknowledged that the prior 'target, means, and timing' threshold was too high. BC Premier David Eby shared the letter on social media, writing: 'the apology is necessary, and yet grossly insufficient for the devastation done to the families of Tumbler Ridge.'",
+        "openai_voluntary_policy_changes_2026_04": "Announced alongside the apology, three voluntary (non-binding, reversible) changes: (1) lowered LE-referral threshold — users no longer need to discuss 'the target, means, and timing' of planned violence for a conversation to trigger a referral; (2) direct RCMP point of contact established; (3) behavioral and mental-health experts enlisted to help assess flagged cases. Critics (researchers cited in The Conversation) noted these changes function as surveillance infrastructure rather than AI safety regulation.",
+        "ndca_civil_suit_2026_04_29": "Multiple Tumbler Ridge victim families filed a federal wrongful death / product liability action in the U.S. District Court for the Northern District of California (San Francisco division) on April 29, 2026, naming OpenAI and Sam Altman personally as defendants. Initial identified plaintiff: Maya Gebala (12-year-old survivor). Claims: negligence, wrongful death, aiding and abetting a mass shooting, product liability. Damages sought: in excess of US$1 billion (per Business in Vancouver lawyer's estimate). Complaint alleges OpenAI's internal safety team urged management to refer the June 2025 account flag to law enforcement and leadership declined — a claim consistent with prior WSJ reporting. Filed in U.S. federal court rather than Canadian court to access damages remedies that exceed Canada's roughly CAD $470,000 wrongful-death cap. Distinct from the existing BC Supreme Court civil action filed by a critically wounded victim's family.",
+        "canadian_government_response": "AI Minister Evan Solomon summoned OpenAI to Ottawa; following the meeting, Solomon stated publicly: 'We were disappointed that they did not have substantial answers for us, and we asked them to have substantial answers.' On April 27, 2026 children's advocacy groups (Children First Canada, CEO Sara Erin Austin) rallied on Parliament Hill calling for passage of online-harms legislation covering AI chatbots; Culture Minister Marc Miller reportedly developing successor to lapsed Bill C-63.",
         "policy_debate": "Active national debate in Canada re: whether AI companies should be required to report credible threats to law enforcement; OpenAI's post-incident 'safety pledges' announced in response criticized by some researchers as surveillance infrastructure rather than AI regulation",
         "second_account": "Undetected until police released shooter's name post-shooting",
-        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting)"
+        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting); now also the first AI-implicated mass shooting where the CEO has personally apologized to a victim community and where victim families have crossed an international border to litigate in U.S. federal court for damages remedies unavailable under domestic law"
       }
     }
   ],

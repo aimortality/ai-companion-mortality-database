@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "version": "3.3.0",
-    "last_updated": "2026-04-27",
-    "total_fatalities": 29,
-    "total_incidents": 19,
-    "total_attempts": 1,
+    "version": "3.4.0",
+    "last_updated": "2026-05-19",
+    "total_fatalities": 33,
+    "total_incidents": 22,
+    "total_attempts": 2,
     "ai_users_deceased": 16,
-    "third_party_victims": 13,
+    "third_party_victims": 17,
     "total_platforms": 8,
-    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (13: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting, and Angela Shellis 45 killed by her son using DeepSeek for weapon selection in Wales)",
+    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (17: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting, Angela Shellis 45 killed by her son using DeepSeek for weapon selection in Wales, Zamil Limon 27 and Nahida Bristy 27 killed at the University of South Florida after the perpetrator consulted ChatGPT on post-mortem disposal, and two adult men in their 20s killed in Seoul motel rooms after the perpetrator consulted ChatGPT on lethal-dose optimization)",
     "taxonomy_version": "1.0.0",
     "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
     "mechanism_definitions": {
@@ -18,7 +18,7 @@
     },
     "time_range": {
       "start": "2023-03-01",
-      "end": "2026-04-21"
+      "end": "2026-05-19"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "MIT",
@@ -27,28 +27,31 @@
   "statistics": {
     "deaths_by_year": {
       "2023": 2,
-      "2024": 2,
+      "2024": 3,
       "2025": 14,
-      "2026": 1
+      "2026": 3
     },
+    "deaths_by_year_note": "Counts incidents per year (date of index event). 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2026 includes Gangbuk-gu motel poisoning murders (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
     "victims_by_age_group": {
       "minors": 10,
-      "adults": 19
+      "adults": 23
     },
     "third_party_victims": {
-      "count": 13,
-      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation)"
+      "count": 17,
+      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation), USF 2 victims (Zamil Limon 27, Nahida Bristy 27 — killed by perpetrator who consulted ChatGPT on post-mortem disposal), Gangbuk-gu Seoul 2 victims (unidentified men in their 20s — killed by perpetrator who consulted ChatGPT on lethal dose optimization)"
     },
     "minors_affected_including_attempts": 6,
     "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 31.5,
-    "minors_percentage_deaths": 34.5,
-    "minors_percentage_all_incidents": 33.3,
+    "average_age": 30.8,
+    "average_age_note": "Average across 33 fatalities; Seoul victim ages estimated at 25 (midpoint of 'in their 20s' as reported in Korean and English sources; precise ages not yet published)",
+    "minors_percentage_deaths": 30.3,
+    "minors_percentage_all_incidents": 30.0,
     "instrumental_pathway_casualties": {
-      "incidents": 3,
-      "total_killed": 11,
-      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder."
+      "incidents": 5,
+      "total_killed": 15,
+      "total_wounded": 8,
+      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder. Gangbuk-gu Seoul motel poisoning murders (January 28 – February 9, 2026): 2 killed, 1 wounded (December 2025 victim survived), perpetrator arrested and indicted on murder charges. University of South Florida double homicide (April 16, 2026): 2 killed, perpetrator indicted May 7, 2026 with death penalty sought."
     }
   },
   "platforms": [

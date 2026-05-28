@@ -85,7 +85,7 @@
       {
         "@type": "PropertyValue",
         "name": "Platforms Documented",
-        "value": 5,
+        "value": 6,
         "description": "Number of AI platforms with documented deaths (ChatGPT, Character.AI, Chai AI, Meta AI, Gemini, DeepSeek)"
       }
     ],
@@ -964,7 +964,7 @@
           React.createElement('div', { className: 'viz-section' },
             React.createElement('div', { className: 'viz-title', id: 'platform-label' }, 'Deaths by Platform'),
             React.createElement('svg', { width: '100%', height: '180', style: { overflow: 'visible' }, role: 'img', 'aria-labelledby': 'platform-label', 'aria-describedby': 'platform-desc' },
-              React.createElement('desc', { id: 'platform-desc' }, 'Horizontal bar chart showing user deaths by platform. ChatGPT: 11 user deaths (23 total with third-party victims), Character.AI: 2 deaths, Meta AI: 1 death, Chai AI: 1 death, Gemini: 1 death, DeepSeek: 0 user deaths but 1 third-party victim killed by an AI user. Claude and Replika have zero documented deaths.'),
+              React.createElement('desc', { id: 'platform-desc' }, 'Horizontal bar chart showing user deaths by platform. ChatGPT: 11 user deaths (27 total with third-party victims), Character.AI: 2 deaths, Meta AI: 1 death, Chai AI: 1 death, Gemini: 1 death, DeepSeek: 0 user deaths but 1 third-party victim killed by an AI user. Claude and Replika have zero documented deaths.'),
               [
                 { name: 'ChatGPT', deaths: 11, type: 'assistant' },
                 { name: 'Character.AI', deaths: 2, type: 'companion' },
@@ -1029,7 +1029,7 @@
             React.createElement('div', { className: 'card' },
               React.createElement('div', { className: 'card-title' }, 'Accelerating Trajectory'),
               React.createElement('div', { className: 'card-meta' },
-                '2025–2026 saw 17 fatal incidents cited in connection with AI chatbot use—exceeding all previous years combined. Five instrumental-pathway cases allege AI as operational tool for violence: FSU mass shooting (April 2025, 2 killed), Roberts/Shellis homicide (Wales, October 2025, 1 killed; UK criminal conviction March 2026, first DeepSeek-involved case), Tumbler Ridge mass shooting (February 2026, 8 killed), Kim Seoul serial poisonings (January–February 2026, 2 killed, first East Asian case), and USF double homicide (April 2026, 2 killed). The Florida AG opened a criminal investigation in April 2026 and expanded it to include USF. ECRI Institute ranked AI chatbot misuse as the #1 Health Technology Hazard for 2026.'
+                '2025–2026 saw 17 fatal incidents cited in connection with AI chatbot use—exceeding all previous years combined. Five instrumental-pathway cases allege AI as operational tool for violence: FSU mass shooting (April 2025, 2 killed), Roberts/Shellis homicide (Wales, October 2025, 1 killed; UK criminal conviction March 2026, first DeepSeek-involved case), Tumbler Ridge mass shooting (February 2026, 8 killed), Kim Seoul serial poisonings (January–February 2026, 2 killed, first East Asian case), and USF double homicide (April 2026, 2 killed). Causal proximity varies across these cases: in FSU the chatbot was consulted on weapon, ammunition, and target timing, whereas in USF the documented query concerned post-crime body disposal rather than the killing itself. The Florida AG opened a criminal investigation in April 2026 and expanded it to include USF. ECRI Institute ranked AI chatbot misuse as the #1 Health Technology Hazard for 2026.'
               )
             )
           ),
@@ -1383,7 +1383,7 @@
                 strokeWidth: '2.5',
                 opacity: '0.8'
               }),
-              // ChatGPT line (black) - 11 user deaths + 12 third-party = 23 total by Apr 2026 (includes Gordon Nov 2025, FSU Apr 2025)
+              // ChatGPT line (black) - 11 user deaths + 16 third-party = 27 total by May 2026 (includes Gordon Nov 2025, FSU Apr 2025, USF + Seoul Apr/Jan 2026)
               React.createElement('polyline', {
                 points: '80,200 300,200 420,116 540,62',
                 fill: 'none',

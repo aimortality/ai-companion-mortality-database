@@ -3,13 +3,13 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.3.0",
-    last_updated: "2026-04-27",
-    total_fatalities: 29,
-    total_incidents: 19,
+    version: "3.4.0",
+    last_updated: "2026-05-19",
+    total_fatalities: 33,
+    total_incidents: 22,
     ai_users_deceased: 16,
-    third_party_victims: 13,
-    total_attempts: 1,
+    third_party_victims: 17,
+    total_attempts: 2,
     taxonomy_version: "1.0.0",
     crisis_support: "988"
   },
@@ -27,7 +27,8 @@ const mortalityData = {
     {
       name: "ChatGPT/OpenAI",
       deaths: 11,
-      fatalities_total: 23,
+      fatalities_total: 27,
+      third_party_fatalities: 15,
       attempts: 0,
       cases: [
         { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA", mechanism: "relational" },
@@ -44,7 +45,9 @@ const mortalityData = {
         { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA", mechanism: "relational" },
         { name: "Suzanne Adams", age: 83, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive", type: "third_party_victim" },
         { name: "Stein-Erik Soelberg", age: 56, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive" },
-        { name: "Jesse van Rootselaar", age: 18, date: "2026-02-10", location: "British Columbia, Canada", mechanism: "instrumental", notes: "8 third-party victims" }
+        { name: "Jesse van Rootselaar", age: 18, date: "2026-02-10", location: "British Columbia, Canada", mechanism: "instrumental", notes: "8 third-party victims" },
+        { name: "Kim So-young (perp), 2 adult male victims unnamed", age: 20, date: "2026-01-28", location: "Seoul, South Korea", mechanism: "instrumental", type: "third_party_victim", notes: "Gangbuk-gu motel serial zolpidem poisoning murders; perpetrator queried ChatGPT on lethal-dose combinations after first victim survived; forensic extraction of ChatGPT logs used to upgrade charges to murder. Tier 2 Journalistic." },
+        { name: "Hisham Abugharbieh (perp): Zamil Limon + Nahida Bristy", date: "2026-04-16", location: "Tampa, FL, USA", mechanism: "instrumental", type: "third_party_victim", notes: "USF double homicide; perpetrator queried ChatGPT on body disposal April 13 pre-crime; two doctoral students killed by sharp-force injuries; indicted May 7, 2026; death penalty sought" }
       ]
     },
     {
@@ -136,15 +139,15 @@ const DataExporter = {
       age_statistics: {
         youngest: 11,
         oldest: 83,
-        average: 31.5,
+        average: 30.8,
         minors: 10,
-        adults: 19
+        adults: 23
       },
       deaths_by_year: {
         "2023": 2,
-        "2024": 2,
+        "2024": 3,
         "2025": 14,
-        "2026": 1
+        "2026": 3
       }
     };
 
@@ -323,11 +326,11 @@ const API = {
         return mortalityData.platforms;
       case 'statistics':
         return {
-          total_fatalities: 29,
+          total_fatalities: 33,
           ai_users_deceased: 16,
-          third_party_victims: 13,
-          total_attempts: 1,
-          minors_percentage: 34.5,
+          third_party_victims: 17,
+          total_attempts: 2,
+          minors_percentage: 30.3,
           platforms_affected: 6
         };
       case 'timeline':

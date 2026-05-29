@@ -38,7 +38,7 @@
     },
     "third_party_victims": {
       "count": 17,
-      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation), USF 2 victims (Zamil Limon 27, Nahida Bristy 27 — killed by perpetrator who consulted ChatGPT on post-mortem disposal), Gangbuk-gu Seoul 2 victims (unidentified men in their 20s — killed by perpetrator who consulted ChatGPT on lethal dose optimization)"
+      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation), USF 2 victims (Zamil Limon 27, Nahida Bristy 27 — killed by perpetrator who consulted ChatGPT on post-mortem disposal), Gangbuk-gu Seoul 2 victims (unidentified men in their 20s, killed January 28 and February 9, 2026 — perpetrator queried ChatGPT about lethal sleeping-pill doses; ChatGPT warned her of respiratory-failure death risk and advised calling 119, but the logs were later used forensically by prosecutors as evidence of premeditated murder intent)"
     },
     "minors_affected_including_attempts": 6,
     "youngest_victim": 11,
@@ -51,7 +51,7 @@
       "incidents": 5,
       "total_killed": 15,
       "total_wounded": 8,
-      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder. Gangbuk-gu Seoul motel poisoning murders (January 28 – February 9, 2026): 2 killed, 1 wounded (December 2025 victim survived), perpetrator arrested and indicted on murder charges. University of South Florida double homicide (April 16, 2026): 2 killed, perpetrator indicted May 7, 2026 with death penalty sought."
+      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder. Gangbuk-gu Seoul motel poisoning murders (indicted period December 14, 2025 – February 9, 2026): 2 killed (January 28 and February 9, 2026), 1 wounded (December 2025 victim survived); perpetrator arrested February 11, indicted on murder charges February 19, 2026. AI's role here is forensic-evidence rather than operational: ChatGPT warned her of respiratory-failure death risk; the logs proved premeditation. University of South Florida double homicide (April 16, 2026): 2 killed, perpetrator indicted May 7, 2026 with death penalty sought."
     }
   },
   "platforms": [
@@ -1056,7 +1056,7 @@
       },
       "platform": "ChatGPT",
       "chatbot_name": "ChatGPT",
-      "interaction_duration": "Months across at least three attacks (October 2025 – February 2026)",
+      "interaction_duration": "Three attacks across the indicted period December 14, 2025 – February 9, 2026 (per the Seoul Northern District Prosecutors' Office indictment summary)",
       "outcome": "Two third-party victims killed by drug poisoning; one additional victim seriously injured and survived",
       "mechanism_type": "instrumental_pathway",
       "mechanism_subtype": "violence_planning_weapon_selection",
@@ -1065,7 +1065,7 @@
         "name": "Kim So-young (김소영)",
         "age": 20,
         "status": "Arrested February 11, 2026; sent to Seoul Northern District Prosecutors' Office on murder charges February 19; identity publicly disclosed by prosecutors March 9, 2026 (first 21st-century-born female suspect in South Korea to have identity publicly disclosed, per JoongAng Ilbo); police PCL-R evaluation (March 4, 2026) found her to meet psychopath criteria",
-        "background": "Met victims via online dating; lured them to motel rooms in Seoul's Gangbuk-gu district; laced drinks with zolpidem (a non-benzodiazepine sedative-hypnotic) she had been prescribed for an unspecified mental illness",
+        "background": "Met victims via online dating; lured them to motel rooms in Seoul's Gangbuk-gu (Suyu-dong) and a cafe in Namyangju; laced drinks with benzodiazepines — specifically flunitrazepam and diazepam, per the indictment — that she had obtained by feigning PTSD to secure psychiatric prescriptions",
         "charges": "Two counts of murder (upgraded by Seoul Gangbuk Police from initial 'inflicting bodily injury resulting in death' classification after ChatGPT logs established premeditated intent); prosecution by Seoul Northern District Prosecutors' Office"
       },
       "victims": {
@@ -1078,18 +1078,18 @@
         "wounded_detail": "A third victim was seriously injured by the same modus operandi in December 2025 and survived; this is the survived attempt counted in metadata.total_attempts. Korean police are investigating two additional suspected cases that could raise the total to five if confirmed."
       },
       "weapons": [
-        "Zolpidem (Z-drug / non-benzodiazepine sedative-hypnotic, prescribed to perpetrator) administered in alcoholic drinks; Korean reporting cited zolpidem specifically though some English coverage generalized to 'benzodiazepines'"
+        "Benzodiazepines — specifically flunitrazepam and diazepam per the prosecution's indictment summary (Khan/경향신문, March 18 2026) — administered in alcoholic drinks. Some earlier English coverage and an internal note in this record previously misidentified the substance as zolpidem (a non-benzodiazepine Z-drug); the indictment supersedes that. Sleeping pills were obtained by feigning PTSD to secure psychiatric prescriptions."
       ],
       "key_factors": [
-        "First documented instrumental-pathway chatbot case outside the English-speaking world and first in East Asia in this database",
-        "First documented case where a chatbot was consulted for dose-optimization of an intoxicant used as a homicide method (substance-mediated weapon-selection variant of the same pattern as Roberts/Shellis 2025-10-GB-001)",
-        "Korean prosecutors described ChatGPT logs as 'highly noteworthy' as direct murder-intent evidence — among the first uses of ChatGPT conversations as forensic evidence of premeditated intent in a criminal proceeding",
-        "After the first attack (December 2025) the victim regained consciousness; perpetrator then queried ChatGPT with questions translated as 'What happens if you take sleeping pills with alcohol?', 'How much is dangerous?', and 'Could it be fatal?' before the second and third attacks, increasing the dose for subsequent attacks",
-        "Seoul Gangbuk Police forensically extracted ChatGPT search history from perpetrator's phone; logs established premeditated intent and supported the upgrade from inflicting-bodily-injury-resulting-in-death to murder",
-        "Three documented attacks across roughly four months in motel rooms in Gangbuk-gu, Seoul: December 2025 (victim survived with serious injury), January 28 2026 (victim died), February 9 2026 (victim died)",
+        "First documented chatbot case in this database where the AI's safety response was itself the forensic evidence used to upgrade homicide charges, and first East Asian case in this database",
+        "ChatGPT's actual responses were SAFETY-ORIENTED, not operational: per the Khan/경향신문 March 18 2026 indictment summary, on January 25 2026 Kim queried '수면제 많이 먹으면 어떻게 돼?' ('What happens if you take many sleeping pills?') and ChatGPT replied that combined with alcohol the risk of death by respiratory failure was very high and advised her to call 119; on January 28 2026 (the day she killed the second victim) she asked '수면제 많이 먹는다고 사람이 죽어?' ('Can people die from taking many sleeping pills?') and ChatGPT answered affirmatively. She proceeded with attacks anyway.",
+        "She doubled the dose for subsequent victims after observing that the first victim had fallen into a coma — this dose-escalation was her own decision after observing survival, not ChatGPT coaching",
+        "Seoul Gangbuk Police forensically extracted Kim's ChatGPT search history from her phone; prosecutors used these logs as evidence that she KNEW the drug combination could be lethal, establishing the premeditation/intent (mens rea) required to upgrade charges from inflicting-bodily-injury-resulting-in-death (상해치사) to murder (살인) on February 19 2026",
+        "Three indicted attacks at a Gangbuk-gu (Suyu-dong) motel and a Namyangju cafe: ~December 14 2025 (first victim survived, comatose), January 28 2026 (second victim died), February 9 2026 (third victim died)",
+        "An additional October 25 2025 incident at a Seocho-gu restaurant (where a man in his 20s collapsed after drinking wine with Kim) is being investigated as a SUSPECTED additional case, NOT part of the indicted murders; police are examining two such suspected additional cases that could raise the total to five if confirmed",
         "Victims were third-party adult men in their 20s met via online dating; not chatbot users themselves",
         "No public statement from OpenAI on this case has been located in available English or Korean reporting",
-        "Mechanism subtype reuses violence_planning_weapon_selection (per Roberts/Shellis precedent and taxonomy parsimony policy); substance-mediated dose-optimization variation is documented in key_factors rather than as a new subtype"
+        "Mechanism subtype reuses violence_planning_weapon_selection (per Roberts/Shellis precedent and taxonomy parsimony policy), but with an important caveat: the AI's role here is materially weaker than in Roberts/Shellis or FSU — ChatGPT did not select or optimize the method, it warned her; the case is in the instrumental set on the strength of how the queries served forensically as premeditation evidence. Worth revisiting at the next taxonomy review."
       ],
       "legal_action": "Arrested by Seoul Gangbuk Police, February 11, 2026; police referral to prosecutors February 19, 2026 on murder charges; identity disclosure committee convened by Seoul Northern District Prosecutors' Office on March 3 and disclosed on March 9, 2026. Active prosecution by Seoul Northern District Prosecutors' Office; no English-language trial date published as of May 18, 2026.",
       "legal_status_category": "criminal_charges_filed",
@@ -1117,7 +1117,7 @@
       "verification_level": "Multiple independent Korean and English news sources; police-sourced; primary Korean court documents not accessible in English (jurisdictional-verification-limited)",
       "additional_context": {
         "tier_at_promotion": "Tier 2 Journalistic with jurisdictional-verification-limited label (Korean criminal court records not accessible in English; English-language reporting confirmed across 10+ outlets, Korean-language reporting confirmed across major broadcasters including MBC, KBS, YTN and major dailies including Hankyung, Money Today)",
-        "korean_language_verification": "Confirmed independently in Korean-language coverage during May 18, 2026 triage sweep; Korean sources corrected three details that had been imprecise in initial English reporting: (1) substance is zolpidem specifically, not generic benzodiazepine; (2) date range starts October 2025, not December 2025; (3) referral to prosecutors was February 19 (Feb 11 was arrest)",
+        "korean_language_verification": "Re-verified May 27, 2026 against the Khan/경향신문 indictment summary (March 18, 2026), the Seoul Northern District Prosecutors' Office disclosure, and asiae English coverage. Two earlier 'corrections' recorded in this field have been REVERSED: (1) substance is benzodiazepines — specifically flunitrazepam and diazepam per the indictment — NOT zolpidem (the prior zolpidem note appears to have come from secondary aggregator coverage and was contradicted by the indictment); (2) the indicted/charged series runs December 14 2025 – February 9 2026, NOT October 2025 — the October 25 2025 Seocho-gu restaurant incident is a SEPARATE, under-investigation suspected case, not part of the indicted murders. One earlier correction stands: referral to prosecutors was February 19, 2026 (February 11 was arrest).",
         "victim_names_status": "Korean-language coverage describes victims only as 'men in their 20s' and does not publish their names — no name has been published in any language as of this entry, which clears the family-recognition gate by default rather than by access",
         "perpetrator_age_discrepancy": "Some early Western coverage reported age 21; official Seoul Northern District Prosecutors' Office disclosure (March 9, 2026) confirmed age 20",
         "psychopath_assessment": "Seoul Gangbuk Police announced March 4, 2026 that PCL-R evaluation found perpetrator to meet psychopath criteria; this was reported as a factor in the public identity-disclosure committee's review",

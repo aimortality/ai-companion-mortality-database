@@ -63,8 +63,8 @@ This repository contains data and documentation for the first comprehensive publ
 | Jonathan Gavalas | 36 | Gemini | Oct 2025 | Florida, USA | Death by suicide | Cognitive/Relational |
 | Austin Gordon | 40 | ChatGPT | Nov 2, 2025 | Colorado, USA | Death by suicide | Relational |
 | **Angela Shellis** | 45 | DeepSeek | Oct 23, 2025 | Prestatyn, Wales, UK | **Homicide (by son)** | Instrumental |
-| **Kim Seoul victim 1** (unnamed) | ~25 | ChatGPT | Jan 28, 2026 | Seoul, South Korea | **Murder victim (zolpidem poisoning)** | Instrumental — Tier 2 |
-| **Kim Seoul victim 2** (unnamed) | ~25 | ChatGPT | Feb 9, 2026 | Seoul, South Korea | **Murder victim (zolpidem poisoning)** | Instrumental — Tier 2 |
+| **Kim Seoul victim 1** (unnamed) | ~25 | ChatGPT | Jan 28, 2026 | Seoul, South Korea | **Murder victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
+| **Kim Seoul victim 2** (unnamed) | ~25 | ChatGPT | Feb 9, 2026 | Seoul, South Korea | **Murder victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
 | **Tumbler Ridge 8 victims** | 11-39 | ChatGPT | Feb 2026 | BC, Canada | **Mass shooting victims** | Instrumental |
 | Jesse van Rootselaar | 18 | ChatGPT | Feb 2026 | BC, Canada | Mass shooting-suicide | Instrumental |
 | **Zamil Limon** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Murder victim (sharp-force)** | Instrumental |

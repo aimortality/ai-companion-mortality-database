@@ -117,7 +117,7 @@ We welcome contributions of:
 - **Corrections** to existing data
 - **Translations** for international accessibility
 
-See [CONTRIBUTING.md](docs/contributing.md) for guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📈 Platform Safety Comparison
 

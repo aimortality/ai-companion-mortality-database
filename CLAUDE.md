@@ -23,33 +23,59 @@ Static site using vanilla HTML/CSS with React 18 loaded via CDN (esm.sh). No bui
 
 ## Adding a New Case - Checklist
 
-1. **Verify the case** through court documents, multiple news sources, or government acknowledgment before adding
-2. Update `data/mortality-data.json` (add incident, update metadata counts, platform deaths)
+1. **Verify the case** through court documents, multiple news sources, or government acknowledgment before adding. For non-English-jurisdiction cases, run a primary-language source sweep and apply the **jurisdictional-verification-limited** Tier 2 sub-label where appropriate. See `docs/verification-standards.md`.
+2. Update `data/mortality-data.json` (add incident record, update metadata counts, update relevant platform record including `third_party_fatalities` where applicable, update `statistics.instrumental_pathway_casualties` if instrumental)
 3. Update `src/index.html`:
-   - Meta tags (description, OG, Twitter, schema.org JSON-LD)
-   - `.meta` line (deaths count, cases count, period)
+   - Meta tags (description, OG, Twitter, schema.org JSON-LD — both the `variableMeasured` values AND the description strings)
+   - `.meta` line (Deaths, Incidents, Period — *not* `Cases` as an additive total; see `docs/methodology.md` "On What Counts as an Incident")
    - Abstract text and key findings list
    - React `data.platforms` array (add case object)
    - Stat boxes (death count, minors count if applicable)
-   - SVG visualizations (age distribution, platform bars, cumulative chart)
+   - SVG visualizations (age distribution, platform bars, cumulative chart) — and **every chart's `<desc>` accessibility text** (see "Presentation lag classes" below)
    - Temporal distribution table (deaths by year)
    - Demographic tables (add age row, recalculate percentages)
    - Footer date
-4. Update `src/report.html` (add case section, update executive summary, stats, conclusions)
-5. Update `src/index-academic.html` (abstract, key findings, dates)
-6. Update `src/export.js` (case array, death counts, stats)
-7. Update `README.md` (badge, case table, platform comparison, key findings)
+4. Update `src/report.html` (add case section, update executive summary near top AND Summary Statistics near bottom — there are two stat blocks, both need attention; update Lawsuits section, Regulatory section, Conclusions)
+5. Update `src/index-academic.html` (abstract, key findings, stats grid, Table 1 deaths-by-year, Table 2 platform distribution, Table 3 age distribution, Table 4 case list, masthead date)
+6. Update `src/export.js` (case array, death counts, age stats, deaths-by-year, mock API stats)
+7. Update `README.md` (badge, case table, platform comparison, key findings, last-updated)
+8. Run the audit grep (see "Verification grep" below) before declaring done.
 
 ## Stats to Recalculate
 
-When death count changes, recalculate:
+When the death count, incident count, or platform tally changes, recalculate:
 - Minors percentage (deaths under 18 / total deaths)
-- Average age
+- Average age (note any estimated ages — e.g., the Kim Seoul Korean victims at midpoint 25 — in `statistics.average_age_note`)
 - Deaths by year
 - Platform death counts and percentages
-- Age distribution buckets (13-17, 18-35, 36-54, 55+) and their percentages
-- Cases count (deaths + survived attempts)
+- Per-platform totals that *aggregate* user deaths + third-party victims — these are the values that were *correct before the change* and silently go stale after (e.g., `ChatGPT total = N`). Re-derive each one rather than relying on grep for the new headline number.
+- Age distribution buckets (13-17, 18-35, 36-54, 55+) and their percentages — the bucket counts must sum to the total fatalities
 - Duration note denominator ("Duration known for X of Y cases")
+- The three pathway counts (relational, cognitive, instrumental) — note that these classify *death mechanism* and need not sum to total incidents; survived-attempt incidents have no death mechanism.
+
+## Presentation lag classes — locations easy to miss
+
+Five classes of locations have caused presentation-vs-data drift in prior sweeps. Check each explicitly:
+
+1. **Same-page duplicate stats in different rhetorical positions.** A single HTML page may carry the same statistic in the Key Findings bullets, the abstract, a card-meta tooltip, the schema.org JSON-LD, and the meta description tags. Updating one and missing the others creates *internal* inconsistency on a single page. Past misses: pathway counts split between two rhetorical sections of `src/index.html`.
+2. **SVG `<desc>` accessibility text.** Each chart has both visible labels and a `<desc>` element that screen readers announce. They are independent strings. Past misses: `src/index.html` engagement-duration desc and platform-deaths desc carrying outdated totals.
+3. **Decorative header dates that are not `last_updated`.** Pages can carry "as of [date]" text in cosmetic header banners that is technically separate from the `last_updated` metadata. Past misses: `src/index-academic.html` `<header class="journal-header">` masthead date.
+4. **Derived subtotals that were CORRECT before the sweep but go stale after.** This is the subtle one. When a top-line total changes, *derived* subtotals (a platform's own total like "ChatGPT: 23 fatalities", a "general-purpose assistants accounted for 26 fatalities" prose sentence, a code comment carrying the prior figure, an SVG `<desc>` reciting the prior platform total) silently become wrong. Grepping only for the headline old value misses these because the stale token is a *different* number that nobody thinks to search for. Before declaring done, enumerate every per-platform and per-category subtotal that the changed total feeds into, and search each old value.
+5. **Mid-paragraph prose.** The worst misses hide in flowing sentences ("...accounted for 26 fatalities...") that no stat-box-focused check looks at. `docs/methodology.md` paragraph-7 numbers, the `index-academic.html` Platform Distribution intro, and the long-form `report.html` Conclusions block are particularly exposed.
+
+## Verification grep — run before declaring a sweep done
+
+Grep all six canonical files (`data/mortality-data.json`, `src/index.html`, `src/index-academic.html`, `src/report.html`, `src/export.js`, `README.md`), plus `docs/methodology.md` (which carries headline numbers in prose) and the project CLAUDE.md, for *every* pre-change value: headline totals, per-platform subtotals, derived percentages, period-end dates, and the version string.
+
+- Use **case-insensitive** matching (`grep -ri`). A capital-I "Incidents" header has previously evaded a case-sensitive pass.
+- Check `<desc id="...-desc">` elements explicitly.
+- Check decorative header bands and page-banner spans, not just `last_updated`.
+- Check prose mid-paragraph, not just stat boxes and tables.
+- Check code comments — they're cosmetic but often quoted as authoritative downstream.
+
+## Sourcing integrity — non-negotiable
+
+When citing sources for a case, **copy source names verbatim from the canonical record's `sources` array**. Never embellish a source list with marquee outlets that did not cover the case. A prior sweep rendered "(including AP, Reuters, BBC)" in the Kim Seoul verification note while omitting the actual cited outlets (Korea Herald, Fortune, NBC News, South China Morning Post) — an integrity failure that is worst-of-all in a Tier 2 / jurisdictional-verification-limited case, where source provenance is the defining caveat.
 
 ## Verification Standards
 
@@ -64,7 +90,7 @@ Cases require at least ONE of:
 
 ## Platforms Tracked
 
-Currently 7: ChatGPT, Character.AI, Chai AI, Meta AI, Gemini, Claude, Replika
+Currently 8: ChatGPT, Character.AI, Chai AI, Meta AI, Gemini, DeepSeek, Claude, Replika. Six of these have documented fatalities (all except Claude and Replika). DeepSeek was added in April 2026 following the Roberts/Shellis homicide (Wales, October 2025) — the first non-Western corporate AI to appear in the database.
 
 ## Content Sensitivity
 

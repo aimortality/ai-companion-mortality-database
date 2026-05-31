@@ -108,6 +108,7 @@ This project uses the **three-tier system** defined in [`docs/verification-stand
 - Three or more independent news outlets reporting the same core facts (wire reprints don't count as independent)
 - Primary-source journalism from a single major outlet (reporter reviewed chat logs directly; original family interviews; documentary evidence obtained)
 - Platform operator acknowledgment of the incident
+- **Sub-label — jurisdictional-verification-limited**: applies when the case meets Tier 2 across multiple outlets but primary court records are not accessible in the publication language. Submitters of non-English-jurisdiction cases should flag this and include at least one primary-language source pass. See [`docs/verification-standards.md`](docs/verification-standards.md#jurisdictional-verification-limits-tier-2-sub-label).
 
 ### Tier 3: Preliminary Evidence (Tracked, not published)
 - Single-source reports without independent confirmation

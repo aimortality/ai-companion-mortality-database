@@ -99,6 +99,25 @@ Non-US cases face additional verification challenges:
 - We note when verification is limited by jurisdiction
 - International cases may require longer verification timelines
 
+### Jurisdictional Verification Limits (Tier 2 sub-label)
+
+A case may meet the Tier 2 standard for journalistic verification — multiple independent outlets, often including a primary-source outlet — while still being limited by the inaccessibility of primary court documents to readers and reviewers of the database. We mark such cases with the **jurisdictional-verification-limited** sub-label.
+
+**When the sub-label applies:**
+
+- The case is verified across the required number of independent sources in at least one language we can read
+- Primary court records (indictments, rulings, transcripts) exist but are not accessible in the language of publication, are not available via the courts' public portals, or both
+- The verification rests substantively on professional journalism rather than on documents we have read directly
+
+**What the sub-label commits us to:**
+
+- A multilingual source sweep, with at least one published-language and one primary-language pass, where the primary-language pass is documented in the canonical record
+- Explicit identification of the most authoritative single source (typically an indictment summary or court-records-based article) for the dates, charges, and substantive facts
+- Re-verification when a primary document becomes accessible, with corrections to the record where prior secondary coverage diverges from the document
+- An honest in-prose note that primary records are not accessible in the language of publication, so readers can weigh the source basis themselves
+
+**Worked example.** The 2026-01-KR-001 Gangbuk-gu motel serial poisoning murders (Kim So-young, Seoul) is the first case in the database to carry this sub-label. The case is verified across 10+ English-language outlets and across major Korean broadcasters and dailies, but Korean criminal court records are not accessible to English-language verification. The Khan/경향신문 March 18, 2026 indictment summary serves as the most authoritative single source for the charged dates, substances, and ChatGPT exchanges. Two earlier "corrections" recorded in the canonical record on the basis of secondary aggregator coverage — the identification of the substance as zolpidem rather than benzodiazepines, and the placement of the series start in October 2025 rather than December 2025 — were both later reversed against the indictment. Cases at this sub-label tier are expected to undergo similar reversals when primary records reach the reviewer; the sub-label exists to mark that exposure honestly rather than to disguise it.
+
 ### Platform Self-Reports
 
 When companies acknowledge incidents:
@@ -170,4 +189,4 @@ Only when all three answers are yes does a case move from internal tracking to p
 
 ---
 
-*Last updated: April 23, 2026*
+*Last updated: May 30, 2026*

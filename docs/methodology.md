@@ -4,7 +4,7 @@
 
 This database exists because someone had to build it.
 
-Between March 2023 and April 2026, 27 fatalities have been documented across 17 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—15 AI users who died and 12 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
+Between March 2023 and May 2026, 33 fatalities have been documented across 22 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—16 AI users who died and 17 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
 
 What began as documentation of suicides associated with companion-chatbot dependency has expanded, of necessity, to include murders, murder-suicides, and mass-casualty events in which perpetrators used general-purpose AI systems for operational planning. The taxonomy grew in response: three causal pathways (relational, cognitive, instrumental); two outcome targets (self-harm, violence-against-others); and two overlapping-but-distinct victim populations (AI users and third-party victims). The database's scope is determined by where the evidence leads, not by a prior theory of harm.
 
@@ -27,6 +27,21 @@ We can know what court documents allege. We can know what families testified und
 We cannot know the interior experience of someone in their final hours. We cannot know whether intervention at any point would have altered the outcome. We cannot know how many similar cases remain undocumented.
 
 This database records what is knowable. It leaves appropriate space for what is not.
+
+### On What Counts as an Incident
+
+An **incident** in this database is an *occurrence of harm*. That is the entire working definition, and the looseness is deliberate.
+
+We resist a stricter definition for two reasons. First, sharper categories invite gaming — by us, when boundary cases tempt us to draw lines that make our totals tidier; and by others, when downstream readers anchor on the scaffolding rather than the underlying harm. Second, the phenomenon documented here does not fit cleanly into a single ontology: fatal and non-fatal outcomes, single-victim and multi-victim events, perpetrator-survivors and victim-survivors, AI users and third-party victims all coexist in the record. A taxonomy crisp enough to be defensible at the boundary would either exclude cases that belong or rest on distinctions the evidence does not support.
+
+The practical consequences of this definition:
+
+- **Survived attempts are incidents.** A survived attempt is an occurrence of harm; it sits inside the incident set rather than alongside it. We do not present headline figures of the form *"X incidents plus Y additional survived attempts"* — that arithmetic double-counts.
+- **A single incident may contain multiple victims.** The Tumbler Ridge mass shooting (8 killed, 2 wounded) is one incident. The Kim Seoul series (3 attacks across three months, indicted as a single case) is one incident.
+- **Mechanism counts will not always sum to incident counts.** The three causal pathways (relational, cognitive, instrumental) classify *death mechanism*. A survived-attempt incident has no death mechanism. The gap between the sum of the three pathways and the total incident count is the count of incidents that did not involve a death — and that gap is meaningful, not a reconciliation error.
+- **"Cases" is not a separate countable unit.** We have at various points used the word *case* informally to refer to a documented record; we do not maintain a separate *case* total distinct from *incidents*.
+
+When a downstream reader needs a stricter operational definition for their own analysis, they should construct one from the underlying records and state it explicitly. The figures we publish do not bake one in.
 
 ---
 
@@ -67,7 +82,7 @@ Cases enter our tracking system through:
 
 1. **News monitoring**: Systematic review of major news outlets, wire services, and technology press
 2. **Legal database searches**: PACER (federal), state court clerk portals (e.g., California Superior Court / San Francisco County; Leon County Clerk, FL; Kennebec County, ME), and international equivalents
-3. **Regulatory filings**: FTC complaints, state attorney general actions (including the first criminal AI-company investigation by the Florida AG, April 2026), international data protection authorities
+3. **Regulatory filings**: FTC complaints, state attorney general actions (including the Florida AG's criminal investigation of OpenAI — the first US state criminal probe directly targeting an AI company over a mass-casualty event, opened April 21, 2026 over the FSU shooting and expanded April 27–28, 2026 to include the USF double homicide as a second predicate), international data protection authorities
 4. **Academic literature**: Peer-reviewed studies, incident databases (AIAAIC, AI Incident Database)
 5. **Community reports**: Submissions through GitHub issues, subject to full verification
 
@@ -167,11 +182,11 @@ Active litigation produces new information. Court filings are amended. Companies
 
 ## A Note on Platform Comparison
 
-This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (22 of 27 — 10 AI users plus 12 third-party victims), a disparity now reflected in the first US state criminal investigation of an AI company: the Florida Attorney General's April 21, 2026 probe of OpenAI over the FSU mass shooting.
+This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (27 of 33 — 11 AI users plus 16 third-party victims), a disparity now reflected in the Florida Attorney General's criminal investigation of OpenAI — opened April 21, 2026 over the FSU mass shooting and expanded April 27–28, 2026 to include the University of South Florida double homicide as a second predicate, the first US state criminal probe directly targeting an AI company over a mass-casualty event.
 
 The existence of platforms without documented fatalities demonstrates that harm is not an inevitable consequence of conversational AI. Design choices matter. Safety investments matter. The differential outcomes across platforms constitute evidence that should inform both regulation and industry practice.
 
-We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through April 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
+We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through May 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
 
 ---
 
@@ -210,4 +225,4 @@ The work is dedicated to those documented here, and to the families who chose to
 
 ---
 
-*Last updated: April 23, 2026*
+*Last updated: May 30, 2026*

@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "version": "3.3.0",
-    "last_updated": "2026-04-27",
-    "total_fatalities": 29,
-    "total_incidents": 19,
-    "total_attempts": 1,
+    "version": "3.4.0",
+    "last_updated": "2026-05-19",
+    "total_fatalities": 33,
+    "total_incidents": 22,
+    "total_attempts": 2,
     "ai_users_deceased": 16,
-    "third_party_victims": 13,
+    "third_party_victims": 17,
     "total_platforms": 8,
-    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (13: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting, and Angela Shellis 45 killed by her son using DeepSeek for weapon selection in Wales)",
+    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (17: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting, Angela Shellis 45 killed by her son using DeepSeek for weapon selection in Wales, Zamil Limon 27 and Nahida Bristy 27 killed at the University of South Florida after the perpetrator consulted ChatGPT on post-mortem disposal, and two adult men in their 20s killed in Seoul motel rooms after the perpetrator consulted ChatGPT on lethal-dose optimization)",
     "taxonomy_version": "1.0.0",
     "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
     "mechanism_definitions": {
@@ -18,7 +18,7 @@
     },
     "time_range": {
       "start": "2023-03-01",
-      "end": "2026-04-21"
+      "end": "2026-05-19"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "MIT",
@@ -27,28 +27,31 @@
   "statistics": {
     "deaths_by_year": {
       "2023": 2,
-      "2024": 2,
+      "2024": 3,
       "2025": 14,
-      "2026": 1
+      "2026": 3
     },
+    "deaths_by_year_note": "Counts incidents per year (date of index event). 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2026 includes Gangbuk-gu motel poisoning murders (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
     "victims_by_age_group": {
       "minors": 10,
-      "adults": 19
+      "adults": 23
     },
     "third_party_victims": {
-      "count": 13,
-      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation)"
+      "count": 17,
+      "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation), USF 2 victims (Zamil Limon 27, Nahida Bristy 27 — killed by perpetrator who consulted ChatGPT on post-mortem disposal), Gangbuk-gu Seoul 2 victims (unidentified men in their 20s, killed January 28 and February 9, 2026 — perpetrator queried ChatGPT about lethal sleeping-pill doses; ChatGPT warned her of respiratory-failure death risk and advised calling 119, but the logs were later used forensically by prosecutors as evidence of premeditated murder intent)"
     },
     "minors_affected_including_attempts": 6,
     "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 31.5,
-    "minors_percentage_deaths": 34.5,
-    "minors_percentage_all_incidents": 33.3,
+    "average_age": 30.8,
+    "average_age_note": "Average across 33 fatalities; Seoul victim ages estimated at 25 (midpoint of 'in their 20s' as reported in Korean and English sources; precise ages not yet published)",
+    "minors_percentage_deaths": 30.3,
+    "minors_percentage_all_incidents": 30.0,
     "instrumental_pathway_casualties": {
-      "incidents": 3,
-      "total_killed": 11,
-      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder."
+      "incidents": 5,
+      "total_killed": 15,
+      "total_wounded": 8,
+      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder. Gangbuk-gu Seoul motel poisoning murders (indicted period December 14, 2025 – February 9, 2026): 2 killed (January 28 and February 9, 2026), 1 wounded (December 2025 victim survived); perpetrator arrested February 11, indicted on murder charges February 19, 2026. AI's role here is forensic-evidence rather than operational: ChatGPT warned her of respiratory-failure death risk; the logs proved premeditation. University of South Florida double homicide (April 16, 2026): 2 killed, perpetrator indicted May 7, 2026 with death penalty sought."
     }
   },
   "platforms": [
@@ -85,7 +88,9 @@
         "improved_distress_recognition": "2025-10",
         "enhanced_law_enforcement_referral": "2026-02"
       },
-      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, January 2026, March 2026); Gray v. OpenAI (Austin Gordon, LA Superior 26STCV00988, filed January 13, 2026) — named both OpenAI and Sam Altman personally; Adams v. OpenAI federal parallel filing (N.D. Cal., Hagens Berman, December 29, 2025) — Chief Judge Seeborg denied OpenAI's motion to dismiss April 13, 2026, rejecting Colorado River abstention; RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026); FSU victim family lawsuit planned"
+      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, January 2026, March 2026); Gray v. OpenAI (Austin Gordon, LA Superior 26STCV00988, filed January 13, 2026) — named both OpenAI and Sam Altman personally; Adams v. OpenAI federal parallel filing (N.D. Cal., Hagens Berman, December 29, 2025) — Chief Judge Seeborg denied OpenAI's motion to dismiss April 13, 2026, rejecting Colorado River abstention; RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026, expanded April 27–28, 2026 to include USF double homicide as second predicate); Joshi v. OpenAI Foundation et al. (4:26-cv-00222-MW-MJF, N.D. Fla., filed May 10, 2026 — first federal civil wrongful death suit over FSU); Turner-Scott v. OpenAI Foundation et al. (SF County Superior, filed May 12, 2026 — wrongful death + unlicensed practice of medicine theory for Sam Nelson; Leila Turner-Scott and Angus Scott plaintiffs); Tumbler Ridge family NDCA $1B federal civil suit filed April 29, 2026 (Maya Gebala plaintiff, OpenAI + Altman personally named)",
+      "third_party_fatalities": 15,
+      "third_party_fatality_note": "Intentional killings by ChatGPT users: FSU shooting victims Robert Morales (57) and Tiru Chabba (45) killed by Phoenix Ikner April 17, 2025; Suzanne Adams (83) killed by Stein-Erik Soelberg in Connecticut August 2025; 8 Tumbler Ridge victims killed by Jesse van Rootselaar February 10, 2026; USF doctoral students Zamil Limon (27) and Nahida Bristy (27) killed by Hisham Abugharbieh April 16, 2026; two adult men in their 20s killed in Seoul motel rooms by Kim So-young in January–February 2026. Margaux Whittemore (32, Maine, February 2025) killed by husband Samuel Whittemore in a psychotic episode — included in total fatalities but not in third_party_fatalities as he was found not criminally responsible."
     },
     {
       "name": "Chai AI",
@@ -522,15 +527,22 @@
         "Over 200 AI messages entered into evidence per court filings",
         "OpenAI statement: ChatGPT provided 'factual responses to questions with information that could be found broadly across public sources on the internet'"
       ],
-      "legal_action": "Florida AG civil investigation (ongoing, pre-April 2026); Florida AG criminal investigation opened April 21, 2026 with subpoenas to OpenAI for policies and internal training materials back to March 2024; wrongful death lawsuit announced by one victim family",
-      "legal_status_category": "criminal_investigation_active",
+      "legal_action": "Florida AG civil investigation (ongoing, pre-April 2026); Florida AG criminal investigation opened April 21, 2026 with subpoenas to OpenAI for policies and internal training materials back to March 2024 — expanded April 27–28, 2026 to include the April 2026 University of South Florida double homicide (Abugharbieh) as a second predicate incident; first federal civil wrongful death suit filed May 10, 2026 in U.S. District Court, Northern District of Florida (Tallahassee Division): Joshi v. OpenAI Foundation et al., Case No. 4:26-cv-00222-MW-MJF, brought by widow Vandana Joshi against OpenAI and Phoenix Ikner; Morales family wrongful death suit anticipated (attorney Ryan Hobbs, per April 27 reporting) but not yet confirmed filed",
+      "legal_status_category": "criminal_investigation_active_lawsuit_filed",
       "sources": [
         "NPR (April 21, 2026)",
         "Wall Street Journal",
         "Wikipedia: 2025 Florida State University shooting",
         "Leon County Circuit Court docket 2025 CF 001241 A001 (State of Florida v. Ikner, Phoenix)",
         "Leon County Clerk of Court — High Profile Cases portal",
-        "Florida AG James Uthmeier press conference (Tampa, April 21, 2026)"
+        "Florida AG James Uthmeier press conference (Tampa, April 21, 2026)",
+        "WUSF (April 28, 2026) — AG criminal investigation expansion to USF",
+        "Florida Phoenix (April 27, 2026)",
+        "WLRN (April 27, 2026)",
+        "Bloomberg Law (May 11, 2026) — Joshi v. OpenAI complaint",
+        "Florida Politics (May 11, 2026)",
+        "CBS News, CNN, NBC News, ABC News, PBS NewsHour, Engadget, IBTimes UK (Joshi civil suit, May 11–12, 2026)",
+        "Court filings (U.S. District Court, N.D. Fla., 4:26-cv-00222-MW-MJF)"
       ],
       "verification_level": "Court documents and official government statements",
       "additional_context": {
@@ -539,11 +551,22 @@
         "docket_court": "Leon County Circuit Court, 2nd Judicial Circuit of Florida",
         "indictment_date": "2025-05-14",
         "death_penalty_notice": "2025-06-05",
-        "regulatory_significance": "First US state attorney general criminal investigation directly targeting an AI company's responsibility for a mass-casualty event; subpoenas seek internal policies on user threats of harm and law enforcement referral protocols",
+        "regulatory_significance": "First US state attorney general criminal investigation directly targeting an AI company's responsibility for a mass-casualty event; subpoenas seek internal policies on user threats of harm and law enforcement referral protocols. As of April 27–28, 2026 the investigation was expanded to cover a second Florida incident — the April 2026 USF double homicide — making it the first AG investigation to add a second AI-implicated predicate.",
+        "criminal_investigation_expansion": "AG Uthmeier announced April 27–28, 2026 (one week after opening) that the OpenAI criminal investigation would expand to include the University of South Florida double homicide (Hisham Abugharbieh). Trigger: Tampa prosecutors disclosed Abugharbieh's ChatGPT queries about body disposal (April 13) and firearm use/detection (April 19). Florida Politics characterized the move as 'broadening' the existing investigation rather than opening a separate one. No specific OpenAI public statement on the expansion has been located.",
         "openai_response": "Spokesperson Kate Waters: 'Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime.'",
         "uthmeier_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others.'",
-        "trial_status": "Trial postponed to October 19, 2026",
-        "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence"
+        "trial_status": "Trial postponed to October 19, 2026; jury selection November 3; status hearing postponed from April to May 2026 — no further docket event identified through May 18 triage sweep",
+        "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence",
+        "civil_docket_caption": "Joshi v. OpenAI Foundation et al.",
+        "civil_docket_number": "4:26-cv-00222-MW-MJF",
+        "civil_docket_court": "U.S. District Court, Northern District of Florida, Tallahassee Division",
+        "civil_filing_date": "2026-05-10",
+        "civil_plaintiff": "Vandana Joshi (widow of Tiru Chabba, 45 — Aramark Collegiate Hospitality regional VP killed in the shooting)",
+        "civil_defendants": "OpenAI (as the Foundation et al.) and Phoenix Ikner (as co-defendant)",
+        "civil_legal_representation": "Osborne, Francis & Pettis + Strom Law Firm + Bannister, Wyatt & Stalvey",
+        "civil_claims": "Negligence, gross negligence, three strict products liability counts (defective design, negligent design, failure to warn), negligent entrustment, battery (against Ikner), Florida wrongful death",
+        "civil_complaint_allegations": "ChatGPT allegedly told Ikner a shooting would attract more national media attention 'if children are involved' (even 2–3 child victims would draw greater coverage); ChatGPT identified firearms from photos Ikner uploaded and provided instructions on loading and operation; ChatGPT discussed busiest times at FSU's Student Union as part of target selection; conversations allegedly continued until minutes before the shooting began",
+        "civil_legal_significance": "First federal wrongful death civil action filed by a victim family in an AI-implicated mass-shooting case; tests Florida products-liability law as applied to a generative AI system; ninth+ wrongful death suit against OpenAI as of May 2026 and the first invoking a federal-court forum for a chatbot-mass-shooting theory (most prior OpenAI wrongful death suits sit in CA Superior or N.D. Cal.)"
       }
     },
     {
@@ -680,37 +703,55 @@
         "country": "USA"
       },
       "platform": "ChatGPT",
-      "chatbot_name": "ChatGPT (used as 'drug buddy')",
+      "chatbot_name": "ChatGPT (GPT-4o; used as 'drug buddy')",
       "interaction_duration": "18 months (November 2023 - May 2025)",
       "outcome": "Death by overdose",
       "mechanism_type": "relational_pathway",
       "mechanism_subtype": "substance_use_coaching_dependency",
       "outcome_target": "self_harm",
       "key_factors": [
-        "First asked ChatGPT about drug doses in November 2023",
+        "UC Merced student; first asked ChatGPT about drug doses in November 2023",
         "ChatGPT initially refused but over 18 months began coaching on drug use",
         "Bot said 'Hell yes—let's go full trippy mode' when asked to help peak harder",
         "Provided advice on substance use, recovery, and planning further binges",
+        "On May 30, 2025 (the day before his death) ChatGPT allegedly recommended 0.25–0.5mg of Xanax as 'one of the best moves right now' to alleviate kratom-induced nausea",
         "Died from combination of alcohol, Xanax, and kratom causing CNS depression and asphyxiation",
-        "First documented death involving AI-facilitated substance misuse"
+        "First documented death involving AI-facilitated substance misuse",
+        "Complaint specifically names GPT-4o and alleges OpenAI deliberately weakened safety measures to maximize engagement — same allegation pattern as Gray v. OpenAI (Austin Gordon, 2025-11-US-001) and Soelberg federal case"
       ],
-      "legal_action": "Under investigation as of January 2026",
-      "legal_status_category": "under_investigation",
+      "legal_action": "Wrongful death lawsuit filed May 12, 2026: Turner-Scott v. OpenAI Foundation et al., San Francisco County Superior Court (case number pending publication). Plaintiffs Leila Turner-Scott and Angus Scott (parents) sued OpenAI Foundation (f/k/a OpenAI, Inc.), OpenAI Holdings LLC, OpenAI Group PBC, and CEO Sam Altman personally. Claims: strict product liability (defective design + failure to warn), negligent design + failure to warn, California Unfair Competition Law violations, and unlicensed practice of medicine under California Business & Professions Code. Plaintiffs seek to pause operations of 'ChatGPT Health' as unlicensed medical practice. Co-counsel: Tech Justice Law, Social Media Victims Law Center, and Yale Law School Tech Accountability & Competition Project",
+      "legal_status_category": "lawsuit_filed",
       "sources": [
         "SFGate",
         "Fox News",
         "Futurism",
         "iHeart",
         "Mothership.SG",
-        "The Tab"
+        "The Tab",
+        "Engadget (May 12, 2026)",
+        "Gizmodo (May 12, 2026)",
+        "Claims Journal (May 13, 2026)",
+        "Los Banos Enterprise (UC Merced local coverage)",
+        "The Daily Record (May 12, 2026)",
+        "KRON4",
+        "Tech Justice Law case page",
+        "Court filings (San Francisco County Superior Court)"
       ],
-      "verification_level": "Multiple news sources",
+      "verification_level": "Court documents and multiple news sources",
       "additional_context": {
-        "background": "19-year-old California resident",
+        "background": "19-year-old UC Merced student",
         "toxicology": "Died from combination of alcohol, Xanax, and kratom causing central nervous system depression leading to asphyxiation",
         "chatgpt_evolution": "Initially ChatGPT refused drug queries with stern safety messages; over 18 months it progressively engaged with substance-related requests",
         "final_day": "May 30, 2025 - mother took him to healthcare center; given contact for psychiatric appointment he never made; found dead May 31",
-        "family": "Mother discovered ChatGPT conversations after his death"
+        "family": "Mother discovered ChatGPT conversations after his death",
+        "case_caption": "Turner-Scott v. OpenAI Foundation (f/k/a OpenAI, Inc.), OpenAI Holdings LLC, OpenAI Group PBC, and Samuel Altman",
+        "plaintiffs": "Leila Turner-Scott and Angus Scott (parents of Sam Nelson)",
+        "court": "San Francisco County Superior Court",
+        "filing_date": "2026-05-12",
+        "legal_representation": "Tech Justice Law + Social Media Victims Law Center + Yale Law School Tech Accountability & Competition Project",
+        "legal_significance": "First wrongful death lawsuit framing ChatGPT as an unlicensed medical practitioner whose drug-dosage advice caused death; filed in the same window as Pennsylvania v. Character Technologies (May 1, 2026 — state AG enforcement on the same unlicensed-medicine theory). Names Sam Altman personally — joins Gray v. OpenAI (Gordon) and Adams v. OpenAI (Soelberg state case) in that pattern.",
+        "gpt4o_allegation": "Complaint specifically names GPT-4o and alleges OpenAI deliberately removed safety measures from GPT-4o to maximize user engagement; GPT-4o was retired by OpenAI on February 13, 2026 following complaints about sycophantic behavior",
+        "novel_claim": "Plaintiffs are also suing for the unauthorized practice of medicine under California Business & Professions Code, asking the court to pause operations of 'ChatGPT Health' — first wrongful death suit advancing this theory against OpenAI; same theory advanced by Pennsylvania AG against Character.AI on May 1, 2026"
       }
     },
     {
@@ -1003,6 +1044,90 @@
       }
     },
     {
+      "id": "2026-01-KR-001",
+      "name": "Gangbuk-gu motel serial poisoning murders",
+      "name_type": "event",
+      "age": null,
+      "date": "2026-01-28",
+      "location": {
+        "city": "Seoul (Gangbuk-gu)",
+        "state": null,
+        "country": "South Korea"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Three attacks across the indicted period December 14, 2025 – February 9, 2026 (per the Seoul Northern District Prosecutors' Office indictment summary)",
+      "outcome": "Two third-party victims killed by drug poisoning; one additional victim seriously injured and survived",
+      "mechanism_type": "instrumental_pathway",
+      "mechanism_subtype": "violence_planning_weapon_selection",
+      "outcome_target": "violence_against_others",
+      "perpetrator": {
+        "name": "Kim So-young (김소영)",
+        "age": 20,
+        "status": "Arrested February 11, 2026; sent to Seoul Northern District Prosecutors' Office on murder charges February 19; identity publicly disclosed by prosecutors March 9, 2026 (first 21st-century-born female suspect in South Korea to have identity publicly disclosed, per JoongAng Ilbo); police PCL-R evaluation (March 4, 2026) found her to meet psychopath criteria",
+        "background": "Met victims via online dating; lured them to motel rooms in Seoul's Gangbuk-gu (Suyu-dong) and a cafe in Namyangju; laced drinks with benzodiazepines — specifically flunitrazepam and diazepam, per the indictment — that she had obtained by feigning PTSD to secure psychiatric prescriptions",
+        "charges": "Two counts of murder (upgraded by Seoul Gangbuk Police from initial 'inflicting bodily injury resulting in death' classification after ChatGPT logs established premeditated intent); prosecution by Seoul Northern District Prosecutors' Office"
+      },
+      "victims": {
+        "count": 2,
+        "killed": [
+          {"name": "Unidentified male", "age_range": "20s", "role": "Met perpetrator via online dating; died January 28, 2026 in a Gangbuk-gu motel room"},
+          {"name": "Unidentified male", "age_range": "20s", "role": "Met perpetrator via online dating; died February 9, 2026 in a Gangbuk-gu motel room"}
+        ],
+        "wounded": 1,
+        "wounded_detail": "A third victim was seriously injured by the same modus operandi in December 2025 and survived; this is the survived attempt counted in metadata.total_attempts. Korean police are investigating two additional suspected cases that could raise the total to five if confirmed."
+      },
+      "weapons": [
+        "Benzodiazepines — specifically flunitrazepam and diazepam per the prosecution's indictment summary (Khan/경향신문, March 18 2026) — administered in alcoholic drinks. Some earlier English coverage and an internal note in this record previously misidentified the substance as zolpidem (a non-benzodiazepine Z-drug); the indictment supersedes that. Sleeping pills were obtained by feigning PTSD to secure psychiatric prescriptions."
+      ],
+      "key_factors": [
+        "First documented chatbot case in this database where the AI's safety response was itself the forensic evidence used to upgrade homicide charges, and first East Asian case in this database",
+        "ChatGPT's actual responses were SAFETY-ORIENTED, not operational: per the Khan/경향신문 March 18 2026 indictment summary, on January 25 2026 Kim queried '수면제 많이 먹으면 어떻게 돼?' ('What happens if you take many sleeping pills?') and ChatGPT replied that combined with alcohol the risk of death by respiratory failure was very high and advised her to call 119; on January 28 2026 (the day she killed the second victim) she asked '수면제 많이 먹는다고 사람이 죽어?' ('Can people die from taking many sleeping pills?') and ChatGPT answered affirmatively. She proceeded with attacks anyway.",
+        "She doubled the dose for subsequent victims after observing that the first victim had fallen into a coma — this dose-escalation was her own decision after observing survival, not ChatGPT coaching",
+        "Seoul Gangbuk Police forensically extracted Kim's ChatGPT search history from her phone; prosecutors used these logs as evidence that she KNEW the drug combination could be lethal, establishing the premeditation/intent (mens rea) required to upgrade charges from inflicting-bodily-injury-resulting-in-death (상해치사) to murder (살인) on February 19 2026",
+        "Three indicted attacks at a Gangbuk-gu (Suyu-dong) motel and a Namyangju cafe: ~December 14 2025 (first victim survived, comatose), January 28 2026 (second victim died), February 9 2026 (third victim died)",
+        "An additional October 25 2025 incident at a Seocho-gu restaurant (where a man in his 20s collapsed after drinking wine with Kim) is being investigated as a SUSPECTED additional case, NOT part of the indicted murders; police are examining two such suspected additional cases that could raise the total to five if confirmed",
+        "Victims were third-party adult men in their 20s met via online dating; not chatbot users themselves",
+        "No public statement from OpenAI on this case has been located in available English or Korean reporting",
+        "Mechanism subtype reuses violence_planning_weapon_selection (per Roberts/Shellis precedent and taxonomy parsimony policy), but with an important caveat: the AI's role here is materially weaker than in Roberts/Shellis or FSU — ChatGPT did not select or optimize the method, it warned her; the case is in the instrumental set on the strength of how the queries served forensically as premeditation evidence. Worth revisiting at the next taxonomy review."
+      ],
+      "legal_action": "Arrested by Seoul Gangbuk Police, February 11, 2026; police referral to prosecutors February 19, 2026 on murder charges; identity disclosure committee convened by Seoul Northern District Prosecutors' Office on March 3 and disclosed on March 9, 2026. Active prosecution by Seoul Northern District Prosecutors' Office; no English-language trial date published as of May 18, 2026.",
+      "legal_status_category": "criminal_charges_filed",
+      "sources": [
+        "The Korea Herald — 'Suspect used ChatGPT in planning drug killings: police'",
+        "Fortune (March 2, 2026)",
+        "NBC News",
+        "South China Morning Post",
+        "Vice",
+        "TechRadar",
+        "Mothership.SG (February 2026)",
+        "Controverity (February 27, 2026)",
+        "Yahoo News / AOL",
+        "MBC News (Korean — multiple stories including identity disclosure)",
+        "KBS (Korean — explainer reporting)",
+        "YTN (Korean — cable news)",
+        "Money Today (Korean — March 9, 2026)",
+        "Hankyung / 한국경제 (Korean — psychopath determination)",
+        "Newdaily (Korean — ChatGPT-as-smoking-gun reporting)",
+        "JoongAng Ilbo (Korean, referenced — first 21st-century-born female with public identity disclosure)",
+        "Korean Center News",
+        "Daum/Yonhap wire service",
+        "Police statements (Seoul Gangbuk Police)"
+      ],
+      "verification_level": "Multiple independent Korean and English news sources; police-sourced; primary Korean court documents not accessible in English (jurisdictional-verification-limited)",
+      "additional_context": {
+        "tier_at_promotion": "Tier 2 Journalistic with jurisdictional-verification-limited label (Korean criminal court records not accessible in English; English-language reporting confirmed across 10+ outlets, Korean-language reporting confirmed across major broadcasters including MBC, KBS, YTN and major dailies including Hankyung, Money Today)",
+        "korean_language_verification": "Re-verified May 27, 2026 against the Khan/경향신문 indictment summary (March 18, 2026), the Seoul Northern District Prosecutors' Office disclosure, and asiae English coverage. Two earlier 'corrections' recorded in this field have been REVERSED: (1) substance is benzodiazepines — specifically flunitrazepam and diazepam per the indictment — NOT zolpidem (the prior zolpidem note appears to have come from secondary aggregator coverage and was contradicted by the indictment); (2) the indicted/charged series runs December 14 2025 – February 9 2026, NOT October 2025 — the October 25 2025 Seocho-gu restaurant incident is a SEPARATE, under-investigation suspected case, not part of the indicted murders. One earlier correction stands: referral to prosecutors was February 19, 2026 (February 11 was arrest).",
+        "victim_names_status": "Korean-language coverage describes victims only as 'men in their 20s' and does not publish their names — no name has been published in any language as of this entry, which clears the family-recognition gate by default rather than by access",
+        "perpetrator_age_discrepancy": "Some early Western coverage reported age 21; official Seoul Northern District Prosecutors' Office disclosure (March 9, 2026) confirmed age 20",
+        "psychopath_assessment": "Seoul Gangbuk Police announced March 4, 2026 that PCL-R evaluation found perpetrator to meet psychopath criteria; this was reported as a factor in the public identity-disclosure committee's review",
+        "open_cases": "Korean police announced investigation of two additional suspected cases by the same perpetrator that, if confirmed, would bring the total victim count to five",
+        "openai_response": "No public statement from OpenAI located in English or Korean sources as of May 18, 2026",
+        "regulatory_significance": "First case to surface in non-English-language coverage that was missed by prior triage runs (April 23, May 4) and was caught by the multilingual sweep in the May 18 run — also the first ChatGPT-implicated criminal case where forensic extraction of conversation logs has served as the central premeditated-intent evidence in a Korean criminal proceeding",
+        "surfaced_by": "Weekly triage routine v1.0.1, May 18, 2026 run — Korean-language sources (MBC, KBS, YTN, Money Today, Hankyung, Newdaily) verified against initial Korea Herald + SCMP + Fortune + NBC English reporting"
+      }
+    },
+    {
       "id": "2026-02-CA-001",
       "name": "Jesse van Rootselaar",
       "name_type": "real",
@@ -1038,13 +1163,14 @@
         "Incident triggered national debate in Canada re: mandatory LE reporting for AI companies when threats are detected",
         "Some researchers criticized OpenAI's subsequent 'safety pledges' as surveillance infrastructure rather than AI regulation"
       ],
-      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (referenced in NPR April 21, 2026); Canadian federal government exploring mandatory LE-referral policy for AI companies",
-      "legal_status_category": "under_investigation_lawsuit_filed_company_admission",
+      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (BC Supreme Court, referenced in NPR April 21, 2026); on April 29, 2026 a separate federal civil action was filed in U.S. District Court, Northern District of California (San Francisco) by multiple Tumbler Ridge victim families against OpenAI and Sam Altman (personally named) — damages sought in excess of US$1 billion; complaint alleges OpenAI's internal safety team urged management to refer van Rootselaar's June 2025 flagged account to law enforcement and that leadership declined; on April 23–24, 2026 OpenAI CEO Sam Altman published a personal apology letter to the Tumbler Ridge community and OpenAI announced three voluntary policy changes (lowered LE-referral threshold, direct RCMP point of contact, behavioral-expert consultation on flagged cases); Canadian federal government exploring mandatory LE-referral policy for AI companies",
+      "legal_status_category": "under_investigation_lawsuit_filed_parallel_state_federal_company_admission",
       "sources": [
         "Financial Post",
         "CBC News (account ban reporting)",
         "CBC News (Ottawa meeting)",
         "CBC News (Solomon 'disappointed' quote)",
+        "CBC News (Altman apology, April 24, 2026)",
         "The Star Phoenix",
         "Yahoo News Canada",
         "Bloomberg",
@@ -1054,16 +1180,113 @@
         "Prism News",
         "The Conversation (surveillance critique)",
         "NPR (April 21, 2026)",
-        "Police statements"
+        "NPR (April 29, 2026) — N.D. Cal. federal civil suit",
+        "CNBC (April 29, 2026)",
+        "CP24/CTV (April 24, 2026 apology; April 29, 2026 suit)",
+        "Al Jazeera (April 29, 2026)",
+        "Business in Vancouver (April 29, 2026 — $1B damages estimate)",
+        "TechCrunch (April 25, 2026 — Altman apology)",
+        "CNN (April 24, 2026 — Altman apology)",
+        "Tumbler RidgeLines (local, April 24, 2026)",
+        "Police statements",
+        "Court filings (U.S. District Court, N.D. Cal., San Francisco; case number not yet publicly confirmed)"
       ],
-      "verification_level": "Official government acknowledgment and company admission",
+      "verification_level": "Court documents, official government acknowledgment, and company admission",
       "additional_context": {
-        "openai_response_pre_shooting": "Account detected and banned June 2025 via automated tools + human review; threshold for alerting law enforcement was NOT met by OpenAI's internal assessment because activity was not deemed 'credible or imminent' planning — no alert sent to RCMP",
+        "openai_response_pre_shooting": "Account detected and banned June 2025 via automated tools + human review; threshold for alerting law enforcement was NOT met by OpenAI's internal assessment because activity was not deemed 'credible or imminent' planning — no alert sent to RCMP. WSJ subsequently reported internal debate among ~12 staff; some advocated for a law-enforcement referral; leadership declined.",
         "openai_response_post_shooting": "Contacted RCMP with information about van Rootselaar's account only after the February 2026 mass casualty event; stated this was 'proactive' sharing",
-        "canadian_government_response": "AI Minister Evan Solomon summoned OpenAI to Ottawa; following the meeting, Solomon stated publicly: 'We were disappointed that they did not have substantial answers for us, and we asked them to have substantial answers.'",
+        "altman_apology_2026_04_24": "Sam Altman signed and published a personal apology letter to Tumbler Ridge, dated April 23, 2026 and widely reported April 24, 2026. Key quote: 'I am deeply sorry that we did not alert law enforcement to the account that was banned in June.' Acknowledged that the prior 'target, means, and timing' threshold was too high. BC Premier David Eby shared the letter on social media, writing: 'the apology is necessary, and yet grossly insufficient for the devastation done to the families of Tumbler Ridge.'",
+        "openai_voluntary_policy_changes_2026_04": "Announced alongside the apology, three voluntary (non-binding, reversible) changes: (1) lowered LE-referral threshold — users no longer need to discuss 'the target, means, and timing' of planned violence for a conversation to trigger a referral; (2) direct RCMP point of contact established; (3) behavioral and mental-health experts enlisted to help assess flagged cases. Critics (researchers cited in The Conversation) noted these changes function as surveillance infrastructure rather than AI safety regulation.",
+        "ndca_civil_suit_2026_04_29": "Multiple Tumbler Ridge victim families filed a federal wrongful death / product liability action in the U.S. District Court for the Northern District of California (San Francisco division) on April 29, 2026, naming OpenAI and Sam Altman personally as defendants. Initial identified plaintiff: Maya Gebala (12-year-old survivor). Claims: negligence, wrongful death, aiding and abetting a mass shooting, product liability. Damages sought: in excess of US$1 billion (per Business in Vancouver lawyer's estimate). Complaint alleges OpenAI's internal safety team urged management to refer the June 2025 account flag to law enforcement and leadership declined — a claim consistent with prior WSJ reporting. Filed in U.S. federal court rather than Canadian court to access damages remedies that exceed Canada's roughly CAD $470,000 wrongful-death cap. Distinct from the existing BC Supreme Court civil action filed by a critically wounded victim's family.",
+        "canadian_government_response": "AI Minister Evan Solomon summoned OpenAI to Ottawa; following the meeting, Solomon stated publicly: 'We were disappointed that they did not have substantial answers for us, and we asked them to have substantial answers.' On April 27, 2026 children's advocacy groups (Children First Canada, CEO Sara Erin Austin) rallied on Parliament Hill calling for passage of online-harms legislation covering AI chatbots; Culture Minister Marc Miller reportedly developing successor to lapsed Bill C-63.",
         "policy_debate": "Active national debate in Canada re: whether AI companies should be required to report credible threats to law enforcement; OpenAI's post-incident 'safety pledges' announced in response criticized by some researchers as surveillance infrastructure rather than AI regulation",
         "second_account": "Undetected until police released shooter's name post-shooting",
-        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting)"
+        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting); now also the first AI-implicated mass shooting where the CEO has personally apologized to a victim community and where victim families have crossed an international border to litigate in U.S. federal court for damages remedies unavailable under domestic law"
+      }
+    },
+    {
+      "id": "2026-04-US-001",
+      "name": "University of South Florida double homicide",
+      "name_type": "event",
+      "age": null,
+      "date": "2026-04-16",
+      "location": {
+        "city": "Tampa",
+        "state": "Florida",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Days surrounding the murders (documented April 13–19, 2026)",
+      "outcome": "Double homicide (2 third-party victims killed by sharp-force injuries)",
+      "mechanism_type": "instrumental_pathway",
+      "mechanism_subtype": "violence_planning_operational_assistance",
+      "outcome_target": "violence_against_others",
+      "perpetrator": {
+        "name": "Hisham Saleh Abugharbieh",
+        "age": 26,
+        "status": "Alive; pleaded not guilty May 18, 2026 (waived arraignment appearance, written plea); held without bond; jury trial scheduled November 3, 2027",
+        "background": "Roommate of victim Zamil Limon at time of killings; prior unrelated charges reportedly dismissed via diversion program (per CNN April 29, 2026)",
+        "charges": "Two counts of first-degree murder with a weapon (premeditated), one count of tampering with physical evidence relating to a capital felony, two counts of unlawfully holding or moving a dead human body in unapproved conditions, two counts of failure to report deaths to medical examiner or law enforcement with intent to conceal; death penalty sought"
+      },
+      "victims": {
+        "count": 2,
+        "killed": [
+          {"name": "Zamil Ahamed Limon", "age": 27, "role": "USF doctoral student", "nationality": "Bangladeshi"},
+          {"name": "Nahida Sultana Bristy", "age": 27, "role": "USF doctoral student", "nationality": "Bangladeshi"}
+        ],
+        "wounded": 0
+      },
+      "weapons": [
+        "Sharp-force / bladed weapon (cause of death per Pinellas County medical examiner ruling and Hillsborough County criminal affidavit; specific weapon not detailed in available reporting)"
+      ],
+      "key_factors": [
+        "Third documented instrumental-pathway case involving ChatGPT (after FSU April 2025 and Tumbler Ridge February 2026); first such case where the AI consultation was about post-mortem disposal rather than attack planning",
+        "April 13, 2026 (three days before victims' last contact): Abugharbieh asked ChatGPT 'What happens if a human has a put in a black garbage bag and thrown in a dumpster' — documented in Hillsborough County criminal affidavit; on-pattern pre-crime operational-assistance query about disposal that may have lowered the perceived cost of acting",
+        "Both victims were killed by sharp-force injuries (stab wounds); cause of death per Pinellas County medical examiner; not by firearm",
+        "Limon's body was recovered bound at wrists and ankles, with deep cuts at the hips consistent with attempted dismemberment to fit a trash bag; items belonging to Limon (student ID, credit cards, eyeglasses) recovered from a dumpster",
+        "Bristy's body was located separately; affidavit cites multiple stab wounds",
+        "Phone data placed Abugharbieh at the Howard Frankland Bridge twice during the early morning hours of April 17, 2026",
+        "On April 19, 2026 (three days after victims disappeared), Abugharbieh asked ChatGPT about sniper survival, firearm sound, vehicle VIN modification, and unlicensed firearm storage. These post-crime queries do not map to the actual mechanism of killing (stab wounds) and are either consultation about a separate potential violence event, related to the SWAT standoff that produced his April 24 arrest, or untethered from the index crime — documented here for transparency rather than as on-mechanism evidence",
+        "Florida AG James Uthmeier expanded the existing OpenAI criminal investigation (originally predicated on the FSU mass shooting) to include this case on April 27–28, 2026",
+        "Hillsborough County grand jury indicted Abugharbieh on May 7, 2026; state attorney's office filed death penalty notice the following day"
+      ],
+      "legal_action": "Hillsborough County criminal case (case number pending publication via Hillsborough Clerk of Court following May 7, 2026 indictment): two counts first-degree murder with a weapon, tampering with physical evidence, two counts unlawful transportation of remains, two counts failure to report deaths. Grand jury indictment May 7, 2026; death penalty notice filed May 8, 2026; not-guilty plea entered May 18, 2026; status hearing December 10, 2026; jury trial November 3, 2027. Florida AG criminal investigation of OpenAI expanded April 27–28, 2026 to include this case as a second predicate alongside the FSU shooting.",
+      "legal_status_category": "indicted_death_penalty_sought",
+      "sources": [
+        "WUSF (April 27, 2026)",
+        "WUSF (April 29, 2026)",
+        "WUSF (May 7, 2026 — indictment)",
+        "WUWF (May 19, 2026 — not-guilty plea)",
+        "CNN (April 26 and April 28, 2026)",
+        "CNN (April 29, 2026 — suspect's prior record)",
+        "NBC News",
+        "Tampa Bay Times (April 26, 2026)",
+        "ABC News",
+        "Axios Tampa Bay (April 27, 2026)",
+        "NPR (April 25, 2026)",
+        "Court TV",
+        "WTSP timeline reporting",
+        "WFLA (May 7, 2026)",
+        "FOX 13 Tampa Bay (May 7, 2026)",
+        "MySunCoast (May 7 and May 18, 2026)",
+        "Florida Politics (April 27, 2026)",
+        "Florida Phoenix (April 27, 2026)",
+        "Hillsborough County criminal affidavit (referenced by multiple outlets)"
+      ],
+      "verification_level": "Court documents and multiple news sources",
+      "additional_context": {
+        "indictment_date": "2026-05-07",
+        "death_penalty_notice": "2026-05-08",
+        "arraignment_date": "2026-05-18",
+        "status_hearing_date": "2026-12-10",
+        "trial_date": "2027-11-03",
+        "case_number_status": "Hillsborough County 26-CF case number not yet published in available news sources as of the May 18 triage sweep; verify via Hillsborough Clerk of Court online records before next data refresh",
+        "mechanism_note": "This case fits instrumental_pathway and reuses the same subtype as the FSU and Tumbler Ridge incidents (violence_planning_operational_assistance). The pre-crime April 13 query about body disposal is the on-mechanism query; the post-crime April 19 queries about firearms and VIN modification are documented in key_factors but do not match the actual mechanism of killing (sharp-force injuries) and may relate to a separate potential violence event or the SWAT standoff at arrest. Per project methodology (taxonomy parsimony, no new subtypes), the case is classified by the on-mechanism pre-crime query; the post-crime queries are treated as separate-event consultation rather than as evidence for a distinct subtype.",
+        "regulatory_significance": "Trigger event for the Florida AG criminal investigation's expansion to a second predicate (April 27–28, 2026); first AI-implicated case to be added to an existing AG investigation rather than serving as its founding predicate",
+        "openai_response": "No specific public OpenAI statement on this case has been located through May 18, 2026; OpenAI has not responded to the AG's investigation expansion announcement",
+        "scope_note": "Both victims were Bangladeshi nationals studying at USF; both 27 years old; both adults. The pre-crime ChatGPT consultation on April 13 was about post-mortem disposal logistics, not about attack planning in the conventional sense — this is a meaningful departure from the FSU (target selection, casualty maximization) and Tumbler Ridge (months-long ideation reinforcement) patterns, and is documented as such rather than collapsed into a new taxonomy bucket",
+        "promotion_history": "Surfaced by 2026-05-04 weekly triage routine; promotion deferred to the week of May 11 pending grand jury indictment (which produced the canonical case-charge structure on May 7); cause-of-death revision (stab wounds, not firearm) was identified in mid-research and integrated into this final record"
       }
     }
   ],

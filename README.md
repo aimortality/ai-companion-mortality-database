@@ -4,9 +4,9 @@
 
 **Tracking Deaths Where AI Chatbot Interaction Was Alleged as a Contributing Factor**
 
-[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-29-red)](https://aimortality.org/)
+[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-33-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-8-orange)](https://aimortality.org/)
-[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Apr%202026-blue)](https://aimortality.org/)
+[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20May%202026-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
@@ -24,17 +24,19 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
 ### Key Findings:
-- **29 total fatalities** across 19 incidents (Mar 2023 - Apr 2026): 16 AI users + 13 third-party victims
-- **34% of victims were minors** (youngest: 11 years old)
-- **14 of 19 incidents occurred in 2025** (escalating trend)
-- **Three causal pathways identified**: relational (12), cognitive (4), instrumental (3 — FSU, Tumbler Ridge, and Roberts/Shellis)
-- **ChatGPT**: 79% of fatalities (23 total: 11 users + 12 third-party victims)
+- **33 total fatalities** across 22 incidents (Mar 2023 - May 2026): 16 AI users + 17 third-party victims
+- **30% of victims were minors** (youngest: 11 years old)
+- **17 of 22 incidents occurred in 2025–2026** (escalating trend)
+- **Three causal pathways identified**: relational (12), cognitive (4), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
+- **ChatGPT**: 82% of fatalities (27 total: 11 users + 16 third-party victims)
 - **8 platforms tracked** (6 with documented fatalities; DeepSeek added April 2026 following first non-Western-corporate-AI homicide consultation case in Wales)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **Zero deaths** linked to Anthropic's Claude or Replika
 - **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
-- **Florida AG opens criminal investigation** into OpenAI on April 21, 2026 over the April 2025 FSU mass shooting — the first US state criminal probe directly targeting an AI company over a mass-casualty event
+- **Florida AG criminal investigation** into OpenAI opened April 21, 2026; expanded to USF double homicide as second predicate April 27–28, 2026
 - **First DeepSeek-involved fatality** documented: Roberts/Shellis homicide (Wales, October 2025) — UK criminal conviction at Mold Crown Court, March 25, 2026 (life sentence, minimum 22 years 6 months)
+- **First East Asian instrumental-pathway case**: Kim Seoul serial poisonings (January–February 2026) — first use of forensic AI chat log extraction to upgrade criminal charges
+- **Three new May 2026 lawsuits against OpenAI**: Joshi v. OpenAI (N.D. Fla., FSU wrongful death), Turner-Scott v. OpenAI (SF Superior, Nelson — novel unlicensed-medicine theory), Tumbler Ridge families NDCA $1B suit
 
 ## 🔍 Verified Cases
 
@@ -52,7 +54,7 @@ This repository contains data and documentation for the first comprehensive publ
 | **FSU shooting: Robert Morales** | 57 | ChatGPT | Apr 17, 2025 | Tallahassee, FL, USA | **Mass shooting victim** | — |
 | **FSU shooting: Tiru Chabba** | 45 | ChatGPT | Apr 17, 2025 | Tallahassee, FL, USA | **Mass shooting victim** | — |
 | Alex Taylor | 35 | ChatGPT | Apr 2025 | USA | Death (suicide by cop) | Cognitive |
-| Sam Nelson | 19 | ChatGPT | May 2025 | California, USA | Death by overdose | Relational |
+| Sam Nelson | 19 | ChatGPT | May 2025 | California, USA | Death by overdose | Relational — Turner-Scott v. OpenAI filed May 12, 2026 |
 | Amaurie Lacey | 17 | ChatGPT | Jun 2025 | Georgia, USA | Death by suicide | Relational |
 | Joe Ceccanti | 48 | ChatGPT | 2025 | Oregon, USA | Death by suicide | Cognitive |
 | Zane Shamblin | 23 | ChatGPT | Jul 2025 | Texas, USA | Death by suicide | Relational |
@@ -61,8 +63,12 @@ This repository contains data and documentation for the first comprehensive publ
 | Jonathan Gavalas | 36 | Gemini | Oct 2025 | Florida, USA | Death by suicide | Cognitive/Relational |
 | Austin Gordon | 40 | ChatGPT | Nov 2, 2025 | Colorado, USA | Death by suicide | Relational |
 | **Angela Shellis** | 45 | DeepSeek | Oct 23, 2025 | Prestatyn, Wales, UK | **Homicide (by son)** | Instrumental |
-| **Tumbler Ridge 8 victims** | 12-13 | ChatGPT | Feb 2026 | BC, Canada | **Mass shooting victims** | — |
+| **Kim Seoul victim 1** (unnamed) | ~25 | ChatGPT | Jan 28, 2026 | Seoul, South Korea | **Murder victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
+| **Kim Seoul victim 2** (unnamed) | ~25 | ChatGPT | Feb 9, 2026 | Seoul, South Korea | **Murder victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
+| **Tumbler Ridge 8 victims** | 11-39 | ChatGPT | Feb 2026 | BC, Canada | **Mass shooting victims** | Instrumental |
 | Jesse van Rootselaar | 18 | ChatGPT | Feb 2026 | BC, Canada | Mass shooting-suicide | Instrumental |
+| **Zamil Limon** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Murder victim (sharp-force)** | Instrumental |
+| **Nahida Bristy** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Murder victim (sharp-force)** | Instrumental |
 
 ## 📁 Repository Structure
 
@@ -111,14 +117,14 @@ We welcome contributions of:
 - **Corrections** to existing data
 - **Translations** for international accessibility
 
-See [CONTRIBUTING.md](docs/contributing.md) for guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📈 Platform Safety Comparison
 
 | Platform | User Deaths | Third-Party Victims | Attempts | Safety Features Added | When Added |
 |----------|------------|---------------------|----------|----------------------|------------|
 | Character.AI | 2 | 0 | 1 | Crisis intervention, time limits | After deaths |
-| ChatGPT/OpenAI | 11 | 12 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral | After deaths |
+| ChatGPT/OpenAI | 11 | 16 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
 | Chai AI | 1 | 0 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | 0 | None documented | N/A |
 | Gemini | 1 | 0 | 0 | Proactive safety design, content filtering | Since launch |
@@ -167,7 +173,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: April 27, 2026
+**Last Updated**: May 19, 2026
 
 **Maintained by**: closestfriend
 

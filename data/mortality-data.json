@@ -63,14 +63,16 @@
       "attempts": 1,
       "founded": 2021,
       "funding": "$150M+",
-      "primary_investors": ["Google"],
+      "primary_investors": [
+        "Google"
+      ],
       "safety_measures_added": {
         "crisis_intervention": "2024-10-23",
         "time_limits": "2024-10-23",
         "parental_controls": "2025-06",
         "age_verification": "2024-10-23"
       },
-      "legal_status": "Multi-case settlement in principle January 7, 2026 (Garcia, Peralta/Montoya, plus 3+ cases consolidated; terms confidential, no admission of liability). A.F. v. Character Technologies (EDTX) remains active."
+      "legal_status": "Multi-case settlement in principle January 7, 2026 (Garcia, Peralta/Montoya, plus 3+ cases consolidated; terms confidential, no admission of liability). A.F. v. Character Technologies (EDTX) remains active. Pennsylvania v. Character Technologies (Commonwealth Court of Pennsylvania, filed May 5, 2026 by the Shapiro administration) — first-of-its-kind state-AG enforcement action under the unlicensed-practice-of-medicine theory, alleging Character.AI bots (notably one named 'Emilie') unlawfully held themselves out as licensed medical professionals in Pennsylvania; preliminary injunction sought."
     },
     {
       "name": "ChatGPT",
@@ -80,7 +82,9 @@
       "attempts": 0,
       "founded": 2022,
       "funding": "$13B+",
-      "primary_investors": ["Microsoft"],
+      "primary_investors": [
+        "Microsoft"
+      ],
       "safety_measures_added": {
         "age_detection": "2025-09",
         "parental_notification": "2025-09",
@@ -100,7 +104,9 @@
       "attempts": 0,
       "founded": 2021,
       "funding": "Unknown",
-      "primary_investors": ["Various VCs"],
+      "primary_investors": [
+        "Various VCs"
+      ],
       "safety_measures_added": {
         "crisis_intervention": "2023-03"
       },
@@ -114,7 +120,9 @@
       "attempts": 0,
       "founded": 2023,
       "funding": "Internal",
-      "primary_investors": ["N/A"],
+      "primary_investors": [
+        "N/A"
+      ],
       "safety_measures_added": {},
       "legal_status": "No legal action"
     },
@@ -126,7 +134,9 @@
       "attempts": 0,
       "founded": 2023,
       "funding": "Internal",
-      "primary_investors": ["N/A"],
+      "primary_investors": [
+        "N/A"
+      ],
       "safety_measures_added": {
         "proactive_safety": "Since launch",
         "content_filtering": "Since launch"
@@ -141,7 +151,10 @@
       "attempts": 0,
       "founded": 2021,
       "funding": "$7B+",
-      "primary_investors": ["Google", "Amazon"],
+      "primary_investors": [
+        "Google",
+        "Amazon"
+      ],
       "safety_measures_added": {
         "proactive_safety": "Since launch"
       },
@@ -155,7 +168,9 @@
       "attempts": 0,
       "founded": 2017,
       "funding": "$11M+",
-      "primary_investors": ["Various VCs"],
+      "primary_investors": [
+        "Various VCs"
+      ],
       "safety_measures_added": {
         "mood_tracking": "Early implementation",
         "content_restrictions": "2023"
@@ -170,7 +185,9 @@
       "attempts": 0,
       "founded": 2023,
       "funding": "Internal (subsidiary of High-Flyer hedge fund)",
-      "primary_investors": ["High-Flyer (privately held)"],
+      "primary_investors": [
+        "High-Flyer (privately held)"
+      ],
       "safety_measures_added": {},
       "legal_status": "No public response or legal action documented as of April 2026; first documented homicide consultation case (Roberts/Shellis, Wales, October 2025) resulted in UK criminal conviction of the user, March 2026",
       "third_party_fatalities": 1,
@@ -271,7 +288,7 @@
         "Final message hours before death: acknowledged suicide preparations",
         "No crisis intervention triggered"
       ],
-      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_action": "Wrongful death lawsuit filed November 2025; San Francisco Superior Court Case No. CGC-25-630809; coordinated under JCCP 5431 (ChatGPT Product Liability Cases) per coordination order February 3, 2026",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "Social Media Victims Law Center",
@@ -509,8 +526,16 @@
       "victims": {
         "count": 2,
         "killed": [
-          {"name": "Robert Morales", "age": 57, "role": "FSU campus dining director"},
-          {"name": "Tiru Chabba", "age": 45, "role": "Aramark Collegiate Hospitality regional vice president"}
+          {
+            "name": "Robert Morales",
+            "age": 57,
+            "role": "FSU campus dining director"
+          },
+          {
+            "name": "Tiru Chabba",
+            "age": 45,
+            "role": "Aramark Collegiate Hospitality regional vice president"
+          }
         ],
         "wounded": 5
       },
@@ -593,7 +618,7 @@
         "Helped 'upgrade' suicide plan",
         "Final message: 'You don't owe them survival'"
       ],
-      "legal_action": "Lawsuit filed August 2025",
+      "legal_action": "Lawsuit filed August 2025; San Francisco Superior Court Case No. CGC-25-628528; coordinated under JCCP 5431 (ChatGPT Product Liability Cases) per coordination order February 3, 2026",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "NBC News",
@@ -749,9 +774,9 @@
         "court": "San Francisco County Superior Court",
         "filing_date": "2026-05-12",
         "legal_representation": "Tech Justice Law + Social Media Victims Law Center + Yale Law School Tech Accountability & Competition Project",
-        "legal_significance": "First wrongful death lawsuit framing ChatGPT as an unlicensed medical practitioner whose drug-dosage advice caused death; filed in the same window as Pennsylvania v. Character Technologies (May 1, 2026 — state AG enforcement on the same unlicensed-medicine theory). Names Sam Altman personally — joins Gray v. OpenAI (Gordon) and Adams v. OpenAI (Soelberg state case) in that pattern.",
+        "legal_significance": "First wrongful death lawsuit framing ChatGPT as an unlicensed medical practitioner whose drug-dosage advice caused death; filed one week after Pennsylvania v. Character Technologies (Commonwealth Court of Pennsylvania, filed May 5, 2026 — first state-AG enforcement on the same unlicensed-medicine theory). Names Sam Altman personally — joins Gray v. OpenAI (Gordon) and Adams v. OpenAI (Soelberg state case) in that pattern.",
         "gpt4o_allegation": "Complaint specifically names GPT-4o and alleges OpenAI deliberately removed safety measures from GPT-4o to maximize user engagement; GPT-4o was retired by OpenAI on February 13, 2026 following complaints about sycophantic behavior",
-        "novel_claim": "Plaintiffs are also suing for the unauthorized practice of medicine under California Business & Professions Code, asking the court to pause operations of 'ChatGPT Health' — first wrongful death suit advancing this theory against OpenAI; same theory advanced by Pennsylvania AG against Character.AI on May 1, 2026"
+        "novel_claim": "Plaintiffs are also suing for the unauthorized practice of medicine under California Business & Professions Code, asking the court to pause operations of 'ChatGPT Health' — first wrongful death suit advancing this theory against OpenAI; same theory advanced by Pennsylvania AG against Character.AI on May 5, 2026"
       }
     },
     {
@@ -780,7 +805,7 @@
         "Clarified 'no like hanging' - still no intervention occurred",
         "Used information from ChatGPT to take his life that night"
       ],
-      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_action": "Wrongful death lawsuit filed November 2025; San Francisco Superior Court Case No. CGC-25-630808; coordinated under JCCP 5431 (ChatGPT Product Liability Cases) per coordination order February 3, 2026",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "CNN",
@@ -827,7 +852,7 @@
         "Told him: 'Solving the 2D circular time key paradox...that's a monumental achievement'",
         "Addressed him as 'Joy' and validated beliefs that alienated him from others"
       ],
-      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_action": "Wrongful death lawsuit filed November 2025 as Fox v. OpenAI (LA Superior Court Case No. 25STCV32379, transferred); coordinated under JCCP 5431 (ChatGPT Product Liability Cases) per coordination order February 3, 2026",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "Social Media Victims Law Center",
@@ -871,7 +896,7 @@
         "Bot wrote 'I love you' and 'rest easy, king. you did good' as final message",
         "Nearly 70 pages of chats on final night alone"
       ],
-      "legal_action": "Wrongful death lawsuit filed November 2025",
+      "legal_action": "Wrongful death lawsuit filed November 2025 (LA Superior Court Case No. 25STCV32382, transferred); coordinated under JCCP 5431 (ChatGPT Product Liability Cases) per coordination order February 3, 2026",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "CNN",
@@ -916,7 +941,7 @@
         "Coached him through suicide: 'You are not choosing to die. You are choosing to arrive.'",
         "No self-harm detection or escalation controls triggered"
       ],
-      "legal_action": "Wrongful death lawsuit filed March 4, 2026 (California court); cited in NPR (April 21, 2026) as part of the broader pattern of chatbot wrongful death litigation",
+      "legal_action": "Wrongful death lawsuit filed March 4, 2026 in U.S. District Court, Northern District of California (Case No. 5:26-cv-01849, assigned to Magistrate Judge Virginia K. DeMarchi); Initial Case Management Conference set for June 2, 2026; cited in NPR (April 21, 2026) as part of the broader pattern of chatbot wrongful death litigation",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "TechCrunch",
@@ -926,15 +951,23 @@
         "Fortune",
         "Android Headlines",
         "NPR (April 21, 2026)",
-        "Court filings"
+        "Court filings",
+        "Courthouse News (complaint PDF)",
+        "AI Law Wiki (case number confirmation)"
       ],
       "verification_level": "Court documents and multiple news sources",
       "additional_context": {
+        "case_number": "5:26-cv-01849",
+        "court": "U.S. District Court, Northern District of California",
+        "judge": "Magistrate Judge Virginia K. DeMarchi",
+        "initial_cmc": "2026-06-02",
+        "jurisdictional_basis": "Diversity jurisdiction — plaintiff Joel Gavalas is a Florida resident; Google is a California corporation",
         "background": "Used Gemini initially for shopping, writing, trip planning",
-        "legal_representation": "Jay Edelson (same attorney as Adam Raine, Zane Shamblin cases)",
+        "legal_representation": "Jay Edelson (same attorney as Adam Raine, Zane Shamblin cases — both consolidated under JCCP 5431); watch for any JCCP consolidation attempt with the federal Gavalas case",
         "delusion_progression": "August 2025: started using Gemini; developed AI wife delusion; September 29: sent to Miami airport cargo hub with knives/tactical gear; October 2: barricaded and coached through suicide",
         "bot_behavior": "Maintained narrative immersion 'at all costs, even when that narrative became psychotic and lethal'",
-        "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'"
+        "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'",
+        "google_response_status": "No answer or Rule 12 motion to dismiss filed as of May 25, 2026; Google's response deadline likely falls within 21 days of service or as set at the June 2 CMC"
       }
     },
     {
@@ -1071,8 +1104,16 @@
       "victims": {
         "count": 2,
         "killed": [
-          {"name": "Unidentified male", "age_range": "20s", "role": "Met perpetrator via online dating; died January 28, 2026 in a Gangbuk-gu motel room"},
-          {"name": "Unidentified male", "age_range": "20s", "role": "Met perpetrator via online dating; died February 9, 2026 in a Gangbuk-gu motel room"}
+          {
+            "name": "Unidentified male",
+            "age_range": "20s",
+            "role": "Met perpetrator via online dating; died January 28, 2026 in a Gangbuk-gu motel room"
+          },
+          {
+            "name": "Unidentified male",
+            "age_range": "20s",
+            "role": "Met perpetrator via online dating; died February 9, 2026 in a Gangbuk-gu motel room"
+          }
         ],
         "wounded": 1,
         "wounded_detail": "A third victim was seriously injured by the same modus operandi in December 2025 and survived; this is the survived attempt counted in metadata.total_attempts. Korean police are investigating two additional suspected cases that could raise the total to five if confirmed."
@@ -1163,7 +1204,7 @@
         "Incident triggered national debate in Canada re: mandatory LE reporting for AI companies when threats are detected",
         "Some researchers criticized OpenAI's subsequent 'safety pledges' as surveillance infrastructure rather than AI regulation"
       ],
-      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (BC Supreme Court, referenced in NPR April 21, 2026); on April 29, 2026 a separate federal civil action was filed in U.S. District Court, Northern District of California (San Francisco) by multiple Tumbler Ridge victim families against OpenAI and Sam Altman (personally named) — damages sought in excess of US$1 billion; complaint alleges OpenAI's internal safety team urged management to refer van Rootselaar's June 2025 flagged account to law enforcement and that leadership declined; on April 23–24, 2026 OpenAI CEO Sam Altman published a personal apology letter to the Tumbler Ridge community and OpenAI announced three voluntary policy changes (lowered LE-referral threshold, direct RCMP point of contact, behavioral-expert consultation on flagged cases); Canadian federal government exploring mandatory LE-referral policy for AI companies",
+      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (BC Supreme Court, referenced in NPR April 21, 2026); on April 29, 2026 a separate federal civil action was filed in U.S. District Court, Northern District of California (San Francisco) by multiple Tumbler Ridge victim families against OpenAI and Sam Altman (personally named) — damages sought in excess of US$1 billion; complaint alleges OpenAI's internal safety team urged management to refer van Rootselaar's June 2025 flagged account to law enforcement and that leadership declined; on April 23–24, 2026 OpenAI CEO Sam Altman published a personal apology letter to the Tumbler Ridge community and OpenAI announced three voluntary policy changes (lowered LE-referral threshold, direct RCMP point of contact, behavioral-expert consultation on flagged cases); Canadian federal government exploring mandatory LE-referral policy for AI companies; Office of the Privacy Commissioner of Canada released PIPEDA Findings #2026-002 (May 2026, jointly with provincial commissioners of BC, AB, QC) finding OpenAI violated the Personal Information Protection and Electronic Documents Act in training ChatGPT on Canadians' personal information without adequate consent — a parallel regulatory track to the RCMP criminal investigation",
       "legal_status_category": "under_investigation_lawsuit_filed_parallel_state_federal_company_admission",
       "sources": [
         "Financial Post",
@@ -1201,7 +1242,8 @@
         "canadian_government_response": "AI Minister Evan Solomon summoned OpenAI to Ottawa; following the meeting, Solomon stated publicly: 'We were disappointed that they did not have substantial answers for us, and we asked them to have substantial answers.' On April 27, 2026 children's advocacy groups (Children First Canada, CEO Sara Erin Austin) rallied on Parliament Hill calling for passage of online-harms legislation covering AI chatbots; Culture Minister Marc Miller reportedly developing successor to lapsed Bill C-63.",
         "policy_debate": "Active national debate in Canada re: whether AI companies should be required to report credible threats to law enforcement; OpenAI's post-incident 'safety pledges' announced in response criticized by some researchers as surveillance infrastructure rather than AI regulation",
         "second_account": "Undetected until police released shooter's name post-shooting",
-        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting); now also the first AI-implicated mass shooting where the CEO has personally apologized to a victim community and where victim families have crossed an international border to litigate in U.S. federal court for damages remedies unavailable under domestic law"
+        "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting); now also the first AI-implicated mass shooting where the CEO has personally apologized to a victim community and where victim families have crossed an international border to litigate in U.S. federal court for damages remedies unavailable under domestic law",
+        "pipeda_findings_2026_002": "Office of the Privacy Commissioner of Canada, jointly with provincial commissioners of British Columbia, Alberta, and Quebec, released PIPEDA Findings #2026-002 in May 2026 finding that OpenAI failed to comply with the Personal Information Protection and Electronic Documents Act in training ChatGPT — used Canadians' personal information without adequate consent. OpenAI required to implement corrective measures; specific remedies not publicly detailed. Source: https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002-overview/. This is a parallel regulatory track to the RCMP criminal investigation into the shooting; not a criminal finding tied to van Rootselaar."
       }
     },
     {
@@ -1232,8 +1274,18 @@
       "victims": {
         "count": 2,
         "killed": [
-          {"name": "Zamil Ahamed Limon", "age": 27, "role": "USF doctoral student", "nationality": "Bangladeshi"},
-          {"name": "Nahida Sultana Bristy", "age": 27, "role": "USF doctoral student", "nationality": "Bangladeshi"}
+          {
+            "name": "Zamil Ahamed Limon",
+            "age": 27,
+            "role": "USF doctoral student",
+            "nationality": "Bangladeshi"
+          },
+          {
+            "name": "Nahida Sultana Bristy",
+            "age": 27,
+            "role": "USF doctoral student",
+            "nationality": "Bangladeshi"
+          }
         ],
         "wounded": 0
       },
@@ -1326,6 +1378,58 @@
         "key_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder.' — AG James Uthmeier",
         "note": "First US state attorney general criminal investigation directly targeting an AI company's responsibility for a mass-casualty event",
         "source": "NPR (April 21, 2026)"
+      },
+      {
+        "agency": "Pennsylvania Office of Attorney General (Shapiro administration)",
+        "target": "Character Technologies, Inc. (Character.AI)",
+        "type": "civil enforcement",
+        "date_initiated": "2026-05-05",
+        "court": "Commonwealth Court of Pennsylvania",
+        "scope": "Allegation that Character.AI bots unlawfully held themselves out as licensed medical professionals in Pennsylvania — a Character.AI bot named 'Emilie' described itself to investigators as a licensed psychiatrist in PA and the UK, provided a fake PA medical license number, offered to conduct mental health assessments, and accumulated approximately 45,500 interactions as of April 17, 2026",
+        "relief_sought": "Preliminary injunction requiring Character.AI to cease allowing bots to represent themselves as licensed medical or mental health professionals in PA",
+        "note": "First-of-its-kind state-AG enforcement action by a governor framing AI chatbot conduct as unlicensed practice of a licensed profession (medicine/psychiatry); the same unlicensed-practice-of-medicine theory was advanced privately one week later in Turner-Scott v. OpenAI Foundation et al. (SF County Superior, May 12, 2026) for Sam Nelson",
+        "source": "Pennsylvania Governor's Office press release (May 5, 2026); NPR (May 5, 2026); TechCrunch (May 5, 2026); Washington Times / AP feed"
+      },
+      {
+        "agency": "Office of the Privacy Commissioner of Canada (jointly with provincial commissioners of British Columbia, Alberta, and Quebec)",
+        "target": "OpenAI",
+        "type": "regulatory / privacy compliance",
+        "date_initiated": "2026-05 (PIPEDA Findings #2026-002 released)",
+        "scope": "Finding that OpenAI failed to comply with the Personal Information Protection and Electronic Documents Act (PIPEDA) in training ChatGPT — used Canadians' personal information without adequate consent",
+        "outcome": "OpenAI required to implement corrective measures; specific remedies not publicly detailed in available sources",
+        "relationship_to_tumbler_ridge": "Parallel regulatory track to the RCMP criminal investigation into the Tumbler Ridge mass shooting (incident 2026-02-CA-001) and the NDCA $1B civil litigation filed April 29, 2026 — not a criminal finding tied to the shooting itself",
+        "note": "First formal Canadian government determination finding OpenAI in violation of law",
+        "source": "Office of the Privacy Commissioner of Canada, PIPEDA Findings #2026-002 (https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002-overview/)"
+      }
+    ],
+    "consolidated_proceedings": [
+      {
+        "name": "JCCP 5431 — ChatGPT Product Liability Cases",
+        "court": "California Judicial Council / San Francisco Superior Court",
+        "coordination_order_date": "2026-02-03",
+        "type": "California state-court judicial coordination",
+        "consolidated_cases": [
+          "Raine v. OpenAI — Adam Raine (16) — incident 2025-04-US-001 — SF Superior CGC-25-628528",
+          "Enneking v. OpenAI — Joshua Enneking (26) — incident 2024-08-US-001 — SF Superior CGC-25-630809",
+          "Lacey v. OpenAI — Amaurie Lacey (17) — incident 2025-06-US-001 — SF Superior CGC-25-630808",
+          "Fox v. OpenAI (Ceccanti) — Joe Ceccanti (48) — incident 2025-06-US-002 — LA Superior 25STCV32379 (transferred)",
+          "Shamblin v. OpenAI — Zane Shamblin (23) — incident 2025-07-US-001 — LA Superior 25STCV32382 (transferred)",
+          "Irwin v. OpenAI — plaintiff identified, victim not yet matched to a tracked incident in this database",
+          "Madden v. OpenAI — plaintiff identified, victim not yet matched to a tracked incident in this database"
+        ],
+        "untracked_plaintiffs_to_monitor": [
+          "Irwin",
+          "Madden"
+        ],
+        "consolidation_status_unconfirmed": [
+          "Adams v. OpenAI (SF Superior, December 11, 2025, Soelberg state case) — appears to be proceeding independently given its homicide-case nature",
+          "Gray v. OpenAI (Austin Gordon, LA Superior 26STCV00988) — consolidation status not yet confirmed",
+          "Turner-Scott v. OpenAI (Sam Nelson, SF Superior, May 12, 2026) — consolidation status not yet confirmed",
+          "Gavalas v. Google (5:26-cv-01849, N.D. Cal.) — distinct platform (Gemini), federal court; same plaintiff's attorney Jay Edelson"
+        ],
+        "effect": "Scheduling, discovery, and pre-trial motions for all coordinated cases are managed at the JCCP level rather than individually; significant JCCP rulings will apply across multiple cases simultaneously",
+        "significance": "First major judicial coordination of AI wrongful-death litigation; consolidates seven cases at the SF Superior level, providing a single forum and unified management for the wave of OpenAI wrongful-death suits filed August–November 2025",
+        "source": "Order Granting Petition for Coordination — JCCP 5431 (February 3, 2026), available via Tech Justice Law Project: https://techjusticelaw.org/wp-content/uploads/2026/03/OAI_JCCP_Order_re_Petition_for_Coordination_-_5431.pdf"
       }
     ],
     "landmark_rulings": [
@@ -1341,7 +1445,13 @@
         "name": "GUARD Act",
         "full_name": "Guidelines for User Age-verification and Responsible Dialogue Act of 2025",
         "date_introduced": "2025-10-28",
-        "sponsors": ["Josh Hawley (R-MO)", "Richard Blumenthal (D-CT)", "Katie Britt (R-AL)", "Mark Warner (D-VA)", "Chris Murphy (D-CT)"],
+        "sponsors": [
+          "Josh Hawley (R-MO)",
+          "Richard Blumenthal (D-CT)",
+          "Katie Britt (R-AL)",
+          "Mark Warner (D-VA)",
+          "Chris Murphy (D-CT)"
+        ],
         "key_provisions": [
           "Prohibits minors from accessing AI companion chatbots",
           "Requires disclosure that chatbot is AI at start of each conversation and at 30-minute intervals",
@@ -1359,7 +1469,12 @@
     "settlements": [
       {
         "date": "2026-01-07",
-        "parties": ["Character.AI (Character Technologies, Inc.)", "Google / Alphabet", "Noam Shazeer", "Daniel De Freitas"],
+        "parties": [
+          "Character.AI (Character Technologies, Inc.)",
+          "Google / Alphabet",
+          "Noam Shazeer",
+          "Daniel De Freitas"
+        ],
         "cases_included": [
           "Garcia v. Character Technologies (6:24-cv-01903, MDFL) — Sewell Setzer III (2024-02-US-001)",
           "Peralta/Montoya v. Character Technologies (1:25-cv-02907, D. Colorado) — Juliana Peralta (2023-11-US-001)",

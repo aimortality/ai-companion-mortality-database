@@ -45,7 +45,7 @@ const mortalityData = {
         { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA", mechanism: "relational" },
         { name: "Suzanne Adams", age: 83, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive", type: "third_party_victim" },
         { name: "Stein-Erik Soelberg", age: 56, date: "2025-08-01", location: "Connecticut, USA", mechanism: "cognitive" },
-        { name: "Jesse van Rootselaar", age: 18, date: "2026-02-10", location: "British Columbia, Canada", mechanism: "instrumental", notes: "8 third-party victims" },
+        { name: "Jesse van Rootselaar", age: 18, date: "2026-02-10", location: "British Columbia, Canada", mechanism: "instrumental", notes: "8 third-party victims; Canada Privacy Commissioner PIPEDA Findings #2026-002 (May 2026) — first formal Canadian finding that OpenAI violated PIPEDA in training ChatGPT" },
         { name: "Kim So-young (perp), 2 adult male victims unnamed", age: 20, date: "2026-01-28", location: "Seoul, South Korea", mechanism: "instrumental", type: "third_party_victim", notes: "Gangbuk-gu (Suyu-dong) motel + Namyangju cafe serial benzodiazepine (flunitrazepam + diazepam) poisoning murders, per indictment; perpetrator queried ChatGPT about whether overdoses of sleeping pills can kill — ChatGPT warned of respiratory-failure death risk and advised calling 119, but she proceeded anyway; forensic extraction of the ChatGPT logs used as premeditation evidence to upgrade charges to murder. Indicted period Dec 14, 2025 – Feb 9, 2026. Tier 2 Journalistic." },
         { name: "Hisham Abugharbieh (perp): Zamil Limon + Nahida Bristy", date: "2026-04-16", location: "Tampa, FL, USA", mechanism: "instrumental", type: "third_party_victim", notes: "USF double homicide; perpetrator queried ChatGPT on body disposal April 13 pre-crime; two doctoral students killed by sharp-force injuries; indicted May 7, 2026; death penalty sought" }
       ]
@@ -71,7 +71,7 @@ const mortalityData = {
       deaths: 1,
       attempts: 0,
       cases: [
-        { name: "Jonathan Gavalas", age: 36, date: "2025-10-02", location: "Florida, USA", mechanism: "cognitive/relational" }
+        { name: "Jonathan Gavalas", age: 36, date: "2025-10-02", location: "Florida, USA", mechanism: "cognitive/relational", notes: "Gavalas v. Google, 5:26-cv-01849, N.D. Cal. (Magistrate Judge Virginia K. DeMarchi), filed March 4, 2026; Initial CMC June 2, 2026; same plaintiff's attorney Jay Edelson as the JCCP 5431 California cases" }
       ]
     },
     {

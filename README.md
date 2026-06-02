@@ -37,6 +37,9 @@ This repository contains data and documentation for the first comprehensive publ
 - **First DeepSeek-involved fatality** documented: Roberts/Shellis homicide (Wales, October 2025) — UK criminal conviction at Mold Crown Court, March 25, 2026 (life sentence, minimum 22 years 6 months)
 - **First East Asian instrumental-pathway case**: Kim Seoul serial poisonings (January–February 2026) — first use of forensic AI chat log extraction to upgrade criminal charges
 - **Three new May 2026 lawsuits against OpenAI**: Joshi v. OpenAI (N.D. Fla., FSU wrongful death), Turner-Scott v. OpenAI (SF Superior, Nelson — novel unlicensed-medicine theory), Tumbler Ridge families NDCA $1B suit
+- **JCCP 5431** (San Francisco Superior Court, coordination order February 3, 2026) — first major judicial coordination of AI wrongful-death litigation, consolidating seven OpenAI cases (Raine, Enneking, Lacey, Ceccanti/Fox, Shamblin, Irwin, Madden)
+- **Pennsylvania v. Character Technologies** (Commonwealth Court of PA, filed May 5, 2026 by the Shapiro administration) — first-of-its-kind state-AG enforcement framing AI chatbot conduct as unlicensed practice of medicine
+- **Canada PIPEDA Findings #2026-002** against OpenAI (Office of the Privacy Commissioner of Canada, May 2026, joint with BC/AB/QC provincial commissioners) — first formal Canadian government determination finding OpenAI in violation of law
 
 ## 🔍 Verified Cases
 
@@ -60,7 +63,7 @@ This repository contains data and documentation for the first comprehensive publ
 | Zane Shamblin | 23 | ChatGPT | Jul 2025 | Texas, USA | Death by suicide | Relational |
 | **Suzanne Adams** | 83 | ChatGPT | Aug 2025 | Connecticut, USA | **Murder victim** | — |
 | Stein-Erik Soelberg | 56 | ChatGPT | Aug 2025 | Connecticut, USA | Murder-suicide | Cognitive |
-| Jonathan Gavalas | 36 | Gemini | Oct 2025 | Florida, USA | Death by suicide | Cognitive/Relational |
+| Jonathan Gavalas | 36 | Gemini | Oct 2025 | Florida, USA | Death by suicide | Cognitive/Relational — Gavalas v. Google, N.D. Cal. 5:26-cv-01849 |
 | Austin Gordon | 40 | ChatGPT | Nov 2, 2025 | Colorado, USA | Death by suicide | Relational |
 | **Angela Shellis** | 45 | DeepSeek | Oct 23, 2025 | Prestatyn, Wales, UK | **Homicide (by son)** | Instrumental |
 | **Kim Seoul victim 1** (unnamed) | ~25 | ChatGPT | Jan 28, 2026 | Seoul, South Korea | **Murder victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |

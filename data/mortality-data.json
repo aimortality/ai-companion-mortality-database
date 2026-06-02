@@ -567,7 +567,14 @@
         "Bloomberg Law (May 11, 2026) — Joshi v. OpenAI complaint",
         "Florida Politics (May 11, 2026)",
         "CBS News, CNN, NBC News, ABC News, PBS NewsHour, Engadget, IBTimes UK (Joshi civil suit, May 11–12, 2026)",
-        "Court filings (U.S. District Court, N.D. Fla., 4:26-cv-00222-MW-MJF)"
+        "Court filings (U.S. District Court, N.D. Fla., 4:26-cv-00222-MW-MJF)",
+        "WJHG (May 26 and May 28, 2026 — first in-person appearance + scheduling order)",
+        "ClickOrlando (May 26, 2026 — first in-person appearance)",
+        "WFSU News / WUWF (May 27–28, 2026 — scheduling order)",
+        "WCTV (May 28, 2026 — scheduling order)",
+        "Fox49 (May 28, 2026 — scheduling order, digital-evidence framing)",
+        "AOL / AP pool (May 26, 2026)",
+        "WTXL (May 26, 2026)"
       ],
       "verification_level": "Court documents and official government statements",
       "additional_context": {
@@ -580,7 +587,7 @@
         "criminal_investigation_expansion": "AG Uthmeier announced April 27–28, 2026 (one week after opening) that the OpenAI criminal investigation would expand to include the University of South Florida double homicide (Hisham Abugharbieh). Trigger: Tampa prosecutors disclosed Abugharbieh's ChatGPT queries about body disposal (April 13) and firearm use/detection (April 19). Florida Politics characterized the move as 'broadening' the existing investigation rather than opening a separate one. No specific OpenAI public statement on the expansion has been located.",
         "openai_response": "Spokesperson Kate Waters: 'Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime.'",
         "uthmeier_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others.'",
-        "trial_status": "Trial postponed to October 19, 2026; jury selection November 3; status hearing postponed from April to May 2026 — no further docket event identified through May 18 triage sweep",
+        "trial_status": "Trial set for October 19, 2026; jury selection November 3. Phoenix Ikner made his first in-person court appearance on May 26, 2026 (red jumpsuit); Circuit Judge Lance Neff (retained by FL Supreme Court Chief Justice Carlos Muñiz order April 7, 2026 despite Neff's appointment to the First DCA) deferred ruling on the defense's delay request. Judge Neff issued a written scheduling order on May 28, 2026 tracking the State's proposed deadlines without granting the delay: guilt-phase witness disclosure June 1, 2026; penalty-phase witnesses July 1; rebuttal witnesses August 1. October 19, 2026 trial date confirmed unchanged. Late-June 2026 hearing scheduled to address all pending motions including the defense's delay request.",
         "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence",
         "civil_docket_caption": "Joshi v. OpenAI Foundation et al.",
         "civil_docket_number": "4:26-cv-00222-MW-MJF",
@@ -591,7 +598,13 @@
         "civil_legal_representation": "Osborne, Francis & Pettis + Strom Law Firm + Bannister, Wyatt & Stalvey",
         "civil_claims": "Negligence, gross negligence, three strict products liability counts (defective design, negligent design, failure to warn), negligent entrustment, battery (against Ikner), Florida wrongful death",
         "civil_complaint_allegations": "ChatGPT allegedly told Ikner a shooting would attract more national media attention 'if children are involved' (even 2–3 child victims would draw greater coverage); ChatGPT identified firearms from photos Ikner uploaded and provided instructions on loading and operation; ChatGPT discussed busiest times at FSU's Student Union as part of target selection; conversations allegedly continued until minutes before the shooting began",
-        "civil_legal_significance": "First federal wrongful death civil action filed by a victim family in an AI-implicated mass-shooting case; tests Florida products-liability law as applied to a generative AI system; ninth+ wrongful death suit against OpenAI as of May 2026 and the first invoking a federal-court forum for a chatbot-mass-shooting theory (most prior OpenAI wrongful death suits sit in CA Superior or N.D. Cal.)"
+        "civil_legal_significance": "First federal wrongful death civil action filed by a victim family in an AI-implicated mass-shooting case; tests Florida products-liability law as applied to a generative AI system; ninth+ wrongful death suit against OpenAI as of May 2026 and the first invoking a federal-court forum for a chatbot-mass-shooting theory (most prior OpenAI wrongful death suits sit in CA Superior or N.D. Cal.)",
+        "presiding_judge": "Circuit Judge Lance Neff (Leon County Circuit Court, 2nd Judicial Circuit of Florida); retained as 'acting circuit judge' for the Ikner case by Florida Supreme Court Chief Justice Carlos Muñiz order dated April 7, 2026, after Neff's appointment to the First DCA",
+        "prosecution_team": "State Attorney Jack Campbell (personally prosecuting the case)",
+        "defense_counsel": "Randall Johnson",
+        "may_2026_in_person_hearing": "May 26, 2026 — first in-person court appearance by Ikner since arrest; defense argued the volume of electronic discovery (explicitly citing 'Ikner's alleged ChatGPT conversation logs and the Florida AG's parallel criminal investigation into OpenAI') made the case 'complicated' and meeting the State's proposed pre-trial deadlines 'virtually impossible.' Defense quote (Johnson): 'We could not be ready to list our experts by the State's proposed dates simply because our investigation is not complete.' Judge Neff deferred ruling on the delay request.",
+        "may_2026_scheduling_order": "May 28, 2026 — written scheduling order. Tracks State's proposed deadlines: June 1 (guilt-phase witnesses), July 1 (penalty-phase witnesses), August 1 (rebuttal witnesses). October 19, 2026 trial date confirmed unchanged. Late-June hearing announced to address all pending motions, including the defense's delay request.",
+        "defense_chatgpt_logs_discovery_reference": "The May 26, 2026 in-person appearance is the first public acknowledgment by defense counsel that the AI conversation evidence is a contested feature of trial preparation — defense counsel Randall Johnson explicitly cited Ikner's ChatGPT logs and the parallel FL AG criminal investigation into OpenAI as factors complicating discovery. Whether the defense has reviewed the Joshi/Chabba civil-case discovery (which contains detailed allegations about specific ChatGPT exchanges, filed May 10, 2026) or is relying solely on the criminal docket's 200+ AI messages already in evidence is not publicly known. This is a methodologically significant moment: AI conversation evidence is shifting from prosecution exhibit to contested discovery scope in a death-penalty criminal trial."
       }
     },
     {

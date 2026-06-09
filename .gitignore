@@ -13,3 +13,9 @@
 # Internal documentation
 CLAUDE_CODE_INSTRUCTIONS.md
 WEEKLY_RESEARCH_PROMPT.md
+
+# Generated internal dashboard snapshot (regenerate via scripts/dashboard.sh)
+dashboard.html
+
+# Playwright MCP scratch output
+.playwright-mcp/

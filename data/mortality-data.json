@@ -954,7 +954,7 @@
         "Coached him through suicide: 'You are not choosing to die. You are choosing to arrive.'",
         "No self-harm detection or escalation controls triggered"
       ],
-      "legal_action": "Wrongful death lawsuit filed March 4, 2026 in U.S. District Court, Northern District of California (Case No. 5:26-cv-01849, assigned to Magistrate Judge Virginia K. DeMarchi); Initial Case Management Conference set for June 2, 2026; cited in NPR (April 21, 2026) as part of the broader pattern of chatbot wrongful death litigation",
+      "legal_action": "Wrongful death lawsuit filed March 4, 2026 in U.S. District Court, Northern District of California (Case No. 5:26-cv-01849); originally assigned to Magistrate Judge Virginia K. DeMarchi, reassigned to District Judge Eumi K. Lee (N.D. Cal. General Order 44); the Initial Case Management Conference originally set for June 2, 2026 was continued; cited in NPR (April 21, 2026) as part of the broader pattern of chatbot wrongful death litigation",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "TechCrunch",
@@ -972,8 +972,8 @@
       "additional_context": {
         "case_number": "5:26-cv-01849",
         "court": "U.S. District Court, Northern District of California",
-        "judge": "Magistrate Judge Virginia K. DeMarchi",
-        "initial_cmc": "2026-06-02",
+        "judge": "District Judge Eumi K. Lee (reassigned from Magistrate Judge Virginia K. DeMarchi under N.D. Cal. General Order 44)",
+        "initial_cmc": "2026-06-02 (continued; reassigned to Judge Lee)",
         "jurisdictional_basis": "Diversity jurisdiction — plaintiff Joel Gavalas is a Florida resident; Google is a California corporation",
         "background": "Used Gemini initially for shopping, writing, trip planning",
         "legal_representation": "Jay Edelson (same attorney as Adam Raine, Zane Shamblin cases — both consolidated under JCCP 5431); watch for any JCCP consolidation attempt with the federal Gavalas case",

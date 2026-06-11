@@ -71,7 +71,7 @@ const mortalityData = {
       deaths: 1,
       attempts: 0,
       cases: [
-        { name: "Jonathan Gavalas", age: 36, date: "2025-10-02", location: "Florida, USA", mechanism: "cognitive/relational", notes: "Gavalas v. Google, 5:26-cv-01849, N.D. Cal. (Magistrate Judge Virginia K. DeMarchi), filed March 4, 2026; Initial CMC June 2, 2026; same plaintiff's attorney Jay Edelson as the JCCP 5431 California cases" }
+        { name: "Jonathan Gavalas", age: 36, date: "2025-10-02", location: "Florida, USA", mechanism: "cognitive/relational", notes: "Gavalas v. Google, 5:26-cv-01849, N.D. Cal. (District Judge Eumi K. Lee, reassigned from Magistrate Judge Virginia K. DeMarchi), filed March 4, 2026; Initial CMC originally set for June 2, 2026 continued; same plaintiff's attorney Jay Edelson as the JCCP 5431 California cases" }
       ]
     },
     {

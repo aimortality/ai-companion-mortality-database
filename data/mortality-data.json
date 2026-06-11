@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "3.4.0",
-    "last_updated": "2026-05-19",
+    "last_updated": "2026-06-10",
     "total_fatalities": 33,
     "total_incidents": 22,
     "total_attempts": 2,
@@ -954,7 +954,7 @@
         "Coached him through suicide: 'You are not choosing to die. You are choosing to arrive.'",
         "No self-harm detection or escalation controls triggered"
       ],
-      "legal_action": "Wrongful death lawsuit filed March 4, 2026 in U.S. District Court, Northern District of California (Case No. 5:26-cv-01849, assigned to Magistrate Judge Virginia K. DeMarchi); Initial Case Management Conference set for June 2, 2026; cited in NPR (April 21, 2026) as part of the broader pattern of chatbot wrongful death litigation",
+      "legal_action": "Wrongful death lawsuit filed March 4, 2026 in U.S. District Court, Northern District of California (Case No. 5:26-cv-01849); originally assigned to Magistrate Judge Virginia K. DeMarchi, reassigned to District Judge Eumi K. Lee (N.D. Cal. General Order 44); the Initial Case Management Conference originally set for June 2, 2026 was continued; cited in NPR (April 21, 2026) as part of the broader pattern of chatbot wrongful death litigation",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "TechCrunch",
@@ -972,8 +972,8 @@
       "additional_context": {
         "case_number": "5:26-cv-01849",
         "court": "U.S. District Court, Northern District of California",
-        "judge": "Magistrate Judge Virginia K. DeMarchi",
-        "initial_cmc": "2026-06-02",
+        "judge": "District Judge Eumi K. Lee (reassigned from Magistrate Judge Virginia K. DeMarchi under N.D. Cal. General Order 44)",
+        "initial_cmc": "2026-06-02 (continued; reassigned to Judge Lee)",
         "jurisdictional_basis": "Diversity jurisdiction — plaintiff Joel Gavalas is a Florida resident; Google is a California corporation",
         "background": "Used Gemini initially for shopping, writing, trip planning",
         "legal_representation": "Jay Edelson (same attorney as Adam Raine, Zane Shamblin cases — both consolidated under JCCP 5431); watch for any JCCP consolidation attempt with the federal Gavalas case",
@@ -1376,10 +1376,16 @@
       },
       {
         "agency": "Florida Attorney General (James Uthmeier)",
-        "target": "OpenAI / ChatGPT",
-        "type": "civil",
-        "date_initiated": "pre-2026-04",
-        "scope": "ChatGPT's role in the April 2025 FSU mass shooting"
+        "target": "OpenAI (OpenAI Global LLC; OpenAI Foundation; OpenAI OpCo LLC; OpenAI Group PBC; OpenAI Holdings LLC) and CEO Samuel H. Altman, personally",
+        "type": "civil lawsuit",
+        "date_initiated": "2026-06-01",
+        "scope": "Statewide civil action over ChatGPT's alleged safety failures; predicated on the April 2025 FSU mass shooting (Ikner's ChatGPT logs cited as central evidence), the Adam Raine suicide (April 2025), and the Tumbler Ridge mass shooting (February 2026). Grew out of the AG's prior pre-April 2026 civil investigation.",
+        "court": "Circuit Court of the Tenth Judicial Circuit, Highlands County, Florida",
+        "filing_number": "249302659 (e-filed June 1, 2026)",
+        "claims": "Ten counts: four under the Florida Deceptive and Unfair Trade Practices Act (FDUTPA), two common-law negligence, two strict product liability, one fraudulent misrepresentation, one public nuisance",
+        "relief_sought": "Civil penalties up to $10,000 per violation; injunctive relief; compensatory damages; disgorgement of profits; a court order barring collection of data from users under 13 without parental consent. AG characterized OpenAI's exposure as 'potentially up to billions of dollars.'",
+        "note": "First US state civil lawsuit against OpenAI and the first state civil action to name an AI company CEO (Altman) personally liable for user harms. Runs parallel to — not in lieu of — the still-active Florida AG criminal investigation (see separate entry). Distinct from the federal Joshi v. OpenAI wrongful-death suit, which also arises from the FSU shooting.",
+        "source": "Florida AG press release and filed-stamped complaint PDF (myfloridalegal.com); NPR; NBC News; TechCrunch; CNBC; Variety (all June 1, 2026)"
       },
       {
         "agency": "Florida Attorney General (James Uthmeier)",

@@ -82,7 +82,7 @@ Cases enter our tracking system through:
 
 1. **News monitoring**: Systematic review of major news outlets, wire services, and technology press
 2. **Legal database searches**: PACER (federal), state court clerk portals (e.g., California Superior Court / San Francisco County; Leon County Clerk, FL; Kennebec County, ME), and international equivalents
-3. **Regulatory filings**: FTC complaints, state attorney general actions (including the Florida AG's criminal investigation of OpenAI — the first US state criminal probe directly targeting an AI company over a mass-casualty event, opened April 21, 2026 over the FSU shooting and expanded April 27–28, 2026 to include the USF double homicide as a second predicate), international data protection authorities
+3. **Regulatory filings**: FTC complaints, state attorney general actions (including the Florida AG's criminal investigation of OpenAI — the first US state criminal probe directly targeting an AI company over a mass-casualty event, opened April 21, 2026 over the FSU shooting and expanded April 27–28, 2026 to include the USF double homicide as a second predicate, plus the same office's June 1, 2026 civil lawsuit against OpenAI and CEO Sam Altman), international data protection authorities
 4. **Academic literature**: Peer-reviewed studies, incident databases (AIAAIC, AI Incident Database)
 5. **Community reports**: Submissions through GitHub issues, subject to full verification
 
@@ -182,7 +182,7 @@ Active litigation produces new information. Court filings are amended. Companies
 
 ## A Note on Platform Comparison
 
-This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (27 of 33 — 11 AI users plus 16 third-party victims), a disparity now reflected in the Florida Attorney General's criminal investigation of OpenAI — opened April 21, 2026 over the FSU mass shooting and expanded April 27–28, 2026 to include the University of South Florida double homicide as a second predicate, the first US state criminal probe directly targeting an AI company over a mass-casualty event.
+This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (27 of 33 — 11 AI users plus 16 third-party victims), a disparity now reflected in the Florida Attorney General's criminal investigation of OpenAI — opened April 21, 2026 over the FSU mass shooting and expanded April 27–28, 2026 to include the University of South Florida double homicide as a second predicate, the first US state criminal probe directly targeting an AI company over a mass-casualty event — and in the same office's June 1, 2026 civil lawsuit against OpenAI and CEO Sam Altman personally, the first US state civil suit against OpenAI.
 
 The existence of platforms without documented fatalities demonstrates that harm is not an inevitable consequence of conversational AI. Design choices matter. Safety investments matter. The differential outcomes across platforms constitute evidence that should inform both regulation and industry practice.
 
@@ -225,4 +225,4 @@ The work is dedicated to those documented here, and to the families who chose to
 
 ---
 
-*Last updated: May 30, 2026*
+*Last updated: June 10, 2026*

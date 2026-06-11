@@ -34,6 +34,7 @@ This repository contains data and documentation for the first comprehensive publ
 - **Zero deaths** linked to Anthropic's Claude or Replika
 - **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
 - **Florida AG criminal investigation** into OpenAI opened April 21, 2026; expanded to USF double homicide as second predicate April 27–28, 2026
+- **Florida AG civil lawsuit** against OpenAI and CEO Sam Altman (personally) filed June 1, 2026 (Highlands County Circuit Court) — first US state civil suit against OpenAI and the first to name an AI company CEO personally liable for user harms; ten counts, penalties up to $10,000/violation
 - **First DeepSeek-involved fatality** documented: Roberts/Shellis homicide (Wales, October 2025) — UK criminal conviction at Mold Crown Court, March 25, 2026 (life sentence, minimum 22 years 6 months)
 - **First East Asian instrumental-pathway case**: Kim Seoul serial poisonings (January–February 2026) — first use of forensic AI chat log extraction to upgrade criminal charges
 - **Three new May 2026 lawsuits against OpenAI**: Joshi v. OpenAI (N.D. Fla., FSU wrongful death), Turner-Scott v. OpenAI (SF Superior, Nelson — novel unlicensed-medicine theory), Tumbler Ridge families NDCA $1B suit
@@ -176,7 +177,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: May 19, 2026
+**Last Updated**: June 10, 2026
 
 **Maintained by**: closestfriend
 

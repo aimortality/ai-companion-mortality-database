@@ -11,6 +11,10 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
+<sub>Data current as of June 10, 2026 · v3.4.0</sub>
+
+<img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
+
 </div>
 
 ---
@@ -28,7 +32,7 @@ This repository contains data and documentation for the first comprehensive publ
 - **30% of victims were minors** (youngest: 11 years old)
 - **17 of 22 incidents occurred in 2025–2026** (escalating trend)
 - **Three causal pathways identified**: relational (12), cognitive (4), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
-- **ChatGPT**: 82% of fatalities (27 total: 11 users + 16 third-party victims)
+- **ChatGPT**: 82% of fatalities (27 total: 11 AI-user deaths + 15 third-party victims, plus Margaux Whittemore — a ChatGPT-linked fatality counted in the database total but **not** classified as a third-party victim, as her killer was found not criminally responsible)
 - **8 platforms tracked** (6 with documented fatalities; DeepSeek added April 2026 following first non-Western-corporate-AI homicide consultation case in Wales)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **Zero deaths** linked to Anthropic's Claude or Replika
@@ -79,21 +83,27 @@ This repository contains data and documentation for the first comprehensive publ
 ```
 ai-companion-mortality-database/
 ├── data/
-│   ├── mortality-data.json         # Complete dataset
-│   ├── platform-analysis.csv       # Platform safety comparison
-│   └── timeline.json               # Chronological incident data
+│   ├── mortality-data.json         # Canonical dataset — all incidents, statistics, regulatory record
+│   ├── platform-analysis.csv       # Per-platform safety comparison (derived)
+│   └── timeline.json               # Chronological incident timeline (derived)
 ├── docs/
-│   ├── methodology.md             # Data collection methodology
-│   ├── verification-standards.md  # How cases are verified
-│   ├── contributing.md           # How to contribute data
-│   └── sources/                  # Links to source materials
+│   ├── methodology.md              # Epistemological framework, scope, ethics
+│   ├── verification-standards.md   # Tier definitions and qualifying sources
+│   ├── sources/                    # Source tracking (court-documents.md, news-coverage.md)
+│   └── reviews/                    # Peer- and credibility-review notes
 ├── src/
-│   ├── index.html                # Database visualization
-│   └── export.js                 # Data export utilities
+│   ├── index.html                  # Main database visualization
+│   ├── index-academic.html         # Academic-style edition
+│   ├── report.html                 # Long-form research report
+│   └── export.js                   # Client-side data export utilities
+├── scripts/
+│   ├── build-data-exports.py       # Regenerates platform-analysis.csv + timeline.json
+│   ├── validate-data.js            # Data integrity + statistical-consistency checks
+│   └── routines/                   # Weekly-triage research routine
 ├── assets/
-│   └── screenshots/              # Database screenshots
-└── scripts/
-    └── validate-data.js          # Data validation scripts
+│   └── screenshots/                # Database screenshots
+├── CONTRIBUTING.md                 # How to contribute data
+└── README.md
 ```
 
 ## 🎯 Purpose
@@ -128,13 +138,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 | Platform | User Deaths | Third-Party Victims | Attempts | Safety Features Added | When Added |
 |----------|------------|---------------------|----------|----------------------|------------|
 | Character.AI | 2 | 0 | 1 | Crisis intervention, time limits | After deaths |
-| ChatGPT/OpenAI | 11 | 16 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
+| ChatGPT/OpenAI | 11 | 15 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
 | Chai AI | 1 | 0 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | 0 | None documented | N/A |
 | Gemini | 1 | 0 | 0 | Proactive safety design, content filtering | Since launch |
 | DeepSeek | 0 | 1 | 0 | None documented | N/A |
 | Anthropic/Claude | 0 | 0 | 0 | Proactive safety design | Before launch |
 | Replika | 0 | 0 | 0 | Mood tracking, clear AI labeling | Early implementation |
+
+<sub>User deaths + third-party victims above sum to 32; the 33rd fatality is Margaux Whittemore (ChatGPT, Maine), counted in the database total but not as a third-party victim — her killer was found not criminally responsible. The database-wide "17 third-party victims" figure uses the broader definition that includes her.</sub>
 
 ## 🚨 Warning Signs
 
@@ -148,20 +160,22 @@ Based on documented cases, these patterns preceded tragedy:
 
 ## 📊 Data Exports
 
-- **[JSON Format](data/mortality-data.json)** - Complete structured data
-- **[CSV Format](data/platform-analysis.csv)** - For spreadsheet analysis
-- **[Timeline Format](data/timeline.json)** - Chronological view
+- **[JSON](data/mortality-data.json)** — complete structured dataset (canonical source)
+- **[CSV](data/platform-analysis.csv)** — per-platform safety comparison, for spreadsheet analysis
+- **[Timeline](data/timeline.json)** — chronological incident view
+
+Both derived exports are regenerated from the canonical JSON via `scripts/build-data-exports.py`; the live site also offers client-side CSV / summary-stat exports (`src/export.js`).
 
 ## 📰 Media & Research
 
 For media inquiries or research access:
-- Email: hnshokrian@gmail.com
+- Email: hunter@hnsk.site
 
 ## 🔗 Key Resources
 
 - [Live Database](https://aimortality.org/)
-- [Congressional Testimony (Sept 2025)](docs/sources/congressional-testimony.md)
-- [Landmark Legal Ruling (May 2025)](docs/sources/setzer-ruling.md)
+- [Methodology](docs/methodology.md) · [Verification Standards](docs/verification-standards.md)
+- [Tracked Court Documents](docs/sources/court-documents.md) · [News Coverage](docs/sources/news-coverage.md)
 
 ## 📜 Legal Disclaimer
 

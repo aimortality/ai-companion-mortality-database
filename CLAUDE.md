@@ -51,6 +51,7 @@ When the death count, incident count, or platform tally changes, recalculate:
 - Per-platform totals that *aggregate* user deaths + third-party victims — these are the values that were *correct before the change* and silently go stale after (e.g., `ChatGPT total = N`). Re-derive each one rather than relying on grep for the new headline number.
 - Age distribution buckets (13-17, 18-35, 36-54, 55+) and their percentages — the bucket counts must sum to the total fatalities
 - Duration note denominator ("Duration known for X of Y cases")
+- **The coverage period (`metadata.time_range.end` and every rendered "Period: March 2023 — <Month YYYY>" / "Mar 2023–<Mon YYYY>" / "Between March 2023 and <Month YYYY>" string).** `time_range.end` tracks the *sweep date* (coverage-through), not the last index event — bump it on every sweep. It surfaces in: the `.meta` line, all three meta descriptions, JSON-LD `temporalCoverage`, abstract + key findings (index and index-academic), the README badge + key findings, `docs/methodology.md` p7 and the zero-deaths claim, and `report.html` exec summary + Conclusions prose. Missed in v3.5.0; caught on the live site.
 - The three pathway counts (relational, cognitive, instrumental) — note that these classify *death mechanism* and need not sum to total incidents; survived-attempt incidents have no death mechanism.
 
 ## Presentation lag classes — locations easy to miss

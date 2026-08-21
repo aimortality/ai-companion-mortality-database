@@ -4,7 +4,7 @@
 
 This database exists because someone had to build it.
 
-Between March 2023 and May 2026, 35 fatalities have been documented across 24 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—18 AI users who died and 17 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
+Between March 2023 and August 2026, 35 fatalities have been documented across 24 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—18 AI users who died and 17 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
 
 What began as documentation of suicides associated with companion-chatbot dependency has expanded, of necessity, to include murders, murder-suicides, and mass-casualty events in which perpetrators used general-purpose AI systems for operational planning. The taxonomy grew in response: three causal pathways (relational, cognitive, instrumental); two outcome targets (self-harm, violence-against-others); and two overlapping-but-distinct victim populations (AI users and third-party victims). The database's scope is determined by where the evidence leads, not by a prior theory of harm.
 
@@ -186,7 +186,7 @@ This database includes platforms with zero documented deaths (Anthropic's Claude
 
 The existence of platforms without documented fatalities demonstrates that harm is not an inevitable consequence of conversational AI. Design choices matter. Safety investments matter. The differential outcomes across platforms constitute evidence that should inform both regulation and industry practice.
 
-We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through May 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
+We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through August 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
 
 ---
 

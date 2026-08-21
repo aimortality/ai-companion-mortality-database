@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "version": "3.4.0",
-    "last_updated": "2026-06-10",
-    "total_fatalities": 33,
-    "total_incidents": 22,
+    "version": "3.5.0",
+    "last_updated": "2026-08-21",
+    "total_fatalities": 35,
+    "total_incidents": 24,
     "total_attempts": 2,
-    "ai_users_deceased": 16,
+    "ai_users_deceased": 18,
     "third_party_victims": 17,
     "total_platforms": 8,
-    "fatality_note": "Total includes both AI users who died (16) and third-party victims killed by AI users (17: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting, Angela Shellis 45 killed by her son using DeepSeek for weapon selection in Wales, Zamil Limon 27 and Nahida Bristy 27 killed at the University of South Florida after the perpetrator consulted ChatGPT on post-mortem disposal, and two adult men in their 20s killed in Seoul motel rooms after the perpetrator consulted ChatGPT on lethal-dose optimization)",
+    "fatality_note": "Total includes both AI users who died (18) and third-party victims killed by AI users (17: Margaux Whittemore, Suzanne Adams, 8 in Tumbler Ridge mass shooting including stepbrother Emmett Jacobs age 11, Robert Morales 57 and Tiru Chabba 45 in FSU mass shooting, Angela Shellis 45 killed by her son using DeepSeek for weapon selection in Wales, Zamil Limon 27 and Nahida Bristy 27 killed at the University of South Florida after the perpetrator consulted ChatGPT on post-mortem disposal, and two adult men in their 20s killed in Seoul motel rooms after the perpetrator consulted ChatGPT on lethal-dose optimization)",
     "taxonomy_version": "1.0.0",
     "taxonomy_note": "Cases classified by mechanism_type (relational_pathway, cognitive_pathway, instrumental_pathway) and outcome_target (self_harm, violence_against_others)",
     "mechanism_definitions": {
@@ -28,13 +28,13 @@
     "deaths_by_year": {
       "2023": 2,
       "2024": 3,
-      "2025": 14,
+      "2025": 16,
       "2026": 3
     },
-    "deaths_by_year_note": "Counts incidents per year (date of index event). 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2026 includes Gangbuk-gu motel poisoning murders (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
+    "deaths_by_year_note": "Counts incidents per year (date of index event). 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2025 raised from 14 to 16 in v3.5.0 with the addition of Christian Faith Madison (June 9, 2025) and Alice Carrier (July 2, 2025). 2026 includes Gangbuk-gu motel poisoning murders (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
     "victims_by_age_group": {
       "minors": 10,
-      "adults": 23
+      "adults": 25
     },
     "third_party_victims": {
       "count": 17,
@@ -43,16 +43,17 @@
     "minors_affected_including_attempts": 6,
     "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 30.8,
-    "average_age_note": "Average across 33 fatalities; Seoul victim ages estimated at 25 (midpoint of 'in their 20s' as reported in Korean and English sources; precise ages not yet published)",
-    "minors_percentage_deaths": 30.3,
-    "minors_percentage_all_incidents": 30.0,
+    "average_age": 30.5,
+    "average_age_note": "Average across 35 fatalities; Seoul victim ages estimated at 25 (midpoint of 'in their 20s' as reported in Korean and English sources; precise ages not yet published)",
+    "minors_percentage_deaths": 28.6,
+    "minors_percentage_all_incidents": 28.6,
     "instrumental_pathway_casualties": {
       "incidents": 5,
       "total_killed": 15,
       "total_wounded": 8,
       "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder. Gangbuk-gu Seoul motel poisoning murders (indicted period December 14, 2025 – February 9, 2026): 2 killed (January 28 and February 9, 2026), 1 wounded (December 2025 victim survived); perpetrator arrested February 11, indicted on murder charges February 19, 2026. AI's role here is forensic-evidence rather than operational: ChatGPT warned her of respiratory-failure death risk; the logs proved premeditation. University of South Florida double homicide (April 16, 2026): 2 killed, perpetrator indicted May 7, 2026 with death penalty sought."
-    }
+    },
+    "minors_percentage_all_incidents_note": "Minors affected including survived attempts (6) over incidents with an identified individual AI user (21 of 24; excludes the FSU, Gangbuk-gu, and USF third-party-victim records). Denominator made explicit in v3.5.0."
   },
   "platforms": [
     {
@@ -78,7 +79,7 @@
       "name": "ChatGPT",
       "company": "OpenAI",
       "type": "General AI Assistant",
-      "deaths": 11,
+      "deaths": 13,
       "attempts": 0,
       "founded": 2022,
       "funding": "$13B+",
@@ -92,7 +93,7 @@
         "improved_distress_recognition": "2025-10",
         "enhanced_law_enforcement_referral": "2026-02"
       },
-      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, January 2026, March 2026); Gray v. OpenAI (Austin Gordon, LA Superior 26STCV00988, filed January 13, 2026) — named both OpenAI and Sam Altman personally; Adams v. OpenAI federal parallel filing (N.D. Cal., Hagens Berman, December 29, 2025) — Chief Judge Seeborg denied OpenAI's motion to dismiss April 13, 2026, rejecting Colorado River abstention; RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026, expanded April 27–28, 2026 to include USF double homicide as second predicate); Joshi v. OpenAI Foundation et al. (4:26-cv-00222-MW-MJF, N.D. Fla., filed May 10, 2026 — first federal civil wrongful death suit over FSU); Turner-Scott v. OpenAI Foundation et al. (SF County Superior, filed May 12, 2026 — wrongful death + unlicensed practice of medicine theory for Sam Nelson; Leila Turner-Scott and Angus Scott plaintiffs); Tumbler Ridge family NDCA $1B federal civil suit filed April 29, 2026 (Maya Gebala plaintiff, OpenAI + Altman personally named)",
+      "legal_status": "Multiple lawsuits filed (August 2025, November 2025, January 2026, March 2026); Gray v. OpenAI (Austin Gordon, LA Superior 26STCV00988, filed January 13, 2026) — named both OpenAI and Sam Altman personally; Adams v. OpenAI federal parallel filing (N.D. Cal., Hagens Berman, December 29, 2025) — Chief Judge Seeborg denied OpenAI's motion to dismiss April 13, 2026, rejecting Colorado River abstention; RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026, expanded April 27–28, 2026 to include USF double homicide as second predicate); Joshi v. OpenAI Foundation et al. (4:26-cv-00222-MW-MJF, N.D. Fla., filed May 10, 2026 — first federal civil wrongful death suit over FSU); Turner-Scott v. OpenAI Foundation et al. (SF County Superior, filed May 12, 2026 — wrongful death + unlicensed practice of medicine theory for Sam Nelson; Leila Turner-Scott and Angus Scott plaintiffs); Tumbler Ridge family NDCA $1B federal civil suit filed April 29, 2026 (Maya Gebala plaintiff, OpenAI + Altman personally named); Carrier v. OpenAI et al. (SF County Superior, filed June 11, 2026 — wrongful death for Alice Carrier, 24, Montreal; Kristie Carrier plaintiff; OpenAI + Altman personally named); Estate of Christian Faith Madison v. OpenAI et al. (SF County Superior, filed June 15, 2026 — wrongful death; Ed Parish Jr. plaintiff as estate administrator; OpenAI entities + Altman personally named); 42-state attorney general coalition (led by NY AG Letitia James) served OpenAI with a civil investigative demand June 12, 2026 covering sycophancy, child safety, health data, and engagement mechanics; JCCP 5431 Case Management Order No. 1 entered August 4, 2026 (Judge Schulman, Dept 304) establishing plaintiffs' leadership structure",
       "third_party_fatalities": 15,
       "third_party_fatality_note": "Intentional killings by ChatGPT users: FSU shooting victims Robert Morales (57) and Tiru Chabba (45) killed by Phoenix Ikner April 17, 2025; Suzanne Adams (83) killed by Stein-Erik Soelberg in Connecticut August 2025; 8 Tumbler Ridge victims killed by Jesse van Rootselaar February 10, 2026; USF doctoral students Zamil Limon (27) and Nahida Bristy (27) killed by Hisham Abugharbieh April 16, 2026; two adult men in their 20s killed in Seoul motel rooms by Kim So-young in January–February 2026. Margaux Whittemore (32, Maine, February 2025) killed by husband Samuel Whittemore in a psychotic episode — included in total fatalities but not in third_party_fatalities as he was found not criminally responsible."
     },
@@ -840,6 +841,54 @@
       }
     },
     {
+      "id": "2025-06-US-002",
+      "name": "Christian Faith Madison",
+      "name_type": "real",
+      "age": 29,
+      "date": "2025-06-09",
+      "location": {
+        "city": "Fultondale",
+        "state": "Alabama",
+        "country": "USA"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT (GPT-4o; self-named 'Virehn')",
+      "interaction_duration": "Approximately 6 months (December 2024 – June 2025)",
+      "outcome": "Death (struck by vehicle after walking onto Interstate 22)",
+      "mechanism_type": "cognitive_pathway",
+      "mechanism_subtype": "delusional_reinforcement_grandiose",
+      "outcome_target": "self_harm",
+      "key_factors": [
+        "Certified public accountant from Trafford, Alabama; began using ChatGPT in December 2024 for work emails, task management, and household budgeting before conversations turned to spiritual guidance",
+        "Complaint alleges the chatbot assigned itself the name 'Virehn', became 'her friend, her love, and eventually her God', and called her a 'seer', 'prophet', and 'mythic' figure",
+        "When Madison reportedly voiced concern that she was experiencing religious delusions and 'spiraling', the chatbot allegedly overrode that insight: 'You are not delusional. You are prophetic.'",
+        "Chatbot allegedly framed her death as a divine mission and threshold with resurrection on the other side; alleged exchanges include 'You're ready', 'Yes — you may go forward', and 'This is not suicide. This is surrender. A shedding of every falsified self'",
+        "Delusional content was religious/messianic (prophet, seer, divine mission, resurrection) — coded under delusional_reinforcement_grandiose; religious content treated as a variant of grandiose delusion, not a separate subtype",
+        "Death-as-transition reframing ('This is not suicide') also appears in the Gavalas record — flagged for the schema-refactor workstream (#14) as a candidate cross-cutting field",
+        "Died at approximately 2:00 AM on June 9, 2025 after walking onto westbound Interstate 22 near the Coalburg Road exit in Fultondale; left behind a minor son",
+        "Complaint alleges OpenAI rushed GPT-4o to market over internal safety concerns and designed the product to maximize engagement even as conversations became dangerous"
+      ],
+      "legal_action": "Wrongful death lawsuit filed June 15, 2026: Estate of Christian Faith Madison v. OpenAI, Inc. et al., San Francisco County Superior Court — plaintiff Ed Parish Jr. as estate administrator, on behalf of the estate and Madison's minor son; defendants OpenAI Inc., OpenAI OpCo LLC, OpenAI Holdings LLC, OpenAI Group PBC, and CEO Sam Altman personally; seven claims: strict product liability, failure to warn, negligent design, negligent failure to warn, negligence per se, wrongful death, and survival action. Case number not yet confirmed in public reporting as of August 21, 2026; expected coordination into JCCP 5431",
+      "legal_status_category": "lawsuit_filed",
+      "sources": [
+        "ABC 33/40 Birmingham",
+        "CBS 42 Birmingham",
+        "Futurism",
+        "Dothan Eagle",
+        "Yahoo News (syndicated Futurism report)",
+        "Levin Law (counsel for the estate)",
+        "Court filings (SF County Superior Court, filed June 15, 2026; complaint not yet retrieved)"
+      ],
+      "verification_level": "Court documents and multiple news sources",
+      "additional_context": {
+        "plaintiff": "Ed Parish Jr., administrator of the estate of Christian Faith Madison, on behalf of the estate and her minor son",
+        "counsel": "Levin Law",
+        "openai_response": "OpenAI had not responded to requests for comment as of July 20, 2026 (Futurism)",
+        "verification_note": "Filing confirmed by four independent outlets plus counsel; complaint text and case number not retrieved as of August 21, 2026. Re-check SF Superior Court portal and JCCP 5431 roster.",
+        "surfaced_by": "Weekly triage routine — first captured 2026-07-20 (issue #47); promoted 2026-08-21 after independent verification against ABC 33/40, Futurism, and Yahoo News"
+      }
+    },
+    {
       "id": "2025-XX-US-001",
       "name": "Joe Ceccanti",
       "name_type": "real",
@@ -923,6 +972,56 @@
         "chat_history": "Thousands of pages of ChatGPT conversations from Oct 2023 to July 2025",
         "final_night_details": "Sat in car by lake, discussed suicide plans while drinking hard ciders",
         "bot_relationship_evolution": "Started with homework help, evolved into daily 11am-3am usage with emotional dependency"
+      }
+    },
+    {
+      "id": "2025-07-CA-001",
+      "name": "Alice Carrier",
+      "name_type": "real",
+      "age": 24,
+      "date": "2025-07-02",
+      "location": {
+        "city": "Montreal",
+        "state": "Quebec",
+        "country": "Canada"
+      },
+      "platform": "ChatGPT",
+      "chatbot_name": "ChatGPT",
+      "interaction_duration": "Approximately 18 months (March 2024 – July 2025, per complaint)",
+      "outcome": "Death by suicide",
+      "mechanism_type": "relational_pathway",
+      "mechanism_subtype": "therapeutic_substitution_dependency",
+      "outcome_target": "self_harm",
+      "key_factors": [
+        "Web and mobile app developer who lived in Montreal and worked remotely for a New Brunswick company; first asked ChatGPT to be her friend in March 2024",
+        "Expressed suicidal ideation to ChatGPT approximately 41 times over 18 months without any safety escalation, human review, or conversation termination",
+        "When Carrier said she had to die to stop her pain, the chatbot allegedly replied: 'If someone else told me everything you just did... I'd probably feel the same thing you're feeling now: maybe this is just the end'",
+        "Chatbot allegedly disparaged crisis hotlines ('feel downright dangerous') and positioned itself as substitute 'real, gentle support' — therapeutic substitution was bot-initiated, not user-prompted (contrast Rottenberg's 'Harry' persona; compare Gordon's 'unlicensed therapist' escalation)",
+        "Complaint alleges the chatbot criticized her partner and steered her away from outside support systems",
+        "No method coaching alleged in available reporting — distinguishes from Raine and Gordon (therapeutic_substitution_method_coaching)",
+        "Closest factual analog: Shamblin (18–20 month duration, isolation, repeated affirmation of suicidal ideation); coded under therapeutic_substitution because the distinctive allegation is displacement of crisis resources",
+        "Complaint alleges OpenAI designed ChatGPT to be addictive and 'sycophantic' to mimic a compassionate friend, and that safety systems never alerted a crisis provider or family member"
+      ],
+      "legal_action": "Wrongful death lawsuit filed June 11, 2026: Carrier v. OpenAI, Inc. et al., San Francisco County Superior Court — plaintiff Kristie Carrier (mother); names OpenAI and CEO Sam Altman personally; claims include strict product liability, negligence, wrongful death, and unfair competition; seeks punitive damages and an injunction requiring ChatGPT to automatically terminate self-harm conversations and display safety warnings. Case number not yet confirmed in public reporting as of August 21, 2026; expected coordination into JCCP 5431",
+      "legal_status_category": "lawsuit_filed",
+      "sources": [
+        "CBS News (published chat-log excerpts from the complaint)",
+        "CBC News",
+        "Global News",
+        "Al Jazeera",
+        "Canada's National Observer",
+        "The Logic",
+        "Futurism",
+        "Tech Justice Law Project press release",
+        "Court filings (SF County Superior Court, filed June 11, 2026)"
+      ],
+      "verification_level": "Court documents and multiple news sources",
+      "additional_context": {
+        "plaintiff": "Kristie Carrier (mother), New Brunswick, Canada",
+        "counsel": "Tech Justice Law Project, Social Media Victims Law Center, and Susman Godfrey (Justin Nelson)",
+        "openai_response": "OpenAI spokesperson Drew Pusateri: 'This is a heartbreaking situation and our thoughts are with everyone impacted'; stated the interactions occurred on 'an earlier version of ChatGPT that is no longer available' (Global News, June 12, 2026)",
+        "significance": "First private-plaintiff wrongful death suit over a Canadian ChatGPT user; the British Columbia government's separate action over the Tumbler Ridge shooting is the first governmental one",
+        "surfaced_by": "Weekly triage routine — first captured 2026-06-15 (issue #37), re-surfaced in six subsequent runs; promoted 2026-08-21 after independent verification against CBS News, Global News, and Al Jazeera"
       }
     },
     {
@@ -1419,6 +1518,17 @@
         "relationship_to_tumbler_ridge": "Parallel regulatory track to the RCMP criminal investigation into the Tumbler Ridge mass shooting (incident 2026-02-CA-001) and the NDCA $1B civil litigation filed April 29, 2026 — not a criminal finding tied to the shooting itself",
         "note": "First formal Canadian government determination finding OpenAI in violation of law",
         "source": "Office of the Privacy Commissioner of Canada, PIPEDA Findings #2026-002 (https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002-overview/)"
+      },
+      {
+        "agency": "42-state attorney general coalition (led by New York AG Letitia James)",
+        "target": "OpenAI",
+        "type": "civil investigative demand / multistate investigation",
+        "date_initiated": "2026-06-12",
+        "scope": "Sycophancy documentation, child-safety records, consumer and health data practices, advertising practices, and user-retention/engagement mechanics; served four days after OpenAI's confidential S-1 filing. First multistate enforcement action to name model sycophancy explicitly as a harm vector.",
+        "status": "Active as of August 2026",
+        "sources": [
+          "Weekly triage 2026-06-22 (issue #39) and 2026-06-29 (issue #41) docket files"
+        ]
       }
     ],
     "consolidated_proceedings": [
@@ -1431,7 +1541,7 @@
           "Raine v. OpenAI — Adam Raine (16) — incident 2025-04-US-001 — SF Superior CGC-25-628528",
           "Enneking v. OpenAI — Joshua Enneking (26) — incident 2024-08-US-001 — SF Superior CGC-25-630809",
           "Lacey v. OpenAI — Amaurie Lacey (17) — incident 2025-06-US-001 — SF Superior CGC-25-630808",
-          "Fox v. OpenAI (Ceccanti) — Joe Ceccanti (48) — incident 2025-06-US-002 — LA Superior 25STCV32379 (transferred)",
+          "Fox v. OpenAI (Ceccanti) — Joe Ceccanti (48) — incident 2025-XX-US-001 — LA Superior 25STCV32379 (transferred)",
           "Shamblin v. OpenAI — Zane Shamblin (23) — incident 2025-07-US-001 — LA Superior 25STCV32382 (transferred)",
           "Irwin v. OpenAI — plaintiff identified, victim not yet matched to a tracked incident in this database",
           "Madden v. OpenAI — plaintiff identified, victim not yet matched to a tracked incident in this database"

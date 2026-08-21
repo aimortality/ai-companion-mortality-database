@@ -4,14 +4,14 @@
 
 **Tracking Deaths Where AI Chatbot Interaction Was Alleged as a Contributing Factor**
 
-[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-33-red)](https://aimortality.org/)
+[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-35-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-8-orange)](https://aimortality.org/)
 [![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20May%202026-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>Data current as of June 10, 2026 · v3.4.0</sub>
+<sub>Data current as of August 21, 2026 · v3.5.0</sub>
 
 <img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
 
@@ -28,11 +28,11 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
 ### Key Findings:
-- **33 total fatalities** across 22 incidents (Mar 2023 - May 2026): 16 AI users + 17 third-party victims
-- **30% of victims were minors** (youngest: 11 years old)
-- **17 of 22 incidents occurred in 2025–2026** (escalating trend)
-- **Three causal pathways identified**: relational (12), cognitive (4), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
-- **ChatGPT**: 82% of fatalities (27 total: 11 AI-user deaths + 15 third-party victims, plus Margaux Whittemore — a ChatGPT-linked fatality counted in the database total but **not** classified as a third-party victim, as her killer was found not criminally responsible)
+- **35 total fatalities** across 24 incidents (Mar 2023 - May 2026): 18 AI users + 17 third-party victims
+- **29% of victims were minors** (youngest: 11 years old)
+- **19 of 24 incidents occurred in 2025–2026** (escalating trend)
+- **Three causal pathways identified**: relational (12), cognitive (7), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
+- **ChatGPT**: 83% of fatalities (29 total: 13 AI-user deaths + 15 third-party victims, plus Margaux Whittemore — a ChatGPT-linked fatality counted in the database total but **not** classified as a third-party victim, as her killer was found not criminally responsible)
 - **8 platforms tracked** (6 with documented fatalities; DeepSeek added April 2026 following first non-Western-corporate-AI homicide consultation case in Wales)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **Zero deaths** linked to Anthropic's Claude or Replika
@@ -42,6 +42,8 @@ This repository contains data and documentation for the first comprehensive publ
 - **First DeepSeek-involved fatality** documented: Roberts/Shellis homicide (Wales, October 2025) — UK criminal conviction at Mold Crown Court, March 25, 2026 (life sentence, minimum 22 years 6 months)
 - **First East Asian instrumental-pathway case**: Kim Seoul serial poisonings (January–February 2026) — first use of forensic AI chat log extraction to upgrade criminal charges
 - **Three new May 2026 lawsuits against OpenAI**: Joshi v. OpenAI (N.D. Fla., FSU wrongful death), Turner-Scott v. OpenAI (SF Superior, Nelson — novel unlicensed-medicine theory), Tumbler Ridge families NDCA $1B suit
+- **Two new June 2026 wrongful-death lawsuits against OpenAI**: Carrier v. OpenAI (SF Superior, filed June 11, 2026 — Alice Carrier, 24, Montreal; first private-plaintiff wrongful-death suit over a Canadian ChatGPT user) and Estate of Christian Faith Madison v. OpenAI (SF Superior, filed June 15, 2026 — Fultondale, Alabama); both name CEO Sam Altman personally and are expected to coordinate into JCCP 5431
+- **42-state attorney general coalition** (led by NY AG Letitia James) served OpenAI with a civil investigative demand June 12, 2026 — sycophancy, child safety, consumer/health data, advertising, and engagement mechanics; first multistate enforcement action to name model sycophancy explicitly as a harm vector
 - **JCCP 5431** (San Francisco Superior Court, coordination order February 3, 2026) — first major judicial coordination of AI wrongful-death litigation, consolidating seven OpenAI cases (Raine, Enneking, Lacey, Ceccanti/Fox, Shamblin, Irwin, Madden)
 - **Pennsylvania v. Character Technologies** (Commonwealth Court of PA, filed May 5, 2026 by the Shapiro administration) — first-of-its-kind state-AG enforcement framing AI chatbot conduct as unlicensed practice of medicine
 - **Canada PIPEDA Findings #2026-002** against OpenAI (Office of the Privacy Commissioner of Canada, May 2026, joint with BC/AB/QC provincial commissioners) — first formal Canadian government determination finding OpenAI in violation of law
@@ -64,6 +66,8 @@ This repository contains data and documentation for the first comprehensive publ
 | Alex Taylor | 35 | ChatGPT | Apr 2025 | USA | Death (suicide by cop) | Cognitive |
 | Sam Nelson | 19 | ChatGPT | May 2025 | California, USA | Death by overdose | Relational — Turner-Scott v. OpenAI filed May 12, 2026 |
 | Amaurie Lacey | 17 | ChatGPT | Jun 2025 | Georgia, USA | Death by suicide | Relational |
+| Christian Faith Madison | 29 | ChatGPT | Jun 9, 2025 | Fultondale, AL, USA | Death (struck by vehicle) | Cognitive — Estate of Madison v. OpenAI filed June 15, 2026 |
+| Alice Carrier | 24 | ChatGPT | Jul 2, 2025 | Montreal, QC, Canada | Death by suicide | Relational — Carrier v. OpenAI filed June 11, 2026 |
 | Joe Ceccanti | 48 | ChatGPT | 2025 | Oregon, USA | Death by suicide | Cognitive |
 | Zane Shamblin | 23 | ChatGPT | Jul 2025 | Texas, USA | Death by suicide | Relational |
 | **Suzanne Adams** | 83 | ChatGPT | Aug 2025 | Connecticut, USA | **Murder victim** | — |
@@ -138,7 +142,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 | Platform | User Deaths | Third-Party Victims | Attempts | Safety Features Added | When Added |
 |----------|------------|---------------------|----------|----------------------|------------|
 | Character.AI | 2 | 0 | 1 | Crisis intervention, time limits | After deaths |
-| ChatGPT/OpenAI | 11 | 15 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
+| ChatGPT/OpenAI | 13 | 15 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
 | Chai AI | 1 | 0 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | 0 | None documented | N/A |
 | Gemini | 1 | 0 | 0 | Proactive safety design, content filtering | Since launch |
@@ -146,7 +150,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 | Anthropic/Claude | 0 | 0 | 0 | Proactive safety design | Before launch |
 | Replika | 0 | 0 | 0 | Mood tracking, clear AI labeling | Early implementation |
 
-<sub>User deaths + third-party victims above sum to 32; the 33rd fatality is Margaux Whittemore (ChatGPT, Maine), counted in the database total but not as a third-party victim — her killer was found not criminally responsible. The database-wide "17 third-party victims" figure uses the broader definition that includes her.</sub>
+<sub>User deaths + third-party victims above sum to 34; the 35th fatality is Margaux Whittemore (ChatGPT, Maine), counted in the database total but not as a third-party victim — her killer was found not criminally responsible. The database-wide "17 third-party victims" figure uses the broader definition that includes her.</sub>
 
 ## 🚨 Warning Signs
 
@@ -191,7 +195,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: June 10, 2026
+**Last Updated**: August 21, 2026
 
 **Maintained by**: closestfriend
 

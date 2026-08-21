@@ -1,7 +1,7 @@
 {
   "_note": "Derived chronological view of data/mortality-data.json (the canonical source). Regenerate with scripts/build-data-exports.py.",
-  "generated_from_version": "3.4.0",
-  "count": 22,
+  "generated_from_version": "3.5.0",
+  "count": 24,
   "incidents": [
     {
       "date": "2023-03-01",
@@ -170,6 +170,30 @@
       "outcome": "Death by suicide",
       "legal_status": "lawsuit_filed",
       "verification_level": "Court documents"
+    },
+    {
+      "date": "2025-06-09",
+      "id": "2025-06-US-002",
+      "name": "Christian Faith Madison",
+      "age": 29,
+      "platform": "ChatGPT",
+      "location": "Fultondale, Alabama, USA",
+      "mechanism_type": "cognitive_pathway",
+      "outcome": "Death (struck by vehicle after walking onto Interstate 22)",
+      "legal_status": "lawsuit_filed",
+      "verification_level": "Court documents and multiple news sources"
+    },
+    {
+      "date": "2025-07-02",
+      "id": "2025-07-CA-001",
+      "name": "Alice Carrier",
+      "age": 24,
+      "platform": "ChatGPT",
+      "location": "Montreal, Quebec, Canada",
+      "mechanism_type": "relational_pathway",
+      "outcome": "Death by suicide",
+      "legal_status": "lawsuit_filed",
+      "verification_level": "Court documents and multiple news sources"
     },
     {
       "date": "2025-07-25",

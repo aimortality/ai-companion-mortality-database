@@ -3,11 +3,11 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.4.0",
-    last_updated: "2026-06-10",
-    total_fatalities: 33,
-    total_incidents: 22,
-    ai_users_deceased: 16,
+    version: "3.5.0",
+    last_updated: "2026-08-21",
+    total_fatalities: 35,
+    total_incidents: 24,
+    ai_users_deceased: 18,
     third_party_victims: 17,
     total_attempts: 2,
     taxonomy_version: "1.0.0",
@@ -26,8 +26,8 @@ const mortalityData = {
     },
     {
       name: "ChatGPT/OpenAI",
-      deaths: 11,
-      fatalities_total: 27,
+      deaths: 13,
+      fatalities_total: 29,
       third_party_fatalities: 15,
       attempts: 0,
       cases: [
@@ -40,6 +40,8 @@ const mortalityData = {
         { name: "Alex Taylor", age: 35, date: "2025-04-25", location: "USA", mechanism: "cognitive" },
         { name: "Sam Nelson", age: 19, date: "2025-05-31", location: "California, USA", mechanism: "relational" },
         { name: "Amaurie Lacey", age: 17, date: "2025-06-02", location: "Georgia, USA", mechanism: "relational" },
+        { name: "Christian Faith Madison", age: 29, date: "2025-06-09", location: "Fultondale, AL, USA", mechanism: "cognitive", notes: "Struck by vehicle after walking onto Interstate 22; complaint alleges GPT-4o persona 'Virehn' reinforced religious/messianic delusions. Estate of Madison v. OpenAI, SF Superior, filed June 15, 2026 (Ed Parish Jr., estate administrator); Altman named personally" },
+        { name: "Alice Carrier", age: 24, date: "2025-07-02", location: "Montreal, QC, Canada", mechanism: "relational", notes: "Complaint alleges ~41 disclosures of suicidal ideation over 18 months with no safety escalation; chatbot allegedly disparaged crisis hotlines. Carrier v. OpenAI, SF Superior, filed June 11, 2026 (Kristie Carrier, mother); Altman named personally" },
         { name: "Joe Ceccanti", age: 48, date: "2025", location: "Oregon, USA", mechanism: "cognitive" },
         { name: "Austin Gordon", age: 40, date: "2025-11-02", location: "Colorado, USA", mechanism: "relational", notes: "Gray v. OpenAI, LA Superior 26STCV00988, filed Jan 13, 2026" },
         { name: "Zane Shamblin", age: 23, date: "2025-07-25", location: "Texas, USA", mechanism: "relational" },
@@ -139,14 +141,14 @@ const DataExporter = {
       age_statistics: {
         youngest: 11,
         oldest: 83,
-        average: 30.8,
+        average: 30.5,
         minors: 10,
-        adults: 23
+        adults: 25
       },
       deaths_by_year: {
         "2023": 2,
         "2024": 3,
-        "2025": 14,
+        "2025": 16,
         "2026": 3
       }
     };
@@ -326,11 +328,11 @@ const API = {
         return mortalityData.platforms;
       case 'statistics':
         return {
-          total_fatalities: 33,
-          ai_users_deceased: 16,
+          total_fatalities: 35,
+          ai_users_deceased: 18,
           third_party_victims: 17,
           total_attempts: 2,
-          minors_percentage: 30.3,
+          minors_percentage: 28.6,
           platforms_affected: 6
         };
       case 'timeline':

@@ -6,7 +6,7 @@
 
 [![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-35-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-8-orange)](https://aimortality.org/)
-[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20May%202026-blue)](https://aimortality.org/)
+[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Aug%202026-blue)](https://aimortality.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
@@ -28,7 +28,7 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
 ### Key Findings:
-- **35 total fatalities** across 24 incidents (Mar 2023 - May 2026): 18 AI users + 17 third-party victims
+- **35 total fatalities** across 24 incidents (Mar 2023 - Aug 2026): 18 AI users + 17 third-party victims
 - **29% of victims were minors** (youngest: 11 years old)
 - **19 of 24 incidents occurred in 2025–2026** (escalating trend)
 - **Three causal pathways identified**: relational (12), cognitive (7), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)

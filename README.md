@@ -11,7 +11,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>Data current as of August 21, 2026 · v3.5.0</sub>
+<sub>Data current as of August 21, 2026 · v3.5.1</sub>
 
 <img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
 
@@ -58,7 +58,7 @@ This repository contains data and documentation for the first comprehensive publ
 | Joshua Enneking | 26 | ChatGPT | Aug 2024 | Florida, USA | Death by suicide | Relational |
 | Nina (pseudonym) | 16 | Character.AI | Nov 2024 | New York, USA | Survived attempt | Relational |
 | Sophie Rottenberg | 29 | ChatGPT | Feb 2025 | USA | Death by suicide | Relational |
-| **Margaux Whittemore** | 32 | ChatGPT | Feb 2025 | Maine, USA | **Murder victim** | Cognitive |
+| **Margaux Whittemore** | 32 | ChatGPT | Feb 2025 | Maine, USA | **Homicide victim** (spouse found not criminally responsible) | Cognitive |
 | Thongbue Wongbandue | 78 | Meta AI | Mar 2025 | New Jersey, USA | Death (fall injury) | Cognitive |
 | Adam Raine | 16 | ChatGPT | Apr 2025 | California, USA | Death by suicide | Relational |
 | **FSU shooting: Robert Morales** | 57 | ChatGPT | Apr 17, 2025 | Tallahassee, FL, USA | **Mass shooting victim** | — |
@@ -75,12 +75,12 @@ This repository contains data and documentation for the first comprehensive publ
 | Jonathan Gavalas | 36 | Gemini | Oct 2025 | Florida, USA | Death by suicide | Cognitive/Relational — Gavalas v. Google, N.D. Cal. 5:26-cv-01849 |
 | Austin Gordon | 40 | ChatGPT | Nov 2, 2025 | Colorado, USA | Death by suicide | Relational |
 | **Angela Shellis** | 45 | DeepSeek | Oct 23, 2025 | Prestatyn, Wales, UK | **Homicide (by son)** | Instrumental |
-| **Kim Seoul victim 1** (unnamed) | ~25 | ChatGPT | Jan 28, 2026 | Seoul, South Korea | **Murder victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
-| **Kim Seoul victim 2** (unnamed) | ~25 | ChatGPT | Feb 9, 2026 | Seoul, South Korea | **Murder victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
+| **Kim Seoul victim 1** (unnamed) | ~25 | ChatGPT | Jan 28, 2026 | Seoul, South Korea | **Homicide victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
+| **Kim Seoul victim 2** (unnamed) | ~25 | ChatGPT | Feb 9, 2026 | Seoul, South Korea | **Homicide victim (benzodiazepine poisoning)** | Instrumental — Tier 2 |
 | **Tumbler Ridge 8 victims** | 11-39 | ChatGPT | Feb 2026 | BC, Canada | **Mass shooting victims** | Instrumental |
 | Jesse van Rootselaar | 18 | ChatGPT | Feb 2026 | BC, Canada | Mass shooting-suicide | Instrumental |
-| **Zamil Limon** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Murder victim (sharp-force)** | Instrumental |
-| **Nahida Bristy** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Murder victim (sharp-force)** | Instrumental |
+| **Zamil Limon** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Homicide victim (sharp-force)** | Instrumental |
+| **Nahida Bristy** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Homicide victim (sharp-force)** | Instrumental |
 
 ## 📁 Repository Structure
 

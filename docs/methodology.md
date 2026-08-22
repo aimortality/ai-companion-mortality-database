@@ -210,11 +210,13 @@ To report an error or submit a new case for verification, see [CONTRIBUTING.md](
 When referencing this database in academic, journalistic, or policy contexts:
 
 ```
-AI Companion Mortality Database. (2026). 
-Methodology and Verification Standards.
-Retrieved from https://aimortality.org
+Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
+Associated with Conversational AI Systems (2023–2026). Version 3.5.2.
+https://aimortality.org
 https://github.com/closestfriend/ai-companion-mortality-database
 ```
+
+Author ORCID: [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035). Correspondence: contact@aimortality.org.
 
 ---
 

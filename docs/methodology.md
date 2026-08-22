@@ -6,7 +6,7 @@ This database exists because someone had to build it.
 
 Between March 2023 and August 2026, 35 fatalities have been documented across 24 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—18 AI users who died and 17 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
 
-What began as documentation of suicides associated with companion-chatbot dependency has expanded, of necessity, to include murders, murder-suicides, and mass-casualty events in which perpetrators used general-purpose AI systems for operational planning. The taxonomy grew in response: three causal pathways (relational, cognitive, instrumental); two outcome targets (self-harm, violence-against-others); and two overlapping-but-distinct victim populations (AI users and third-party victims). The database's scope is determined by where the evidence leads, not by a prior theory of harm.
+What began as documentation of suicides associated with companion-chatbot dependency has expanded, of necessity, to include homicides, murder-suicides, and mass-casualty events in which perpetrators used general-purpose AI systems for operational planning. The taxonomy grew in response: three causal pathways (relational, cognitive, instrumental); two outcome targets (self-harm, violence-against-others); and two overlapping-but-distinct victim populations (AI users and third-party victims). The database's scope is determined by where the evidence leads, not by a prior theory of harm.
 
 We are not advocates. We are not prosecutors. We are archivists of a phenomenon that arrived before anyone had language for it, and which continues to unfold as we document it.
 
@@ -145,7 +145,7 @@ For each verified case, we document:
 
 - Companies are contacted before publication when possible
 - Responses and policy changes are documented alongside harms
-- We distinguish between allegations in active litigation and adjudicated findings
+- We distinguish between allegations in active litigation and adjudicated findings. Killings are described by the perpetrator's adjudicated status: "homicide" and "killed" until a court has ruled; "murder" only where a conviction or guilty plea exists (or, conventionally, in a murder-suicide where the perpetrator is dead); "found not criminally responsible" where that is the finding. Charges are quoted in the charging authority's words. Labels are upgraded, with citation, when a verdict is entered
 - Platforms with zero documented incidents are included to demonstrate that harm is not inherent to the technology
 
 ---

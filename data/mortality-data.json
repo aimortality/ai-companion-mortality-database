@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "3.5.0",
+    "version": "3.5.1",
     "last_updated": "2026-08-21",
     "total_fatalities": 35,
     "total_incidents": 24,
@@ -31,7 +31,7 @@
       "2025": 16,
       "2026": 3
     },
-    "deaths_by_year_note": "Counts incidents per year (date of index event). 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2025 raised from 14 to 16 in v3.5.0 with the addition of Christian Faith Madison (June 9, 2025) and Alice Carrier (July 2, 2025). 2026 includes Gangbuk-gu motel poisoning murders (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
+    "deaths_by_year_note": "Counts incidents per year (date of index event). 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2025 raised from 14 to 16 in v3.5.0 with the addition of Christian Faith Madison (June 9, 2025) and Alice Carrier (July 2, 2025). 2026 includes Gangbuk-gu motel poisonings (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
     "victims_by_age_group": {
       "minors": 10,
       "adults": 25
@@ -51,7 +51,7 @@
       "incidents": 5,
       "total_killed": 15,
       "total_wounded": 8,
-      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder. Gangbuk-gu Seoul motel poisoning murders (indicted period December 14, 2025 – February 9, 2026): 2 killed (January 28 and February 9, 2026), 1 wounded (December 2025 victim survived); perpetrator arrested February 11, indicted on murder charges February 19, 2026. AI's role here is forensic-evidence rather than operational: ChatGPT warned her of respiratory-failure death risk; the logs proved premeditation. University of South Florida double homicide (April 16, 2026): 2 killed, perpetrator indicted May 7, 2026 with death penalty sought."
+      "note": "FSU (April 17, 2025): 2 killed, 5 wounded, perpetrator alive and awaiting trial. Tumbler Ridge (February 10, 2026): 8 killed + shooter, 2 wounded. Roberts/Shellis (October 23, 2025, Wales): 1 killed (mother), perpetrator convicted of murder. Gangbuk-gu Seoul motel poisonings (indicted period December 14, 2025 – February 9, 2026): 2 killed (January 28 and February 9, 2026), 1 wounded (December 2025 victim survived); perpetrator arrested February 11, indicted on murder charges February 19, 2026. AI's role here is forensic-evidence rather than operational: ChatGPT warned her of respiratory-failure death risk; the logs proved premeditation. University of South Florida double homicide (April 16, 2026): 2 killed, perpetrator indicted May 7, 2026 with death penalty sought."
     },
     "minors_percentage_all_incidents_note": "Minors affected including survived attempts (6) over incidents with an identified individual AI user (21 of 24; excludes the FSU, Gangbuk-gu, and USF third-party-victim records). Denominator made explicit in v3.5.0."
   },
@@ -386,7 +386,7 @@
       "platform": "ChatGPT",
       "chatbot_name": "ChatGPT",
       "interaction_duration": "Up to 14 hours daily",
-      "outcome": "Murder (killed by spouse)",
+      "outcome": "Killed by spouse (spouse found not criminally responsible)",
       "mechanism_type": "cognitive_pathway",
       "mechanism_subtype": "delusional_reinforcement_psychosis",
       "outcome_target": "violence_against_others",
@@ -417,7 +417,7 @@
       "verification_level": "Court documents and official government statements",
       "additional_context": {
         "perpetrator_background": "Former SpaceX engineer, traveled extensively",
-        "marriage": "Married September 2024, 5 months before murder",
+        "marriage": "Married September 2024, 5 months before her death",
         "victim_background": "International marketing consultant, former France resident",
         "expert_testimony": "Forensic psychologists testified ChatGPT use combined with work stress caused psychotic episode",
         "legal_outcome": "Committed to Maine psychiatric facility indefinitely"
@@ -1190,7 +1190,7 @@
     },
     {
       "id": "2026-01-KR-001",
-      "name": "Gangbuk-gu motel serial poisoning murders",
+      "name": "Gangbuk-gu motel serial poisonings",
       "name_type": "event",
       "age": null,
       "date": "2026-01-28",
@@ -1371,7 +1371,7 @@
       },
       "platform": "ChatGPT",
       "chatbot_name": "ChatGPT",
-      "interaction_duration": "Days surrounding the murders (documented April 13–19, 2026)",
+      "interaction_duration": "Days surrounding the killings (documented April 13–19, 2026)",
       "outcome": "Double homicide (2 third-party victims killed by sharp-force injuries)",
       "mechanism_type": "instrumental_pathway",
       "mechanism_subtype": "violence_planning_operational_assistance",

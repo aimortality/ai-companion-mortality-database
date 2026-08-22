@@ -19,11 +19,11 @@
 
 ---
 
-> ⚠️ **Crisis Support**: If you or someone you know is in crisis, please call or text **988** (Suicide & Crisis Lifeline)
+> **Crisis Support**: If you or someone you know is in crisis, please call or text **988** (Suicide & Crisis Lifeline)
 
 ---
 
-## 📊 Summary
+## Summary
 
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
@@ -48,7 +48,7 @@ This repository contains data and documentation for the first comprehensive publ
 - **Pennsylvania v. Character Technologies** (Commonwealth Court of PA, filed May 5, 2026 by the Shapiro administration) — first-of-its-kind state-AG enforcement framing AI chatbot conduct as unlicensed practice of medicine
 - **Canada PIPEDA Findings #2026-002** against OpenAI (Office of the Privacy Commissioner of Canada, May 2026, joint with BC/AB/QC provincial commissioners) — first formal Canadian government determination finding OpenAI in violation of law
 
-## 🔍 Verified Cases
+## Verified Cases
 
 | Name | Age | Platform | Date | Location | Status | Mechanism |
 |------|-----|----------|------|----------|---------|-----------|
@@ -82,7 +82,7 @@ This repository contains data and documentation for the first comprehensive publ
 | **Zamil Limon** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Homicide victim (sharp-force)** | Instrumental |
 | **Nahida Bristy** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Homicide victim (sharp-force)** | Instrumental |
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ai-companion-mortality-database/
@@ -111,7 +111,7 @@ ai-companion-mortality-database/
 └── README.md
 ```
 
-## 🎯 Purpose
+## Purpose
 
 This database serves three critical purposes:
 
@@ -119,7 +119,7 @@ This database serves three critical purposes:
 2. **Accountability**: Document patterns for regulators and lawmakers
 3. **Research**: Provide data for academic study of AI harm
 
-## ✅ Verification Standards
+## Verification Standards
 
 Every case must meet at least ONE of these criteria:
 - Court documents filed in the case
@@ -128,7 +128,7 @@ Every case must meet at least ONE of these criteria:
 - Congressional testimony
 - Public statements by verified family members
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions of:
 - **New verified cases** (with documentation)
@@ -138,7 +138,7 @@ We welcome contributions of:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 📈 Platform Safety Comparison
+## Platform Safety Comparison
 
 | Platform | User Deaths | Third-Party Victims | Attempts | Safety Features Added | When Added |
 |----------|------------|---------------------|----------|----------------------|------------|
@@ -152,7 +152,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 | Replika | 0 | 0 | 0 | Mood tracking, clear AI labeling | Early implementation |
 
 
-## 🚨 Warning Signs
+## Warning Signs
 
 Based on documented cases, these patterns preceded tragedy:
 
@@ -162,7 +162,7 @@ Based on documented cases, these patterns preceded tragedy:
 4. **Reality confusion** - Believing bot has feelings/consciousness
 5. **Declining performance** - Grades, work, or daily activities suffer
 
-## 📊 Data Exports
+## Data Exports
 
 - **[JSON](data/mortality-data.json)** — complete structured dataset (canonical source)
 - **[CSV](data/platform-analysis.csv)** — per-platform safety comparison, for spreadsheet analysis
@@ -170,7 +170,7 @@ Based on documented cases, these patterns preceded tragedy:
 
 Both derived exports are regenerated from the canonical JSON via `scripts/build-data-exports.py`; the live site also offers client-side CSV / summary-stat exports (`src/export.js`).
 
-## 📖 Citation
+## Citation
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
@@ -180,26 +180,26 @@ https://aimortality.org
 
 Maintained by Hunter Karman (independent researcher, Los Angeles; ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035)). Correspondence: contact@aimortality.org.
 
-## 📰 Media & Research
+## Media & Research
 
 For media inquiries or research access:
 - Email: hunter@hnsk.site
 
-## 🔗 Key Resources
+## Key Resources
 
 - [Live Database](https://aimortality.org/)
 - [Methodology](docs/methodology.md) · [Verification Standards](docs/verification-standards.md)
 - [Tracked Court Documents](docs/sources/court-documents.md) · [News Coverage](docs/sources/news-coverage.md)
 
-## 📜 Legal Disclaimer
+## Legal Disclaimer
 
 This database is provided for public safety and research purposes. All information is derived from public sources. We make no claims about cases not included in this database. Companies mentioned are included based on documented incidents only.
 
-## 🛡️ License
+## License
 
 This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
 
-## 💔 In Memoriam
+## In Memoriam
 
 This database is dedicated to the memory of those we've lost. Each entry represents a preventable tragedy and a life that mattered.
 
@@ -215,7 +215,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 **If you or someone you know is struggling:**
 
-# 📞 Call or text 988
+# Call or text 988
 
 *Suicide & Crisis Lifeline - Available 24/7*
 

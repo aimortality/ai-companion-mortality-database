@@ -103,6 +103,7 @@ ai-companion-mortality-database/
 ├── scripts/
 │   ├── build-data-exports.py       # Regenerates platform-analysis.csv + timeline.json
 │   ├── validate-data.js            # Data integrity + statistical-consistency checks
+│   ├── audit-surfaces.py           # Cross-surface consistency audit (surfaces vs canonical; --base <ref> for stale probes; --links)
 │   └── routines/                   # Weekly-triage research routine
 ├── assets/
 │   └── screenshots/                # Database screenshots

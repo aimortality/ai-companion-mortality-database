@@ -170,6 +170,16 @@ Based on documented cases, these patterns preceded tragedy:
 
 Both derived exports are regenerated from the canonical JSON via `scripts/build-data-exports.py`; the live site also offers client-side CSV / summary-stat exports (`src/export.js`).
 
+## 📖 Citation
+
+```
+Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
+Associated with Conversational AI Systems (2023–2026). Version 3.5.2.
+https://aimortality.org
+```
+
+Maintained by Hunter Karman (independent researcher, Los Angeles; ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035)). Correspondence: contact@aimortality.org.
+
 ## 📰 Media & Research
 
 For media inquiries or research access:

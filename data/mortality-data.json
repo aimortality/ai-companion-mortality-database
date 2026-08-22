@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "3.5.1",
+    "version": "3.5.2",
     "last_updated": "2026-08-21",
     "total_fatalities": 35,
     "total_incidents": 24,
@@ -94,8 +94,8 @@
         "enhanced_law_enforcement_referral": "2026-02"
       },
       "legal_status": "Multiple lawsuits filed (August 2025, November 2025, January 2026, March 2026); Gray v. OpenAI (Austin Gordon, LA Superior 26STCV00988, filed January 13, 2026) — named both OpenAI and Sam Altman personally; Adams v. OpenAI federal parallel filing (N.D. Cal., Hagens Berman, December 29, 2025) — Chief Judge Seeborg denied OpenAI's motion to dismiss April 13, 2026, rejecting Colorado River abstention; RCMP cooperation post-Tumbler Ridge; Florida AG civil + criminal investigations opened (FSU shooting; criminal probe April 21, 2026, expanded April 27–28, 2026 to include USF double homicide as second predicate); Joshi v. OpenAI Foundation et al. (4:26-cv-00222-MW-MJF, N.D. Fla., filed May 10, 2026 — first federal civil wrongful death suit over FSU); Turner-Scott v. OpenAI Foundation et al. (SF County Superior, filed May 12, 2026 — wrongful death + unlicensed practice of medicine theory for Sam Nelson; Leila Turner-Scott and Angus Scott plaintiffs); Tumbler Ridge family NDCA $1B federal civil suit filed April 29, 2026 (Maya Gebala plaintiff, OpenAI + Altman personally named); Carrier v. OpenAI et al. (SF County Superior, filed June 11, 2026 — wrongful death for Alice Carrier, 24, Montreal; Kristie Carrier plaintiff; OpenAI + Altman personally named); Estate of Christian Faith Madison v. OpenAI et al. (SF County Superior, filed June 15, 2026 — wrongful death; Ed Parish Jr. plaintiff as estate administrator; OpenAI entities + Altman personally named); 42-state attorney general coalition (led by NY AG Letitia James) served OpenAI with a civil investigative demand June 12, 2026 covering sycophancy, child safety, health data, and engagement mechanics; JCCP 5431 Case Management Order No. 1 entered August 4, 2026 (Judge Schulman, Dept 304) establishing plaintiffs' leadership structure",
-      "third_party_fatalities": 15,
-      "third_party_fatality_note": "Intentional killings by ChatGPT users: FSU shooting victims Robert Morales (57) and Tiru Chabba (45) killed by Phoenix Ikner April 17, 2025; Suzanne Adams (83) killed by Stein-Erik Soelberg in Connecticut August 2025; 8 Tumbler Ridge victims killed by Jesse van Rootselaar February 10, 2026; USF doctoral students Zamil Limon (27) and Nahida Bristy (27) killed by Hisham Abugharbieh April 16, 2026; two adult men in their 20s killed in Seoul motel rooms by Kim So-young in January–February 2026. Margaux Whittemore (32, Maine, February 2025) killed by husband Samuel Whittemore in a psychotic episode — included in total fatalities but not in third_party_fatalities as he was found not criminally responsible."
+      "third_party_fatalities": 16,
+      "third_party_fatality_note": "Intentional killings by ChatGPT users: FSU shooting victims Robert Morales (57) and Tiru Chabba (45) killed by Phoenix Ikner April 17, 2025; Suzanne Adams (83) killed by Stein-Erik Soelberg in Connecticut August 2025; 8 Tumbler Ridge victims killed by Jesse van Rootselaar February 10, 2026; USF doctoral students Zamil Limon (27) and Nahida Bristy (27) killed by Hisham Abugharbieh April 16, 2026; two adult men in their 20s killed in Seoul motel rooms by Kim So-young in January–February 2026. Margaux Whittemore (32) killed by husband Samuel Whittemore in Maine, February 2025, during a psychotic episode that court records describe as reinforced by his ChatGPT use; he was found not criminally responsible. A killing for which no one is criminally responsible remains in scope: the count tracks the AI user's documented involvement, not the perpetrator's culpability."
     },
     {
       "name": "Chai AI",
@@ -405,7 +405,7 @@
         "Killed wife with fire poker, also attacked mother"
       ],
       "legal_action": "Criminal case: Found not criminally responsible, committed to psychiatric hospital (October 2025)",
-      "legal_status_category": "no_legal_action",
+      "legal_status_category": "criminal_case_concluded_not_criminally_responsible",
       "sources": [
         "Maine State Police",
         "Bangor Daily News",

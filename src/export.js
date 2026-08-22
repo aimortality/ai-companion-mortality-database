@@ -3,7 +3,7 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.5.1",
+    version: "3.5.2",
     last_updated: "2026-08-21",
     total_fatalities: 35,
     total_incidents: 24,
@@ -28,7 +28,7 @@ const mortalityData = {
       name: "ChatGPT/OpenAI",
       deaths: 13,
       fatalities_total: 29,
-      third_party_fatalities: 15,
+      third_party_fatalities: 16,
       attempts: 0,
       cases: [
         { name: "Joshua Enneking", age: 26, date: "2024-08-03", location: "Florida, USA", mechanism: "relational" },

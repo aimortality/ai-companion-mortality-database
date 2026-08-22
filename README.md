@@ -11,7 +11,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>Data current as of August 21, 2026 · v3.5.1</sub>
+<sub>Data current as of August 21, 2026 · v3.5.2</sub>
 
 <img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
 
@@ -32,7 +32,7 @@ This repository contains data and documentation for the first comprehensive publ
 - **29% of victims were minors** (youngest: 11 years old)
 - **19 of 24 incidents occurred in 2025–2026** (escalating trend)
 - **Three causal pathways identified**: relational (12), cognitive (7), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
-- **ChatGPT**: 83% of fatalities (29 total: 13 AI-user deaths + 15 third-party victims, plus Margaux Whittemore — a ChatGPT-linked fatality counted in the database total but **not** classified as a third-party victim, as her killer was found not criminally responsible)
+- **ChatGPT**: 83% of fatalities (29 total: 13 AI-user deaths + 16 third-party victims)
 - **8 platforms tracked** (6 with documented fatalities; DeepSeek added April 2026 following first non-Western-corporate-AI homicide consultation case in Wales)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **Zero deaths** linked to Anthropic's Claude or Replika
@@ -143,7 +143,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 | Platform | User Deaths | Third-Party Victims | Attempts | Safety Features Added | When Added |
 |----------|------------|---------------------|----------|----------------------|------------|
 | Character.AI | 2 | 0 | 1 | Crisis intervention, time limits | After deaths |
-| ChatGPT/OpenAI | 13 | 15 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
+| ChatGPT/OpenAI | 13 | 16 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
 | Chai AI | 1 | 0 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | 0 | None documented | N/A |
 | Gemini | 1 | 0 | 0 | Proactive safety design, content filtering | Since launch |
@@ -151,7 +151,6 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 | Anthropic/Claude | 0 | 0 | 0 | Proactive safety design | Before launch |
 | Replika | 0 | 0 | 0 | Mood tracking, clear AI labeling | Early implementation |
 
-<sub>User deaths + third-party victims above sum to 34; the 35th fatality is Margaux Whittemore (ChatGPT, Maine), counted in the database total but not as a third-party victim — her killer was found not criminally responsible. The database-wide "17 third-party victims" figure uses the broader definition that includes her.</sub>
 
 ## 🚨 Warning Signs
 

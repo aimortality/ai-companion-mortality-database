@@ -7,6 +7,7 @@
 [![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-35-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-8-orange)](https://aimortality.org/)
 [![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Aug%202026-blue)](https://aimortality.org/)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22062863-blue)](https://doi.org/10.5281/zenodo.22062863)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
@@ -175,7 +176,7 @@ Both derived exports are regenerated from the canonical JSON via `scripts/build-
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
 Associated with Conversational AI Systems (2023–2026). Version 3.5.2.
-https://aimortality.org
+Zenodo. https://doi.org/10.5281/zenodo.22062863
 ```
 
 Maintained by Hunter Karman (independent researcher, Los Angeles; ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035)). Correspondence: contact@aimortality.org.

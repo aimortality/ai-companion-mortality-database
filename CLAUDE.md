@@ -66,6 +66,15 @@ Five classes of locations have caused presentation-vs-data drift in prior sweeps
 
 ## Verification grep — run before declaring a sweep done
 
+**Run the scripts first — they derive every expected and stale value from canonical, so they cannot rot:**
+
+```bash
+node scripts/validate-data.js                    # JSON invariants
+python3 scripts/audit-surfaces.py --base main    # surfaces vs canonical + stale probes (use the pre-sweep ref as --base)
+```
+
+Then the manual grep below for anything the script cannot classify (prose subtotals, code comments), and the `/credibility-audit` skill for the judgment calls (source integrity via independent subagent, allegation framing, dated snapshots).
+
 Grep all six canonical files (`data/mortality-data.json`, `src/index.html`, `src/index-academic.html`, `src/report.html`, `src/export.js`, `README.md`), plus `docs/methodology.md` (which carries headline numbers in prose) and the project CLAUDE.md, for *every* pre-change value: headline totals, per-platform subtotals, derived percentages, period-end dates, and the version string.
 
 - Use **case-insensitive** matching (`grep -ri`). A capital-I "Incidents" header has previously evaded a case-sensitive pass.

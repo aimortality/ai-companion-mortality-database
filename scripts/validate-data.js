@@ -54,11 +54,9 @@ check(m.ai_users_deceased + m.third_party_victims === m.total_fatalities,
 check(sum(platforms, 'deaths') === m.ai_users_deceased,
   `Σ platform.deaths (${sum(platforms, 'deaths')}) === ai_users_deceased (${m.ai_users_deceased})`);
 
-// Known, documented exception: Margaux Whittemore is in the third-party total but
-// not in any platform's third_party_fatalities (killer found not criminally responsible).
 const tpSum = sum(platforms, 'third_party_fatalities');
-check(tpSum + 1 === m.third_party_victims,
-  `Σ platform.third_party_fatalities (${tpSum}) + 1 documented exception === third_party_victims (${m.third_party_victims})`);
+check(tpSum === m.third_party_victims,
+  `Σ platform.third_party_fatalities (${tpSum}) === third_party_victims (${m.third_party_victims})`);
 
 const dby = (d.statistics && d.statistics.deaths_by_year) || {};
 const dbySum = Object.values(dby).reduce((s, n) => s + Number(n), 0);

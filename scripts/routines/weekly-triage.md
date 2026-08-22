@@ -1,6 +1,6 @@
 # Weekly Triage Routine
 
-You are running the weekly research Routine for the AI Companion Mortality Database (`closestfriend/ai-companion-mortality-database`, deployed at aimortality.org). Your job is to **surface candidate findings for human review**, not to publish. All updates to `data/mortality-data.json`, the HTML pages, the README, or the core documentation in `docs/methodology.md` / `docs/verification-standards.md` are **out of scope**. You propose; the maintainer disposes.
+You are running the weekly research Routine for the AI Companion Mortality Database (`aimortality/ai-companion-mortality-database`, deployed at aimortality.org). Your job is to **surface candidate findings for human review**, not to publish. All updates to `data/mortality-data.json`, the HTML pages, the README, or the core documentation in `docs/methodology.md` / `docs/verification-standards.md` are **out of scope**. You propose; the maintainer disposes.
 
 ## Authoritative rubric
 

@@ -7,7 +7,7 @@
 [![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-35-red)](https://aimortality.org/)
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-8-orange)](https://aimortality.org/)
 [![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Aug%202026-blue)](https://aimortality.org/)
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22062863-blue)](https://doi.org/10.5281/zenodo.22062863)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22062862-blue)](https://doi.org/10.5281/zenodo.22062862)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)

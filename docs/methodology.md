@@ -8,6 +8,8 @@ Between March 2023 and August 2026, 35 fatalities have been documented across 24
 
 What began as documentation of suicides associated with companion-chatbot dependency has expanded, of necessity, to include homicides, murder-suicides, and mass-casualty events in which perpetrators used general-purpose AI systems for operational planning. The taxonomy grew in response: three causal pathways (relational, cognitive, instrumental); two outcome targets (self-harm, violence-against-others); and two overlapping-but-distinct victim populations (AI users and third-party victims). The database's scope is determined by where the evidence leads, not by a prior theory of harm.
 
+**Scope.** This database documents deaths associated with *conversational AI systems* — chatbots and LLM-based assistants with which a person interacted through natural language. It does not cover autonomous vehicles, clinical or diagnostic machine learning, industrial or robotic automation, autonomous or AI-assisted weapons, content-recommendation systems, or any other application of artificial intelligence. Those are distinct phenomena with distinct evidentiary standards, and conflating them under a single "AI deaths" figure would serve none of them. "Companion" in the database's name reflects its origin in companion-chatbot cases; the scope has since expanded to general-purpose assistants, and the name is retained for continuity of citation.
+
 We are not advocates. We are not prosecutors. We are archivists of a phenomenon that arrived before anyone had language for it, and which continues to unfold as we document it.
 
 ---
@@ -213,7 +215,7 @@ When referencing this database in academic, journalistic, or policy contexts:
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
 Associated with Conversational AI Systems (2023–2026). Version 3.5.2.
 https://aimortality.org
-https://github.com/closestfriend/ai-companion-mortality-database
+https://github.com/aimortality/ai-companion-mortality-database
 ```
 
 Author ORCID: [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035). Correspondence: contact@aimortality.org.

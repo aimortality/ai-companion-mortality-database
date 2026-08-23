@@ -39,7 +39,18 @@ Static site using vanilla HTML/CSS with React 18 loaded via CDN (esm.sh). No bui
 5. Update `src/index-academic.html` (abstract, key findings, stats grid, Table 1 deaths-by-year, Table 2 platform distribution, Table 3 age distribution, Table 4 case list, masthead date)
 6. Update `src/export.js` (case array, death counts, age stats, deaths-by-year, mock API stats)
 7. Update `README.md` (badge, case table, platform comparison, key findings, last-updated)
-8. Run the audit grep (see "Verification grep" below) before declaring done.
+8. Regenerate the derived exports: `python3 scripts/build-data-exports.py` (`data/platform-analysis.csv`, `data/timeline.json`). They are a seventh surface; the audit fails if they drift from canonical. Missed after v3.5.1/3.5.2 and shipped stale to Zenodo.
+9. Run the audit grep (see "Verification grep" below) before declaring done.
+
+## Releasing a version (Zenodo DOI)
+
+Every released version is archived on Zenodo under concept DOI `10.5281/zenodo.22062862` (always resolves to the latest version). The README badge uses the concept DOI; citation strings use the *version* DOI.
+
+1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/export.js`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Regenerate exports. Audit green. Merge.
+2. Zenodo → the latest record → **New version** (or API: `POST /api/deposit/depositions/{id}/actions/newversion` with `$ZENODO_TOKEN`), upload the same seven files from the merged `main` (`data/*.json`, `data/*.csv`, `docs/methodology.md`, `docs/verification-standards.md`, `README.md`, `LICENSE`), set `version`, publish.
+3. Put the new version DOI into the three citation strings (academic footer, methodology, README, data/README) in a follow-up PR. The concept-DOI badge needs no change.
+
+Publishing is permanent; the maintainer confirms it. Never upload derived exports that the audit has not just verified against canonical.
 
 ## Stats to Recalculate
 

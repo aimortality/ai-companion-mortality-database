@@ -12,7 +12,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>Data current as of August 21, 2026 · v3.5.2</sub>
+<sub>Data current as of August 21, 2026 · v3.5.3</sub>
 
 <img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
 
@@ -175,7 +175,7 @@ Both derived exports are regenerated from the canonical JSON via `scripts/build-
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.2.
+Associated with Conversational AI Systems (2023–2026). Version 3.5.3.
 Zenodo. https://doi.org/10.5281/zenodo.22062863
 ```
 
@@ -208,7 +208,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 **Last Updated**: August 21, 2026
 
-**Maintained by**: closestfriend
+**Maintained by**: Hunter Karman (ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035))
 
 ---
 

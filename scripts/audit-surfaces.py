@@ -249,6 +249,22 @@ def check_sources(d):
     ok(f"{f}: source attribution compared for {checked} case sections")
 
 
+def check_exports():
+    """Derived exports must equal what build-data-exports.py would generate from canonical now."""
+    targets = ["data/platform-analysis.csv", "data/timeline.json"]
+    before = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}
+    subprocess.run([sys.executable, os.path.join(ROOT, "scripts/build-data-exports.py")], capture_output=True)
+    after = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}
+    stale = [t for t in targets if before[t] != after[t]]
+    for t in targets:  # never leave the working tree modified by an audit
+        if before[t] != after[t]:
+            open(os.path.join(ROOT, t), "wb").write(before[t])
+    if stale:
+        fail("derived exports stale vs canonical — run scripts/build-data-exports.py: " + ", ".join(stale))
+    else:
+        ok("derived exports (platform-analysis.csv, timeline.json) match canonical")
+
+
 def check_links():
     import concurrent.futures
     urls = set()
@@ -258,10 +274,10 @@ def check_links():
                 urls.add(u.rstrip(".,;"))
     def probe(u):
         ua = ["-A", "Mozilla/5.0 (link-checker)"]
-        code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "15", *ua, "--head", u],
+        code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "25", *ua, "--head", u],
                               capture_output=True, text=True).stdout
         if code in ("403", "405", "000"):
-            code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "15", *ua, "-r", "0-1024", u],
+            code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "25", *ua, "-r", "0-1024", u],
                                   capture_output=True, text=True).stdout
         return code, u
     with concurrent.futures.ThreadPoolExecutor(8) as ex:
@@ -300,6 +316,7 @@ def main():
         check_stale(E, B, text, f)
     check_index_charts(E, read("src/index.html"))
     check_sources(d)
+    check_exports()
     if args.links:
         check_links()
 

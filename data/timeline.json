@@ -1,6 +1,6 @@
 {
   "_note": "Derived chronological view of data/mortality-data.json (the canonical source). Regenerate with scripts/build-data-exports.py.",
-  "generated_from_version": "3.5.0",
+  "generated_from_version": "3.5.3",
   "count": 24,
   "incidents": [
     {
@@ -95,8 +95,8 @@
       "platform": "ChatGPT",
       "location": "Readfield, Maine, USA",
       "mechanism_type": "cognitive_pathway",
-      "outcome": "Murder (killed by spouse)",
-      "legal_status": "no_legal_action",
+      "outcome": "Killed by spouse (spouse found not criminally responsible)",
+      "legal_status": "criminal_case_concluded_not_criminally_responsible",
       "verification_level": "Court documents and official government statements"
     },
     {
@@ -258,7 +258,7 @@
     {
       "date": "2026-01-28",
       "id": "2026-01-KR-001",
-      "name": "Gangbuk-gu motel serial poisoning murders",
+      "name": "Gangbuk-gu motel serial poisonings",
       "age": null,
       "platform": "ChatGPT",
       "location": "Seoul (Gangbuk-gu), South Korea",

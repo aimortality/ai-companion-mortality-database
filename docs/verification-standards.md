@@ -1,9 +1,5 @@
 # Verification Standards
 
-> *"The difference between something that might be true and something we can stand behind."*
-
----
-
 ## Quick Reference
 
 | Tier | Name | Requirement | Published? |

@@ -26,3 +26,7 @@ dashboard.html
 # PRIVATE Register design preview (not for deployment; regenerate via scripts/build-register-preview.py)
 register-preview.html
 register-data.js
+
+# Netlify build copies (netlify.toml build command)
+src/data/
+src/docs/

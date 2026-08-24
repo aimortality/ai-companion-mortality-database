@@ -1,6 +1,6 @@
 {
   "_note": "Derived chronological view of data/mortality-data.json (the canonical source). Regenerate with scripts/build-data-exports.py.",
-  "generated_from_version": "3.5.3",
+  "generated_from_version": "3.5.4",
   "count": 24,
   "incidents": [
     {

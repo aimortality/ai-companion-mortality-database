@@ -8,11 +8,11 @@
 [![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-8-orange)](https://aimortality.org/)
 [![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Aug%202026-blue)](https://aimortality.org/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22062862-blue)](https://doi.org/10.5281/zenodo.22062862)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![Code License](https://img.shields.io/badge/Code-MIT-green)](LICENSE) [![Data License](https://img.shields.io/badge/Data-CC%20BY%204.0-green)](data/LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>Data current as of August 21, 2026 · v3.5.3</sub>
+<sub>Data current as of August 21, 2026 · v3.5.4</sub>
 
 <img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
 
@@ -175,7 +175,7 @@ Both derived exports are regenerated from the canonical JSON via `scripts/build-
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.3.
+Associated with Conversational AI Systems (2023–2026). Version 3.5.4.
 Zenodo. https://doi.org/10.5281/zenodo.22063180
 ```
 
@@ -198,7 +198,10 @@ This database is provided for public safety and research purposes. All informati
 
 ## License
 
-This project is licensed under the MIT License - see [LICENSE](LICENSE) file for details.
+Dual-licensed by component:
+
+- **Data** (`data/` — the canonical JSON and derived exports): [Creative Commons Attribution 4.0](data/LICENSE) (CC BY 4.0). Reuse freely with attribution — cite the version you used (see [Citation](#citation)).
+- **Code and site** (scripts, HTML, everything else): [MIT](LICENSE).
 
 ## In Memoriam
 

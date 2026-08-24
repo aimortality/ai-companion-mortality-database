@@ -251,7 +251,7 @@ def check_sources(d):
 
 def check_exports():
     """Derived exports must equal what build-data-exports.py would generate from canonical now."""
-    targets = ["data/platform-analysis.csv", "data/timeline.json"]
+    targets = ["data/platform-analysis.csv", "data/incidents.csv", "data/timeline.json"]
     before = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}
     subprocess.run([sys.executable, os.path.join(ROOT, "scripts/build-data-exports.py")], capture_output=True)
     after = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}
@@ -262,7 +262,7 @@ def check_exports():
     if stale:
         fail("derived exports stale vs canonical — run scripts/build-data-exports.py: " + ", ".join(stale))
     else:
-        ok("derived exports (platform-analysis.csv, timeline.json) match canonical")
+        ok("derived exports (platform-analysis.csv, incidents.csv, timeline.json) match canonical")
 
 
 def check_relative_links():

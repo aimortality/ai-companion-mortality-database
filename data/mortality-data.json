@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "3.5.4",
+    "version": "3.5.5",
     "last_updated": "2026-08-21",
     "total_fatalities": 35,
     "total_incidents": 24,
@@ -198,6 +198,8 @@
   "incidents": [
     {
       "id": "2023-03-BE-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Pierre",
       "name_type": "pseudonym",
       "age": 30,
@@ -231,6 +233,8 @@
     },
     {
       "id": "2023-11-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Juliana Peralta",
       "name_type": "real",
       "age": 13,
@@ -266,6 +270,8 @@
     },
     {
       "id": "2024-08-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Joshua Enneking",
       "name_type": "real",
       "age": 26,
@@ -308,6 +314,8 @@
     },
     {
       "id": "2024-02-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Sewell Setzer III",
       "name_type": "real",
       "age": 14,
@@ -342,6 +350,8 @@
     },
     {
       "id": "2024-11-US-001",
+      "fatalities": 0,
+      "survived_attempt_victims": 1,
       "name": "Nina",
       "name_type": "pseudonym",
       "age": 16,
@@ -374,6 +384,8 @@
     },
     {
       "id": "2025-02-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Margaux Whittemore",
       "name_type": "real",
       "age": 32,
@@ -425,6 +437,8 @@
     },
     {
       "id": "2025-02-US-002",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Sophie Rottenberg",
       "name_type": "real",
       "age": 29,
@@ -469,6 +483,8 @@
     },
     {
       "id": "2025-03-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Thongbue Wongbandue",
       "name_type": "real",
       "age": 78,
@@ -501,6 +517,8 @@
     },
     {
       "id": "2025-04-US-FSU",
+      "fatalities": 2,
+      "survived_attempt_victims": 0,
       "name": "Florida State University mass shooting",
       "name_type": "event",
       "age": null,
@@ -610,6 +628,8 @@
     },
     {
       "id": "2025-04-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Adam Raine",
       "name_type": "real",
       "age": 16,
@@ -645,6 +665,8 @@
     },
     {
       "id": "2025-04-US-002",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Alex Taylor",
       "name_type": "real",
       "age": 35,
@@ -677,6 +699,8 @@
     },
     {
       "id": "2025-08-US-001",
+      "fatalities": 2,
+      "survived_attempt_victims": 0,
       "name": "Stein-Erik Soelberg",
       "name_type": "real",
       "age": 56,
@@ -732,6 +756,8 @@
     },
     {
       "id": "2025-05-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Sam Nelson",
       "name_type": "real",
       "age": 19,
@@ -795,6 +821,8 @@
     },
     {
       "id": "2025-06-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Amaurie Lacey",
       "name_type": "real",
       "age": 17,
@@ -842,6 +870,8 @@
     },
     {
       "id": "2025-06-US-002",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Christian Faith Madison",
       "name_type": "real",
       "age": 29,
@@ -890,6 +920,8 @@
     },
     {
       "id": "2025-XX-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Joe Ceccanti",
       "name_type": "real",
       "age": 48,
@@ -934,6 +966,8 @@
     },
     {
       "id": "2025-07-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Zane Shamblin",
       "name_type": "real",
       "age": 23,
@@ -976,6 +1010,8 @@
     },
     {
       "id": "2025-07-CA-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Alice Carrier",
       "name_type": "real",
       "age": 24,
@@ -1026,6 +1062,8 @@
     },
     {
       "id": "2025-10-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Jonathan Gavalas",
       "name_type": "real",
       "age": 36,
@@ -1084,6 +1122,8 @@
     },
     {
       "id": "2025-10-GB-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Angela Shellis",
       "name_type": "real",
       "age": 45,
@@ -1143,6 +1183,8 @@
     },
     {
       "id": "2025-11-US-001",
+      "fatalities": 1,
+      "survived_attempt_victims": 0,
       "name": "Austin Gordon",
       "name_type": "real",
       "age": 40,
@@ -1190,6 +1232,8 @@
     },
     {
       "id": "2026-01-KR-001",
+      "fatalities": 2,
+      "survived_attempt_victims": 1,
       "name": "Gangbuk-gu motel serial poisonings",
       "name_type": "event",
       "age": null,
@@ -1282,6 +1326,8 @@
     },
     {
       "id": "2026-02-CA-001",
+      "fatalities": 9,
+      "survived_attempt_victims": 0,
       "name": "Jesse van Rootselaar",
       "name_type": "real",
       "age": 18,
@@ -1360,6 +1406,8 @@
     },
     {
       "id": "2026-04-US-001",
+      "fatalities": 2,
+      "survived_attempt_victims": 0,
       "name": "University of South Florida double homicide",
       "name_type": "event",
       "age": null,

@@ -63,6 +63,21 @@ const dbySum = Object.values(dby).reduce((s, n) => s + Number(n), 0);
 check(dbySum === m.total_incidents,
   `Σ deaths_by_year (${dbySum}) === total_incidents (${m.total_incidents})`, warns);
 
+const missingFatalityFields = incidents.filter(i =>
+  typeof i.fatalities !== 'number' || i.fatalities < 0 ||
+  typeof i.survived_attempt_victims !== 'number' || i.survived_attempt_victims < 0);
+check(missingFatalityFields.length === 0,
+  'every incident has a non-negative fatalities and survived_attempt_victims' +
+  (missingFatalityFields.length ? ` (offenders: ${missingFatalityFields.map(i => i.id).join(', ')})` : ''));
+
+const fatalitiesSum = sum(incidents, 'fatalities');
+check(fatalitiesSum === m.total_fatalities,
+  `Σ incident.fatalities (${fatalitiesSum}) === total_fatalities (${m.total_fatalities})`);
+
+const survivedSum = sum(incidents, 'survived_attempt_victims');
+check(survivedSum === m.total_attempts,
+  `Σ incident.survived_attempt_victims (${survivedSum}) === total_attempts (${m.total_attempts})`);
+
 // ── currency ────────────────────────────────────────────────────
 const maxDate = incidents.map(i => i.date).sort().slice(-1)[0];
 check((m.last_updated || '') >= (maxDate || ''),

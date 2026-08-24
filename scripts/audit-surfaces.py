@@ -265,6 +265,29 @@ def check_exports():
         ok("derived exports (platform-analysis.csv, timeline.json) match canonical")
 
 
+def check_relative_links():
+    """Every relative href/src in the served pages must exist in the publish tree
+    (src/ plus the data/ and docs/ copies made by the Netlify build command)."""
+    import glob
+    missing = []
+    for f in ("src/index.html", "src/report.html", "src/index-academic.html", "src/methodology.html"):
+        text = read(f)
+        for u in re.findall(r"""(?:href|src)[=:]\s?["']([^"']+)["']""", text):
+            u = u.split("#")[0].split("?")[0]
+            if not u or u.startswith(("http", "mailto:", "tel:", "data:")) or u == "/":
+                continue
+            base = os.path.dirname(f) if not u.startswith("/") else "src"
+            path = os.path.normpath(os.path.join(ROOT, base, u.lstrip("/")))
+            # data/ and docs/ are copied into the publish dir at build time
+            alt = os.path.normpath(os.path.join(ROOT, u.lstrip("/").replace("../", "")))
+            if not (os.path.exists(path) or os.path.exists(alt)):
+                missing.append(f"{f} -> {u}")
+    if missing:
+        fail("relative links to nonexistent files: " + "; ".join(sorted(set(missing))))
+    else:
+        ok("relative links in served pages all resolve")
+
+
 def check_links():
     import concurrent.futures
     urls = set()
@@ -317,6 +340,7 @@ def main():
     check_index_charts(E, read("src/index.html"))
     check_sources(d)
     check_exports()
+    check_relative_links()
     if args.links:
         check_links()
 

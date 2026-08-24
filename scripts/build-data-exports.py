@@ -46,7 +46,8 @@ with open(plat_path, "w", newline="", encoding="utf-8") as fh:
 inc_path = os.path.join(ROOT, "data/incidents.csv")
 with open(inc_path, "w", newline="", encoding="utf-8") as fh:
     w = csv.writer(fh)
-    w.writerow(["ID", "Date", "Name", "Age", "Platform", "Chatbot Name", "Location",
+    w.writerow(["ID", "Date", "Name", "Age", "Fatalities", "Survived-Attempt Victims",
+                "Platform", "Chatbot Name", "Location",
                 "Mechanism Type", "Mechanism Subtype", "Outcome", "Outcome Target",
                 "Interaction Duration", "Verification Level", "Legal Status Category",
                 "Sources"])
@@ -54,6 +55,7 @@ with open(inc_path, "w", newline="", encoding="utf-8") as fh:
         l = i.get("location", {}) or {}
         w.writerow([
             i.get("id", ""), i.get("date", ""), i.get("name", ""), i.get("age", ""),
+            i.get("fatalities", 0), i.get("survived_attempt_victims", 0),
             i.get("platform", ""), i.get("chatbot_name", ""),
             ", ".join(x for x in [l.get("city") if l.get("city") not in (None, "Unknown") else None,
                                   l.get("state"), l.get("country")] if x),
@@ -78,6 +80,8 @@ timeline = sorted(({
     "id": i.get("id"),
     "name": i.get("name"),
     "age": i.get("age"),
+    "fatalities": i.get("fatalities", 0),
+    "survived_attempt_victims": i.get("survived_attempt_victims", 0),
     "platform": i.get("platform"),
     "location": loc(i),
     "mechanism_type": i.get("mechanism_type"),

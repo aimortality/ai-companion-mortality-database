@@ -6,6 +6,7 @@ Three files. One is canonical; two are derived from it.
 |---|---|---|
 | `mortality-data.json` | **Canonical record.** Every incident with sources, legal status, mechanism classification, key factors, and victim details; platform records; regulatory responses; derived statistics; metadata (version, coverage period, definitions). | Anything you'll cite. |
 | `platform-analysis.csv` | Per-platform summary: user deaths, third-party fatalities, survived attempts, safety features and when they were added. | Spreadsheets, quick comparisons. |
+| `incidents.csv` | One row per incident: date, name, age, platform, location, mechanism, outcome, verification level, legal status, sources. | Spreadsheet analysis of the cases themselves. |
 | `timeline.json` | Incidents in chronological order with outcome, legal status, and mechanism. | Time-series views. |
 
 The two derived files are regenerated from the JSON by `scripts/build-data-exports.py` and checked against it by `scripts/audit-surfaces.py`; if they ever disagree, the JSON is right.
@@ -29,7 +30,7 @@ The JSON carries its version in `metadata.version`. Each released version is arc
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.3.
+Associated with Conversational AI Systems (2023–2026). Version 3.5.4.
 Zenodo. https://doi.org/10.5281/zenodo.22063180
 ```
 
@@ -37,4 +38,4 @@ Zenodo. https://doi.org/10.5281/zenodo.22063180
 
 ## License and contact
 
-MIT (see [`LICENSE`](../LICENSE)). Questions, corrections, and requests about a documented person: **contact@aimortality.org** — a person reads it.
+The data is licensed [CC BY 4.0](LICENSE) — reuse freely with attribution (cite the version you used, above). The repository's code is MIT ([`../LICENSE`](../LICENSE)). Questions, corrections, and requests about a documented person: **contact@aimortality.org** — a person reads it.

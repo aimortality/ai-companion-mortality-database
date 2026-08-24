@@ -3,7 +3,7 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.5.3",
+    version: "3.5.4",
     last_updated: "2026-08-21",
     total_fatalities: 35,
     total_incidents: 24,

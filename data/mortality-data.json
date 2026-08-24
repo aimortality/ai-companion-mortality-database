@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "version": "3.5.3",
+    "version": "3.5.4",
     "last_updated": "2026-08-21",
     "total_fatalities": 35,
     "total_incidents": 24,
@@ -21,7 +21,7 @@
       "end": "2026-08-21"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
-    "data_license": "MIT",
+    "data_license": "CC-BY-4.0",
     "crisis_support": "988 (US Suicide & Crisis Lifeline)"
   },
   "statistics": {

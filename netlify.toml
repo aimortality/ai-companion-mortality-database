@@ -1,6 +1,8 @@
 [build]
   publish = "src"
-  command = ""
+  # data/ and docs/ live outside the publish dir; copy them in at build time so
+  # /data/mortality-data.json and /docs/methodology.md are served (single source, no dup).
+  command = "cp -r data src/data && cp -r docs src/docs"
 
 # Redirect all ai-death.com traffic to aimortality.org
 [[redirects]]

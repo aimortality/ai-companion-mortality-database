@@ -47,7 +47,7 @@ Static site using vanilla HTML/CSS with React 18 loaded via CDN (esm.sh). No bui
 Every released version is archived on Zenodo under concept DOI `10.5281/zenodo.22062862` (always resolves to the latest version). The README badge uses the concept DOI; citation strings use the *version* DOI.
 
 1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/export.js`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Regenerate exports. Audit green. Merge.
-2. Zenodo → the latest record → **New version** (or API: `POST /api/deposit/depositions/{id}/actions/newversion` with `$ZENODO_TOKEN`), upload the same seven files from the merged `main` (`data/*.json`, `data/*.csv`, `docs/methodology.md`, `docs/verification-standards.md`, `README.md`, `LICENSE`), set `version`, publish.
+2. Zenodo → the latest record → **New version** (or API: `POST /api/deposit/depositions/{id}/actions/newversion` with `$ZENODO_TOKEN`), upload the files from the merged `main` (`data/mortality-data.json`, `data/incidents.csv`, `data/platform-analysis.csv`, `data/timeline.json`, `data/LICENSE`, `docs/methodology.md`, `docs/verification-standards.md`, `README.md`, `LICENSE`), set `version` and `license: cc-by-4.0` (data license; code is MIT in-repo), publish.
 3. Put the new version DOI into the three citation strings (academic footer, methodology, README, data/README) in a follow-up PR. The concept-DOI badge needs no change.
 
 Publishing is permanent; the maintainer confirms it. Never upload derived exports that the audit has not just verified against canonical.

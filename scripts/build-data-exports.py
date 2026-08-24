@@ -3,6 +3,7 @@
 
 Produces, from data/mortality-data.json:
   - data/platform-analysis.csv  — per-platform safety comparison
+  - data/incidents.csv          — one row per incident, flattened
   - data/timeline.json          — chronological incident timeline
 
 Both are DERIVED views; mortality-data.json remains the single source of truth.
@@ -40,6 +41,30 @@ with open(plat_path, "w", newline="", encoding="utf-8") as fh:
             as_text(p.get("safety_measures_added")),
             as_text(p.get("legal_status")),
         ])
+
+# ── incidents.csv ──────────────────────────────────────────────
+inc_path = os.path.join(ROOT, "data/incidents.csv")
+with open(inc_path, "w", newline="", encoding="utf-8") as fh:
+    w = csv.writer(fh)
+    w.writerow(["ID", "Date", "Name", "Age", "Platform", "Chatbot Name", "Location",
+                "Mechanism Type", "Mechanism Subtype", "Outcome", "Outcome Target",
+                "Interaction Duration", "Verification Level", "Legal Status Category",
+                "Sources"])
+    for i in sorted(d["incidents"], key=lambda x: x.get("date") or ""):
+        l = i.get("location", {}) or {}
+        w.writerow([
+            i.get("id", ""), i.get("date", ""), i.get("name", ""), i.get("age", ""),
+            i.get("platform", ""), i.get("chatbot_name", ""),
+            ", ".join(x for x in [l.get("city") if l.get("city") not in (None, "Unknown") else None,
+                                  l.get("state"), l.get("country")] if x),
+            i.get("mechanism_type", ""), i.get("mechanism_subtype", ""),
+            i.get("outcome", ""), i.get("outcome_target", ""),
+            i.get("interaction_duration", ""), i.get("verification_level", ""),
+            i.get("legal_status_category", ""),
+            as_text(i.get("sources")),
+        ])
+
+print(f"wrote {inc_path} ({len(d['incidents'])} incidents)")
 
 # ── timeline.json ──────────────────────────────────────────────
 def loc(i):

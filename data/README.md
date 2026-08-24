@@ -6,10 +6,12 @@ Three files. One is canonical; two are derived from it.
 |---|---|---|
 | `mortality-data.json` | **Canonical record.** Every incident with sources, legal status, mechanism classification, key factors, and victim details; platform records; regulatory responses; derived statistics; metadata (version, coverage period, definitions). | Anything you'll cite. |
 | `platform-analysis.csv` | Per-platform summary: user deaths, third-party fatalities, survived attempts, safety features and when they were added. | Spreadsheets, quick comparisons. |
-| `incidents.csv` | One row per incident: date, name, age, platform, location, mechanism, outcome, verification level, legal status, sources. | Spreadsheet analysis of the cases themselves. |
-| `timeline.json` | Incidents in chronological order with outcome, legal status, and mechanism. | Time-series views. |
+| `incidents.csv` | One row per incident: date, name, age, fatalities, survived-attempt victims, platform, location, mechanism, outcome, verification level, legal status, sources. | Spreadsheet analysis of the cases themselves. |
+| `timeline.json` | Incidents in chronological order with fatalities, survived-attempt victims, outcome, legal status, and mechanism. | Time-series views. |
 
 The two derived files are regenerated from the JSON by `scripts/build-data-exports.py` and checked against it by `scripts/audit-surfaces.py`; if they ever disagree, the JSON is right.
+
+**24 incidents, 35 fatalities — not the same number, on purpose.** `total_incidents` counts *occurrences of harm*; `total_fatalities` counts *people who died*. Most incidents have one victim, but Tumbler Ridge (8 killed by the same shooter, who also died) and the FSU, USF, and Kim Seoul cases (2 killed each) are one incident apiece with multiple victims — see *On What Counts as an Incident* in the methodology. `incidents.csv`'s `Fatalities` column makes this arithmetic checkable directly in a spreadsheet: `SUM(Fatalities)` equals `total_fatalities` (35); `SUM(Survived-Attempt Victims)` equals `total_attempts` (2, both inside incidents that also had fatalities: Kim Seoul's first, December-2025 victim, and Nina's incident, which is 0 fatalities / 1 survived).
 
 ## Scope and definitions
 
@@ -30,7 +32,7 @@ The JSON carries its version in `metadata.version`. Each released version is arc
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.4.
+Associated with Conversational AI Systems (2023–2026). Version 3.5.5.
 Zenodo. https://doi.org/10.5281/zenodo.22075242
 ```
 

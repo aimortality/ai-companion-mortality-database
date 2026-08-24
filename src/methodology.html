@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SS2VTGZ004"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-SS2VTGZ004');
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology — AI Companion Mortality Database</title>
+  <meta name="description" content="Methodology and verification standards for the AI Companion Mortality Database: scope, incident definition, causal pathways, evidence tiers, ethical commitments, and limitations.">
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #000000;
+      --muted: #666666;
+      --border: #000000;
+      --border-soft: #e0e0e0;
+      --panel: #f9f9f9;
+      --link: #0000ff;
+    }
+    :root[data-theme="dark"] {
+      --bg: #0f1113;
+      --text: #f2f2f2;
+      --muted: #b5b5b5;
+      --border: #e6e6e6;
+      --border-soft: #3a3a3a;
+      --panel: #171a1d;
+      --link: #8ab4f8;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --bg: #0f1113;
+        --text: #f2f2f2;
+        --muted: #b5b5b5;
+        --border: #e6e6e6;
+        --border-soft: #3a3a3a;
+        --panel: #171a1d;
+        --link: #8ab4f8;
+      }
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+    .theme-toggle {
+      position: fixed; top: 18px; right: 18px; z-index: 200;
+      font-family: inherit; font-size: 11px; letter-spacing: 0.4px;
+      padding: 6px 10px; border-radius: 4px;
+      border: 1px solid var(--border-soft);
+      background: var(--panel); color: var(--text); cursor: pointer;
+    }
+    .crisis {
+      background: var(--panel); border: 1px solid var(--border-soft);
+      padding: 10px 14px; font-size: 12px; margin-bottom: 28px;
+    }
+    .back-link { color: var(--muted); }
+    .site-nav { font-size: 12px; margin: 6px 0 24px; }
+    .site-nav a, .doc-switch a { color: var(--muted); }
+    .doc-switch { font-size: 12px; margin: 0 0 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
+    .doc-switch strong { color: var(--text); }
+    #doc h1 { font-size: 26px; margin: 0 0 20px; border-bottom: 2px solid var(--border); padding-bottom: 12px; }
+    #doc h2 { font-size: 18px; margin: 36px 0 14px; border-bottom: 1px solid var(--border-soft); padding-bottom: 8px; }
+    #doc h3 { font-size: 15px; margin: 26px 0 10px; }
+    #doc h4 { font-size: 14px; margin: 20px 0 8px; }
+    #doc p, #doc li { margin-bottom: 12px; }
+    #doc ul, #doc ol { margin: 0 0 16px 24px; }
+    #doc li { margin-bottom: 6px; }
+    #doc a { color: var(--link); }
+    #doc blockquote { border-left: 3px solid var(--border-soft); padding-left: 14px; color: var(--muted); margin-bottom: 16px; }
+    #doc hr { border: none; border-top: 1px solid var(--border-soft); margin: 30px 0; }
+    #doc code { background: var(--panel); padding: 1px 5px; border-radius: 3px; font-size: 13px; }
+    #doc pre { background: var(--panel); border: 1px solid var(--border-soft); padding: 14px; overflow-x: auto; margin-bottom: 16px; }
+    #doc pre code { background: none; padding: 0; }
+    #doc table { border-collapse: collapse; width: 100%; margin: 16px 0; font-size: 13px; display: block; overflow-x: auto; }
+    #doc th, #doc td { border: 1px solid var(--border-soft); padding: 6px 10px; text-align: left; }
+    #doc th { background: var(--panel); }
+    .status { color: var(--muted); font-size: 12px; }
+    footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--border-soft); font-size: 12px; color: var(--muted); }
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Theme: Light</button>
+
+  <div class="crisis">Crisis resources available 24/7: <strong><a href="tel:988" style="color:var(--text)">Call or text 988</a></strong> (Suicide &amp; Crisis Lifeline)</div>
+
+  <a href="index.html" class="back-link">&larr; Back to Database</a>
+  <nav class="site-nav" aria-label="Site"><a href="report.html">Research Report</a> | <a href="index-academic.html">Academic Summary</a> | <a href="https://github.com/aimortality/ai-companion-mortality-database">Data &amp; Source</a></nav>
+
+  <nav class="doc-switch" aria-label="Document">
+    <span id="switch-methodology"><strong>Methodology</strong></span> ·
+    <span id="switch-standards"><a href="methodology.html?doc=verification-standards">Verification Standards</a></span>
+  </nav>
+
+  <main id="doc"><p class="status">Loading&hellip;</p></main>
+
+  <footer>
+    <p>Rendered from the canonical markdown in the repository (single source):
+      <a id="source-link" href="https://github.com/aimortality/ai-companion-mortality-database/blob/main/docs/methodology.md">view source on GitHub</a>.
+      Questions or corrections: <a href="mailto:contact@aimortality.org">contact@aimortality.org</a>.</p>
+  </footer>
+
+  <script type="module">
+    import { marked } from 'https://esm.sh/marked@12.0.2';
+
+    const DOCS = {
+      'methodology': { file: 'docs/methodology.md', title: 'Methodology — AI Companion Mortality Database' },
+      'verification-standards': { file: 'docs/verification-standards.md', title: 'Verification Standards — AI Companion Mortality Database' },
+    };
+    const param = new URLSearchParams(location.search).get('doc');
+    const key = Object.prototype.hasOwnProperty.call(DOCS, param) ? param : 'methodology';
+    const doc = DOCS[key];
+    document.title = doc.title;
+    document.getElementById('source-link').href =
+      'https://github.com/aimortality/ai-companion-mortality-database/blob/main/' + doc.file;
+    if (key === 'verification-standards') {
+      document.getElementById('switch-methodology').innerHTML = '<a href="methodology.html">Methodology</a>';
+      document.getElementById('switch-standards').innerHTML = '<strong>Verification Standards</strong>';
+    }
+
+    const target = document.getElementById('doc');
+    try {
+      const res = await fetch('/' + doc.file, { cache: 'no-cache' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const md = await res.text();
+      target.innerHTML = marked.parse(md);
+    } catch (err) {
+      target.innerHTML = '<p class="status">Could not load the document (' + err.message +
+        '). Read it on GitHub instead: <a href="https://github.com/aimortality/ai-companion-mortality-database/blob/main/' +
+        doc.file + '">' + doc.file + '</a></p>';
+    }
+  </script>
+
+  <script>
+    (function () {
+      const storageKey = 'theme';
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+      const systemTheme = () => (media && media.matches ? 'dark' : 'light');
+      const storedTheme = () => {
+        let value = null;
+        try { value = localStorage.getItem(storageKey); } catch (e) {}
+        return value === 'dark' || value === 'light' ? value : null;
+      };
+      const currentTheme = () => root.dataset.theme || systemTheme();
+      const setButton = (theme) => {
+        toggle.textContent = 'Theme: ' + (theme === 'dark' ? 'Dark' : 'Light');
+        toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      };
+      const stored = storedTheme();
+      if (stored) root.dataset.theme = stored;
+      setButton(currentTheme());
+      toggle.addEventListener('click', () => {
+        const next = currentTheme() === 'dark' ? 'light' : 'dark';
+        root.dataset.theme = next;
+        try { localStorage.setItem(storageKey, next); } catch (e) {}
+        setButton(next);
+      });
+      if (media) {
+        media.addEventListener('change', (event) => {
+          if (!storedTheme()) setButton(event.matches ? 'dark' : 'light');
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

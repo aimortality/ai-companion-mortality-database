@@ -115,7 +115,7 @@ Currently 8: ChatGPT, Character.AI, Chai AI, Meta AI, Gemini, DeepSeek, Claude, 
 
 ## Content Sensitivity
 
-**This repository is public.** Tier 3 leads, unpromoted candidates, weekly-triage drafts, and the living-room brief live in the private repo `aimortality/triage` (sibling checkout `../triage`) and must never be committed here — `drafts/` is gitignored and was purged from history on 2026-08-25. Anything that names a person the database has not published belongs there, not here.
+**This repository is public.** Tier 3 leads, unpromoted candidates, weekly-triage drafts, and the living-room brief live in the private repo `closestfriend/aimortality-triage` (sibling checkout `../triage`) and must never be committed here — `drafts/` is gitignored and was purged from history on 2026-08-25. Anything that names a person the database has not published belongs there, not here.
 
 This database documents real deaths. Maintain:
 - Crisis resources (988 hotline) on every page

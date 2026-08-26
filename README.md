@@ -4,15 +4,12 @@
 
 **Tracking Deaths Where AI Chatbot Interaction Was Alleged as a Contributing Factor**
 
-[![Deaths Tracked](https://img.shields.io/badge/Deaths%20Tracked-35-red)](https://aimortality.org/)
-[![Platforms Monitored](https://img.shields.io/badge/Platforms%20Monitored-8-orange)](https://aimortality.org/)
-[![Time Period](https://img.shields.io/badge/Time%20Period-Mar%202023%20to%20Aug%202026-blue)](https://aimortality.org/)
 [![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22062862-blue)](https://doi.org/10.5281/zenodo.22062862)
 [![Code License](https://img.shields.io/badge/Code-MIT-green)](LICENSE) [![Data License](https://img.shields.io/badge/Data-CC%20BY%204.0-green)](data/LICENSE)
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>Data current as of August 21, 2026 · v3.5.5</sub>
+<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – August 2026 · Data current as of August 21, 2026 · v3.5.5</sub>
 
 <img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
 
@@ -183,8 +180,10 @@ Maintained by Hunter Karman (independent researcher, Los Angeles; ORCID [0009-00
 
 ## Media & Research
 
-For media inquiries or research access:
-- Email: hunter@hnsk.site
+For media inquiries or research access: contact@aimortality.org
+
+Cited in:
+- Jess McHugh, ["When The AI Says To Kill"](https://www.noemamag.com/when-the-ai-says-to-kill/), *Noema* (Berggruen Institute), August 25, 2026
 
 ## Key Resources
 

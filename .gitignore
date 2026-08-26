@@ -29,7 +29,7 @@ src/data/
 src/docs/
 
 # PRIVATE working notes — this repo is PUBLIC. Triage drafts, the Tier 3 monitor,
-# and unpromoted candidates live in the private repo aimortality/triage (sibling
+# and unpromoted candidates live in the private repo closestfriend/aimortality-triage (sibling
 # checkout ../triage). Never commit them here. History was purged 2026-08-25.
 drafts/
 living-room-brief.md

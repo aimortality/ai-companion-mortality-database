@@ -292,8 +292,8 @@ def check_links():
     import concurrent.futures
     urls = set()
     for f in ("src/index.html", "src/report.html", "src/index-academic.html", "README.md"):
-        for u in re.findall(r"https?://[^\"'<>) ]+", read(f)):
-            if not re.search(r"img\.shields\.io|esm\.sh|aimortality\.org|creativecommons\.org|schema\.org|googletagmanager|github\.com/closestfriend|w3\.org|sitemaps\.org", u):
+        for u in re.findall(r"https?://[^\"'<>)\s`]+", read(f)):
+            if not re.search(r"img\.shields\.io|esm\.sh|aimortality\.org|creativecommons\.org|schema\.org|googletagmanager|github\.com/aimortality|w3\.org|sitemaps\.org", u):
                 urls.add(u.rstrip(".,;"))
     def probe(u):
         ua = ["-A", "Mozilla/5.0 (link-checker)"]

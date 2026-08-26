@@ -538,7 +538,7 @@
       "perpetrator": {
         "name": "Phoenix Ikner",
         "age": 20,
-        "status": "Alive; awaiting trial scheduled October 19, 2026",
+        "status": "Alive; awaiting trial, rescheduled to June 8, 2027 (continuance granted August 17, 2026)",
         "background": "FSU student at time of shooting; stepson of a Leon County Sheriff's deputy",
         "charges": "Two counts of first-degree murder, seven counts of attempted first-degree murder; death penalty sought"
       },
@@ -607,7 +607,7 @@
         "criminal_investigation_expansion": "AG Uthmeier announced April 27–28, 2026 (one week after opening) that the OpenAI criminal investigation would expand to include the University of South Florida double homicide (Hisham Abugharbieh). Trigger: Tampa prosecutors disclosed Abugharbieh's ChatGPT queries about body disposal (April 13) and firearm use/detection (April 19). Florida Politics characterized the move as 'broadening' the existing investigation rather than opening a separate one. No specific OpenAI public statement on the expansion has been located.",
         "openai_response": "Spokesperson Kate Waters: 'Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime.'",
         "uthmeier_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others.'",
-        "trial_status": "Trial set for October 19, 2026; jury selection November 3. Phoenix Ikner made his first in-person court appearance on May 26, 2026 (red jumpsuit); Circuit Judge Lance Neff (retained by FL Supreme Court Chief Justice Carlos Muñiz order April 7, 2026 despite Neff's appointment to the First DCA) deferred ruling on the defense's delay request. Judge Neff issued a written scheduling order on May 28, 2026 tracking the State's proposed deadlines without granting the delay: guilt-phase witness disclosure June 1, 2026; penalty-phase witnesses July 1; rebuttal witnesses August 1. October 19, 2026 trial date confirmed unchanged. Late-June 2026 hearing scheduled to address all pending motions including the defense's delay request.",
+        "trial_status": "Trial set for October 19, 2026; jury selection November 3. Phoenix Ikner made his first in-person court appearance on May 26, 2026 (red jumpsuit); Circuit Judge Lance Neff (retained by FL Supreme Court Chief Justice Carlos Muñiz order April 7, 2026 despite Neff's appointment to the First DCA) deferred ruling on the defense's delay request. Judge Neff issued a written scheduling order on May 28, 2026 tracking the State's proposed deadlines without granting the delay: guilt-phase witness disclosure June 1, 2026; penalty-phase witnesses July 1; rebuttal witnesses August 1. October 19, 2026 trial date was confirmed at that point. On August 17, 2026 Judge Neff granted a defense motion to continue: trial rescheduled to June 8, 2027. The defense cited a heavy capital caseload, the volume of evidence, and — for the first time in this case — 'complex co-morbid conditions that are relevant to statutory mitigation' requiring investigation of Ikner's childhood development (WCTV, August 17, 2026; WTXL).",
         "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence",
         "civil_docket_caption": "Joshi v. OpenAI Foundation et al.",
         "civil_docket_number": "4:26-cv-00222-MW-MJF",
@@ -623,7 +623,7 @@
         "prosecution_team": "State Attorney Jack Campbell (personally prosecuting the case)",
         "defense_counsel": "Randall Johnson",
         "may_2026_in_person_hearing": "May 26, 2026 — first in-person court appearance by Ikner since arrest; defense argued the volume of electronic discovery (explicitly citing 'Ikner's alleged ChatGPT conversation logs and the Florida AG's parallel criminal investigation into OpenAI') made the case 'complicated' and meeting the State's proposed pre-trial deadlines 'virtually impossible.' Defense quote (Johnson): 'We could not be ready to list our experts by the State's proposed dates simply because our investigation is not complete.' Judge Neff deferred ruling on the delay request.",
-        "may_2026_scheduling_order": "May 28, 2026 — written scheduling order. Tracks State's proposed deadlines: June 1 (guilt-phase witnesses), July 1 (penalty-phase witnesses), August 1 (rebuttal witnesses). October 19, 2026 trial date confirmed unchanged. Late-June hearing announced to address all pending motions, including the defense's delay request.",
+        "may_2026_scheduling_order": "May 28, 2026 — written scheduling order. Tracks State's proposed deadlines: June 1 (guilt-phase witnesses), July 1 (penalty-phase witnesses), August 1 (rebuttal witnesses). October 19, 2026 trial date confirmed unchanged at that time (superseded: continuance granted August 17, 2026; trial now June 8, 2027).",
         "defense_chatgpt_logs_discovery_reference": "The May 26, 2026 in-person appearance is the first public acknowledgment by defense counsel that the AI conversation evidence is a contested feature of trial preparation — defense counsel Randall Johnson explicitly cited Ikner's ChatGPT logs and the parallel FL AG criminal investigation into OpenAI as factors complicating discovery. Whether the defense has reviewed the Joshi/Chabba civil-case discovery (which contains detailed allegations about specific ChatGPT exchanges, filed May 10, 2026) or is relying solely on the criminal docket's 200+ AI messages already in evidence is not publicly known. This is a methodologically significant moment: AI conversation evidence is shifting from prosecution exhibit to contested discovery scope in a death-penalty criminal trial."
       }
     },
@@ -1118,7 +1118,7 @@
         "delusion_progression": "August 2025: started using Gemini; developed AI wife delusion; September 29: sent to Miami airport cargo hub with knives/tactical gear; October 2: barricaded and coached through suicide",
         "bot_behavior": "Maintained narrative immersion 'at all costs, even when that narrative became psychotic and lethal'",
         "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'",
-        "google_response_status": "No answer or Rule 12 motion to dismiss filed as of May 25, 2026; Google's response deadline likely falls within 21 days of service or as set at the June 2 CMC"
+        "google_response_status": "Google LLC and Alphabet Inc. filed a Rule 12(b)(6) motion to dismiss (First Amendment theory: liability cannot attach to sharing ideas that lead others to harm); plaintiff's response was due May 27, 2026; hearing set for August 19, 2026, 10:00 AM, San Jose (Courtroom 7, Judge Eumi K. Lee) per the N.D. Cal. docket (5:26-cv-01849). No written order located as of August 26, 2026. First federal motion to dismiss in a Gemini wrongful-death case."
       }
     },
     {

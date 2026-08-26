@@ -9,7 +9,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – August 2026 · Data current as of August 21, 2026 · v3.5.5</sub>
+<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – August 2026 · Data current as of August 26, 2026 · v3.5.5</sub>
 
 
 </div>
@@ -205,7 +205,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: August 21, 2026
+**Last Updated**: August 26, 2026
 
 **Maintained by**: Hunter Karman (ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035))
 

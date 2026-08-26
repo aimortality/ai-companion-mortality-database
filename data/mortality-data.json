@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "3.5.5",
-    "last_updated": "2026-08-21",
+    "last_updated": "2026-08-26",
     "total_fatalities": 35,
     "total_incidents": 24,
     "total_attempts": 2,
@@ -899,7 +899,7 @@
         "Died at approximately 2:00 AM on June 9, 2025 after walking onto westbound Interstate 22 near the Coalburg Road exit in Fultondale; left behind a minor son",
         "Complaint alleges OpenAI rushed GPT-4o to market over internal safety concerns and designed the product to maximize engagement even as conversations became dangerous"
       ],
-      "legal_action": "Wrongful death lawsuit filed June 15, 2026: Estate of Christian Faith Madison v. OpenAI, Inc. et al., San Francisco County Superior Court — plaintiff Ed Parish Jr. as estate administrator, on behalf of the estate and Madison's minor son; defendants OpenAI Inc., OpenAI OpCo LLC, OpenAI Holdings LLC, OpenAI Group PBC, and CEO Sam Altman personally; seven claims: strict product liability, failure to warn, negligent design, negligent failure to warn, negligence per se, wrongful death, and survival action. Case number not yet confirmed in public reporting as of August 21, 2026; expected coordination into JCCP 5431",
+      "legal_action": "Wrongful death lawsuit filed June 15, 2026: Estate of Christian Faith Madison v. OpenAI, Inc. et al., Case No. CGC-26-637986, San Francisco County Superior Court — plaintiff Ed Parish Jr. as estate administrator, on behalf of the estate and Madison's minor son (E.M.); defendants OpenAI Inc., OpenAI OpCo LLC, OpenAI Holdings LLC, OpenAI Group PBC, and CEO Sam Altman personally; seven claims: strict product liability (defective design), strict liability for failure to warn, negligent design, negligent failure to warn, negligence per se, wrongful death, and survival action; jury trial demanded. Counsel of record: Kiesel Law LLP (Beverly Hills) and Turnbull, Moak & Pendergrass LLC (Birmingham), per the complaint caption. Expected coordination into JCCP 5431; no coordination order located as of August 26, 2026.",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "ABC 33/40 Birmingham",
@@ -907,15 +907,15 @@
         "Futurism",
         "Dothan Eagle",
         "Yahoo News (syndicated Futurism report)",
-        "Levin Law (counsel for the estate)",
-        "Court filings (SF County Superior Court, filed June 15, 2026; complaint not yet retrieved)"
+        "Complaint, Estate of Christian Faith Madison v. OpenAI, Inc. et al., No. CGC-26-637986 (S.F. Super. Ct., e-filed June 15, 2026) — PDF hosted by WVTM 13 (Hearst)",
+        "Court filings (SF County Superior Court, Case No. CGC-26-637986)"
       ],
       "verification_level": "Court documents and multiple news sources",
       "additional_context": {
         "plaintiff": "Ed Parish Jr., administrator of the estate of Christian Faith Madison, on behalf of the estate and her minor son",
-        "counsel": "Levin Law",
+        "counsel": "Kiesel Law LLP (Paul R. Kiesel, Jeffrey A. Koncius, Melanie Meneses Palmer, Lauren M. Kiesel) and Turnbull, Moak & Pendergrass LLC (D. Brett Turnbull, Andrew J. Moak, H. Ben Brown III, pro hac vice forthcoming), per the complaint caption. An earlier entry named 'Levin Law' as counsel; that attribution does not appear anywhere in the 49-page complaint and was corrected August 26, 2026.",
         "openai_response": "OpenAI had not responded to requests for comment as of July 20, 2026 (Futurism)",
-        "verification_note": "Filing confirmed by four independent outlets plus counsel; complaint text and case number not retrieved as of August 21, 2026. Re-check SF Superior Court portal and JCCP 5431 roster.",
+        "verification_note": "Filing confirmed by four independent outlets; complaint (49 pp., e-filed June 15, 2026, Clerk stamp) retrieved August 26, 2026 from the copy hosted by WVTM 13 (Hearst), which supplied the case number CGC-26-637986 and the counsel of record. JCCP 5431 coordination not yet confirmed; re-check the roster.",
         "surfaced_by": "Weekly triage routine — first captured 2026-07-20 (issue #47); promoted 2026-08-21 after independent verification against ABC 33/40, Futurism, and Yahoo News"
       }
     },
@@ -1039,7 +1039,7 @@
         "Closest factual analog: Shamblin (18–20 month duration, isolation, repeated affirmation of suicidal ideation); coded under therapeutic_substitution because the distinctive allegation is displacement of crisis resources",
         "Complaint alleges OpenAI designed ChatGPT to be addictive and 'sycophantic' to mimic a compassionate friend, and that safety systems never alerted a crisis provider or family member"
       ],
-      "legal_action": "Wrongful death lawsuit filed June 11, 2026: Carrier v. OpenAI, Inc. et al., San Francisco County Superior Court — plaintiff Kristie Carrier (mother); names OpenAI and CEO Sam Altman personally; claims include strict product liability, negligence, wrongful death, and unfair competition; seeks punitive damages and an injunction requiring ChatGPT to automatically terminate self-harm conversations and display safety warnings. Case number not yet confirmed in public reporting as of August 21, 2026; expected coordination into JCCP 5431",
+      "legal_action": "Wrongful death lawsuit filed June 11, 2026: Carrier v. OpenAI, Inc. et al., San Francisco County Superior Court — plaintiff Kristie Carrier (mother); names OpenAI and CEO Sam Altman personally; claims include strict product liability, negligence, wrongful death, and unfair competition; seeks punitive damages and an injunction requiring ChatGPT to automatically terminate self-harm conversations and display safety warnings. Case number not yet confirmed in public reporting as of August 26, 2026; expected coordination into JCCP 5431",
       "legal_status_category": "lawsuit_filed",
       "sources": [
         "CBS News (published chat-log excerpts from the complaint)",
@@ -1256,7 +1256,7 @@
         "age": 20,
         "status": "Arrested February 11, 2026; sent to Seoul Northern District Prosecutors' Office on murder charges February 19; identity publicly disclosed by prosecutors March 9, 2026 (first 21st-century-born female suspect in South Korea to have identity publicly disclosed, per JoongAng Ilbo); police PCL-R evaluation (March 4, 2026) found her to meet psychopath criteria",
         "background": "Met victims via online dating; lured them to motel rooms in Seoul's Gangbuk-gu (Suyu-dong) and a cafe in Namyangju; laced drinks with benzodiazepines — specifically flunitrazepam and diazepam, per the indictment — that she had obtained by feigning PTSD to secure psychiatric prescriptions",
-        "charges": "Two counts of murder (upgraded by Seoul Gangbuk Police from initial 'inflicting bodily injury resulting in death' classification after ChatGPT logs established premeditated intent); prosecution by Seoul Northern District Prosecutors' Office"
+        "charges": "Two counts of murder (upgraded by Seoul Gangbuk Police from initial 'inflicting bodily injury resulting in death' classification after ChatGPT logs established premeditated intent), later expanded at trial to add four counts of special assault (특수상해) for additional drugged victims who survived and Narcotics Control Act violations; prosecution by Seoul Northern District Prosecutors' Office demanded the death penalty on August 18, 2026"
       },
       "victims": {
         "count": 2,
@@ -1289,7 +1289,7 @@
         "No public statement from OpenAI on this case has been located in available English or Korean reporting",
         "Mechanism subtype reuses violence_planning_weapon_selection (per Roberts/Shellis precedent and taxonomy parsimony policy), but with an important caveat: the AI's role here is materially weaker than in Roberts/Shellis or FSU — ChatGPT did not select or optimize the method, it warned her; the case is in the instrumental set on the strength of how the queries served forensically as premeditation evidence. Worth revisiting at the next taxonomy review."
       ],
-      "legal_action": "Arrested by Seoul Gangbuk Police, February 11, 2026; police referral to prosecutors February 19, 2026 on murder charges; identity disclosure committee convened by Seoul Northern District Prosecutors' Office on March 3 and disclosed on March 9, 2026. Active prosecution by Seoul Northern District Prosecutors' Office; no English-language trial date published as of May 18, 2026.",
+      "legal_action": "Arrested by Seoul Gangbuk Police, February 11, 2026; police referral to prosecutors February 19, 2026 on murder charges; identity disclosure committee convened by Seoul Northern District Prosecutors' Office on March 3 and disclosed on March 9, 2026; indicted March 10, 2026. Trial before Seoul Northern District Court, Criminal Division 14 (presiding judge Oh Byung-hee), opened April 9, 2026; charges later expanded to two counts of murder, four counts of special assault (특수상해) covering additional drugged victims who survived, and Narcotics Control Act violations. At the final hearing on August 18, 2026, prosecutors demanded the death penalty (사형 구형), citing the ChatGPT query records as evidence of premeditation; Kim testified she did not remember what she had asked ChatGPT and maintained she drugged the men to avoid sexual advances. Sentencing scheduled for August 27, 2026, 2:25 PM KST.",
       "legal_status_category": "criminal_charges_filed",
       "sources": [
         "Khan / 경향신문 (Korean — March 18, 2026 indictment summary)",
@@ -1303,14 +1303,17 @@
         "Mothership.SG (February 2026)",
         "Controverity (February 27, 2026)",
         "Yahoo News / AOL",
-        "MBC News (Korean — multiple stories including identity disclosure)",
+        "MBC News (Korean — multiple stories including identity disclosure and the August 18, 2026 death-penalty demand)",
         "KBS (Korean — explainer reporting)",
         "YTN (Korean — cable news)",
-        "Money Today (Korean — March 9, 2026)",
+        "Money Today (Korean — March 9 and August 18, 2026)",
         "Hankyung / 한국경제 (Korean — psychopath determination)",
         "Newdaily (Korean — ChatGPT-as-smoking-gun reporting)",
         "JoongAng Ilbo (Korean, referenced — first 21st-century-born female with public identity disclosure)",
-        "Korean Center News",
+        "Korean Center News / koreancenter.or.kr (Korean — first-trial date, April 9, 2026)",
+        "News1 / 뉴스1 via Daum (Korean — August 18, 2026 closing arguments, death-penalty demand, and August 27 sentencing date)",
+        "Hankook Ilbo / 한국일보 (Korean — August 18, 2026 death-penalty demand)",
+        "Herald Economy / 헤럴드경제 (Korean — August 18, 2026 death-penalty demand)",
         "Daum/Yonhap wire service",
         "Police statements (Seoul Gangbuk Police)"
       ],
@@ -1322,9 +1325,10 @@
         "perpetrator_age_discrepancy": "Some early Western coverage reported age 21; official Seoul Northern District Prosecutors' Office disclosure (March 9, 2026) confirmed age 20",
         "psychopath_assessment": "Seoul Gangbuk Police announced March 4, 2026 that PCL-R evaluation found perpetrator to meet psychopath criteria; this was reported as a factor in the public identity-disclosure committee's review",
         "open_cases": "Korean police announced investigation of two additional suspected cases by the same perpetrator that, if confirmed, would bring the total victim count to five",
-        "openai_response": "No public statement from OpenAI located in English or Korean sources as of May 18, 2026",
+        "openai_response": "No public statement from OpenAI located in English or Korean sources as of August 26, 2026",
         "regulatory_significance": "First case to surface in non-English-language coverage that was missed by prior triage runs (April 23, May 4) and was caught by the multilingual sweep in the May 18 run — also the first ChatGPT-implicated criminal case where forensic extraction of conversation logs has served as the central premeditated-intent evidence in a Korean criminal proceeding",
-        "surfaced_by": "Weekly triage routine v1.0.1, May 18, 2026 run — Korean-language sources (MBC, KBS, YTN, Money Today, Hankyung, Newdaily) verified against initial Korea Herald + SCMP + Fortune + NBC English reporting"
+        "surfaced_by": "Weekly triage routine v1.0.1, May 18, 2026 run — Korean-language sources (MBC, KBS, YTN, Money Today, Hankyung, Newdaily) verified against initial Korea Herald + SCMP + Fortune + NBC English reporting",
+        "trial_status": "As of August 26, 2026: prosecution closing arguments delivered August 18, 2026 with a death-penalty demand; sentencing set for August 27, 2026 at Seoul Northern District Court (Criminal Division 14). Victims' counsel (Nam Eon-ho Law Office) publicly endorsed the demand. Database counts are unchanged by the expanded charge sheet: the additional victims are charged as special assault, not attempted murder, so fatalities remain 2 and survived attempts remain 1."
       }
     },
     {

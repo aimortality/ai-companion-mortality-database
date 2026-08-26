@@ -230,4 +230,4 @@ The work is dedicated to those documented here, and to the families who chose to
 
 ---
 
-*Last updated: August 21, 2026*
+*Last updated: August 26, 2026*

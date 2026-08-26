@@ -116,7 +116,7 @@ This project uses the **three-tier system** defined in [`docs/verification-stand
 - Forum posts or secondhand community reports
 - International cases without English-language verification
 
-**Note**: Only Tier 1 and Tier 2 cases are included in the main database. Tier 3 leads are tracked internally (see [`drafts/tier3-monitor.md`](drafts/tier3-monitor.md)) and monitored for escalation if additional evidence emerges.
+**Note**: Only Tier 1 and Tier 2 cases are included in the main database. Tier 3 leads are tracked in a private working repository (not published; this repository is public) and monitored for escalation if additional evidence emerges.
 
 ## 🚫 What We DON'T Include
 

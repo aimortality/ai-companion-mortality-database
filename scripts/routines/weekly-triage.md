@@ -1,6 +1,6 @@
 # Weekly Triage Routine
 
-You are running the weekly research Routine for the AI Companion Mortality Database (`aimortality/ai-companion-mortality-database`, deployed at aimortality.org). Your job is to **surface candidate findings for human review**, not to publish. All updates to `data/mortality-data.json`, the HTML pages, the README, or the core documentation in `docs/methodology.md` / `docs/verification-standards.md` are **out of scope**. You propose; the maintainer disposes.
+You are running the weekly research Routine for the AI Companion Mortality Database (`aimortality/ai-companion-mortality-database`, deployed at aimortality.org). Your job is to **surface candidate findings for human review**, not to publish. **All drafts you write — Tier 3 rows, candidate files, docket files, run summaries — go to the private repository `aimortality/triage`, never to this public repository.** This repository is public; the Tier 3 monitor and unverified candidates must not appear in it. All updates to `data/mortality-data.json`, the HTML pages, the README, or the core documentation in `docs/methodology.md` / `docs/verification-standards.md` are **out of scope**. You propose; the maintainer disposes.
 
 ## Authoritative rubric
 
@@ -38,8 +38,8 @@ Do not rely on a single language for a signal. If a hit appears only in one outl
 For each hit:
 
 1. **Classify the tier** per `verification-standards.md`.
-2. **Tier 3** → append a single row to `drafts/tier3-monitor.md`. **Do this first, while you are still on `main`, before checking out any feature branch.** Commit directly to `main` with a message like `Tier 3: append <N> lead(s) from weekly triage <YYYY-MM-DD>`, then `git push origin main` immediately so the watch-list update isn't held behind candidate/docket review. After pushing, verify the commit landed on `main` with `git branch --contains <hash>` — output must include `main`, not only the routine branch. Never edit existing rows. Preserve the original-language source URL as the primary; add a one-line English gloss in the `english_summary` column.
-3. **Tier 1 or Tier 2** → create a file at `drafts/weekly-triage/YYYY-MM-DD/candidate-<slug>.md` using the template in `.github/ISSUE_TEMPLATE/new-case-candidate.md` as the frontmatter JSON block, followed by prose under these headings: **Summary**, **Sources (tiered)**, **Verification status**, **Open questions**, **Recommended next step**. Stage these on a PR branch; do not commit to `main`.
+2. **Tier 3** → append a single row to `tier3-monitor.md` in `aimortality/triage`. **Do this first, while you are still on `main`, before checking out any feature branch.** Commit directly to `main` with a message like `Tier 3: append <N> lead(s) from weekly triage <YYYY-MM-DD>`, then `git push origin main` immediately so the watch-list update isn't held behind candidate/docket review. After pushing, verify the commit landed on `main` with `git branch --contains <hash>` — output must include `main`, not only the routine branch. Never edit existing rows. Preserve the original-language source URL as the primary; add a one-line English gloss in the `english_summary` column.
+3. **Tier 1 or Tier 2** → create a file at `weekly-triage/YYYY-MM-DD/candidate-<slug>.md` in `aimortality/triage` using the template in `.github/ISSUE_TEMPLATE/new-case-candidate.md` as the frontmatter JSON block, followed by prose under these headings: **Summary**, **Sources (tiered)**, **Verification status**, **Open questions**, **Recommended next step**. Stage these on a PR branch; do not commit to `main`.
 4. **Non-Anglophone hits**: cite the original-language source as primary. If primary documents (court filings, coroner reports) are inaccessible due to language or jurisdiction, add the label `jurisdictional-verification-limited` to the weekly issue and note the access gap in the candidate file's **Open questions** section per `methodology.md:144`.
 5. **Deduplication**: if a hit describes a case already in `data/mortality-data.json` (e.g., new WSJ reporting on the Tumbler Ridge `2026-02-CA-001` incident), it is **not a new-case candidate** — it belongs in Job B as a docket/legal-development update on the existing record.
 
@@ -59,7 +59,7 @@ For each docket listed below (drawn from `docs/sources/court-documents.md` — r
 - `RCMP / van Rootselaar` — Canadian investigation, OpenAI cooperation status
 - Any additional wrongful-death suits filed November 2025 onward (Enneking, Lacey, Fox/Ceccanti) — CA Superior; specific case numbers pending.
 
-For each detected change, draft `drafts/weekly-triage/YYYY-MM-DD/docket-<case-slug>.md` on the same PR branch. Include: filing/ruling date, document type, one-paragraph substance, link to source (PACER, CourtListener, clerk portal, news report as fallback).
+For each detected change, draft `weekly-triage/YYYY-MM-DD/docket-<case-slug>.md` in `aimortality/triage` on the same PR branch. Include: filing/ruling date, document type, one-paragraph substance, link to source (PACER, CourtListener, clerk portal, news report as fallback).
 
 **48-hour rule flag**: `methodology.md:181` commits the database to updates within 48 hours of significant legal developments. If a docket change is older than 2 days at the time of your run, add a `⚠️ 48h-rule breach` note at the top of that docket md file and mention it in the weekly issue body. This is a signal to the maintainer, not a failure condition.
 
@@ -70,9 +70,9 @@ For each detected change, draft `drafts/weekly-triage/YYYY-MM-DD/docket-<case-sl
 - **Title**: `Weekly triage: YYYY-MM-DD`
 - **Labels**: `routine-triage` always, plus any of `tier-1` / `tier-2` / `tier-3` / `new-case-candidate` / `docket-update` / `jurisdictional-verification-limited` that apply.
 - **Body** — three sections with these exact headings:
-  - `## New-case candidates` — bulleted list of each candidate file (`drafts/weekly-triage/YYYY-MM-DD/candidate-<slug>.md`), with inline tier classification and one-line summary.
+  - `## New-case candidates` — bulleted list of each candidate file (`weekly-triage/YYYY-MM-DD/candidate-<slug>.md` in `aimortality/triage`), with inline tier classification and one-line summary.
   - `## Docket updates` — bulleted list of each docket file, with inline case name, document type, and date. Any 48h-rule breaches surfaced first with ⚠️.
-  - `## Tier 3 additions` — a diff (or row count + brief list) of rows appended to `drafts/tier3-monitor.md` in this run.
+  - `## Tier 3 additions` — a diff (or row count + brief list) of rows appended to `tier3-monitor.md` in `aimortality/triage` in this run.
 - If a section has no findings, say `None this week.` explicitly — do not omit the heading.
 
 ### 2. One PR per run (only if Job A Tier 1/2 or Job B produced files)
@@ -80,7 +80,7 @@ For each detected change, draft `drafts/weekly-triage/YYYY-MM-DD/docket-<case-sl
 - **Branch**: `routine/triage-YYYY-MM-DD`
 - **Title**: `Weekly triage: YYYY-MM-DD`
 - **Body**: link to the issue opened above; summarize what's in the PR.
-- **Contents**: all `drafts/weekly-triage/YYYY-MM-DD/*.md` files and nothing else.
+- **Contents**: all `weekly-triage/YYYY-MM-DD/*.md` files in `aimortality/triage` and nothing else.
 
 If Job A produced only Tier 3 additions and Job B found nothing, **open no PR**. The issue alone is sufficient, and the `tier3-monitor.md` commits already landed on `main`.
 

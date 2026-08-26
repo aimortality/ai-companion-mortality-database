@@ -31,7 +31,7 @@ Then **render it**: serve `src/` (`python3 -m http.server`), open `index.html` h
 |---|---|
 | **Source integrity on a case you just wrote** | You are anchored. Dispatch an independent subagent: *"Do NOT trust any prior 'clean' assessment. For case X, list canonical `sources`, then every rendered outlet; flag any outlet not in canonical and any quoted fact, date, or name that differs."* Mandatory for Tier 2 / jurisdictional-verification-limited cases, where provenance is the defining caveat. |
 | **Allegation framing** | Every chatbot-behavior claim in new prose carries "complaint alleges" / "allegedly" / "reportedly". Crisis resources (988) present on every page. |
-| **Dated status snapshots** | "as of May 2026", "no ruling as of…", "at least N lawsuits" — the script ignores these on purpose. They are findings only if a newer docket item on `main` (`drafts/weekly-triage/`) supersedes them; otherwise they are honest history. |
+| **Dated status snapshots** | "as of May 2026", "no ruling as of…", "at least N lawsuits" — the script ignores these on purpose. They are findings only if a newer docket item in the private triage repo (`aimortality/triage`, sibling checkout `../triage/weekly-triage/`) supersedes them; otherwise they are honest history. |
 | **Derived subtotals in prose** | Per-platform totals, "general-purpose assistants accounted for N", lawsuit tallies with their own arithmetic. Re-derive each from canonical; do not grep for the headline number. |
 | **`docs/verification-standards.md`** | Must define every Tier sub-label canonical uses (`jurisdictional-verification-limited`). |
 | **WARN lines** | A WARN on source attribution is a real gap in canonical or a real embellishment in the report — decide which, and say so in the report. Never close a pass with unexplained WARNs. |
@@ -58,7 +58,7 @@ Then **render it**: serve `src/` (`python3 -m http.server`), open `index.html` h
 | "grep came back clean" | The script greps source. Prose, charts, and judgment live elsewhere. Render it; dispatch for sources. |
 | "I wrote the sweep, I know it's complete" | That is precisely why an independent pass is required. |
 | "WARN isn't FAIL" | A WARN on a Tier 2 case's sources is a finding. Explain it or fix it. |
-| "That number is a dated snapshot, leave it" | Only if nothing on `main` supersedes it. Check `drafts/weekly-triage/`. |
+| "That number is a dated snapshot, leave it" | Only if nothing in the private triage repo supersedes it. Check `../triage/weekly-triage/`. |
 
 ## Report format
 

@@ -50,7 +50,7 @@ def metadata_stats():
 
 
 def tier3_section():
-    path = "drafts/tier3-monitor.md"
+    path = "../triage/tier3-monitor.md"  # private repo aimortality/triage, sibling checkout
     if not os.path.exists(path):
         return None
     rows, dates, statuses = 0, [], {}
@@ -73,7 +73,7 @@ def tier3_section():
 
 def triage_section():
     """Latest weekly-triage run — merged locally OR pending on an open PR."""
-    base = "drafts/weekly-triage"
+    base = "../triage/weekly-triage"  # private repo aimortality/triage, sibling checkout
     open_prs = gh_json(["gh", "pr", "list", "--state", "open", "--limit", "30",
                         "--json", "number,title,headRefName,url"], [])
     local = []

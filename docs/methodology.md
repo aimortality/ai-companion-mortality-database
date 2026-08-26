@@ -213,9 +213,9 @@ When referencing this database in academic, journalistic, or policy contexts:
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.5.
-Zenodo. https://doi.org/10.5281/zenodo.22076350
-https://github.com/aimortality/ai-companion-mortality-database
+Associated with Conversational AI Systems (2023–2026). Version 3.5.6.
+Zenodo. https://doi.org/10.5281/zenodo.22117872
+Data files: https://aimortality.org/data/
 ```
 
 Author ORCID: [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035). Correspondence: contact@aimortality.org.

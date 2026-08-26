@@ -98,7 +98,7 @@
   <div class="crisis">Crisis resources available 24/7: <strong><a href="tel:988" style="color:var(--text)">Call or text 988</a></strong> (Suicide &amp; Crisis Lifeline)</div>
 
   <a href="index.html" class="back-link">&larr; Back to Database</a>
-  <nav class="site-nav" aria-label="Site"><a href="report.html">Research Report</a> | <a href="index-academic.html">Academic Summary</a> | <a href="https://github.com/aimortality/ai-companion-mortality-database">Data &amp; Source</a></nav>
+  <nav class="site-nav" aria-label="Site"><a href="report.html">Research Report</a> | <a href="index-academic.html">Academic Summary</a> | <a href="https://doi.org/10.5281/zenodo.22062862">Dataset (Zenodo)</a> | <a href="data/README.md">Data files</a></nav>
 
   <nav class="doc-switch" aria-label="Document">
     <span id="switch-methodology"><strong>Methodology</strong></span> ·
@@ -108,8 +108,8 @@
   <main id="doc"><p class="status">Loading&hellip;</p></main>
 
   <footer>
-    <p>Rendered from the canonical markdown in the repository (single source):
-      <a id="source-link" href="https://github.com/aimortality/ai-companion-mortality-database/blob/main/docs/methodology.md">view source on GitHub</a>.
+    <p>Rendered from the canonical markdown (single source):
+            <a id="source-link" href="/docs/methodology.md">view the source file</a>. Archived with the dataset at <a href="https://doi.org/10.5281/zenodo.22062862">Zenodo</a>.
       Questions or corrections: <a href="mailto:contact@aimortality.org">contact@aimortality.org</a>.</p>
   </footer>
 
@@ -125,7 +125,7 @@
     const doc = DOCS[key];
     document.title = doc.title;
     document.getElementById('source-link').href =
-      'https://github.com/aimortality/ai-companion-mortality-database/blob/main/' + doc.file;
+      '/' + doc.file;
     if (key === 'verification-standards') {
       document.getElementById('switch-methodology').innerHTML = '<a href="methodology.html">Methodology</a>';
       document.getElementById('switch-standards').innerHTML = '<strong>Verification Standards</strong>';
@@ -139,8 +139,7 @@
       target.innerHTML = marked.parse(md);
     } catch (err) {
       target.innerHTML = '<p class="status">Could not load the document (' + err.message +
-        '). Read it on GitHub instead: <a href="https://github.com/aimortality/ai-companion-mortality-database/blob/main/' +
-        doc.file + '">' + doc.file + '</a></p>';
+        '). Read the source file instead: <a href="/' + doc.file + '">' + doc.file + '</a></p>';
     }
   </script>
 

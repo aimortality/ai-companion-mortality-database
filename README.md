@@ -11,7 +11,6 @@
 
 <sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – August 2026 · Data current as of August 21, 2026 · v3.5.5</sub>
 
-<img src="assets/screenshots/database-overview.png" alt="AI Companion Mortality Database — overview" width="820">
 
 </div>
 
@@ -103,8 +102,6 @@ ai-companion-mortality-database/
 │   ├── validate-data.js            # Data integrity + statistical-consistency checks
 │   ├── audit-surfaces.py           # Cross-surface consistency audit (surfaces vs canonical; --base <ref> for stale probes; --links)
 │   └── routines/                   # Weekly-triage research routine
-├── assets/
-│   └── screenshots/                # Database screenshots
 ├── CONTRIBUTING.md                 # How to contribute data
 └── README.md
 ```

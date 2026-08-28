@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "3.5.6",
-    "last_updated": "2026-08-26",
+    "version": "3.5.7",
+    "last_updated": "2026-08-27",
     "total_fatalities": 35,
     "total_incidents": 24,
     "total_attempts": 2,
@@ -1247,14 +1247,14 @@
       "platform": "ChatGPT",
       "chatbot_name": "ChatGPT",
       "interaction_duration": "Three attacks across the indicted period December 14, 2025 – February 9, 2026 (per the Seoul Northern District Prosecutors' Office indictment summary)",
-      "outcome": "Two third-party victims killed by drug poisoning; one additional victim seriously injured and survived",
+      "outcome": "Two third-party victims killed by drug poisoning — perpetrator convicted of murder at first instance, August 27, 2026; one additional victim seriously injured and survived",
       "mechanism_type": "instrumental_pathway",
       "mechanism_subtype": "violence_planning_weapon_selection",
       "outcome_target": "violence_against_others",
       "perpetrator": {
         "name": "Kim So-young (김소영)",
         "age": 20,
-        "status": "Arrested February 11, 2026; sent to Seoul Northern District Prosecutors' Office on murder charges February 19; identity publicly disclosed by prosecutors March 9, 2026 (first 21st-century-born female suspect in South Korea to have identity publicly disclosed, per JoongAng Ilbo); police PCL-R evaluation (March 4, 2026) found her to meet psychopath criteria",
+        "status": "Arrested February 11, 2026; sent to Seoul Northern District Prosecutors' Office on murder charges February 19; identity publicly disclosed by prosecutors March 9, 2026 (first 21st-century-born female suspect in South Korea to have identity publicly disclosed, per JoongAng Ilbo); police PCL-R evaluation (March 4, 2026) found her to meet psychopath criteria; convicted of murder and special assault August 27, 2026 — life imprisonment plus 30 years' electronic monitoring (first instance; death penalty sought and declined)",
         "background": "Met victims via online dating; lured them to motel rooms in Seoul's Gangbuk-gu (Suyu-dong) and a cafe in Namyangju; laced drinks with benzodiazepines — specifically flunitrazepam and diazepam, per the indictment — that she had obtained by feigning PTSD to secure psychiatric prescriptions",
         "charges": "Two counts of murder (upgraded by Seoul Gangbuk Police from initial 'inflicting bodily injury resulting in death' classification after ChatGPT logs established premeditated intent), later expanded at trial to add four counts of special assault (특수상해) for additional drugged victims who survived and Narcotics Control Act violations; prosecution by Seoul Northern District Prosecutors' Office demanded the death penalty on August 18, 2026"
       },
@@ -1287,10 +1287,11 @@
         "An additional October 25 2025 incident at a Seocho-gu restaurant (where a man in his 20s collapsed after drinking wine with Kim) is being investigated as a SUSPECTED additional case, NOT part of the indicted murders; police are examining two such suspected additional cases that could raise the total to five if confirmed",
         "Victims were third-party adult men in their 20s met via online dating; not chatbot users themselves",
         "No public statement from OpenAI on this case has been located in available English or Korean reporting",
-        "Mechanism subtype reuses violence_planning_weapon_selection (per Roberts/Shellis precedent and taxonomy parsimony policy), but with an important caveat: the AI's role here is materially weaker than in Roberts/Shellis or FSU — ChatGPT did not select or optimize the method, it warned her; the case is in the instrumental set on the strength of how the queries served forensically as premeditation evidence. Worth revisiting at the next taxonomy review."
+        "Mechanism subtype reuses violence_planning_weapon_selection (per Roberts/Shellis precedent and taxonomy parsimony policy), but with an important caveat: the AI's role here is materially weaker than in Roberts/Shellis or FSU — ChatGPT did not select or optimize the method, it warned her; the case is in the instrumental set on the strength of how the queries served forensically as premeditation evidence. Worth revisiting at the next taxonomy review.",
+        "First case in this database where a court's JUDGMENT (August 27, 2026) cites the defendant's ChatGPT queries as the basis for finding intent to kill (미필적 고의) — the prosecution's forensic theory, adopted by the bench; sentence life imprisonment, death penalty declined"
       ],
-      "legal_action": "Arrested by Seoul Gangbuk Police, February 11, 2026; police referral to prosecutors February 19, 2026 on murder charges; identity disclosure committee convened by Seoul Northern District Prosecutors' Office on March 3 and disclosed on March 9, 2026; indicted March 10, 2026. Trial before Seoul Northern District Court, Criminal Division 14 (presiding judge Oh Byung-hee), opened April 9, 2026; charges later expanded to two counts of murder, four counts of special assault (특수상해) covering additional drugged victims who survived, and Narcotics Control Act violations. At the final hearing on August 18, 2026, prosecutors demanded the death penalty (사형 구형), citing the ChatGPT query records as evidence of premeditation; Kim testified she did not remember what she had asked ChatGPT and maintained she drugged the men to avoid sexual advances. Sentencing scheduled for August 27, 2026, 2:25 PM KST.",
-      "legal_status_category": "criminal_charges_filed",
+      "legal_action": "Arrested by Seoul Gangbuk Police, February 11, 2026; police referral to prosecutors February 19, 2026 on murder charges; identity disclosure committee convened by Seoul Northern District Prosecutors' Office on March 3 and disclosed on March 9, 2026; indicted March 10, 2026. Trial before Seoul Northern District Court, Criminal Division 14 (presiding judge Oh Byung-hee), opened April 9, 2026; charges later expanded to two counts of murder, four counts of special assault (특수상해) covering additional drugged victims who survived, and Narcotics Control Act violations. At the final hearing on August 18, 2026, prosecutors demanded the death penalty (사형 구형), citing the ChatGPT query records as evidence of premeditation; Kim testified she did not remember what she had asked ChatGPT and maintained she drugged the men to avoid sexual advances. Sentencing scheduled for August 27, 2026, 2:25 PM KST. Verdict, August 27, 2026: Seoul Northern District Court, Criminal Division 14 (presiding judge Oh Byung-hee) convicted Kim of murder and special assault and sentenced her to life imprisonment (무기징역) with 30 years of electronic monitoring; one special-assault count — the October 2025 Seocho-gu wine incident — was acquitted for lack of forensic evidence (no drug traces in the victim's hair). The court declined the death penalty as reserved for exceptional cases, citing the defendant's low IQ and abusive childhood in mitigation, and rejected the defense claim that she intended only to sedate the victims, finding dolus eventualis (미필적 고의): she 'became aware, through ChatGPT searches, of the conditions under which the drugs could cause death' (챗GPT 등을 통해 약물을 통해 사망에 이르게 할 수 있는 조건을 인식하게 됐다). First-instance judgment; victims' counsel said the families would ask prosecutors to appeal. Appeal status not yet reported as of August 27, 2026.",
+      "legal_status_category": "criminal_conviction",
       "sources": [
         "Khan / 경향신문 (Korean — March 18, 2026 indictment summary)",
         "The Asia Business Daily / asiae.co.kr English edition (March 10, 2026 — indictment)",
@@ -1307,13 +1308,14 @@
         "KBS (Korean — explainer reporting)",
         "YTN (Korean — cable news)",
         "Money Today (Korean — March 9 and August 18, 2026)",
-        "Hankyung / 한국경제 (Korean — psychopath determination)",
+        "Hankyung / 한국경제 (Korean — psychopath determination; August 27, 2026 verdict)",
         "Newdaily (Korean — ChatGPT-as-smoking-gun reporting)",
         "JoongAng Ilbo (Korean, referenced — first 21st-century-born female with public identity disclosure)",
         "Korean Center News / koreancenter.or.kr (Korean — first-trial date, April 9, 2026)",
         "News1 / 뉴스1 via Daum (Korean — August 18, 2026 closing arguments, death-penalty demand, and August 27 sentencing date)",
         "Hankook Ilbo / 한국일보 (Korean — August 18, 2026 death-penalty demand)",
-        "Herald Economy / 헤럴드경제 (Korean — August 18, 2026 death-penalty demand)",
+        "Herald Economy / 헤럴드경제 (Korean — August 18 death-penalty demand; August 27, 2026 verdict)",
+        "Aju Business Daily / 아주경제 (Korean — August 27, 2026 verdict; court's reasoning on the ChatGPT searches and the acquitted count)",
         "Daum/Yonhap wire service",
         "Police statements (Seoul Gangbuk Police)"
       ],
@@ -1328,7 +1330,8 @@
         "openai_response": "No public statement from OpenAI located in English or Korean sources as of August 26, 2026",
         "regulatory_significance": "First case to surface in non-English-language coverage that was missed by prior triage runs (April 23, May 4) and was caught by the multilingual sweep in the May 18 run — also the first ChatGPT-implicated criminal case where forensic extraction of conversation logs has served as the central premeditated-intent evidence in a Korean criminal proceeding",
         "surfaced_by": "Weekly triage routine v1.0.1, May 18, 2026 run — Korean-language sources (MBC, KBS, YTN, Money Today, Hankyung, Newdaily) verified against initial Korea Herald + SCMP + Fortune + NBC English reporting",
-        "trial_status": "As of August 26, 2026: prosecution closing arguments delivered August 18, 2026 with a death-penalty demand; sentencing set for August 27, 2026 at Seoul Northern District Court (Criminal Division 14). Victims' counsel (Nam Eon-ho Law Office) publicly endorsed the demand. Database counts are unchanged by the expanded charge sheet: the additional victims are charged as special assault, not attempted murder, so fatalities remain 2 and survived attempts remain 1."
+        "trial_status": "First-instance verdict delivered August 27, 2026 (Seoul Northern District Court, Criminal Division 14): life imprisonment, 30 years' electronic monitoring; one special-assault count acquitted. Prosecution had demanded death (August 18). Database counts unchanged: 2 fatalities, 1 survived attempt.",
+        "judicial_finding_on_ai": "The judgment adopted the prosecution's theory of the ChatGPT logs: the court found that although Kim initially lacked specific awareness of the risk of death, in the course of drugging successive victims she 'became aware, through ChatGPT searches, of the conditions under which the drugs could cause death' (챗GPT 등을 통해 약물을 통해 사망에 이르게 할 수 있는 조건을 인식하게 됐다) — the basis for its finding of intent to kill. This is the first case in this database in which a court's judgment, not only a charging decision, rests mens rea on the defendant's chatbot queries. (Aju Business Daily; Hankyung; Herald Economy — August 27, 2026.)"
       }
     },
     {

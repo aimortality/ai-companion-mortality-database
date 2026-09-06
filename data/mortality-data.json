@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "3.5.7",
-    "last_updated": "2026-08-27",
+    "version": "3.5.8",
+    "last_updated": "2026-09-05",
     "total_fatalities": 35,
     "total_incidents": 24,
     "total_attempts": 2,
@@ -18,7 +18,7 @@
     },
     "time_range": {
       "start": "2023-03-01",
-      "end": "2026-08-21"
+      "end": "2026-08-31"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "CC-BY-4.0",
@@ -1118,7 +1118,8 @@
         "delusion_progression": "August 2025: started using Gemini; developed AI wife delusion; September 29: sent to Miami airport cargo hub with knives/tactical gear; October 2: barricaded and coached through suicide",
         "bot_behavior": "Maintained narrative immersion 'at all costs, even when that narrative became psychotic and lethal'",
         "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'",
-        "google_response_status": "Google LLC and Alphabet Inc. filed a Rule 12(b)(6) motion to dismiss (First Amendment theory: liability cannot attach to sharing ideas that lead others to harm); plaintiff's response was due May 27, 2026; hearing set for August 19, 2026, 10:00 AM, San Jose (Courtroom 7, Judge Eumi K. Lee) per the N.D. Cal. docket (5:26-cv-01849). No written order located as of August 26, 2026. First federal motion to dismiss in a Gemini wrongful-death case."
+        "google_response_status": "Google LLC and Alphabet Inc. filed a Rule 12(b)(6) motion to dismiss (First Amendment theory: liability cannot attach to sharing ideas that lead others to harm); plaintiff's response was due May 27, 2026; hearing set for August 19, 2026, 10:00 AM, San Jose (Courtroom 7, Judge Eumi K. Lee) per the N.D. Cal. docket (5:26-cv-01849). No written order located as of August 26, 2026. First federal motion to dismiss in a Gemini wrongful-death case. Motion remained under submission with no ruling located as of September 5, 2026; the Initial Case Management Conference was continued to September 16, 2026 (August 31, 2026 docket check).",
+        "docket_date_discrepancy": "One docket-aggregator summary (CourtListener snippet retrieved September 5, 2026) describes the motion-to-dismiss argument as heard August 5, 2026; this record's August 19, 2026 hearing date came from the reporting verified at the August 26 update. The primary docket was not directly accessible at either check. Resolve against PACER at the next docket review; the August 19 date stands until then."
       }
     },
     {

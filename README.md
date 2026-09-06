@@ -9,7 +9,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – August 2026 · Data current as of August 27, 2026 · v3.5.7</sub>
+<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – August 2026 · Data current as of September 5, 2026 · v3.5.8</sub>
 
 
 </div>
@@ -169,8 +169,8 @@ Both derived exports are regenerated from the canonical JSON via `scripts/build-
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.7.
-Zenodo. https://doi.org/10.5281/zenodo.22137497
+Associated with Conversational AI Systems (2023–2026). Version 3.5.8.
+Zenodo. https://doi.org/10.5281/zenodo.22428187
 ```
 
 Maintained by Hunter Karman (independent researcher, Los Angeles; ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035)). Correspondence: contact@aimortality.org.
@@ -205,7 +205,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: August 27, 2026
+**Last Updated**: September 5, 2026
 
 **Maintained by**: Hunter Karman (ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035))
 

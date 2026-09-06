@@ -213,8 +213,8 @@ When referencing this database in academic, journalistic, or policy contexts:
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.7.
-Zenodo. https://doi.org/10.5281/zenodo.22137497
+Associated with Conversational AI Systems (2023–2026). Version 3.5.8.
+Zenodo. https://doi.org/10.5281/zenodo.22428187
 Data files: https://aimortality.org/data/
 ```
 
@@ -230,4 +230,4 @@ The work is dedicated to those documented here, and to the families who chose to
 
 ---
 
-*Last updated: August 27, 2026*
+*Last updated: September 5, 2026*

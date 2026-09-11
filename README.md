@@ -165,6 +165,8 @@ Based on documented cases, these patterns preceded tragedy:
 
 Both derived exports are regenerated from the canonical JSON via `scripts/build-data-exports.py`; the live site also offers client-side CSV / summary-stat exports (`src/export.js`).
 
+Source repository: [gitlab.com/aimortality/ai-companion-mortality-database](https://gitlab.com/aimortality/ai-companion-mortality-database). Archived releases: [Zenodo (concept DOI 10.5281/zenodo.22062862)](https://doi.org/10.5281/zenodo.22062862).
+
 ## Citation
 
 ```

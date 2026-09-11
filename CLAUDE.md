@@ -19,7 +19,7 @@ Static site using vanilla HTML/CSS with React 18 loaded via CDN (esm.sh). No bui
 | `src/report.html` | Research report. Individual case sections with detailed narratives, legal proceedings, and summary stats. |
 | `src/index-academic.html` | Academic-style page. Has abstract, key findings, and dates that mirror index.html. |
 | `src/export.js` | Data export utilities. Has **another copy** of case data plus a mock API with hardcoded stats. |
-| `README.md` | GitHub-facing. Has badges, case table, platform comparison, key findings. |
+| `README.md` | Repo-facing (GitLab: aimortality/ai-companion-mortality-database; also uploaded to Zenodo). Has badges, case table, platform comparison, key findings. |
 
 ## Adding a New Case - Checklist
 

@@ -158,7 +158,7 @@ Court filing or government action? → Upgrade to Tier 1
 
 If you believe a case has been incorrectly verified or should be reclassified:
 
-1. **Open a GitHub issue** with "Verification Challenge" label
+1. **Open an issue** on the [project issue tracker](https://gitlab.com/aimortality/ai-companion-mortality-database/-/issues) with "Verification Challenge" label (or email contact@aimortality.org)
 2. **Provide contrary evidence** with sources
 3. **We review within 7 days** and respond publicly
 4. **Outcome documented** in issue thread and, if warranted, commit history

@@ -87,7 +87,7 @@ Cases enter our tracking system through:
 2. **Legal database searches**: PACER (federal), state court clerk portals (e.g., California Superior Court / San Francisco County; Leon County Clerk, FL; Kennebec County, ME), and international equivalents
 3. **Regulatory filings**: FTC complaints, state attorney general actions (including the Florida AG's criminal investigation of OpenAI — the first US state criminal probe directly targeting an AI company over a mass-casualty event, opened April 21, 2026 over the FSU shooting and expanded April 27–28, 2026 to include the USF double homicide as a second predicate, plus the same office's June 1, 2026 civil lawsuit against OpenAI and CEO Sam Altman; and the 42-state attorney general coalition's June 12, 2026 civil investigative demand to OpenAI, led by New York AG Letitia James), international data protection authorities
 4. **Academic literature**: Peer-reviewed studies, incident databases (AIAAIC, AI Incident Database)
-5. **Community reports**: Submissions through GitHub issues, subject to full verification
+5. **Community reports**: Submissions through the [project issue tracker](https://gitlab.com/aimortality/ai-companion-mortality-database/-/issues) or contact@aimortality.org, subject to full verification
 
 ### Verification Workflow
 

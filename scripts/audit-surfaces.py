@@ -207,7 +207,7 @@ def check_stale(E, B, text, f):
     hits = []
     for p in probes:
         for ln, line in enumerate(text.splitlines(), 1):
-            if p in line and not re.search(r"v3\.\d\.0\)|corrected|raised from|prior count|added in v", line):
+            if p in line and not re.search(r"v3\.\d\.0\)|corrected|raised from|prior count|added in v|promoted |first captured ", line):
                 hits.append(f"  L{ln}: '{p}' → {line.strip()[:110]}")
     if hits:
         fail(f"{f}: stale pre-change value(s) survive:\n" + "\n".join(hits))

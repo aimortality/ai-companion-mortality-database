@@ -1,6 +1,6 @@
 {
   "_note": "Derived chronological view of data/mortality-data.json (the canonical source). Regenerate with scripts/build-data-exports.py.",
-  "generated_from_version": "3.5.5",
+  "generated_from_version": "3.5.8",
   "count": 24,
   "incidents": [
     {
@@ -307,8 +307,8 @@
       "platform": "ChatGPT",
       "location": "Seoul (Gangbuk-gu), South Korea",
       "mechanism_type": "instrumental_pathway",
-      "outcome": "Two third-party victims killed by drug poisoning; one additional victim seriously injured and survived",
-      "legal_status": "criminal_charges_filed",
+      "outcome": "Two third-party victims killed by drug poisoning — perpetrator convicted of murder at first instance, August 27, 2026; one additional victim seriously injured and survived",
+      "legal_status": "criminal_conviction",
       "verification_level": "Multiple independent Korean and English news sources; police-sourced; primary Korean court documents not accessible in English (jurisdictional-verification-limited)"
     },
     {

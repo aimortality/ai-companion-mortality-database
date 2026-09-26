@@ -59,7 +59,7 @@ We maintain source integrity through:
 
 If you have access to relevant primary documents not yet in our index:
 
-1. Open a GitHub issue with "Source Contribution" label
+1. Open an issue on the [project issue tracker](https://gitlab.com/aimortality/ai-companion-mortality-database/-/issues) with "Source Contribution" label
 2. Describe the document and its relevance
 3. Provide access pathway or offer to share (respecting legal constraints)
 4. We will verify and add with appropriate credit

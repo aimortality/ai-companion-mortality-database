@@ -3,8 +3,8 @@
 
 const mortalityData = {
   metadata: {
-    version: "3.5.5",
-    last_updated: "2026-08-21",
+    version: "3.5.8",
+    last_updated: "2026-09-05",
     total_fatalities: 35,
     total_incidents: 24,
     ai_users_deceased: 18,
@@ -276,7 +276,7 @@ function addExportButtons(containerId) {
     </div>
     <p style="margin-top: 16px; font-size: 0.8rem; color: var(--text-muted);">
       All data is verified through court documents, news sources, or government acknowledgment.<br>
-      For contributing new cases, visit our <a href="https://github.com/[username]/ai-mortality-database" style="color: var(--accent-info);">GitHub repository</a>.
+      To report a case or correction, email <a href="mailto:contact@aimortality.org" style="color: var(--accent-info);">contact@aimortality.org</a>.
     </p>
   `;
 

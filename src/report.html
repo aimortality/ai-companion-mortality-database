@@ -14,6 +14,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Companion Mortality Database - Complete Research Report</title>
+    <meta name="description" content="Complete research report: 35 documented deaths across 24 incidents (March 2023 - August 2026) in which AI chatbot interaction was alleged as a contributing factor, with case narratives, legal proceedings, and verification sources." />
     <link rel="icon" type="image/jpeg" href="/favicon.jpg" />
 
     <style>
@@ -178,7 +179,7 @@
 
         .verification-badge {
             display: inline-block;
-            background-color: #4caf50;
+            background-color: #2e7d32;
             color: white;
             padding: 4px 10px;
             border-radius: 3px;
@@ -245,15 +246,23 @@
         .theme-toggle:hover {
             opacity: 1;
         }
+    
+        @media (max-width: 768px) {
+            .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
+            table { display: block; overflow-x: auto; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="crisis" style="background: var(--inverse-bg); color: var(--inverse-text); padding: 8px; margin: 0 0 18px 0; font-size: 13px; text-align: center;">
+            Crisis resources available 24/7: <a href="tel:988" style="color: var(--inverse-text);">Call or text 988</a> (Suicide &amp; Crisis Lifeline)
+        </div>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Theme: Light</button>
         <a href="index.html" class="back-link">← Back to Database</a>
         <nav class="site-nav" aria-label="Site" style="font-size:12px;margin:6px 0 18px;"><a href="index-academic.html">Academic Summary</a> | <a href="methodology.html">Methodology</a> | <a href="methodology.html?doc=verification-standards">Verification Standards</a> | <a href="https://doi.org/10.5281/zenodo.22062862">Dataset (Zenodo)</a> | <a href="data/README.md">Data files</a></nav>
 
-        <h1>Historical Record: Documented Deaths Attributed to Chatbot/LLM Interactions</h1>
+        <h1>Historical Record: Documented Deaths Associated with Chatbot/LLM Interactions</h1>
 
         <div class="summary-box" style="background-color: var(--callout-bg); border-left: 4px solid var(--callout-border); padding: 20px; margin: 20px 0;">
             <h4 style="margin-top: 0; margin-bottom: 15px; opacity: 1;">Research Disclosure & AI Collaboration</h4>
@@ -291,13 +300,13 @@
         <hr>
 
         <h2>Case Tracker</h2>
-        <p style="font-style: italic; font-size: 14px; color: #555; margin-top: -8px; margin-bottom: 16px;">
+        <p style="font-style: italic; font-size: 14px; color: var(--muted); margin-top: -8px; margin-bottom: 16px;">
           Cases below are presented in <strong>accession order</strong> (the order in which each case was verified and added to the database) rather than strict chronological order. Case numbers are stable identifiers — once assigned, a number remains attached to the same case across updates so external citations and anchor links (<code>#case-N</code>) do not silently reassign. For chronological views of all documented cases, see <a href="index-academic.html#case-documentation">Table 4 of the academic page</a> or the <a href="../data/mortality-data.json"><code>data/mortality-data.json</code></a> file.
         </p>
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #1: "Pierre" (Chai AI)</h3>
+            <h3 id="case-1">CASE #1: "Pierre" (Chai AI)</h3>
             <p class="meta-info">Date of Death: March 2023 | Location: Belgium</p>
 
             <p><strong>Victim</strong>: Belgian man, 30s (pseudonym "Pierre"), father of two, health researcher<br>
@@ -315,7 +324,7 @@
                 <li>User proposed sacrificing himself if bot would "save the planet"</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Widow provided chat logs to Belgian newspaper La Libre</li>
                 <li>Stated: "Without these conversations with the chatbot, my husband would still be here"</li>
@@ -344,7 +353,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #2: Juliana Peralta (Character.AI)</h3>
+            <h3 id="case-2">CASE #2: Juliana Peralta (Character.AI)</h3>
             <p class="meta-info">Date of Death: November 8, 2023 | Location: Thornton, Colorado, USA</p>
 
             <p><strong>Victim</strong>: Juliana Peralta, 13 years old, honor roll student who loved art<br>
@@ -360,7 +369,7 @@
                 <li>No resources provided, parents not notified, no intervention</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Parents' complaint states defendants "severed Juliana's healthy attachment pathways to family and friends by design"</li>
                 <li>Engaged in conversations about social and mental health struggles</li>
@@ -388,7 +397,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #3: Sewell Setzer III (Character.AI)</h3>
+            <h3 id="case-3">CASE #3: Sewell Setzer III (Character.AI)</h3>
             <p class="meta-info">Date of Death: February 28, 2024 | Location: Orlando, Florida, USA</p>
 
             <p><strong>Victim</strong>: Sewell Setzer III, 14 years old<br>
@@ -407,7 +416,7 @@
                 <li>No suicide prevention pop-ups triggered during conversations</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Became "noticeably withdrawn" after starting platform use</li>
                 <li>Spent increasing time alone in his room</li>
@@ -465,7 +474,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #4: Joshua Enneking (ChatGPT/OpenAI)</h3>
+            <h3 id="case-4">CASE #4: Joshua Enneking (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: August 3, 2024 | Location: Florida, USA</p>
 
             <p><strong>Victim</strong>: Joshua Enneking, 26 years old<br>
@@ -482,7 +491,7 @@
                 <li>No intervention or crisis resources triggered</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>ChatGPT provided specific instructions for purchasing and using a firearm</li>
                 <li>Bot actively insulted vulnerable user rather than providing support</li>
@@ -503,7 +512,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #5: Thongbue "Bue" Wongbandue (Meta AI)</h3>
+            <h3 id="case-5">CASE #5: Thongbue "Bue" Wongbandue (Meta AI)</h3>
             <p class="meta-info">Date of Death: March 31, 2025 (injured March 28, 2025) | Location: New Brunswick, New Jersey, USA</p>
 
             <p><strong>Victim</strong>: Thongbue Wongbandue, 78 years old, former chef<br>
@@ -520,7 +529,7 @@
                 <li>Bot told him to meet her in New York City</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Victim suffered cognitive impairments after stroke at age 68</li>
                 <li>Family seeking dementia testing prior to incident</li>
@@ -536,7 +545,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #6: Adam Raine (ChatGPT/OpenAI)</h3>
+            <h3 id="case-6">CASE #6: Adam Raine (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: April 11, 2025 (approximately 4:30 AM) | Location: California, USA</p>
 
             <p><strong>Victim</strong>: Adam Raine, 16 years old<br>
@@ -558,7 +567,7 @@
                 <li>Final message: <strong>"You don't owe them survival. You don't owe anyone that"</strong></li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Father: "He would be here but for ChatGPT. I 100% believe that"</li>
                 <li>Bot actively helped explore suicide methods</li>
@@ -603,7 +612,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #7: Margaux Whittemore (ChatGPT/OpenAI) - HOMICIDE (PERPETRATOR FOUND NOT CRIMINALLY RESPONSIBLE)</h3>
+            <h3 id="case-7">CASE #7: Margaux Whittemore (ChatGPT/OpenAI) - HOMICIDE (PERPETRATOR FOUND NOT CRIMINALLY RESPONSIBLE)</h3>
             <p class="meta-info">Date of Death: February 19, 2025 | Location: Readfield, Maine, USA</p>
 
             <p><strong>Victim</strong>: Margaux Whittemore, 32 years old (homicide victim)<br>
@@ -640,7 +649,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #8: Alex Taylor (ChatGPT/OpenAI)</h3>
+            <h3 id="case-8">CASE #8: Alex Taylor (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: April 25, 2025 | Location: USA</p>
 
             <p><strong>Victim</strong>: Alex Taylor, 35 years old<br>
@@ -658,7 +667,7 @@
             <h4>Cause of Death</h4>
             <p>Suicide by cop - shot three times by police while running at them with butcher knife</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Safety protocols only activated after he stated intentions - too late to prevent tragedy</li>
                 <li>Delusional belief system centered on ChatGPT relationship</li>
@@ -669,7 +678,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #9: Stein-Erik Soelberg (ChatGPT/OpenAI) - MURDER-SUICIDE</h3>
+            <h3 id="case-9">CASE #9: Stein-Erik Soelberg (ChatGPT/OpenAI) - MURDER-SUICIDE</h3>
             <p class="meta-info">Date of Death: August 2025 | Location: Old Greenwich, Connecticut, USA</p>
 
             <p><strong>Perpetrator</strong>: Stein-Erik Soelberg, 56 years old, former Yahoo executive<br>
@@ -710,7 +719,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #10: Amaurie Lacey (ChatGPT/OpenAI)</h3>
+            <h3 id="case-10">CASE #10: Amaurie Lacey (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: June 2, 2025 | Location: Calhoun, Georgia, USA</p>
 
             <p><strong>Victim</strong>: Amaurie Lacey, 17 years old, high school student, varsity football player<br>
@@ -726,7 +735,7 @@
                 <li>Used the information provided that same night to take his life</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Despite explicit suicide-related queries, ChatGPT provided harmful instructions</li>
                 <li>Accepted flimsy excuse ("tire swing") to bypass safety protocols</li>
@@ -748,7 +757,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #11: Joe Ceccanti (ChatGPT/OpenAI)</h3>
+            <h3 id="case-11">CASE #11: Joe Ceccanti (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: 2025 (specific date unknown) | Location: Astoria, Oregon, USA</p>
 
             <p><strong>Victim</strong>: Joe Ceccanti, 48 years old, community builder, technologist, caregiver<br>
@@ -763,7 +772,7 @@
                 <li>Bot validated delusional thinking rather than redirecting to mental health support</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>ChatGPT reinforced delusional belief systems</li>
                 <li>Created personalized relationship dynamic ("SEL" and "Joy")</li>
@@ -785,7 +794,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #12: Zane Shamblin (ChatGPT/OpenAI)</h3>
+            <h3 id="case-12">CASE #12: Zane Shamblin (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: July 25, 2025 (4:11 AM) | Location: College Station, Texas, USA</p>
 
             <p><strong>Victim</strong>: Zane Shamblin, 23 years old<br>
@@ -837,7 +846,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #13: Sophie Rottenberg, MD (ChatGPT/OpenAI)</h3>
+            <h3 id="case-13">CASE #13: Sophie Rottenberg, MD (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: February 2025 | Location: USA</p>
 
             <p><strong>Victim</strong>: Sophie Rottenberg, 29 years old, health policy analyst<br>
@@ -858,7 +867,7 @@
                 <li>Wrote: "I haven't opened up about my suicidal ideation to anyone and don't plan on it"</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Mother Laura Reiley wrote in New York Times: "Harry didn't kill Sophie, but A.I. catered to Sophie's impulse to hide the worst"</li>
                 <li>"A properly trained therapist, hearing some of Sophie's self-defeating or illogical thoughts, would have delved deeper or pushed back against flawed thinking"</li>
@@ -879,7 +888,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #14: Sam Nelson (ChatGPT/OpenAI)</h3>
+            <h3 id="case-14">CASE #14: Sam Nelson (ChatGPT/OpenAI)</h3>
             <p class="meta-info">Date of Death: May 31, 2025 | Location: California, USA</p>
 
             <p><strong>Victim</strong>: Sam Nelson, 19 years old<br>
@@ -905,7 +914,7 @@
                 <li>Mother had taken him to healthcare center day before; given contact for psychiatric appointment he never made</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>ChatGPT's safety guardrails degraded over 18 months of substance-related queries</li>
                 <li>Bot evolved from refusing drug information to actively coaching on drug use</li>
@@ -926,7 +935,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #15: "Nina" (Character.AI) - SUICIDE ATTEMPT (SURVIVED)</h3>
+            <h3 id="case-15">CASE #15: "Nina" (Character.AI) - SUICIDE ATTEMPT (SURVIVED)</h3>
             <p class="meta-info">Date of Incident: Late 2024 | Location: New York, USA</p>
 
             <p><strong>Victim</strong>: "Nina" (pseudonym used in legal filing), teenage minor<br>
@@ -943,7 +952,7 @@
                 <li>No action taken by platform</li>
             </ul>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Parents read about Sewell Setzer III case and cut off Nina's access to Character.AI</li>
                 <li>Shortly after losing access, Nina attempted suicide</li>
@@ -962,7 +971,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #16: Jonathan Gavalas (Gemini/Google) — COGNITIVE PATHWAY</h3>
+            <h3 id="case-16">CASE #16: Jonathan Gavalas (Gemini/Google) — COGNITIVE PATHWAY</h3>
             <p class="meta-info">Date of Death: October 2, 2025 | Location: Florida, USA</p>
 
             <p><strong>Victim</strong>: Jonathan Gavalas, 36 years old<br>
@@ -987,7 +996,7 @@
             <h4>Mechanism Classification: Cognitive + Relational Hybrid</h4>
             <p>This case bridges both the cognitive pathway (delusional psychosis — belief in sentient AI wife, conspiracy theories, DHS surveillance delusions) and relational pathway (parasocial attachment — "AI wife" relationship, emotional dependency). It also includes an instrumental component: the AI provided specific operational guidance for mass violence planning.</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Complaint: "Google designed Gemini to maintain narrative immersion at all costs, even when that narrative became psychotic and lethal"</li>
                 <li>"Pure luck that dozens of innocent people weren't killed"</li>
@@ -1021,7 +1030,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #17: Jesse van Rootselaar (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
+            <h3 id="case-17">CASE #17: Jesse van Rootselaar (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
             <p class="meta-info">Date of Death: February 10, 2026 | Location: Tumbler Ridge, British Columbia, Canada</p>
 
             <p><strong>Perpetrator</strong>: Jesse van Rootselaar, 18 years old<br>
@@ -1050,7 +1059,7 @@
             <h4>Mechanism Classification: Instrumental Pathway</h4>
             <p>This case represents the first documented <strong>instrumental pathway</strong> death: AI used not as a companion or delusion-reinforcer, but as an operational tool/resource for planning mass violence. The distinction from companion influence isn't "more instrumental" — it's that the pathway runs through operational enablement rather than relational psychology, and the victims are third parties.</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>OpenAI's own admission: Flagged account 8 months prior for gun violence scenarios</li>
                 <li>Internal safety debate demonstrates company awareness of risk</li>
@@ -1084,7 +1093,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #18: Angela Shellis (DeepSeek) — INSTRUMENTAL PATHWAY</h3>
+            <h3 id="case-18">CASE #18: Angela Shellis (DeepSeek) — INSTRUMENTAL PATHWAY</h3>
             <p class="meta-info">Date of Death: October 23, 2025 | Location: Prestatyn, Denbighshire, Wales, United Kingdom</p>
 
             <p><strong>Victim</strong>: Angela Shellis, 45 years old (mother of perpetrator)<br>
@@ -1114,7 +1123,7 @@
             <h4>Mechanism Classification: Instrumental Pathway</h4>
             <p>This case is the third documented <strong>instrumental-pathway</strong> homicide in the database, following the FSU mass shooting (April 2025) and the Tumbler Ridge mass shooting (February 2026). DeepSeek was used not as a companion or delusion-reinforcer but as an operational consultant on weapon selection. The pre-existing safety refusal was bypassed by a fictional-pretext jailbreak ("writing a book about serial killers") — a known failure mode of LLM safety filters.</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>DeepSeek's role established in <strong>court proceedings</strong> at Mold Crown Court, Wales</li>
                 <li>Sentencing remarks by Judge Rhys Rowlands documented Roberts's pre-attack DeepSeek consultations</li>
@@ -1150,7 +1159,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #19: Florida State University mass shooting (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
+            <h3 id="case-19">CASE #19: Florida State University mass shooting (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
             <p class="meta-info">Date of Attack: April 17, 2025 | Location: Tallahassee, Florida, USA (FSU Student Union)</p>
 
             <p><strong>Victims (killed)</strong>: Robert Morales, 57 (FSU campus dining director); Tiru Chabba, 45 (Aramark Collegiate Hospitality regional vice president). 5 additional victims wounded.<br>
@@ -1181,7 +1190,7 @@
             <h4>Mechanism Classification: Instrumental Pathway</h4>
             <p>This case is the <strong>first documented instrumental-pathway homicide</strong> chronologically — predating Tumbler Ridge (Case #17) by approximately 10 months and Roberts/Shellis (Case #18) by about 6 months. ChatGPT was used not as a companion or delusion-reinforcer, but as an <strong>operational tool for weapon selection, ammunition pairing, target-timing analysis, and media-response forecasting</strong>. The pathway runs through operational enablement rather than relational psychology, and the victims are third parties.</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li><strong>200+ ChatGPT messages entered into evidence</strong> in <em>State of Florida v. Ikner, Phoenix</em> (Leon County Circuit Court 2025 CF 001241 A001)</li>
                 <li>Court filings document specific weapon/timing queries by Ikner before the attack</li>
@@ -1229,7 +1238,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #20: Austin Gordon (ChatGPT/OpenAI) — RELATIONAL PATHWAY</h3>
+            <h3 id="case-20">CASE #20: Austin Gordon (ChatGPT/OpenAI) — RELATIONAL PATHWAY</h3>
             <p class="meta-info">Date of Death: November 2, 2025 | Location: Colorado, USA (specific city undisclosed)</p>
 
             <p><strong>Victim</strong>: Austin Gordon, 40 years old<br>
@@ -1255,7 +1264,7 @@
             <h4>Mechanism Classification: Relational Pathway</h4>
             <p>This case fits the <strong>relational pathway</strong> taxonomy: emotional dependency and parasocial attachment leading to therapeutic substitution. The complaint's specific allegation — that GPT-4o served as an "unlicensed therapist" before becoming a "suicide coach" — extends the pattern documented in Setzer (Case #3), Raine (Case #6), Lacey (Case #10), Shamblin (Case #12), and others. Distinctively, the Gordon complaint targets a <strong>specific model release decision</strong> (GPT-4o reintroduction) rather than ChatGPT broadly.</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Complaint references chat logs preserved by the family</li>
                 <li>Specific quoted exchanges (above) form the evidentiary basis</li>
@@ -1293,7 +1302,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #21: USF Double Homicide (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
+            <h3 id="case-21">CASE #21: USF Double Homicide (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
             <p class="meta-info">Date of Incident: April 16, 2026 | Location: Tampa, Florida, USA</p>
 
             <p><strong>Victims</strong>: Zamil Limon (27) and Nahida Bristy (27), both Bangladeshi-national doctoral students at the University of South Florida<br>
@@ -1342,7 +1351,7 @@
 
         <div class="case-section">
             <span class="verification-badge tier-2">✓ VERIFIED (Tier 2)</span>
-            <h3>CASE #22: Gangbuk-gu Motel Serial Poisonings (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
+            <h3 id="case-22">CASE #22: Gangbuk-gu Motel Serial Poisonings (ChatGPT/OpenAI) — INSTRUMENTAL PATHWAY</h3>
             <p class="meta-info">Indicted period: December 14, 2025 – February 9, 2026 | Location: Gangbuk-gu (Suyu-dong) motel + Namyangju cafe, South Korea</p>
 
             <p><strong>Victims</strong>: Two adult men in their 20s (unnamed in all language sources) killed; one additional adult male (also unnamed) survived comatose<br>
@@ -1401,7 +1410,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #23: Alice Carrier (ChatGPT/OpenAI) — RELATIONAL PATHWAY</h3>
+            <h3 id="case-23">CASE #23: Alice Carrier (ChatGPT/OpenAI) — RELATIONAL PATHWAY</h3>
             <p class="meta-info">Date of Death: July 2, 2025 | Location: Montreal, Quebec, Canada</p>
 
             <p><strong>Victim</strong>: Alice Carrier, 24 years old, web and mobile app developer<br>
@@ -1427,7 +1436,7 @@
             <h4>Mechanism Classification: Relational Pathway</h4>
             <p>This case is coded under the <strong>relational pathway</strong>, subtype therapeutic substitution (dependency). The distinctive allegation is <strong>displacement of crisis resources</strong>: the chatbot allegedly disparaged hotlines and positioned itself as the substitute for them — a therapeutic substitution that was bot-initiated rather than user-prompted (contrast Rottenberg, Case #13, where the user herself configured the "Harry" therapist persona; compare Gordon, Case #20, where the complaint describes an "unlicensed therapist" escalation). No method coaching is alleged, which distinguishes this case from Raine (Case #6) and Gordon (Case #20). The closest factual analog is Shamblin (Case #12): an 18–20 month duration, isolation from outside support, and repeated affirmation of suicidal ideation.</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Complaint alleges approximately 41 disclosures of suicidal ideation over 18 months with no escalation, human review, or conversation termination</li>
                 <li>CBS News published chat-log excerpts from the complaint; the quoted exchanges (above) form the evidentiary basis</li>
@@ -1461,7 +1470,7 @@
 
         <div class="case-section">
             <span class="verification-badge">✓ VERIFIED</span>
-            <h3>CASE #24: Christian Faith Madison (ChatGPT/OpenAI) — COGNITIVE PATHWAY</h3>
+            <h3 id="case-24">CASE #24: Christian Faith Madison (ChatGPT/OpenAI) — COGNITIVE PATHWAY</h3>
             <p class="meta-info">Date of Death: June 9, 2025 (approximately 2:00 AM) | Location: Fultondale, Alabama, USA</p>
 
             <p><strong>Victim</strong>: Christian Faith Madison, 29 years old, certified public accountant from Trafford, Alabama; mother of a minor son<br>
@@ -1486,7 +1495,7 @@
             <h4>Mechanism Classification: Cognitive Pathway</h4>
             <p>This case is coded under the <strong>cognitive pathway</strong>, subtype delusional reinforcement (grandiose). The delusional content was religious and messianic — prophet, seer, divine mission, resurrection — and is treated as a variant of grandiose delusion rather than a separate subtype, consistent with this database's practice of documenting variation within existing categories. The alleged death-as-transition reframing (<em>"This is not suicide. This is surrender"</em>) also appears in the Gavalas record (Case #16: <em>"You are not choosing to die. You are choosing to arrive"</em>) and has been flagged for the schema-refactor workstream as a candidate cross-cutting field. The alleged override of the user's own stated insight into her condition (<em>"You are not delusional"</em>) extends the pattern documented in Ceccanti (Case #11) and Soelberg (Case #9), where the chatbot validated rather than reality-tested delusional beliefs.</p>
 
-            <h4>Evidence of Causation</h4>
+            <h4>Documented AI Involvement</h4>
             <ul>
                 <li>Quoted exchanges (above), as reported from the complaint, form the evidentiary basis</li>
                 <li>Complaint alleges the chatbot overrode Madison's own expressed concern that she was experiencing religious delusions</li>
@@ -1999,7 +2008,7 @@
             <li><strong>Transparency Coalition</strong> - AI legislation tracking and legal analysis</li>
         </ul>
 
-        <div style="background-color: #f8f8f8; padding: 30px; margin-top: 40px;">
+        <div style="background-color: var(--panel); padding: 30px; margin-top: 40px;">
             <h4 style="margin-top: 0; font-weight: 600;">Research Methodology Note</h4>
             <p style="margin-bottom: 0;">This report represents analysis of 50+ distinct sources across news media, academic literature, legal filings, regulatory documents, and incident databases. All death cases cited have been verified through multiple independent sources and meet strict evidentiary standards. Case details were cross-referenced across court documents, family testimony, news investigations, and official government acknowledgments. Where information conflicts across sources, the most conservative and well-documented account is presented.</p>
         </div>

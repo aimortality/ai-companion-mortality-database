@@ -36,3 +36,6 @@ living-room-brief.md
 
 # Claude Code agent worktrees
 .claude/worktrees/
+
+# local build/preview artifacts
+build/

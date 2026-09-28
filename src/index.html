@@ -27,7 +27,7 @@
   <meta property="og:site_name" content="AI Companion Mortality Database" />
 
   <!-- TWITTER -->
-  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:card" content="summary" />
   <meta property="twitter:url" content="https://aimortality.org/" />
   <meta property="twitter:title" content="AI Companion Mortality Database" />
   <meta property="twitter:description" content="Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. 35 fatalities (18 AI users + 17 third-party victims) across 24 incidents from March 2023 to August 2026." />
@@ -632,6 +632,11 @@
 
     .theme-toggle:hover {
       opacity: 1;
+    }
+  
+    @media (max-width: 768px) {
+      .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
+      table { display: block; overflow-x: auto; }
     }
   </style>
 </head>
@@ -1508,7 +1513,7 @@
             React.createElement('thead', null,
               React.createElement('tr', null,
                 React.createElement('th', { scope: 'col' }, 'Year'),
-                React.createElement('th', { scope: 'col' }, 'Deaths'),
+                React.createElement('th', { scope: 'col' }, 'Incidents'),
                 React.createElement('th', { scope: 'col' }, 'Attempts'),
                 React.createElement('th', { scope: 'col' }, 'Notes')
               )

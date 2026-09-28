@@ -1,3 +1,5 @@
+// NOTE: NOT CURRENTLY LOADED by any page on the site. The /api/v1/* endpoints
+// referenced below are mock/aspirational and DO NOT exist as live endpoints.
 // Data Export Utilities for AI Mortality Database
 // Can be integrated into the main index.html or used standalone
 

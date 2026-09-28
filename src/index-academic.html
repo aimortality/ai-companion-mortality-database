@@ -12,6 +12,7 @@
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Companion Mortality Database: A Systematic Documentation of Deaths Associated with Conversational AI Systems</title>
+  <meta name="description" content="Academic summary of the AI Companion Mortality Database: 35 documented deaths across 24 incidents (March 2023 - August 2026), verification methodology, and tabulated case data. Version 3.5.8, DOI 10.5281/zenodo.22428187." />
   <link rel="icon" type="image/jpeg" href="/favicon.jpg">
   <style>
     :root {
@@ -397,6 +398,11 @@
     .theme-toggle:hover {
       opacity: 1;
     }
+  
+    @media (max-width: 768px) {
+      .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
+      table { display: block; overflow-x: auto; }
+    }
   </style>
 </head>
 <body>
@@ -498,15 +504,15 @@
 
     <h2>Temporal Distribution</h2>
     <p>
-      Analysis of case distribution over time reveals an accelerating trajectory. While 2023 and 2024 each recorded 2–3 deaths, 2025 saw 16 documented deaths, and 2026 has recorded 3 additional incidents (Kim Seoul, Tumbler Ridge, and USF). Five instrumental pathway incidents now fall in this database: the FSU mass shooting (April 2025, perpetrator consulted ChatGPT for weapon and target-timing planning), the Roberts/Shellis homicide (Wales, October 2025; first DeepSeek-involved case; UK criminal conviction March 2026), the Kim Seoul serial poisonings (December 2025–February 2026; perpetrator's ChatGPT queries served forensically as premeditation evidence — first East Asian case), the Tumbler Ridge mass shooting (February 2026; OpenAI flagged the perpetrator's account 8 months prior but did not alert law enforcement), and the USF double homicide (April 2026; perpetrator consulted ChatGPT on body disposal). The instrumental pathway represents a category of concern distinct from companion or delusion dynamics: AI as operational tool for violence planning.
+      Analysis of case distribution over time reveals an accelerating trajectory. While 2023 and 2024 each recorded 2–3 incidents, 2025 saw 16 documented incidents, and 2026 has recorded 3 additional incidents (Kim Seoul, Tumbler Ridge, and USF). Five instrumental pathway incidents now fall in this database: the FSU mass shooting (April 2025, perpetrator consulted ChatGPT for weapon and target-timing planning), the Roberts/Shellis homicide (Wales, October 2025; first DeepSeek-involved case; UK criminal conviction March 2026), the Kim Seoul serial poisonings (December 2025–February 2026; perpetrator's ChatGPT queries served forensically as premeditation evidence — first East Asian case), the Tumbler Ridge mass shooting (February 2026; OpenAI flagged the perpetrator's account 8 months prior but did not alert law enforcement), and the USF double homicide (April 2026; perpetrator consulted ChatGPT on body disposal). The instrumental pathway represents a category of concern distinct from companion or delusion dynamics: AI as operational tool for violence planning.
     </p>
 
     <table>
-      <caption>Table 1. Deaths by Year</caption>
+      <caption>Table 1. Incidents by Year</caption>
       <thead>
         <tr>
           <th scope="col">Year</th>
-          <th scope="col">Deaths</th>
+          <th scope="col">Incidents</th>
           <th scope="col">Attempts</th>
           <th scope="col">Notable Events</th>
         </tr>
@@ -654,7 +660,7 @@
       </tbody>
     </table>
 
-    <h2>Case Documentation</h2>
+    <h2 id="case-documentation">Case Documentation</h2>
     <p>
       Each case in the database includes: victim identification (name or verified pseudonym), age, date, platform, location, engagement duration (where known), outcome classification, documented risk factors, legal status, and primary sources. Full case documentation is available in the <a href="report.html">Research Report</a>.
     </p>

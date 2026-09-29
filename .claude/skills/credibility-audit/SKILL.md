@@ -7,7 +7,7 @@ description: Use before opening or merging any PR that touches data values, case
 
 ## Overview
 
-The database is cited by researchers, regulators, and journalists. Its truth is spread across six files that duplicate the same facts (`data/mortality-data.json` is canonical; `src/index.html`, `src/index-academic.html`, `src/report.html`, `src/export.js`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
+The database is cited by researchers, regulators, and journalists. Its truth is spread across five files that duplicate the same facts (`data/mortality-data.json` is canonical; `src/index.html`, `src/index-academic.html`, `src/report.html`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
 
 **Core principle: evidence before claims.** Every finding cites `file:line` or fresh command output from *this* pass. If you did not run the command in this pass, you cannot say it passes.
 
@@ -17,7 +17,7 @@ The database is cited by researchers, regulators, and journalists. Its truth is 
 
 ```bash
 node scripts/validate-data.js                      # JSON internal invariants
-python3 scripts/audit-surfaces.py --base main      # six surfaces vs canonical; stale probes vs main
+python3 scripts/audit-surfaces.py --base main      # five surfaces vs canonical; stale probes vs main
 python3 scripts/audit-surfaces.py --links          # add on quarterly passes or after source edits
 ```
 

@@ -18,7 +18,6 @@ Static site using vanilla HTML/CSS with React 18 loaded via CDN (esm.sh). No bui
 | `src/index.html` | Main page. Has inline React component with **its own copy** of all case data, SVG charts, stat boxes, demographic tables, and meta tags. |
 | `src/report.html` | Research report. Individual case sections with detailed narratives, legal proceedings, and summary stats. |
 | `src/index-academic.html` | Academic-style page. Has abstract, key findings, and dates that mirror index.html. |
-| `src/export.js` | Data export utilities. Has **another copy** of case data plus a mock API with hardcoded stats. |
 | `README.md` | Repo-facing (GitLab: aimortality/ai-companion-mortality-database; also uploaded to Zenodo). Has badges, case table, platform comparison, key findings. |
 
 ## Adding a New Case - Checklist
@@ -37,16 +36,15 @@ Static site using vanilla HTML/CSS with React 18 loaded via CDN (esm.sh). No bui
    - Footer date
 4. Update `src/report.html` (add case section, update executive summary near top AND Summary Statistics near bottom — there are two stat blocks, both need attention; update Lawsuits section, Regulatory section, Conclusions)
 5. Update `src/index-academic.html` (abstract, key findings, stats grid, Table 1 deaths-by-year, Table 2 platform distribution, Table 3 age distribution, Table 4 case list, masthead date)
-6. Update `src/export.js` (case array, death counts, age stats, deaths-by-year, mock API stats)
-7. Update `README.md` (badge, case table, platform comparison, key findings, last-updated)
-8. Regenerate the derived exports: `python3 scripts/build-data-exports.py` (`data/platform-analysis.csv`, `data/timeline.json`). They are a seventh surface; the audit fails if they drift from canonical. Missed after v3.5.1/3.5.2 and shipped stale to Zenodo.
-9. Run the audit grep (see "Verification grep" below) before declaring done.
+6. Update `README.md` (badge, case table, platform comparison, key findings, last-updated)
+7. Regenerate the derived exports: `python3 scripts/build-data-exports.py` (`data/platform-analysis.csv`, `data/timeline.json`). They are a sixth surface; the audit fails if they drift from canonical. Missed after v3.5.1/3.5.2 and shipped stale to Zenodo.
+8. Run the audit grep (see "Verification grep" below) before declaring done.
 
 ## Releasing a version (Zenodo DOI)
 
 Every released version is archived on Zenodo under concept DOI `10.5281/zenodo.22062862` (always resolves to the latest version). The README badge uses the concept DOI; citation strings use the *version* DOI.
 
-1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/export.js`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Regenerate exports. Audit green. Merge.
+1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Regenerate exports. Audit green. Merge.
 2. Zenodo → the latest record → **New version** (or API: `POST /api/deposit/depositions/{id}/actions/newversion` with `$ZENODO_TOKEN`), upload the files from the merged `main` (`data/mortality-data.json`, `data/incidents.csv`, `data/platform-analysis.csv`, `data/timeline.json`, `data/LICENSE`, `docs/methodology.md`, `docs/verification-standards.md`, `README.md`, `LICENSE`), set `version` and `license: cc-by-4.0` (data license; code is MIT in-repo), publish.
 3. Put the new version DOI into the three citation strings (academic footer, methodology, README, data/README) in a follow-up PR. The concept-DOI badge needs no change.
 
@@ -86,7 +84,7 @@ python3 scripts/audit-surfaces.py --base main    # surfaces vs canonical + stale
 
 Then the manual grep below for anything the script cannot classify (prose subtotals, code comments), and the `/credibility-audit` skill for the judgment calls (source integrity via independent subagent, allegation framing, dated snapshots).
 
-Grep all six canonical files (`data/mortality-data.json`, `src/index.html`, `src/index-academic.html`, `src/report.html`, `src/export.js`, `README.md`), plus `docs/methodology.md` (which carries headline numbers in prose) and the project CLAUDE.md, for *every* pre-change value: headline totals, per-platform subtotals, derived percentages, period-end dates, and the version string.
+Grep all five canonical files (`data/mortality-data.json`, `src/index.html`, `src/index-academic.html`, `src/report.html`, `README.md`), plus `docs/methodology.md` (which carries headline numbers in prose) and the project CLAUDE.md, for *every* pre-change value: headline totals, per-platform subtotals, derived percentages, period-end dates, and the version string.
 
 - Use **case-insensitive** matching (`grep -ri`). A capital-I "Incidents" header has previously evaded a case-sensitive pass.
 - Check `<desc id="...-desc">` elements explicitly.

@@ -2,7 +2,10 @@
   publish = "src"
   # data/ and docs/ live outside the publish dir; copy them in at build time so
   # /data/mortality-data.json and /docs/methodology.md are served (single source, no dup).
-  command = "cp -r data src/data && cp -r docs src/docs"
+  # rm first: `cp -r data src/data` onto an EXISTING src/data copies into it (src/data/data/),
+  # leaving the stale top-level file to ship. Netlify builds from a clean checkout, but local
+  # CLI builds do not. scripts/audit-surfaces.py (check_publish_copies) fails on a stale copy.
+  command = "rm -rf src/data src/docs && cp -R data src/data && cp -R docs src/docs"
 
 # Redirect all ai-death.com traffic to aimortality.org
 [[redirects]]

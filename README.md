@@ -96,7 +96,7 @@ ai-companion-mortality-database/
 │   ├── index.html                  # Main database visualization
 │   ├── index-academic.html         # Academic-style edition
 │   ├── report.html                 # Long-form research report
-│   └── export.js                   # Client-side data export utilities
+│   └── methodology.html            # Renders docs/methodology.md on-site
 ├── scripts/
 │   ├── build-data-exports.py       # Regenerates platform-analysis.csv + timeline.json
 │   ├── validate-data.js            # Data integrity + statistical-consistency checks
@@ -163,7 +163,7 @@ Based on documented cases, these patterns preceded tragedy:
 - **[CSV](data/platform-analysis.csv)** — per-platform safety comparison, for spreadsheet analysis
 - **[Timeline](data/timeline.json)** — chronological incident view
 
-Both derived exports are regenerated from the canonical JSON via `scripts/build-data-exports.py`; a client-side export module (`src/export.js`) exists in the repo but is not currently wired into any page.
+Both derived exports are regenerated from the canonical JSON via `scripts/build-data-exports.py`.
 
 Source repository: [gitlab.com/aimortality/ai-companion-mortality-database](https://gitlab.com/aimortality/ai-companion-mortality-database). Archived releases: [Zenodo (concept DOI 10.5281/zenodo.22062862)](https://doi.org/10.5281/zenodo.22062862).
 

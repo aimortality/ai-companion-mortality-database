@@ -28,11 +28,12 @@ SURFACES = [
     "src/index.html",
     "src/index-academic.html",
     "src/report.html",
-    "src/export.js",
     "README.md",
     "docs/methodology.md",
 ]
 ALIAS = {"wsj": "wall street journal", "nyt": "new york times", "ap": "associated press", "wapo": "washington post"}
+# canonical incident name -> the token its report.html header uses, where they differ
+CASE_ALIAS = {"University of South Florida double homicide": "USF"}
 MARQUEE = ("associated press", " ap ", "reuters", "bbc", "guardian", "new york times", "washington post")
 
 fails, warns, passes = [], [], []
@@ -219,7 +220,7 @@ def check_sources(d):
     """report.html 'Verification Sources' lines vs canonical sources arrays."""
     f = "src/report.html"
     text = read(f)
-    sections = re.split(r"<h3>CASE #\d+: ", text)[1:]
+    sections = re.split(r"<h3[^>]*>CASE #\d+: ", text)[1:]
     by_name = {}
     for sec in sections:
         title = re.sub(r"<.*?>", "", sec.split("\n", 1)[0]).strip()
@@ -229,11 +230,14 @@ def check_sources(d):
     def norm(s):
         s = re.sub(r"\(.*?\)", "", s).lower()
         return re.sub(r"[^a-z0-9]+", " ", s).strip()
-    checked = 0
+    checked, unmatched = 0, []
     for inc in d["incidents"]:
         name = inc.get("name", "")
-        key = next((t for t in by_name if name.split(" (")[0].lower() in t.lower()), None)
+        needle = CASE_ALIAS.get(name, name.split(" (")[0]).lower()
+        toks = needle.split()
+        key = next((t for t in by_name if all(tok in t.lower() for tok in toks)), None)
         if not key:
+            unmatched.append(name)
             continue
         checked += 1
         canon = [norm(s) for s in inc["sources"]]
@@ -246,7 +250,13 @@ def check_sources(d):
             fail(f"{f}: '{name}' cites marquee outlet(s) NOT in canonical sources: {marquee}")
         elif extra:
             warn(f"{f}: '{name}' rendered outlets not matched to canonical (check wording): {extra[:4]}")
-    ok(f"{f}: source attribution compared for {checked} case sections")
+    expected = d["metadata"]["total_incidents"]
+    if len(sections) < expected or checked < expected:
+        fail(f"{f}: source attribution compared {checked} of {expected} incidents "
+             f"({len(sections)} case sections found); unmatched: {unmatched or 'none'} — "
+             f"fix the header or add a CASE_ALIAS entry")
+    else:
+        ok(f"{f}: source attribution compared for {checked} of {len(sections)} case sections")
 
 
 def check_exports():
@@ -286,6 +296,39 @@ def check_relative_links():
         fail("relative links to nonexistent files: " + "; ".join(sorted(set(missing))))
     else:
         ok("relative links in served pages all resolve")
+
+
+def check_publish_copies():
+    """src/data and src/docs are build-time copies of data/ and docs/ (netlify.toml). Absent is
+    fine -- the build creates them. Present means they are what a local deploy would publish, so
+    they must be exact and un-nested: `cp -r data src/data` onto an existing src/data copies INTO
+    it, leaving the stale file at the top level while the new one lands at src/data/data/."""
+    problems = []
+    for src_dir, pub_dir in (("data", "src/data"), ("docs", "src/docs")):
+        pub = os.path.join(ROOT, pub_dir)
+        if not os.path.isdir(pub):
+            continue
+        if os.path.isdir(os.path.join(pub, src_dir)):
+            problems.append(f"{pub_dir}/{src_dir}/ exists (nested copy)")
+        for base, other, label in ((os.path.join(ROOT, src_dir), pub, "missing from"),
+                                   (pub, os.path.join(ROOT, src_dir), "not in source, still in")):
+            for dirpath, _, files in os.walk(base):
+                if os.path.relpath(dirpath, base).split(os.sep)[0] == src_dir and base == pub:
+                    continue  # the nested copy is reported once above
+                for fn in files:
+                    if fn == ".DS_Store":
+                        continue
+                    rel = os.path.relpath(os.path.join(dirpath, fn), base)
+                    twin = os.path.join(other, rel)
+                    if not os.path.exists(twin):
+                        problems.append(f"{rel} {label} {pub_dir}")
+                    elif base != pub and open(os.path.join(dirpath, fn), "rb").read() != open(twin, "rb").read():
+                        problems.append(f"{pub_dir}/{rel} is stale vs {src_dir}/{rel}")
+    if problems:
+        fail("publish copies would ship stale data -- rebuild with the netlify.toml command: "
+             + "; ".join(sorted(set(problems))[:8]))
+    else:
+        ok("publish copies (src/data, src/docs) absent or exact")
 
 
 def check_links():
@@ -341,6 +384,7 @@ def main():
     check_sources(d)
     check_exports()
     check_relative_links()
+    check_publish_copies()
     if args.links:
         check_links()
 

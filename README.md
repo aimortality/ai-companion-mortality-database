@@ -92,15 +92,18 @@ ai-companion-mortality-database/
 │   ├── verification-standards.md   # Tier definitions and qualifying sources
 │   ├── sources/                    # Source tracking (court-documents.md, news-coverage.md)
 │   └── reviews/                    # Peer- and credibility-review notes
+├── build.py                        # Builds the site into dist/ (validate → render → assemble)
+├── templates/
+│   └── index.html.j2               # Main page (rendered to static HTML)
 ├── src/
-│   ├── index.html                  # Main database visualization
 │   ├── index-academic.html         # Academic-style edition
 │   ├── report.html                 # Long-form research report
 │   └── methodology.html            # Renders docs/methodology.md on-site
 ├── scripts/
 │   ├── build-data-exports.py       # Regenerates platform-analysis.csv + timeline.json
-│   ├── validate-data.js            # Data integrity + statistical-consistency checks
-│   ├── audit-surfaces.py           # Cross-surface consistency audit (surfaces vs canonical; --base <ref> for stale probes; --links)
+│   ├── validate_data.py            # Data integrity + statistical-consistency checks
+│   ├── audit-surfaces.py           # Audits the BUILT site vs canonical (--base <ref> for stale probes; --links)
+│   ├── compare_rendered.py         # Render-equivalence check between two HTML pages
 │   └── routines/                   # Weekly-triage research routine
 ├── CONTRIBUTING.md                 # How to contribute data
 └── README.md

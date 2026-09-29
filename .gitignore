@@ -24,9 +24,8 @@ dashboard.html
 register-preview.html
 register-data.js
 
-# Netlify build copies (netlify.toml build command)
-src/data/
-src/docs/
+# Build output (build.py) -- never committed; Netlify rebuilds it on every deploy
+dist/
 
 # PRIVATE working notes — this repo is PUBLIC. Triage drafts, the Tier 3 monitor,
 # and unpromoted candidates live in the private repo closestfriend/aimortality-triage (sibling

@@ -91,7 +91,7 @@ Committed directly to `main`, **before** the routine branch is created. Any numb
 ## Forbidden actions
 
 - Do not modify `data/mortality-data.json`.
-- Do not modify `src/index.html`, `src/report.html`, or `src/index-academic.html`.
+- Do not modify `templates/`, `build.py`, `src/report.html`, `src/index-academic.html`, or `src/methodology.html`. The site is built from these; `dist/` is build output and is not in the repository.
 - Do not modify `README.md`.
 - Do not modify `docs/methodology.md` or `docs/verification-standards.md`.
 - Do not modify `docs/sources/court-documents.md` or `docs/sources/news-coverage.md` — flag additions in a candidate md, let the human integrate.
@@ -119,4 +119,4 @@ If you cannot say yes to all three, downgrade the candidate to Tier 3 and append
 
 ## Version
 
-Prompt version: 1.1.2 — dropped `src/export.js` from Forbidden actions (file deleted 2026-09-29: dead, loaded by no page). 1.1.1 — host-agnostic: the run prompt names concrete hosts and CLI; this file no longer hardcodes GitHub or GitLab, so host failover (as during the Aug–Sep 2026 GitHub suspension, when both repos gained GitLab mirrors) requires only a trigger-prompt change. (1.1.0 briefly hardcoded GitLab during the suspension; 1.0.1 clarified Tier 3 commit-ordering; 1.0.0 regression: 2026-05-04 run committed Tier 3 to routine branch instead of `main`, then mis-claimed the location in the issue body.) Iterate via normal review flow against this file.
+Prompt version: 1.2.0 — site is now built by `build.py` from `templates/` into `dist/`; Forbidden actions protect the new source paths (2026-09-29). 1.1.2 — dropped `src/export.js` from Forbidden actions (file deleted 2026-09-29: dead, loaded by no page). 1.1.1 — host-agnostic: the run prompt names concrete hosts and CLI; this file no longer hardcodes GitHub or GitLab, so host failover (as during the Aug–Sep 2026 GitHub suspension, when both repos gained GitLab mirrors) requires only a trigger-prompt change. (1.1.0 briefly hardcoded GitLab during the suspension; 1.0.1 clarified Tier 3 commit-ordering; 1.0.0 regression: 2026-05-04 run committed Tier 3 to routine branch instead of `main`, then mis-claimed the location in the issue body.) Iterate via normal review flow against this file.

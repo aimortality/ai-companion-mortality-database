@@ -3,13 +3,14 @@
 
 Derives every expected value from data/mortality-data.json (never hardcoded),
 derives every STALE value from the canonical file at a git base ref, then checks
-the rendered surfaces for both. Companion to validate-data.js (which checks the
-JSON's internal invariants); this checks that the six duplicated surfaces agree
-with the JSON.
+the surfaces for both. Builds dist/ first (build.py) and checks the BUILT pages --
+what ships -- not their sources. Companion to validate_data.py (which checks the
+JSON's internal invariants); this checks that the surfaces agree with the JSON.
 
     python3 scripts/audit-surfaces.py             # base = main
     python3 scripts/audit-surfaces.py --base HEAD~1
     python3 scripts/audit-surfaces.py --links     # also test every external URL
+    python3 scripts/audit-surfaces.py --no-build  # audit the existing dist/ (the Netlify gate)
 
 Exit 0 if no FAIL. WARN never fails the run.
 """
@@ -24,10 +25,11 @@ from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CANON = "data/mortality-data.json"
+SITE = "dist"  # what ships: build.py output. The audit checks the built site, not its sources.
 SURFACES = [
-    "src/index.html",
-    "src/index-academic.html",
-    "src/report.html",
+    f"{SITE}/index.html",
+    f"{SITE}/index-academic.html",
+    f"{SITE}/report.html",
     "README.md",
     "docs/methodology.md",
 ]
@@ -115,7 +117,7 @@ def check_period(E, text, f):
         fail(f"{f}: coverage-period string(s) {sorted(bad)} ≠ time_range.end {month_long(E['period_end'])}")
     else:
         ok(f"{f}: coverage-period strings agree with time_range.end")
-    if f == "src/index.html":
+    if f == f"{SITE}/index.html":
         tc = re.search(r'"temporalCoverage":\s*"([0-9/\-]+)"', text)
         want_tc = f"{E['period_start'][:7]}/{E['period_end'][:7]}"
         if tc and tc.group(1) != want_tc:
@@ -155,28 +157,25 @@ def check_pathways(E, text, f):
         ok(f"{f}: pathway counts checked against canonical {E['relational']}/{E['cognitive']}/{E['instrumental']}")
 
 
-def check_index_charts(E, text):
-    f = "src/index.html"
-    # age buckets must sum to total fatalities, and the <desc> must quote the same counts
-    buckets = [(r, int(c)) for r, c in re.findall(r"\{ range: '([^']+)', count: (\d+)", text)]
-    if buckets:
-        total = sum(c for _, c in buckets)
-        (ok if total == E["F"] else fail)(f"{f}: age buckets {dict(buckets)} sum={total} vs fatalities {E['F']}")
-        desc = re.search(r"'age-dist-desc' \}, '([^']+)'", text)
-        if desc:
-            missing = [f"{r} ({c})" for r, c in buckets if f"({c} people)" not in desc.group(1)]
-            (ok if not missing else fail)(f"{f}: age-dist <desc> quotes bucket counts" + (f" — missing {missing}" if missing else ""))
-    # duration denominator: desc, caption, note must all agree with canonical
+def check_duration_statements(E):
+    """Any "Duration known for N of M cases" statement, on any surface, must match canonical.
+
+    The index page's charts -- age distribution, engagement duration, platform bars, timeline,
+    cumulative -- and its duration and statistics tables were removed 2026-09-29 (maintainer's
+    decision: take every visualization off the front page and reintroduce them only as generated
+    output). Their chart checks went with them. When a generated chart returns, its check returns
+    with it, reading the rendered page.
+    """
     want = f"Duration known for {E['duration_known']} of {E['I']} cases"
-    hits = set(re.findall(r"Duration known for \d+ of \d+ cases", text))
-    (ok if hits == {want} else fail)(f"{f}: duration strings {sorted(hits)} vs canonical '{want}'")
-    # platform chart data vs <desc>
-    pd = re.search(r"\{ name: 'ChatGPT', deaths: (\d+)", text)
-    desc = re.search(r"'platform-desc' \}, '([^']+)'", text)
-    if pd and desc:
-        n = int(pd.group(1))
-        (ok if n == E["platform_deaths"].get("ChatGPT") else fail)(f"{f}: platform chart ChatGPT deaths={n} vs canonical {E['platform_deaths'].get('ChatGPT')}")
-        (ok if f"ChatGPT: {n} user deaths" in desc.group(1) else fail)(f"{f}: platform <desc> agrees with chart data ({n})")
+    found = {}
+    for f in SURFACES:
+        for h in re.findall(r"Duration known for \d+ of \d+ cases", read(f)):
+            found.setdefault(h, []).append(f)
+    bad = {h: fs for h, fs in found.items() if h != want}
+    if bad:
+        fail(f"duration statement(s) disagree with canonical '{want}': {bad}")
+    else:
+        ok(f"duration statements: {sum(len(v) for v in found.values())} found, all match canonical")
 
 
 def check_stale(E, B, text, f):
@@ -218,7 +217,7 @@ def check_stale(E, B, text, f):
 
 def check_sources(d):
     """report.html 'Verification Sources' lines vs canonical sources arrays."""
-    f = "src/report.html"
+    f = f"{SITE}/report.html"
     text = read(f)
     sections = re.split(r"<h3[^>]*>CASE #\d+: ", text)[1:]
     by_name = {}
@@ -276,21 +275,19 @@ def check_exports():
 
 
 def check_relative_links():
-    """Every relative href/src in the served pages must exist in the publish tree
-    (src/ plus the data/ and docs/ copies made by the Netlify build command)."""
+    """Every relative href/src in the built pages must resolve inside the built site (dist/),
+    which contains data/ and docs/ -- so a link to a file the build did not produce fails."""
     import glob
     missing = []
-    for f in ("src/index.html", "src/report.html", "src/index-academic.html", "src/methodology.html"):
+    for f in (f"{SITE}/index.html", f"{SITE}/report.html", f"{SITE}/index-academic.html", f"{SITE}/methodology.html"):
         text = read(f)
         for u in re.findall(r"""(?:href|src)[=:]\s?["']([^"']+)["']""", text):
             u = u.split("#")[0].split("?")[0]
             if not u or u.startswith(("http", "mailto:", "tel:", "data:")) or u == "/":
                 continue
-            base = os.path.dirname(f) if not u.startswith("/") else "src"
+            base = os.path.dirname(f) if not u.startswith("/") else SITE
             path = os.path.normpath(os.path.join(ROOT, base, u.lstrip("/")))
-            # data/ and docs/ are copied into the publish dir at build time
-            alt = os.path.normpath(os.path.join(ROOT, u.lstrip("/").replace("../", "")))
-            if not (os.path.exists(path) or os.path.exists(alt)):
+            if not os.path.exists(path):
                 missing.append(f"{f} -> {u}")
     if missing:
         fail("relative links to nonexistent files: " + "; ".join(sorted(set(missing))))
@@ -299,14 +296,14 @@ def check_relative_links():
 
 
 def check_publish_copies():
-    """src/data and src/docs are build-time copies of data/ and docs/ (netlify.toml). Absent is
-    fine -- the build creates them. Present means they are what a local deploy would publish, so
-    they must be exact and un-nested: `cp -r data src/data` onto an existing src/data copies INTO
-    it, leaving the stale file at the top level while the new one lands at src/data/data/."""
+    """dist/data and dist/docs are the build's copies of data/ and docs/, and they are what
+    ships. They must exist and be exact and un-nested (`cp -r data X` onto an existing X copies
+    INTO it, leaving the stale file at the top level -- the failure this check was written for)."""
     problems = []
-    for src_dir, pub_dir in (("data", "src/data"), ("docs", "src/docs")):
+    for src_dir, pub_dir in (("data", f"{SITE}/data"), ("docs", f"{SITE}/docs")):
         pub = os.path.join(ROOT, pub_dir)
         if not os.path.isdir(pub):
+            problems.append(f"{pub_dir}/ missing from the build")
             continue
         if os.path.isdir(os.path.join(pub, src_dir)):
             problems.append(f"{pub_dir}/{src_dir}/ exists (nested copy)")
@@ -328,13 +325,13 @@ def check_publish_copies():
         fail("publish copies would ship stale data -- rebuild with the netlify.toml command: "
              + "; ".join(sorted(set(problems))[:8]))
     else:
-        ok("publish copies (src/data, src/docs) absent or exact")
+        ok(f"publish copies ({SITE}/data, {SITE}/docs) exact")
 
 
 def check_links():
     import concurrent.futures
     urls = set()
-    for f in ("src/index.html", "src/report.html", "src/index-academic.html", "README.md"):
+    for f in (f"{SITE}/index.html", f"{SITE}/report.html", f"{SITE}/index-academic.html", "README.md"):
         for u in re.findall(r"https?://[^\"'<>)\s`]+", read(f)):
             if not re.search(r"img\.shields\.io|esm\.sh|aimortality\.org|creativecommons\.org|schema\.org|googletagmanager|github\.com/aimortality|w3\.org|sitemaps\.org", u):
                 urls.add(u.rstrip(".,;"))
@@ -358,7 +355,17 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base", default="main", help="git ref whose canonical JSON supplies the STALE values (default: main)")
     ap.add_argument("--links", action="store_true", help="also test every external URL")
+    ap.add_argument("--no-build", action="store_true", help="audit the existing dist/ instead of rebuilding it first")
     args = ap.parse_args()
+
+    if not args.no_build:
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "build.py")], capture_output=True, text=True)
+        if r.returncode != 0:
+            print(r.stdout + r.stderr + "\n  FAIL  build.py failed -- nothing to audit")
+            sys.exit(1)
+    if not os.path.isdir(os.path.join(ROOT, SITE)):
+        print(f"  FAIL  {SITE}/ does not exist -- run build.py or drop --no-build")
+        sys.exit(1)
 
     d = json.loads(read(CANON))
     E = expected(d)
@@ -380,7 +387,7 @@ def main():
         check_updated(E, text, f)
         check_pathways(E, text, f)
         check_stale(E, B, text, f)
-    check_index_charts(E, read("src/index.html"))
+    check_duration_statements(E)
     check_sources(d)
     check_exports()
     check_relative_links()

@@ -7,7 +7,7 @@ description: Use before opening or merging any PR that touches data values, case
 
 ## Overview
 
-The database is cited by researchers, regulators, and journalists. Its truth is spread across five files that duplicate the same facts (`data/mortality-data.json` is canonical; `src/index.html`, `src/index-academic.html`, `src/report.html`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
+The database is cited by researchers, regulators, and journalists. Its truth is spread across five files that duplicate the same facts (`data/mortality-data.json` is canonical; `templates/index.html.j2` (built to `dist/index.html`), `src/index-academic.html`, `src/report.html`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
 
 **Core principle: evidence before claims.** Every finding cites `file:line` or fresh command output from *this* pass. If you did not run the command in this pass, you cannot say it passes.
 
@@ -16,14 +16,14 @@ The database is cited by researchers, regulators, and journalists. Its truth is 
 ## The run
 
 ```bash
-node scripts/validate-data.js                      # JSON internal invariants
+python3 scripts/validate_data.py                   # JSON internal invariants
 python3 scripts/audit-surfaces.py --base main      # five surfaces vs canonical; stale probes vs main
 python3 scripts/audit-surfaces.py --links          # add on quarterly passes or after source edits
 ```
 
 `--base` is the ref whose canonical JSON supplies the *pre-change* values (use `HEAD~1` or the pre-sweep commit when auditing a merged sweep). The script checks: headline totals; coverage-period strings (`Period: … — <Month YYYY>`, `Between March 2023 and …`, `Mar 2023–…`, the three meta descriptions, JSON-LD `temporalCoverage`, methodology's zero-deaths claim); version and last-updated strings incl. the index-academic masthead; pathway counts; `index.html` age buckets summing to fatalities, duration denominator, and every chart `<desc>` against its data; `report.html` Verification Sources against canonical `sources` (marquee outlet not in canonical = FAIL; any other unmatched outlet = WARN); stale pre-change values surviving anywhere. Exit 0 = no FAIL.
 
-Then **render it**: serve `src/` (`python3 -m http.server`), open `index.html` headless, confirm zero console errors and that stat boxes show canonical values. The script reads source; it cannot see a chart clipping its own label.
+Then **render it**: serve `dist/` (`python3 -m http.server -d dist`), open `index.html` headless, confirm zero console errors and that the page shows canonical values. The script reads the built pages' markup; it cannot see a chart clipping its own label.
 
 ## What the script cannot judge — do these by hand or by subagent
 
@@ -80,5 +80,5 @@ When invoked as `/credibility-audit --fix`, apply only unambiguous fixes after t
 ## Related
 
 - `CLAUDE.md` — "Stats to Recalculate" and the five presentation-lag classes; this skill is their enforcement.
-- `scripts/validate-data.js` — JSON invariants. `scripts/audit-surfaces.py` — surface consistency. Both must be green to ship.
+- `scripts/validate_data.py` — JSON invariants. `scripts/audit-surfaces.py` — surface consistency. Both must be green to ship.
 - Memory: `feedback_presentation_lag_patterns`, `feedback_adversarial_subagent_review`, `project_third_party_margaux_inconsistency`, `project_definition_of_incident`.

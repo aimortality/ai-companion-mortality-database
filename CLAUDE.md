@@ -29,11 +29,9 @@ Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netli
    - `.meta` line (Deaths, Incidents, Period — *not* `Cases` as an additive total; see `docs/methodology.md` "On What Counts as an Incident")
    - Abstract text and key findings list
    - Case table row (in `<div id="cases">`)
-   - Stat boxes (death count, minors count if applicable)
-   - SVG visualizations (age distribution, platform bars, cumulative chart) — and **every chart's `<desc>` accessibility text** (see "Presentation lag classes" below)
-   - Temporal distribution table (deaths by year)
-   - Demographic tables (add age row, recalculate percentages)
+   - Key Findings cards (`card-grid`) — prose that carries derived figures
    - Footer date
+   - *No charts or statistics tables on this page.* They were removed 2026-09-29 and return only as output generated from canonical, never hand-drawn. The deaths-by-year, platform, and age tables live on the academic page (Tables 1–3).
 4. Update `src/report.html` (add case section, update executive summary near top AND Summary Statistics near bottom — there are two stat blocks, both need attention; update Lawsuits section, Regulatory section, Conclusions)
 5. Update `src/index-academic.html` (abstract, key findings, stats grid, Table 1 deaths-by-year, Table 2 platform distribution, Table 3 age distribution, Table 4 case list, masthead date)
 6. Update `README.md` (badge, case table, platform comparison, key findings, last-updated)

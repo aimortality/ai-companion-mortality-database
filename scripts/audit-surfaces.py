@@ -15,7 +15,6 @@ JSON's internal invariants); this checks that the surfaces agree with the JSON.
 Exit 0 if no FAIL. WARN never fails the run.
 """
 import argparse
-import html
 import json
 import os
 import re
@@ -158,41 +157,25 @@ def check_pathways(E, text, f):
         ok(f"{f}: pathway counts checked against canonical {E['relational']}/{E['cognitive']}/{E['instrumental']}")
 
 
-def rendered_desc(text, did):
-    m = re.search(r'<desc id="' + did + r'">(.*?)</desc>', text, re.S)
-    return html.unescape(m.group(1)) if m else None
+def check_duration_statements(E):
+    """Any "Duration known for N of M cases" statement, on any surface, must match canonical.
 
-
-def check_index_charts(E, d, text):
-    """Checks the RENDERED page: what a reader and a screen reader actually get. A chart whose
-    <desc> is missing FAILS -- removing a chart must come with an edit here, so it is explicit."""
-    f = f"{SITE}/index.html"
-    # age distribution: the <desc> bucket counts must sum to total fatalities, and its minors
-    # count must equal canonical's victims_by_age_group.minors
-    desc = rendered_desc(text, "age-dist-desc")
-    if desc is None:
-        fail(f"{f}: age-dist <desc> not found")
-    else:
-        counts = [int(c) for c in re.findall(r"\((\d+) people\)", desc)]
-        (ok if counts and sum(counts) == E["F"] else fail)(
-            f"{f}: age-dist <desc> buckets {counts} sum={sum(counts)} vs fatalities {E['F']}")
-        minors = re.search(r"minors[^()]*\((\d+) people\)", desc)
-        want_minors = d["statistics"]["victims_by_age_group"]["minors"]
-        (ok if minors and int(minors.group(1)) == want_minors else fail)(
-            f"{f}: age-dist <desc> minors={minors.group(1) if minors else 'absent'} vs canonical {want_minors}")
-    # duration denominator: desc, caption, note must all agree with canonical
+    The index page's charts -- age distribution, engagement duration, platform bars, timeline,
+    cumulative -- and its duration and statistics tables were removed 2026-09-29 (maintainer's
+    decision: take every visualization off the front page and reintroduce them only as generated
+    output). Their chart checks went with them. When a generated chart returns, its check returns
+    with it, reading the rendered page.
+    """
     want = f"Duration known for {E['duration_known']} of {E['I']} cases"
-    hits = set(re.findall(r"Duration known for \d+ of \d+ cases", text))
-    (ok if hits == {want} else fail)(f"{f}: duration strings {sorted(hits)} vs canonical '{want}'")
-    # platform chart: the <desc> must state canonical's ChatGPT user deaths
-    desc = rendered_desc(text, "platform-desc")
-    want = E["platform_deaths"].get("ChatGPT")
-    if desc is None:
-        fail(f"{f}: platform <desc> not found")
+    found = {}
+    for f in SURFACES:
+        for h in re.findall(r"Duration known for \d+ of \d+ cases", read(f)):
+            found.setdefault(h, []).append(f)
+    bad = {h: fs for h, fs in found.items() if h != want}
+    if bad:
+        fail(f"duration statement(s) disagree with canonical '{want}': {bad}")
     else:
-        m = re.search(r"ChatGPT: (\d+) user deaths", desc)
-        (ok if m and int(m.group(1)) == want else fail)(
-            f"{f}: platform <desc> ChatGPT={m.group(1) if m else 'absent'} vs canonical {want}")
+        ok(f"duration statements: {sum(len(v) for v in found.values())} found, all match canonical")
 
 
 def check_stale(E, B, text, f):
@@ -404,7 +387,7 @@ def main():
         check_updated(E, text, f)
         check_pathways(E, text, f)
         check_stale(E, B, text, f)
-    check_index_charts(E, d, read(f"{SITE}/index.html"))
+    check_duration_statements(E)
     check_sources(d)
     check_exports()
     check_relative_links()

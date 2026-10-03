@@ -77,20 +77,6 @@
       padding: 60px 24px;
     }
 
-    /* Crisis Banner - Subtle but present */
-    .crisis-notice {
-      background: var(--panel);
-      border: 1px solid var(--muted-light);
-      padding: 12px 16px;
-      font-size: 13px;
-      margin-bottom: 40px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .crisis-notice a {
-      color: var(--accent);
-      font-weight: 600;
-    }
-
     /* Header */
     .journal-header {
       border-bottom: 1px solid var(--border);
@@ -397,18 +383,14 @@
   </style>
 {% endblock %}
 
-{% block body %}
-  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
-  <div class="crisis-notice">
-    If you or someone you know is in crisis, contact the <strong>988 Suicide & Crisis Lifeline</strong>: <a href="tel:988">Call or text 988</a> (available 24/7)
-  </div>
-
+{% block masthead %}
   <header class="journal-header">
     <span>AI Companion Mortality Database</span>
     <span>September 2026</span>
   </header>
-  <nav class="site-nav" aria-label="Site" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:12px;color:var(--muted);margin:-18px 0 30px;"><a href="index.html" style="color:var(--muted)">Database</a> · <a href="report.html" style="color:var(--muted)">Research Report</a> · <a href="methodology.html" style="color:var(--muted)">Methodology</a> · <a href="methodology.html?doc=verification-standards" style="color:var(--muted)">Verification Standards</a> · <a href="https://doi.org/10.5281/zenodo.22062862" style="color:var(--muted)">Dataset (Zenodo)</a> | <a href="data/README.md" style="color:var(--muted)">Data files</a></nav>
+{% endblock %}
 
+{% block body %}
   <article>
     <h1>Documented Deaths Associated with Conversational AI Systems: A Systematic Database (2023–2026)</h1>
 

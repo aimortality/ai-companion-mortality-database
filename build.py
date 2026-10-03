@@ -31,6 +31,13 @@ TEMPLATED = {
     "index-academic.html": "index-academic.html.j2",
     "methodology.html": "methodology.html.j2",
 }
+# Which nav item is current. Passed to the shared nav partial as page_key.
+PAGE_KEYS = {
+    "index.html": "index",
+    "report.html": "report",
+    "index-academic.html": "academic",
+    "methodology.html": "methodology",
+}
 IGNORE = shutil.ignore_patterns(".DS_Store")
 
 
@@ -87,7 +94,7 @@ def render(ctx):
         keep_trailing_newline=True,
     )
     for out, tpl in TEMPLATED.items():
-        html = env.get_template(tpl).render(**ctx)
+        html = env.get_template(tpl).render(**ctx, page_key=PAGE_KEYS[out])
         with open(os.path.join(DIST, out), "w", encoding="utf-8", newline="\n") as f:
             f.write(html)
 

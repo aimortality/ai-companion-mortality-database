@@ -1,0 +1,13 @@
+{% macro item(key, href, label) -%}
+<li><a href="{{ href }}"{% if page_key == key %} aria-current="page"{% endif %}>{{ label }}</a></li>
+{%- endmacro %}
+<nav aria-label="Site">
+  <ul>
+    {{ item("index", "/", "Database") }}
+    {{ item("report", "/report.html", "Research Report") }}
+    {{ item("academic", "/index-academic.html", "Academic Summary") }}
+    {{ item("methodology", "/methodology.html", "Methodology") }}
+    {{ item("standards", "/methodology.html?doc=verification-standards", "Verification Standards") }}
+    {{ item("data", "/data/README.md", "Data files") }}
+  </ul>
+</nav>

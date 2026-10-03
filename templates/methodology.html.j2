@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SS2VTGZ004"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SS2VTGZ004');
-  </script>
+{% extends "base.html.j2" %}
+{% block head %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light dark">
   <title>Methodology — AI Companion Mortality Database</title>
@@ -96,10 +86,9 @@
       .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
     }
   </style>
-  <link rel="stylesheet" href="assets/base.css">
-  <script src="assets/theme-init.js"></script>
-</head>
-<body>
+{% endblock %}
+
+{% block body %}
   <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
 
   <div class="crisis">Crisis resources available 24/7: <strong><a href="tel:988" style="color:var(--text)">Call or text 988</a></strong> (Suicide &amp; Crisis Lifeline)</div>
@@ -150,6 +139,4 @@
     }
   </script>
 
-  <script src="assets/theme.js" defer></script>
-</body>
-</html>
+{% endblock %}

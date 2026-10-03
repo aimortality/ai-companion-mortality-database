@@ -1,18 +1,7 @@
+{% extends "base.html.j2" %}
 {#- GENERATED PAGE. Source of truth: templates/index.html.j2 + data/mortality-data.json.
     Rebuild: python3 build.py. Do not hand-edit dist/index.html. -#}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SS2VTGZ004"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-SS2VTGZ004');
-  </script>
+{% block head %}
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="light dark" />
@@ -642,10 +631,9 @@
       table { display: block; overflow-x: auto; }
     }
   </style>
-  <link rel="stylesheet" href="assets/base.css">
-  <script src="assets/theme-init.js"></script>
-</head>
-<body>
+{% endblock %}
+
+{% block body %}
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
   <div class="crisis">
@@ -1032,7 +1020,4 @@
     </div>
   </main>
 
-  <script src="assets/theme.js" defer></script>
-
-</body>
-</html>
+{% endblock %}

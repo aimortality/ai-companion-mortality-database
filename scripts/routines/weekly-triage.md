@@ -91,7 +91,7 @@ Committed directly to `main`, **before** the routine branch is created. Any numb
 ## Forbidden actions
 
 - Do not modify `data/mortality-data.json`.
-- Do not modify `templates/`, `build.py`, `src/report.html`, `src/index-academic.html`, or `src/methodology.html`. The site is built from these; `dist/` is build output and is not in the repository.
+- Do not modify `templates/`, `build.py`, `templates/report.html.j2`, `templates/index-academic.html.j2`, or `templates/methodology.html.j2`. The site is built from these; `dist/` is build output and is not in the repository.
 - Do not modify `README.md`.
 - Do not modify `docs/methodology.md` or `docs/verification-standards.md`.
 - Do not modify `docs/sources/court-documents.md` or `docs/sources/news-coverage.md` — flag additions in a candidate md, let the human integrate.

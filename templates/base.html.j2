@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+{% include "partials/analytics.html" %}
+{% block head %}{% endblock %}
+  <link rel="stylesheet" href="/assets/base.css">
+  <script src="/assets/theme-init.js"></script>
+</head>
+<body>
+{% block body %}{% endblock %}
+  <script src="/assets/theme.js" defer></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

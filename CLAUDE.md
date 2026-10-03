@@ -6,7 +6,7 @@ Public research database tracking verified deaths associated with AI chatbot int
 
 ## Architecture
 
-Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netlify publishes. `build.py` validates canonical (`scripts/validate_data.py`) and refuses to build from invalid data, renders `templates/index.html.j2` to static HTML (no runtime JavaScript is needed to read the page), and copies the other pages from `src/` plus `data/` and `docs/`. **Never edit `dist/`** — it is not in git and is rebuilt on every deploy. Change the template or the data and run `python3 build.py`.
+Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netlify publishes. `build.py` validates canonical (`scripts/validate_data.py`) and refuses to build from invalid data, renders all four pages (`index`, `report`, `index-academic`, `methodology`) from `templates/*.html.j2`, each extending one `templates/base.html.j2` (shared head, analytics, theme scripts), to static HTML (no runtime JavaScript is needed to read the page), and copies `src/` (static assets only: `assets/`, favicon, robots, sitemap, redirects) plus `data/` and `docs/` through. **Never edit `dist/`** — it is not in git and is rebuilt on every deploy. Change the template or the data and run `python3 build.py`.
 
 ## Key Files & Data Flow
 
@@ -15,9 +15,9 @@ Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netli
 | File | What it contains |
 |------|-----------------|
 | `data/mortality-data.json` | **Canonical data source.** Full incident records, platform stats, regulatory info. Update this first. |
-| `templates/index.html.j2` | Main page, rendered to `dist/index.html` by `build.py`. Static HTML. Still carries hand-typed values (case rows, meta tags, prose figures) until they are derived from canonical. |
-| `src/report.html` | Research report. Individual case sections with detailed narratives, legal proceedings, and summary stats. |
-| `src/index-academic.html` | Academic-style page. Has abstract, key findings, and dates that mirror index.html. |
+| `templates/index.html.j2` | Main page, rendered to `dist/index.html` by `build.py` on `templates/base.html.j2`. Static HTML. Still carries hand-typed values (case rows, meta tags, prose figures) until they are derived from canonical. |
+| `templates/report.html.j2` | Research report. Individual case sections with detailed narratives, legal proceedings, and summary stats. |
+| `templates/index-academic.html.j2` | Academic-style page. Has abstract, key findings, and dates that mirror index.html. |
 | `README.md` | Repo-facing (GitLab: aimortality/ai-companion-mortality-database; also uploaded to Zenodo). Has badges, case table, platform comparison, key findings. |
 
 ## Adding a New Case - Checklist
@@ -31,8 +31,8 @@ Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netli
    - Case table row (in `<div id="cases">`)
    - Key Findings cards (`card-grid`) — prose that carries derived figures
    - *No charts or statistics tables on this page.* They were removed 2026-09-29 and return only as output generated from canonical, never hand-drawn. The deaths-by-year, platform, and age tables live on the academic page (Tables 1–3).
-4. Update `src/report.html` (add case section, update executive summary near top AND Summary Statistics near bottom — there are two stat blocks, both need attention; update Lawsuits section, Regulatory section, Conclusions)
-5. Update `src/index-academic.html` (abstract, key findings, stats grid, Table 1 deaths-by-year, Table 2 platform distribution, Table 3 age distribution, Table 4 case list, masthead date)
+4. Update `templates/report.html.j2` (add case section, update executive summary near top AND Summary Statistics near bottom — there are two stat blocks, both need attention; update Lawsuits section, Regulatory section, Conclusions)
+5. Update `templates/index-academic.html.j2` (abstract, key findings, stats grid, Table 1 deaths-by-year, Table 2 platform distribution, Table 3 age distribution, Table 4 case list, masthead date)
 6. Update `README.md` (badge, case table, platform comparison, key findings, last-updated)
 7. Regenerate the derived exports: `python3 scripts/build-data-exports.py` (`data/platform-analysis.csv`, `data/timeline.json`). They are a sixth surface; the audit fails if they drift from canonical. Missed after v3.5.1/3.5.2 and shipped stale to Zenodo.
 8. Run the audit grep (see "Verification grep" below) before declaring done.
@@ -41,7 +41,7 @@ Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netli
 
 Every released version is archived on Zenodo under concept DOI `10.5281/zenodo.22062862` (always resolves to the latest version). The README badge uses the concept DOI; citation strings use the *version* DOI.
 
-1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Set every `<lastmod>` in `src/sitemap.xml` to `metadata.last_updated` (hand-typed, and no audit check covers it; missed in v3.5.9 until review). Regenerate exports. Audit green. Merge.
+1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `templates/index-academic.html.j2` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Set every `<lastmod>` in `src/sitemap.xml` to `metadata.last_updated` (hand-typed, and no audit check covers it; missed in v3.5.9 until review). Regenerate exports. Audit green. Merge.
 2. Zenodo → the latest record → **New version** (or API: `POST /api/deposit/depositions/{id}/actions/newversion` with `$ZENODO_TOKEN`), upload the files from the merged `main` (`data/mortality-data.json`, `data/incidents.csv`, `data/platform-analysis.csv`, `data/timeline.json`, `data/LICENSE`, `docs/methodology.md`, `docs/verification-standards.md`, `README.md`, `LICENSE`), set `version` and `license: cc-by-4.0` (data license; code is MIT in-repo), publish.
 3. Put the new version DOI into the three citation strings (academic footer, methodology, README, data/README) in a follow-up PR. The concept-DOI badge needs no change.
 
@@ -66,7 +66,7 @@ Five classes of locations have caused presentation-vs-data drift in prior sweeps
 
 1. **Same-page duplicate stats in different rhetorical positions.** A single HTML page may carry the same statistic in the Key Findings bullets, the abstract, a card-meta tooltip, the schema.org JSON-LD, and the meta description tags. Updating one and missing the others creates *internal* inconsistency on a single page. Past misses: pathway counts split between two rhetorical sections of the index page.
 2. **SVG `<desc>` accessibility text.** Each chart has both visible labels and a `<desc>` element that screen readers announce. They are independent strings. Past misses: the index page's engagement-duration desc and platform-deaths desc carrying outdated totals.
-3. **Decorative header dates that are not `last_updated`.** Pages can carry "as of [date]" text in cosmetic header banners that is technically separate from the `last_updated` metadata. Past misses: `src/index-academic.html` `<header class="journal-header">` masthead date.
+3. **Decorative header dates that are not `last_updated`.** Pages can carry "as of [date]" text in cosmetic header banners that is technically separate from the `last_updated` metadata. Past misses: `templates/index-academic.html.j2` `<header class="journal-header">` masthead date.
 4. **Derived subtotals that were CORRECT before the sweep but go stale after.** This is the subtle one. When a top-line total changes, *derived* subtotals (a platform's own total like "ChatGPT: 23 fatalities", a "general-purpose assistants accounted for 26 fatalities" prose sentence, a code comment carrying the prior figure, an SVG `<desc>` reciting the prior platform total) silently become wrong. Grepping only for the headline old value misses these because the stale token is a *different* number that nobody thinks to search for. Before declaring done, enumerate every per-platform and per-category subtotal that the changed total feeds into, and search each old value.
 5. **Mid-paragraph prose.** The worst misses hide in flowing sentences ("...accounted for 26 fatalities...") that no stat-box-focused check looks at. `docs/methodology.md` paragraph-7 numbers, the `index-academic.html` Platform Distribution intro, and the long-form `report.html` Conclusions block are particularly exposed.
 
@@ -81,7 +81,7 @@ python3 scripts/audit-surfaces.py --base main    # builds dist/, then checks the
 
 Then the manual grep below for anything the script cannot classify (prose subtotals, code comments), and the `/credibility-audit` skill for the judgment calls (source integrity via independent subagent, allegation framing, dated snapshots).
 
-Grep all five canonical files (`data/mortality-data.json`, `templates/index.html.j2`, `src/index-academic.html`, `src/report.html`, `README.md`), plus `docs/methodology.md` (which carries headline numbers in prose) and the project CLAUDE.md, for *every* pre-change value: headline totals, per-platform subtotals, derived percentages, period-end dates, and the version string.
+Grep all five canonical files (`data/mortality-data.json`, `templates/index.html.j2`, `templates/index-academic.html.j2`, `templates/report.html.j2`, `README.md`), plus `docs/methodology.md` (which carries headline numbers in prose) and the project CLAUDE.md, for *every* pre-change value: headline totals, per-platform subtotals, derived percentages, period-end dates, and the version string.
 
 - Use **case-insensitive** matching (`grep -ri`). A capital-I "Incidents" header has previously evaded a case-sensitive pass.
 - Check `<desc id="...-desc">` elements explicitly.

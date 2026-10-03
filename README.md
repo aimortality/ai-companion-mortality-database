@@ -95,11 +95,17 @@ ai-companion-mortality-database/
 │   └── reviews/                    # Peer- and credibility-review notes
 ├── build.py                        # Builds the site into dist/ (validate → render → assemble)
 ├── templates/
-│   └── index.html.j2               # Main page (rendered to static HTML)
+│   ├── base.html.j2                # Shared page skeleton every page extends
+│   ├── partials/                   # Shared fragments (analytics)
+│   ├── index.html.j2               # Main page
+│   ├── report.html.j2              # Long-form research report
+│   ├── index-academic.html.j2      # Academic-style edition
+│   └── methodology.html.j2         # Renders docs/methodology.md on-site
 ├── src/
-│   ├── index-academic.html         # Academic-style edition
-│   ├── report.html                 # Long-form research report
-│   └── methodology.html            # Renders docs/methodology.md on-site
+│   └── assets/                     # Shared CSS and JS; static files (favicon, robots.txt, sitemap.xml) sit beside it
+├── tests/
+│   ├── test_*.py                   # pytest: audit and build checks
+│   └── e2e/                        # Playwright browser tests
 ├── scripts/
 │   ├── build-data-exports.py       # Regenerates platform-analysis.csv + timeline.json
 │   ├── validate_data.py            # Data integrity + statistical-consistency checks

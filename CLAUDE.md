@@ -41,7 +41,7 @@ Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netli
 
 Every released version is archived on Zenodo under concept DOI `10.5281/zenodo.22062862` (always resolves to the latest version). The README badge uses the concept DOI; citation strings use the *version* DOI.
 
-1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Regenerate exports. Audit green. Merge.
+1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Set every `<lastmod>` in `src/sitemap.xml` to `metadata.last_updated` (hand-typed, and no audit check covers it; missed in v3.5.9 until review). Regenerate exports. Audit green. Merge.
 2. Zenodo → the latest record → **New version** (or API: `POST /api/deposit/depositions/{id}/actions/newversion` with `$ZENODO_TOKEN`), upload the files from the merged `main` (`data/mortality-data.json`, `data/incidents.csv`, `data/platform-analysis.csv`, `data/timeline.json`, `data/LICENSE`, `docs/methodology.md`, `docs/verification-standards.md`, `README.md`, `LICENSE`), set `version` and `license: cc-by-4.0` (data license; code is MIT in-repo), publish.
 3. Put the new version DOI into the three citation strings (academic footer, methodology, README, data/README) in a follow-up PR. The concept-DOI badge needs no change.
 

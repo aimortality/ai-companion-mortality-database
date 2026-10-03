@@ -11,6 +11,7 @@
     gtag('config', 'G-SS2VTGZ004');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>AI Companion Mortality Database: A Systematic Documentation of Deaths Associated with Conversational AI Systems</title>
   <meta name="description" content="Academic summary of the AI Companion Mortality Database: 35 documented deaths across 24 incidents (March 2023 - September 2026), verification methodology, and tabulated case data. Version 3.5.9, DOI 10.5281/zenodo.22428187." />
   <link rel="icon" type="image/jpeg" href="/favicon.jpg">
@@ -404,9 +405,11 @@
       table { display: block; overflow-x: auto; }
     }
   </style>
+  <link rel="stylesheet" href="assets/base.css">
+  <script src="assets/theme-init.js"></script>
 </head>
 <body>
-  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Theme: Light</button>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
   <div class="crisis-notice">
     If you or someone you know is in crisis, contact the <strong>988 Suicide & Crisis Lifeline</strong>: <a href="tel:988">Call or text 988</a> (available 24/7)
   </div>
@@ -948,45 +951,6 @@
     </footer>
   </article>
 
-  <script>
-    (function() {
-      const storageKey = 'theme';
-      const root = document.documentElement;
-      const toggle = document.getElementById('theme-toggle');
-      const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-
-      const systemTheme = () => (media && media.matches ? 'dark' : 'light');
-      const storedTheme = () => {
-        const value = localStorage.getItem(storageKey);
-        return value === 'dark' || value === 'light' ? value : null;
-      };
-      const currentTheme = () => root.dataset.theme || systemTheme();
-      const setButton = (theme) => {
-        toggle.textContent = `Theme: ${theme === 'dark' ? 'Dark' : 'Light'}`;
-        toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-      };
-
-      const stored = storedTheme();
-      if (stored) {
-        root.dataset.theme = stored;
-      }
-      setButton(currentTheme());
-
-      toggle.addEventListener('click', () => {
-        const next = currentTheme() === 'dark' ? 'light' : 'dark';
-        root.dataset.theme = next;
-        localStorage.setItem(storageKey, next);
-        setButton(next);
-      });
-
-      if (media) {
-        media.addEventListener('change', (event) => {
-          if (!storedTheme()) {
-            setButton(event.matches ? 'dark' : 'light');
-          }
-        });
-      }
-    })();
-  </script>
+  <script src="assets/theme.js" defer></script>
 </body>
 </html>

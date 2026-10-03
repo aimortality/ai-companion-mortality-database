@@ -11,6 +11,7 @@
     gtag('config', 'G-SS2VTGZ004');
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
   <title>Methodology — AI Companion Mortality Database</title>
   <meta name="description" content="Methodology and verification standards for the AI Companion Mortality Database: scope, incident definition, causal pathways, evidence tiers, ethical commitments, and limitations.">
   <link rel="icon" type="image/jpeg" href="/favicon.jpg">
@@ -95,9 +96,11 @@
       .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
     }
   </style>
+  <link rel="stylesheet" href="assets/base.css">
+  <script src="assets/theme-init.js"></script>
 </head>
 <body>
-  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Theme: Light</button>
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
 
   <div class="crisis">Crisis resources available 24/7: <strong><a href="tel:988" style="color:var(--text)">Call or text 988</a></strong> (Suicide &amp; Crisis Lifeline)</div>
 
@@ -147,38 +150,6 @@
     }
   </script>
 
-  <script>
-    (function () {
-      const storageKey = 'theme';
-      const root = document.documentElement;
-      const toggle = document.getElementById('theme-toggle');
-      const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
-      const systemTheme = () => (media && media.matches ? 'dark' : 'light');
-      const storedTheme = () => {
-        let value = null;
-        try { value = localStorage.getItem(storageKey); } catch (e) {}
-        return value === 'dark' || value === 'light' ? value : null;
-      };
-      const currentTheme = () => root.dataset.theme || systemTheme();
-      const setButton = (theme) => {
-        toggle.textContent = 'Theme: ' + (theme === 'dark' ? 'Dark' : 'Light');
-        toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-      };
-      const stored = storedTheme();
-      if (stored) root.dataset.theme = stored;
-      setButton(currentTheme());
-      toggle.addEventListener('click', () => {
-        const next = currentTheme() === 'dark' ? 'light' : 'dark';
-        root.dataset.theme = next;
-        try { localStorage.setItem(storageKey, next); } catch (e) {}
-        setButton(next);
-      });
-      if (media) {
-        media.addEventListener('change', (event) => {
-          if (!storedTheme()) setButton(event.matches ? 'dark' : 'light');
-        });
-      }
-    })();
-  </script>
+  <script src="assets/theme.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,6 @@
+/* Cross-page rules shared by every page. Uses currentColor / neutral values only: page palettes
+   still live in each page's own <style> until the identity decision (Track 3). */
+:root { color-scheme: light dark; }
+:root[data-theme="light"] { color-scheme: light; }
+:root[data-theme="dark"] { color-scheme: dark; }
+.theme-toggle[aria-pressed="true"] { outline: 1px solid currentColor; outline-offset: 2px; }

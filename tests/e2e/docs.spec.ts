@@ -1,4 +1,5 @@
 import { test, expect } from './fixtures';
+import { hrefBoth, linkTo } from './pages';
 
 // The two documents are rendered to static HTML at build time, so they must read without JavaScript.
 const DOCS: [string, string, string][] = [
@@ -34,15 +35,15 @@ for (const [path] of DOCS) {
     await expect(page.locator(target)).toBeInViewport();
     const sw = page.locator('nav[aria-label="Document"] a');
     await expect(sw).toHaveText(['Methodology', 'Verification Standards']);
-    await expect(sw.nth(0)).toHaveAttribute('href', '/methodology.html');
-    await expect(sw.nth(1)).toHaveAttribute('href', '/verification-standards.html');
-    await expect(page.locator('nav[aria-label="Document"] [aria-current="page"]')).toHaveAttribute('href', path);
+    await expect(sw.nth(0)).toHaveAttribute('href', hrefBoth('/methodology.html'));
+    await expect(sw.nth(1)).toHaveAttribute('href', hrefBoth('/verification-standards.html'));
+    await expect(page.locator('nav[aria-label="Document"] [aria-current="page"]')).toHaveAttribute('href', hrefBoth(path));
   });
 }
 
 test('the two documents link to each other and to the repository, never to a raw markdown path', async ({ page }) => {
   await page.goto('/verification-standards.html');
-  await expect(page.locator('main a[href="/methodology.html"]')).toHaveCount(1);
+  await expect(page.locator('main').locator(linkTo('/methodology.html'))).toHaveCount(1);
   await page.goto('/methodology.html');
   await expect(page.locator('main a[href^="https://gitlab.com/aimortality/ai-companion-mortality-database/-/blob/main/CONTRIBUTING.md"]')).toHaveCount(1);
   await expect(page.locator('main a[href$=".md"][href^="../"], main a[href="methodology.md"], main a[href="verification-standards.md"]')).toHaveCount(0);

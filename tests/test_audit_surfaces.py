@@ -147,3 +147,17 @@ def test_check_period_matches_the_lowercase_between_form():
     audit.fails.clear()
     audit.check_period(E, "linked to chatbot interactions between March 2023 and September 2026.", "dist/report.html")
     assert audit.fails == []
+
+
+def test_built_methodology_page_is_a_headline_surface_and_gets_the_through_clause():
+    assert "dist/methodology.html" in audit.HEADLINE_SURFACES
+    E = {"period_end": "2026-09-28", "period_start": "2023-03-01"}
+    audit.fails.clear()
+    audit.check_period(E, "We claim only that, through May 2024, no deaths meeting our standards", "dist/methodology.html")
+    assert any("May 2024" in f for f in audit.fails), audit.fails
+    audit.fails.clear()
+    audit.check_period(E, "We claim only that, through September 2026, no deaths meeting our standards", "dist/methodology.html")
+    assert audit.fails == []
+    audit.fails.clear()    # the clause stays scoped: other pages may say "through <month>, no deaths" of something else
+    audit.check_period(E, "through May 2024, no deaths", "dist/report.html")
+    assert audit.fails == []

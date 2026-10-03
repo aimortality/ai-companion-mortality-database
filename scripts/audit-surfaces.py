@@ -34,7 +34,10 @@ SITE = "dist"  # what ships: build.py output. The audit checks the built site, n
 EXEMPT_PAGES = {"google59ac8b7ece0bfc3a.html": "Search Console verification stub"}
 MARKDOWN_SURFACES = ["README.md", "data/README.md", "docs/methodology.md", "docs/verification-standards.md"]
 HEADLINE_SURFACES = {f"{SITE}/index.html", f"{SITE}/index-academic.html", f"{SITE}/report.html",
-                     "README.md", "docs/methodology.md"}
+                     f"{SITE}/methodology.html", "README.md", "docs/methodology.md"}
+# The methodology document's zero-deaths sentence ("through <Month YYYY>, no deaths ...") is also a
+# coverage statement; both the Markdown source and the page rendered from it are held to it.
+THROUGH_SURFACES = {"docs/methodology.md", f"{SITE}/methodology.html"}
 
 
 def site_pages(root=None):
@@ -134,7 +137,7 @@ def check_headline(E, text, f):
 def check_period(E, text, f):
     want = {month_long(E["period_end"]), month_short(E["period_end"])}
     bad = {m.group(2) for m in PERIOD_RE.finditer(text) if m.group(2) not in want}
-    if f == "docs/methodology.md":  # the zero-deaths claim is also a coverage statement
+    if f in THROUGH_SURFACES:  # the zero-deaths claim is also a coverage statement
         bad |= {m.group(2) for m in PERIOD_THROUGH_RE.finditer(text) if m.group(2) not in want}
     if bad:
         fail(f"{f}: coverage-period string(s) {sorted(bad)} ≠ time_range.end {month_long(E['period_end'])}")
@@ -482,7 +485,7 @@ def check_links():
     urls = set()
     for f in site_pages() + MARKDOWN_SURFACES:
         for u in re.findall(r"https?://[^\"'<>)\s`]+", read(f)):
-            if not re.search(r"img\.shields\.io|esm\.sh|aimortality\.org|creativecommons\.org|schema\.org|googletagmanager|github\.com/aimortality|w3\.org|sitemaps\.org", u):
+            if not re.search(r"img\.shields\.io|aimortality\.org|creativecommons\.org|schema\.org|googletagmanager|github\.com/aimortality|w3\.org|sitemaps\.org", u):
                 urls.add(u.rstrip(".,;"))
     def probe(u):
         ua = ["-A", "Mozilla/5.0 (link-checker)"]

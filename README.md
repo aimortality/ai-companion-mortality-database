@@ -102,7 +102,7 @@ ai-companion-mortality-database/
 │   ├── index-academic.html.j2      # Academic-style edition
 │   └── methodology.html.j2         # Renders docs/methodology.md on-site
 ├── src/
-│   └── assets/                     # Shared CSS and JS; static files (favicon, robots.txt, sitemap.xml) sit beside it
+│   └── assets/                     # Shared CSS and JS; static files (favicon, robots.txt) sit beside it
 ├── tests/
 │   ├── test_*.py                   # pytest: audit and build checks
 │   └── e2e/                        # Playwright browser tests

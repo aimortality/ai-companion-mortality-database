@@ -24,8 +24,13 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
 CANON = os.path.join(ROOT, "data", "mortality-data.json")
 
-# Pages rendered from templates/. Everything else under src/ is copied through unchanged.
-TEMPLATED = {"index.html": "index.html.j2"}
+# Pages rendered from templates/, all extending base.html.j2. Everything else under src/ is copied through unchanged.
+TEMPLATED = {
+    "index.html": "index.html.j2",
+    "report.html": "report.html.j2",
+    "index-academic.html": "index-academic.html.j2",
+    "methodology.html": "methodology.html.j2",
+}
 IGNORE = shutil.ignore_patterns(".DS_Store")
 
 

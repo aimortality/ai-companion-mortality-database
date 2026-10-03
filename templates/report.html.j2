@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SS2VTGZ004"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-SS2VTGZ004');
-    </script>
+{% extends "base.html.j2" %}
+{% block head %}
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="light dark">
@@ -253,10 +242,9 @@
             table { display: block; overflow-x: auto; }
         }
     </style>
-    <link rel="stylesheet" href="assets/base.css">
-    <script src="assets/theme-init.js"></script>
-</head>
-<body>
+{% endblock %}
+
+{% block body %}
     <div class="container">
         <div class="crisis" style="background: var(--inverse-bg); color: var(--inverse-text); padding: 8px; margin: 0 0 18px 0; font-size: 13px; text-align: center;">
             Crisis resources available 24/7: <a href="tel:988" style="color: var(--inverse-text);">Call or text 988</a> (Suicide &amp; Crisis Lifeline)
@@ -2120,6 +2108,4 @@
         </div>
     </div>
 
-    <script src="assets/theme.js" defer></script>
-</body>
-</html>
+{% endblock %}

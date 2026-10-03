@@ -7,7 +7,7 @@ description: Use before opening or merging any PR that touches data values, case
 
 ## Overview
 
-The database is cited by researchers, regulators, and journalists. Its truth is spread across five files that duplicate the same facts (`data/mortality-data.json` is canonical; `templates/index.html.j2` (built to `dist/index.html`), `src/index-academic.html`, `src/report.html`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
+The database is cited by researchers, regulators, and journalists. Its truth is spread across five files that duplicate the same facts (`data/mortality-data.json` is canonical; `templates/index.html.j2` (built to `dist/index.html`), `templates/index-academic.html.j2`, `templates/report.html.j2`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
 
 **Core principle: evidence before claims.** Every finding cites `file:line` or fresh command output from *this* pass. If you did not run the command in this pass, you cannot say it passes.
 

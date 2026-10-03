@@ -11,6 +11,8 @@
   background: #111; color: #fff;
   padding: 8px 12px; margin: 0 0 20px;
   font-size: 13px; line-height: 1.5; text-align: center;
+  /* Text runs and the link become flex items, so a narrow screen breaks between phrases, not inside them. */
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 0.5em;
 }
 .crisis-bar a {
   color: inherit; font-weight: bold; text-decoration: underline;
@@ -27,9 +29,8 @@
 
 /* Site nav: one flat list. The current page is marked by a 2px rule, never colour alone. */
 nav[aria-label="Site"] { font-size: 12px; margin: 0 0 24px; }
-nav[aria-label="Site"] ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; }
+nav[aria-label="Site"] ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
 nav[aria-label="Site"] li { margin: 0; padding: 0; }
-nav[aria-label="Site"] li + li { border-left: 1px solid currentColor; margin-left: 10px; padding-left: 10px; }
 nav[aria-label="Site"] a { color: inherit; text-decoration: underline; display: inline-block; padding: 4px 0 2px; border-top: 2px solid transparent; }
 nav[aria-label="Site"] a[aria-current="page"] { border-top: 2px solid currentColor; font-weight: bold; }
 

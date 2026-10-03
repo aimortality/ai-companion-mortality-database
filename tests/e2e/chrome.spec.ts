@@ -18,7 +18,10 @@ for (const path of PAGES) {
     await expect(links).toHaveText(NAV);
     await expect(page.locator('nav[aria-label="Site"] [aria-current="page"]')).toHaveText(CURRENT[path]);
     await expect(page.locator('.register-line')).toContainText('Period: March 2023 —');
-    await expect(page.locator('footer a[href="mailto:contact@aimortality.org"]').first()).toBeVisible();
+    const footer = page.locator('footer.site-footer');
+    await expect(footer.locator('a[href="mailto:contact@aimortality.org"]')).toBeVisible();
+    await expect(footer.locator('a[href="tel:988"]')).toBeVisible();
+    await expect(footer.locator('a[href="https://doi.org/10.5281/zenodo.22062862"]')).toBeVisible();
   });
 }
 

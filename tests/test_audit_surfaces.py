@@ -34,3 +34,13 @@ def test_headline_presence_only_required_on_headline_surfaces():
          "updated": "2026-09-29", "relational": 12, "cognitive": 7, "instrumental": 5}
     audit.audit_surface(E, None, "dist/cases/x.html", "<p>no totals here</p>")
     assert audit.fails == []
+
+
+def test_check_updated_flags_last_updated_but_not_a_documents_own_revision_label():
+    E = {"updated": "2026-09-29"}
+    audit.fails.clear()
+    audit.check_updated(E, "*Last updated: May 30, 2026*", "docs/x.md")
+    assert any("May 30, 2026" in f for f in audit.fails)
+    audit.fails.clear()
+    audit.check_updated(E, "*Standards last revised: May 30, 2026*", "docs/x.md")
+    assert audit.fails == []

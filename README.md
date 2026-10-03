@@ -182,7 +182,7 @@ Source repository: [gitlab.com/aimortality/ai-companion-mortality-database](http
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
 Associated with Conversational AI Systems (2023–2026). Version 3.5.9.
-Zenodo. https://doi.org/10.5281/zenodo.22428187
+Zenodo. https://doi.org/10.5281/zenodo.23115481
 ```
 
 Maintained by Hunter Karman (independent researcher, Los Angeles; ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035)). Correspondence: contact@aimortality.org.

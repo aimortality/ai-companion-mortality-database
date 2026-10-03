@@ -23,19 +23,6 @@
   to = "/data/README.md"
   status = 301
 
-# Redirect all ai-death.com traffic to aimortality.org
-[[redirects]]
-  from = "https://ai-death.com/*"
-  to = "https://aimortality.org/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.ai-death.com/*"
-  to = "https://aimortality.org/:splat"
-  status = 301
-  force = true
-
 # Redirect all chatbotdeaths.org traffic to aimortality.org
 [[redirects]]
   from = "https://chatbotdeaths.org/*"
@@ -56,11 +43,22 @@
   status = 301
   force = true
 
+# Redirects live here only. src/_redirects (processed BEFORE this file) duplicated the rules
+# above and silently shadowed them; it was removed so there is one source of truth.
+
+# URL contract. Netlify's Pretty URLs serve /page for page.html and rewrite internal "page.html"
+# links to "/page" at deploy, so dist/ links say page.html while the live site says /page; both
+# forms return 200. It was on via the dashboard; set here so the repo is the source of truth.
+# New pages: emit name.html, link name.html. Canonical URLs are extensionless.
+[build.processing.html]
+  pretty_urls = true
+
 # Headers for security
 [[headers]]
   for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
-    X-XSS-Protection = "1; mode=block"
+    # Deprecated; the legacy XSS auditor it enabled could itself leak data. 0 = off (OWASP guidance).
+    X-XSS-Protection = "0"
     Referrer-Policy = "strict-origin-when-cross-origin"

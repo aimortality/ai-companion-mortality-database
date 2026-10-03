@@ -95,7 +95,7 @@ def load_base(ref):
 
 # ── checks ────────────────────────────────────────────────────────────────
 PERIOD_RE = re.compile(
-    r"(Between March 2023 and|Mar 2023\s?[–\-]\s?|Period: March 2023 —|March 2023 to)\s?([A-Z][a-z]+ \d{4})")
+    r"(Between March 2023 and|Mar 2023\s?[–\-]\s?|March 2023\s?[–—\-]\s?|Period: March 2023 —|March 2023 to)\s?([A-Z][a-z]+ \d{4})")
 PERIOD_THROUGH_RE = re.compile(r"(through)\s?([A-Z][a-z]+ \d{4}), no deaths")
 VERSION_RE = re.compile(r"\b[Vv]ersion:?\s?v?(\d+\.\d+(?:\.\d+)?)\b|·\s?v(\d+\.\d+\.\d+)\b|(?<!taxonomy_)version:\s?\"(\d+\.\d+\.\d+)\"")
 UPDATED_RE = re.compile(r"(?:last updated|data current as of|database last updated):?\*{0,2}:?\s*([A-Z][a-z]+ \d{1,2}, \d{4})", re.I)
@@ -132,6 +132,18 @@ def check_version(E, text, f):
         fail(f"{f}: version string(s) {sorted(stale)} ≠ canonical {E['version']}")
     elif found:
         ok(f"{f}: version {E['version']}")
+
+
+def check_masthead(E, text, f):
+    """The academic page's journal-header issue month tracks the coverage period end. The skill
+    listed this as caught by the version/updated checks; it was not (neither regex matches it)."""
+    m = re.search(r'<header class="journal-header">.*?<span>([A-Z][a-z]+ \d{4})</span>\s*</header>', text, re.S)
+    if m is None:
+        fail(f"{f}: journal-header masthead month not found")
+    elif m.group(1) != month_long(E["period_end"]):
+        fail(f"{f}: masthead '{m.group(1)}' ≠ coverage end {month_long(E['period_end'])}")
+    else:
+        ok(f"{f}: masthead {m.group(1)}")
 
 
 def check_updated(E, text, f):
@@ -207,8 +219,15 @@ def check_stale(E, B, text, f):
     hits = []
     for p in probes:
         for ln, line in enumerate(text.splitlines(), 1):
-            if p in line and not re.search(r"v3\.\d\.0\)|corrected|raised from|prior count|added in v|promoted |first captured ", line):
-                hits.append(f"  L{ln}: '{p}' → {line.strip()[:110]}")
+            if p not in line or re.search(r"v3\.\d\.0\)|corrected|raised from|prior count|added in v|promoted |first captured ", line):
+                continue
+            # A dated status snapshot ("no ruling located as of September 5, 2026") is history, not a stale
+            # value. It shares the release date by construction, because a release checks dockets that day.
+            # "Data current as of" is a last-updated form and is still checked.
+            if all(re.search(r"(?<!data current )\bas of\s*$", line[:i], re.I)
+                   for i in [m.start() for m in re.finditer(re.escape(p), line)]):
+                continue
+            hits.append(f"  L{ln}: '{p}' → {line.strip()[:110]}")
     if hits:
         fail(f"{f}: stale pre-change value(s) survive:\n" + "\n".join(hits))
     else:
@@ -387,6 +406,8 @@ def main():
         check_updated(E, text, f)
         check_pathways(E, text, f)
         check_stale(E, B, text, f)
+        if f.endswith("index-academic.html"):
+            check_masthead(E, text, f)
     check_duration_statements(E)
     check_sources(d)
     check_exports()

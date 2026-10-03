@@ -25,12 +25,11 @@ Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netli
 1. **Verify the case** through court documents, multiple news sources, or government acknowledgment before adding. For non-English-jurisdiction cases, run a primary-language source sweep and apply the **jurisdictional-verification-limited** Tier 2 sub-label where appropriate. See `docs/verification-standards.md`.
 2. Update `data/mortality-data.json` (add incident record, update metadata counts, update relevant platform record including `third_party_fatalities` where applicable, update `statistics.instrumental_pathway_casualties` if instrumental)
 3. Update `templates/index.html.j2`:
-   - Meta tags (description, OG, Twitter, schema.org JSON-LD — both the `variableMeasured` values AND the description strings)
-   - `.meta` line (Deaths, Incidents, Period — *not* `Cases` as an additive total; see `docs/methodology.md` "On What Counts as an Incident")
+   - **Derived — do not hand-edit:** the `.meta` register line (last updated, Deaths, Incidents, Period), the coverage period in the three meta descriptions, the abstract's "Between … and …", the key-findings period, JSON-LD `temporalCoverage` and `dateModified`, and the footer's "Database last updated". `build.py` renders them from canonical `metadata`.
+   - Still hand-typed: the JSON-LD `variableMeasured` values and the counts inside the meta descriptions and prose (*not* `Cases` as an additive total; see `docs/methodology.md` "On What Counts as an Incident")
    - Abstract text and key findings list
    - Case table row (in `<div id="cases">`)
    - Key Findings cards (`card-grid`) — prose that carries derived figures
-   - Footer date
    - *No charts or statistics tables on this page.* They were removed 2026-09-29 and return only as output generated from canonical, never hand-drawn. The deaths-by-year, platform, and age tables live on the academic page (Tables 1–3).
 4. Update `src/report.html` (add case section, update executive summary near top AND Summary Statistics near bottom — there are two stat blocks, both need attention; update Lawsuits section, Regulatory section, Conclusions)
 5. Update `src/index-academic.html` (abstract, key findings, stats grid, Table 1 deaths-by-year, Table 2 platform distribution, Table 3 age distribution, Table 4 case list, masthead date)
@@ -42,7 +41,7 @@ Static site built by `build.py` (Python 3.12 + Jinja2) into `dist/`, which Netli
 
 Every released version is archived on Zenodo under concept DOI `10.5281/zenodo.22062862` (always resolves to the latest version). The README badge uses the concept DOI; citation strings use the *version* DOI.
 
-1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Regenerate exports. Audit green. Merge.
+1. Bump the version in all five places: `data/mortality-data.json` `metadata.version`, `src/index-academic.html` (masthead + footer citation), `README.md` (sub line + citation), `docs/methodology.md` citation, `data/README.md` citation. Set every `<lastmod>` in `src/sitemap.xml` to `metadata.last_updated` (hand-typed, and no audit check covers it; missed in v3.5.9 until review). Regenerate exports. Audit green. Merge.
 2. Zenodo → the latest record → **New version** (or API: `POST /api/deposit/depositions/{id}/actions/newversion` with `$ZENODO_TOKEN`), upload the files from the merged `main` (`data/mortality-data.json`, `data/incidents.csv`, `data/platform-analysis.csv`, `data/timeline.json`, `data/LICENSE`, `docs/methodology.md`, `docs/verification-standards.md`, `README.md`, `LICENSE`), set `version` and `license: cc-by-4.0` (data license; code is MIT in-repo), publish.
 3. Put the new version DOI into the three citation strings (academic footer, methodology, README, data/README) in a follow-up PR. The concept-DOI badge needs no change.
 

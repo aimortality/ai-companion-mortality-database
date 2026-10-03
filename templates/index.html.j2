@@ -18,21 +18,21 @@
 
   <!-- PRIMARY META TAGS -->
   <title>AI Companion Mortality Database</title>
-  <meta name="description" content="Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. 35 fatalities (18 AI users + 17 third-party victims) across 24 incidents from March 2023 to August 2026." />
+  <meta name="description" content="Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. 35 fatalities (18 AI users + 17 third-party victims) across 24 incidents from {{ period_start_long }} to {{ period_end_long }}." />
   <meta name="keywords" content="AI safety, chatbot deaths, AI companion risks, mental health, suicide prevention, artificial intelligence, platform safety, Character.AI, ChatGPT, AI mortality" />
 
   <!-- OPEN GRAPH / FACEBOOK -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aimortality.org/" />
   <meta property="og:title" content="AI Companion Mortality Database" />
-  <meta property="og:description" content="Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. 35 fatalities (18 AI users + 17 third-party victims) across 24 incidents from March 2023 to August 2026." />
+  <meta property="og:description" content="Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. 35 fatalities (18 AI users + 17 third-party victims) across 24 incidents from {{ period_start_long }} to {{ period_end_long }}." />
   <meta property="og:site_name" content="AI Companion Mortality Database" />
 
   <!-- TWITTER -->
   <meta property="twitter:card" content="summary" />
   <meta property="twitter:url" content="https://aimortality.org/" />
   <meta property="twitter:title" content="AI Companion Mortality Database" />
-  <meta property="twitter:description" content="Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. 35 fatalities (18 AI users + 17 third-party victims) across 24 incidents from March 2023 to August 2026." />
+  <meta property="twitter:description" content="Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. 35 fatalities (18 AI users + 17 third-party victims) across 24 incidents from {{ period_start_long }} to {{ period_end_long }}." />
 
   <!-- CANONICAL -->
   <link rel="canonical" href="https://aimortality.org/" />
@@ -52,9 +52,9 @@
     "name": "AI Companion Mortality Database",
     "description": "Public database documenting deaths where AI chatbot interaction was alleged as a contributing factor. Cases include only verified incidents with credible source documentation.",
     "url": "https://aimortality.org",
-    "temporalCoverage": "2023-03/2026-08",
+    "temporalCoverage": "{{ temporal_coverage }}",
     "datePublished": "2024-10-23",
-    "dateModified": "2026-09-05",
+    "dateModified": "{{ updated_iso }}",
     "license": "https://creativecommons.org/licenses/by/4.0/",
     "keywords": ["AI safety", "chatbot deaths", "AI companion risks", "mental health", "suicide prevention", "artificial intelligence", "platform safety"],
     "citation": "AI Companion Mortality Database. (2026). Retrieved from https://aimortality.org",
@@ -655,7 +655,7 @@
     All cases verified through court documents, news sources, or government acknowledgment.
   </div>
   <div class="meta">
-    Last updated: September 5, 2026 | Deaths: 35 | Incidents: 24 | Period: March 2023 — August 2026
+    Last updated: {{ updated_long }} | Deaths: {{ meta.total_fatalities }} | Incidents: {{ meta.total_incidents }} | Period: {{ period_start_long }} — {{ period_end_long }}
     <nav class="site-nav" aria-label="Site">
       <a href="report.html">Research Report</a> | <a href="index-academic.html">Academic Summary</a> | <a href="methodology.html">Methodology</a> | <a href="methodology.html?doc=verification-standards">Verification Standards</a> | <a href="https://doi.org/10.5281/zenodo.22062862">Dataset (Zenodo)</a> | <a href="data/README.md">Data files</a>
     </nav>
@@ -663,7 +663,7 @@
 
   <div class="abstract">
     <p>
-      This database documents fatalities where interaction with conversational AI systems was alleged as a contributing factor—through lawsuits, family statements, investigations, or government inquiries. Between March 2023 and August 2026, we identified <strong>35 fatalities</strong> across <strong>24 incidents</strong> (occurrences of harm) involving <strong>6 platforms</strong>; in 2 of these, victims survived rather than died. This includes 18 AI users who died and 17 third-party victims killed by AI users. Cases were verified through court documents, multiple independent news sources, or official government acknowledgment.
+      This database documents fatalities where interaction with conversational AI systems was alleged as a contributing factor—through lawsuits, family statements, investigations, or government inquiries. Between {{ period_start_long }} and {{ period_end_long }}, we identified <strong>35 fatalities</strong> across <strong>24 incidents</strong> (occurrences of harm) involving <strong>6 platforms</strong>; in 2 of these, victims survived rather than died. This includes 18 AI users who died and 17 third-party victims killed by AI users. Cases were verified through court documents, multiple independent news sources, or official government acknowledgment.
     </p>
     <p>
       The data reveals concerning patterns: <strong>29% of victims were minors</strong> (ages 11–17), and 2025–2026 account for 19 incidents with fatalities—exceeding all previous years combined. Fatalities where ChatGPT use was cited (n=29, including 16 third-party victims) exceeded those of all other platforms combined. The ECRI Institute ranked AI chatbot misuse as the <strong>#1 Health Technology Hazard for 2026</strong>. On April 21, 2026, Florida Attorney General James Uthmeier opened a <strong>criminal investigation</strong> into OpenAI over ChatGPT's alleged role in the April 2025 FSU mass shooting—the first US state criminal probe directly targeting an AI company over a mass-casualty event, later expanded to include the April 2026 USF double homicide as a second predicate. On June 1, 2026, the same office filed a separate <strong>civil lawsuit</strong> against five OpenAI entities and CEO Sam Altman personally—the first US state civil suit against OpenAI and the first to name an AI company CEO personally liable for user harms. The first documented DeepSeek-involved homicide (Roberts/Shellis, Wales, October 2025) added an 8th platform and the first non-Western corporate AI to the registry following a UK criminal conviction in March 2026. Unlike speculative discussions of AI existential risk, this work focuses on documented cases where AI interaction was cited as a factor.
@@ -671,7 +671,7 @@
     <div class="key-findings">
       <strong>Key Findings:</strong>
       <ul>
-        <li>35 total fatalities across 24 incidents, 6 AI platforms with documented deaths (Mar 2023–Aug 2026): 18 AI users + 17 third-party victims</li>
+        <li>35 total fatalities across 24 incidents, 6 AI platforms with documented deaths ({{ period_start_short }}–{{ period_end_short }}): 18 AI users + 17 third-party victims</li>
         <li>29% of victims were minors (10 of 35), with ages ranging from 11 to 17 years</li>
         <li>19 fatal incidents occurred in 2025–2026, exceeding all previous years combined</li>
         <li>ChatGPT leads in absolute numbers (29 fatalities: 13 users + 16 third-party victims)</li>
@@ -1020,7 +1020,7 @@
           <p style="margin: 0px;">Maintained as a public research resource. Full case documentation and source verification available in the <a href="report.html" style="color: var(--link); text-decoration: underline;">complete research report</a>.</p>
         </div>
         <div class="footer">
-          <p>Database last updated: September 5, 2026</p>
+          <p>Database last updated: {{ updated_long }}</p>
           <p>Crisis resources: Call or text 988 (available 24/7)</p>
           <p>Maintained as a public research resource</p>
           <p>Contact: <a href="mailto:contact@aimortality.org" style="color: var(--muted); text-decoration: underline;">contact@aimortality.org</a></p>

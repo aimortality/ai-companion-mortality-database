@@ -9,7 +9,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – August 2026 · Data current as of September 5, 2026 · v3.5.8</sub>
+<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – September 2026 · Data current as of September 29, 2026 · v3.5.9</sub>
 
 
 </div>
@@ -25,7 +25,7 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
 
 ### Key Findings:
-- **35 total fatalities** across 24 incidents (Mar 2023 - Aug 2026): 18 AI users + 17 third-party victims
+- **35 total fatalities** across 24 incidents (Mar 2023 - Sep 2026): 18 AI users + 17 third-party victims
 - **29% of victims were minors** (youngest: 11 years old)
 - **19 of 24 incidents occurred in 2025–2026** (escalating trend)
 - **Three causal pathways identified**: relational (12), cognitive (7), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
@@ -43,6 +43,7 @@ This repository contains data and documentation for the first comprehensive publ
 - **42-state attorney general coalition** (led by NY AG Letitia James) served OpenAI with a civil investigative demand June 12, 2026 — sycophancy, child safety, consumer/health data, advertising, and engagement mechanics; first multistate enforcement action to name model sycophancy explicitly as a harm vector
 - **JCCP 5431** (San Francisco Superior Court, coordination order February 3, 2026) — first major judicial coordination of AI wrongful-death litigation, consolidating seven OpenAI cases (Raine, Enneking, Lacey, Ceccanti/Fox, Shamblin, Irwin, Madden)
 - **Pennsylvania v. Character Technologies** (Commonwealth Court of PA, filed May 5, 2026 by the Shapiro administration) — first-of-its-kind state-AG enforcement framing AI chatbot conduct as unlicensed practice of medicine
+- **Tumbler Ridge litigation expands (September 2026)**: 30 further complaints filed September 2, 2026 in federal court in San Francisco by people present at the shooting — students, teachers, and the principal; on September 21, 2026 the Province of British Columbia and School District No. 59 (Peace River South) sued Sam Altman and four OpenAI entities in the U.S. District Court for the Northern District of California (No. 26-cv-10743), including a count of aiding and abetting a mass shooting
 - **Canada PIPEDA Findings #2026-002** against OpenAI (Office of the Privacy Commissioner of Canada, May 2026, joint with BC/AB/QC provincial commissioners) — first formal Canadian government determination finding OpenAI in violation of law
 
 ## Verified Cases
@@ -174,7 +175,7 @@ Source repository: [gitlab.com/aimortality/ai-companion-mortality-database](http
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.8.
+Associated with Conversational AI Systems (2023–2026). Version 3.5.9.
 Zenodo. https://doi.org/10.5281/zenodo.22428187
 ```
 
@@ -210,7 +211,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: September 5, 2026
+**Last Updated**: September 29, 2026
 
 **Maintained by**: Hunter Karman (ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035))
 

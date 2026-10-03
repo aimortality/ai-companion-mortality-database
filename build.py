@@ -11,6 +11,7 @@ dist/ is build output. Never hand-edit it -- change the template or the data and
 """
 import json
 import os
+from datetime import date
 import shutil
 import sys
 
@@ -42,9 +43,35 @@ def load():
     return d
 
 
+def month_long(ymd):
+    return date(int(ymd[:4]), int(ymd[5:7]), 1).strftime("%B %Y")     # "September 2026"
+
+
+def month_short(ymd):
+    return date(int(ymd[:4]), int(ymd[5:7]), 1).strftime("%b %Y")     # "Sep 2026"
+
+
+def day_long(ymd):
+    y, m, dd = (int(x) for x in ymd.split("-"))
+    return f"{date(y, m, dd).strftime('%B')} {dd}, {y}"                 # "September 29, 2026"
+
+
 def derive(d):
-    """Every value a template shows that comes from data. Templates must not compute."""
-    return {"meta": d["metadata"]}
+    """Every value a template shows that comes from data. Templates must not compute.
+    Date formats match scripts/audit-surfaces.py, which checks the rendered strings -- so a
+    formatting drift between the two fails the audit rather than shipping."""
+    m = d["metadata"]
+    start, end = m["time_range"]["start"], m["time_range"]["end"]
+    return {
+        "meta": m,
+        "updated_long": day_long(m["last_updated"]),
+        "updated_iso": m["last_updated"],
+        "period_start_long": month_long(start),
+        "period_start_short": month_short(start),
+        "period_end_long": month_long(end),
+        "period_end_short": month_short(end),
+        "temporal_coverage": f"{start[:7]}/{end[:7]}",
+    }
 
 
 def render(ctx):

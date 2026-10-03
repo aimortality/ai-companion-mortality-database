@@ -36,7 +36,7 @@ Then **render it**: serve `dist/` (`python3 -m http.server -d dist`), open `inde
 | **`docs/verification-standards.md`** | Must define every Tier sub-label canonical uses (`jurisdictional-verification-limited`). |
 | **WARN lines** | A WARN on source attribution is a real gap in canonical or a real embellishment in the report — decide which, and say so in the report. Never close a pass with unexplained WARNs. |
 
-**Conventions to preserve, not "fix":** ChatGPT's third-party count is 16 on index/report/methodology and 15 + Margaux footnote on README (the validator encodes this as a documented exception). Reconciling it is a canonical data decision for the maintainer, not an audit fix. Record it as a known inconsistency in the report.
+**No documented exceptions.** The Margaux Whittemore 15/16 split was resolved 2026-08-22 (PR #64, v3.5.2): she counts, ChatGPT's third-party total is 16 on every surface, and `validate_data.py` checks a plain sum. Do not reintroduce an exception — if the sums disagree, the data is wrong.
 
 ## Past misses — the institutional memory this skill exists for
 
@@ -47,15 +47,20 @@ Then **render it**: serve `dist/` (`python3 -m http.server -d dist`), open `inde
 | Coverage period left at "May 2026" through an August sweep — `time_range.end` is the *sweep date*, not the last death | `.meta` line, 3 meta descriptions, JSON-LD, abstract, README badge, methodology, Conclusions prose | period checks (all forms) |
 | Cognitive-pathway count "4" on four surfaces while canonical said 6 | Key findings, Summary Statistics | pathway check |
 | Version "3.0" and masthead "May 2026" on the academic page | `<header class="journal-header">` | version / updated checks |
-| `<desc>` screen-reader text reciting a prior platform total | SVG accessibility strings | `<desc>` vs chart-data checks |
-| Cumulative chart points that never matched canonical dates | `index.html` SVG polyline | rendering check + manual re-derivation |
+| `<desc>` screen-reader text reciting a prior platform total | SVG accessibility strings | Chart removed 2026-09-29. Charts return only as generated output; their checks read the rendered `<desc>` and fail closed if it is missing |
+| Cumulative chart points that never matched canonical dates | `index.html` SVG polyline | Chart removed 2026-09-29 (non-linear time axis) |
+| Timeline year labels hardcoded at x=350/650/950 while markers were interpolated (true 307/566/823) — a January 2026 case read as 2025 | `index.html` timeline | Chart removed 2026-09-29. A generated chart emits labels and marks from one scale function |
+| Source-attribution check compared **0** case sections and reported PASS — Wave 1's `id="case-N"` anchors broke a literal `<h3>CASE #` match; off for two days, unnoticed at 51/0/0 | `audit-surfaces.py` `check_sources` | Fails closed unless every incident is compared (PR #89). A check that compares nothing must not report PASS |
+| Local deploy could ship stale data — `cp -r data src/data` onto an existing copy nests into it | `netlify.toml` build command | `build.py` rebuilds `dist/` from scratch; `check_publish_copies` |
+| The weekly routine's docket files **fabricated facts about canonical records** and labeled them "confirmed": Tumbler Ridge described as a Character.AI stabbing (canonical: ChatGPT mass shooting, 9 dead); an uninvolved plaintiff named as the FSU shooter (canonical: Phoenix Ikner) | Private triage PR #4, 2026-09-28 | Independent source verification before any routine finding reaches canonical — check every claim about an existing record against canonical first. Routine output is a lead, never a source |
 
 ## Red flags — you are rationalizing
 
 | Thought | Reality |
 |---|---|
 | "The new cases fall inside the period, so it's unchanged" | The period is coverage-through. It moves on every sweep. |
-| "grep came back clean" | The script greps source. Prose, charts, and judgment live elsewhere. Render it; dispatch for sources. |
+| "grep came back clean" | The script reads the built pages' markup. Prose meaning and judgment live elsewhere. Render it; dispatch for sources. |
+| "The routine confirmed it" | The routine is an LLM. It has fabricated facts about existing records and labeled them confirmed. Verify against canonical and a primary source. |
 | "I wrote the sweep, I know it's complete" | That is precisely why an independent pass is required. |
 | "WARN isn't FAIL" | A WARN on a Tier 2 case's sources is a finding. Explain it or fix it. |
 | "That number is a dated snapshot, leave it" | Only if nothing in the private triage repo supersedes it. Check `../triage/weekly-triage/`. |
@@ -68,7 +73,7 @@ Then **render it**: serve `dist/` (`python3 -m http.server -d dist`), open `inde
 
 ### Major      <finding> — file:line — evidence — why it matters — fix
 ### Minor      <finding> — file:line — evidence
-### Known inconsistencies preserved   (e.g., Margaux 15/16)
+### Known items deliberately parked   (each with the maintainer's decision and date)
 ### What checks out                   (script summary line, link counts, render result)
 ### Receipts   | Check | Command | Result |
 ```

@@ -9,6 +9,20 @@
 [build.environment]
   PYTHON_VERSION = "3.12"
 
+# /export.js was a client-side export module that no page loaded; it was removed 2026-09-29.
+# It advertised /api/v1/* endpoints that never existed. Anyone following an old link to either
+# lands on the real data files -- the same place the site nav's "Data files" link goes -- rather
+# than a dead end. 301: the removal is permanent and so is the replacement.
+[[redirects]]
+  from = "/export.js"
+  to = "/data/README.md"
+  status = 301
+
+[[redirects]]
+  from = "/api/v1/*"
+  to = "/data/README.md"
+  status = 301
+
 # Redirect all chatbotdeaths.org traffic to aimortality.org
 [[redirects]]
   from = "https://chatbotdeaths.org/*"

@@ -23,6 +23,22 @@
   to = "/data/README.md"
   status = 301
 
+# The two docs were one client-rendered page switched by ?doc=; they are now two static pages.
+# Old citations keep working. Query rules sit above the domain rules below.
+[[redirects]]
+  from = "/methodology"
+  query = { doc = "verification-standards" }
+  to = "/verification-standards"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/methodology.html"
+  query = { doc = "verification-standards" }
+  to = "/verification-standards"
+  status = 301
+  force = true
+
 # Redirect all chatbotdeaths.org traffic to aimortality.org
 [[redirects]]
   from = "https://chatbotdeaths.org/*"

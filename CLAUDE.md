@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Public research database tracking verified deaths associated with AI chatbot interactions. Static HTML site deployed on Netlify at **aimortality.org**. Also accessible via ai-death.com and chatbotdeaths.org (redirects).
+Public research database tracking verified deaths associated with AI chatbot interactions. Static HTML site deployed on Netlify at **aimortality.org**. Also accessible via chatbotdeaths.org (redirects).
 
 ## Architecture
 

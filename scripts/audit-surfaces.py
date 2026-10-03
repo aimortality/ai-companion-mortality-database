@@ -215,6 +215,9 @@ def check_sitemap(E, root=None):
     xml = open(path, encoding="utf-8").read()
     locs = re.findall(r"<loc>\s*([^<]*?)\s*</loc>", xml)
     want = {page_url(p) for p in site_pages(root) if p not in SITEMAP_EXCLUDED}
+    if not want:
+        fail(f"{SITE}/sitemap.xml: no built pages found to check it against (site_pages() is empty)")
+        return
     missing, extra = sorted(want - set(locs)), sorted(set(locs) - want)
     dupes = sorted({u for u in locs if locs.count(u) > 1})
     lastmods = re.findall(r"<lastmod>\s*([^<]*?)\s*</lastmod>", xml)
@@ -261,7 +264,11 @@ def check_meta(E, root=None):
     expected URL, og:title / og:description / og:url (= canonical), twitter:card by name=, and a
     non-empty description. No twitter:* by property=. Fails closed on any absence."""
     root = root or ROOT
-    for f in site_pages(root):
+    pages = site_pages(root)
+    if not pages:
+        fail(f"{SITE}/: no built pages found to check for head metadata (site_pages() is empty)")
+        return
+    for f in pages:
         h = _Head()
         h.feed(open(os.path.join(root, f), encoding="utf-8").read())
         want, problems = page_url(f), []

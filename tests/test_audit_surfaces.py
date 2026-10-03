@@ -125,3 +125,14 @@ def test_check_meta_fails_closed_on_each_missing_or_wrong_tag(tmp_path):
         audit.fails.clear()
         audit.check_meta({}, root=_meta_site(tmp_path / label.replace(" ", "_").replace(":", "_"), html))
         assert audit.fails, f"check_meta passed silently: {label}"
+
+
+def test_checks_fail_when_there_are_no_pages_to_check(tmp_path):
+    # an empty dist/ (build produced nothing, or the path is wrong) must not pass silently
+    audit.fails.clear()
+    audit.check_meta({}, root=str(tmp_path))
+    assert audit.fails, "check_meta passed with no pages"
+    audit.fails.clear()
+    touch(tmp_path / "dist/sitemap.xml", _sitemap([]))      # a sitemap exists, but no pages do
+    audit.check_sitemap(E_SM, root=str(tmp_path))
+    assert any("no built pages" in f for f in audit.fails), audit.fails

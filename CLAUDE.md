@@ -126,6 +126,7 @@ This database documents real deaths. Maintain:
 - **Domain:** aimortality.org
 - **Analytics:** Google Analytics (G-SS2VTGZ004)
 - Netlify runs `pip install -r requirements.txt && python3 build.py && python3 scripts/audit-surfaces.py --no-build`. Any audit FAIL fails the deploy, and the site stays on its last good build. Deploy previews run the same gate on every PR.
+- **Content-Security-Policy** is set in `netlify.toml` (`script-src` has no `'unsafe-inline'`). Pages must not contain inline executable scripts or inline event handlers (the audit's `check_inline_scripts` enforces it; JSON-LD data blocks are fine). A new third-party host (script, beacon, image) needs a deliberate change to the CSP in `netlify.toml`; `tests/e2e/csp.spec.ts` checks the policy against every page.
 
 ## Style Conventions
 

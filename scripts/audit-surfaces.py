@@ -302,6 +302,44 @@ def check_meta(E, root=None):
             ok(f"{f}: title, canonical, og, twitter, description present")
 
 
+class _Scripts(HTMLParser):
+    """Collects what check_inline_scripts cares about: <script> elements with no src (and their
+    type), and any attribute named on*= (an inline event handler) on any element."""
+    def __init__(self):
+        super().__init__()
+        self.inline_scripts, self.handlers = [], []
+
+    def handle_starttag(self, tag, attrs):
+        a = {k.lower(): v for k, v in attrs}
+        if tag == "script" and not a.get("src"):
+            self.inline_scripts.append((a.get("type") or "").strip().lower())
+        for name in a:
+            if name.startswith("on"):
+                self.handlers.append(f"<{tag} {name}=...>")
+
+
+def check_inline_scripts(E, root=None):
+    """The Content-Security-Policy in netlify.toml has no 'unsafe-inline' in script-src, so a page
+    that carries an inline executable script or an inline event handler would break in the browser.
+    Every <script> without a src must be a type="application/ld+json" data block (never executed),
+    and no element may have an on*= attribute. Fails closed on an empty page list."""
+    root = root or ROOT
+    pages = site_pages(root)
+    if not pages:
+        fail(f"{SITE}/: no built pages found to check for inline scripts (site_pages() is empty)")
+        return
+    for f in pages:
+        p = _Scripts()
+        p.feed(open(os.path.join(root, f), encoding="utf-8").read())
+        bad = [t for t in p.inline_scripts if t != "application/ld+json"]
+        for t in bad:
+            fail(f"{f}: inline <script> (type={t or 'none'!r}) -- move it to a file under src/assets/; the CSP forbids it")
+        for h in p.handlers:
+            fail(f"{f}: inline event handler {h} -- attach it from a script file; the CSP forbids it")
+        if not bad and not p.handlers:
+            ok(f"{f}: no inline scripts or event handlers (JSON-LD data blocks only)")
+
+
 def check_duration_statements(E):
     """Any "Duration known for N of M cases" statement, on any surface, must match canonical.
 
@@ -552,6 +590,7 @@ def main():
     check_publish_copies()
     check_sitemap(E)
     check_meta(E)
+    check_inline_scripts(E)
     if args.links:
         check_links()
 

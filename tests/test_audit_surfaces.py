@@ -161,3 +161,54 @@ def test_built_methodology_page_is_a_headline_surface_and_gets_the_through_claus
     audit.fails.clear()    # the clause stays scoped: other pages may say "through <month>, no deaths" of something else
     audit.check_period(E, "through May 2024, no deaths", "dist/report.html")
     assert audit.fails == []
+
+
+def _script_site(tmp_path, body):
+    touch(tmp_path / "dist/index.html", f"<html><head><title>T</title></head><body>{body}</body></html>")
+    return str(tmp_path)
+
+
+def test_check_inline_scripts_passes_json_ld_and_external_scripts_only(tmp_path):
+    audit.fails.clear()
+    body = ('<script type="application/ld+json">{"@type": "Dataset"}</script>'
+            '<script src="/assets/theme.js" defer></script>'
+            '<script async src="https://www.googletagmanager.com/gtag/js?id=X"></script>')
+    audit.check_inline_scripts({}, root=_script_site(tmp_path, body))
+    assert audit.fails == []
+
+
+def test_check_inline_scripts_fails_on_an_inline_executable_script(tmp_path):
+    for label, body in {
+        "bare": "<script>alert(1)</script>",
+        "typed javascript": '<script type="text/javascript">alert(1)</script>',
+        "module": '<script type="module">import("/x.js")</script>',
+        "empty src": "<script src>alert(1)</script>",
+    }.items():
+        audit.fails.clear()
+        audit.check_inline_scripts({}, root=_script_site(tmp_path / label.replace(" ", "_"), body))
+        assert audit.fails and "index.html" in audit.fails[0], f"inline script passed silently: {label}"
+
+
+def test_check_inline_scripts_fails_on_an_inline_event_handler(tmp_path):
+    for label, body in {
+        "onclick": '<button onclick="x()">go</button>',
+        "uppercase": '<a href="/" ONMOUSEOVER="x()">go</a>',
+        "onload on body-level tag": '<img src="/a.png" onerror="x()">',
+    }.items():
+        audit.fails.clear()
+        audit.check_inline_scripts({}, root=_script_site(tmp_path / label.replace(" ", "_"), body))
+        assert audit.fails and "index.html" in audit.fails[0], f"inline handler passed silently: {label}"
+
+
+def test_check_inline_scripts_ignores_text_that_only_looks_like_a_handler(tmp_path):
+    # prose and attribute VALUES mentioning onclick= are not handler attributes; only a parser can tell
+    audit.fails.clear()
+    body = '<p>Do not write onclick="x()" in a page.</p><a href="/" title="onload=1" data-note="onerror=2">ok</a>'
+    audit.check_inline_scripts({}, root=_script_site(tmp_path, body))
+    assert audit.fails == []
+
+
+def test_check_inline_scripts_fails_when_there_are_no_pages(tmp_path):
+    audit.fails.clear()
+    audit.check_inline_scripts({}, root=str(tmp_path))
+    assert audit.fails, "check_inline_scripts passed with no pages"

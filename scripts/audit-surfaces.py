@@ -22,6 +22,7 @@ import subprocess
 import sys
 from collections import Counter
 from datetime import date
+from html.parser import HTMLParser
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CANON = "data/mortality-data.json"
@@ -117,7 +118,7 @@ def load_base(ref):
 
 # ── checks ────────────────────────────────────────────────────────────────
 PERIOD_RE = re.compile(
-    r"(Between March 2023 and|Mar 2023\s?[–\-]\s?|March 2023\s?[–—\-]\s?|Period: March 2023 —|March 2023 to)\s?([A-Z][a-z]+ \d{4})")
+    r"([Bb]etween March 2023 and|Mar 2023\s?[–\-]\s?|March 2023\s?[–—\-]\s?|Period: March 2023 —|March 2023 to)\s?([A-Z][a-z]+ \d{4})")
 PERIOD_THROUGH_RE = re.compile(r"(through)\s?([A-Z][a-z]+ \d{4}), no deaths")
 VERSION_RE = re.compile(r"\b[Vv]ersion:?\s?v?(\d+\.\d+(?:\.\d+)?)\b|·\s?v(\d+\.\d+\.\d+)\b|(?<!taxonomy_)version:\s?\"(\d+\.\d+\.\d+)\"")
 UPDATED_RE = re.compile(r"(?:last updated|data current as of|database last updated):?\*{0,2}:?\s*([A-Z][a-z]+ \d{1,2}, \d{4})", re.I)
@@ -189,6 +190,113 @@ def check_pathways(E, text, f):
             fail(f"{f}: {p} pathway count(s) {sorted(bad)} ≠ canonical {E[p]}")
     if seen:
         ok(f"{f}: pathway counts checked against canonical {E['relational']}/{E['cognitive']}/{E['instrumental']}")
+
+
+SITE_URL = "https://aimortality.org"
+SITEMAP_EXCLUDED = {f"{SITE}/404.html"}     # an error page is not a destination
+
+
+def page_url(rel):
+    """Canonical URL of a built page (the URL contract in AUDIT.md): dist/index.html -> /,
+    dist/x.html -> /x. Extensionless, no trailing slash."""
+    path = rel[len(SITE) + 1:] if rel.startswith(SITE + "/") else rel
+    path = path[:-len(".html")] if path.endswith(".html") else path
+    return SITE_URL + "/" + ("" if path == "index" else path)
+
+
+def check_sitemap(E, root=None):
+    """dist/sitemap.xml exists, lists every built page (minus 404) exactly once and nothing else,
+    and every <lastmod> is the canonical last_updated. Fails closed: a missing file is a FAIL."""
+    root = root or ROOT
+    path = os.path.join(root, SITE, "sitemap.xml")
+    if not os.path.exists(path):
+        fail(f"{SITE}/sitemap.xml: missing")
+        return
+    xml = open(path, encoding="utf-8").read()
+    locs = re.findall(r"<loc>\s*([^<]*?)\s*</loc>", xml)
+    want = {page_url(p) for p in site_pages(root) if p not in SITEMAP_EXCLUDED}
+    if not want:
+        fail(f"{SITE}/sitemap.xml: no built pages found to check it against (site_pages() is empty)")
+        return
+    missing, extra = sorted(want - set(locs)), sorted(set(locs) - want)
+    dupes = sorted({u for u in locs if locs.count(u) > 1})
+    lastmods = re.findall(r"<lastmod>\s*([^<]*?)\s*</lastmod>", xml)
+    stale = sorted({m for m in lastmods if m != E["updated"]})
+    for label, bad in (("page(s) not listed", missing), ("URL(s) listed that are not built pages", extra),
+                       ("URL(s) listed more than once", dupes), (f"<lastmod> value(s) != last_updated {E['updated']}", stale)):
+        if bad:
+            fail(f"{SITE}/sitemap.xml: {label}: {bad}")
+    if len(lastmods) != len(locs):
+        fail(f"{SITE}/sitemap.xml: {len(locs)} <loc> but {len(lastmods)} <lastmod>")
+    if not (missing or extra or dupes or stale) and locs and len(lastmods) == len(locs):
+        ok(f"{SITE}/sitemap.xml: {len(locs)} pages, all lastmod {E['updated']}")
+    elif not locs:
+        fail(f"{SITE}/sitemap.xml: lists no URLs")
+
+
+class _Head(HTMLParser):
+    """Collects the tags check_meta cares about: <title> count/text, <meta>, <link>."""
+    def __init__(self):
+        super().__init__()
+        self.titles, self.metas, self.links, self._in_title = [], [], [], False
+
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        if tag == "title":
+            self._in_title = True
+            self.titles.append("")
+        elif tag == "meta":
+            self.metas.append(a)
+        elif tag == "link":
+            self.links.append(a)
+
+    def handle_endtag(self, tag):
+        if tag == "title":
+            self._in_title = False
+
+    def handle_data(self, data):
+        if self._in_title:
+            self.titles[-1] += data
+
+
+def check_meta(E, root=None):
+    """Every built page carries the shared head metadata: one <title>, one canonical equal to its
+    expected URL, og:title / og:description / og:url (= canonical), twitter:card by name=, and a
+    non-empty description. No twitter:* by property=. Fails closed on any absence."""
+    root = root or ROOT
+    pages = site_pages(root)
+    if not pages:
+        fail(f"{SITE}/: no built pages found to check for head metadata (site_pages() is empty)")
+        return
+    for f in pages:
+        h = _Head()
+        h.feed(open(os.path.join(root, f), encoding="utf-8").read())
+        want, problems = page_url(f), []
+
+        def meta(key, attr):
+            return [m.get("content", "") for m in h.metas if m.get(attr) == key]
+
+        if len(h.titles) != 1 or not h.titles[0].strip():
+            problems.append(f"{len(h.titles)} <title> (need exactly one, non-empty)")
+        canon = [l.get("href") for l in h.links if l.get("rel") == "canonical"]
+        if canon != [want]:
+            problems.append(f"canonical {canon} != [{want!r}]")
+        for prop in ("og:title", "og:description"):
+            if len([c for c in meta(prop, "property") if c.strip()]) != 1:
+                problems.append(f"{prop} missing or empty")
+        if meta("og:url", "property") != [want]:
+            problems.append(f"og:url {meta('og:url', 'property')} != [{want!r}]")
+        if len(meta("twitter:card", "name")) != 1:
+            problems.append('name="twitter:card" missing')
+        if len([c for c in meta("description", "name") if c.strip()]) != 1:
+            problems.append("description missing or empty")
+        if any(str(m.get("property", "")).startswith("twitter:") for m in h.metas):
+            problems.append('twitter:* tag uses property= (must be name=)')
+        if problems:
+            for p in problems:
+                fail(f"{f}: {p}")
+        else:
+            ok(f"{f}: title, canonical, og, twitter, description present")
 
 
 def check_duration_statements(E):
@@ -439,6 +547,8 @@ def main():
     check_exports()
     check_relative_links()
     check_publish_copies()
+    check_sitemap(E)
+    check_meta(E)
     if args.links:
         check_links()
 

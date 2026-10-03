@@ -4,3 +4,37 @@
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
 .theme-toggle[aria-pressed="true"] { outline: 1px solid currentColor; outline-offset: 2px; }
+
+/* Crisis bar: the same loud inverse on every page. Explicit colours in both themes so the
+   page palettes (which differ) cannot soften it. Room is left for a second line. */
+.crisis-bar {
+  background: #111; color: #fff;
+  padding: 8px 12px; margin: 0 0 20px;
+  font-size: 13px; line-height: 1.5; text-align: center;
+  /* Text runs and the link become flex items, so a narrow screen breaks between phrases, not inside them. */
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 0.5em;
+}
+.crisis-bar a {
+  color: inherit; font-weight: bold; text-decoration: underline;
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px; padding: 0 4px;
+}
+:root[data-theme="dark"] .crisis-bar { background: #f2f2f2; color: #111; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .crisis-bar { background: #f2f2f2; color: #111; }
+}
+
+/* Register line: the one-line state of the record, under the masthead. */
+.register-line { font-size: 12px; letter-spacing: 0.2px; margin: 0 0 8px; }
+
+/* Site nav: one flat list. The current page is marked by a 2px rule, never colour alone. */
+nav[aria-label="Site"] { font-size: 12px; margin: 0 0 24px; }
+nav[aria-label="Site"] ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
+nav[aria-label="Site"] li { margin: 0; padding: 0; }
+nav[aria-label="Site"] a { color: inherit; text-decoration: underline; display: inline-block; padding: 4px 0 2px; border-top: 2px solid transparent; }
+nav[aria-label="Site"] a[aria-current="page"] { border-top: 2px solid currentColor; font-weight: bold; }
+
+/* Shared footer lines, rendered once by base.html.j2 on every page. */
+.site-footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid currentColor; font-size: 12px; }
+.site-footer p { margin: 0 0 8px; }
+.site-footer a { color: inherit; text-decoration: underline; }

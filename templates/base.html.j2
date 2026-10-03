@@ -3,12 +3,34 @@
 <head>
   <meta charset="UTF-8">
 {% include "partials/analytics.html" %}
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>{{ page.title }}</title>
+  <meta name="description" content="{{ page.description }}">
+  <link rel="canonical" href="{{ page.url }}">
+  <meta property="og:type" content="{{ page.og_type }}">
+  <meta property="og:url" content="{{ page.url }}">
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ page.description }}">
+  <meta property="og:site_name" content="{{ site_name }}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ page.title }}">
+  <meta name="twitter:description" content="{{ page.description }}">
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">{% if page.json_ld %}
+  <script type="application/ld+json">{{ page.json_ld | tojson }}</script>{% endif %}
 {% block head %}{% endblock %}
   <link rel="stylesheet" href="/assets/base.css">
   <script src="/assets/theme-init.js"></script>
 </head>
 <body>
+{% block skip %}{% endblock %}
+{% include "partials/crisis.html" %}
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
+{% block masthead %}{% endblock %}
+{% include "partials/register.html" %}
+{% include "partials/nav.html" %}
 {% block body %}{% endblock %}
+{% include "partials/site-footer.html" %}
   <script src="/assets/theme.js" defer></script>
 {% block scripts %}{% endblock %}
 </body>

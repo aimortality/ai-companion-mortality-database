@@ -26,13 +26,35 @@ from datetime import date
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CANON = "data/mortality-data.json"
 SITE = "dist"  # what ships: build.py output. The audit checks the built site, not its sources.
-SURFACES = [
-    f"{SITE}/index.html",
-    f"{SITE}/index-academic.html",
-    f"{SITE}/report.html",
-    "README.md",
-    "docs/methodology.md",
-]
+# Every built page is audited -- derived from dist/, so a new page cannot escape the gate by
+# someone forgetting a list. Agreement checks (period, version, updated, pathways, stale values)
+# only fail on a WRONG value, so they run on every surface. Presence checks (the headline totals,
+# the academic masthead) are page-specific.
+EXEMPT_PAGES = {"google59ac8b7ece0bfc3a.html": "Search Console verification stub"}
+MARKDOWN_SURFACES = ["README.md", "data/README.md", "docs/methodology.md", "docs/verification-standards.md"]
+HEADLINE_SURFACES = {f"{SITE}/index.html", f"{SITE}/index-academic.html", f"{SITE}/report.html",
+                     "README.md", "docs/methodology.md"}
+
+
+def site_pages(root=None):
+    """Repo-relative paths of every HTML page the build produced, excluding the data/ and docs/
+    publish copies (checked by check_publish_copies) and EXEMPT_PAGES."""
+    root = root or ROOT
+    site = os.path.join(root, SITE)
+    pages = []
+    for dirpath, dirnames, files in os.walk(site):
+        rel = os.path.relpath(dirpath, site)
+        if rel.split(os.sep)[0] in ("data", "docs"):
+            dirnames[:] = []
+            continue
+        for fn in files:
+            if fn.endswith(".html") and not (rel == "." and fn in EXEMPT_PAGES):
+                pages.append(os.path.normpath(os.path.join(SITE, rel, fn)).replace(os.sep, "/"))
+    return sorted(pages)
+
+
+def surfaces():
+    return site_pages() + MARKDOWN_SURFACES
 ALIAS = {"wsj": "wall street journal", "nyt": "new york times", "ap": "associated press", "wapo": "washington post"}
 # canonical incident name -> the token its report.html header uses, where they differ
 CASE_ALIAS = {"University of South Florida double homicide": "USF"}
@@ -180,7 +202,7 @@ def check_duration_statements(E):
     """
     want = f"Duration known for {E['duration_known']} of {E['I']} cases"
     found = {}
-    for f in SURFACES:
+    for f in surfaces():
         for h in re.findall(r"Duration known for \d+ of \d+ cases", read(f)):
             found.setdefault(h, []).append(f)
     bad = {h: fs for h, fs in found.items() if h != want}
@@ -298,7 +320,7 @@ def check_relative_links():
     which contains data/ and docs/ -- so a link to a file the build did not produce fails."""
     import glob
     missing = []
-    for f in (f"{SITE}/index.html", f"{SITE}/report.html", f"{SITE}/index-academic.html", f"{SITE}/methodology.html"):
+    for f in site_pages():
         text = read(f)
         for u in re.findall(r"""(?:href|src)[=:]\s?["']([^"']+)["']""", text):
             u = u.split("#")[0].split("?")[0]
@@ -350,7 +372,7 @@ def check_publish_copies():
 def check_links():
     import concurrent.futures
     urls = set()
-    for f in (f"{SITE}/index.html", f"{SITE}/report.html", f"{SITE}/index-academic.html", "README.md"):
+    for f in site_pages() + MARKDOWN_SURFACES:
         for u in re.findall(r"https?://[^\"'<>)\s`]+", read(f)):
             if not re.search(r"img\.shields\.io|esm\.sh|aimortality\.org|creativecommons\.org|schema\.org|googletagmanager|github\.com/aimortality|w3\.org|sitemaps\.org", u):
                 urls.add(u.rstrip(".,;"))
@@ -368,6 +390,18 @@ def check_links():
     if broken:
         fail("broken URLs:\n" + "\n".join(f"  {c}  {u}" for c, u in broken))
     ok(f"links: {len(results) - len(broken)}/{len(results)} external URLs 2xx")
+
+
+def audit_surface(E, B, f, text):
+    if f in HEADLINE_SURFACES:
+        check_headline(E, text, f)
+    check_period(E, text, f)
+    check_version(E, text, f)
+    check_updated(E, text, f)
+    check_pathways(E, text, f)
+    check_stale(E, B, text, f)
+    if f.endswith("index-academic.html"):
+        check_masthead(E, text, f)
 
 
 def main():
@@ -398,16 +432,8 @@ def main():
     else:
         print(f"base {args.base}: not readable — stale-value probes skipped")
 
-    for f in SURFACES:
-        text = read(f)
-        check_headline(E, text, f)
-        check_period(E, text, f)
-        check_version(E, text, f)
-        check_updated(E, text, f)
-        check_pathways(E, text, f)
-        check_stale(E, B, text, f)
-        if f.endswith("index-academic.html"):
-            check_masthead(E, text, f)
+    for f in surfaces():
+        audit_surface(E, B, f, read(f))
     check_duration_statements(E)
     check_sources(d)
     check_exports()

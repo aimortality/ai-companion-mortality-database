@@ -38,3 +38,10 @@ living-room-brief.md
 
 # local build/preview artifacts
 build/
+
+# Dev tooling (requirements-dev.txt, tests/)
+.venv/
+__pycache__/
+tests/e2e/node_modules/
+tests/e2e/test-results/
+tests/e2e/playwright-report/

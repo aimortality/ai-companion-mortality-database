@@ -185,4 +185,4 @@ Only when all three answers are yes does a case move from internal tracking to p
 
 ---
 
-*Last updated: May 30, 2026*
+*Standards last revised: May 30, 2026*

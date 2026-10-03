@@ -118,7 +118,7 @@ def load_base(ref):
 
 # ── checks ────────────────────────────────────────────────────────────────
 PERIOD_RE = re.compile(
-    r"(Between March 2023 and|Mar 2023\s?[–\-]\s?|March 2023\s?[–—\-]\s?|Period: March 2023 —|March 2023 to)\s?([A-Z][a-z]+ \d{4})")
+    r"([Bb]etween March 2023 and|Mar 2023\s?[–\-]\s?|March 2023\s?[–—\-]\s?|Period: March 2023 —|March 2023 to)\s?([A-Z][a-z]+ \d{4})")
 PERIOD_THROUGH_RE = re.compile(r"(through)\s?([A-Z][a-z]+ \d{4}), no deaths")
 VERSION_RE = re.compile(r"\b[Vv]ersion:?\s?v?(\d+\.\d+(?:\.\d+)?)\b|·\s?v(\d+\.\d+\.\d+)\b|(?<!taxonomy_)version:\s?\"(\d+\.\d+\.\d+)\"")
 UPDATED_RE = re.compile(r"(?:last updated|data current as of|database last updated):?\*{0,2}:?\s*([A-Z][a-z]+ \d{1,2}, \d{4})", re.I)

@@ -136,3 +136,14 @@ def test_checks_fail_when_there_are_no_pages_to_check(tmp_path):
     touch(tmp_path / "dist/sitemap.xml", _sitemap([]))      # a sitemap exists, but no pages do
     audit.check_sitemap(E_SM, root=str(tmp_path))
     assert any("no built pages" in f for f in audit.fails), audit.fails
+
+
+def test_check_period_matches_the_lowercase_between_form():
+    # report.html Conclusions say "...linked to chatbot interactions between March 2023 and <Month YYYY>"
+    E = {"period_end": "2026-09-28", "period_start": "2023-03-01"}
+    audit.fails.clear()
+    audit.check_period(E, "linked to chatbot interactions between March 2023 and May 2024.", "dist/report.html")
+    assert any("May 2024" in f for f in audit.fails), audit.fails
+    audit.fails.clear()
+    audit.check_period(E, "linked to chatbot interactions between March 2023 and September 2026.", "dist/report.html")
+    assert audit.fails == []

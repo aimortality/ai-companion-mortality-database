@@ -9,19 +9,6 @@
 [build.environment]
   PYTHON_VERSION = "3.12"
 
-# Redirect all ai-death.com traffic to aimortality.org
-[[redirects]]
-  from = "https://ai-death.com/*"
-  to = "https://aimortality.org/:splat"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "https://www.ai-death.com/*"
-  to = "https://aimortality.org/:splat"
-  status = 301
-  force = true
-
 # Redirect all chatbotdeaths.org traffic to aimortality.org
 [[redirects]]
   from = "https://chatbotdeaths.org/*"

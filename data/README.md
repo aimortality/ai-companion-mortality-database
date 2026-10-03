@@ -32,7 +32,7 @@ The JSON carries its version in `metadata.version`. Each released version is arc
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.8.
+Associated with Conversational AI Systems (2023–2026). Version 3.5.9.
 Zenodo. https://doi.org/10.5281/zenodo.22428187
 ```
 

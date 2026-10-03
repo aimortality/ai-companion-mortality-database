@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "3.5.8",
-    "last_updated": "2026-09-05",
+    "version": "3.5.9",
+    "last_updated": "2026-09-29",
     "total_fatalities": 35,
     "total_incidents": 24,
     "total_attempts": 2,
@@ -18,7 +18,7 @@
     },
     "time_range": {
       "start": "2023-03-01",
-      "end": "2026-08-31"
+      "end": "2026-09-28"
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "CC-BY-4.0",
@@ -1373,7 +1373,7 @@
         "Incident triggered national debate in Canada re: mandatory LE reporting for AI companies when threats are detected",
         "Some researchers criticized OpenAI's subsequent 'safety pledges' as surveillance infrastructure rather than AI regulation"
       ],
-      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (BC Supreme Court, referenced in NPR April 21, 2026); on April 29, 2026 a separate federal civil action was filed in U.S. District Court, Northern District of California (San Francisco) by multiple Tumbler Ridge victim families against OpenAI and Sam Altman (personally named) — damages sought in excess of US$1 billion; complaint alleges OpenAI's internal safety team urged management to refer van Rootselaar's June 2025 flagged account to law enforcement and that leadership declined; on April 23–24, 2026 OpenAI CEO Sam Altman published a personal apology letter to the Tumbler Ridge community and OpenAI announced three voluntary policy changes (lowered LE-referral threshold, direct RCMP point of contact, behavioral-expert consultation on flagged cases); Canadian federal government exploring mandatory LE-referral policy for AI companies; Office of the Privacy Commissioner of Canada released PIPEDA Findings #2026-002 (May 2026, jointly with provincial commissioners of BC, AB, QC) finding OpenAI violated the Personal Information Protection and Electronic Documents Act in training ChatGPT on Canadians' personal information without adequate consent — a parallel regulatory track to the RCMP criminal investigation",
+      "legal_action": "Criminal investigation by RCMP; civil suit filed in 2026 by family of a critically wounded victim (BC Supreme Court, referenced in NPR April 21, 2026); on April 29, 2026 a separate federal civil action was filed in U.S. District Court, Northern District of California (San Francisco) by multiple Tumbler Ridge victim families against OpenAI and Sam Altman (personally named) — damages sought in excess of US$1 billion; complaint alleges OpenAI's internal safety team urged management to refer van Rootselaar's June 2025 flagged account to law enforcement and that leadership declined; on April 23–24, 2026 OpenAI CEO Sam Altman published a personal apology letter to the Tumbler Ridge community and OpenAI announced three voluntary policy changes (lowered LE-referral threshold, direct RCMP point of contact, behavioral-expert consultation on flagged cases); Canadian federal government exploring mandatory LE-referral policy for AI companies; Office of the Privacy Commissioner of Canada released PIPEDA Findings #2026-002 (May 2026, jointly with provincial commissioners of BC, AB, QC) finding OpenAI violated the Personal Information Protection and Electronic Documents Act in training ChatGPT on Canadians' personal information without adequate consent — a parallel regulatory track to the RCMP criminal investigation; on September 2, 2026, 30 further complaints were filed in federal court in San Francisco against OpenAI and Sam Altman by people present at the shooting, including students, teachers, and the school principal, making claims similar to the April suit (failure to notify law enforcement; aiding and abetting the shooting) (NPR; TechCrunch); on September 21, 2026, His Majesty the King in Right of the Province of British Columbia and the Board of Education of School District No. 59 (Peace River South) sued Samuel Altman and four OpenAI entities in the U.S. District Court for the Northern District of California (No. 26-cv-10743), asserting eight counts including negligence (failure to warn law enforcement), negligent entrustment, aiding and abetting a mass shooting, and strict product liability — the complaint alleges OpenAI's monitoring flagged the shooter's account in June 2025 and deactivated it without referral to law enforcement",
       "legal_status_category": "under_investigation_lawsuit_filed_parallel_state_federal_company_admission",
       "sources": [
         "Financial Post",
@@ -1399,7 +1399,12 @@
         "CNN (April 24, 2026 — Altman apology)",
         "Tumbler RidgeLines (local, April 24, 2026)",
         "Police statements",
-        "Court filings (U.S. District Court, N.D. Cal., San Francisco; case number not yet publicly confirmed)"
+        "Court filings (U.S. District Court, N.D. Cal., San Francisco; case number not yet publicly confirmed)",
+        "NPR (September 2, 2026) — 30 survivor complaints",
+        "TechCrunch (September 2, 2026) — 30 survivor complaints",
+        "Complaint, His Majesty the King in Right of the Province of British Columbia et al. v. Altman et al., No. 26-cv-10743 (N.D. Cal., filed September 21, 2026)",
+        "BC Gov News — Attorney General's statement (September 21, 2026)",
+        "Al Jazeera (September 22, 2026) — Province of British Columbia suit"
       ],
       "verification_level": "Court documents, official government acknowledgment, and company admission",
       "additional_context": {
@@ -1588,6 +1593,19 @@
         "sources": [
           "Weekly triage 2026-06-22 (issue #39) and 2026-06-29 (issue #41) docket files"
         ]
+      },
+      {
+        "agency": "Province of British Columbia (announced by Attorney General Niki Sharma) and Board of Education of School District No. 59 (Peace River South)",
+        "target": "OpenAI (OpenAI Foundation, f/k/a OpenAI, Inc.; OpenAI OpCo LLC; OpenAI Holdings LLC; OpenAI Group PBC) and CEO Samuel Altman",
+        "type": "civil lawsuit",
+        "date_initiated": "2026-09-21",
+        "scope": "Civil action arising from the February 10, 2026 Tumbler Ridge Secondary School mass shooting (incident 2026-02-CA-001); a provincial government and school board as plaintiffs in U.S. federal court.",
+        "court": "U.S. District Court, Northern District of California",
+        "filing_number": "26-cv-10743 (the caption reads 3:26-cv-10743; the ECF page headers read 4:26-cv-10743-KAW — division prefix to be confirmed from the docket)",
+        "claims": "Eight counts: negligence (failure to warn law enforcement); negligent entrustment; aiding and abetting a mass shooting; negligence (failure to warn); negligent undertaking; negligence (design defect); strict product liability (design defect); strict product liability (failure to warn). Jury demanded.",
+        "relief_sought": "Compensatory damages (including destroyed school property and public expenditures such as policing, health care, victim services, and a replacement school and wellness center); punitive damages; restitution and disgorgement; injunctive relief including safeguards against violence-planning conversations, automated detection with human-review escalation, and a law-enforcement referral policy for credible threats.",
+        "note": "All claims are allegations. The complaint alleges OpenAI's automated monitoring flagged the shooter's account in June 2025 and deactivated it without referral to law enforcement, and that the shooter continued on a second account. Attorney General Niki Sharma announced the filing; she is not a named party.",
+        "source": "Complaint, His Majesty the King in Right of the Province of British Columbia et al. v. Altman et al., No. 26-cv-10743 (N.D. Cal., filed September 21, 2026); BC Gov News — Attorney General's statement (September 21, 2026); Al Jazeera (September 22, 2026)"
       }
     ],
     "consolidated_proceedings": [

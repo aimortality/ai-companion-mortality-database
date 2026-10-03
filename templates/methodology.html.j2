@@ -53,13 +53,8 @@
       border: 1px solid var(--border-soft);
       background: var(--panel); color: var(--text); cursor: pointer;
     }
-    .crisis {
-      background: var(--panel); border: 1px solid var(--border-soft);
-      padding: 10px 14px; font-size: 12px; margin-bottom: 28px;
-    }
     .back-link { color: var(--muted); }
-    .site-nav { font-size: 12px; margin: 6px 0 24px; }
-    .site-nav a, .doc-switch a { color: var(--muted); }
+    .doc-switch a { color: var(--muted); }
     .doc-switch { font-size: 12px; margin: 0 0 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border-soft); }
     .doc-switch strong { color: var(--text); }
     #doc h1 { font-size: 26px; margin: 0 0 20px; border-bottom: 2px solid var(--border); padding-bottom: 12px; }
@@ -89,12 +84,7 @@
 {% endblock %}
 
 {% block body %}
-  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
-
-  <div class="crisis">Crisis resources available 24/7: <strong><a href="tel:988" style="color:var(--text)">Call or text 988</a></strong> (Suicide &amp; Crisis Lifeline)</div>
-
   <a href="index.html" class="back-link">&larr; Back to Database</a>
-  <nav class="site-nav" aria-label="Site"><a href="report.html">Research Report</a> | <a href="index-academic.html">Academic Summary</a> | <a href="https://doi.org/10.5281/zenodo.22062862">Dataset (Zenodo)</a> | <a href="data/README.md">Data files</a></nav>
 
   <nav class="doc-switch" aria-label="Document">
     <span id="switch-methodology"><strong>Methodology</strong></span> ·

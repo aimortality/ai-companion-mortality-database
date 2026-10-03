@@ -185,20 +185,6 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
-    .crisis {
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      padding: 8px;
-      margin: -40px -40px 30px -40px;
-      font-size: 13px;
-      text-align: center;
-    }
-
-    .crisis a {
-      color: var(--inverse-text);
-      font-weight: bold;
-    }
-
     h1 {
       font-size: 28px;
       font-weight: normal;
@@ -214,22 +200,6 @@
       margin: 0 0 20px 0;
       color: var(--muted-strong);
       line-height: 1.5;
-    }
-
-    .site-nav {
-      margin-top: 10px;
-    }
-    .site-nav a {
-      color: var(--muted);
-      text-decoration: underline;
-    }
-    .meta {
-      font-size: 12px;
-      margin: 0 0 40px 0;
-      color: var(--muted);
-      border-bottom: 1px solid var(--border-soft);
-      padding-bottom: 20px;
-      letter-spacing: 0.2px;
     }
 
     /* SVG VISUALIZATIONS - enhanced layout */
@@ -521,10 +491,6 @@
         margin: 20px;
       }
 
-      .crisis {
-        margin: -20px -20px 20px -20px;
-      }
-
       .viz-container,
       .card-grid {
         grid-template-columns: 1fr;
@@ -633,25 +599,19 @@
   </style>
 {% endblock %}
 
-{% block body %}
+{% block skip %}
   <a href="#main-content" class="skip-link">Skip to main content</a>
-  <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">Dark theme</button>
-  <div class="crisis">
-    Crisis resources available 24/7: <a href="tel:988">Call or text 988</a> (Suicide & Crisis Lifeline)
-  </div>
+{% endblock %}
 
+{% block masthead %}
   <h1>AI Companion Mortality Database</h1>
   <div class="subtitle">
     Public database documenting deaths in which AI chatbot interaction was alleged as a contributing factor.<br>
     All cases verified through court documents, news sources, or government acknowledgment.
   </div>
-  <div class="meta">
-    Last updated: {{ updated_long }} | Deaths: {{ meta.total_fatalities }} | Incidents: {{ meta.total_incidents }} | Period: {{ period_start_long }} — {{ period_end_long }}
-    <nav class="site-nav" aria-label="Site">
-      <a href="report.html">Research Report</a> | <a href="index-academic.html">Academic Summary</a> | <a href="methodology.html">Methodology</a> | <a href="methodology.html?doc=verification-standards">Verification Standards</a> | <a href="https://doi.org/10.5281/zenodo.22062862">Dataset (Zenodo)</a> | <a href="data/README.md">Data files</a>
-    </nav>
-  </div>
+{% endblock %}
 
+{% block body %}
   <div class="abstract">
     <p>
       This database documents fatalities where interaction with conversational AI systems was alleged as a contributing factor—through lawsuits, family statements, investigations, or government inquiries. Between {{ period_start_long }} and {{ period_end_long }}, we identified <strong>35 fatalities</strong> across <strong>24 incidents</strong> (occurrences of harm) involving <strong>6 platforms</strong>; in 2 of these, victims survived rather than died. This includes 18 AI users who died and 17 third-party victims killed by AI users. Cases were verified through court documents, multiple independent news sources, or official government acknowledgment.
@@ -1012,9 +972,7 @@
         </div>
         <div class="footer">
           <p>Database last updated: {{ updated_long }}</p>
-          <p>Crisis resources: Call or text 988 (available 24/7)</p>
           <p>Maintained as a public research resource</p>
-          <p>Contact: <a href="mailto:contact@aimortality.org" style="color: var(--muted); text-decoration: underline;">contact@aimortality.org</a></p>
         </div>
       </div>
     </div>

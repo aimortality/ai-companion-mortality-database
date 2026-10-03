@@ -38,6 +38,47 @@ PAGE_KEYS = {
     "index-academic.html": "academic",
     "methodology.html": "methodology",
 }
+SITE_URL = "https://aimortality.org"
+SITE_NAME = "AI Companion Mortality Database"
+# Zenodo DOI of the RELEASED version (the concept DOI, 10.5281/zenodo.22062862, always resolves to the
+# latest and lives in the footer and README). Bumped by hand in the release checklist (CLAUDE.md
+# "Releasing a version", step 3), after Zenodo mints it -- it cannot come from canonical data.
+VERSION_DOI = "10.5281/zenodo.22428187"
+
+# Per-page head metadata, keyed by output file. `path` is the canonical, extensionless URL path
+# (Netlify Pretty URLs serves /report for report.html; "/" for the index). `description` is a
+# str.format template: every number, the coverage period and the version come from canonical via
+# derive(); nothing here is a figure. `ld_type` Dataset = the index carries its own full block.
+PAGES_META = {
+    "index.html": {
+        "title": "AI Companion Mortality Database",
+        "description": ("Public database documenting deaths where AI chatbot interaction was alleged as a "
+                        "contributing factor. {fatalities} fatalities ({users} AI users + {third_party} "
+                        "third-party victims) across {incidents} incidents from {period_start} to {period_end}."),
+        "path": "/", "og_type": "website", "ld_type": "Dataset",
+    },
+    "report.html": {
+        "title": "AI Companion Mortality Database - Complete Research Report",
+        "description": ("Complete research report: {fatalities} documented deaths across {incidents} incidents "
+                        "({period_start} - {period_end}) in which AI chatbot interaction was alleged as a "
+                        "contributing factor, with case narratives, legal proceedings, and verification sources."),
+        "path": "/report", "og_type": "article", "ld_type": "Article",
+    },
+    "index-academic.html": {
+        "title": "AI Companion Mortality Database: A Systematic Documentation of Deaths Associated with "
+                 "Conversational AI Systems",
+        "description": ("Academic summary of the AI Companion Mortality Database: {fatalities} documented deaths "
+                        "across {incidents} incidents ({period_start} - {period_end}), verification methodology, "
+                        "and tabulated case data. Version {version}, DOI {version_doi}."),
+        "path": "/index-academic", "og_type": "article", "ld_type": "Article",
+    },
+    "methodology.html": {
+        "title": "Methodology \u2014 AI Companion Mortality Database",
+        "description": ("Methodology and verification standards for the AI Companion Mortality Database: scope, "
+                        "incident definition, causal pathways, evidence tiers, ethical commitments, and limitations."),
+        "path": "/methodology", "og_type": "article", "ld_type": "WebPage",
+    },
+}
 IGNORE = shutil.ignore_patterns(".DS_Store")
 
 
@@ -68,14 +109,44 @@ def day_long(ymd):
     return f"{date(y, m, dd).strftime('%B')} {dd}, {y}"                 # "September 29, 2026"
 
 
+def page_meta(out, fields, updated_iso):
+    """One page's resolved head metadata: the PAGES_META entry with its description filled from
+    canonical-derived `fields`, its absolute URL, and (for non-index pages) its JSON-LD."""
+    m = PAGES_META[out]
+    url = SITE_URL + m["path"]
+    title = m["title"]
+    page = {"title": title, "description": m["description"].format(**fields), "url": url,
+            "og_type": m["og_type"], "ld_type": m["ld_type"], "json_ld": None}
+    if m["ld_type"] != "Dataset":      # the index keeps its own full Dataset block in its head
+        page["json_ld"] = {
+            "@context": "https://schema.org",
+            "@type": m["ld_type"],
+            "headline": title,
+            "url": url,
+            "dateModified": updated_iso,
+            "isPartOf": {"@type": "Dataset", "name": SITE_NAME, "url": SITE_URL + "/"},
+            "author": {"@type": "Person", "name": "Hunter Karman"},
+        }
+    return page
+
+
 def derive(d):
     """Every value a template shows that comes from data. Templates must not compute.
     Date formats match scripts/audit-surfaces.py, which checks the rendered strings -- so a
     formatting drift between the two fails the audit rather than shipping."""
     m = d["metadata"]
     start, end = m["time_range"]["start"], m["time_range"]["end"]
+    fields = {
+        "fatalities": m["total_fatalities"], "users": m["ai_users_deceased"],
+        "third_party": m["third_party_victims"], "incidents": m["total_incidents"],
+        "version": m["version"], "version_doi": VERSION_DOI,
+        "period_start": month_long(start), "period_end": month_long(end),
+    }
     return {
         "meta": m,
+        "version_doi": VERSION_DOI,
+        "site_name": SITE_NAME,
+        "pages": {out: page_meta(out, fields, m["last_updated"]) for out in PAGES_META},
         "updated_long": day_long(m["last_updated"]),
         "updated_iso": m["last_updated"],
         "period_start_long": month_long(start),
@@ -94,7 +165,7 @@ def render(ctx):
         keep_trailing_newline=True,
     )
     for out, tpl in TEMPLATED.items():
-        html = env.get_template(tpl).render(**ctx, page_key=PAGE_KEYS[out])
+        html = env.get_template(tpl).render(**ctx, page_key=PAGE_KEYS[out], page=ctx["pages"][out])
         with open(os.path.join(DIST, out), "w", encoding="utf-8", newline="\n") as f:
             f.write(html)
 
@@ -111,6 +182,20 @@ def assemble():
         shutil.copytree(os.path.join(ROOT, sub), os.path.join(DIST, sub), ignore=IGNORE)
 
 
+def sitemap_url(out):
+    return SITE_URL + PAGES_META[out]["path"]
+
+
+def write_sitemap(pages, lastmod):
+    """dist/sitemap.xml: one <url> per page in `pages` (output file names), every <lastmod> the
+    canonical last_updated. Generated, so it cannot drift from the pages or the data."""
+    rows = "".join(f"  <url><loc>{sitemap_url(p)}</loc><lastmod>{lastmod}</lastmod></url>\n" for p in pages)
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + '</urlset>\n')
+    with open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(xml)
+
+
 def main():
     if os.path.exists(DIST):
         shutil.rmtree(DIST)
@@ -118,6 +203,8 @@ def main():
     ctx = derive(load())
     render(ctx)
     assemble()
+    # 404.html (not built yet) is a page, not a destination: it never belongs in the sitemap.
+    write_sitemap([p for p in sorted(TEMPLATED) if p != "404.html"], ctx["updated_iso"])
     print(f"built dist/: {sum(len(f) for _, _, f in os.walk(DIST))} files")
     return 0
 

@@ -1,10 +1,5 @@
 {% extends "base.html.j2" %}
 {% block head %}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="color-scheme" content="light dark">
-  <title>AI Companion Mortality Database: A Systematic Documentation of Deaths Associated with Conversational AI Systems</title>
-  <meta name="description" content="Academic summary of the AI Companion Mortality Database: 35 documented deaths across 24 incidents (March 2023 - September 2026), verification methodology, and tabulated case data. Version 3.5.9, DOI 10.5281/zenodo.22428187." />
-  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
   <style>
     :root {
       --bg: #ffffff;
@@ -404,7 +399,7 @@
     <div class="metadata">
       <span><strong>Version:</strong> 3.5.9</span>
       <span><strong>Last Updated:</strong> September 29, 2026</span>
-      <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.22428187">10.5281/zenodo.22428187</a></span>
+      <span><strong>DOI:</strong> <a href="https://doi.org/{{ version_doi }}">{{ version_doi }}</a></span>
     </div>
 
     <div class="abstract">
@@ -913,7 +908,7 @@
     </div>
 
     <footer>
-      <p><strong>Citation:</strong> Karman, H. (2026). AI Companion Mortality Database: Documented Deaths Associated with Conversational AI Systems (2023–2026). Version 3.5.9. Zenodo. https://doi.org/10.5281/zenodo.22428187</p>
+      <p><strong>Citation:</strong> Karman, H. (2026). AI Companion Mortality Database: Documented Deaths Associated with Conversational AI Systems (2023–2026). Version 3.5.9. Zenodo. https://doi.org/{{ version_doi }}</p>
       <p style="margin-top: 12px;"><strong>Correspondence:</strong> <a href="mailto:contact@aimortality.org">contact@aimortality.org</a></p>
       <p style="margin-top: 12px;"><strong>Conflicts of Interest:</strong> The author is an independent researcher with no institutional affiliation, receives no funding from advocacy organizations or AI companies, and has no financial relationship with any platform tracked. The database is compiled with AI assistance from Anthropic's Claude; Anthropic is among the eight platforms tracked (zero documented fatalities as of this version). See the Research Disclosure in the <a href="report.html">full report</a>.</p>
     <p style="margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--border-soft);">

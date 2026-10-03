@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build aimortality.org into dist/ from canonical data and templates.
 
-  python3 build.py
+  .venv/bin/python build.py     # one-time: python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 
 Stages: load (validate canonical) -> derive (every computed value) -> render (templates only
 interpolate; they do no arithmetic) -> assemble (static pages, data/, docs/). The output is a
@@ -20,10 +20,15 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
 from validate_data import validate  # noqa: E402
 
-from jinja2 import Environment, FileSystemLoader, StrictUndefined
-from markdown_it import MarkdownIt
-from markupsafe import Markup
-from mdit_py_plugins.anchors import anchors_plugin
+try:
+    from jinja2 import Environment, FileSystemLoader, StrictUndefined
+    from markdown_it import MarkdownIt
+    from markupsafe import Markup
+    from mdit_py_plugins.anchors import anchors_plugin
+except ImportError as e:     # one actionable line instead of a traceback (the system Python lacks these)
+    raise SystemExit(f"build.py needs the packages in requirements.txt (missing: {e.name}). One-time setup: "
+                     "python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt "
+                     "-- then run .venv/bin/python build.py")
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
@@ -186,18 +191,38 @@ DOC_PAGE_PATHS = {src: "/" + out for out, src in DOC_SOURCES.items()}     # docs
 _SCHEME = re.compile(r"^(?:[a-z][a-z0-9+.\-]*:|//)", re.I)
 
 
+def _is_published(site_path):
+    """Will the built site serve this root-absolute path? True for "/", a page the build renders,
+    and any file under docs/ or data/ (copied whole) or src/ (static assets, favicon, robots)."""
+    rel = site_path.lstrip("/")
+    if not rel or rel in TEMPLATED:
+        return True
+    if rel.split("/")[0] in PUBLISHED_ROOTS:
+        return os.path.isfile(os.path.join(ROOT, *rel.split("/")))
+    return os.path.isfile(os.path.join(ROOT, "src", *rel.split("/")))
+
+
 def rewrite_doc_link(href, doc_dir="docs"):
     """The href a link written in a document under `doc_dir` should have on the built site.
 
-    External, mailto: and #fragment links are untouched. A relative link is resolved against the
-    document's own folder, then: another rendered document -> its page; a file under docs/ or
-    data/ (published) -> its root-absolute path; any other repository file -> its page on the
-    repository host. A link to a file that does not exist raises, so a dead link fails the build."""
+    Untouched: external and mailto: links, //host/... (protocol-relative, external) and #fragments.
+    A root-absolute /path is already a site path: untouched if the site serves it (see
+    _is_published), otherwise it raises. A relative link is resolved against the document's own
+    folder, then: another rendered document -> its page; a file under docs/ or data/ (published)
+    -> its root-absolute path; any other repository file -> its page on the repository host. The
+    query string and fragment are kept as written and travel with the rewritten target; only the
+    path decides what the link is. A target that does not exist, or is a directory (there is no
+    index page for one), raises, so a dead link fails the build instead of shipping."""
     if not href or href.startswith("#") or _SCHEME.match(href):
         return href
-    target, hash_, frag = href.partition("#")
-    target = target.partition("?")[0]
-    repo_path = posixpath.normpath(posixpath.join(doc_dir, target))
+    path, hash_, frag = href.partition("#")
+    path, q, query = path.partition("?")
+    tail = (q + query) + (hash_ + frag)
+    if path.startswith("/"):
+        if not _is_published(path):
+            raise ValueError(f"link {href!r} in {doc_dir}/ is not a page or file the built site serves")
+        return href
+    repo_path = posixpath.normpath(posixpath.join(doc_dir, path))
     if repo_path.startswith("..") or not os.path.isfile(os.path.join(ROOT, *repo_path.split("/"))):
         raise ValueError(f"link {href!r} in {doc_dir}/ points at no file in the repository")
     if repo_path in DOC_PAGE_PATHS:
@@ -206,7 +231,7 @@ def rewrite_doc_link(href, doc_dir="docs"):
         new = "/" + repo_path
     else:
         new = f"{REPO_URL}/-/blob/main/{repo_path}"
-    return new + hash_ + frag
+    return new + tail
 
 
 def _inline_text(inline):

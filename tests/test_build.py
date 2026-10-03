@@ -167,3 +167,40 @@ def test_doc_sources_are_published_unmodified():
     for name in ("methodology.md", "verification-standards.md"):
         assert (open(os.path.join(ROOT, "docs", name), "rb").read()
                 == open(os.path.join(ROOT, "dist", "docs", name), "rb").read())
+
+
+def test_root_absolute_doc_links_pass_through_when_published_and_fail_when_not():
+    import pytest
+    # a root-absolute link is already a site path: untouched if the site will serve it
+    assert build.rewrite_doc_link("/data/mortality-data.json") == "/data/mortality-data.json"
+    assert build.rewrite_doc_link("/docs/methodology.md#a") == "/docs/methodology.md#a"
+    assert build.rewrite_doc_link("/methodology.html") == "/methodology.html"      # a built page
+    assert build.rewrite_doc_link("/favicon.jpg") == "/favicon.jpg"                 # copied from src/
+    # ... and a build failure if the site would 404 on it (never re-pointed at the repository)
+    for dead in ("/CONTRIBUTING.md", "/data/no-such-file.json", "/no-such-page.html", "/data/"):
+        with pytest.raises(ValueError):
+            build.rewrite_doc_link(dead)
+    # //host/... is protocol-relative, i.e. external: untouched
+    assert build.rewrite_doc_link("//example.org/x") == "//example.org/x"
+
+
+def test_doc_link_query_is_kept_and_directory_links_fail():
+    import pytest
+    # the query and fragment travel with the rewritten target; only the path decides what it is
+    assert build.rewrite_doc_link("../data/README.md?x=1#a") == "/data/README.md?x=1#a"
+    assert (build.rewrite_doc_link("../CONTRIBUTING.md?plain=1#top")
+            == "https://gitlab.com/aimortality/ai-companion-mortality-database/-/blob/main/CONTRIBUTING.md?plain=1#top")
+    with pytest.raises(ValueError):
+        build.rewrite_doc_link("../data/")          # a directory is not a published page
+
+
+def test_missing_dependency_exits_with_one_setup_line_not_a_traceback(tmp_path):
+    import subprocess
+    # a shim directory whose markdown_it cannot be imported, ahead of the real packages on the path
+    (tmp_path / "markdown_it.py").write_text("raise ModuleNotFoundError(\"No module named 'markdown_it'\", name='markdown_it')\n")
+    env = dict(os.environ, PYTHONPATH=str(tmp_path))
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "build.py")], capture_output=True, text=True, env=env)
+    assert r.returncode != 0
+    assert "Traceback" not in r.stderr
+    assert "requirements.txt" in r.stderr and "python3.12 -m venv .venv" in r.stderr and "markdown_it" in r.stderr
+    assert len(r.stderr.strip().splitlines()) == 1, r.stderr

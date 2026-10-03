@@ -52,7 +52,8 @@ test('old citation URLs land on Verification Standards', async ({ page, baseURL 
   test.skip(baseURL!.includes('127.0.0.1'), 'redirects only exist on Netlify — run with BASE_URL=<deploy preview>');
   for (const u of ['/methodology?doc=verification-standards', '/methodology.html?doc=verification-standards']) {
     await page.goto(u);
-    await expect(page).toHaveURL(/verification-standards/);
+    // Netlify may keep ?doc= in the query; the path itself must be exactly the new route.
+    expect(new URL(page.url()).pathname).toBe('/verification-standards');
     await expect(page.locator('main h1')).toHaveText('Verification Standards');
   }
 });

@@ -8,7 +8,8 @@ import build  # noqa: E402
 
 
 def test_every_page_is_templated_and_extends_base():
-    assert set(build.TEMPLATED) == {"index.html", "report.html", "index-academic.html", "methodology.html"}
+    assert set(build.TEMPLATED) == {"index.html", "report.html", "index-academic.html", "methodology.html",
+                                    "verification-standards.html"}
     for tpl in build.TEMPLATED.values():
         with open(os.path.join(ROOT, "templates", tpl), encoding="utf-8") as f:
             assert f.read().lstrip().startswith('{% extends "base.html.j2" %}')
@@ -70,10 +71,99 @@ def test_non_index_pages_get_derived_json_ld():
     import json
     import re
     build.main()
-    for out, ld in (("report.html", "Article"), ("index-academic.html", "Article"), ("methodology.html", "WebPage")):
+    for out, ld in (("report.html", "Article"), ("index-academic.html", "Article"), ("methodology.html", "WebPage"),
+                    ("verification-standards.html", "WebPage")):
         html = open(os.path.join(ROOT, "dist", out), encoding="utf-8").read()
         blocks = re.findall(r'<script type="application/ld\+json">(.*?)</script>', html, re.S)
         assert len(blocks) == 1, out
         data = json.loads(blocks[0])
         assert data["@type"] == ld and data["url"] == "https://aimortality.org" + build.PAGES_META[out]["path"]
         assert data["isPartOf"]["url"] == "https://aimortality.org/"
+
+
+# ── Task 6: the two documents render at build time ───────────────────────────────────────────
+DOC_PAGES = (("methodology.html", "On What Counts as an Incident"),
+             ("verification-standards.html", "Tier 1: Juridical Evidence"))
+
+
+def test_docs_render_statically():
+    import re
+    build.main()
+    for out, needle in DOC_PAGES:
+        html = open(os.path.join(ROOT, "dist", out), encoding="utf-8").read()
+        assert needle in html and "Loading" not in html, out
+        assert 'type="module"' not in html, out
+        assert len(re.findall(r"<h1[ >]", html)) == 1, out
+        assert len(re.findall(r"<main[ >]", html)) == 1 and 'id="main-content"' in html, out
+        assert len(re.findall(r"<footer[ >]", html)) == 1 and 'class="site-footer"' in html, out
+        assert re.search(r'<nav [^>]*aria-label="On this page"', html), out
+        assert 'class="doc-source"' in html and 'href="/docs/' in html, out
+    for name in os.listdir(os.path.join(ROOT, "dist")):
+        if name.endswith(".html"):
+            assert "esm.sh" not in open(os.path.join(ROOT, "dist", name), encoding="utf-8").read(), name
+
+
+def test_doc_switch_is_two_real_links_with_aria_current():
+    import re
+    build.main()
+    for out, current in (("methodology.html", "/methodology.html"), ("verification-standards.html", "/verification-standards.html")):
+        html = open(os.path.join(ROOT, "dist", out), encoding="utf-8").read()
+        sw = re.search(r'<nav class="doc-switch" aria-label="Document">(.*?)</nav>', html, re.S).group(1)
+        hrefs = re.findall(r'<a [^>]*href="([^"]+)"', sw)
+        assert hrefs == ["/methodology.html", "/verification-standards.html"], hrefs
+        assert re.findall(r'<a [^>]*href="([^"]+)"[^>]*aria-current="page"', sw) == [current]
+        site_nav = re.search(r'<nav aria-label="Site">(.*?)</nav>', html, re.S).group(1)
+        assert re.findall(r'href="([^"]+)"[^>]*aria-current="page"', site_nav) == [current]
+        assert "doc=verification-standards" not in html
+
+
+def test_headings_get_stable_ids_toc_and_labelled_permalinks():
+    import re
+    build.main()
+    html = open(os.path.join(ROOT, "dist", "verification-standards.html"), encoding="utf-8").read()
+    assert '<h2 id="tier-1-juridical-evidence">' in html
+    assert '<h3 id="minors">' in html
+    toc = re.search(r'<nav [^>]*aria-label="On this page">(.*?)</nav>', html, re.S).group(1)
+    assert 'href="#tier-1-juridical-evidence"' in toc and 'href="#minors"' not in toc   # h2s only
+    # every permalink is a link with an accessible name, never a bare symbol
+    anchors = re.findall(r'<a class="header-anchor"[^>]*>', html)
+    assert anchors and all('aria-label="' in a for a in anchors), anchors
+    # every contents link lands on a real id
+    for frag in re.findall(r'href="#([^"]+)"', toc):
+        assert f'id="{frag}"' in html, frag
+
+
+def test_doc_links_between_docs_published_files_and_unpublished_files():
+    g = "https://gitlab.com/aimortality/ai-companion-mortality-database/-/blob/main/"
+    # links between the two documents -> their rendered pages (fragment kept)
+    assert build.rewrite_doc_link("methodology.md") == "/methodology.html"
+    assert build.rewrite_doc_link("./verification-standards.md#minors") == "/verification-standards.html#minors"
+    # files that ARE published under dist/ (docs/, data/) -> root-absolute site path
+    assert build.rewrite_doc_link("../data/mortality-data.json") == "/data/mortality-data.json"
+    assert build.rewrite_doc_link("sources/README.md") == "/docs/sources/README.md"
+    # repository files that are NOT published -> the repository URL
+    assert build.rewrite_doc_link("../CONTRIBUTING.md") == g + "CONTRIBUTING.md"
+    # external, mailto and #fragment links are untouched
+    for untouched in ("https://orcid.org/0009-0004-5699-6035", "mailto:contact@aimortality.org", "#minors"):
+        assert build.rewrite_doc_link(untouched) == untouched
+    # a link to a file that does not exist fails the build; it never ships a dead link
+    import pytest
+    with pytest.raises(ValueError):
+        build.rewrite_doc_link("../no-such-file.md")
+
+
+def test_rendered_docs_contain_no_relative_markdown_links():
+    import re
+    build.main()
+    for out, _ in DOC_PAGES:
+        html = open(os.path.join(ROOT, "dist", out), encoding="utf-8").read()
+        doc = html[html.index('id="doc"'):html.index("</main>")]
+        assert not re.findall(r'href="(?!https?://|mailto:|#|/)[^"]*"', doc), out
+
+
+def test_doc_sources_are_published_unmodified():
+    # the document is rewritten at render time only; dist/docs must stay exact copies of docs/
+    build.main()
+    for name in ("methodology.md", "verification-standards.md"):
+        assert (open(os.path.join(ROOT, "docs", name), "rb").read()
+                == open(os.path.join(ROOT, "dist", "docs", name), "rb").read())

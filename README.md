@@ -100,7 +100,7 @@ ai-companion-mortality-database/
 │   ├── index.html.j2               # Main page
 │   ├── report.html.j2              # Long-form research report
 │   ├── index-academic.html.j2      # Academic-style edition
-│   └── methodology.html.j2         # Renders docs/methodology.md on-site
+│   └── doc.html.j2                 # Renders docs/methodology.md and docs/verification-standards.md at build time
 ├── src/
 │   └── assets/                     # Shared CSS and JS; static files (favicon, robots.txt) sit beside it
 ├── tests/

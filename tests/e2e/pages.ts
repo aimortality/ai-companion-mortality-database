@@ -1,1 +1,1 @@
-export const PAGES = ['/index.html', '/report.html', '/index-academic.html', '/methodology.html'];
+export const PAGES = ['/index.html', '/report.html', '/index-academic.html', '/methodology.html', '/verification-standards.html'];

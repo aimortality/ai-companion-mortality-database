@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build aimortality.org into dist/ from canonical data and templates.
 
-  python3 build.py
+  .venv/bin/python build.py     # one-time: python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
 
 Stages: load (validate canonical) -> derive (every computed value) -> render (templates only
 interpolate; they do no arithmetic) -> assemble (static pages, data/, docs/). The output is a
@@ -11,6 +11,8 @@ dist/ is build output. Never hand-edit it -- change the template or the data and
 """
 import json
 import os
+import posixpath
+import re
 from datetime import date
 import shutil
 import sys
@@ -18,7 +20,15 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "scripts"))
 from validate_data import validate  # noqa: E402
 
-from jinja2 import Environment, FileSystemLoader, StrictUndefined
+try:
+    from jinja2 import Environment, FileSystemLoader, StrictUndefined
+    from markdown_it import MarkdownIt
+    from markupsafe import Markup
+    from mdit_py_plugins.anchors import anchors_plugin
+except ImportError as e:     # one actionable line instead of a traceback (the system Python lacks these)
+    raise SystemExit(f"build.py needs the packages in requirements.txt (missing: {e.name}). One-time setup: "
+                     "python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt "
+                     "-- then run .venv/bin/python build.py")
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
@@ -29,7 +39,14 @@ TEMPLATED = {
     "index.html": "index.html.j2",
     "report.html": "report.html.j2",
     "index-academic.html": "index-academic.html.j2",
-    "methodology.html": "methodology.html.j2",
+    "methodology.html": "doc.html.j2",
+    "verification-standards.html": "doc.html.j2",
+}
+# The two pages rendered from Markdown (output file -> repo-relative source). Both use doc.html.j2;
+# render_markdown() turns the source into HTML here, in Python, never in the template.
+DOC_SOURCES = {
+    "methodology.html": "docs/methodology.md",
+    "verification-standards.html": "docs/verification-standards.md",
 }
 # Which nav item is current. Passed to the shared nav partial as page_key.
 PAGE_KEYS = {
@@ -37,6 +54,7 @@ PAGE_KEYS = {
     "report.html": "report",
     "index-academic.html": "academic",
     "methodology.html": "methodology",
+    "verification-standards.html": "verification-standards",
 }
 SITE_URL = "https://aimortality.org"
 SITE_NAME = "AI Companion Mortality Database"
@@ -77,6 +95,12 @@ PAGES_META = {
         "description": ("Methodology and verification standards for the AI Companion Mortality Database: scope, "
                         "incident definition, causal pathways, evidence tiers, ethical commitments, and limitations."),
         "path": "/methodology", "og_type": "article", "ld_type": "WebPage",
+    },
+    "verification-standards.html": {
+        "title": "Verification Standards \u2014 AI Companion Mortality Database",
+        "description": ("Verification standards for the AI Companion Mortality Database: the three evidence tiers "
+                        "(juridical, journalistic, preliminary), what qualifies for each, and which are published."),
+        "path": "/verification-standards", "og_type": "article", "ld_type": "WebPage",
     },
 }
 IGNORE = shutil.ignore_patterns(".DS_Store")
@@ -157,6 +181,94 @@ def derive(d):
     }
 
 
+# ── Markdown documents ───────────────────────────────────────────────────────────────────────
+# Where a link in a document should point once the document is a page at the site root. The
+# Markdown sources stay byte-identical (dist/docs/*.md must be exact copies); links are rewritten
+# at render time only.
+REPO_URL = "https://gitlab.com/aimortality/ai-companion-mortality-database"
+PUBLISHED_ROOTS = ("docs", "data")          # copied whole into dist/ by assemble()
+DOC_PAGE_PATHS = {src: "/" + out for out, src in DOC_SOURCES.items()}     # docs/x.md -> /x.html
+_SCHEME = re.compile(r"^(?:[a-z][a-z0-9+.\-]*:|//)", re.I)
+
+
+def _is_published(site_path):
+    """Will the built site serve this root-absolute path? True for "/", a page the build renders,
+    and any file under docs/ or data/ (copied whole) or src/ (static assets, favicon, robots)."""
+    rel = site_path.lstrip("/")
+    if not rel or rel in TEMPLATED:
+        return True
+    if rel.split("/")[0] in PUBLISHED_ROOTS:
+        return os.path.isfile(os.path.join(ROOT, *rel.split("/")))
+    return os.path.isfile(os.path.join(ROOT, "src", *rel.split("/")))
+
+
+def rewrite_doc_link(href, doc_dir="docs"):
+    """The href a link written in a document under `doc_dir` should have on the built site.
+
+    Untouched: external and mailto: links, //host/... (protocol-relative, external) and #fragments.
+    A root-absolute /path is already a site path: untouched if the site serves it (see
+    _is_published), otherwise it raises. A relative link is resolved against the document's own
+    folder, then: another rendered document -> its page; a file under docs/ or data/ (published)
+    -> its root-absolute path; any other repository file -> its page on the repository host. The
+    query string and fragment are kept as written and travel with the rewritten target; only the
+    path decides what the link is. A target that does not exist, or is a directory (there is no
+    index page for one), raises, so a dead link fails the build instead of shipping."""
+    if not href or href.startswith("#") or _SCHEME.match(href):
+        return href
+    path, hash_, frag = href.partition("#")
+    path, q, query = path.partition("?")
+    tail = (q + query) + (hash_ + frag)
+    if path.startswith("/"):
+        if not _is_published(path):
+            raise ValueError(f"link {href!r} in {doc_dir}/ is not a page or file the built site serves")
+        return href
+    repo_path = posixpath.normpath(posixpath.join(doc_dir, path))
+    if repo_path.startswith("..") or not os.path.isfile(os.path.join(ROOT, *repo_path.split("/"))):
+        raise ValueError(f"link {href!r} in {doc_dir}/ points at no file in the repository")
+    if repo_path in DOC_PAGE_PATHS:
+        new = DOC_PAGE_PATHS[repo_path]
+    elif repo_path.split("/")[0] in PUBLISHED_ROOTS:
+        new = "/" + repo_path
+    else:
+        new = f"{REPO_URL}/-/blob/main/{repo_path}"
+    return new + tail
+
+
+def _inline_text(inline):
+    return "".join(c.content for c in inline.children if c.type in ("text", "code_inline"))
+
+
+def render_markdown(rel_path):
+    """Render one Markdown document (repo-relative path) to (html, toc). `toc` lists (id, text)
+    for each h2. CommonMark plus tables; raw HTML in the source stays disabled. h2/h3 get stable
+    ids and a permalink with an accessible name. Linkify is limited to bare e-mail addresses
+    (the client-side renderer this replaces autolinked them, and contact@ must stay a link)."""
+    md = (MarkdownIt("commonmark", {"html": False, "linkify": True}).enable(["table", "linkify"])
+          .use(anchors_plugin, min_level=2, max_level=3, permalink=True))
+    md.linkify.set({"fuzzy_link": False, "fuzzy_email": True})
+    with open(os.path.join(ROOT, *rel_path.split("/")), encoding="utf-8") as f:
+        tokens = md.parse(f.read())
+    doc_dir = posixpath.dirname(rel_path)
+    toc = []
+    for i, tok in enumerate(tokens):
+        if tok.type == "heading_open" and tok.tag == "h2":
+            toc.append((tok.attrGet("id"), _inline_text(tokens[i + 1]).strip()))
+        if tok.type != "inline":
+            continue
+        for c in tok.children:
+            if c.type == "link_open":
+                if c.attrGet("class") == "header-anchor":
+                    c.attrSet("aria-label", "Link to this section: " + _inline_text(tok).strip())
+                else:
+                    c.attrSet("href", rewrite_doc_link(c.attrGet("href"), doc_dir))
+    return md.renderer.render(tokens, md.options, {}), toc
+
+
+def doc_context(out):
+    html, toc = render_markdown(DOC_SOURCES[out])
+    return {"doc_html": Markup(html), "doc_toc": toc, "doc_source": DOC_SOURCES[out]}
+
+
 def render(ctx):
     env = Environment(
         loader=FileSystemLoader(os.path.join(ROOT, "templates")),
@@ -165,7 +277,8 @@ def render(ctx):
         keep_trailing_newline=True,
     )
     for out, tpl in TEMPLATED.items():
-        html = env.get_template(tpl).render(**ctx, page_key=PAGE_KEYS[out], page=ctx["pages"][out])
+        extra = doc_context(out) if out in DOC_SOURCES else {}
+        html = env.get_template(tpl).render(**ctx, **extra, page_key=PAGE_KEYS[out], page=ctx["pages"][out])
         with open(os.path.join(DIST, out), "w", encoding="utf-8", newline="\n") as f:
             f.write(html)
 

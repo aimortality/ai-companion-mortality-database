@@ -3,7 +3,8 @@ import { PAGES } from './pages';
 
 const NAV = ['Database', 'Research Report', 'Academic Summary', 'Methodology', 'Verification Standards', 'Data files'];
 const CURRENT: Record<string, string> = { '/index.html': 'Database', '/report.html': 'Research Report',
-  '/index-academic.html': 'Academic Summary', '/methodology.html': 'Methodology' };
+  '/index-academic.html': 'Academic Summary', '/methodology.html': 'Methodology',
+  '/verification-standards.html': 'Verification Standards' };
 
 for (const path of PAGES) {
   test(`${path}: shared chrome`, async ({ page }) => {

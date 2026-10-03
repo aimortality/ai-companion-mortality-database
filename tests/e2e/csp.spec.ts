@@ -11,24 +11,45 @@ const match = toml.match(/^\s*Content-Security-Policy\s*=\s*"([^"]+)"/m);
 if (!match) throw new Error('netlify.toml has no Content-Security-Policy header line');
 const CSP = match[1];
 
+// Netlify deploy previews (and only previews; production does not do this) inject
+// <script async src="/.netlify/scripts/cdp">, which frames https://app.netlify.com for the preview
+// toolbar. Our policy blocks that frame, correctly: the policy is not widened for a tool that never
+// reaches production. So the collectors ignore exactly that one violation: effective directive
+// frame-src AND blocked origin https://app.netlify.com. Nothing broader.
+const NETLIFY_TOOLBAR_ORIGIN = 'https://app.netlify.com';
+const isToolbarFrame = (effectiveDirective: string, blockedURI: string): boolean => {
+  let origin = '';
+  try { origin = new URL(blockedURI).origin; } catch { /* not a URL (e.g. "inline"): not the toolbar */ }
+  return effectiveDirective === 'frame-src' && origin === NETLIFY_TOOLBAR_ORIGIN;
+};
+// Chromium's console text for the same event: "Framing 'https://app.netlify.com/' violates ...
+// 'frame-src' was not explicitly set, so 'default-src' is used as a fallback."
+const isToolbarFrameMessage = (text: string): boolean => {
+  const m = text.match(/^Framing '([^']+)' violates/);
+  return !!m && /'frame-src'/.test(text) && isToolbarFrame('frame-src', m[1]);
+};
+
 // Two independent collectors: the console message Chromium prints for a violation, and the
 // securitypolicyviolation DOM event (which carries the directive and the blocked URI).
 async function collectViolations(page: Page): Promise<string[]> {
   const violations: string[] = [];
   page.on('console', (m) => {
-    if (/Content Security Policy/i.test(m.text())) violations.push(`console: ${m.text()}`);
+    const text = m.text();
+    if (/Content Security Policy/i.test(text) && !isToolbarFrameMessage(text)) violations.push(`console: ${text}`);
   });
   await page.addInitScript(() => {
     (window as any).__cspViolations = [];
     document.addEventListener('securitypolicyviolation', (e) => {
-      (window as any).__cspViolations.push(`${e.violatedDirective} blocked ${e.blockedURI}`);
+      (window as any).__cspViolations.push({ effective: e.effectiveDirective, violated: e.violatedDirective, blocked: e.blockedURI });
     });
   });
   return violations;
 }
 
 async function domViolations(page: Page): Promise<string[]> {
-  return page.evaluate(() => (window as any).__cspViolations ?? []);
+  const raw: { effective: string; violated: string; blocked: string }[] =
+    await page.evaluate(() => (window as any).__cspViolations ?? []);
+  return raw.filter((v) => !isToolbarFrame(v.effective, v.blocked)).map((v) => `${v.violated} blocked ${v.blocked}`);
 }
 
 // (a) Runs locally and on previews: the local server sends no headers, so attach the policy to the
@@ -43,7 +64,10 @@ fixtureTest.describe('CSP enforced on every page (header attached by the test)',
       });
       const violations = await collectViolations(page);
       await page.emulateMedia({ colorScheme: 'light' });
-      await page.goto(path);
+      const response = await page.goto(path);
+      // Positive control: the document the page actually received carries the policy, so a
+      // route.fulfill that stopped attaching it cannot leave this test passing vacuously.
+      fixtureExpect(response!.headers()['content-security-policy']).toBe(CSP);
       await page.waitForLoadState('load');
       const btn = page.locator('#theme-toggle');
       await fixtureExpect(btn).toHaveAttribute('aria-pressed', 'false');
@@ -59,7 +83,8 @@ fixtureTest.describe('CSP enforced on every page (header attached by the test)',
 // (b) Netlify only: the real header, and Google Analytics left unaborted to prove the policy
 // does not break it.
 rawTest.describe('CSP as served by Netlify', () => {
-  rawTest.skip(({ baseURL }) => !!baseURL?.includes('127.0.0.1'), 'headers only exist on Netlify');
+  // Same switch playwright.config.ts uses: no BASE_URL means the local server, which sends no headers.
+  rawTest.skip(!process.env.BASE_URL, 'headers only exist on Netlify');
 
   for (const path of PAGES) {
     rawTest(`${path}: header equals netlify.toml, zero violations`, async ({ page }) => {

@@ -92,6 +92,7 @@ Committed directly to `main`, **before** the routine branch is created. Any numb
 
 - Do not modify `data/mortality-data.json`.
 - Do not modify `templates/`, `build.py`, `templates/report.html.j2`, `templates/index-academic.html.j2`, or `templates/doc.html.j2`. The site is built from these; `dist/` is build output and is not in the repository.
+- Do not modify `netlify.toml` (deploy command, redirects, the Content-Security-Policy), `src/assets/` (the site's CSS and JavaScript), `scripts/` (the audit gate that decides whether a deploy ships, and the build helpers), `tests/`, or `requirements*.txt`. An unattended run must never be able to weaken the checks it is judged by.
 - Do not modify `README.md`.
 - Do not modify `docs/methodology.md` or `docs/verification-standards.md`.
 - Do not modify `docs/sources/court-documents.md` or `docs/sources/news-coverage.md` — flag additions in a candidate md, let the human integrate.

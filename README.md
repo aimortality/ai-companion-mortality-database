@@ -96,7 +96,7 @@ ai-companion-mortality-database/
 ├── build.py                        # Builds the site into dist/ (validate → render → assemble)
 ├── templates/
 │   ├── base.html.j2                # Shared page skeleton every page extends
-│   ├── partials/                   # Shared fragments (analytics)
+│   ├── partials/                   # Shared fragments: analytics, crisis, nav, register, site-footer
 │   ├── index.html.j2               # Main page
 │   ├── report.html.j2              # Long-form research report
 │   ├── index-academic.html.j2      # Academic-style edition

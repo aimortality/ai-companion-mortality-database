@@ -242,3 +242,16 @@ def test_missing_dependency_exits_with_one_setup_line_not_a_traceback(tmp_path):
     assert "Traceback" not in r.stderr
     assert "requirements.txt" in r.stderr and "python3.12 -m venv .venv" in r.stderr and "markdown_it" in r.stderr
     assert len(r.stderr.strip().splitlines()) == 1, r.stderr
+
+
+def test_root_absolute_doc_links_are_normalised_before_the_published_check():
+    import pytest
+    # /data/../CONTRIBUTING.md resolves to /CONTRIBUTING.md, which the site does not serve; it must not
+    # pass just because its first segment is "data" and the file exists in the repository
+    for escaping in ("/data/../CONTRIBUTING.md", "/docs/../README.md", "/data/../../etc/passwd", "/data/./../CONTRIBUTING.md"):
+        with pytest.raises(ValueError):
+            build.rewrite_doc_link(escaping)
+    assert build._is_published("/data/../favicon.jpg")          # normalises to a file src/ does publish
+    assert not build._is_published("/data/../CONTRIBUTING.md")
+    # a harmless dot segment inside a published path still passes, and the href is kept as written
+    assert build.rewrite_doc_link("/data/./mortality-data.json") == "/data/./mortality-data.json"

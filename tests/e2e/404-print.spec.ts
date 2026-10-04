@@ -101,3 +101,14 @@ test('print: external links in main show their URL; sources are not hidden', asy
   const after = await link.evaluate((e) => getComputedStyle(e, '::after').content);
   expect(after).toContain((await link.getAttribute('href'))!);
 });
+
+test('print: heading permalink glyphs are hidden; on screen they exist (the check is not vacuous)', async ({ page }) => {
+  await page.goto('/methodology.html');
+  const anchors = page.locator('a.header-anchor');
+  expect(await anchors.count()).toBeGreaterThan(0);
+  await expect(anchors.first()).toBeVisible();
+  await page.emulateMedia({ media: 'print' });
+  for (const a of await anchors.all()) {
+    expect(await a.evaluate((e) => getComputedStyle(e).display)).toBe('none');
+  }
+});

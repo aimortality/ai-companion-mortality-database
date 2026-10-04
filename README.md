@@ -100,7 +100,8 @@ ai-companion-mortality-database/
 │   ├── index.html.j2               # Main page
 │   ├── report.html.j2              # Long-form research report
 │   ├── index-academic.html.j2      # Academic-style edition
-│   └── doc.html.j2                 # Renders docs/methodology.md and docs/verification-standards.md at build time
+│   ├── doc.html.j2                 # Renders docs/methodology.md and docs/verification-standards.md at build time
+│   └── 404.html.j2                 # Error page (noindex, not in the sitemap); Netlify serves it for unknown paths
 ├── src/
 │   └── assets/                     # Shared CSS and JS; static files (favicon, robots.txt) sit beside it
 ├── tests/

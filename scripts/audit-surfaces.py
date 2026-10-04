@@ -265,7 +265,10 @@ class _Head(HTMLParser):
 def check_meta(E, root=None):
     """Every built page carries the shared head metadata: one <title>, one canonical equal to its
     expected URL, og:title / og:description / og:url (= canonical), twitter:card by name=, and a
-    non-empty description. No twitter:* by property=. Fails closed on any absence."""
+    non-empty description. No twitter:* by property=. Fails closed on any absence.
+    The one carve-out is a rule, not a filename: a page whose head carries <meta name="robots"
+    content="noindex"> is not a destination, so it must claim no URL -- NO canonical and NO og:url --
+    and every other requirement still applies."""
     root = root or ROOT
     pages = site_pages(root)
     if not pages:
@@ -282,12 +285,18 @@ def check_meta(E, root=None):
         if len(h.titles) != 1 or not h.titles[0].strip():
             problems.append(f"{len(h.titles)} <title> (need exactly one, non-empty)")
         canon = [l.get("href") for l in h.links if l.get("rel") == "canonical"]
-        if canon != [want]:
+        noindex = any("noindex" in re.split(r"[\s,]+", c.lower()) for c in meta("robots", "name"))
+        if noindex:
+            if canon:
+                problems.append(f"noindex page has canonical {canon} (must claim no URL)")
+            if meta("og:url", "property"):
+                problems.append(f"noindex page has og:url {meta('og:url', 'property')} (must claim no URL)")
+        elif canon != [want]:
             problems.append(f"canonical {canon} != [{want!r}]")
         for prop in ("og:title", "og:description"):
             if len([c for c in meta(prop, "property") if c.strip()]) != 1:
                 problems.append(f"{prop} missing or empty")
-        if meta("og:url", "property") != [want]:
+        if not noindex and meta("og:url", "property") != [want]:
             problems.append(f"og:url {meta('og:url', 'property')} != [{want!r}]")
         if len(meta("twitter:card", "name")) != 1:
             problems.append('name="twitter:card" missing')
@@ -299,7 +308,8 @@ def check_meta(E, root=None):
             for p in problems:
                 fail(f"{f}: {p}")
         else:
-            ok(f"{f}: title, canonical, og, twitter, description present")
+            ok(f"{f}: title, og, twitter, description present; "
+               + ("noindex, no canonical or og:url" if noindex else "canonical present"))
 
 
 class _Scripts(HTMLParser):

@@ -1,0 +1,28 @@
+/* Print stylesheet, linked from base.html.j2 with media="print" after base.css. Journalists and
+   researchers print these pages: always black on white (whatever the screen theme), no screen-only
+   controls, the crisis line kept, wide tables unclipped, and external links readable on paper. */
+
+/* Black on white regardless of theme. Every page sets its own palette in its own <style>, with
+   panels and cards in theme variables, so rather than chase variable names: everything is transparent
+   over a white html/body with black text. !important beats the dark-theme rules. */
+:root { color-scheme: light !important; }
+* { background: transparent !important; color: #000 !important; border-color: #000 !important; box-shadow: none !important; }
+html, body { background: #fff !important; color: #000 !important; }
+
+/* Screen-only chrome. */
+#theme-toggle, nav[aria-label="Site"], .skip-link, nav.doc-switch, nav[aria-label="On this page"] { display: none !important; }
+
+/* The crisis line stays: plain black on white with a thin border. */
+.crisis-bar { background: #fff !important; color: #000 !important; border: 1px solid #000; }
+
+/* Wide tables print whole, not clipped to their screen scroll box; headers repeat across pages. */
+.table-scroll { overflow: visible !important; }
+thead { display: table-header-group; }
+
+/* Pagination. */
+.case-section { break-inside: avoid-page; }
+p, li { orphans: 3; widows: 3; }
+
+/* Links are black and underlined; an external link also prints its address. */
+a, a:visited { color: #000 !important; text-decoration: underline; }
+main a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.85em; word-break: break-all; }

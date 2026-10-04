@@ -7,7 +7,7 @@ description: Use before opening or merging any PR that touches data values, case
 
 ## Overview
 
-The database is cited by researchers, regulators, and journalists. Its truth is spread across five files that duplicate the same facts (`data/mortality-data.json` is canonical; `templates/index.html.j2` (built to `dist/index.html`), `templates/index-academic.html.j2`, `templates/report.html.j2`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
+The database is cited by researchers, regulators, and journalists. Its truth is spread across several files that duplicate the same facts (`data/mortality-data.json` is canonical; `templates/index.html.j2` (built to `dist/index.html`), `templates/index-academic.html.j2`, `templates/report.html.j2`, `README.md` derive from it; `docs/methodology.md` carries headline numbers in prose). When they disagree, the database is silently lying. This audit catches drift before it ships.
 
 **Core principle: evidence before claims.** Every finding cites `file:line` or fresh command output from *this* pass. If you did not run the command in this pass, you cannot say it passes.
 
@@ -16,14 +16,15 @@ The database is cited by researchers, regulators, and journalists. Its truth is 
 ## The run
 
 ```bash
-python3 scripts/validate_data.py                   # JSON internal invariants
-python3 scripts/audit-surfaces.py --base main      # five surfaces vs canonical; stale probes vs main
-python3 scripts/audit-surfaces.py --links          # add on quarterly passes or after source edits
+# one-time setup: python3.12 -m venv .venv && .venv/bin/pip install -r requirements-dev.txt
+.venv/bin/python scripts/validate_data.py                   # JSON internal invariants
+.venv/bin/python scripts/audit-surfaces.py --base main      # built pages + Markdown surfaces vs canonical; stale probes vs main
+.venv/bin/python scripts/audit-surfaces.py --links          # add on quarterly passes or after source edits
 ```
 
-`--base` is the ref whose canonical JSON supplies the *pre-change* values (use `HEAD~1` or the pre-sweep commit when auditing a merged sweep). The script checks: headline totals; coverage-period strings (`Period: … — <Month YYYY>`, `Between March 2023 and …`, `Mar 2023–…`, the three meta descriptions, JSON-LD `temporalCoverage`, methodology's zero-deaths claim); version and last-updated strings incl. the index-academic masthead; pathway counts; `index.html` age buckets summing to fatalities, duration denominator, and every chart `<desc>` against its data; `report.html` Verification Sources against canonical `sources` (marquee outlet not in canonical = FAIL; any other unmatched outlet = WARN); stale pre-change values surviving anywhere. Exit 0 = no FAIL.
+`--base` is the ref whose canonical JSON supplies the *pre-change* values (use `HEAD~1` or the pre-sweep commit when auditing a merged sweep; the stale probes do nothing when base equals HEAD, as on a Netlify production build). The script builds `dist/` and checks the **built pages** plus the Markdown surfaces; `scripts/AUDIT.md` is the authoritative list of what each check asserts. In short: headline totals; coverage-period strings; version, last-updated and masthead month; pathway counts; the "Duration known for N of M" statements; `report.html` Verification Sources against canonical `sources` (marquee outlet not in canonical = FAIL; any other unmatched outlet = WARN); derived exports; the version DOI agreeing on every surface; relative links, publish copies, required pages, sitemap, head metadata and inline scripts; and stale pre-change values surviving anywhere. The index-page charts and their checks were removed on 2026-09-29. Exit 0 = no FAIL.
 
-Then **render it**: serve `dist/` (`python3 -m http.server -d dist`), open `index.html` headless, confirm zero console errors and that the page shows canonical values. The script reads the built pages' markup; it cannot see a chart clipping its own label.
+Then **render it**: serve `dist/` (`.venv/bin/python -m http.server --directory dist`), open `index.html` headless, confirm zero console errors and that the page shows canonical values. The script reads the built pages' markup; it cannot see a chart clipping its own label.
 
 ## What the script cannot judge — do these by hand or by subagent
 

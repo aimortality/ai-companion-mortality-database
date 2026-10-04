@@ -206,8 +206,11 @@ _SCHEME = re.compile(r"^(?:[a-z][a-z0-9+.\-]*:|//)", re.I)
 
 def _is_published(site_path):
     """Will the built site serve this root-absolute path? True for "/", a page the build renders,
-    and any file under docs/ or data/ (copied whole) or src/ (static assets, favicon, robots)."""
-    rel = site_path.lstrip("/")
+    and any file under docs/ or data/ (copied whole) or src/ (static assets, favicon, robots). `..` and
+    `.` segments are resolved before the decision."""
+    # Normalise first, as a browser does: /data/../CONTRIBUTING.md is /CONTRIBUTING.md, not a file under
+    # data/. normpath on an absolute path clamps ".." at the root, so nothing can climb out.
+    rel = posixpath.normpath("/" + site_path.lstrip("/")).lstrip("/")
     if not rel or rel in TEMPLATED:
         return True
     if rel.split("/")[0] in PUBLISHED_ROOTS:

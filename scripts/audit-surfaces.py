@@ -7,10 +7,10 @@ the surfaces for both. Builds dist/ first (build.py) and checks the BUILT pages 
 what ships -- not their sources. Companion to validate_data.py (which checks the
 JSON's internal invariants); this checks that the surfaces agree with the JSON.
 
-    python3 scripts/audit-surfaces.py             # base = main
-    python3 scripts/audit-surfaces.py --base HEAD~1
-    python3 scripts/audit-surfaces.py --links     # also test every external URL
-    python3 scripts/audit-surfaces.py --no-build  # audit the existing dist/ (the Netlify gate)
+    .venv/bin/python scripts/audit-surfaces.py             # base = main
+    .venv/bin/python scripts/audit-surfaces.py --base HEAD~1
+    .venv/bin/python scripts/audit-surfaces.py --links     # also test every external URL
+    .venv/bin/python scripts/audit-surfaces.py --no-build  # audit the existing dist/ (the Netlify gate)
 
 Exit 0 if no FAIL. WARN never fails the run.
 """
@@ -38,6 +38,12 @@ HEADLINE_SURFACES = {f"{SITE}/index.html", f"{SITE}/index-academic.html", f"{SIT
 # The methodology document's zero-deaths sentence ("through <Month YYYY>, no deaths ...") is also a
 # coverage statement; both the Markdown source and the page rendered from it are held to it.
 THROUGH_SURFACES = {"docs/methodology.md", f"{SITE}/methodology.html"}
+# Pages that MUST exist in dist/. site_pages() derives its list from dist/ itself, so a page that
+# vanished from the build would otherwise vanish from every check too (the 404 page, which nothing
+# links to, is the one that could). Independent of build.TEMPLATED on purpose; tests/ asserts the two
+# agree, so adding a page to the build without listing it here fails the test suite.
+REQUIRED_PAGES = {"index.html", "report.html", "index-academic.html", "methodology.html",
+                  "verification-standards.html", "404.html"}
 
 
 def site_pages(root=None):
@@ -57,8 +63,10 @@ def site_pages(root=None):
     return sorted(pages)
 
 
-def surfaces():
-    return site_pages() + MARKDOWN_SURFACES
+def surfaces(root=None):
+    return site_pages(root) + MARKDOWN_SURFACES
+
+
 ALIAS = {"wsj": "wall street journal", "nyt": "new york times", "ap": "associated press", "wapo": "washington post"}
 # canonical incident name -> the token its report.html header uses, where they differ
 CASE_ALIAS = {"University of South Florida double homicide": "USF"}
@@ -136,13 +144,17 @@ def check_headline(E, text, f):
 
 def check_period(E, text, f):
     want = {month_long(E["period_end"]), month_short(E["period_end"])}
-    bad = {m.group(2) for m in PERIOD_RE.finditer(text) if m.group(2) not in want}
+    found = {m.group(2) for m in PERIOD_RE.finditer(text)}
     if f in THROUGH_SURFACES:  # the zero-deaths claim is also a coverage statement
-        bad |= {m.group(2) for m in PERIOD_THROUGH_RE.finditer(text) if m.group(2) not in want}
+        found |= {m.group(2) for m in PERIOD_THROUGH_RE.finditer(text)}
+    bad = found - want
     if bad:
         fail(f"{f}: coverage-period string(s) {sorted(bad)} ≠ time_range.end {month_long(E['period_end'])}")
-    else:
+    elif found:
         ok(f"{f}: coverage-period strings agree with time_range.end")
+    elif f in HEADLINE_SURFACES:    # a headline surface must state the period; none found = reworded away
+        fail(f"{f}: no coverage-period string found (expected one matching PERIOD_RE / PERIOD_THROUGH_RE) -- "
+             "the check would be comparing nothing; if the wording changed, extend the patterns in the same change")
     if f == f"{SITE}/index.html":
         tc = re.search(r'"temporalCoverage":\s*"([0-9/\-]+)"', text)
         want_tc = f"{E['period_start'][:7]}/{E['period_end'][:7]}"
@@ -158,6 +170,36 @@ def check_version(E, text, f):
         fail(f"{f}: version string(s) {sorted(stale)} ≠ canonical {E['version']}")
     elif found:
         ok(f"{f}: version {E['version']}")
+
+
+CONCEPT_DOI = "10.5281/zenodo.22062862"   # always resolves to the latest version; lives in the footer and README badge
+DOI_RE = re.compile(r"10\.5281/zenodo\.\d+")
+VERSION_DOI_RE = re.compile(r"""^VERSION_DOI\s*=\s*["'](10\.5281/zenodo\.\d+)["']\s*(?:#.*)?$""", re.M)
+
+
+def check_version_doi(root=None):
+    """The released version's Zenodo DOI is typed in four places: build.py VERSION_DOI (rendered into
+    the academic page) and the citation lines of README.md, data/README.md and docs/methodology.md.
+    Every 10.5281/zenodo.<digits> on any surface other than the concept DOI must equal VERSION_DOI, so
+    a release that bumps only some of them cannot ship a citation mismatch. VERSION_DOI is read from
+    build.py's SOURCE (not imported: the audit stays independent of the build's dependencies); if it
+    cannot be parsed the check FAILS rather than comparing against nothing."""
+    root = root or ROOT
+    src = open(os.path.join(root, "build.py"), encoding="utf-8").read()
+    m = VERSION_DOI_RE.search(src)
+    if not m:
+        fail('build.py: VERSION_DOI = "10.5281/zenodo.<digits>" not found as a plain string assignment; '
+             "cannot check the version DOI on any surface (fail closed)")
+        return
+    want = m.group(1)
+    stray = []
+    for f in surfaces(root):
+        text = open(os.path.join(root, f), encoding="utf-8").read()
+        stray += [f"{f}: {d}" for d in sorted(set(DOI_RE.findall(text)) - {CONCEPT_DOI, want})]
+    if stray:
+        fail(f"version DOI(s) ≠ build.py VERSION_DOI {want}: " + "; ".join(stray))
+    else:
+        ok(f"version DOI {want} agrees on every surface (concept DOI {CONCEPT_DOI} excepted)")
 
 
 def check_masthead(E, text, f):
@@ -260,6 +302,18 @@ class _Head(HTMLParser):
     def handle_data(self, data):
         if self._in_title:
             self.titles[-1] += data
+
+
+def check_required_pages(root=None):
+    """Every page in REQUIRED_PAGES exists in dist/. Every other check derives its page list from
+    dist/, so without this a page that stopped being built (nothing links to the 404 page) would
+    drop out of the audit silently."""
+    root = root or ROOT
+    missing = sorted(p for p in REQUIRED_PAGES if not os.path.isfile(os.path.join(root, SITE, p)))
+    for p in missing:
+        fail(f"{SITE}/{p}: required page missing from the build")
+    if not missing:
+        ok(f"all {len(REQUIRED_PAGES)} required pages present in {SITE}/")
 
 
 def check_meta(E, root=None):
@@ -462,36 +516,46 @@ def check_exports():
     """Derived exports must equal what build-data-exports.py would generate from canonical now."""
     targets = ["data/platform-analysis.csv", "data/incidents.csv", "data/timeline.json"]
     before = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}
-    subprocess.run([sys.executable, os.path.join(ROOT, "scripts/build-data-exports.py")], capture_output=True)
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts/build-data-exports.py")], capture_output=True)
     after = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}
     stale = [t for t in targets if before[t] != after[t]]
     for t in targets:  # never leave the working tree modified by an audit
         if before[t] != after[t]:
             open(os.path.join(ROOT, t), "wb").write(before[t])
-    if stale:
+    if r.returncode != 0:     # a crashed generator leaves the files untouched: do not read that as "match"
+        tail = (r.stderr or b"").decode("utf-8", "replace").strip().splitlines()[-5:]
+        fail(f"scripts/build-data-exports.py exited {r.returncode}; exports not verified: " + " | ".join(tail))
+    elif stale:
         fail("derived exports stale vs canonical — run scripts/build-data-exports.py: " + ", ".join(stale))
     else:
         ok("derived exports (platform-analysis.csv, incidents.csv, timeline.json) match canonical")
 
 
-def check_relative_links():
+def check_relative_links(root=None):
     """Every relative href/src in the built pages must resolve inside the built site (dist/),
-    which contains data/ and docs/ -- so a link to a file the build did not produce fails."""
-    import glob
-    missing = []
-    for f in site_pages():
-        text = read(f)
+    which contains data/ and docs/ -- so a link to a file the build did not produce fails, and so
+    does one whose `..` climbs out of dist/ (it would resolve to a repo file that is not served;
+    browsers clamp `..` at the site root, so it only works live by accident)."""
+    root = root or ROOT
+    site_root = os.path.join(root, SITE)
+    missing, outside = [], []
+    for f in site_pages(root):
+        text = open(os.path.join(root, f), encoding="utf-8").read()
         for u in re.findall(r"""(?:href|src)[=:]\s?["']([^"']+)["']""", text):
             u = u.split("#")[0].split("?")[0]
             if not u or u.startswith(("http", "mailto:", "tel:", "data:")) or u == "/":
                 continue
             base = os.path.dirname(f) if not u.startswith("/") else SITE
-            path = os.path.normpath(os.path.join(ROOT, base, u.lstrip("/")))
-            if not os.path.exists(path):
+            path = os.path.normpath(os.path.join(root, base, u.lstrip("/")))
+            if os.path.commonpath([path, site_root]) != site_root:
+                outside.append(f"{f} -> {u}")
+            elif not os.path.exists(path):
                 missing.append(f"{f} -> {u}")
+    if outside:
+        fail(f"relative links that resolve outside {SITE}/: " + "; ".join(sorted(set(outside))))
     if missing:
         fail("relative links to nonexistent files: " + "; ".join(sorted(set(missing))))
-    else:
+    elif not outside:
         ok("relative links in served pages all resolve")
 
 
@@ -591,8 +655,10 @@ def main():
     else:
         print(f"base {args.base}: not readable — stale-value probes skipped")
 
+    check_required_pages()
     for f in surfaces():
         audit_surface(E, B, f, read(f))
+    check_version_doi()
     check_duration_statements(E)
     check_sources(d)
     check_exports()

@@ -211,7 +211,7 @@ def test_built_methodology_page_is_a_headline_surface_and_gets_the_through_claus
     audit.check_period(E, "We claim only that, through September 2026, no deaths meeting our standards", "dist/methodology.html")
     assert audit.fails == []
     audit.fails.clear()    # the clause stays scoped: other pages may say "through <month>, no deaths" of something else
-    audit.check_period(E, "through May 2024, no deaths", "dist/report.html")
+    audit.check_period(E, "between March 2023 and September 2026. Separately: through May 2024, no deaths", "dist/report.html")
     assert audit.fails == []
 
 
@@ -264,3 +264,128 @@ def test_check_inline_scripts_fails_when_there_are_no_pages(tmp_path):
     audit.fails.clear()
     audit.check_inline_scripts({}, root=str(tmp_path))
     assert audit.fails, "check_inline_scripts passed with no pages"
+
+
+# ── close-out: gate holes found by the Track 1 final review ───────────────────────────────────
+import subprocess  # noqa: E402
+import sys  # noqa: E402
+
+sys.path.insert(0, os.path.join(HERE, ".."))  # for `import build` (REQUIRED_PAGES must track TEMPLATED)
+
+
+def _reset():
+    audit.fails.clear()
+    audit.passes.clear()
+
+
+def test_check_exports_fails_when_the_generator_crashes(monkeypatch):
+    # the generator exiting non-zero leaves the files unchanged; that must not read as "exports match"
+    _reset()
+    monkeypatch.setattr(audit.subprocess, "run", lambda *a, **k: subprocess.CompletedProcess(
+        a[0], 1, stdout=b"", stderr=b"Traceback ...\nKeyError: 'boom-marker'\n"))
+    audit.check_exports()
+    assert any("boom-marker" in f for f in audit.fails), audit.fails
+    assert not any("match canonical" in p for p in audit.passes), audit.passes
+
+
+def test_check_exports_passes_when_the_generator_succeeds_and_nothing_drifts(monkeypatch):
+    _reset()
+    monkeypatch.setattr(audit.subprocess, "run", lambda *a, **k: subprocess.CompletedProcess(a[0], 0, stdout=b"", stderr=b""))
+    audit.check_exports()
+    assert audit.fails == [] and any("match canonical" in p for p in audit.passes)
+
+
+def test_required_pages_equal_the_templated_pages():
+    import build
+    assert audit.REQUIRED_PAGES == set(build.TEMPLATED), (
+        "a page was added to (or removed from) build.TEMPLATED: update REQUIRED_PAGES in audit-surfaces.py too")
+
+
+def test_check_required_pages_fails_for_each_page_missing_from_dist(tmp_path):
+    for name in sorted(audit.REQUIRED_PAGES):
+        touch(tmp_path / "dist" / name)
+    _reset()
+    audit.check_required_pages(root=str(tmp_path))
+    assert audit.fails == [] and audit.passes
+    (tmp_path / "dist" / "404.html").unlink()
+    (tmp_path / "dist" / "report.html").unlink()
+    _reset()
+    audit.check_required_pages(root=str(tmp_path))
+    assert any("404.html" in f for f in audit.fails) and any("report.html" in f for f in audit.fails), audit.fails
+
+
+E_PER = {"period_end": "2026-09-28", "period_start": "2023-03-01"}
+
+
+def test_check_period_passes_only_when_a_period_string_was_compared():
+    _reset()
+    audit.check_period(E_PER, "<p>Period: March 2023 — September 2026</p>", "dist/report.html")
+    assert audit.fails == [] and any("agree" in p for p in audit.passes), (audit.fails, audit.passes)
+    # a surface that is allowed to have no period string records nothing (no PASS to inflate the count)
+    _reset()
+    audit.check_period(E_PER, "<p>nothing</p>", "dist/cases/x.html")
+    assert audit.fails == [] and audit.passes == []
+
+
+def test_check_period_fails_a_headline_surface_with_no_period_string():
+    for f in sorted(audit.HEADLINE_SURFACES):
+        _reset()
+        audit.check_period(E_PER, "<p>the register line was reworded</p>", f)
+        assert any(f in x and "no coverage-period" in x for x in audit.fails), (f, audit.fails)
+        assert audit.passes == []
+
+
+def _links_site(tmp_path, href, target=None):
+    touch(tmp_path / "dist/index.html", f'<html><body><a href="{href}">x</a></body></html>')
+    if target:
+        touch(tmp_path / target, "x")
+    return str(tmp_path)
+
+
+def test_check_relative_links_passes_inside_dist(tmp_path):
+    _reset()
+    audit.check_relative_links(root=_links_site(tmp_path, "/data/x.json", "dist/data/x.json"))
+    assert audit.fails == [] and audit.passes
+
+
+def test_check_relative_links_fails_when_a_dotdot_escapes_dist_even_if_the_file_exists(tmp_path):
+    # ../data/x.json from dist/index.html resolves to <root>/data/x.json: it exists, but outside dist/
+    for href in ("../data/x.json", "/../data/x.json"):
+        _reset()
+        sub = tmp_path / href.replace("/", "_").replace(".", "-")
+        audit.check_relative_links(root=_links_site(sub, href, "data/x.json"))
+        assert audit.fails and "x.json" in audit.fails[0], (href, audit.fails)
+
+
+VERSION_DOI_SRC = 'VERSION_DOI = "10.5281/zenodo.23115481"\n'
+CONCEPT = "10.5281/zenodo.22062862"
+
+
+def _doi_root(tmp_path, build_src=VERSION_DOI_SRC, **page_texts):
+    touch(tmp_path / "build.py", build_src)
+    touch(tmp_path / "dist/index.html", f"<p>concept {CONCEPT}</p>")
+    for rel in audit.MARKDOWN_SURFACES:
+        touch(tmp_path / rel, page_texts.get(rel, f"Zenodo. https://doi.org/10.5281/zenodo.23115481 and {CONCEPT}"))
+    return str(tmp_path)
+
+
+def test_check_version_doi_passes_when_every_surface_agrees(tmp_path):
+    _reset()
+    audit.check_version_doi(root=_doi_root(tmp_path))
+    assert audit.fails == [] and any("23115481" in p for p in audit.passes), (audit.fails, audit.passes)
+
+
+def test_check_version_doi_fails_on_a_stale_doi_naming_surface_and_doi(tmp_path):
+    _reset()
+    audit.check_version_doi(root=_doi_root(tmp_path, **{"docs/methodology.md": "Zenodo. https://doi.org/10.5281/zenodo.22428187"}))
+    assert any("docs/methodology.md" in f and "10.5281/zenodo.22428187" in f for f in audit.fails), audit.fails
+    assert not any("README.md" in f for f in audit.fails)
+
+
+def test_check_version_doi_fails_closed_when_the_constant_cannot_be_parsed(tmp_path):
+    for label, src in {"missing": "x = 1\n", "not a doi": 'VERSION_DOI = "TBD"\n',
+                       "computed": 'VERSION_DOI = "10.5281/zenodo." + str(n)\n'}.items():
+        _reset()
+        audit.check_version_doi(root=_doi_root(tmp_path / label.replace(" ", "_"), build_src=src))
+        assert any("VERSION_DOI" in f for f in audit.fails), (label, audit.fails)
+        assert not any("agree" in p for p in audit.passes)

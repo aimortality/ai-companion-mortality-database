@@ -9,7 +9,7 @@ import build  # noqa: E402
 
 def test_every_page_is_templated_and_extends_base():
     assert set(build.TEMPLATED) == {"index.html", "report.html", "index-academic.html", "methodology.html",
-                                    "verification-standards.html"}
+                                    "verification-standards.html", "404.html"}
     for tpl in build.TEMPLATED.values():
         with open(os.path.join(ROOT, "templates", tpl), encoding="utf-8") as f:
             assert f.read().lstrip().startswith('{% extends "base.html.j2" %}')
@@ -24,7 +24,9 @@ def test_sitemap_lists_every_page_with_canonical_lastmod():
     canon = json.load(open(os.path.join(ROOT, "data", "mortality-data.json"), encoding="utf-8"))["metadata"]["last_updated"]
     locs = re.findall(r"<loc>([^<]+)</loc>", xml)
     assert "https://aimortality.org/" in locs and "https://aimortality.org/report" in locs
-    assert sorted(locs) == sorted(f"https://aimortality.org{m['path']}" for m in build.PAGES_META.values())
+    # every page that has a path: an error page (path None) is not a destination
+    assert sorted(locs) == sorted(f"https://aimortality.org{m['path']}" for m in build.PAGES_META.values() if m["path"])
+    assert not any("404" in loc for loc in locs)
     assert set(re.findall(r"<lastmod>([^<]+)</lastmod>", xml)) == {canon}
     assert not os.path.exists(os.path.join(ROOT, "src", "sitemap.xml"))   # generated, never hand-typed
 
@@ -33,6 +35,8 @@ def test_every_page_has_canonical_og_twitter():
     import re
     build.main()
     for out in build.TEMPLATED:
+        if build.PAGES_META[out].get("noindex"):
+            continue            # an unindexed page claims no canonical URL (see test_404_page_*)
         html = open(os.path.join(ROOT, "dist", out), encoding="utf-8").read()
         for needle in ('rel="canonical"', 'property="og:title"', 'property="og:description"', 'name="twitter:card"'):
             assert needle in html, (out, needle)
@@ -46,8 +50,31 @@ def test_every_page_has_canonical_og_twitter():
 def test_pages_meta_covers_every_templated_page():
     assert set(build.PAGES_META) == set(build.TEMPLATED)
     for out, m in build.PAGES_META.items():
+        if m.get("noindex"):
+            assert m["path"] is None and m["ld_type"] is None, out      # claims no URL, carries no JSON-LD
+            continue
         assert m["path"] == ("/" if out == "index.html" else "/" + out[:-5])
         assert m["ld_type"] in ("Dataset", "Article", "WebPage")
+
+
+def test_404_page_is_unindexed_claims_no_url_and_keeps_the_shared_chrome():
+    import re
+    build.main()
+    html = open(os.path.join(ROOT, "dist", "404.html"), encoding="utf-8").read()
+    head = html[:html.index("</head>")]
+    assert '<meta name="robots" content="noindex">' in head
+    for absent in ('rel="canonical"', 'property="og:url"', "application/ld+json"):
+        assert absent not in head, absent
+    assert re.findall(r"<title>([^<]*)</title>", head) == ["Page not found \u2014 AI Companion Mortality Database"]
+    assert 'content="The page you requested does not exist on the AI Companion Mortality Database."' in head
+    assert '<h1>Page not found</h1>' in html
+    assert 'class="crisis-bar"' in html and 'href="tel:988"' in html and 'class="site-footer"' in html
+    assert 'aria-current' not in html          # no nav item is current
+    # root-absolute assets and links: it is served at any path depth
+    assert 'href="/assets/base.css"' in html and 'src="/assets/theme.js"' in html
+    assert 'href="/report.html"' in html
+    sitemap = open(os.path.join(ROOT, "dist", "sitemap.xml"), encoding="utf-8").read()
+    assert "/404" not in sitemap
 
 
 def test_descriptions_and_doi_come_from_canonical():

@@ -127,6 +127,58 @@ def test_check_meta_fails_closed_on_each_missing_or_wrong_tag(tmp_path):
         assert audit.fails, f"check_meta passed silently: {label}"
 
 
+NOINDEX = '<meta name="robots" content="noindex">'
+
+
+def _noindex_page(extra="", canonical=False):
+    """A head like the 404 page's: noindex, no canonical, no og:url; every other tag present."""
+    link = '<link rel="canonical" href="https://aimortality.org/report">' if canonical else ""
+    return (f'<html><head><title>T</title><meta name="description" content="d">{NOINDEX}{link}'
+            f'<meta property="og:title" content="T"><meta property="og:description" content="d">'
+            f'<meta name="twitter:card" content="summary">{extra}</head></html>')
+
+
+def test_check_meta_noindex_page_needs_no_canonical_or_og_url(tmp_path):
+    audit.fails.clear()
+    audit.check_meta({}, root=_meta_site(tmp_path, _noindex_page()))
+    assert audit.fails == []
+
+
+def test_check_meta_noindex_page_must_not_claim_a_canonical_or_og_url(tmp_path):
+    for label, html in {
+        "noindex with canonical": _noindex_page(canonical=True),
+        "noindex with og:url": _noindex_page(extra='<meta property="og:url" content="https://aimortality.org/report">'),
+    }.items():
+        audit.fails.clear()
+        audit.check_meta({}, root=_meta_site(tmp_path / label.replace(" ", "_").replace(":", "_"), html))
+        assert audit.fails, f"check_meta passed silently: {label}"
+
+
+def test_check_meta_noindex_page_still_needs_title_description_and_twitter_card(tmp_path):
+    good = _noindex_page()
+    for label, html in {
+        "no title": good.replace("<title>T</title>", ""),
+        "no description": good.replace('<meta name="description" content="d">', ""),
+        "no twitter:card": good.replace('<meta name="twitter:card" content="summary">', ""),
+    }.items():
+        audit.fails.clear()
+        audit.check_meta({}, root=_meta_site(tmp_path / label.replace(" ", "_").replace(":", "_"), html))
+        assert audit.fails, f"check_meta passed silently: {label}"
+
+
+def test_check_meta_indexable_page_without_canonical_still_fails(tmp_path):
+    # the carve-out is the robots noindex tag, nothing else: a page that merely lacks a canonical fails
+    audit.fails.clear()
+    html = _meta_page().replace('<link rel="canonical" href="https://aimortality.org/report">', "")
+    audit.check_meta({}, root=_meta_site(tmp_path, html))
+    assert any("canonical" in f for f in audit.fails), audit.fails
+    audit.fails.clear()
+    html = _meta_page(extra='<meta name="robots" content="index, follow">').replace(
+        '<link rel="canonical" href="https://aimortality.org/report">', "")
+    audit.check_meta({}, root=_meta_site(tmp_path / "index_follow", html))
+    assert any("canonical" in f for f in audit.fails), audit.fails
+
+
 def test_checks_fail_when_there_are_no_pages_to_check(tmp_path):
     # an empty dist/ (build produced nothing, or the path is wrong) must not pass silently
     audit.fails.clear()

@@ -43,6 +43,7 @@ TEMPLATED = {
     "index-academic.html": "index-academic.html.j2",
     "methodology.html": "doc.html.j2",
     "verification-standards.html": "doc.html.j2",
+    "404.html": "404.html.j2",
 }
 # The two pages rendered from Markdown (output file -> repo-relative source). Both use doc.html.j2;
 # render_markdown() turns the source into HTML here, in Python, never in the template.
@@ -57,6 +58,7 @@ PAGE_KEYS = {
     "index-academic.html": "academic",
     "methodology.html": "methodology",
     "verification-standards.html": "verification-standards",
+    "404.html": "404",       # matches no nav item, so none is marked current
 }
 SITE_URL = "https://aimortality.org"
 SITE_NAME = "AI Companion Mortality Database"
@@ -69,6 +71,9 @@ VERSION_DOI = "10.5281/zenodo.23115481"
 # (Netlify Pretty URLs serves /report for report.html; "/" for the index). `description` is a
 # str.format template: every number, the coverage period and the version come from canonical via
 # derive(); nothing here is a figure. `ld_type` Dataset = the index carries its own full block.
+# `noindex` (optional) marks a page that is not a destination (the 404 page): it gets a robots
+# noindex tag and claims no URL, so its `path` and `ld_type` are None -- no canonical, no og:url,
+# no JSON-LD, and it is left out of the sitemap.
 PAGES_META = {
     "index.html": {
         "title": "AI Companion Mortality Database",
@@ -103,6 +108,11 @@ PAGES_META = {
         "description": ("Verification standards for the AI Companion Mortality Database: the three evidence tiers "
                         "(juridical, journalistic, preliminary), what qualifies for each, and which are published."),
         "path": "/verification-standards", "og_type": "article", "ld_type": "WebPage",
+    },
+    "404.html": {
+        "title": "Page not found \u2014 AI Companion Mortality Database",
+        "description": "The page you requested does not exist on the AI Companion Mortality Database.",
+        "path": None, "og_type": "website", "ld_type": None, "noindex": True,
     },
 }
 IGNORE = shutil.ignore_patterns(".DS_Store")
@@ -139,11 +149,12 @@ def page_meta(out, fields, updated_iso):
     """One page's resolved head metadata: the PAGES_META entry with its description filled from
     canonical-derived `fields`, its absolute URL, and (for non-index pages) its JSON-LD."""
     m = PAGES_META[out]
-    url = SITE_URL + m["path"]
+    url = SITE_URL + m["path"] if m["path"] else None
     title = m["title"]
     page = {"title": title, "description": m["description"].format(**fields), "url": url,
-            "og_type": m["og_type"], "ld_type": m["ld_type"], "json_ld": None}
-    if m["ld_type"] != "Dataset":      # the index keeps its own full Dataset block in its head
+            "og_type": m["og_type"], "ld_type": m["ld_type"], "json_ld": None,
+            "noindex": m.get("noindex", False)}
+    if m["ld_type"] not in (None, "Dataset"):      # the index keeps its own full Dataset block in its head
         page["json_ld"] = {
             "@context": "https://schema.org",
             "@type": m["ld_type"],
@@ -344,8 +355,8 @@ def main():
     ctx = derive(load())
     render(ctx)
     assemble()
-    # 404.html (not built yet) is a page, not a destination: it never belongs in the sitemap.
-    write_sitemap([p for p in sorted(TEMPLATED) if p != "404.html"], ctx["updated_iso"])
+    # A page with no path (the 404 page) is not a destination: it never belongs in the sitemap.
+    write_sitemap([p for p in sorted(TEMPLATED) if PAGES_META[p]["path"]], ctx["updated_iso"])
     print(f"built dist/: {sum(len(f) for _, _, f in os.walk(DIST))} files")
     return 0
 

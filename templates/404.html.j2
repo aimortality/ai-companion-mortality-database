@@ -1,0 +1,22 @@
+{% extends "base.html.j2" %}
+{% block head %}
+  <style>
+    :root { --bg: #ffffff; --text: #000000; --link: #0000ff; }
+    :root[data-theme="dark"] { --bg: #0f1113; --text: #f2f2f2; --link: #8ab4f8; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) { --bg: #0f1113; --text: #f2f2f2; --link: #8ab4f8; }
+    }
+    body { font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace; font-size: 14px; line-height: 1.7;
+           color: var(--text); background: var(--bg); max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+    main a { color: var(--link); }
+    .theme-toggle { font-family: inherit; font-size: 11px; padding: 6px 10px; border-radius: 4px;
+                    border: 1px solid var(--text); background: var(--bg); color: var(--text); cursor: pointer; margin: 0 0 16px; }
+  </style>
+{% endblock %}
+{% block body %}
+  <main id="main-content">
+    <h1>Page not found</h1>
+    <p>This page doesn't exist. Case numbers in the research report are stable; if you followed a citation to a case, it is in the report.</p>
+    <p><a href="/report.html">Research report</a> · <a href="/">Database</a></p>
+  </main>
+{% endblock %}

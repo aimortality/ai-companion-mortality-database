@@ -78,3 +78,12 @@
     # Deprecated; the legacy XSS auditor it enabled could itself leak data. 0 = off (OWASP guidance).
     X-XSS-Protection = "0"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Content-Security-Policy. Edit this deliberately; the e2e spec tests/e2e/csp.spec.ts reads
+    # this exact line, and the audit (check_inline_scripts) keeps inline scripts out of the pages.
+    #  - 'unsafe-inline' is in style-src ONLY because pages still carry inline <style> blocks and
+    #    style="" attributes. It comes out when those do.
+    #  - The Google hosts are the ones GA4 needs: the gtag.js loader (googletagmanager.com) and
+    #    its beacons (google-analytics.com, analytics.google.com).
+    #  - Any new third-party host must be added here on purpose, never worked around.
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://*.googletagmanager.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; img-src 'self' data: https://*.google-analytics.com https://*.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'"

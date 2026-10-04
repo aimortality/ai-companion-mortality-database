@@ -3,7 +3,25 @@
 :root { color-scheme: light dark; }
 :root[data-theme="light"] { color-scheme: light; }
 :root[data-theme="dark"] { color-scheme: dark; }
-.theme-toggle[aria-pressed="true"] { outline: 1px solid currentColor; outline-offset: 2px; }
+
+/* Theme toggle. "Pressed" is shown by a full-strength border, NOT by outline: the focus ring below
+   owns the outline, so a focused toggle shows the same 2px ring pressed or not. 44px minimum target. */
+.theme-toggle { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+.theme-toggle[aria-pressed="true"] { border-color: currentColor; }
+
+/* Accessibility floor (WCAG 2.1 AA). */
+/* Skip link: first element in <body> on every page; parked off-screen until focused. */
+.skip-link { position: absolute; left: -9999px; top: 8px; }
+.skip-link:focus { left: 8px; z-index: 1000; padding: 8px 12px; background: Canvas; color: CanvasText; outline: 2px solid currentColor; }
+/* One focus ring for everything keyboard-reachable (links, buttons, scroll regions). */
+:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+/* A table wider than the screen scrolls inside its own keyboard-focusable box, never the page. */
+.table-scroll { overflow-x: auto; max-width: 100%; }
+/* Visually hidden, still announced. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+/* Motion: smooth anchor scrolling only for people who have not asked for less. */
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
 
 /* Crisis bar: the same loud inverse on every page. Explicit colours in both themes so the
    page palettes (which differ) cannot soften it. Room is left for a second line. */

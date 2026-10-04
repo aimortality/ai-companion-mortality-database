@@ -79,6 +79,9 @@
         .container {
             margin: 0;
             padding: 0;
+            /* Long unbroken field names (e.g. violence_planning_operational_assistance) wrap
+               instead of widening the page past a 320px screen (WCAG 1.4.10 reflow). */
+            overflow-wrap: break-word;
         }
 
         .back-link {
@@ -234,7 +237,6 @@
     
         @media (max-width: 768px) {
             .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
-            table { display: block; overflow-x: auto; }
         }
     </style>
 {% endblock %}
@@ -244,6 +246,7 @@
 {% endblock %}
 
 {% block body %}
+    <main id="main-content">
     <div class="container">
         <a href="index.html" class="back-link">← Back to Database</a>
 
@@ -2097,5 +2100,6 @@
 
         </div>
     </div>
+    </main>
 
 {% endblock %}

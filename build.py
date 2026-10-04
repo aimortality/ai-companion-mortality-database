@@ -63,7 +63,7 @@ SITE_NAME = "AI Companion Mortality Database"
 # Zenodo DOI of the RELEASED version (the concept DOI, 10.5281/zenodo.22062862, always resolves to the
 # latest and lives in the footer and README). Bumped by hand in the release checklist (CLAUDE.md
 # "Releasing a version", step 3), after Zenodo mints it -- it cannot come from canonical data.
-VERSION_DOI = "10.5281/zenodo.22428187"
+VERSION_DOI = "10.5281/zenodo.23115481"
 
 # Per-page head metadata, keyed by output file. `path` is the canonical, extensionless URL path
 # (Netlify Pretty URLs serves /report for report.html; "/" for the index). `description` is a

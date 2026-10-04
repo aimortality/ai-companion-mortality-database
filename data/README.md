@@ -33,7 +33,7 @@ The JSON carries its version in `metadata.version`. Each released version is arc
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
 Associated with Conversational AI Systems (2023–2026). Version 3.5.9.
-Zenodo. https://doi.org/10.5281/zenodo.22428187
+Zenodo. https://doi.org/10.5281/zenodo.23115481
 ```
 
 `10.5281/zenodo.22062862` is the concept DOI and always resolves to the latest version; each version also has its own DOI on its Zenodo page.

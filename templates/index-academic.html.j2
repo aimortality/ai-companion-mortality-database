@@ -323,12 +323,15 @@
     }
 
     /* Links */
+    /* Underlined at rest: in dark mode the link colour is too close to the text colour to tell
+       links apart by colour alone (WCAG 1.4.1). Hover thickens the rule instead of adding it. */
     a {
       color: var(--link);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
     a:hover {
-      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
 
     /* Responsive */
@@ -373,7 +376,6 @@
   
     @media (max-width: 768px) {
       .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
-      table { display: block; overflow-x: auto; }
     }
   </style>
 {% endblock %}
@@ -386,6 +388,7 @@
 {% endblock %}
 
 {% block body %}
+  <main id="main-content">
   <article>
     <h1>Documented Deaths Associated with Conversational AI Systems: A Systematic Database (2023–2026)</h1>
 
@@ -476,6 +479,7 @@
       Analysis of case distribution over time reveals an accelerating trajectory. While 2023 and 2024 each recorded 2–3 incidents, 2025 saw 16 documented incidents, and 2026 has recorded 3 additional incidents (Kim Seoul, Tumbler Ridge, and USF). Five instrumental pathway incidents now fall in this database: the FSU mass shooting (April 2025, perpetrator consulted ChatGPT for weapon and target-timing planning), the Roberts/Shellis homicide (Wales, October 2025; first DeepSeek-involved case; UK criminal conviction March 2026), the Kim Seoul serial poisonings (December 2025–February 2026; perpetrator's ChatGPT queries served forensically as premeditation evidence — first East Asian case), the Tumbler Ridge mass shooting (February 2026; OpenAI flagged the perpetrator's account 8 months prior but did not alert law enforcement), and the USF double homicide (April 2026; perpetrator consulted ChatGPT on body disposal). The instrumental pathway represents a category of concern distinct from companion or delusion dynamics: AI as operational tool for violence planning.
     </p>
 
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Table 1. Incidents by Year">
     <table>
       <caption>Table 1. Incidents by Year</caption>
       <thead>
@@ -513,12 +517,14 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <h2>Platform Distribution</h2>
     <p>
       Fatalities were documented across six platforms, with notable variation in risk patterns. General-purpose AI assistants (ChatGPT, Meta AI, Gemini, DeepSeek) accounted for 32 fatalities, while dedicated companion chatbots (Character.AI, Chai AI) accounted for 3. Two platforms with significant user bases—Claude (Anthropic) and Replika—have zero documented deaths in this database. The database now includes both AI users who died (n=18) and third-party victims killed by AI users (n=17).
     </p>
 
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Table 2. Fatalities by Platform">
     <table>
       <caption>Table 2. Fatalities by Platform</caption>
       <thead>
@@ -589,6 +595,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <p class="table-note">Note: Claude (Anthropic) and Replika have zero documented deaths.</p>
 
     <h2>Demographic Patterns</h2>
@@ -596,6 +603,7 @@
       Victims ranged in age from 11 to 83 years, with a mean age of 30.5 years (Seoul victims estimated at ~25 each per midpoint of "in their 20s" source reporting). Minors (under 18) represented 29% of fatalities (10 of 35), a disproportionate figure given that minors constitute a smaller percentage of AI chatbot users. This includes 6 third-party victims (stepbrother age 11 and 5 students aged 12–13 in the Tumbler Ridge mass shooting). The two fatalities added in v3.5.0 (Christian Faith Madison, 29; Alice Carrier, 24) fall in the 18–35 age group, as did the four added in v3.4.0 (USF victims Zamil Limon 27, Nahida Bristy 27; Seoul victims ~25, ~25).
     </p>
 
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Table 3. Age Distribution (All 35 Fatalities)">
     <table>
       <caption>Table 3. Age Distribution (All 35 Fatalities)</caption>
       <thead>
@@ -628,12 +636,14 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <h2 id="case-documentation">Case Documentation</h2>
     <p>
       Each case in the database includes: victim identification (name or verified pseudonym), age, date, platform, location, engagement duration (where known), outcome classification, documented risk factors, legal status, and primary sources. Full case documentation is available in the <a href="report.html">Research Report</a>.
     </p>
 
+    <div class="table-scroll" role="region" tabindex="0" aria-label="Table 4. Documented Cases (Chronological)">
     <table>
       <caption>Table 4. Documented Cases (Chronological)</caption>
       <thead>
@@ -849,6 +859,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
     <p class="table-note">*Pseudonym used to protect privacy. Seoul victims unnamed in all language sources.</p>
 
     <h2>Risk Factors</h2>
@@ -916,5 +927,6 @@
       </p>
     </footer>
   </article>
+  </main>
 
 {% endblock %}

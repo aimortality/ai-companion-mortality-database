@@ -194,6 +194,17 @@ def test_doc_link_query_is_kept_and_directory_links_fail():
         build.rewrite_doc_link("../data/")          # a directory is not a published page
 
 
+def test_markdown_tables_render_inside_labelled_scroll_regions():
+    import re
+    html, _ = build.render_markdown("docs/verification-standards.md")
+    tables = re.findall(r"<table>", html)
+    wrapped = re.findall(r'<div class="table-scroll" role="region" tabindex="0" aria-label="([^"]+)">\s*<table>', html)
+    assert tables and len(wrapped) == len(tables)
+    assert len(set(wrapped)) == len(wrapped)              # labels on one page are unique
+    assert "Quick Reference table" in wrapped             # named from the nearest preceding heading
+    assert html.count("</table>\n</div>") == len(tables)  # and every region is closed right after its table
+
+
 def test_missing_dependency_exits_with_one_setup_line_not_a_traceback(tmp_path):
     import subprocess
     # a shim directory whose markdown_it cannot be imported, ahead of the real packages on the path

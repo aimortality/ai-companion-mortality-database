@@ -73,10 +73,6 @@
   }
   </script>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
     :root {
       --bg: #ffffff;
       --text: #000000;
@@ -516,34 +512,6 @@
       margin-bottom: 6px;
     }
 
-    /* Accessibility: Skip link */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--inverse-bg);
-      color: var(--inverse-text);
-      padding: 8px 16px;
-      z-index: 100;
-      text-decoration: none;
-      font-size: 14px;
-    }
-    .skip-link:focus {
-      top: 0;
-    }
-
-    /* Accessibility: Focus indicators */
-    a:focus,
-    button:focus {
-      outline: 2px solid var(--border);
-      outline-offset: 2px;
-    }
-    a:focus-visible,
-    button:focus-visible {
-      outline: 2px solid var(--border);
-      outline-offset: 2px;
-    }
-
     .theme-toggle {
       position: fixed;
       top: 18px;
@@ -567,13 +535,8 @@
   
     @media (max-width: 768px) {
       .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
-      table { display: block; overflow-x: auto; }
     }
   </style>
-{% endblock %}
-
-{% block skip %}
-  <a href="#main-content" class="skip-link">Skip to main content</a>
 {% endblock %}
 
 {% block masthead %}
@@ -640,6 +603,7 @@
             </div>
           </div>
           <h3 style="font-size: 14px; font-weight: bold; margin-top: 40px; margin-bottom: 15px;">Documented Risk Factors</h3>
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Documented risk factors across cases">
           <table role="table" aria-label="Documented risk factors across cases">
             <thead>
               <tr>
@@ -671,9 +635,11 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
         <div id="cases">
           <h2 class="section-title">Documented Cases</h2>
+          <div class="table-scroll" role="region" tabindex="0" aria-label="Complete list of documented cases with victim information and outcomes">
           <table role="table" aria-label="Complete list of documented cases with victim information and outcomes">
             <thead>
               <tr>
@@ -930,6 +896,7 @@
               </tr>
             </tbody>
           </table>
+          </div>
         </div>
         <div class="methodology">
           <h3>Verification Methodology</h3>

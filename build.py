@@ -9,6 +9,7 @@ deterministic function of the repository: running it twice produces byte-identic
 
 dist/ is build output. Never hand-edit it -- change the template or the data and rebuild.
 """
+import html as htmllib
 import json
 import os
 import posixpath
@@ -23,6 +24,7 @@ from validate_data import validate  # noqa: E402
 try:
     from jinja2 import Environment, FileSystemLoader, StrictUndefined
     from markdown_it import MarkdownIt
+    from markdown_it.token import Token
     from markupsafe import Markup
     from mdit_py_plugins.anchors import anchors_plugin
 except ImportError as e:     # one actionable line instead of a traceback (the system Python lacks these)
@@ -261,7 +263,33 @@ def render_markdown(rel_path):
                     c.attrSet("aria-label", "Link to this section: " + _inline_text(tok).strip())
                 else:
                     c.attrSet("href", rewrite_doc_link(c.attrGet("href"), doc_dir))
-    return md.renderer.render(tokens, md.options, {}), toc
+    return md.renderer.render(_scrollable_tables(tokens), md.options, {}), toc
+
+
+def _scrollable_tables(tokens):
+    """Wrap every table in a keyboard-focusable scroll region named after the nearest preceding
+    heading ("Quick Reference table"), so a table wider than the screen scrolls inside its own box
+    (WCAG 1.4.10 reflow) and a keyboard or screen-reader user can reach and scroll it. Labels on one
+    page must be unique, so a repeat gets a number."""
+    out, heading, seen = [], "Document", {}
+    for i, tok in enumerate(tokens):
+        if tok.type == "heading_open":
+            heading = _inline_text(tokens[i + 1]).strip()
+        if tok.type == "table_open":
+            label = f"{heading} table"
+            seen[label] = seen.get(label, 0) + 1
+            if seen[label] > 1:
+                label += f" {seen[label]}"
+            wrap = Token("html_block", "", 0)
+            wrap.content = (f'<div class="table-scroll" role="region" tabindex="0" '
+                            f'aria-label="{htmllib.escape(label, quote=True)}">\n')
+            out.append(wrap)
+        out.append(tok)
+        if tok.type == "table_close":
+            end = Token("html_block", "", 0)
+            end.content = "</div>\n"
+            out.append(end)
+    return out
 
 
 def doc_context(out):

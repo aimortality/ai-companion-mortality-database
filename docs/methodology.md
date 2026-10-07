@@ -149,7 +149,6 @@ For each verified case, we document:
 - Companies are contacted before publication when possible
 - Responses and policy changes are documented alongside harms
 - We distinguish between allegations in active litigation and adjudicated findings. Killings are described by the perpetrator's adjudicated status: "homicide" and "killed" until a court has ruled; "murder" only where a conviction or guilty plea exists (or, conventionally, in a murder-suicide where the perpetrator is dead); "found not criminally responsible" where that is the finding. Charges are quoted in the charging authority's words. Labels are upgraded, with citation, when a verdict is entered
-- Platforms with zero documented incidents are included to demonstrate that harm is not inherent to the technology
 
 ---
 
@@ -185,9 +184,7 @@ Active litigation produces new information. Court filings are amended. Companies
 
 ## A Note on Platform Comparison
 
-This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. This is intentional. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (29 of 35 — 13 AI users plus 16 third-party victims), a disparity now reflected in the Florida Attorney General's criminal investigation of OpenAI — opened April 21, 2026 over the FSU mass shooting and expanded April 27–28, 2026 to include the University of South Florida double homicide as a second predicate, the first US state criminal probe directly targeting an AI company over a mass-casualty event — and in the same office's June 1, 2026 civil lawsuit against OpenAI and CEO Sam Altman personally, the first US state civil suit against OpenAI.
-
-The existence of platforms without documented fatalities demonstrates that harm is not an inevitable consequence of conversational AI. Design choices matter. Safety investments matter. The differential outcomes across platforms constitute evidence that should inform both regulation and industry practice.
+This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (29 of 35 — 13 AI users plus 16 third-party victims), a disparity now reflected in the Florida Attorney General's criminal investigation of OpenAI — opened April 21, 2026 over the FSU mass shooting and expanded April 27–28, 2026 to include the University of South Florida double homicide as a second predicate, the first US state criminal probe directly targeting an AI company over a mass-casualty event — and in the same office's June 1, 2026 civil lawsuit against OpenAI and CEO Sam Altman personally, the first US state civil suit against OpenAI.
 
 We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through September 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
 

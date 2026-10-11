@@ -6,8 +6,12 @@ tool surfaces (fatality counts from a tracked JSON file, the Tier-3 watch list,
 and whether this week's triage run is merged or still on an open PR) and prints
 the status-board JSON contract to stdout.
 
-Copy this to <repo>/.status-board/adapter and make it executable. The generator
-auto-discovers it there. Run with CWD = repo root; argv[1] = repo root.
+This file is run by a personal `status-board` generator that is NOT part of this
+repository (the repo's own launcher script, scripts/dashboard.sh, was removed
+2026-10-10). Run with CWD = repo root; argv[1] = repo root. The fatality stats
+come from this repo's data/mortality-data.json. The Tier-3 watch list needs the
+private sibling checkout ../triage (closestfriend/aimortality-triage); without it
+that section is omitted.
 """
 import json
 import os

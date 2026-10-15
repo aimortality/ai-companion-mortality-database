@@ -185,13 +185,9 @@ We do not claim that platforms with zero documented deaths are "safe" in any abs
 
 ## Updates and Corrections
 
-This database is maintained as a living document. Updates occur:
+**This database was archived on October 15, 2026 and is no longer updated.** Coverage runs through October 15, 2026; each record's legal status is as of the date stated in that record. Deaths and legal developments after that date are not reflected here.
 
-- **Immediately**: When new verified deaths are documented
-- **Within 48 hours**: When significant legal developments occur in existing cases
-- **Monthly**: Comprehensive review of all entries for accuracy and completeness
-
-Corrections are handled transparently. Significant changes are noted in commit history with explanation.
+Corrections to the archived record are still accepted at contact@aimortality.org and, if made, are released as a new archived version with the change noted in the version history. For ongoing coverage of incidents of this kind, see the [AI Incident Database](https://incidentdatabase.ai/) and the [OECD AI Incidents Monitor](https://oecd.ai/en/incidents).
 
 To report an error or submit a new case for verification, see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
@@ -203,7 +199,7 @@ When referencing this database in academic, journalistic, or policy contexts:
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.9.
+Associated with Conversational AI Systems (2023–2026). Version 4.0.0.
 Zenodo. https://doi.org/10.5281/zenodo.23115481
 Data files: https://aimortality.org/data/
 ```

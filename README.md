@@ -9,7 +9,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>37 fatalities · 25 incidents · 8 platforms tracked · March 2023 – October 2026 · Data current as of October 15, 2026 · v3.5.9</sub>
+<sub>37 fatalities · 25 incidents · 8 platforms tracked · March 2023 – October 2026 · Data current as of October 15, 2026 · v4.0.0</sub>
 
 
 </div>
@@ -17,6 +17,8 @@
 ---
 
 > **Crisis Support**: If you or someone you know is in crisis, please call or text **988** (Suicide & Crisis Lifeline)
+
+> **Archived October 15, 2026.** This database is no longer updated. Coverage runs through October 15, 2026; legal statuses are as of the dates shown in each record. Corrections: contact@aimortality.org. For ongoing coverage of incidents of this kind, see the [AI Incident Database](https://incidentdatabase.ai/) and the [OECD AI Incidents Monitor](https://oecd.ai/en/incidents).
 
 ---
 
@@ -184,7 +186,7 @@ Source repository: [github.com/aimortality/ai-companion-mortality-database](http
 
 ```
 Karman, H. (2026). AI Companion Mortality Database: Documented Deaths
-Associated with Conversational AI Systems (2023–2026). Version 3.5.9.
+Associated with Conversational AI Systems (2023–2026). Version 4.0.0.
 Zenodo. https://doi.org/10.5281/zenodo.23115481
 ```
 

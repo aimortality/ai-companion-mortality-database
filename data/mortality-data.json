@@ -52,8 +52,8 @@
     "minors_affected_including_attempts": 11,
     "youngest_victim": 11,
     "oldest_victim": 83,
-    "average_age": 30.5,
-    "average_age_note": "Average across 35 fatalities; Seoul victim ages estimated at 25 (midpoint of 'in their 20s' as reported in Korean and English sources; precise ages not yet published)",
+    "average_age": 30.4,
+    "average_age_note": "Average across 35 fatalities (sum of ages 1065); Seoul victim ages estimated at 25 (midpoint of in their 20s as reported in Korean and English sources; precise ages not yet published). 30.5 before the Wongbandue age correction (78 to 76) of 2026-10-14.",
     "minors_percentage_deaths": 28.6,
     "minors_percentage_all_incidents": 28.6,
     "instrumental_pathway_casualties": {
@@ -535,7 +535,7 @@
           "age": 34,
           "age_precision": "exact",
           "age_source": "incident.perpetrator.age",
-          "note": "AI user and perpetrator (found not criminally responsible); role user per methodology. His mother, also attacked, is not a canonical survivor and is not carried."
+          "note": "AI user and perpetrator, found not criminally responsible (October 2025); role user per methodology."
         },
         {
           "role": "third_party",
@@ -546,6 +546,16 @@
           "age_precision": "exact",
           "age_source": "incident.age",
           "note": "Incident-level name/age describe this victim, not the AI user."
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "His mother, also attacked with the fire poker and injured (WGME, Kennebec County court documents); not named in canonical."
         }
       ]
     },
@@ -616,8 +626,8 @@
       "survived_attempt_victims": 0,
       "name": "Thongbue Wongbandue",
       "name_type": "real",
-      "age": 78,
-      "date": "2025-03-31",
+      "age": 76,
+      "date": "2025-03-28",
       "date_precision": "day",
       "location": {
         "city": "New Brunswick",
@@ -653,10 +663,10 @@
           "outcome": "died",
           "name": "Thongbue Wongbandue",
           "name_type": "real",
-          "age": 78,
+          "age": 76,
           "age_precision": "exact",
-          "age_source": "incident.age",
-          "note": "Reuters-sourced coverage gives 76 and death on March 28, 2025 (https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots, citing Reuters); canonical 78 and 2025-03-31 need re-verification."
+          "age_source": "Reuters investigation (August 14, 2025), as carried by SAN, NY Post/Yahoo and the AI Incident Database #1180",
+          "note": "Fell on March 25, 2025 while travelling to meet the chatbot; died March 28 after three days on life support. Earlier releases carried 78 and 2025-03-31; corrected 2026-10-14 to the Reuters-sourced consensus."
         }
       ]
     },
@@ -784,7 +794,7 @@
           "age": 20,
           "age_precision": "exact",
           "age_source": "incident.perpetrator.age",
-          "note": "AI user and shooter, alive; role user per methodology. Canonical says he was wounded, so 'uninjured' is forced by the enum. 5 wounded victims not carried."
+          "note": "AI user and shooter, alive; role user per methodology. Wounded and apprehended at the scene."
         },
         {
           "role": "third_party",
@@ -803,6 +813,56 @@
           "age": 45,
           "age_precision": "exact",
           "age_source": "incident.victims.killed[1].age"
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "One of five people wounded in the shooting (canonical outcome: 2 killed, 5 wounded); not individually identified in canonical."
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "One of five people wounded in the shooting (canonical outcome: 2 killed, 5 wounded); not individually identified in canonical."
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "One of five people wounded in the shooting (canonical outcome: 2 killed, 5 wounded); not individually identified in canonical."
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "One of five people wounded in the shooting (canonical outcome: 2 killed, 5 wounded); not individually identified in canonical."
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "One of five people wounded in the shooting (canonical outcome: 2 killed, 5 wounded); not individually identified in canonical."
         }
       ]
     },
@@ -1511,19 +1571,21 @@
         "North Wales Live / Daily Post (March 25-26, 2026)",
         "Yahoo News UK",
         "IBTimes UK",
-        "Mold Crown Court conviction (guilty plea, March 25, 2026)"
+        "Mold Crown Court conviction (guilty plea, March 25, 2026)",
+        "Judiciary of England and Wales — sentencing remarks of HHJ Rowlands, Mold Crown Court, March 25, 2026 (judiciary.uk)",
+        "Crown Prosecution Service press release, March 25, 2026 (cps.gov.uk)"
       ],
       "verification_level": "Court documents and official government statements",
       "tier": 1,
       "sub_labels": [],
-      "tier_basis": "verification_level 'Court documents and official government statements' (Mold Crown Court conviction, North Wales Police and CPS Cymru statements); the underscore-spelled label in additional_context.jurisdictional_note is not carried because the sub-label is defined for Tier 2.",
+      "tier_basis": "Tier 1 for the killing and conviction: Mold Crown Court guilty plea and sentence (March 25, 2026), the published sentencing remarks and the CPS release. The DeepSeek element rests on press reports of what prosecutors said in court (North Wales Live/Daily Post, ITV Wales, Express, NY Post): the sentencing remarks say only that he spent several hours on the internet researching methods of how to kill, and the CPS release describes laptop research into methods of killing and removing blood and DNA traces; neither names DeepSeek or any chatbot.",
       "additional_context": {
         "court": "Mold Crown Court, North Wales",
         "presiding_judge": "Judge Rhys Rowlands",
         "sentencing_date": "2026-03-25",
         "minimum_term": "22 years 6 months",
         "platform_significance": "First documented DeepSeek case in this database; expands tracked platforms from 7 to 8 and adds the first non-Western-corporate AI platform to the registry",
-        "jurisdictional_note": "UK criminal proceeding; full Mold Crown Court trial transcript not yet obtained at time of database entry — label `jurisdictional_verification_limited` applied per methodology, though Tier 1 evidence (criminal conviction, government press releases) is in hand",
+        "jurisdictional_note": "UK criminal proceeding resolved by guilty plea, so there is no trial transcript. The primary records are public: the judiciary.uk sentencing remarks (March 25, 2026) and the CPS release. They confirm the internet research but do not name DeepSeek; the chatbot attribution is press-reported from the prosecution opening. The jurisdictional-verification-limited sub-label does not apply (primary records are accessible); an earlier entry applied it in underscore spelling pending a transcript that does not exist.",
         "deepseek_response": "No public response or statement from DeepSeek located as of April 2026; whether the company retained logs of Roberts's queries or has been subject to inquiries from Chinese regulators is not publicly documented",
         "open_questions": "Specific DeepSeek product version (R1, V3, or web interface) used by Roberts is not yet established in public reporting; full conversation transcript not yet published",
         "surfaced_by": "Weekly triage routine v1.0.0, run 2026-04-27 — primary news ran March 25-26, 2026, outside the prior April 23 dry-run search window; Tier 1 verification (criminal conviction, North Wales Police press release, CPS Cymru Wales statement)"
@@ -1537,7 +1599,7 @@
           "age": 18,
           "age_precision": "exact",
           "age_source": "incident.perpetrator.age",
-          "note": "AI user and perpetrator, convicted of murder; role user per methodology."
+          "note": "AI user and killer, alive; role user per methodology. Pleaded guilty; life with a minimum of 22 years 6 months."
         },
         {
           "role": "third_party",
@@ -1863,7 +1925,7 @@
           "age": 18,
           "age_precision": "exact",
           "age_source": "incident.age",
-          "note": "AI user and shooter, died by suicide; role user per methodology. 2 wounded not carried."
+          "note": "AI user and shooter, died by suicide; role user per methodology."
         },
         {
           "role": "third_party",
@@ -1883,7 +1945,7 @@
           "age": 11,
           "age_precision": "exact",
           "age_source": "incident.victims.includes ('stepbrother Emmett Jacobs (age 11)')",
-          "note": "Shooter's stepbrother; minor named by canonical, family publicity undocumented (Author's call)."
+          "note": "Named publicly by the RCMP; his relatives (Jennifer Jacobs/Strang's brother and sister-in-law) spoke to The Globe and Mail asking that the victims' stories not be overshadowed (https://theglobeandmail.com/canada/article-tumbler-ridge-jennifer-strang-emmett-jacobs), which satisfies the minors rule in verification-standards.md."
         },
         {
           "role": "third_party",
@@ -1944,6 +2006,26 @@
           "age_precision": "exact",
           "age_source": "https://www.cftktv.com/news/article/what-we-know-about-the-victims-of-the-mass-shooting-in-tumbler-ridge (RCMP: five students aged 12, 12, 12, 12 and 13); canonical victims.includes gives '12-13' only",
           "note": "Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "One of two people wounded at the school (canonical: 8 killed, 2 wounded); one was critically wounded and that family filed suit in BC Supreme Court. Not individually identified in canonical."
+        },
+        {
+          "role": "third_party",
+          "outcome": "wounded",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "not given in canonical",
+          "note": "One of two people wounded at the school (canonical: 8 killed, 2 wounded); one was critically wounded and that family filed suit in BC Supreme Court. Not individually identified in canonical."
         }
       ]
     },

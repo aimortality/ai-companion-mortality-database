@@ -57,7 +57,7 @@ This repository contains data and documentation for the first comprehensive publ
 | Nina (pseudonym) | 16 | Character.AI | Nov 2024 | New York, USA | Survived attempt | Relational |
 | Sophie Rottenberg | 29 | ChatGPT | Feb 2025 | USA | Death by suicide | Relational |
 | **Margaux Whittemore** | 32 | ChatGPT | Feb 2025 | Maine, USA | **Homicide victim** (spouse found not criminally responsible) | Cognitive |
-| Thongbue Wongbandue | 78 | Meta AI | Mar 2025 | New Jersey, USA | Death (fall injury) | Cognitive |
+| Thongbue Wongbandue | 76 | Meta AI | Mar 2025 | New Jersey, USA | Death (fall injury) | Cognitive |
 | Adam Raine | 16 | ChatGPT | Apr 2025 | California, USA | Death by suicide | Relational |
 | **FSU shooting: Robert Morales** | 57 | ChatGPT | Apr 17, 2025 | Tallahassee, FL, USA | **Mass shooting victim** | — |
 | **FSU shooting: Tiru Chabba** | 45 | ChatGPT | Apr 17, 2025 | Tallahassee, FL, USA | **Mass shooting victim** | — |

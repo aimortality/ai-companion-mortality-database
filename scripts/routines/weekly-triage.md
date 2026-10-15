@@ -16,9 +16,22 @@ If any of those files contradict this prompt, they win. This prompt is a launche
 
 ## Two jobs, one run
 
+### Before either job — the pending-work ledger
+
+`data/mortality-data.json` holds only what the maintainer has **published**. Candidate and docket files from earlier runs that are still awaiting review are not in it, and they are not on the private triage repository's `main` either until their review request is merged, which can take weeks. A run that checks only canonical will re-file cases that are already pending. Before searching, in the private triage checkout:
+
+1. Fetch every routine branch, merged or not: `git fetch origin '+refs/heads/routine/*:refs/remotes/origin/routine/*'`.
+2. List every candidate and docket file on `main` and on those branches: `for r in origin/main $(git for-each-ref --format='%(refname:short)' refs/remotes/origin/routine/); do git ls-tree -r --name-only "$r" -- weekly-triage/; done | sort -u`. Read any file whose slug could match a case or docket this run touches with `git show <ref>:<path>`. A file on a later branch can supersede an earlier one (a tier escalation, a new filing), so read the latest.
+3. Read `tier3-monitor.md` on `main`.
+4. Find the previous run's date from the newest `Weekly triage: YYYY-MM-DD` issue on the private triage repository's tracker, open or closed. Every run opens one whether or not anything is merged, so the issues are the run record; the newest folder on `main` is not.
+
+**Search window.** Both jobs cover the last 7 days. If the previous run was more than 7 days ago (runs fail or get skipped), widen both windows back to that run's date and state the widened window at the top of the issue body.
+
+*Regression precedent (run 2026-10-12):* a run re-filed a case as a fresh Tier 2 candidate while an unmerged branch from the week before held that case's Tier 1 escalation, leaving two pending files that disagree. The 2026-10-05 run, which found the earlier file and wrote an update to it, is the pattern to follow.
+
 ### Job A — New-case sweep (multilingual)
 
-Search the last **7 days** of news for AI-chatbot-linked deaths, severe harms, or regulatory actions (AG investigations, new legislation, class-action filings) that are not already represented in `data/mortality-data.json`. Query in these 12 languages:
+Search the last **7 days** of news (or the widened window; see *Search window* above) for AI-chatbot-linked deaths, severe harms, or regulatory actions (AG investigations, new legislation, class-action filings) that are not already represented in `data/mortality-data.json`. Query in these 12 languages:
 
 - `en` English — US, UK, AU, CA, IN
 - `es` Spanish — Spain, LATAM
@@ -41,11 +54,13 @@ For each hit:
 2. **Tier 3** → append a single row to `tier3-monitor.md` in the private triage repository. **Do this first, while you are still on `main`, before checking out any feature branch.** Commit directly to `main` with a message like `Tier 3: append <N> lead(s) from weekly triage <YYYY-MM-DD>`, then `git push origin main` immediately so the watch-list update isn't held behind candidate/docket review. After pushing, verify the commit landed on `main` with `git branch --contains <hash>` — output must include `main`, not only the routine branch. Never edit existing rows. Preserve the original-language source URL as the primary; add a one-line English gloss in the `english_summary` column.
 3. **Tier 1 or Tier 2** → create a file at `weekly-triage/YYYY-MM-DD/candidate-<slug>.md` in the private triage repository using the template in `.github/ISSUE_TEMPLATE/new-case-candidate.md` as the frontmatter JSON block (the `.github/` directory is a legacy path that still holds the template on GitLab), followed by prose under these headings: **Summary**, **Sources (tiered)**, **Verification status**, **Open questions**, **Recommended next step**. Stage these on an MR branch; do not commit to `main`.
 4. **Non-Anglophone hits**: cite the original-language source as primary. If primary documents (court filings, coroner reports) are inaccessible due to language or jurisdiction, add the label `jurisdictional-verification-limited` to the weekly issue and note the access gap in the candidate file's **Open questions** section per `methodology.md:144`.
-5. **Deduplication**: if a hit describes a case already in `data/mortality-data.json` (e.g., new WSJ reporting on the Tumbler Ridge `2026-02-CA-001` incident), it is **not a new-case candidate** — it belongs in Job B as a docket/legal-development update on the existing record.
+5. **Deduplication**: if a hit describes a case already in `data/mortality-data.json` (e.g., new WSJ reporting on the Tumbler Ridge `2026-02-CA-001` incident), it is **not a new-case candidate** — it belongs in Job B as a docket/legal-development update on the existing record. Check the pending-work ledger too:
+   - **Matches a pending candidate file** (on `main` or any routine branch) → do not open a fresh candidate. If there is new evidence, write `weekly-triage/YYYY-MM-DD/candidate-<slug>-update.md` whose first line names the file it updates and states what changed and the resulting tier. If nothing is new, write no file and list the case in the issue body as "already pending in `<path>`". Never classify a pending case at a lower tier than its latest pending file without saying why.
+   - **Matches a `tier3-monitor.md` row** → do not append a second row. Note the new source in the issue body's `## Tier 3 additions` section against the existing row's slug, and say whether the lead may now meet Tier 2; promotion is the maintainer's call.
 
 ### Job B — Docket and legal-development watch
 
-For each docket listed below (drawn from `docs/sources/court-documents.md` — re-read that file each run in case new dockets were added manually), check for filings, rulings, or state-court status changes in the last 7 days:
+For each docket listed below (drawn from `docs/sources/court-documents.md` — re-read that file each run in case new dockets were added manually), check for filings, rulings, or state-court status changes in the search window:
 
 - `Garcia v. Character Technologies` — 6:24-cv-01903, MDFL Orlando Div (PACER)
 - `A.F. v. Character Technologies` — 2:24-cv-01014, EDTX (PACER)
@@ -59,7 +74,7 @@ For each docket listed below (drawn from `docs/sources/court-documents.md` — r
 - `RCMP / van Rootselaar` — Canadian investigation, OpenAI cooperation status
 - Any additional wrongful-death suits filed November 2025 onward (Enneking, Lacey, Fox/Ceccanti) — CA Superior; specific case numbers pending.
 
-For each detected change, draft `weekly-triage/YYYY-MM-DD/docket-<case-slug>.md` in the private triage repository on the same MR branch. Include: filing/ruling date, document type, one-paragraph substance, link to source (PACER, CourtListener, clerk portal, news report as fallback).
+For each detected change, draft `weekly-triage/YYYY-MM-DD/docket-<case-slug>.md` in the private triage repository on the same MR branch. Include: filing/ruling date, document type, one-paragraph substance, link to source (PACER, CourtListener, clerk portal, news report as fallback). If the pending-work ledger already holds a docket file for the same case, read the latest one first, draft only what is new since it, and name it in the first line. A case with nothing new since its latest pending file gets no new file.
 
 **48-hour rule flag**: `methodology.md:181` commits the database to updates within 48 hours of significant legal developments. If a docket change is older than 2 days at the time of your run, add a `⚠️ 48h-rule breach` note at the top of that docket md file and mention it in the weekly issue body. This is a signal to the maintainer, not a failure condition.
 
@@ -120,4 +135,4 @@ If you cannot say yes to all three, downgrade the candidate to Tier 3 and append
 
 ## Version
 
-Prompt version: 1.2.0 — site is now built by `build.py` from `templates/` into `dist/`; Forbidden actions protect the new source paths (2026-09-29). 1.1.2 — dropped `src/export.js` from Forbidden actions (file deleted 2026-09-29: dead, loaded by no page). 1.1.1 — host-agnostic: the run prompt names concrete hosts and CLI; this file no longer hardcodes GitHub or GitLab, so host failover (as during the Aug–Sep 2026 GitHub suspension, when both repos gained GitLab mirrors) requires only a trigger-prompt change. (1.1.0 briefly hardcoded GitLab during the suspension; 1.0.1 clarified Tier 3 commit-ordering; 1.0.0 regression: 2026-05-04 run committed Tier 3 to routine branch instead of `main`, then mis-claimed the location in the issue body.) Iterate via normal review flow against this file.
+Prompt version: 1.3.0 — pending-work ledger: deduplicate against candidate and docket files on every routine branch (merged or not) and `tier3-monitor.md`, not only canonical; the previous run's date comes from the issue tracker, and the search window widens after missed runs (2026-10-14). 1.2.0 — site is now built by `build.py` from `templates/` into `dist/`; Forbidden actions protect the new source paths (2026-09-29). 1.1.2 — dropped `src/export.js` from Forbidden actions (file deleted 2026-09-29: dead, loaded by no page). 1.1.1 — host-agnostic: the run prompt names concrete hosts and CLI; this file no longer hardcodes GitHub or GitLab, so host failover (as during the Aug–Sep 2026 GitHub suspension, when both repos gained GitLab mirrors) requires only a trigger-prompt change. (1.1.0 briefly hardcoded GitLab during the suspension; 1.0.1 clarified Tier 3 commit-ordering; 1.0.0 regression: 2026-05-04 run committed Tier 3 to routine branch instead of `main`, then mis-claimed the location in the issue body.) Iterate via normal review flow against this file.

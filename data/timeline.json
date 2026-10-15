@@ -1,7 +1,7 @@
 {
   "_note": "Derived chronological view of data/mortality-data.json (the canonical source). Regenerate with scripts/build-data-exports.py.",
   "generated_from_version": "3.5.9",
-  "count": 24,
+  "count": 25,
   "incidents": [
     {
       "date": "2023-03-01",
@@ -386,6 +386,22 @@
       "outcome": "Double homicide (2 third-party victims killed by sharp-force injuries)",
       "legal_status": "indicted_death_penalty_sought",
       "verification_level": "Court documents and multiple news sources"
+    },
+    {
+      "date": "2026-08-11",
+      "date_precision": "day",
+      "id": "2026-08-US-001",
+      "name": "Acton, Massachusetts double homicide",
+      "age": null,
+      "tier": 1,
+      "fatalities": 2,
+      "survived_attempt_victims": 0,
+      "platform": "ChatGPT",
+      "location": "Acton, Massachusetts, USA",
+      "mechanism_type": "cognitive_pathway",
+      "outcome": "Two third-party victims killed (mother and younger brother of the AI user); the AI user, 17, is charged with two counts of first-degree murder and has pleaded not guilty",
+      "legal_status": "criminal_prosecution",
+      "verification_level": "Court documents and official government statements"
     }
   ]
 }

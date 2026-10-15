@@ -4,7 +4,7 @@
 
 This database exists because someone had to build it.
 
-Between March 2023 and September 2026, 35 fatalities have been documented across 24 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—18 AI users who died and 17 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
+Between March 2023 and October 2026, 37 fatalities have been documented across 25 incidents in which AI chatbot interaction played a role sufficient to appear in court filings, government statements, or multi-source reporting—18 AI users who died and 19 third-party victims killed by AI users. Each case represents not merely a data point but an irreversible absence—a chair empty at a family table, a voice that will not answer when called. The purpose of this methodology is to ensure that when we speak of these losses, we speak truthfully.
 
 What began as documentation of suicides associated with companion-chatbot dependency has expanded, of necessity, to include homicides, murder-suicides, and mass-casualty events in which perpetrators used general-purpose AI systems for operational planning. The taxonomy grew in response: three causal pathways (relational, cognitive, instrumental); two outcome targets (self-harm, violence-against-others); and two overlapping-but-distinct victim populations (AI users and third-party victims). The database's scope is determined by where the evidence leads, not by a prior theory of harm.
 
@@ -177,9 +177,9 @@ Active litigation produces new information. Court filings are amended. Companies
 
 ## A Note on Platform Comparison
 
-This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (29 of 35 — 13 AI users plus 16 third-party victims), a disparity now reflected in the Florida Attorney General's criminal investigation of OpenAI — opened April 21, 2026 over the FSU mass shooting and expanded April 27–28, 2026 to include the University of South Florida double homicide as a second predicate, the first US state criminal probe directly targeting an AI company over a mass-casualty event — and in the same office's June 1, 2026 civil lawsuit against OpenAI and CEO Sam Altman personally, the first US state civil suit against OpenAI.
+This database includes platforms with zero documented deaths (Anthropic's Claude, Replika) alongside those with documented incidents. Google Gemini was previously in this zero-death category until the Gavalas case (October 2025, lawsuit filed March 2026). ChatGPT accounts for the largest share of documented fatalities by a wide margin (31 of 37 — 13 AI users plus 18 third-party victims), a disparity now reflected in the Florida Attorney General's criminal investigation of OpenAI — opened April 21, 2026 over the FSU mass shooting and expanded April 27–28, 2026 to include the University of South Florida double homicide as a second predicate, the first US state criminal probe directly targeting an AI company over a mass-casualty event — and in the same office's June 1, 2026 civil lawsuit against OpenAI and CEO Sam Altman personally, the first US state civil suit against OpenAI.
 
-We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through September 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
+We do not claim that platforms with zero documented deaths are "safe" in any absolute sense. We claim only that, through October 2026, no deaths meeting our verification standards have been linked to their products. This could change. We will document it if it does.
 
 ---
 
@@ -220,4 +220,4 @@ The work is dedicated to those documented here, and to the families who chose to
 
 ---
 
-*Last updated: September 29, 2026*
+*Last updated: October 15, 2026*

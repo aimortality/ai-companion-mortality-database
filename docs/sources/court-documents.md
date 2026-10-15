@@ -263,7 +263,7 @@ Three additional wrongful death lawsuits filed against OpenAI in November 2025:
 | **Initial Appearance** | Circuit Court Judge Monique Richardson; defendant found indigent |
 | **Defense** | Randall Harper (public defender) |
 | **State's Intent** | Death penalty sought (announced June 5, 2025) |
-| **Trial Date** | Postponed to October 19, 2026 |
+| **Trial Date** | June 8, 2027 (continued August 17, 2026; previously October 19, 2026) |
 | **Status** | Pending trial |
 
 **Victims killed:** Robert Morales, 57 (FSU campus dining director); Tiru Chabba, 45 (Aramark Collegiate Hospitality regional VP).
@@ -295,6 +295,31 @@ Three additional wrongful death lawsuits filed against OpenAI in November 2025:
 **Anticipated civil suit:** Family of one FSU victim announced intent to sue OpenAI (not yet filed as of April 21, 2026). If filed in federal court (diversity jurisdiction), documents would become accessible via PACER.
 
 **Source:** [NPR (April 21, 2026)](https://www.npr.org/2026/04/21/nx-s1-5793967/florida-openai-investigation-mass-shooting-fsu)
+
+---
+
+### Commonwealth v. Arjun Aravind
+**Acton, Massachusetts double homicide; prosecutors say the accused used ChatGPT to generate stories about killing his family and asked it about killing his mother hours before the killings.**
+
+| Field | Information |
+|-------|-------------|
+| **Court** | Middlesex County Superior Court, Massachusetts |
+| **Incident Date** | August 11, 2026 (Acton, MA) |
+| **Defendant** | Arjun Aravind, 17 (a minor, charged as an adult) |
+| **Charges** | 2× first-degree murder; assault and battery on a family or household member; assault and battery; motor vehicle theft |
+| **Earlier Proceedings** | Arraignment in Concord District Court (and Lowell Juvenile Court for the motor-vehicle count), August 12–13, 2026; court-ordered mental health evaluation (August 2026) |
+| **Indictment** | Middlesex County grand jury, October 1, 2026 |
+| **Arraignment** | October 6, 2026 (Superior Court); not-guilty plea; held without bail by agreement |
+| **Next Date** | Scheduling conference, October 27, 2026 |
+| **Status** | Pending; charges untried |
+
+**Victims killed:** Sudha Venkatesan, 45 (mother of the accused); Siddharth Aravind, 14 (his younger brother).
+
+**ChatGPT evidence (as stated by prosecutors):** At the August 13, 2026 district court arraignment, District Attorney Marian Ryan stated that in the months before the killings the accused used ChatGPT to make searches for "theoretical ideas or fantasy stories regarding the killing of his family" and to create "Gothic novel-kind of stories," including storylines about death and violence toward his parents. At the October 6, 2026 Superior Court arraignment, prosecutors cited "obvious planning" that included asking ChatGPT about killing his mother hours before the killings. No ChatGPT logs are public; the defense says it is waiting for the ChatGPT data from prosecutors.
+
+**Civil action:** None against OpenAI located as of October 15, 2026.
+
+**Source:** [The Boston Globe (October 6, 2026)](https://www.bostonglobe.com/2026/10/06/metro/acton-teen-accused-of-killing-mother-and-brother-in-court/); Boston.com (October 6, 2026)
 
 ---
 

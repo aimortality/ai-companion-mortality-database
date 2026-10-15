@@ -22,16 +22,25 @@
     },
     "verification_standard": "Court documents, multiple independent news sources, or official government acknowledgment",
     "data_license": "CC-BY-4.0",
-    "crisis_support": "988 (US Suicide & Crisis Lifeline)"
+    "crisis_support": "988 (US Suicide & Crisis Lifeline)",
+    "schema_version": "2.0.0",
+    "schema_note": "2.0.0 (2026-10-14): per-incident tier, sub_labels, date_precision and people[] (role user|third_party|perpetrator, outcome died|survived|uninjured, age); statistics.incidents_by_year replaces the misnamed deaths_by_year, which now counts deaths."
   },
   "statistics": {
-    "deaths_by_year": {
+    "incidents_by_year": {
       "2023": 2,
       "2024": 3,
       "2025": 16,
       "2026": 3
     },
-    "deaths_by_year_note": "Counts incidents per year (date of index event). 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2025 raised from 14 to 16 in v3.5.0 with the addition of Christian Faith Madison (June 9, 2025) and Alice Carrier (July 2, 2025). 2026 includes Gangbuk-gu motel poisonings (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
+    "deaths_by_year": {
+      "2023": 2,
+      "2024": 2,
+      "2025": 18,
+      "2026": 13
+    },
+    "deaths_by_year_note": "Counts people who died, by the year of the incident's index event; sums to total_fatalities. incidents_by_year counts incidents.",
+    "incidents_by_year_note": "Counts incidents per year (date of index event); renamed from deaths_by_year in v4.0.0 because it never counted deaths. 2024 corrected from 2 to 3 in v3.4.0 to match the 2024 records in the incidents array — prior count was a pre-existing off-by-one. 2025 raised from 14 to 16 in v3.5.0 with the addition of Christian Faith Madison (June 9, 2025) and Alice Carrier (July 2, 2025). 2026 includes Gangbuk-gu motel poisonings (January 28, 2026), Tumbler Ridge mass shooting (February 10, 2026), and University of South Florida double homicide (April 16, 2026).",
     "victims_by_age_group": {
       "minors": 10,
       "adults": 25
@@ -40,7 +49,7 @@
       "count": 17,
       "breakdown": "Whittemore (32), Suzanne Adams (83), Tumbler Ridge 8 victims (mother age 39, stepbrother age 11, education assistant age 39, 5 students ages 12-13), FSU 2 victims (Robert Morales 57, Tiru Chabba 45), Angela Shellis (45, Wales — killed by son following DeepSeek weapon-selection consultation), USF 2 victims (Zamil Limon 27, Nahida Bristy 27 — killed by perpetrator who consulted ChatGPT on post-mortem disposal), Gangbuk-gu Seoul 2 victims (unidentified men in their 20s, killed January 28 and February 9, 2026 — perpetrator queried ChatGPT about lethal sleeping-pill doses; ChatGPT warned her of respiratory-failure death risk and advised calling 119, but the logs were later used forensically by prosecutors as evidence of premeditated murder intent)"
     },
-    "minors_affected_including_attempts": 6,
+    "minors_affected_including_attempts": 11,
     "youngest_victim": 11,
     "oldest_victim": 83,
     "average_age": 30.5,
@@ -204,6 +213,7 @@
       "name_type": "pseudonym",
       "age": 30,
       "date": "2023-03-01",
+      "date_precision": "month",
       "location": {
         "city": "Unknown",
         "state": null,
@@ -229,7 +239,22 @@
         "Vice/Motherboard",
         "AI Incident Database #505"
       ],
-      "verification_level": "Government acknowledged"
+      "verification_level": "Government acknowledged",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Government acknowledged' (Belgian state acknowledgment); listed sources are press only (La Libre, Vice/Motherboard, AI Incident Database #505).",
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Pierre",
+          "name_type": "pseudonym",
+          "age": 30,
+          "age_precision": "approximate",
+          "age_source": "incident.age (30); templates/report.html.j2 'Belgian man, 30s'; https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots ('a Belgian man in his thirties')",
+          "note": "Canonical 30 is the floor of 'in his thirties'; exact age unpublished."
+        }
+      ]
     },
     {
       "id": "2023-11-US-001",
@@ -239,6 +264,7 @@
       "name_type": "real",
       "age": 13,
       "date": "2023-11-08",
+      "date_precision": "day",
       "location": {
         "city": "Thornton",
         "state": "Colorado",
@@ -266,7 +292,22 @@
         "CNBC (Jan 7, 2026)",
         "Federal court filings (D. Colorado 1:25-cv-02907)"
       ],
-      "verification_level": "Court documents"
+      "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; sources include federal filings, D. Colorado 1:25-cv-02907.",
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Juliana Peralta",
+          "name_type": "real",
+          "age": 13,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+        }
+      ]
     },
     {
       "id": "2024-08-US-001",
@@ -276,6 +317,7 @@
       "name_type": "real",
       "age": 26,
       "date": "2024-08-03",
+      "date_precision": "day",
       "location": {
         "city": "Unknown",
         "state": "Florida",
@@ -306,11 +348,25 @@
         "CNN"
       ],
       "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; legal_action cites SF Superior Court CGC-25-630809 (JCCP 5431).",
       "additional_context": {
         "mental_health_history": "Struggled with gender identity, anxiety, and suicidal thoughts",
         "chatgpt_relationship": "Began as coping mechanism, became trusted confidant",
         "final_hours": "Told ChatGPT 'I sit here in my bathroom with all my preparations complete' several hours before death"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Joshua Enneking",
+          "name_type": "real",
+          "age": 26,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2024-02-US-001",
@@ -320,6 +376,7 @@
       "name_type": "real",
       "age": 14,
       "date": "2024-02-28",
+      "date_precision": "day",
       "location": {
         "city": "Orlando",
         "state": "Florida",
@@ -346,7 +403,22 @@
         "NBC News",
         "Federal court documents"
       ],
-      "verification_level": "Court documents"
+      "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; sources include federal court documents.",
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Sewell Setzer III",
+          "name_type": "real",
+          "age": 14,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+        }
+      ]
     },
     {
       "id": "2024-11-US-001",
@@ -356,6 +428,7 @@
       "name_type": "pseudonym",
       "age": 16,
       "date": "2024-11-01",
+      "date_precision": "month",
       "location": {
         "city": "Unknown",
         "state": "New York",
@@ -380,7 +453,22 @@
         "CNN",
         "Court documents"
       ],
-      "verification_level": "Court documents"
+      "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; sources are CNN and court documents (class action).",
+      "people": [
+        {
+          "role": "user",
+          "outcome": "survived",
+          "name": "Nina",
+          "name_type": "pseudonym",
+          "age": 16,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Survived attempt counted in metadata.total_attempts; minor pseudonymised per standards."
+        }
+      ]
     },
     {
       "id": "2025-02-US-001",
@@ -390,6 +478,7 @@
       "name_type": "real",
       "age": 32,
       "date": "2025-02-19",
+      "date_precision": "day",
       "location": {
         "city": "Readfield",
         "state": "Maine",
@@ -427,13 +516,38 @@
         "Court documents (Kennebec County)"
       ],
       "verification_level": "Court documents and official government statements",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and official government statements'; sources include Maine State Police and Kennebec County court documents.",
       "additional_context": {
         "perpetrator_background": "Former SpaceX engineer, traveled extensively",
         "marriage": "Married September 2024, 5 months before her death",
         "victim_background": "International marketing consultant, former France resident",
         "expert_testimony": "Forensic psychologists testified ChatGPT use combined with work stress caused psychotic episode",
         "legal_outcome": "Committed to Maine psychiatric facility indefinitely"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "uninjured",
+          "name": "Samuel Whittemore",
+          "name_type": "real",
+          "age": 34,
+          "age_precision": "exact",
+          "age_source": "incident.perpetrator.age",
+          "note": "AI user and perpetrator (found not criminally responsible); role user per methodology. His mother, also attacked, is not a canonical survivor and is not carried."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Margaux Whittemore",
+          "name_type": "real",
+          "age": 32,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Incident-level name/age describe this victim, not the AI user."
+        }
+      ]
     },
     {
       "id": "2025-02-US-002",
@@ -443,6 +557,7 @@
       "name_type": "real",
       "age": 29,
       "date": "2025-02",
+      "date_precision": "month",
       "location": {
         "city": "Unknown",
         "state": "Unknown",
@@ -473,13 +588,27 @@
         "British Psychological Society"
       ],
       "verification_level": "Multiple news sources",
+      "tier": 2,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Multiple news sources'; sources are press, led by her mother's NYT op-ed (primary source); no court or official record.",
       "additional_context": {
         "background": "Health policy analyst, MD; described as energetic and social",
         "trigger": "Struggled to find work after sabbatical due to election-year hiring freezes; growing isolation",
         "chatgpt_relationship": "Started with everyday tasks, evolved into virtual therapy after downloading Reddit prompt",
         "family": "Mother: Laura Reiley (Washington Post food critic, wrote NYT op-ed)",
         "discovery": "Family discovered ChatGPT conversations five months after her death"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Sophie Rottenberg",
+          "name_type": "real",
+          "age": 29,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-03-US-001",
@@ -489,6 +618,7 @@
       "name_type": "real",
       "age": 78,
       "date": "2025-03-31",
+      "date_precision": "day",
       "location": {
         "city": "New Brunswick",
         "state": "New Jersey",
@@ -513,7 +643,22 @@
         "Reuters investigation",
         "Family interviews"
       ],
-      "verification_level": "Multiple news sources"
+      "verification_level": "Multiple news sources",
+      "tier": 2,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Multiple news sources'; sources are a Reuters investigation and family interviews (primary-source journalism); no legal or official record.",
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Thongbue Wongbandue",
+          "name_type": "real",
+          "age": 78,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Reuters-sourced coverage gives 76 and death on March 28, 2025 (https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots, citing Reuters); canonical 78 and 2025-03-31 need re-verification."
+        }
+      ]
     },
     {
       "id": "2025-04-US-FSU",
@@ -523,6 +668,7 @@
       "name_type": "event",
       "age": null,
       "date": "2025-04-17",
+      "date_precision": "day",
       "location": {
         "city": "Tallahassee",
         "state": "Florida",
@@ -597,6 +743,9 @@
         "WTXL (May 26, 2026)"
       ],
       "verification_level": "Court documents and official government statements",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and official government statements'; sources include Leon County docket 2025 CF 001241 and N.D. Fla. 4:26-cv-00222.",
       "additional_context": {
         "docket_number": "2025 CF 001241 A001",
         "docket_caption": "State of Florida v. Ikner, Phoenix",
@@ -625,7 +774,37 @@
         "may_2026_in_person_hearing": "May 26, 2026 — first in-person court appearance by Ikner since arrest; defense argued the volume of electronic discovery (explicitly citing 'Ikner's alleged ChatGPT conversation logs and the Florida AG's parallel criminal investigation into OpenAI') made the case 'complicated' and meeting the State's proposed pre-trial deadlines 'virtually impossible.' Defense quote (Johnson): 'We could not be ready to list our experts by the State's proposed dates simply because our investigation is not complete.' Judge Neff deferred ruling on the delay request.",
         "may_2026_scheduling_order": "May 28, 2026 — written scheduling order. Tracks State's proposed deadlines: June 1 (guilt-phase witnesses), July 1 (penalty-phase witnesses), August 1 (rebuttal witnesses). October 19, 2026 trial date confirmed unchanged at that time (superseded: continuance granted August 17, 2026; trial now June 8, 2027).",
         "defense_chatgpt_logs_discovery_reference": "The May 26, 2026 in-person appearance is the first public acknowledgment by defense counsel that the AI conversation evidence is a contested feature of trial preparation — defense counsel Randall Johnson explicitly cited Ikner's ChatGPT logs and the parallel FL AG criminal investigation into OpenAI as factors complicating discovery. Whether the defense has reviewed the Joshi/Chabba civil-case discovery (which contains detailed allegations about specific ChatGPT exchanges, filed May 10, 2026) or is relying solely on the criminal docket's 200+ AI messages already in evidence is not publicly known. This is a methodologically significant moment: AI conversation evidence is shifting from prosecution exhibit to contested discovery scope in a death-penalty criminal trial."
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "wounded",
+          "name": "Phoenix Ikner",
+          "name_type": "real",
+          "age": 20,
+          "age_precision": "exact",
+          "age_source": "incident.perpetrator.age",
+          "note": "AI user and shooter, alive; role user per methodology. Canonical says he was wounded, so 'uninjured' is forced by the enum. 5 wounded victims not carried."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Robert Morales",
+          "name_type": "real",
+          "age": 57,
+          "age_precision": "exact",
+          "age_source": "incident.victims.killed[0].age"
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Tiru Chabba",
+          "name_type": "real",
+          "age": 45,
+          "age_precision": "exact",
+          "age_source": "incident.victims.killed[1].age"
+        }
+      ]
     },
     {
       "id": "2025-04-US-001",
@@ -635,6 +814,7 @@
       "name_type": "real",
       "age": 16,
       "date": "2025-04-11",
+      "date_precision": "day",
       "location": {
         "city": "Unknown",
         "state": "California",
@@ -662,7 +842,22 @@
         "Congressional testimony",
         "Court filings"
       ],
-      "verification_level": "Court documents"
+      "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; sources include SF Superior CGC-25-628528 filings and congressional testimony.",
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Adam Raine",
+          "name_type": "real",
+          "age": 16,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+        }
+      ]
     },
     {
       "id": "2025-04-US-002",
@@ -672,6 +867,7 @@
       "name_type": "real",
       "age": 35,
       "date": "2025-04-25",
+      "date_precision": "day",
       "location": {
         "city": "Unknown",
         "state": "Unknown",
@@ -696,7 +892,21 @@
         "Rolling Stone",
         "The Independent"
       ],
-      "verification_level": "Multiple news sources"
+      "verification_level": "Multiple news sources",
+      "tier": 2,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Multiple news sources'; only two outlets listed (Rolling Stone, The Independent); no court or police record cited.",
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Alex Taylor",
+          "name_type": "real",
+          "age": 35,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-08-US-001",
@@ -706,6 +916,7 @@
       "name_type": "real",
       "age": 56,
       "date": "2025-08-01",
+      "date_precision": "month",
       "location": {
         "city": "Old Greenwich",
         "state": "Connecticut",
@@ -747,13 +958,38 @@
         "Court filings (N.D. Cal. federal)"
       ],
       "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; sources include parallel SF Superior and N.D. Cal. filings.",
       "additional_context": {
         "legal_significance": "First chatbot-related wrongful death lawsuit to name Microsoft as defendant; first homicide case in chatbot litigation; first federal MTD denial in a chatbot wrongful-death case (Seeborg, April 13, 2026) — also first federal court rejection of Colorado River abstention in this litigation category",
         "legal_representation": "State case: Jay Edelson / Edelson PC (same attorney as Adam Raine case). Federal case: Hagens Berman Sobol Shapiro LLP",
         "defendants": "OpenAI, Microsoft Corporation, Sam Altman (CEO)",
         "federal_case_theory": "Federal case (Hagens Berman) alleges GPT-4o repeatedly affirmed Soelberg's delusional beliefs (paranoia that family/friends were surveilling and trying to kill him), treated him as a 'trusted confidant' whose validation confirmed paranoid beliefs, and that the design of ChatGPT — building on conversation history over months — deepened psychosis; complaint alleges OpenAI bypassed safety parameters before releasing GPT-4o to market",
         "seeborg_ruling_key_quote": "'A stay is not appropriate where there is \"substantial doubt\" that the resolution of the state proceedings will resolve the federal case.'"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Stein-Erik Soelberg",
+          "name_type": "real",
+          "age": 56,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "AI user and perpetrator (murder-suicide); role user per methodology."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Suzanne Eberson Adams",
+          "name_type": "real",
+          "age": 83,
+          "age_precision": "exact",
+          "age_source": "incident.murder_victim.age",
+          "note": "Name per murder_victim.name; metadata.fatality_note shortens it to 'Suzanne Adams'."
+        }
+      ]
     },
     {
       "id": "2025-05-US-001",
@@ -763,6 +999,7 @@
       "name_type": "real",
       "age": 19,
       "date": "2025-05-31",
+      "date_precision": "day",
       "location": {
         "city": "Unknown",
         "state": "California",
@@ -804,6 +1041,9 @@
         "Court filings (San Francisco County Superior Court)"
       ],
       "verification_level": "Court documents and multiple news sources",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and multiple news sources'; Turner-Scott v. OpenAI Foundation (SF Superior) in sources.",
       "additional_context": {
         "background": "19-year-old UC Merced student",
         "toxicology": "Died from combination of alcohol, Xanax, and kratom causing central nervous system depression leading to asphyxiation",
@@ -818,7 +1058,18 @@
         "legal_significance": "First wrongful death lawsuit framing ChatGPT as an unlicensed medical practitioner whose drug-dosage advice caused death; filed one week after Pennsylvania v. Character Technologies (Commonwealth Court of Pennsylvania, filed May 5, 2026 — first state-AG enforcement on the same unlicensed-medicine theory). Names Sam Altman personally — joins Gray v. OpenAI (Gordon) and Adams v. OpenAI (Soelberg state case) in that pattern.",
         "gpt4o_allegation": "Complaint specifically names GPT-4o and alleges OpenAI deliberately removed safety measures from GPT-4o to maximize user engagement; GPT-4o was retired by OpenAI on February 13, 2026 following complaints about sycophantic behavior",
         "novel_claim": "Plaintiffs are also suing for the unauthorized practice of medicine under California Business & Professions Code, asking the court to pause operations of 'ChatGPT Health' — first wrongful death suit advancing this theory against OpenAI; same theory advanced by Pennsylvania AG against Character.AI on May 5, 2026"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Sam Nelson",
+          "name_type": "real",
+          "age": 19,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-06-US-001",
@@ -828,6 +1079,7 @@
       "name_type": "real",
       "age": 17,
       "date": "2025-06-02",
+      "date_precision": "day",
       "location": {
         "city": "Calhoun",
         "state": "Georgia",
@@ -861,13 +1113,28 @@
         "Ponders Funeral Home"
       ],
       "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; sources include SF Superior CGC-25-630808 filings.",
       "additional_context": {
         "education": "Calhoun High School student, Class of 2026",
         "athletics": "Varsity football player (RB, LS, OLB)",
         "chatgpt_use": "Initially used ChatGPT for everyday questions and schoolwork",
         "final_day": "June 1, 2025 - initiated four separate chats with ChatGPT, final chat began 4:18 PM",
         "family": "Father: Cedric Lacey (plaintiff in lawsuit)"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Amaurie Lacey",
+          "name_type": "real",
+          "age": 17,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+        }
+      ]
     },
     {
       "id": "2025-06-US-002",
@@ -877,6 +1144,7 @@
       "name_type": "real",
       "age": 29,
       "date": "2025-06-09",
+      "date_precision": "day",
       "location": {
         "city": "Fultondale",
         "state": "Alabama",
@@ -911,13 +1179,27 @@
         "Court filings (SF County Superior Court, Case No. CGC-26-637986)"
       ],
       "verification_level": "Court documents and multiple news sources",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and multiple news sources'; complaint CGC-26-637986 retrieved and cited.",
       "additional_context": {
         "plaintiff": "Ed Parish Jr., administrator of the estate of Christian Faith Madison, on behalf of the estate and her minor son",
         "counsel": "Kiesel Law LLP (Paul R. Kiesel, Jeffrey A. Koncius, Melanie Meneses Palmer, Lauren M. Kiesel) and Turnbull, Moak & Pendergrass LLC (D. Brett Turnbull, Andrew J. Moak, H. Ben Brown III, pro hac vice forthcoming), per the complaint caption. An earlier entry named 'Levin Law' as counsel; that attribution does not appear anywhere in the 49-page complaint and was corrected August 26, 2026.",
         "openai_response": "OpenAI had not responded to requests for comment as of July 20, 2026 (Futurism)",
         "verification_note": "Filing confirmed by four independent outlets; complaint (49 pp., e-filed June 15, 2026, Clerk stamp) retrieved August 26, 2026 from the copy hosted by WVTM 13 (Hearst), which supplied the case number CGC-26-637986 and the counsel of record. JCCP 5431 coordination not yet confirmed; re-check the roster.",
         "surfaced_by": "Weekly triage routine — first captured 2026-07-20 (issue #47); promoted 2026-08-21 after independent verification against ABC 33/40, Futurism, and Yahoo News"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Christian Faith Madison",
+          "name_type": "real",
+          "age": 29,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-XX-US-001",
@@ -927,6 +1209,7 @@
       "name_type": "real",
       "age": 48,
       "date": "2025",
+      "date_precision": "year",
       "location": {
         "city": "Astoria",
         "state": "Oregon",
@@ -958,12 +1241,26 @@
         "Court filings (California Superior Court, Los Angeles)"
       ],
       "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; Fox v. OpenAI, LA Superior 25STCV32379 (JCCP 5431).",
       "additional_context": {
         "background": "Community builder, technologist, caregiver",
         "family": "Wife: Jennifer 'Kate' Fox (plaintiff in lawsuit)",
         "work": "Created nature-based sanctuary with wife for those in need",
         "chatgpt_relationship": "Started as productive tool, evolved into dangerous confidante as social circle thinned"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Joe Ceccanti",
+          "name_type": "real",
+          "age": 48,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-07-US-001",
@@ -973,6 +1270,7 @@
       "name_type": "real",
       "age": 23,
       "date": "2025-07-25",
+      "date_precision": "day",
       "location": {
         "city": "College Station",
         "state": "Texas",
@@ -1000,6 +1298,9 @@
         "Court filings (California state court, San Francisco)"
       ],
       "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; LA Superior 25STCV32382 (JCCP 5431).",
       "additional_context": {
         "education": "Master's degree in business from Texas A&M University (May 2025)",
         "mental_health_history": "Had mental health issues at times, showed signs of depression",
@@ -1007,7 +1308,18 @@
         "chat_history": "Thousands of pages of ChatGPT conversations from Oct 2023 to July 2025",
         "final_night_details": "Sat in car by lake, discussed suicide plans while drinking hard ciders",
         "bot_relationship_evolution": "Started with homework help, evolved into daily 11am-3am usage with emotional dependency"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Zane Shamblin",
+          "name_type": "real",
+          "age": 23,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-07-CA-001",
@@ -1017,6 +1329,7 @@
       "name_type": "real",
       "age": 24,
       "date": "2025-07-02",
+      "date_precision": "day",
       "location": {
         "city": "Montreal",
         "state": "Quebec",
@@ -1053,13 +1366,27 @@
         "Court filings (SF County Superior Court, filed June 11, 2026)"
       ],
       "verification_level": "Court documents and multiple news sources",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and multiple news sources'; Carrier v. OpenAI (SF Superior, filed June 11, 2026).",
       "additional_context": {
         "plaintiff": "Kristie Carrier (mother), New Brunswick, Canada",
         "counsel": "Tech Justice Law Project, Social Media Victims Law Center, and Susman Godfrey (Justin Nelson)",
         "openai_response": "OpenAI spokesperson Drew Pusateri: 'This is a heartbreaking situation and our thoughts are with everyone impacted'; stated the interactions occurred on 'an earlier version of ChatGPT that is no longer available' (Global News, June 12, 2026)",
         "significance": "First private-plaintiff wrongful death suit over a Canadian ChatGPT user; the British Columbia government's separate action over the Tumbler Ridge shooting is the first governmental one",
         "surfaced_by": "Weekly triage routine — first captured 2026-06-15 (issue #37), re-surfaced in six subsequent runs; promoted 2026-08-21 after independent verification against CBS News, Global News, and Al Jazeera"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Alice Carrier",
+          "name_type": "real",
+          "age": 24,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-10-US-001",
@@ -1069,6 +1396,7 @@
       "name_type": "real",
       "age": 36,
       "date": "2025-10-02",
+      "date_precision": "day",
       "location": {
         "city": "Miami area",
         "state": "Florida",
@@ -1107,6 +1435,9 @@
         "AI Law Wiki (case number confirmation)"
       ],
       "verification_level": "Court documents and multiple news sources",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and multiple news sources'; N.D. Cal. 5:26-cv-01849.",
       "additional_context": {
         "case_number": "5:26-cv-01849",
         "court": "U.S. District Court, Northern District of California",
@@ -1120,7 +1451,18 @@
         "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'",
         "google_response_status": "Google LLC and Alphabet Inc. filed a Rule 12(b)(6) motion to dismiss (First Amendment theory: liability cannot attach to sharing ideas that lead others to harm); plaintiff's opposition filed June 17, 2026 after a stipulated extension (Dkt. 34, May 27, 2026, which also advanced the hearing from August 19 to August 5, 2026). Motion hearing held August 5, 2026 before Judge Eumi K. Lee, San Jose, and the motion was taken under submission (Dkt. 39); transcript filed August 6 (Dkt. 42). First federal motion to dismiss in a Gemini wrongful-death case. No ruling located as of October 14, 2026. The Further Case Management Conference was reset to December 2, 2026 (Dkt. 43, August 24, 2026). N.D. Cal. 5:26-cv-01849.",
         "docket_date_discrepancy": "Resolved October 14, 2026 against the docket (PACER Monitor): the hearing was advanced to August 5, 2026 by Dkt. 34 and held that day (Dkt. 39). Earlier versions of this record carried the superseded August 19 setting (Dkt. 31) and a September 16 case-management date (Dkt. 30), both since reset."
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Jonathan Gavalas",
+          "name_type": "real",
+          "age": 36,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2025-10-GB-001",
@@ -1130,6 +1472,7 @@
       "name_type": "real",
       "age": 45,
       "date": "2025-10-23",
+      "date_precision": "day",
       "location": {
         "city": "Prestatyn",
         "state": "Denbighshire",
@@ -1171,6 +1514,9 @@
         "Mold Crown Court conviction (guilty plea, March 25, 2026)"
       ],
       "verification_level": "Court documents and official government statements",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and official government statements' (Mold Crown Court conviction, North Wales Police and CPS Cymru statements); the underscore-spelled label in additional_context.jurisdictional_note is not carried because the sub-label is defined for Tier 2.",
       "additional_context": {
         "court": "Mold Crown Court, North Wales",
         "presiding_judge": "Judge Rhys Rowlands",
@@ -1181,7 +1527,29 @@
         "deepseek_response": "No public response or statement from DeepSeek located as of April 2026; whether the company retained logs of Roberts's queries or has been subject to inquiries from Chinese regulators is not publicly documented",
         "open_questions": "Specific DeepSeek product version (R1, V3, or web interface) used by Roberts is not yet established in public reporting; full conversation transcript not yet published",
         "surfaced_by": "Weekly triage routine v1.0.0, run 2026-04-27 — primary news ran March 25-26, 2026, outside the prior April 23 dry-run search window; Tier 1 verification (criminal conviction, North Wales Police press release, CPS Cymru Wales statement)"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "uninjured",
+          "name": "Tristan Roberts",
+          "name_type": "real",
+          "age": 18,
+          "age_precision": "exact",
+          "age_source": "incident.perpetrator.age",
+          "note": "AI user and perpetrator, convicted of murder; role user per methodology."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Angela Shellis",
+          "name_type": "real",
+          "age": 45,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "Incident-level name/age describe this victim, not the AI user."
+        }
+      ]
     },
     {
       "id": "2025-11-US-001",
@@ -1191,6 +1559,7 @@
       "name_type": "real",
       "age": 40,
       "date": "2025-11-02",
+      "date_precision": "day",
       "location": {
         "city": "Undisclosed",
         "state": "Colorado",
@@ -1224,13 +1593,27 @@
         "Court filings (LA County Superior Court 26STCV00988)"
       ],
       "verification_level": "Court documents",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents'; Gray v. OpenAI, LA Superior 26STCV00988.",
       "additional_context": {
         "plaintiff": "Stephanie Gray (mother of Austin Gordon)",
         "gpt4o_allegation": "Complaint alleges OpenAI released GPT-4o knowing internally that its sycophantic response pattern created severe harm risk, briefly pulled it in 2024, then reintroduced it",
         "related_litigation": "Case is one of at least eight active wrongful death lawsuits pending against OpenAI as of April 2026",
         "primary_documents": "Complaint publicly available via CourthouseNews (courthousenews.com/wp-content/uploads/2026/01/stephanie-gray-openai.pdf) and Ars Technica (cdn.arstechnica.net/wp-content/uploads/2026/01/Gray-v-OpenAI-Complaint.pdf)",
         "surfaced_by": "Weekly triage routine v1.0.0, dry run 2026-04-23 — surfaced independently in French-language coverage before English verification; cross-referenced across 5+ independent outlets plus primary complaint"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Austin Gordon",
+          "name_type": "real",
+          "age": 40,
+          "age_precision": "exact",
+          "age_source": "incident.age"
+        }
+      ]
     },
     {
       "id": "2026-01-KR-001",
@@ -1240,6 +1623,7 @@
       "name_type": "event",
       "age": null,
       "date": "2026-01-28",
+      "date_precision": "day",
       "location": {
         "city": "Seoul (Gangbuk-gu)",
         "state": null,
@@ -1321,6 +1705,11 @@
         "Police statements (Seoul Gangbuk Police)"
       ],
       "verification_level": "Multiple independent Korean and English news sources; police-sourced; primary Korean court documents not accessible in English (jurisdictional-verification-limited)",
+      "tier": 2,
+      "sub_labels": [
+        "jurisdictional-verification-limited"
+      ],
+      "tier_basis": "verification_level: multiple Korean and English news sources, police-sourced, primary Korean court documents not accessible in English; additional_context.tier_at_promotion records Tier 2 with this sub-label.",
       "additional_context": {
         "tier_at_promotion": "Tier 2 Journalistic with jurisdictional-verification-limited label (Korean criminal court records not accessible in English; English-language reporting confirmed across 10+ outlets, Korean-language reporting confirmed across major broadcasters including MBC, KBS, YTN and major dailies including Hankyung, Money Today)",
         "korean_language_verification": "Re-verified May 27, 2026 against the Khan/경향신문 indictment summary (March 18, 2026), the Seoul Northern District Prosecutors' Office disclosure, and asiae English coverage. Two earlier 'corrections' recorded in this field have been REVERSED: (1) substance is benzodiazepines — specifically flunitrazepam and diazepam per the indictment — NOT zolpidem (the prior zolpidem note appears to have come from secondary aggregator coverage and was contradicted by the indictment); (2) the indicted/charged series runs December 14 2025 – February 9 2026, NOT October 2025 — the October 25 2025 Seocho-gu restaurant incident is a SEPARATE, under-investigation suspected case, not part of the indicted murders. One earlier correction stands: referral to prosecutors was February 19, 2026 (February 11 was arrest).",
@@ -1333,7 +1722,49 @@
         "surfaced_by": "Weekly triage routine v1.0.1, May 18, 2026 run — Korean-language sources (MBC, KBS, YTN, Money Today, Hankyung, Newdaily) verified against initial Korea Herald + SCMP + Fortune + NBC English reporting",
         "trial_status": "First-instance verdict delivered August 27, 2026 (Seoul Northern District Court, Criminal Division 14): life imprisonment, 30 years' electronic monitoring; one special-assault count acquitted. Prosecution had demanded death (August 18). Database counts unchanged: 2 fatalities, 1 survived attempt.",
         "judicial_finding_on_ai": "The judgment adopted the prosecution's theory of the ChatGPT logs: the court found that although Kim initially lacked specific awareness of the risk of death, in the course of drugging successive victims she 'became aware, through ChatGPT searches, of the conditions under which the drugs could cause death' (챗GPT 등을 통해 약물을 통해 사망에 이르게 할 수 있는 조건을 인식하게 됐다) — the basis for its finding of intent to kill. This is the first case in this database in which a court's judgment, not only a charging decision, rests mens rea on the defendant's chatbot queries. (Aju Business Daily; Hankyung; Herald Economy — August 27, 2026.)"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "uninjured",
+          "name": "Kim So-young (김소영)",
+          "name_type": "real",
+          "age": 20,
+          "age_precision": "exact",
+          "age_source": "incident.perpetrator.age",
+          "note": "AI user and perpetrator, convicted at first instance; role user per methodology. Prosecutors confirmed 20 (early coverage said 21)."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 25,
+          "age_precision": "approximate",
+          "age_source": "statistics.average_age_note (midpoint of incident.victims.killed[0].age_range '20s')",
+          "note": "Died January 28, 2026; ~25 is canonical's midpoint estimate of 'in their 20s'."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 25,
+          "age_precision": "approximate",
+          "age_source": "statistics.average_age_note (midpoint of incident.victims.killed[1].age_range '20s')",
+          "note": "Died February 9, 2026; ~25 is canonical's midpoint estimate of 'in their 20s'."
+        },
+        {
+          "role": "third_party",
+          "outcome": "survived",
+          "name": null,
+          "name_type": "unnamed",
+          "age": null,
+          "age_precision": "unknown",
+          "age_source": "incident.victims.wounded_detail (no age given)",
+          "note": "December 2025 victim, survived; counted in metadata.total_attempts. key_factors calls the victims men in their 20s collectively."
+        }
+      ]
     },
     {
       "id": "2026-02-CA-001",
@@ -1343,6 +1774,7 @@
       "name_type": "real",
       "age": 18,
       "date": "2026-02-10",
+      "date_precision": "day",
       "location": {
         "city": "Tumbler Ridge",
         "state": "British Columbia",
@@ -1407,6 +1839,9 @@
         "Al Jazeera (September 22, 2026) — Province of British Columbia suit"
       ],
       "verification_level": "Court documents, official government acknowledgment, and company admission",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents, official government acknowledgment, and company admission'; sources include police statements, N.D. Cal. 26-cv-10743 and BC Gov News.",
       "additional_context": {
         "openai_response_pre_shooting": "Account detected and banned June 2025 via automated tools + human review; threshold for alerting law enforcement was NOT met by OpenAI's internal assessment because activity was not deemed 'credible or imminent' planning — no alert sent to RCMP. WSJ subsequently reported internal debate among ~12 staff; some advocated for a law-enforcement referral; leadership declined.",
         "openai_response_post_shooting": "Contacted RCMP with information about van Rootselaar's account only after the February 2026 mass casualty event; stated this was 'proactive' sharing",
@@ -1418,7 +1853,99 @@
         "second_account": "Undetected until police released shooter's name post-shooting",
         "significance": "First case where AI company explicitly acknowledged prior detection of violent planning; largest-casualty instrumental-pathway incident in the database; prompted first national-government-level intervention (Canadian minister summoning AI company for an accounting); now also the first AI-implicated mass shooting where the CEO has personally apologized to a victim community and where victim families have crossed an international border to litigate in U.S. federal court for damages remedies unavailable under domestic law",
         "pipeda_findings_2026_002": "Office of the Privacy Commissioner of Canada, jointly with provincial commissioners of British Columbia, Alberta, and Quebec, released PIPEDA Findings #2026-002 in May 2026 finding that OpenAI failed to comply with the Personal Information Protection and Electronic Documents Act in training ChatGPT — used Canadians' personal information without adequate consent. OpenAI required to implement corrective measures; specific remedies not publicly detailed. Source: https://www.priv.gc.ca/en/opc-actions-and-decisions/investigations/investigations-into-businesses/2026/pipeda-2026-002-overview/. This is a parallel regulatory track to the RCMP criminal investigation into the shooting; not a criminal finding tied to van Rootselaar."
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "died",
+          "name": "Jesse van Rootselaar",
+          "name_type": "real",
+          "age": 18,
+          "age_precision": "exact",
+          "age_source": "incident.age",
+          "note": "AI user and shooter, died by suicide; role user per methodology. 2 wounded not carried."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 39,
+          "age_precision": "exact",
+          "age_source": "incident.victims.includes ('Mother (age 39)')",
+          "note": "Shooter's mother; canonical does not name her."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Emmett Jacobs",
+          "name_type": "real",
+          "age": 11,
+          "age_precision": "exact",
+          "age_source": "incident.victims.includes ('stepbrother Emmett Jacobs (age 11)')",
+          "note": "Shooter's stepbrother; minor named by canonical, family publicity undocumented (Author's call)."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 39,
+          "age_precision": "exact",
+          "age_source": "incident.victims.includes ('education assistant (age 39)')",
+          "note": "Education assistant; canonical does not name this victim."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 12,
+          "age_precision": "exact",
+          "age_source": "https://www.cftktv.com/news/article/what-we-know-about-the-victims-of-the-mass-shooting-in-tumbler-ridge (RCMP: five students aged 12, 12, 12, 12 and 13); canonical victims.includes gives '12-13' only",
+          "note": "Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 12,
+          "age_precision": "exact",
+          "age_source": "https://www.cftktv.com/news/article/what-we-know-about-the-victims-of-the-mass-shooting-in-tumbler-ridge (RCMP: five students aged 12, 12, 12, 12 and 13); canonical victims.includes gives '12-13' only",
+          "note": "Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 12,
+          "age_precision": "exact",
+          "age_source": "https://www.cftktv.com/news/article/what-we-know-about-the-victims-of-the-mass-shooting-in-tumbler-ridge (RCMP: five students aged 12, 12, 12, 12 and 13); canonical victims.includes gives '12-13' only",
+          "note": "Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 12,
+          "age_precision": "exact",
+          "age_source": "https://www.cftktv.com/news/article/what-we-know-about-the-victims-of-the-mass-shooting-in-tumbler-ridge (RCMP: five students aged 12, 12, 12, 12 and 13); canonical victims.includes gives '12-13' only",
+          "note": "Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": null,
+          "name_type": "unnamed",
+          "age": 13,
+          "age_precision": "exact",
+          "age_source": "https://www.cftktv.com/news/article/what-we-know-about-the-victims-of-the-mass-shooting-in-tumbler-ridge (RCMP: five students aged 12, 12, 12, 12 and 13); canonical victims.includes gives '12-13' only",
+          "note": "Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+        }
+      ]
     },
     {
       "id": "2026-04-US-001",
@@ -1428,6 +1955,7 @@
       "name_type": "event",
       "age": null,
       "date": "2026-04-16",
+      "date_precision": "day",
       "location": {
         "city": "Tampa",
         "state": "Florida",
@@ -1504,6 +2032,9 @@
         "Hillsborough County criminal affidavit (referenced by multiple outlets)"
       ],
       "verification_level": "Court documents and multiple news sources",
+      "tier": 1,
+      "sub_labels": [],
+      "tier_basis": "verification_level 'Court documents and multiple news sources'; Hillsborough County criminal affidavit and May 7, 2026 indictment.",
       "additional_context": {
         "indictment_date": "2026-05-07",
         "death_penalty_notice": "2026-05-08",
@@ -1516,7 +2047,37 @@
         "openai_response": "No specific public OpenAI statement on this case has been located through May 18, 2026; OpenAI has not responded to the AG's investigation expansion announcement",
         "scope_note": "Both victims were Bangladeshi nationals studying at USF; both 27 years old; both adults. The pre-crime ChatGPT consultation on April 13 was about post-mortem disposal logistics, not about attack planning in the conventional sense — this is a meaningful departure from the FSU (target selection, casualty maximization) and Tumbler Ridge (months-long ideation reinforcement) patterns, and is documented as such rather than collapsed into a new taxonomy bucket",
         "promotion_history": "Surfaced by 2026-05-04 weekly triage routine; promotion deferred to the week of May 11 pending grand jury indictment (which produced the canonical case-charge structure on May 7); cause-of-death revision (stab wounds, not firearm) was identified in mid-research and integrated into this final record"
-      }
+      },
+      "people": [
+        {
+          "role": "user",
+          "outcome": "uninjured",
+          "name": "Hisham Saleh Abugharbieh",
+          "name_type": "real",
+          "age": 26,
+          "age_precision": "exact",
+          "age_source": "incident.perpetrator.age",
+          "note": "AI user and perpetrator, alive (pleaded not guilty); role user per methodology."
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Zamil Ahamed Limon",
+          "name_type": "real",
+          "age": 27,
+          "age_precision": "exact",
+          "age_source": "incident.victims.killed[0].age"
+        },
+        {
+          "role": "third_party",
+          "outcome": "died",
+          "name": "Nahida Sultana Bristy",
+          "name_type": "real",
+          "age": 27,
+          "age_precision": "exact",
+          "age_source": "incident.victims.killed[1].age"
+        }
+      ]
     }
   ],
   "regulatory_response": {

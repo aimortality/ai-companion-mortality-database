@@ -32,7 +32,6 @@ This repository contains data and documentation for the first comprehensive publ
 - **ChatGPT**: 83% of fatalities (29 total: 13 AI-user deaths + 16 third-party victims)
 - **8 platforms tracked** (6 with documented fatalities; DeepSeek added April 2026 following first non-Western-corporate-AI homicide consultation case in Wales)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
-- **Zero deaths** linked to Anthropic's Claude or Replika
 - **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
 - **Florida AG criminal investigation** into OpenAI opened April 21, 2026; expanded to USF double homicide as second predicate April 27–28, 2026
 - **Florida AG civil lawsuit** against OpenAI and CEO Sam Altman (personally) filed June 1, 2026 (Highlands County Circuit Court) — first US state civil suit against OpenAI and the first to name an AI company CEO personally liable for user harms; ten counts, penalties up to $10,000/violation

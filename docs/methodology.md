@@ -66,7 +66,7 @@ Each case in this database meets at least one criterion from Tier 1 or Tier 2. C
 - **Primary source access**: Journalist reviewed chat logs, interviewed family members directly, or obtained documentary evidence
 - **Company acknowledgment**: Platform operator confirmed the incident in public statement
 
-*Tier 2 evidence establishes journalistic fact. It has been subjected to editorial standards and, typically, legal review before publication.*
+*Tier 2 evidence is the record of professional reporting. It has been subjected to the outlet's editorial standards and, typically, its legal review before publication.*
 
 #### Tier 3: Preliminary Evidence (Not Published)
 - **Single source reports**: One news article without independent confirmation
@@ -102,11 +102,7 @@ Primary Document Review (court filings, transcripts where available)
      ↓
 Timeline Construction
      ↓
-Platform Confirmation Attempt
-     ↓
 Family/Representative Contact (where appropriate and ethical)
-     ↓
-Legal Review
      ↓
 Publication
 ```
@@ -146,7 +142,6 @@ For each verified case, we document:
 
 ### To the Platforms
 
-- Companies are contacted before publication when possible
 - Responses and policy changes are documented alongside harms
 - We distinguish between allegations in active litigation and adjudicated findings. Killings are described by the perpetrator's adjudicated status: "homicide" and "killed" until a court has ruled; "murder" only where a conviction or guilty plea exists (or, conventionally, in a murder-suicide where the perpetrator is dead); "found not criminally responsible" where that is the finding. Charges are quoted in the charging authority's words. Labels are upgraded, with citation, when a verdict is entered
 
@@ -221,7 +216,7 @@ Author ORCID: [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035). Corr
 
 ## Acknowledgments
 
-This database was compiled with research assistance from Anthropic's Claude. The methodology was developed through consultation with journalists, legal researchers, and AI safety practitioners. Errors remain our own.
+This database is compiled and maintained with assistance from Anthropic's Claude (data organization, consistency checks, source cross-referencing, tabulation and web development); case selection, verification decisions, classification and every editorial judgment are the researcher's own. The methodology was developed through consultation with journalists, legal researchers, and AI safety practitioners. Errors remain our own.
 
 The work is dedicated to those documented here, and to the families who chose to speak so that others might be warned.
 

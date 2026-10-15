@@ -22,11 +22,11 @@
 
 ## Summary
 
-This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case is verified through court documents, multiple independent news sources, or official government acknowledgment. This database makes no independent claims of causation.
+This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case meets Tier 1 (court documents or government acknowledgment) or Tier 2 (three or more independent outlets, or primary-document journalism) of [docs/verification-standards.md](docs/verification-standards.md). This database makes no independent claims of causation.
 
 ### Key Findings:
 - **35 total fatalities** across 24 incidents (Mar 2023 - Sep 2026): 18 AI users + 17 third-party victims
-- **29% of victims were minors** (youngest: 11 years old)
+- **10 of the 35 who died were minors** (4 AI users; 6 third-party victims at Tumbler Ridge; youngest 11)
 - **19 of 24 incidents occurred in 2025–2026** (escalating trend)
 - **Three causal pathways identified**: relational (12), cognitive (7), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
 - **ChatGPT**: 83% of fatalities (29 total: 13 AI-user deaths + 16 third-party victims)
@@ -126,12 +126,12 @@ This database serves three critical purposes:
 
 ## Verification Standards
 
-Every case must meet at least ONE of these criteria:
-- Court documents filed in the case
-- Multiple independent news sources (3+)
-- Official government acknowledgment
-- Congressional testimony
-- Public statements by verified family members
+Every published case meets Tier 1 or Tier 2 of [docs/verification-standards.md](docs/verification-standards.md):
+- **Tier 1 — Juridical**: court documents or government acknowledgment (including legislative testimony and law-enforcement records)
+- **Tier 2 — Journalistic**: three or more independent outlets, or primary-document journalism (chat logs, records, direct interviews)
+- **Tier 3 — Preliminary**: a single source or unverified reports — tracked internally, never published
+
+Each incident record carries its `tier` in `data/mortality-data.json`.
 
 ## Contributing
 

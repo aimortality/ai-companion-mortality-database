@@ -59,7 +59,7 @@ Each case in this database meets at least one criterion from Tier 1 or Tier 2. C
 - **Government acknowledgment**: Official statements from regulatory bodies, legislative testimony, or law enforcement reports
 - **Coroner or medical examiner findings**: Where AI interaction is noted as a contributing factor
 
-*Tier 1 evidence establishes legal fact. It has been subjected to adversarial scrutiny or official verification processes.*
+*Tier 1 evidence is a public legal or official record. A filed complaint records sworn allegations that have not been adjudicated; a ruling, conviction or official finding records a determination. Each entry says which kind of record it rests on.*
 
 #### Tier 2: Journalistic Evidence
 - **Multiple independent sources**: Three or more news organizations reporting independently (not wire service reprints)

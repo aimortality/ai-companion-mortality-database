@@ -57,18 +57,30 @@
     "distribution": [
       {
         "@type": "DataDownload",
-        "encodingFormat": "text/html",
-        "contentUrl": "https://aimortality.org"
+        "encodingFormat": "application/json",
+        "contentUrl": "https://aimortality.org/data/mortality-data.json"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://aimortality.org/data/incidents.csv"
+      },
+      {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://aimortality.org/data/people.csv"
       }
     ],
+    "identifier": "https://doi.org/10.5281/zenodo.22062862",
+    "creator": {
+      "@type": "Person",
+      "name": "Hunter Karman",
+      "@id": "https://orcid.org/0009-0004-5699-6035"
+    },
     "about": {
       "@type": "Thing",
       "name": "AI chatbot safety",
       "description": "Documentation of mortality events associated with AI companion and assistant chatbot usage"
-    },
-    "includedInDataCatalog": {
-      "@type": "DataCatalog",
-      "name": "AI Safety Research"
     }
   }
   </script>

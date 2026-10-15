@@ -148,7 +148,7 @@ This project uses the **three-tier system** defined in [`docs/verification-stand
 
 ### Discord: [Not yet available]
 ### Email: contact@aimortality.org
-### Issues: Use the [GitLab issue tracker](https://gitlab.com/aimortality/ai-companion-mortality-database/-/issues) for all contributions
+### Issues: Use the [GitHub issue tracker](https://github.com/aimortality/ai-companion-mortality-database/issues) for all contributions
 
 ## 📜 Code of Conduct
 

@@ -192,9 +192,6 @@ Maintained by Hunter Karman (independent researcher, Los Angeles; ORCID [0009-00
 
 For media inquiries or research access: contact@aimortality.org
 
-Cited in:
-- Jess McHugh, ["When The AI Says To Kill"](https://www.noemamag.com/when-the-ai-says-to-kill/), *Noema* (Berggruen Institute), August 25, 2026
-
 ## Key Resources
 
 - [Live Database](https://aimortality.org/)

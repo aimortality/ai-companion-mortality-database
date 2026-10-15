@@ -23,7 +23,7 @@ The highest standard. These sources have been subjected to legal processes—swo
 - Coroner findings mentioning chatbot interaction
 - Settlement agreements (when public)
 
-**What this means:** If a case rests on Tier 1 evidence, someone has staked their legal or professional standing on its accuracy. Perjury, sanctions, and official misconduct attach to false statements at this level.
+**What this means:** A Tier 1 record is a public legal or official document. For a filed complaint, that means the allegations are on the record and subject to the court's rules against false pleading — not that they have been proven; a ruling, conviction or official finding is a determination. The database notes which kind of record each case rests on.
 
 ---
 

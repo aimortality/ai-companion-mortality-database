@@ -199,6 +199,8 @@ For media inquiries or research access: contact@aimortality.org
 
 ## Legal Disclaimer
 
+This website is an independent project and is not affiliated with, endorsed by, or connected to any of the organizations, companies, research labs, or open-source projects listed. All names, trademarks, and logos are the property of their respective owners and are used for identification and informational purposes only. Content is aggregated on a best-effort basis and may contain errors or omissions.
+
 This database is provided for public safety and research purposes. All information is derived from public sources. We make no claims about cases not included in this database. Companies mentioned are included based on documented incidents only.
 
 ## License

@@ -80,8 +80,8 @@ fixtureTest.describe('CSP enforced on every page (header attached by the test)',
   }
 });
 
-// (b) Netlify only: the real header, and Google Analytics left unaborted to prove the policy
-// does not break it.
+// (b) Netlify only: the real header, and the Cloudflare Web Analytics beacon left unaborted to
+// prove the policy does not break it.
 rawTest.describe('CSP as served by Netlify', () => {
   // Same switch playwright.config.ts uses: no BASE_URL means the local server, which sends no headers.
   rawTest.skip(!process.env.BASE_URL, 'headers only exist on Netlify');
@@ -96,11 +96,11 @@ rawTest.describe('CSP as served by Netlify', () => {
     });
   }
 
-  rawTest('analytics still reaches Google under the policy', async ({ page }) => {
+  rawTest('analytics still reaches Cloudflare under the policy', async ({ page }) => {
     const collect = page.waitForRequest(
       (r) => {
         const u = new URL(r.url());
-        return /google-analytics\.com|analytics\.google\.com/.test(u.hostname) && u.pathname.includes('/collect');
+        return /cloudflareinsights\.com$/.test(u.hostname) && u.pathname.includes('/cdn-cgi/rum');
       },
       { timeout: 15_000 },
     );

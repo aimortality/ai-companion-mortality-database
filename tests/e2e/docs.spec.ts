@@ -45,7 +45,7 @@ test('the two documents link to each other and to the repository, never to a raw
   await page.goto('/verification-standards.html');
   await expect(page.locator('main').locator(linkTo('/methodology.html'))).toHaveCount(1);
   await page.goto('/methodology.html');
-  await expect(page.locator('main a[href^="https://gitlab.com/aimortality/ai-companion-mortality-database/-/blob/main/CONTRIBUTING.md"]')).toHaveCount(1);
+  await expect(page.locator('main a[href^="https://github.com/aimortality/ai-companion-mortality-database/blob/main/CONTRIBUTING.md"]')).toHaveCount(1);
   await expect(page.locator('main a[href$=".md"][href^="../"], main a[href="methodology.md"], main a[href="verification-standards.md"]')).toHaveCount(0);
 });
 

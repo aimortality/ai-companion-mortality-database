@@ -198,7 +198,7 @@ def derive(d):
 # Where a link in a document should point once the document is a page at the site root. The
 # Markdown sources stay byte-identical (dist/docs/*.md must be exact copies); links are rewritten
 # at render time only.
-REPO_URL = "https://gitlab.com/aimortality/ai-companion-mortality-database"
+REPO_URL = "https://github.com/aimortality/ai-companion-mortality-database"
 PUBLISHED_ROOTS = ("docs", "data")          # copied whole into dist/ by assemble()
 DOC_PAGE_PATHS = {src: "/" + out for out, src in DOC_SOURCES.items()}     # docs/x.md -> /x.html
 _SCHEME = re.compile(r"^(?:[a-z][a-z0-9+.\-]*:|//)", re.I)
@@ -246,7 +246,7 @@ def rewrite_doc_link(href, doc_dir="docs"):
     elif repo_path.split("/")[0] in PUBLISHED_ROOTS:
         new = "/" + repo_path
     else:
-        new = f"{REPO_URL}/-/blob/main/{repo_path}"
+        new = f"{REPO_URL}/blob/main/{repo_path}"
     return new + tail
 
 

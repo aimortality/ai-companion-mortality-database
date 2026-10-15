@@ -129,7 +129,7 @@ This database documents real deaths. Maintain:
 
 - **Host:** Netlify (auto-deploys from main branch)
 - **Domain:** aimortality.org
-- **Analytics:** Google Analytics (G-SS2VTGZ004)
+- **Analytics:** Cloudflare Web Analytics (cookieless beacon; site token in `templates/partials/analytics.html`; dashboard at dash.cloudflare.com → Web Analytics)
 - Netlify runs `pip install -r requirements.txt && python3 build.py && python3 scripts/audit-surfaces.py --no-build`. Any audit FAIL fails the deploy, and the site stays on its last good build. Deploy previews run the same gate on every PR. **The stale-value probes (`check_stale`) mostly do not run on Netlify.** The audit defaults to `--base main`; on a production build `main` equals HEAD, so the pre-change and current values are the same and no probe fires, and a clone without a `main` ref prints "stale-value probes skipped". The probes do real work only in a local run with `--base <pre-change ref>` (e.g. `.venv/bin/python scripts/audit-surfaces.py --base origin/main` before merging, or `--base HEAD~1` after). Do that before declaring a sweep done; do not rely on a green deploy for it.
 - **Content-Security-Policy** is set in `netlify.toml` (`script-src` has no `'unsafe-inline'`). Pages must not contain inline executable scripts or inline event handlers (the audit's `check_inline_scripts` enforces it; JSON-LD data blocks are fine). A new third-party host (script, beacon, image) needs a deliberate change to the CSP in `netlify.toml`; `tests/e2e/csp.spec.ts` checks the policy against every page.
 

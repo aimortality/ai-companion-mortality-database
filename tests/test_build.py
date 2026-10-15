@@ -161,7 +161,7 @@ def test_headings_get_stable_ids_toc_and_labelled_permalinks():
 
 
 def test_doc_links_between_docs_published_files_and_unpublished_files():
-    g = "https://gitlab.com/aimortality/ai-companion-mortality-database/-/blob/main/"
+    g = "https://github.com/aimortality/ai-companion-mortality-database/blob/main/"
     # links between the two documents -> their rendered pages (fragment kept)
     assert build.rewrite_doc_link("methodology.md") == "/methodology.html"
     assert build.rewrite_doc_link("./verification-standards.md#minors") == "/verification-standards.html#minors"
@@ -216,7 +216,7 @@ def test_doc_link_query_is_kept_and_directory_links_fail():
     # the query and fragment travel with the rewritten target; only the path decides what it is
     assert build.rewrite_doc_link("../data/README.md?x=1#a") == "/data/README.md?x=1#a"
     assert (build.rewrite_doc_link("../CONTRIBUTING.md?plain=1#top")
-            == "https://gitlab.com/aimortality/ai-companion-mortality-database/-/blob/main/CONTRIBUTING.md?plain=1#top")
+            == "https://github.com/aimortality/ai-companion-mortality-database/blob/main/CONTRIBUTING.md?plain=1#top")
     with pytest.raises(ValueError):
         build.rewrite_doc_link("../data/")          # a directory is not a published page
 

@@ -49,3 +49,6 @@ Incident ID,Incident Date,Date Precision,Platform,Mechanism Type,Role,Outcome,Na
 2026-04-US-001,2026-04-16,day,ChatGPT,instrumental_pathway,user,uninjured,Hisham Saleh Abugharbieh,real,26,exact,"AI user and perpetrator, alive (pleaded not guilty); role user per methodology."
 2026-04-US-001,2026-04-16,day,ChatGPT,instrumental_pathway,third_party,died,Zamil Ahamed Limon,real,27,exact,
 2026-04-US-001,2026-04-16,day,ChatGPT,instrumental_pathway,third_party,died,Nahida Sultana Bristy,real,27,exact,
+2026-08-US-001,2026-08-11,day,ChatGPT,cognitive_pathway,user,uninjured,Arjun Aravind,real,17,exact,"AI user and accused, a minor charged as an adult; alive; role user per methodology. Named as the courts and press name him."
+2026-08-US-001,2026-08-11,day,ChatGPT,cognitive_pathway,third_party,died,Sudha Venkatesan,real,45,exact,
+2026-08-US-001,2026-08-11,day,ChatGPT,cognitive_pathway,third_party,died,Siddharth Aravind,real,14,exact,Minor victim named per additional_context.minor_names_note.

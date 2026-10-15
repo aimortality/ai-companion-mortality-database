@@ -9,7 +9,7 @@
 
 [**View Live Database**](https://aimortality.org/) | [**Download Data**](data/mortality-data.json)
 
-<sub>35 fatalities · 24 incidents · 8 platforms tracked · March 2023 – September 2026 · Data current as of September 29, 2026 · v3.5.9</sub>
+<sub>37 fatalities · 25 incidents · 8 platforms tracked · March 2023 – October 2026 · Data current as of October 15, 2026 · v3.5.9</sub>
 
 
 </div>
@@ -25,11 +25,11 @@
 This repository contains data and documentation for the first comprehensive public database tracking deaths in which AI chatbot interaction was alleged as a contributing factor. Every case meets Tier 1 (court documents or government acknowledgment) or Tier 2 (three or more independent outlets, or primary-document journalism) of [docs/verification-standards.md](docs/verification-standards.md). This database makes no independent claims of causation.
 
 ### Key Findings:
-- **35 total fatalities** across 24 incidents (Mar 2023 - Sep 2026): 18 AI users + 17 third-party victims
-- **10 of the 35 who died were minors** (4 AI users; 6 third-party victims at Tumbler Ridge; youngest 11)
-- **19 of 24 incidents occurred in 2025–2026** (escalating trend)
-- **Three causal pathways identified**: relational (12), cognitive (7), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
-- **ChatGPT**: 83% of fatalities (29 total: 13 AI-user deaths + 16 third-party victims)
+- **37 total fatalities** across 25 incidents (Mar 2023 - Oct 2026): 18 AI users + 19 third-party victims
+- **11 of the 37 who died were minors** (4 AI users; 7 third-party victims: 6 at Tumbler Ridge and Siddharth Aravind, 14, in Acton, Massachusetts; youngest 11)
+- **20 of 25 incidents occurred in 2025–2026** (escalating trend)
+- **Three causal pathways identified**: relational (12), cognitive (8), instrumental (5 — FSU, Roberts/Shellis, Tumbler Ridge, Kim Seoul, USF)
+- **ChatGPT**: 84% of fatalities (31 total: 13 AI-user deaths + 18 third-party victims)
 - **8 platforms tracked** (6 with documented fatalities; DeepSeek added April 2026 following first non-Western-corporate-AI homicide consultation case in Wales)
 - **New taxonomy**: companion dependency, delusional reinforcement, operational violence
 - **ECRI Institute** ranked AI chatbot misuse as #1 Health Technology Hazard for 2026
@@ -78,6 +78,9 @@ This repository contains data and documentation for the first comprehensive publ
 | Jesse van Rootselaar | 18 | ChatGPT | Feb 2026 | BC, Canada | Mass shooting-suicide | Instrumental |
 | **Zamil Limon** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Homicide victim (sharp-force)** | Instrumental |
 | **Nahida Bristy** | 27 | ChatGPT | Apr 16, 2026 | Tampa, FL, USA | **Homicide victim (sharp-force)** | Instrumental |
+| **Sudha Venkatesan** | 45 | ChatGPT | Aug 11, 2026 | Acton, MA, USA | **Homicide victim** | — |
+| **Siddharth Aravind** | 14 | ChatGPT | Aug 11, 2026 | Acton, MA, USA | **Homicide victim** | — |
+| Arjun Aravind (accused) | 17 | ChatGPT | Aug 11, 2026 | Acton, MA, USA | Accused; charged as an adult; pleaded not guilty (Commonwealth v. Arjun Aravind, Middlesex Superior, indicted October 1, 2026) | Cognitive |
 
 ## Repository Structure
 
@@ -148,7 +151,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 | Platform | User Deaths | Third-Party Victims | Attempts | Safety Features Added | When Added |
 |----------|------------|---------------------|----------|----------------------|------------|
 | Character.AI | 2 | 0 | 1 | Crisis intervention, time limits | After deaths |
-| ChatGPT/OpenAI | 13 | 16 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
+| ChatGPT/OpenAI | 13 | 18 | 0 | Parental controls, age detection, improved distress recognition, enhanced law enforcement referral, lowered LE-referral threshold (April 2026) | After deaths |
 | Chai AI | 1 | 0 | 0 | Crisis resources | After death |
 | Meta AI | 1 | 0 | 0 | None documented | N/A |
 | Gemini | 1 | 0 | 0 | Proactive safety design, content filtering | Since launch |
@@ -216,7 +219,7 @@ This database is dedicated to the memory of those we've lost. Each entry represe
 
 ---
 
-**Last Updated**: September 29, 2026
+**Last Updated**: October 15, 2026
 
 **Maintained by**: Hunter Karman (ORCID [0009-0004-5699-6035](https://orcid.org/0009-0004-5699-6035))
 

@@ -73,7 +73,7 @@
         "parental_controls": "2025-06",
         "age_verification": "2024-10-23"
       },
-      "legal_status": "Multi-case settlement in principle January 7, 2026 (Garcia, Peralta/Montoya, plus 3+ cases consolidated; terms confidential, no admission of liability). A.F. v. Character Technologies (EDTX) remains active. Pennsylvania v. Character Technologies (Commonwealth Court of Pennsylvania, filed May 5, 2026 by the Shapiro administration) — first-of-its-kind state-AG enforcement action under the unlicensed-practice-of-medicine theory, alleging Character.AI bots (notably one named 'Emilie') unlawfully held themselves out as licensed medical professionals in Pennsylvania; preliminary injunction sought."
+      "legal_status": "Multi-case settlement in principle January 7, 2026 (Garcia, Peralta/Montoya, plus 3+ cases consolidated; terms confidential, no admission of liability). A.F. v. Character Technologies (EDTX) remains active. Pennsylvania v. Character Technologies (Commonwealth Court of Pennsylvania, filed May 5, 2026 by the Commonwealth, the Department of State and the State Board of Medicine under the Shapiro administration; not an Attorney General action) — first-of-its-kind state enforcement action under the unlicensed-practice-of-medicine theory, alleging Character.AI bots (notably one named 'Emilie') unlawfully held themselves out as licensed medical professionals in Pennsylvania; preliminary injunction sought."
     },
     {
       "name": "ChatGPT",
@@ -607,7 +607,7 @@
         "criminal_investigation_expansion": "AG Uthmeier announced April 27–28, 2026 (one week after opening) that the OpenAI criminal investigation would expand to include the University of South Florida double homicide (Hisham Abugharbieh). Trigger: Tampa prosecutors disclosed Abugharbieh's ChatGPT queries about body disposal (April 13) and firearm use/detection (April 19). Florida Politics characterized the move as 'broadening' the existing investigation rather than opening a separate one. No specific OpenAI public statement on the expansion has been located.",
         "openai_response": "Spokesperson Kate Waters: 'Last year's mass shooting at Florida State University was a tragedy, but ChatGPT is not responsible for this terrible crime.'",
         "uthmeier_quote": "'My prosecutors have looked at this and they've told me, if it was a person on the other end of that screen, we would be charging them with murder. We cannot have AI bots that are advising people on how to kill others.'",
-        "trial_status": "Trial set for October 19, 2026; jury selection November 3. Phoenix Ikner made his first in-person court appearance on May 26, 2026 (red jumpsuit); Circuit Judge Lance Neff (retained by FL Supreme Court Chief Justice Carlos Muñiz order April 7, 2026 despite Neff's appointment to the First DCA) deferred ruling on the defense's delay request. Judge Neff issued a written scheduling order on May 28, 2026 tracking the State's proposed deadlines without granting the delay: guilt-phase witness disclosure June 1, 2026; penalty-phase witnesses July 1; rebuttal witnesses August 1. October 19, 2026 trial date was confirmed at that point. On August 17, 2026 Judge Neff granted a defense motion to continue: trial rescheduled to June 8, 2027. The defense cited a heavy capital caseload, the volume of evidence, and — for the first time in this case — 'complex co-morbid conditions that are relevant to statutory mitigation' requiring investigation of Ikner's childhood development (WCTV, August 17, 2026; WTXL).",
+        "trial_status": "Trial rescheduled to June 8, 2027 (continuance granted August 17, 2026; originally set for October 19, 2026 with jury selection November 3). Phoenix Ikner made his first in-person court appearance on May 26, 2026 (red jumpsuit); Circuit Judge Lance Neff (retained by FL Supreme Court Chief Justice Carlos Muñiz order April 7, 2026 despite Neff's appointment to the First DCA) deferred ruling on the defense's delay request. Judge Neff issued a written scheduling order on May 28, 2026 tracking the State's proposed deadlines without granting the delay: guilt-phase witness disclosure June 1, 2026; penalty-phase witnesses July 1; rebuttal witnesses August 1. October 19, 2026 trial date was confirmed at that point. On August 17, 2026 Judge Neff granted a defense motion to continue: trial rescheduled to June 8, 2027. The defense cited a heavy capital caseload, the volume of evidence, and — for the first time in this case — 'complex co-morbid conditions that are relevant to statutory mitigation' requiring investigation of Ikner's childhood development (WCTV, August 17, 2026; WTXL).",
         "message_volume": "13,000+ messages with ChatGPT over more than one year; 200+ entered as evidence",
         "civil_docket_caption": "Joshi v. OpenAI Foundation et al.",
         "civil_docket_number": "4:26-cv-00222-MW-MJF",
@@ -1118,8 +1118,8 @@
         "delusion_progression": "August 2025: started using Gemini; developed AI wife delusion; September 29: sent to Miami airport cargo hub with knives/tactical gear; October 2: barricaded and coached through suicide",
         "bot_behavior": "Maintained narrative immersion 'at all costs, even when that narrative became psychotic and lethal'",
         "public_safety_risk": "Complaint states 'pure luck that dozens of innocent people weren't killed'",
-        "google_response_status": "Google LLC and Alphabet Inc. filed a Rule 12(b)(6) motion to dismiss (First Amendment theory: liability cannot attach to sharing ideas that lead others to harm); plaintiff's response was due May 27, 2026; hearing set for August 19, 2026, 10:00 AM, San Jose (Courtroom 7, Judge Eumi K. Lee) per the N.D. Cal. docket (5:26-cv-01849). No written order located as of August 26, 2026. First federal motion to dismiss in a Gemini wrongful-death case. Motion remained under submission with no ruling located as of September 5, 2026; the Initial Case Management Conference was continued to September 16, 2026 (August 31, 2026 docket check).",
-        "docket_date_discrepancy": "One docket-aggregator summary (CourtListener snippet retrieved September 5, 2026) describes the motion-to-dismiss argument as heard August 5, 2026; this record's August 19, 2026 hearing date came from the reporting verified at the August 26 update. The primary docket was not directly accessible at either check. Resolve against PACER at the next docket review; the August 19 date stands until then."
+        "google_response_status": "Google LLC and Alphabet Inc. filed a Rule 12(b)(6) motion to dismiss (First Amendment theory: liability cannot attach to sharing ideas that lead others to harm); plaintiff's opposition filed June 17, 2026 after a stipulated extension (Dkt. 34, May 27, 2026, which also advanced the hearing from August 19 to August 5, 2026). Motion hearing held August 5, 2026 before Judge Eumi K. Lee, San Jose, and the motion was taken under submission (Dkt. 39); transcript filed August 6 (Dkt. 42). First federal motion to dismiss in a Gemini wrongful-death case. No ruling located as of October 14, 2026. The Further Case Management Conference was reset to December 2, 2026 (Dkt. 43, August 24, 2026). N.D. Cal. 5:26-cv-01849.",
+        "docket_date_discrepancy": "Resolved October 14, 2026 against the docket (PACER Monitor): the hearing was advanced to August 5, 2026 by Dkt. 34 and held that day (Dkt. 39). Earlier versions of this record carried the superseded August 19 setting (Dkt. 31) and a September 16 case-management date (Dkt. 30), both since reset."
       }
     },
     {
@@ -1469,7 +1469,7 @@
         "Sharp-force / bladed weapon (cause of death per Pinellas County medical examiner ruling and Hillsborough County criminal affidavit; specific weapon not detailed in available reporting)"
       ],
       "key_factors": [
-        "Third documented instrumental-pathway case involving ChatGPT (after FSU April 2025 and Tumbler Ridge February 2026); first such case where the AI consultation was about post-mortem disposal rather than attack planning",
+        "Fourth documented instrumental-pathway case involving ChatGPT (after FSU April 2025, the Gangbuk-gu serial poisonings December 2025–February 2026, and Tumbler Ridge February 2026); first such case where the AI consultation was about post-mortem disposal rather than attack planning",
         "April 13, 2026 (three days before victims' last contact): Abugharbieh asked ChatGPT 'What happens if a human has a put in a black garbage bag and thrown in a dumpster' — documented in Hillsborough County criminal affidavit; on-pattern pre-crime operational-assistance query about disposal that may have lowered the perceived cost of acting",
         "Both victims were killed by sharp-force injuries (stab wounds); cause of death per Pinellas County medical examiner; not by firearm",
         "Limon's body was recovered bound at wrists and ankles, with deep cuts at the hips consistent with attempted dismemberment to fit a trash bag; items belonging to Limon (student ID, credit cards, eyeglasses) recovered from a dumpster",
@@ -1500,6 +1500,7 @@
         "MySunCoast (May 7 and May 18, 2026)",
         "Florida Politics (April 27, 2026)",
         "Florida Phoenix (April 27, 2026)",
+        "WLRN (April 27, 2026 — AG investigation expanded to the USF homicides)",
         "Hillsborough County criminal affidavit (referenced by multiple outlets)"
       ],
       "verification_level": "Court documents and multiple news sources",
@@ -1562,14 +1563,14 @@
         "source": "NPR (April 21, 2026)"
       },
       {
-        "agency": "Pennsylvania Office of Attorney General (Shapiro administration)",
+        "agency": "Commonwealth of Pennsylvania — Department of State and State Board of Medicine (Shapiro administration; not the Office of Attorney General)",
         "target": "Character Technologies, Inc. (Character.AI)",
         "type": "civil enforcement",
         "date_initiated": "2026-05-05",
         "court": "Commonwealth Court of Pennsylvania",
         "scope": "Allegation that Character.AI bots unlawfully held themselves out as licensed medical professionals in Pennsylvania — a Character.AI bot named 'Emilie' described itself to investigators as a licensed psychiatrist in PA and the UK, provided a fake PA medical license number, offered to conduct mental health assessments, and accumulated approximately 45,500 interactions as of April 17, 2026",
         "relief_sought": "Preliminary injunction requiring Character.AI to cease allowing bots to represent themselves as licensed medical or mental health professionals in PA",
-        "note": "First-of-its-kind state-AG enforcement action by a governor framing AI chatbot conduct as unlicensed practice of a licensed profession (medicine/psychiatry); the same unlicensed-practice-of-medicine theory was advanced privately one week later in Turner-Scott v. OpenAI Foundation et al. (SF County Superior, May 12, 2026) for Sam Nelson",
+        "note": "First-of-its-kind state enforcement action — brought by the Department of State after Governor Shapiro directed it in February 2026 to investigate chatbots for unlicensed practice — framing AI chatbot conduct as unlicensed practice of a licensed profession (medicine/psychiatry); the same unlicensed-practice-of-medicine theory was advanced privately one week later in Turner-Scott v. OpenAI Foundation et al. (SF County Superior, May 12, 2026) for Sam Nelson",
         "source": "Pennsylvania Governor's Office press release (May 5, 2026); NPR (May 5, 2026); TechCrunch (May 5, 2026); Washington Times / AP feed"
       },
       {

@@ -389,3 +389,33 @@ def test_check_version_doi_fails_closed_when_the_constant_cannot_be_parsed(tmp_p
         audit.check_version_doi(root=_doi_root(tmp_path / label.replace(" ", "_"), build_src=src))
         assert any("VERSION_DOI" in f for f in audit.fails), (label, audit.fails)
         assert not any("agree" in p for p in audit.passes)
+
+
+# check_sources: the rendered outlet list must be a subset of canonical sources. Outlets are separated by ';' or ','
+# and may sit inside parentheses; a check that read only ';' let "(including AP, Reuters, BBC)" through — the exact
+# embellishment the check exists to catch (2026-10-14 audit).
+
+def test_rendered_outlets_splits_on_commas_and_reads_parentheticals():
+    assert audit.rendered_outlets("La Libre; Vice (including AP, Reuters, BBC)") == [
+        "associated press", "reuters", "bbc", "la libre", "vice"]
+    assert audit.rendered_outlets("Vice/Motherboard, La Libre, Reuters, BBC, Associated Press") == [
+        "vice motherboard", "la libre", "reuters", "bbc", "associated press"]
+
+
+def test_rendered_outlets_drops_dates_and_verification_notes():
+    assert audit.rendered_outlets("CP24/CTV (April 24, 2026 apology; April 29, 2026 suit); court filings (retrieved August 26, 2026)") == [
+        "cp24 ctv", "court filings"]
+
+
+def test_source_findings_fails_marquee_outlets_hidden_in_a_comma_list_or_parenthetical():
+    canon = ["La Libre", "Vice/Motherboard", "AI Incident Database #505"]
+    for line in ("Vice/Motherboard, La Libre, Reuters, BBC, Associated Press",
+                 "La Libre; Vice (including AP, Reuters, BBC)"):
+        marquee, extra = audit.source_findings(canon, line)
+        assert set(marquee) == {"associated press", "reuters", "bbc"}, (line, marquee)
+        assert set(marquee) <= set(extra)
+
+
+def test_source_findings_is_clean_when_rendered_outlets_are_all_canonical():
+    canon = ["CBC News (Altman apology, April 24, 2026)", "TechCrunch (April 25, 2026 — Altman apology)", "court filings"]
+    assert audit.source_findings(canon, "CBC News, TechCrunch (April 25, 2026); court filings") == ([], [])

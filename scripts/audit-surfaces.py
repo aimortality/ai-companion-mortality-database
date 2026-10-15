@@ -469,6 +469,50 @@ def check_stale(E, B, text, f):
         ok(f"{f}: no stale pre-change values ({len(probes)} probes)")
 
 
+def norm_source(s):
+    """A canonical source entry reduced to its outlet: parentheticals (dates, what was covered) dropped."""
+    s = re.sub(r"\(.*?\)", "", s).lower()
+    return re.sub(r"[^a-z0-9]+", " ", s).strip()
+
+
+SOURCE_NOISE = re.compile(r"confirmed by|sweep|verified|retrieved|order|\b(19|20)\d\d\b|independent outlets|perp"
+                          r"|\b(january|february|march|april|may|june|july|august|september|october|november|december)\b"
+                          r"|^\d+$")
+
+
+def rendered_outlets(line):
+    """Every outlet a rendered 'Verification Sources' line names, including those inside parentheses.
+
+    Outlets are separated by ';' or ','. Parenthetical text is split into its own segments rather than
+    discarded, so '(including AP, Reuters, BBC)' yields the three outlets. Segments that are dates, counts,
+    or verification notes are dropped; a leading 'including'/'and'/'also' is stripped; ALIAS is applied.
+    """
+    segments = []
+    for inner in re.findall(r"\((.*?)\)", line):
+        segments.extend(inner.split(";") if ";" in inner else [inner])
+    segments.extend(re.sub(r"\(.*?\)", "", line).split(";"))
+    outlets = []
+    for seg in segments:
+        for part in seg.split(","):
+            s = re.sub(r"[^a-z0-9]+", " ", part.lower()).strip()
+            s = re.sub(r"^(including|incl|and|also|via|e g)\s+", "", s)
+            if not s or SOURCE_NOISE.search(s):
+                continue
+            s = ALIAS.get(s, s)
+            if s not in outlets:
+                outlets.append(s)
+    return outlets
+
+
+def source_findings(canonical_sources, rendered_line):
+    """(marquee, extra): rendered outlets absent from canonical, and the subset that are marquee outlets."""
+    canon = [norm_source(s) for s in canonical_sources]
+    extra = [r for r in rendered_outlets(rendered_line) if not any(r in c or c in r for c in canon)]
+    # whole-word: "ap" must not match "april" or "apology"
+    marquee = [r for r in extra if any(re.search(rf"\b{re.escape(m.strip())}\b", r) for m in MARQUEE)]
+    return marquee, extra
+
+
 def check_sources(d):
     """report.html 'Verification Sources' lines vs canonical sources arrays."""
     f = f"{SITE}/report.html"
@@ -480,9 +524,6 @@ def check_sources(d):
         m = re.search(r"<strong>Verification Sources</strong>:\s*(.+?)</p>", sec, re.S)
         if m:
             by_name[title] = re.sub(r"<.*?>", "", m.group(1))
-    def norm(s):
-        s = re.sub(r"\(.*?\)", "", s).lower()
-        return re.sub(r"[^a-z0-9]+", " ", s).strip()
     checked, unmatched = 0, []
     for inc in d["incidents"]:
         name = inc.get("name", "")
@@ -493,12 +534,7 @@ def check_sources(d):
             unmatched.append(name)
             continue
         checked += 1
-        canon = [norm(s) for s in inc["sources"]]
-        rendered = [norm(s) for s in by_name[key].split(";") if s.strip()]
-        rendered = [r for r in rendered if not re.search(r"confirmed by|sweep|verified|retrieved|order|\b(19|20)\d\d\b|independent outlets|perp", r)]
-        rendered = [ALIAS.get(r, r) for r in rendered]
-        extra = [r for r in rendered if r and not any(r in c or c in r for c in canon)]
-        marquee = [r for r in extra if any(m.strip() in f" {r} " for m in MARQUEE)]
+        marquee, extra = source_findings(inc["sources"], by_name[key])
         if marquee:
             fail(f"{f}: '{name}' cites marquee outlet(s) NOT in canonical sources: {marquee}")
         elif extra:
@@ -603,8 +639,11 @@ def check_links():
         ua = ["-A", "Mozilla/5.0 (link-checker)"]
         code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "25", *ua, "--head", u],
                               capture_output=True, text=True).stdout
-        if code in ("403", "405", "000"):
-            code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "25", *ua, "-r", "0-1024", u],
+        if not code.startswith("2"):
+            # Some hosts answer HEAD, or a GET that does not ask for HTML, with 404 (GitLab does), so a page
+            # that opens in a browser is only reported broken if a browser-like GET also fails.
+            code = subprocess.run(["curl", "-s", "-o", "/dev/null", "-w", "%{http_code}", "-L", "--max-time", "25", *ua,
+                                   "-H", "Accept: text/html,application/xhtml+xml,*/*;q=0.8", "-r", "0-1024", u],
                                   capture_output=True, text=True).stdout
         return code, u
     with concurrent.futures.ThreadPoolExecutor(8) as ex:

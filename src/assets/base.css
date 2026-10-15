@@ -30,6 +30,11 @@
   /* Text runs and the link become flex items, so a narrow screen breaks between phrases, not inside them. */
   display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 0.5em;
 }
+.archive-bar {
+  border: 1px solid currentColor; padding: 8px 12px; margin: 0 0 20px;
+  font-size: 13px; line-height: 1.5; text-align: center;
+}
+.archive-bar a { color: inherit; text-decoration: underline; }
 .crisis-bar a {
   color: inherit; font-weight: bold; text-decoration: underline;
   display: inline-flex; align-items: center; justify-content: center;

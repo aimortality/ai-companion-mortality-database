@@ -114,6 +114,7 @@ def expected(d):
         "duration_known": known,
         "platform_deaths": {p["name"]: p["deaths"] for p in d["platforms"]},
         "minors_pct": s.get("minors_percentage_deaths"), "avg_age": s.get("average_age"),
+        "incidents_by_year": s.get("incidents_by_year", {}),
         "deaths_by_year": s.get("deaths_by_year", {}),
     }
 
@@ -550,7 +551,7 @@ def check_sources(d):
 
 def check_exports():
     """Derived exports must equal what build-data-exports.py would generate from canonical now."""
-    targets = ["data/platform-analysis.csv", "data/incidents.csv", "data/timeline.json"]
+    targets = ["data/platform-analysis.csv", "data/incidents.csv", "data/people.csv", "data/timeline.json"]
     before = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}
     r = subprocess.run([sys.executable, os.path.join(ROOT, "scripts/build-data-exports.py")], capture_output=True)
     after = {t: open(os.path.join(ROOT, t), "rb").read() for t in targets}

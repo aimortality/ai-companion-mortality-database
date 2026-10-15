@@ -1,0 +1,43 @@
+Incident ID,Incident Date,Date Precision,Platform,Mechanism Type,Role,Outcome,Name,Name Type,Age,Age Precision,Note
+2023-03-BE-001,2023-03-01,month,Chai AI,relational_pathway,user,died,Pierre,pseudonym,30,approximate,Canonical 30 is the floor of 'in his thirties'; exact age unpublished.
+2023-11-US-001,2023-11-08,day,Character.AI,relational_pathway,user,died,Juliana Peralta,real,13,exact,"Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+2024-02-US-001,2024-02-28,day,Character.AI,relational_pathway,user,died,Sewell Setzer III,real,14,exact,"Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+2024-08-US-001,2024-08-03,day,ChatGPT,relational_pathway,user,died,Joshua Enneking,real,26,exact,
+2024-11-US-001,2024-11-01,month,Character.AI,relational_pathway,user,survived,Nina,pseudonym,16,exact,Survived attempt counted in metadata.total_attempts; minor pseudonymised per standards.
+2025-XX-US-001,2025,year,ChatGPT,cognitive_pathway,user,died,Joe Ceccanti,real,48,exact,
+2025-02-US-002,2025-02,month,ChatGPT,relational_pathway,user,died,Sophie Rottenberg,real,29,exact,
+2025-02-US-001,2025-02-19,day,ChatGPT,cognitive_pathway,user,uninjured,Samuel Whittemore,real,34,exact,"AI user and perpetrator (found not criminally responsible); role user per methodology. His mother, also attacked, is not a canonical survivor and is not carried."
+2025-02-US-001,2025-02-19,day,ChatGPT,cognitive_pathway,third_party,died,Margaux Whittemore,real,32,exact,"Incident-level name/age describe this victim, not the AI user."
+2025-03-US-001,2025-03-31,day,Meta AI,cognitive_pathway,user,died,Thongbue Wongbandue,real,78,exact,"Reuters-sourced coverage gives 76 and death on March 28, 2025 (https://en.wikipedia.org/wiki/Deaths_linked_to_chatbots, citing Reuters); canonical 78 and 2025-03-31 need re-verification."
+2025-04-US-001,2025-04-11,day,ChatGPT,relational_pathway,user,died,Adam Raine,real,16,exact,"Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+2025-04-US-FSU,2025-04-17,day,ChatGPT,instrumental_pathway,user,wounded,Phoenix Ikner,real,20,exact,"AI user and shooter, alive; role user per methodology. Canonical says he was wounded, so 'uninjured' is forced by the enum. 5 wounded victims not carried."
+2025-04-US-FSU,2025-04-17,day,ChatGPT,instrumental_pathway,third_party,died,Robert Morales,real,57,exact,
+2025-04-US-FSU,2025-04-17,day,ChatGPT,instrumental_pathway,third_party,died,Tiru Chabba,real,45,exact,
+2025-04-US-002,2025-04-25,day,ChatGPT,cognitive_pathway,user,died,Alex Taylor,real,35,exact,
+2025-05-US-001,2025-05-31,day,ChatGPT,relational_pathway,user,died,Sam Nelson,real,19,exact,
+2025-06-US-001,2025-06-02,day,ChatGPT,relational_pathway,user,died,Amaurie Lacey,real,17,exact,"Minor named by canonical; family went public as plaintiffs, consistent with the minors rule."
+2025-06-US-002,2025-06-09,day,ChatGPT,cognitive_pathway,user,died,Christian Faith Madison,real,29,exact,
+2025-07-CA-001,2025-07-02,day,ChatGPT,relational_pathway,user,died,Alice Carrier,real,24,exact,
+2025-07-US-001,2025-07-25,day,ChatGPT,relational_pathway,user,died,Zane Shamblin,real,23,exact,
+2025-08-US-001,2025-08-01,month,ChatGPT,cognitive_pathway,user,died,Stein-Erik Soelberg,real,56,exact,AI user and perpetrator (murder-suicide); role user per methodology.
+2025-08-US-001,2025-08-01,month,ChatGPT,cognitive_pathway,third_party,died,Suzanne Eberson Adams,real,83,exact,Name per murder_victim.name; metadata.fatality_note shortens it to 'Suzanne Adams'.
+2025-10-US-001,2025-10-02,day,Gemini,cognitive_pathway,user,died,Jonathan Gavalas,real,36,exact,
+2025-10-GB-001,2025-10-23,day,DeepSeek,instrumental_pathway,user,uninjured,Tristan Roberts,real,18,exact,"AI user and perpetrator, convicted of murder; role user per methodology."
+2025-10-GB-001,2025-10-23,day,DeepSeek,instrumental_pathway,third_party,died,Angela Shellis,real,45,exact,"Incident-level name/age describe this victim, not the AI user."
+2025-11-US-001,2025-11-02,day,ChatGPT,relational_pathway,user,died,Austin Gordon,real,40,exact,
+2026-01-KR-001,2026-01-28,day,ChatGPT,instrumental_pathway,user,uninjured,Kim So-young (김소영),real,20,exact,"AI user and perpetrator, convicted at first instance; role user per methodology. Prosecutors confirmed 20 (early coverage said 21)."
+2026-01-KR-001,2026-01-28,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,25,approximate,"Died January 28, 2026; ~25 is canonical's midpoint estimate of 'in their 20s'."
+2026-01-KR-001,2026-01-28,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,25,approximate,"Died February 9, 2026; ~25 is canonical's midpoint estimate of 'in their 20s'."
+2026-01-KR-001,2026-01-28,day,ChatGPT,instrumental_pathway,third_party,survived,,unnamed,,unknown,"December 2025 victim, survived; counted in metadata.total_attempts. key_factors calls the victims men in their 20s collectively."
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,user,died,Jesse van Rootselaar,real,18,exact,"AI user and shooter, died by suicide; role user per methodology. 2 wounded not carried."
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,39,exact,Shooter's mother; canonical does not name her.
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,Emmett Jacobs,real,11,exact,"Shooter's stepbrother; minor named by canonical, family publicity undocumented (Author's call)."
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,39,exact,Education assistant; canonical does not name this victim.
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,12,exact,"Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,12,exact,"Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,12,exact,"Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,12,exact,"Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+2026-02-CA-001,2026-02-10,day,ChatGPT,instrumental_pathway,third_party,died,,unnamed,13,exact,"Student; unnamed, so which entry is 12 and which is 13 is arbitrary."
+2026-04-US-001,2026-04-16,day,ChatGPT,instrumental_pathway,user,uninjured,Hisham Saleh Abugharbieh,real,26,exact,"AI user and perpetrator, alive (pleaded not guilty); role user per methodology."
+2026-04-US-001,2026-04-16,day,ChatGPT,instrumental_pathway,third_party,died,Zamil Ahamed Limon,real,27,exact,
+2026-04-US-001,2026-04-16,day,ChatGPT,instrumental_pathway,third_party,died,Nahida Sultana Bristy,real,27,exact,

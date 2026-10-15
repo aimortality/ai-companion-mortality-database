@@ -32,7 +32,7 @@
         "@type": "PropertyValue",
         "name": "Total Incidents",
         "value": 24,
-        "description": "Distinct incidents with AI-connected fatalities"
+        "description": "Distinct incidents (occurrences of harm): 23 with fatalities and one survived attempt"
       },
       {
         "@type": "PropertyValue",
@@ -536,6 +536,12 @@
     @media (max-width: 768px) {
       .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
     }
+    .table-note {
+      font-size: 12px;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 8px;
+    }
   </style>
 {% endblock %}
 
@@ -564,7 +570,7 @@
         <li>ChatGPT leads in absolute numbers (29 fatalities: 13 users + 16 third-party victims)</li>
         <li>Five alleged instrumental-pathway incidents documented: FSU (Apr 2025), Roberts/Shellis Wales (Oct 2025), Tumbler Ridge (Feb 2026), USF (Apr 2026), Kim Seoul (Dec 2025–Feb 2026)</li>
         <li>ECRI Institute ranked AI chatbot misuse as #1 Health Technology Hazard for 2026</li>
-        <li>Regulatory landscape broadening in 2026: California JCCP 5431 coordinated seven OpenAI wrongful-death cases (Feb); Pennsylvania AG filed first state-AG enforcement framing chatbot conduct as unlicensed practice of medicine (May); Canada's Privacy Commissioner found OpenAI violated PIPEDA in training ChatGPT (May); a 42-state attorney general coalition led by New York AG Letitia James served OpenAI with a civil investigative demand covering sycophancy, child safety, health data, advertising, and engagement mechanics (June 12)</li>
+        <li>Regulatory landscape broadening in 2026: California JCCP 5431 coordinated seven OpenAI wrongful-death cases (Feb); Pennsylvania's Department of State filed the first state enforcement action framing chatbot conduct as unlicensed practice of medicine (May); Canada's Privacy Commissioner found OpenAI violated PIPEDA in training ChatGPT (May); a 42-state attorney general coalition led by New York AG Letitia James served OpenAI with a civil investigative demand covering sycophancy, child safety, health data, advertising, and engagement mechanics (June 12)</li>
       </ul>
     </div>
   </div>
@@ -574,7 +580,7 @@
       <strong>Important context:</strong> This database documents cases where AI chatbot interaction has been <strong>alleged</strong> as a contributing factor—through lawsuits, investigations, government inquiries, or family statements. The database makes no independent claims of causation. Many of these cases involve individuals with pre-existing vulnerabilities, and chatbot interaction was one of multiple factors cited.
     </p>
     <p style="font-size: 13px; margin-bottom: 10px;">
-      Cases exist on a spectrum of accountability. In most, allegations remain unresolved. However, some have progressed beyond accusation: one case resulted in a <strong>settlement</strong> (Setzer/Character.AI-Google, January 2026); one company <strong>acknowledged</strong> prior detection and changed its policies (OpenAI/van Rootselaar); a <strong>landmark court ruling</strong> classified chatbot output as a product rather than protected speech (Garcia v. Character Technologies, May 2025); seven OpenAI wrongful-death cases were <strong>judicially coordinated</strong> at the California state level (JCCP 5431, February 2026); a <strong>state Attorney General</strong> filed first-of-its-kind enforcement framing chatbot conduct as unlicensed practice of medicine (Pennsylvania v. Character Technologies, May 2026); and a foreign privacy regulator made the first formal finding that OpenAI violated national law (Canada's Privacy Commissioner, PIPEDA #2026-002, May 2026). These distinctions matter and are noted per case below.
+      Cases exist on a spectrum of accountability. In most, allegations remain unresolved. However, some have progressed beyond accusation: two cases were resolved by a <strong>settlement in principle</strong> (Setzer and Peralta, Character.AI/Google, January 2026); one company <strong>acknowledged</strong> prior detection and changed its policies (OpenAI/van Rootselaar); a <strong>landmark court ruling</strong> classified chatbot output as a product rather than protected speech (Garcia v. Character Technologies, May 2025); seven OpenAI wrongful-death cases were <strong>judicially coordinated</strong> at the California state level (JCCP 5431, February 2026); a <strong>state Attorney General</strong> filed first-of-its-kind enforcement framing chatbot conduct as unlicensed practice of medicine (Pennsylvania v. Character Technologies, May 2026); and a foreign privacy regulator made the first formal finding that OpenAI violated national law (Canada's Privacy Commissioner, PIPEDA #2026-002, May 2026). These distinctions matter and are noted per case below.
     </p>
     <p style="font-size: 13px; margin: 0;">
       Billions of AI chatbot interactions occur annually without documented harm.
@@ -654,7 +660,7 @@
             </thead>
             <tbody>
               <tr>
-                <td><b>Pierre</b></td>
+                <td><b>Pierre</b>*</td>
                 <td>30</td>
                 <td>Mar 2023</td>
                 <td>Chai AI</td>
@@ -670,8 +676,8 @@
                 <td>Character.AI</td>
                 <td>Thornton, CO</td>
                 <td>Death by suicide</td>
-                <td>Lawsuit filed</td>
-                <td><a href="https://www.nbcnews.com/tech/tech-news/character-ai-lawsuit-teen-suicide-chatbot-rcna174582" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: var(--link); text-decoration: underline;">View source →</a></td>
+                <td>Settled (Jan 2026)</td>
+                <td><a href="https://abc17news.com/money/cnn-business-consumer/2025/09/16/more-families-sue-character-ai-developer-alleging-app-played-a-role-in-teens-suicide-and-suicide-attempt/" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: var(--link); text-decoration: underline;">View source →</a></td>
               </tr>
               <tr>
                 <td><b>Sewell Setzer III</b></td>
@@ -694,14 +700,14 @@
                 <td><a href="https://socialmediavictims.org/press-releases/smvlc-tech-justice-law-project-lawsuits-accuse-chatgpt-of-emotional-manipulation-supercharging-ai-delusions-and-acting-as-a-suicide-coach/" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: var(--link); text-decoration: underline;">View source →</a></td>
               </tr>
               <tr>
-                <td><b>Nina</b></td>
+                <td><b>Nina</b>*</td>
                 <td>16</td>
                 <td>Nov 2024</td>
                 <td>Character.AI</td>
                 <td>New York, NY</td>
                 <td>Survived attempt</td>
                 <td>Lawsuit filed</td>
-                <td><a href="https://www.nbcnews.com/tech/tech-news/character-ai-lawsuit-teen-suicide-chatbot-rcna174582" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: var(--link); text-decoration: underline;">View source →</a></td>
+                <td><a href="https://abc17news.com/money/cnn-business-consumer/2025/09/16/more-families-sue-character-ai-developer-alleging-app-played-a-role-in-teens-suicide-and-suicide-attempt/" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: var(--link); text-decoration: underline;">View source →</a></td>
               </tr>
               <tr>
                 <td><b>Sophie Rottenberg</b></td>
@@ -890,11 +896,12 @@
                 <td>ChatGPT</td>
                 <td>Tampa, FL</td>
                 <td>Double homicide (2 killed)</td>
-                <td>Criminal prosecution; under investigation</td>
+                <td>Convicted (Aug 27, 2026; life imprisonment)</td>
                 <td><a href="https://www.wusf.org/courts-law/2026-05-07/roommate-indicted-usf-doctoral-students-slayings" target="_blank" rel="noopener noreferrer" style="font-size: 11px; color: var(--link); text-decoration: underline;">View source →</a></td>
               </tr>
             </tbody>
           </table>
+          <p class="table-note">*Pseudonym. Nina survived; her row is included because survived attempts are incidents (see Methodology).</p>
           </div>
         </div>
         <div class="methodology">

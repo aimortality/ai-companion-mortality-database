@@ -1,383 +1,5 @@
 {% extends "base.html.j2" %}
 {% block head %}
-  <style>
-    :root {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666666;
-      --muted-light: #dddddd;
-      --border: #1a1a1a;
-      --border-soft: #eeeeee;
-      --panel: #f5f5f5;
-      --panel-alt: #fafafa;
-      --link: #1a1a1a;
-      --accent: #1a1a1a;
-    }
-
-    :root[data-theme="light"] {
-      --bg: #ffffff;
-      --text: #1a1a1a;
-      --muted: #666666;
-      --muted-light: #dddddd;
-      --border: #1a1a1a;
-      --border-soft: #eeeeee;
-      --panel: #f5f5f5;
-      --panel-alt: #fafafa;
-      --link: #1a1a1a;
-      --accent: #1a1a1a;
-    }
-
-    :root[data-theme="dark"] {
-      --bg: #0f1113;
-      --text: #f2f2f2;
-      --muted: #b5b5b5;
-      --muted-light: #3a3a3a;
-      --border: #e6e6e6;
-      --border-soft: #2b2f33;
-      --panel: #171a1d;
-      --panel-alt: #15181b;
-      --link: #c7c7c7;
-      --accent: #f2f2f2;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0f1113;
-        --text: #f2f2f2;
-        --muted: #b5b5b5;
-        --muted-light: #3a3a3a;
-        --border: #e6e6e6;
-        --border-soft: #2b2f33;
-        --panel: #171a1d;
-        --panel-alt: #15181b;
-        --link: #c7c7c7;
-        --accent: #f2f2f2;
-      }
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Georgia', 'Times New Roman', Times, serif;
-      font-size: 16px;
-      line-height: 1.7;
-      color: var(--text);
-      background: var(--bg);
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
-
-    /* Header */
-    .journal-header {
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 8px;
-      margin-bottom: 30px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-    }
-
-    /* Title Block */
-    h1 {
-      font-size: 28px;
-      font-weight: normal;
-      line-height: 1.3;
-      margin-bottom: 20px;
-    }
-
-    .authors {
-      font-size: 15px;
-      margin-bottom: 8px;
-    }
-    .authors a {
-      color: var(--link);
-    }
-
-    .affiliation {
-      font-size: 13px;
-      color: var(--muted);
-      font-style: italic;
-      margin-bottom: 30px;
-    }
-
-    .metadata {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 12px;
-      color: var(--muted);
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid var(--border-soft);
-    }
-    .metadata span {
-      margin-right: 20px;
-    }
-
-    /* Abstract */
-    .abstract {
-      background: var(--panel-alt);
-      border-left: 3px solid var(--border);
-      padding: 20px 24px;
-      margin-bottom: 40px;
-    }
-    .abstract-title {
-      font-weight: bold;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .abstract p {
-      font-size: 15px;
-      margin-bottom: 12px;
-    }
-    .abstract p:last-child {
-      margin-bottom: 0;
-    }
-    .keywords {
-      font-size: 13px;
-      margin-top: 16px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-soft);
-    }
-    .keywords strong {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Sections */
-    h2 {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 40px;
-      margin-bottom: 16px;
-      counter-increment: section;
-    }
-    h2::before {
-      content: counter(section) ". ";
-    }
-
-    h3 {
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 28px;
-      margin-bottom: 12px;
-    }
-
-    p {
-      margin-bottom: 16px;
-      text-align: justify;
-      hyphens: auto;
-    }
-
-    /* Key Findings Box */
-    .key-findings {
-      background: var(--bg);
-      border: 1px solid var(--border);
-      padding: 20px 24px;
-      margin: 30px 0;
-    }
-    .key-findings-title {
-      font-weight: bold;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 16px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    .key-findings ul {
-      margin-left: 20px;
-    }
-    .key-findings li {
-      margin-bottom: 8px;
-    }
-
-    /* Tables */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 24px 0;
-      font-size: 14px;
-    }
-    caption {
-      text-align: left;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    th {
-      background: var(--panel);
-      border-top: 2px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 12px;
-      text-align: left;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    td {
-      border-bottom: 1px solid var(--border-soft);
-      padding: 10px 12px;
-      vertical-align: top;
-    }
-    tbody tr:last-child td {
-      border-bottom: 2px solid var(--border);
-    }
-    .table-note {
-      font-size: 12px;
-      color: var(--muted);
-      font-style: italic;
-      margin-top: 8px;
-    }
-
-    /* Figures */
-    figure {
-      margin: 30px 0;
-    }
-    figcaption {
-      font-size: 13px;
-      margin-top: 12px;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-    figcaption strong {
-      font-weight: 600;
-    }
-
-    /* Stats Grid */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1px;
-      background: var(--border);
-      border: 1px solid var(--border);
-      margin: 24px 0;
-    }
-    .stat-cell {
-      background: var(--bg);
-      padding: 16px;
-      text-align: center;
-    }
-    .stat-value {
-      font-size: 28px;
-      font-weight: normal;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .stat-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--muted);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    /* Citations */
-    .citation {
-      font-size: 14px;
-      color: var(--muted);
-    }
-    sup {
-      font-size: 11px;
-      color: var(--link);
-    }
-
-    /* References */
-    .references {
-      margin-top: 50px;
-      padding-top: 30px;
-      border-top: 1px solid var(--border);
-    }
-    .references h2::before {
-      content: "";
-    }
-    .references ol {
-      font-size: 13px;
-      line-height: 1.6;
-      padding-left: 24px;
-    }
-    .references li {
-      margin-bottom: 10px;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 60px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border-soft);
-      font-size: 12px;
-      color: var(--muted);
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
-
-    /* Links */
-    /* Underlined at rest: in dark mode the link colour is too close to the text colour to tell
-       links apart by colour alone (WCAG 1.4.1). Hover thickens the rule instead of adding it. */
-    a {
-      color: var(--link);
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    a:hover {
-      text-decoration-thickness: 2px;
-    }
-
-    /* Responsive */
-    @media (max-width: 600px) {
-      body {
-        padding: 30px 16px;
-      }
-      h1 {
-        font-size: 22px;
-      }
-      .stats-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      table {
-        font-size: 12px;
-      }
-      th, td {
-        padding: 8px 6px;
-      }
-    }
-
-    .theme-toggle {
-      position: fixed;
-      top: 18px;
-      right: 18px;
-      z-index: 200;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.4px;
-      padding: 6px 10px;
-      border-radius: 4px;
-      border: 1px solid var(--border-soft);
-      background: var(--panel);
-      color: var(--text);
-      opacity: 0.85;
-      transition: opacity 0.15s ease;
-    }
-
-    .theme-toggle:hover {
-      opacity: 1;
-    }
-  
-    @media (max-width: 768px) {
-      .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
-    }
-  </style>
 {% endblock %}
 
 {% block masthead %}
@@ -389,11 +11,11 @@
 
 {% block body %}
   <main id="main-content">
-  <article>
+  <article class="numbered">
     <h1>Documented Deaths Associated with Conversational AI Systems: A Systematic Database (2023–2026)</h1>
 
     <div class="authors">
-      <a href="https://orcid.org/0009-0004-5699-6035">Hunter Karman</a> <span style="font-size:12px;color:var(--muted);">ORCID 0009-0004-5699-6035</span>
+      <a href="https://orcid.org/0009-0004-5699-6035">Hunter Karman</a> <span class="dim">ORCID 0009-0004-5699-6035</span>
     </div>
     <div class="affiliation">
       Independent Researcher · Los Angeles, California
@@ -873,7 +495,7 @@
     <p>
       Analysis of documented cases reveals several recurring patterns:
     </p>
-    <ul style="margin-left: 24px; margin-bottom: 16px;">
+    <ul>
       <li><strong>Pre-existing mental health conditions:</strong> stated in 4 incident records (mental illness 2, cognitive impairment 1, autism 1); most records are silent on prior conditions</li>
       <li><strong>Emotional dependence:</strong> Victims frequently described chatbots as their "closest friend" or primary confidant</li>
       <li><strong>Social isolation:</strong> Many victims experienced bullying, family conflict, or limited peer relationships</li>
@@ -885,7 +507,7 @@
     <p>
       Cases are included in this database only if they meet the following verification criteria:
     </p>
-    <ol style="margin-left: 24px; margin-bottom: 16px;">
+    <ol>
       <li>Death or serious harm occurred with chatbot interaction documented as a contributing factor</li>
       <li>Verification through at least one of: court documents, multiple independent news sources, or official government acknowledgment</li>
       <li>Sufficient documentation to establish platform identification and basic case details</li>
@@ -898,7 +520,7 @@
     <p>
       The legal landscape has evolved rapidly. Key developments include:
     </p>
-    <ul style="margin-left: 24px; margin-bottom: 16px;">
+    <ul>
       <li><strong>Garcia v. Character Technologies (May 2025):</strong> Motion-to-dismiss ruling declining to hold, at that stage, that chatbot output is protected speech under the First Amendment</li>
       <li><strong>Senate Judiciary Committee hearing (September 2025):</strong> Testimony from victim's father on AI chatbot harms</li>
       <li><strong>FTC inquiry (2025):</strong> Formal inquiry into Character.AI practices</li>
@@ -927,9 +549,9 @@
 
     <footer>
       <p><strong>Citation:</strong> Karman, H. (2026). AI Companion Mortality Database: Documented Deaths Associated with Conversational AI Systems (2023–2026). Version 4.0.0. Zenodo. https://doi.org/{{ version_doi }}</p>
-      <p style="margin-top: 12px;"><strong>Correspondence:</strong> <a href="mailto:contact@aimortality.org">contact@aimortality.org</a></p>
-      <p style="margin-top: 12px;"><strong>Conflicts of Interest:</strong> The author is an independent researcher with no institutional affiliation, receives no funding from advocacy organizations or AI companies, and has no financial relationship with any platform tracked. The database is compiled with AI assistance from Anthropic's Claude; Anthropic is among the eight platforms tracked (zero documented fatalities as of this version). See the Research Disclosure in the <a href="report.html">full report</a>.</p>
-    <p style="margin-top: 20px; padding-top: 12px; border-top: 1px solid var(--border-soft);">
+      <p><strong>Correspondence:</strong> <a href="mailto:contact@aimortality.org">contact@aimortality.org</a></p>
+      <p><strong>Conflicts of Interest:</strong> The author is an independent researcher with no institutional affiliation, receives no funding from advocacy organizations or AI companies, and has no financial relationship with any platform tracked. The database is compiled with AI assistance from Anthropic's Claude; Anthropic is among the eight platforms tracked (zero documented fatalities as of this version). See the Research Disclosure in the <a href="report.html">full report</a>.</p>
+    <p class="dim">
         Database last updated: October 15, 2026 | <a href="report.html">Full Research Report</a>
       </p>
     </footer>

@@ -63,6 +63,10 @@ fixtureTest.describe('CSP enforced on every page (header attached by the test)',
         await route.fulfill({ response, headers: { ...response.headers(), 'content-security-policy': CSP } });
       });
       const violations = await collectViolations(page);
+      // A script the policy blocks never reaches the network, so an issued beacon request (aborted by the
+      // fixture, to stay offline) plus zero violations shows the policy admits the analytics beacon.
+      const beacon: string[] = [];
+      page.on('request', (r) => { if (/static\.cloudflareinsights\.com\/beacon\.min\.js/.test(r.url())) beacon.push(r.url()); });
       await page.emulateMedia({ colorScheme: 'light' });
       const response = await page.goto(path);
       // Positive control: the document the page actually received carries the policy, so a
@@ -73,8 +77,7 @@ fixtureTest.describe('CSP enforced on every page (header attached by the test)',
       await fixtureExpect(btn).toHaveAttribute('aria-pressed', 'false');
       await btn.click();
       await fixtureExpect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
-      // analytics.js ran under the policy: its gtag('js') and gtag('config') calls are queued.
-      fixtureExpect(await page.evaluate(() => (window as any).dataLayer?.length ?? 0)).toBeGreaterThanOrEqual(2);
+      fixtureExpect(beacon.length, 'the Cloudflare Web Analytics beacon was requested under the policy').toBeGreaterThanOrEqual(1);
       fixtureExpect([...violations, ...(await domViolations(page))]).toEqual([]);
     });
   }

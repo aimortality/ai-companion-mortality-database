@@ -4,7 +4,7 @@ import { test as base, expect } from '@playwright/test';
 // and offline-safe. Test-only: the analytics tags on the pages are untouched.
 export const test = base.extend({
   page: async ({ page }, use) => {
-    await page.route(/googletagmanager|google-analytics/, (r) => r.abort());
+    await page.route(/cloudflareinsights\.com/, (r) => r.abort());
     await use(page);
   },
 });

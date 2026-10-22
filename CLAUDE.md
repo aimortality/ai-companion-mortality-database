@@ -135,7 +135,8 @@ This database documents real deaths. Maintain:
 
 ## Style Conventions
 
-- Monospace font throughout (SF Mono / Menlo / Monaco / Courier New)
-- Brutalist aesthetic with light/dark theme toggle
+- One stylesheet, `src/assets/base.css`: tokens (`--paper`, `--ink`, `--dim`, `--rule`, `--hi`) with light and dark values, one grotesque, an off-centre prose measure, rules instead of boxes. No webfont, radius, shadow or gradient.
+- **No `<style>` blocks and no `style=""` attributes in any template.** The CSP is `style-src 'self'`, so an inline style is blocked in production; add a class to `base.css` instead. The e2e CSP spec catches violations.
+- Light/dark theme toggle on every page; `--dim` must keep small text at 4.5:1 or better on `--hi` panels (currently 5.1:1).
 - All dates in format: "Month DD, YYYY" or "Month YYYY"
 - Sources linked with "View source ->" text

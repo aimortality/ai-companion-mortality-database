@@ -46,6 +46,20 @@ async function collectViolations(page: Page): Promise<string[]> {
   return violations;
 }
 
+// Previews also inject the toolbar's container, <div data-netlify-deploy-id=... style="position:fixed">,
+// into the served HTML. The policy blocks its inline style, correctly (style-src 'self'). Production
+// serves no such element, so exactly one inline-style violation per toolbar container is excused and
+// nothing else: on the local server and in production the count is 0 and the check is fully strict.
+async function withoutToolbarStyle(page: Page, list: string[]): Promise<string[]> {
+  let console_ = await page.evaluate(() => document.querySelectorAll('[data-netlify-deploy-id][style]').length);
+  let dom = console_;
+  return list.filter((v) => {
+    if (dom > 0 && /style-src-attr blocked inline$/.test(v)) { dom--; return false; }
+    if (console_ > 0 && /^console: Applying inline style violates the following Content Security Policy directive 'style-src/.test(v)) { console_--; return false; }
+    return true;
+  });
+}
+
 async function domViolations(page: Page): Promise<string[]> {
   const raw: { effective: string; violated: string; blocked: string }[] =
     await page.evaluate(() => (window as any).__cspViolations ?? []);
@@ -78,7 +92,7 @@ fixtureTest.describe('CSP enforced on every page (header attached by the test)',
       await btn.click();
       await fixtureExpect(page.locator('html')).toHaveAttribute('data-theme', 'dark');
       fixtureExpect(beacon.length, 'the Cloudflare Web Analytics beacon was requested under the policy').toBeGreaterThanOrEqual(1);
-      fixtureExpect([...violations, ...(await domViolations(page))]).toEqual([]);
+      fixtureExpect(await withoutToolbarStyle(page, [...violations, ...(await domViolations(page))])).toEqual([]);
     });
   }
 });
@@ -95,7 +109,7 @@ rawTest.describe('CSP as served by Netlify', () => {
       const response = await page.goto(path);
       await page.waitForLoadState('networkidle');
       expect(response!.headers()['content-security-policy']).toBe(CSP);
-      expect([...violations, ...(await domViolations(page))]).toEqual([]);
+      expect(await withoutToolbarStyle(page, [...violations, ...(await domViolations(page))])).toEqual([]);
     });
   }
 

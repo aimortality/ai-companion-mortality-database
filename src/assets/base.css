@@ -1,61 +1,193 @@
-/* Cross-page rules shared by every page. Uses currentColor / neutral values only: page palettes
-   still live in each page's own <style> until the identity decision (Track 3). */
-:root { color-scheme: light dark; }
+/* AI Companion Mortality Database — the one stylesheet.
+   Cream paper, near-black ink, one grotesque, an off-centre measure, metadata set as catalog
+   references. No webfont, radius, shadow, gradient or motion. Rules and panels only where a piece
+   of the record needs them: tables, the crisis line, notes. Every page uses these tokens; no page
+   carries its own <style> or style="" (the Content-Security-Policy forbids inline styles). */
+
+/* ---- tokens ---- */
+:root {
+  --paper: #f6f4ef;
+  --ink: #111;
+  --dim: #5f5f5a;
+  --rule: #d8d5cc;
+  --hi: #e8e5dc;
+  --sans: "Helvetica Neue", Helvetica, Inter, "Segoe UI", Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;   /* field names and paths only */
+  --measure: 38rem;     /* prose; rem, so headings share the body's column */
+  --indent: 0px;        /* off-centre column start; set on wide screens below */
+  color-scheme: light dark;
+}
 :root[data-theme="light"] { color-scheme: light; }
-:root[data-theme="dark"] { color-scheme: dark; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #131311; --ink: #ebe8e0; --dim: #a29f96; --rule: #3a3934; --hi: #25241f;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #131311; --ink: #ebe8e0; --dim: #a29f96; --rule: #3a3934; --hi: #25241f;
+  }
+}
+@media (min-width: 900px) { :root { --indent: 12%; } }
 
-/* Theme toggle. "Pressed" is shown by a full-strength border, NOT by outline: the focus ring below
-   owns the outline, so a focused toggle shows the same 2px ring pressed or not. 44px minimum target. */
-.theme-toggle { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
-.theme-toggle[aria-pressed="true"] { border-color: currentColor; }
+/* ---- page ---- */
+* { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  padding: 22px 26px 64px calc(26px + var(--indent));
+  max-width: calc(var(--indent) + 76em);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.006em;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+}
+@media (max-width: 600px) { body { font-size: 16px; padding: 16px 16px 48px; } }
 
-/* Accessibility floor (WCAG 2.1 AA). */
-/* Skip link: first element in <body> on every page; parked off-screen until focused. */
+/* ---- type ---- */
+h1, h2, h3, h4 { font-weight: 600; line-height: 1.1; letter-spacing: -0.015em; max-width: var(--measure); }
+h1 { font-size: 34px; margin: 8px 0 14px; }
+h2 { font-size: 24px; margin: 56px 0 16px; }
+h3 { font-size: 19px; margin: 36px 0 10px; }
+h4 { font-size: 17px; margin: 24px 0 8px; }
+@media (max-width: 600px) { h1 { font-size: 27px; } h2 { font-size: 21px; } }
+p, ul, ol, blockquote, dl { max-width: var(--measure); margin: 0 0 14px; }
+ul, ol { padding-left: 1.2em; }
+li { margin: 0 0 6px; }
+strong, b { font-weight: 600; }
+sup { line-height: 0; }
+hr { border: 0; border-top: 1px solid var(--rule); margin: 40px 0; }
+code { font-family: var(--mono); font-size: 0.86em; }
+pre { font: inherit; white-space: pre; overflow-x: auto; max-width: var(--measure); margin: 0 0 16px; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+pre code { font-family: inherit; font-size: inherit; }
+blockquote { margin-left: 0; padding-left: 16px; border-left: 2px solid var(--rule); color: var(--dim); }
+
+/* Links: in a sourcing document every link must be identifiable mid-sentence. */
+a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { background: var(--hi); }
+
+/* Catalog references: small, dim, tabular. */
+.dim, .meta-info, .table-note, .register-line, .affiliation, .keywords, .doc-source, figcaption, caption { color: var(--dim); }
+
+/* ---- accessibility floor (WCAG 2.1 AA) ---- */
 .skip-link { position: absolute; left: -9999px; top: 8px; }
-.skip-link:focus { left: 8px; z-index: 1000; padding: 8px 12px; background: Canvas; color: CanvasText; outline: 2px solid currentColor; }
-/* One focus ring for everything keyboard-reachable (links, buttons, scroll regions). */
+.skip-link:focus { left: 8px; z-index: 1000; padding: 8px 12px; background: var(--paper); color: var(--ink); outline: 2px solid currentColor; }
 :focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
-/* A table wider than the screen scrolls inside its own keyboard-focusable box, never the page. */
-.table-scroll { overflow-x: auto; max-width: 100%; }
-/* Motion: smooth anchor scrolling only for people who have not asked for less. */
+.table-scroll { overflow-x: auto; max-width: 100%; margin: 16px 0 8px; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
 
-/* Crisis bar: the same loud inverse on every page. Explicit colours in both themes so the
-   page palettes (which differ) cannot soften it. Room is left for a second line. */
+/* ---- chrome: crisis line, archive notice, theme toggle, register line, site nav, footer ---- */
+/* The crisis line is the one loud element: inverse in both themes. */
 .crisis-bar {
-  background: #111; color: #fff;
-  padding: 8px 12px; margin: 0 0 20px;
-  font-size: 13px; line-height: 1.5; text-align: center;
-  /* Text runs and the link become flex items, so a narrow screen breaks between phrases, not inside them. */
+  background: var(--ink); color: var(--paper);
+  padding: 6px 12px; margin: 0 0 12px;
+  font-size: 13px; line-height: 1.4; text-align: center;
   display: flex; flex-wrap: wrap; justify-content: center; align-items: center; column-gap: 0.5em;
 }
-.archive-bar {
-  border: 1px solid currentColor; padding: 8px 12px; margin: 0 0 20px;
-  font-size: 13px; line-height: 1.5; text-align: center;
-}
-.archive-bar a { color: inherit; text-decoration: underline; }
 .crisis-bar a {
-  color: inherit; font-weight: bold; text-decoration: underline;
+  color: inherit; font-weight: 600;
   display: inline-flex; align-items: center; justify-content: center;
   min-width: 44px; min-height: 44px; padding: 0 4px;
 }
-:root[data-theme="dark"] .crisis-bar { background: #f2f2f2; color: #111; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .crisis-bar { background: #f2f2f2; color: #111; }
+.crisis-bar a:hover { background: transparent; text-decoration-thickness: 2px; }
+.archive-bar {
+  margin: 0 0 12px; padding: 10px 0;
+  border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  font-size: 14px; line-height: 1.45; max-width: none;
 }
+.theme-toggle {
+  float: right; display: flex; align-items: center; justify-content: center;
+  margin: 8px 0 8px 20px; min-width: 44px; min-height: 44px; padding: 0 12px;
+  font: inherit; font-size: 13px; color: var(--dim);
+  background: transparent; border: 1px solid var(--rule); border-radius: 0; cursor: pointer;
+}
+.theme-toggle:hover { background: var(--hi); color: var(--ink); }
+.theme-toggle[aria-pressed="true"] { border-color: var(--ink); color: var(--ink); }
+.register-line { font-size: 13px; margin: 0 0 6px; max-width: none; }
+nav[aria-label="Site"] { clear: both; font-size: 14px; margin: 0 0 32px; }
+nav[aria-label="Site"] ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 22px; max-width: none; }
+nav[aria-label="Site"] li { margin: 0; }
+nav[aria-label="Site"] a { display: inline-block; padding: 6px 0 4px; border-top: 2px solid transparent; }
+nav[aria-label="Site"] a[aria-current="page"] { border-top-color: currentColor; font-weight: 600; text-decoration: none; }
+.site-footer { margin-top: 72px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: 13px; color: var(--dim); }
+.site-footer p { margin: 0 0 8px; max-width: 60em; }
 
-/* Register line: the one-line state of the record, under the masthead. */
-.register-line { font-size: 12px; letter-spacing: 0.2px; margin: 0 0 8px; }
+/* ---- shared components ---- */
+.subtitle { color: var(--dim); max-width: var(--measure); margin: 0 0 16px; }
+.lede { font-size: 19px; line-height: 1.45; }
+.note, .summary-box { background: var(--hi); padding: 18px 22px; margin: 24px 0; max-width: calc(var(--measure) + 44px); }
+.note p:last-child, .summary-box p:last-child, .summary-box ul:last-child { margin-bottom: 0; }
+.label { font-size: 13px; font-weight: 600; letter-spacing: 0.02em; margin: 0 0 8px; }
 
-/* Site nav: one flat list. The current page is marked by a 2px rule, never colour alone. */
-nav[aria-label="Site"] { font-size: 12px; margin: 0 0 24px; }
-nav[aria-label="Site"] ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; }
-nav[aria-label="Site"] li { margin: 0; padding: 0; }
-nav[aria-label="Site"] a { color: inherit; text-decoration: underline; display: inline-block; padding: 4px 0 2px; border-top: 2px solid transparent; }
-nav[aria-label="Site"] a[aria-current="page"] { border-top: 2px solid currentColor; font-weight: bold; }
+/* Tables: rules, not boxes. */
+table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.4; }
+caption { caption-side: top; text-align: left; font-size: 14px; padding: 0 0 8px; }
+th { text-align: left; font-weight: 400; font-size: 13px; color: var(--dim); padding: 8px 18px 8px 0; border-bottom: 1px solid var(--ink); vertical-align: bottom; }
+td { padding: 9px 18px 9px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+td a { font-size: 13px; }
+/* The two case tables: dates and source links stay on one line; the region scrolls instead. */
+#cases td:nth-child(3), #cases td:last-child, [aria-label^="Table 4"] td:first-child { white-space: nowrap; }
+.table-note { font-size: 13px; margin: 6px 0 24px; max-width: var(--measure); }
 
-/* Shared footer lines, rendered once by base.html.j2 on every page. */
-.site-footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid currentColor; font-size: 12px; }
-.site-footer p { margin: 0 0 8px; }
-.site-footer a { color: inherit; text-decoration: underline; }
+/* Findings: three blocks under a rule. */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px 32px; margin: 16px 0 40px; }
+.card { border-top: 1px solid var(--ink); padding-top: 10px; }
+.card-title { font-weight: 600; margin: 0 0 6px; }
+.card-meta { font-size: 15px; line-height: 1.5; }
+
+/* Summary statistics: number over label. */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px 28px; margin: 16px 0 32px; }
+.stat-cell { border-top: 1px solid var(--rule); padding-top: 8px; }
+.stat-value { display: block; font-size: 30px; line-height: 1.1; letter-spacing: -0.02em; }
+.stat-label { display: block; font-size: 13px; color: var(--dim); margin-top: 4px; }
+
+/* In-page nav (the index's Overview / Cases jump links). */
+.nav { display: flex; flex-wrap: wrap; gap: 4px 22px; font-size: 14px; margin: 0 0 8px; }
+.nav a { display: inline-block; padding: 6px 0; }
+
+/* ---- the index ---- */
+.abstract { max-width: var(--measure); margin: 0 0 28px; }
+.key-findings ul { padding-left: 1.2em; }
+.methodology { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule); }
+.methodology h3 { margin-top: 0; }
+
+/* ---- the academic edition: catalog header, numbered sections ---- */
+.journal-header { clear: both; display: flex; justify-content: space-between; gap: 16px; font-size: 13px; color: var(--dim); padding-bottom: 8px; border-bottom: 1px solid var(--rule); margin: 0 0 20px; }
+.authors { margin: 0 0 2px; }
+.affiliation { font-size: 15px; margin: 0 0 14px; }
+.metadata { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 13px; color: var(--dim); padding-bottom: 16px; border-bottom: 1px solid var(--rule); margin: 0 0 28px; }
+.abstract-title, .key-findings-title { font-size: 13px; font-weight: 600; letter-spacing: 0.02em; margin: 0 0 8px; }
+.keywords { font-size: 14px; }
+.key-findings { margin: 0 0 32px; }
+.numbered { counter-reset: section; }
+.numbered h2 { counter-increment: section; }
+.numbered h2::before { content: counter(section) ". "; color: var(--dim); font-weight: 400; }
+.numbered .references h2::before { content: ""; }
+.references { margin-top: 56px; padding-top: 12px; border-top: 1px solid var(--rule); }
+.references ol { font-size: 14px; padding-left: 1.4em; }
+.citation { font-size: 14px; }
+figure { margin: 24px 0; }
+
+/* ---- the report ---- */
+.case-section { border-top: 1px solid var(--ink); padding-top: 20px; margin-top: 56px; }
+.case-section h3 { margin-top: 10px; }
+.verification-badge { display: inline-block; font-size: 12px; letter-spacing: 0.04em; color: var(--dim); border: 1px solid var(--rule); padding: 2px 8px; }
+.meta-info { font-size: 14.5px; line-height: 1.55; }
+.back-link { display: inline-block; font-size: 14px; margin: 0 0 16px; }
+
+/* ---- methodology and verification standards (rendered Markdown) ---- */
+.doc-switch { font-size: 14px; display: flex; gap: 22px; margin: 0 0 24px; }
+.doc-switch a[aria-current="page"] { font-weight: 600; text-decoration: none; }
+.doc-toc { font-size: 14px; margin: 0 0 36px; padding: 0 0 12px; border-bottom: 1px solid var(--rule); max-width: 52em; }
+.doc-toc-title { font-size: 13px; font-weight: 600; color: var(--dim); margin: 0 0 8px; }
+.doc-toc ul { list-style: none; margin: 0; padding: 0; columns: 2 240px; column-gap: 32px; max-width: none; }
+.doc-toc li { margin: 0 0 4px; break-inside: avoid; }
+#doc .header-anchor { margin-left: 8px; font-size: 0.75em; font-weight: 400; color: var(--dim); text-decoration: none; }
+#doc :target { scroll-margin-top: 16px; }
+#doc h1 { margin-top: 0; }
+#doc table { margin: 16px 0; max-width: 52em; }
+.doc-source { font-size: 13px; margin-top: 48px; }

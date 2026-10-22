@@ -2,243 +2,6 @@
 {% block head %}
 
 
-    <style>
-        :root {
-            --bg: #ffffff;
-            --text: #000000;
-            --muted: #666666;
-            --muted-strong: #333333;
-            --border: #000000;
-            --border-soft: #e0e0e0;
-            --panel: #f9f9f9;
-            --link: #0000ff;
-            --inverse-bg: #000000;
-            --inverse-text: #ffffff;
-            --callout-bg: #f0f8ff;
-            --callout-border: #0000ff;
-        }
-
-        :root[data-theme="light"] {
-            --bg: #ffffff;
-            --text: #000000;
-            --muted: #666666;
-            --muted-strong: #333333;
-            --border: #000000;
-            --border-soft: #e0e0e0;
-            --panel: #f9f9f9;
-            --link: #0000ff;
-            --inverse-bg: #000000;
-            --inverse-text: #ffffff;
-            --callout-bg: #f0f8ff;
-            --callout-border: #0000ff;
-        }
-
-        :root[data-theme="dark"] {
-            --bg: #0f1113;
-            --text: #f2f2f2;
-            --muted: #b5b5b5;
-            --muted-strong: #c7c7c7;
-            --border: #e6e6e6;
-            --border-soft: #3a3a3a;
-            --panel: #171a1d;
-            --link: #8ab4f8;
-            --inverse-bg: #f2f2f2;
-            --inverse-text: #0f1113;
-            --callout-bg: #111a22;
-            --callout-border: #8ab4f8;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #0f1113;
-                --text: #f2f2f2;
-                --muted: #b5b5b5;
-                --muted-strong: #c7c7c7;
-                --border: #e6e6e6;
-                --border-soft: #3a3a3a;
-                --panel: #171a1d;
-                --link: #8ab4f8;
-                --inverse-bg: #f2f2f2;
-                --inverse-text: #0f1113;
-                --callout-bg: #111a22;
-                --callout-border: #8ab4f8;
-            }
-        }
-
-        body {
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            margin: 40px;
-            font-size: 14px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        .container {
-            margin: 0;
-            padding: 0;
-            /* Long unbroken field names (e.g. violence_planning_operational_assistance) wrap
-               instead of widening the page past a 320px screen (WCAG 1.4.10 reflow). */
-            overflow-wrap: break-word;
-        }
-
-        .back-link {
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-size: 0.85rem;
-            color: var(--link);
-            text-decoration: none;
-            margin-bottom: 40px;
-            display: inline-block;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-
-        h1 {
-            font-size: 28px;
-            font-weight: normal;
-            margin: 0 0 8px 0;
-            border-bottom: 3px solid var(--border);
-            padding-bottom: 12px;
-            letter-spacing: -0.5px;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-weight: 600;
-            font-size: 1.5rem;
-            margin: 60px 0 20px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        h3 {
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 40px 0 15px 0;
-        }
-
-        h4 {
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin: 30px 0 10px 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            opacity: 0.7;
-        }
-
-        p {
-            margin: 0 0 15px 0;
-        }
-
-        ul, ol {
-            margin: 0 0 15px 0;
-            padding-left: 25px;
-        }
-
-        li {
-            margin-bottom: 8px;
-        }
-
-        strong {
-            font-weight: 600;
-        }
-
-        .case-section {
-            background-color: var(--panel);
-            padding: 25px;
-            margin: 40px 0;
-            border: 2px solid var(--border);
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
-        }
-
-        .meta-info {
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 10px;
-        }
-
-        .verification-badge {
-            display: inline-block;
-            background-color: #2e7d32;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 3px;
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-size: 0.75rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .summary-box {
-            background-color: var(--panel);
-            border: 2px solid var(--border);
-            padding: 25px;
-            margin: 30px 0;
-            box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid var(--border-soft);
-            margin: 60px 0;
-        }
-
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            font-size: 12px;
-            color: var(--muted);
-            text-align: center;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                margin: 20px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.2rem;
-            }
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 18px;
-            right: 18px;
-            z-index: 200;
-            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
-            font-size: 11px;
-            letter-spacing: 0.4px;
-            padding: 6px 10px;
-            border-radius: 4px;
-            border: 1px solid var(--border-soft);
-            background: var(--panel);
-            color: var(--text);
-            opacity: 0.85;
-            transition: opacity 0.15s ease;
-        }
-
-        .theme-toggle:hover {
-            opacity: 1;
-        }
-    
-        @media (max-width: 768px) {
-            .theme-toggle { position: static; display: inline-block; margin: 0 0 10px 0; }
-        }
-    </style>
 {% endblock %}
 
 {% block masthead %}
@@ -250,15 +13,15 @@
     <div class="container">
         <a href="index.html" class="back-link">← Back to Database</a>
 
-        <div class="summary-box" style="background-color: var(--callout-bg); border-left: 4px solid var(--callout-border); padding: 20px; margin: 20px 0;">
-            <h4 style="margin-top: 0; margin-bottom: 15px; opacity: 1;">Research Disclosure & AI Collaboration</h4>
-            <p style="margin-bottom: 10px;">This database is compiled and maintained with assistance from Anthropic's Claude Code, an AI coding assistant. Claude assists with data organization, cross-surface consistency checks, source cross-referencing, statistical tabulation, and web development. Case selection, verification decisions, classification, and every editorial judgment are the researcher's own. Nothing enters the database on the AI's say-so: LLM-generated research is treated as a lead, not a source, and is independently verified against court filings, government statements, or multiple news outlets before inclusion.</p>
+        <div class="summary-box">
+            <h4>Research Disclosure & AI Collaboration</h4>
+            <p>This database is compiled and maintained with assistance from Anthropic's Claude Code, an AI coding assistant. Claude assists with data organization, cross-surface consistency checks, source cross-referencing, statistical tabulation, and web development. Case selection, verification decisions, classification, and every editorial judgment are the researcher's own. Nothing enters the database on the AI's say-so: LLM-generated research is treated as a lead, not a source, and is independently verified against court filings, government statements, or multiple news outlets before inclusion.</p>
 
-            <p style="margin-bottom: 0;"><strong>Conflict of interest.</strong> The assisting system's developer, Anthropic, is one of the eight platforms this database tracks; its model, Claude, has zero documented fatalities as of this version. Readers should weigh that proximity. The database draws no conclusion from it: the platform table reports absolute counts, not rates, and a zero on that table reflects the documented record, not a safety judgment. A coding tool used by one researcher is not comparable in kind, population, or exposure to the consumer deployments documented in the cases below, and no inference about those deployments is drawn from this collaboration.</p>
+            <p><strong>Conflict of interest.</strong> The assisting system's developer, Anthropic, is one of the eight platforms this database tracks; its model, Claude, has zero documented fatalities as of this version. Readers should weigh that proximity. The database draws no conclusion from it: the platform table reports absolute counts, not rates, and a zero on that table reflects the documented record, not a safety judgment. A coding tool used by one researcher is not comparable in kind, population, or exposure to the consumer deployments documented in the cases below, and no inference about those deployments is drawn from this collaboration.</p>
         </div>
 
         <div class="summary-box">
-            <h2 style="margin-top: 0;">Executive Summary</h2>
+            <h2>Executive Summary</h2>
             <p>Between March 2023 and October 2026, <strong>at least 37 fatalities have been documented</strong> across 25 incidents (occurrences of harm) with credible evidence linking them to chatbot/LLM interactions; one incident involved no death (Nina, Character.AI 2024), and the Kim Seoul series includes one victim who survived (its December 2025 first victim). This includes <strong>18 AI users who died</strong> and <strong>19 third-party victims</strong> killed by AI users (Margaux Whittemore, Suzanne Adams, 8 in the Tumbler Ridge mass shooting, Robert Morales and Tiru Chabba in the FSU mass shooting, Angela Shellis killed by her son in Wales, Zamil Limon and Nahida Bristy in the USF double homicide, two unnamed adult men in Seoul, and Sudha Venkatesan and Siddharth Aravind in the Acton, Massachusetts double homicide). Cases are classified by <strong>causal mechanism</strong>: relational pathway (companion dependency), cognitive pathway (delusional reinforcement), and instrumental pathway (operational tool for violence). ChatGPT accounts for the highest number of fatalities (31 total including third-party victims), followed by Character.AI (2 user deaths, 1 survived attempt), Chai (1), Meta AI (1), Gemini (1), and DeepSeek (0 user deaths but 1 third-party victim — first documented homicide consultation case, Wales, October 2025).</p>
 
             <h3>Total Fatalities by Platform (Users + Third-Party Victims)</h3>
@@ -287,7 +50,7 @@
 
         <h2>Case Tracker</h2>
         <p class="meta-info"><strong>Content note.</strong> The entries below describe deaths by suicide and homicide and quote messages from the records. Method details are limited to what the record needs; where a complaint or court document goes further, this report does not. Crisis lines are at the top and bottom of every page.</p>
-        <p style="font-style: italic; font-size: 14px; color: var(--muted); margin-top: -8px; margin-bottom: 16px;">
+        <p class="table-note">
           Cases below are presented in <strong>accession order</strong> (the order in which each case was verified and added to the database) rather than strict chronological order. Case numbers are stable identifiers — once assigned, a number remains attached to the same case across updates so external citations and anchor links (<code>#case-N</code>) do not silently reassign. For chronological views of all documented cases, see <a href="index-academic.html#case-documentation">Table 4 of the academic page</a> or the <a href="/data/mortality-data.json"><code>data/mortality-data.json</code></a> file.
         </p>
 
@@ -1876,10 +1639,10 @@
 
         <h2>Sources and Verification</h2>
 
-        <p style="margin-bottom: 30px;">This report is based on comprehensive research across news media, legal filings, academic studies, regulatory documents, and verified incident databases. Every case meets Tier 1 (court documents or government acknowledgment) or Tier 2 (three or more independent outlets, or primary-document journalism) of the verification standards. Statements about what a chatbot said or did are as alleged in those sources unless a court has found them.</p>
+        <p>This report is based on comprehensive research across news media, legal filings, academic studies, regulatory documents, and verified incident databases. Every case meets Tier 1 (court documents or government acknowledgment) or Tier 2 (three or more independent outlets, or primary-document journalism) of the verification standards. Statements about what a chatbot said or did are as alleged in those sources unless a court has found them.</p>
 
         <h3>Primary News Sources</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>NBC News</strong> - Coverage of ChatGPT and Character.AI death cases</li>
             <li><strong>CNN Business</strong> - Extensive reporting on lawsuits and safety concerns</li>
             <li><strong>The Washington Post</strong> - In-depth investigations and policy analysis</li>
@@ -1898,7 +1661,7 @@
         </ul>
 
         <h3>Legal and Court Documents</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>Garcia v. Character Technologies, Inc.</strong> (U.S. District Court, Middle District of Florida, Case No. 6:24-cv-01903) - Landmark ruling May 21, 2025</li>
             <li><strong>Raine v. OpenAI</strong> (California Superior Court, San Francisco) - Filed August 26, 2025</li>
             <li><strong>Peralta family v. Character Technologies</strong> (Colorado Federal Court) - Filed September 16, 2025</li>
@@ -1912,7 +1675,7 @@
         </ul>
 
         <h3>Academic Research and Studies</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>Stanford University (2025)</strong> - Multiple studies on AI companions and youth mental health risks</li>
             <li><strong>Northeastern University (July 2025)</strong> - Adversarial jailbreaking in mental health contexts</li>
             <li><strong>JMIR Mental Health</strong> - "An Examination of Generative AI Response to Suicide Inquiries: Content Analysis"</li>
@@ -1921,7 +1684,7 @@
         </ul>
 
         <h3>Regulatory and Government Sources</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>U.S. Senate Judiciary Committee</strong> - September 17, 2025 hearing "Examining the Harm of AI Chatbots"</li>
             <li><strong>Federal Trade Commission (FTC)</strong> - September 2025 inquiry into AI companion chatbot safety</li>
             <li><strong>Texas Attorney General</strong> - December 2024 investigation of Character.AI and 14 other tech firms</li>
@@ -1932,14 +1695,14 @@
         </ul>
 
         <h3>Incident Databases and Documentation</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>AI Incident Database (incidentdatabase.ai)</strong> - Incident #505 (Chai AI/Pierre), Incident #826 (Character.AI/Setzer), Incident #863 (Character.AI/Texas teen)</li>
             <li><strong>Wikipedia</strong> - "Deaths linked to chatbots" comprehensive documentation</li>
             <li><strong>AIAAIC Repository</strong> - AI, Algorithmic, and Automation Incidents and Controversies</li>
         </ul>
 
         <h3>Company Sources and Statements</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>Character.AI</strong> - Safety announcements, policy updates, community guidelines</li>
             <li><strong>OpenAI</strong> - Safety feature announcements, parental control rollouts</li>
             <li><strong>Chai Research/Luka Inc.</strong> - Post-incident statements and safety implementations</li>
@@ -1948,21 +1711,21 @@
         </ul>
 
         <h3>Belgian Media (Pierre/Chai Case)</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>La Libre</strong> - Original reporting with widow's testimony and chat logs</li>
             <li><strong>Le Soir</strong> - Belgian newspaper coverage</li>
             <li><strong>The Brussels Times</strong> - English-language reporting</li>
         </ul>
 
         <h3>Key Investigative Journalism</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>Reuters (August 2025)</strong> - Investigation into Meta AI death (Thongbue Wongbandue), including family interviews and message history review</li>
             <li><strong>Wall Street Journal</strong> - Investigation into ChatGPT murder-suicide case (Stein-Erik Soelberg), including chat log review</li>
             <li><strong>404 Media</strong> - Technical investigations into chatbot safety failures</li>
         </ul>
 
         <h3>Additional Resources</h3>
-        <ul style="margin-bottom: 30px; line-height: 1.8;">
+        <ul>
             <li><strong>The Conversation</strong> - Academic analysis: "Deaths linked to chatbots show we must urgently revisit what counts as 'high-risk' AI"</li>
             <li><strong>TechCrunch</strong> - Technology industry coverage and policy analysis</li>
             <li><strong>Axios</strong> - Political and regulatory developments</li>
@@ -1970,9 +1733,9 @@
             <li><strong>Transparency Coalition</strong> - AI legislation tracking and legal analysis</li>
         </ul>
 
-        <div style="background-color: var(--panel); padding: 30px; margin-top: 40px;">
-            <h4 style="margin-top: 0; font-weight: 600;">Research Methodology Note</h4>
-            <p style="margin-bottom: 0;">This report represents analysis of 50+ distinct sources across news media, academic literature, legal filings, regulatory documents, and incident databases. Every case meets Tier 1 or Tier 2 of the verification standards; the tier is recorded per incident in the canonical data. Case details were cross-referenced across court documents, family testimony, news investigations, and official government acknowledgments. Where information conflicts across sources, the most conservative and well-documented account is presented.</p>
+        <div class="note">
+            <h4>Research Methodology Note</h4>
+            <p>This report represents analysis of 50+ distinct sources across news media, academic literature, legal filings, regulatory documents, and incident databases. Every case meets Tier 1 or Tier 2 of the verification standards; the tier is recorded per incident in the canonical data. Case details were cross-referenced across court documents, family testimony, news investigations, and official government acknowledgments. Where information conflicts across sources, the most conservative and well-documented account is presented.</p>
         </div>
 
         <hr>
